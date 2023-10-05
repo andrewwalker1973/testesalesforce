@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>RSC_RetailServicingAssociatedContractExtensions</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>This sharing rule is used to share the associated contract extensions record related to Retail Service Console.</description>
+        <label>Retail Servicing Associated Contract Extensions</label>
+        <sharedTo>
+            <roleAndSubordinates>RSC_ZA_Retail_ClientandAdviserServiceCentre</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>SC_CaseRecordType__c</field>
+            <operation>equals</operation>
+            <value>RSC_Retail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SC_TeamLeaderWriteAccess</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows team leads to view to Edit Associated Contract Extension</description>
+        <label>Team Leader Write Access</label>
+        <sharedTo>
+            <group>RSC_ClientandAdviserServiceCentreLeaders</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>SC_CaseRecordType__c</field>
+            <operation>equals</operation>
+            <value>RSC_Retail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

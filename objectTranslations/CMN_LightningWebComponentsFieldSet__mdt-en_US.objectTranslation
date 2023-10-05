@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lightning Web Components FieldSet</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lightning Web Components FieldSets</value>
+    </caseValues>
+    <fields>
+        <label><!-- LWC Active Sections --></label>
+        <name>CMN_LWCActiveSections__c</name>
+    </fields>
+    <fields>
+        <label><!-- LWC FieldSets --></label>
+        <name>CMN_LWCFieldSets__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

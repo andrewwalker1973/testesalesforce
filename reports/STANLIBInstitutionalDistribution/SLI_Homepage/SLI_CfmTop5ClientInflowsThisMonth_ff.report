@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FinServ__FinancialAccount__c$FinServ__PrimaryOwner__c</field>
+    </columns>
+    <columns>
+        <field>FinServ__FinancialAccount__c$FinServ__PrimaryOwner__c.SLI_Consultant__c</field>
+    </columns>
+    <columns>
+        <field>FinServ__FinancialAccount__c.FinServ__FinancialAccountTranslations__r$FinServ__Amount__c</field>
+    </columns>
+    <columns>
+        <field>FinServ__FinancialAccount__c$SLI_Franchise__c</field>
+    </columns>
+    <description>A view of top 5 (highest to lowest) inflows for the month, clients name, consultant, rand value and franchise.</description>
+    <filter>
+        <criteriaItems>
+            <column>FinServ__FinancialAccount__c.FinServ__FinancialAccountTranslations__r$FinServ__TransactionType__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IN</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FinServ__FinancialAccount__c$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>FinServ__FinancialAccount__c.SLC_FinancialAccount</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>CFM - Top 5 Client Inflows This Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>SLI_FinancialAccountsWithTransactions__c</reportType>
+    <rowLimit>5</rowLimit>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>FinServ__FinancialAccount__c.FinServ__FinancialAccountTranslations__r$FinServ__Amount__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>FinServ__FinancialAccount__c.FinServ__FinancialAccountTranslations__r$FinServ__TransactionDate__c</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

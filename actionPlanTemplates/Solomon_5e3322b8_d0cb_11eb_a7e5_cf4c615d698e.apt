@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Update FNA</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Solomon</name>
+    <targetEntityType>01I4J000000mUFE</targetEntityType>
+    <uniqueName>Solomon_5e3322b8_d0cb_11eb_a7e5_cf4c615d698e</uniqueName>
+</ActionPlanTemplate>

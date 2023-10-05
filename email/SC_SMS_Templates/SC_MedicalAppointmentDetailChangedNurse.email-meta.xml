@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template to be used for Nurses About Medical Appointment Details Changed</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Medical Appointment Detail Changed Nurse</name>
+    <style>none</style>
+    <subject>SMS To Nurses for Medical Appointment Details Changed</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

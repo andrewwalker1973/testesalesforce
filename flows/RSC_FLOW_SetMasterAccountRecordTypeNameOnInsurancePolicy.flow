@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>RSC_SetEmptyString</name>
+        <label>Set Empty String</label>
+        <locationX>314</locationX>
+        <locationY>791</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_RecordTypeValue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_UdateMasterRecordTypeName</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>RSC_SetMasterRecordTypeName</name>
+        <label>Set Master RecordTypeName</label>
+        <locationX>50</locationX>
+        <locationY>791</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_RecordTypeValue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.AW_MasterAccount__r.RecordType.DeveloperName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_UdateMasterRecordTypeName</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Used to check if the Master account exists for the primary account of Financial Account</description>
+        <name>RSC_CheckIfMasterAccountExists</name>
+        <label>Check If Master Account Exists</label>
+        <locationX>182</locationX>
+        <locationY>671</locationY>
+        <defaultConnector>
+            <targetReference>RSC_SetEmptyString</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Master Account Does&apos;nt Exists</defaultConnectorLabel>
+        <rules>
+            <name>RSC_MasterAccountExists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AW_MasterAccount__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_SetMasterRecordTypeName</targetReference>
+            </connector>
+            <label>Master Account Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Used to check if the Record or New or an Existing Record</description>
+        <name>RSC_CheckIfNewOrOldRecord</name>
+        <label>Check If New Or Old Record</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>RSC_IsNew</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_CheckIfMasterAccountExists</targetReference>
+            </connector>
+            <label>Is New</label>
+        </rules>
+        <rules>
+            <name>RSC_IsUpdated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AW_MasterAccount__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.AW_MasterAccount__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_CheckIfMasterAccountExists</targetReference>
+            </connector>
+            <label>Is Updated</label>
+        </rules>
+    </decisions>
+    <description>Used to store the Master Account RecordType name which is used for sharing the records with Agents</description>
+    <interviewLabel>RSC_FLOW_SetMasterAccountRecordTypeNameOnInsurancePolicy {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RSC_FLOW_SetMasterAccountRecordTypeNameOnInsurancePolicy</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>RSC_UdateMasterRecordTypeName</name>
+        <label>Update Master Recordtype Name Field</label>
+        <locationX>182</locationX>
+        <locationY>1007</locationY>
+        <inputAssignments>
+            <field>CMN_MasterAccountRecordTypeName__c</field>
+            <value>
+                <elementReference>RSC_RecordTypeValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_CheckIfNewOrOldRecord</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>NameInsuredId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>InsurancePolicy</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>RSC_RecordTypeValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>Liberty_logo_and_Tag_Line_Horizonta</masterLabel>
+    <originNetwork>Liberty Client Portal</originNetwork>
+    <relationships>
+        <workspace>
+            <access>INFERRED</access>
+            <isManagingWorkspace>true</isManagingWorkspace>
+            <name>sfdc_asset_company_assets</name>
+        </workspace>
+    </relationships>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>Liberty logo and Tag Line Horizontal.png</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>54.0</apiVersion>
+	<description>Rsc Lwc Choose Email Recipients</description>
+	<isExposed>true</isExposed>
+	<masterLabel>Rsc Lwc Choose Email Recipients</masterLabel>
+
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<propertyType name="A"
+						  extends="SObject"
+						  label="Account Type"
+						  description="Select Account object as data type"/>
+			<property name="client"
+					  label="Client"
+					  type="{A}"
+					  role="inputOnly"/>
+
+			<propertyType name="C"
+						  extends="SObject"
+						  label="Contact Type"
+						  description="Select Contact object as data type"/>
+			<property name="financialAdvisor"
+					  label="Financial Advisor"
+					  type="{C}"
+					  role="inputOnly"/>
+
+			<propertyType name="U"
+						  extends="SObject"
+						  label="User Type"
+						  description="Select User object as data type"/>
+			<property name="thirdParty"
+					  label="Third Party"
+					  type="{U}"
+					  role="inputOnly"/>
+
+			<property name="clientSelected"
+					  label="Client Selected"
+					  description="Boolean to store if the Client Selected has been selected"
+					  type="Boolean"/>
+			<property name="financialAdvisorSelected"
+					  label="Financial Advisor Selected"
+					  description="Boolean to store if the Financial Advisor has been selected"
+					  type="Boolean"/>
+			<property name="thirdPartySelected"
+					  label="Third Party Selected"
+					  description="Boolean to store if the Third Party has been selected"
+					  type="Boolean"/>
+
+			<property name="recipients"
+					  label="List of Recipients"
+					  type="apex://CMN_DTO_CommunicationRecipients[]"/>
+		</targetConfig>
+	</targetConfigs>
+
+</LightningComponentBundle>

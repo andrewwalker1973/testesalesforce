@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>STANLIB Institutional Triage Template</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>STANLIB_CaseLetterhead</letterhead>
+    <name>STANLIB Institutional Triage</name>
+    <style>freeForm</style>
+    <subject>Reviewed and in progress: {!Case.Subject}</subject>
+    <textOnly>Dear {!Case.Contact},
+
+We have reviewed your email and can confirm that {!Case.OwnerFullName} is working closely with the respective STANLIB team to provide you with the information you require.
+
+If you have any questions, please do not hesitate to call us on {!Case.OwnerPhone}, with your reference number {!Case.CaseNumber}.
+
+Regards,
+STANLIB Client Experience: Institutional
+
+{!Case.Email_Thread}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

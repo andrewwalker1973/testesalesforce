@@ -1,0 +1,71 @@
+<!-- /**
+* @description LWC Component used to update policies linked to a case.
+*
+* @author Accenture
+*
+* @see storyNo: 168884
+*
+* @date August 2021
+* -->
+<template>
+	<lightning-card>
+		<div if:true={isLoading}>
+			<lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+		</div>
+		<div class="slds-p-horizontal_large slds-border_bottom">
+			<div class="slds-grid slds-grid_vertical-align-center">
+				<div class="slds-col">
+					<div class="slds-grid slds-grid_vertical-align-center">
+						<div class="slds-col_bump-left slds-m-bottom_x-small">
+							<lightning-icon alternative-text="Policies" class="icon-bgcolor slds-m-right_medium" icon-name="standard:account"
+											size="medium"></lightning-icon>
+						</div>
+						<div class="slds-col">
+							<h2 class="slds-text-heading_small slds-p-bottom_xx-small">
+								Policies </h2>
+						</div>
+						<div class="slds-clearfix">
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Link/Delink" onclick={handleUpdate} slot="actions"
+											  variant="brand"></lightning-button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slds-card__body slds-card__body_inner slds-m-top_medium">
+			<lightning-datatable columns={columns} data={contractList} hide-checkbox-column="true" key-field="id" onrowaction={handleOnRowAction}
+								 onsort={handleOnSort}></lightning-datatable>
+		</div>
+	</lightning-card>
+	<!-- Section to select the contracts -->
+	<lightning-card if:true={isUpdateContracts}>
+		<div class="slds-container">
+			<section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open"
+					 role="dialog" tabindex="-1">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header">
+						<h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-01"><b>Update Policies</b>
+						</h2>
+					</header>
+
+					<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+						<template if:true={isUpdateContracts}>
+							<c-rsc-lwc-display-contracts-section preselect-fetched-rows='true' record-id={caseId}></c-rsc-lwc-display-contracts-section>
+						</template>
+					</div>
+					<footer class="slds-modal__footer">
+						<div class="slds-clearfix">
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Save" onclick={handleSave}
+											  variant="brand"></lightning-button>
+
+							<lightning-button class="slds-p-around_x-small slds-float_left" label="Cancel" onclick={handleCancel}
+											  variant="brand"></lightning-button>
+						</div>
+					</footer>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open"></div>
+		</div>
+	</lightning-card>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

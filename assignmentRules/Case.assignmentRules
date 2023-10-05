@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>CMN_DefaultCaseAssignmentRule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>SD_SAWebToCase</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND ( 	OR 	( 		ISPICKVAL(SD_FeedbackType__c, &quot;Query&quot;), 		ISPICKVAL(SD_FeedbackType__c, &quot;Compliment&quot;) 	), 	OR 	( 		RecordType.DeveloperName = &quot;SD_HealthFeedback&quot;, 		RecordType.DeveloperName = &quot;SD_HealthSupport&quot; 	)  )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <formula>TRUE</formula>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>SD_SAWebToCase</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>SD_SAWebToCase</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.SD_FeedbackType__c</field>
+                <operation>equals</operation>
+                <value>Query</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SD_FeedbackType__c</field>
+                <operation>equals</operation>
+                <value>Compliment</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

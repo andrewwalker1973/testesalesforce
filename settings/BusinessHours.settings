@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessHoursSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <businessHours>
+        <active>true</active>
+        <default>false</default>
+        <fridayEndTime>00:00:00.000Z</fridayEndTime>
+        <fridayStartTime>00:00:00.000Z</fridayStartTime>
+        <mondayEndTime>00:00:00.000Z</mondayEndTime>
+        <mondayStartTime>00:00:00.000Z</mondayStartTime>
+        <name>Default</name>
+        <saturdayEndTime>00:00:00.000Z</saturdayEndTime>
+        <saturdayStartTime>00:00:00.000Z</saturdayStartTime>
+        <sundayEndTime>00:00:00.000Z</sundayEndTime>
+        <sundayStartTime>00:00:00.000Z</sundayStartTime>
+        <thursdayEndTime>00:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>00:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Africa/Johannesburg</timeZoneId>
+        <tuesdayEndTime>00:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>00:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>00:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>00:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <businessHours>
+        <active>true</active>
+        <default>true</default>
+        <fridayEndTime>17:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>17:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>Liberty Business Hours</name>
+        <thursdayEndTime>17:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Africa/Johannesburg</timeZoneId>
+        <tuesdayEndTime>17:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>17:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <holidays>
+        <activityDate>2019-12-25</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Christmas Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-12-26</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Day of Goodwill</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-12-16</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Day of Reconciliation</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-04-22</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Family Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-04-27</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Freedom Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-04-19</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-09-24</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Heritage Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-03-21</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Human Rights Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-08-09</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>National Women’s Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-01-01</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>New Year&apos;s Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-05-01</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Workers Day</name>
+    </holidays>
+    <holidays>
+        <activityDate>2019-06-16</activityDate>
+        <isRecurring>false</isRecurring>
+        <name>Youth Day</name>
+    </holidays>
+</BusinessHoursSettings>

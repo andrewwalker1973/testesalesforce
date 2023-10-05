@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Send Email Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Send Email Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- The display name of the organization-wide email address associated with the outgoing email. --></help>
+        <label><!-- Organization-Wide Address Display Name --></label>
+        <name>CMN_OrganizationWideAddressDisplayName__c</name>
+    </fields>
+    <fields>
+        <help><!-- A list of email addresses or object IDs of the contacts, leads, and users you’re sending the email to. --></help>
+        <label><!-- To Email Addresses --></label>
+        <name>CMN_ToEmailAddresses__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

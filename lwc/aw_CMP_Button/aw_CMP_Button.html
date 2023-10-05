@@ -1,0 +1,10 @@
+<template>
+    <template if:true={stretch}>
+        <lightning-button variant={variant} class="stretch-button" label={buttonLabel} title={buttonLabel}
+            onclick={handleClick}></lightning-button>
+    </template>
+    <template if:false={stretch}>
+        <lightning-button variant={variant} label={buttonLabel} title={buttonLabel}
+            onclick={handleClick}></lightning-button>
+    </template>
+</template>

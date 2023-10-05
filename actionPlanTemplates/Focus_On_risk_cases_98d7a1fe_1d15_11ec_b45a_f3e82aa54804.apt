@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Focus on more risk cases</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Focus On risk cases</name>
+    <targetEntityType>Opportunity</targetEntityType>
+    <uniqueName>Focus_On_risk_cases_98d7a1fe_1d15_11ec_b45a_f3e82aa54804</uniqueName>
+</ActionPlanTemplate>

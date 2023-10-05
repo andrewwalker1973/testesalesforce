@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>NetworkAffinity</contextRecordType>
+    <description>Share my experience used with Chatbot</description>
+    <label>Share my Experience</label>
+    <recommendationLoad>
+        <label>Create a Lead</label>
+        <name>Create_a_Lead</name>
+        <condition>
+            <field>AcceptanceLabel</field>
+            <operator>EQUALS</operator>
+            <value>
+                <type>TEXT</type>
+                <value>Refer Lead</value>
+            </value>
+        </condition>
+        <conditionLogic>and</conditionLogic>
+        <object>Recommendation</object>
+    </recommendationLoad>
+    <union>
+        <childNode>Create_a_Lead</childNode>
+        <label>Output</label>
+        <name>Output_b27022bc66894b52b27ab113fa8a7fec</name>
+    </union>
+</RecommendationStrategy>

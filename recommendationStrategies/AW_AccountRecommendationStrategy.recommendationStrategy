@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>Account</contextRecordType>
+    <description>This strategy will show the propensity score for product groups</description>
+    <invocableAction>
+        <label>Generate Recommendation</label>
+        <name>AW_GenerateRecommendation</name>
+        <action>AW_FLOW_GetAccountRecommendation</action>
+        <argument>
+            <name>accountId</name>
+            <value>$Record.Id</value>
+        </argument>
+        <isGenerator>true</isGenerator>
+        <type>apex</type>
+    </invocableAction>
+    <label>Account Recommendation Strategy</label>
+    <union>
+        <childNode>AW_GenerateRecommendation</childNode>
+        <label>Output</label>
+        <name>Output_af08dad385ac46c1a6594d287d168a89</name>
+    </union>
+</RecommendationStrategy>

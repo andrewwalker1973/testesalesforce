@@ -1,0 +1,50 @@
+<template>
+    <!--TODO: Message when list is empty-->
+    <lightning-card class="timeline-card" title="My Goals">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-12 slds-align_absolute-center">
+                <lightning-button-icon icon-name="utility:chevronleft" variant="border-filled"
+                    alternative-text="Scroll Left" onclick={scrollLeft}>
+                </lightning-button-icon>
+            </div>
+            <div class="slds-col slds-size_10-of-12 slds-align_absolute-center">
+
+                <div class="timeline-container">
+                    <ul class="timeline">
+                        <template class="timeline-list" if:true={goalList}>
+                            <template for:each={goalList} for:item="goal" class="slds-m-bottom_large">
+                                <li class="li" key={goal.Id}>
+                                    <div class="timestamp">
+                                        <span class="author">{goal.Name}</span>
+                                        <span class="date">
+                                            <lightning-formatted-date-time value={goal.FinServ__TargetDate__c}
+                                                year="2-digit" month="short" day="2-digit">
+                                            </lightning-formatted-date-time>
+                                        </span>
+                                    </div>
+                                    <div class="status" data-status={goal.FinServ__Status__c}>
+                                        <h4> {goal.FinServ__Status__c} </h4>
+                                    </div>
+                                </li>
+                            </template>
+                        </template>
+                        <template if:true={goalListError}>
+                            {goalListError.error}
+                        </template>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-align_absolute-center">
+                <lightning-button-icon icon-name="utility:chevronright" variant="border-filled"
+                    alternative-text="Scroll Right" onclick={scrollRight}>
+                </lightning-button-icon>
+            </div>
+        </div>
+        <div class="slds-p-top_large slds-align_absolute-center">
+            <a class="slds-button slds-button_brand" href="/clientportal/s/my-living-life-plan/">View Living Life
+                Plan</a>
+        </div>
+
+    </lightning-card>
+</template>

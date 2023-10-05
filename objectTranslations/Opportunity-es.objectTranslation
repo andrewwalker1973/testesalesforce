@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Adviser UACFID --></label>
+        <name>AW_AdviserUACFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Date --></label>
+        <name>AW_ClosedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments/Notes --></label>
+        <name>AW_CommentsNotes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conversion Time --></label>
+        <name>AW_ConversionTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Stage --></label>
+        <name>AW_FromStage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours in current status --></label>
+        <name>AW_HoursInCurrentStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Idle Stage Indicator --></label>
+        <name>AW_IdleStageIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Status Change --></label>
+        <name>AW_LastStatusChange__c</name>
+    </fields>
+    <fields>
+        <label><!-- AW_MasterAccountId --></label>
+        <name>AW_MasterAccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- MasterAccount --></label>
+        <name>AW_MasterAccount__c</name>
+        <relationshipLabel><!-- Opportunities (MasterAccount) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Created Key --></label>
+        <name>AW_OpportunityCreatedKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Score --></label>
+        <name>AW_OpportunityScore__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage Negative Setting --></label>
+        <name>AW_OpportunityStageNegativeSetting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage Positive Setting --></label>
+        <name>AW_OpportunityStagePositiveSetting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Type --></label>
+        <name>AW_OpportunityType__c</name>
+        <picklistValues>
+            <masterLabel>Existing Book</masterLabel>
+            <translation><!-- Existing Book --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Business</masterLabel>
+            <translation><!-- New Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orphan</masterLabel>
+            <translation><!-- Orphan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Won Key --></label>
+        <name>AW_OpportunityWonKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner Region --></label>
+        <name>AW_Opportunity_Owner_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- AW_ParentAccountOwnerId --></label>
+        <name>AW_ParentAccountOwnerId__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Policy number also referred to as the contract number is the unique number used to identify a product. --></help>
+        <label><!-- Policy number(s) --></label>
+        <name>AW_PolicyNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Interest --></label>
+        <name>AW_ProductInterest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Product Interest --></label>
+        <name>AW_SubProductInterest__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Stage --></label>
+        <name>AW_ToStage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Account --></label>
+        <name>FinServ__FinancialAccount__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Household Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Account or Contact that referred the lead --></help>
+        <label><!-- External Referrer --></label>
+        <name>FinServ__ReferredByContact__c</name>
+        <relationshipLabel><!-- My Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Internal Referrer --></label>
+        <name>FinServ__ReferredByUser__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Age (Days) --></label>
+        <name>SLC_Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointment Effective --></label>
+        <name>SLC_AppointmentEffective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitor Product --></label>
+        <name>SLC_Competitor_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitor --></label>
+        <name>SLC_Competitor__c</name>
+        <picklistValues>
+            <masterLabel>27Four Collective Investments</masterLabel>
+            <translation><!-- 27Four Collective Investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absa</masterLabel>
+            <translation><!-- Absa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Allan Gray</masterLabel>
+            <translation><!-- Allan Gray --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alusi</masterLabel>
+            <translation><!-- Alusi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aluwani</masterLabel>
+            <translation><!-- Aluwani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ashburton</masterLabel>
+            <translation><!-- Ashburton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boutique Collective Investments</masterLabel>
+            <translation><!-- Boutique Collective Investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bridge Collective Investments</masterLabel>
+            <translation><!-- Bridge Collective Investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CI Collective Investments</masterLabel>
+            <translation><!-- CI Collective Investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colourfield</masterLabel>
+            <translation><!-- Colourfield --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Community Growth</masterLabel>
+            <translation><!-- Community Growth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coreshares</masterLabel>
+            <translation><!-- Coreshares --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coronation</masterLabel>
+            <translation><!-- Coronation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discovery</masterLabel>
+            <translation><!-- Discovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FNB CIS</masterLabel>
+            <translation><!-- FNB CIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fairtree Am</masterLabel>
+            <translation><!-- Fairtree Am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fedgroup</masterLabel>
+            <translation><!-- Fedgroup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foord</masterLabel>
+            <translation><!-- Foord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Futuregrowth</masterLabel>
+            <translation><!-- Futuregrowth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glacier</masterLabel>
+            <translation><!-- Glacier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grant Thornton</masterLabel>
+            <translation><!-- Grant Thornton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gryphon Collective Investments</masterLabel>
+            <translation><!-- Gryphon Collective Investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H4</masterLabel>
+            <translation><!-- H4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP Management Company</masterLabel>
+            <translation><!-- IP Management Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Solutions</masterLabel>
+            <translation><!-- Investment Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Itransact Fund Managers (Rf)(Pty) Ltd</masterLabel>
+            <translation><!-- Itransact Fund Managers (Rf)(Pty) Ltd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kagiso</masterLabel>
+            <translation><!-- Kagiso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marriott</masterLabel>
+            <translation><!-- Marriott --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Momentum</masterLabel>
+            <translation><!-- Momentum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nedgroup</masterLabel>
+            <translation><!-- Nedgroup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newfunds</masterLabel>
+            <translation><!-- Newfunds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ninety One</masterLabel>
+            <translation><!-- Ninety One --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novare CIS</masterLabel>
+            <translation><!-- Novare CIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oasis Crescent</masterLabel>
+            <translation><!-- Oasis Crescent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Old Mutual</masterLabel>
+            <translation><!-- Old Mutual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPS</masterLabel>
+            <translation><!-- PPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSG</masterLabel>
+            <translation><!-- PSG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Trust</masterLabel>
+            <translation><!-- Personal Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescient</masterLabel>
+            <translation><!-- Prescient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prime</masterLabel>
+            <translation><!-- Prime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prudential</masterLabel>
+            <translation><!-- Prudential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rezco</masterLabel>
+            <translation><!-- Rezco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIS</masterLabel>
+            <translation><!-- SIS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanlam</masterLabel>
+            <translation><!-- Sanlam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanne Management Company</masterLabel>
+            <translation><!-- Sanne Management Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satrix</masterLabel>
+            <translation><!-- Satrix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sygnia</masterLabel>
+            <translation><!-- Sygnia --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Consultant --></label>
+        <name>SLC_Consultant__c</name>
+        <relationshipLabel><!-- Opportunities (Consultant) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Consulting Firm --></label>
+        <name>SLC_ConsultingFirm__c</name>
+        <relationshipLabel><!-- Opportunities (Consulting Firm) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country of Incorporation --></label>
+        <name>SLC_CountryofIncorporation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Diligence Date --></label>
+        <name>SLC_DueDiligenceDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Diligence Feedback --></label>
+        <name>SLC_DueDiligenceFeedback__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Amount --></label>
+        <name>SLC_Fee_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Percentage --></label>
+        <name>SLC_Fee_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Franchise --></label>
+        <name>SLC_Franchise__c</name>
+        <picklistValues>
+            <masterLabel>Balanced</masterLabel>
+            <translation><!-- Balanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Alternatives</masterLabel>
+            <translation><!-- Credit Alternatives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Income</masterLabel>
+            <translation><!-- Fixed Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IFA Broker Division</masterLabel>
+            <translation><!-- IFA Broker Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Index</masterLabel>
+            <translation><!-- Index --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LISP</masterLabel>
+            <translation><!-- LISP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberty Agency</masterLabel>
+            <translation><!-- Liberty Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberty Franchise</masterLabel>
+            <translation><!-- Liberty Franchise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Listed Property</masterLabel>
+            <translation><!-- Listed Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi Asset</masterLabel>
+            <translation><!-- Multi Asset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Manager</masterLabel>
+            <translation><!-- Multi-Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Strategy</masterLabel>
+            <translation><!-- Multi-Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offshore</masterLabel>
+            <translation><!-- Offshore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property</masterLabel>
+            <translation><!-- Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Bank Financial Consultant</masterLabel>
+            <translation><!-- Standard Bank Financial Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partners</masterLabel>
+            <translation><!-- Strategic Partners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesale - Corporate</masterLabel>
+            <translation><!-- Wholesale - Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesale - FOF</masterLabel>
+            <translation><!-- Wholesale - FOF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesale - IFA</masterLabel>
+            <translation><!-- Wholesale - IFA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Investment Strategy --></label>
+        <name>SLC_InvestmentStrategy__c</name>
+        <picklistValues>
+            <masterLabel>Balanced</masterLabel>
+            <translation><!-- Balanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Alternatives</masterLabel>
+            <translation><!-- Credit Alternatives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equity</masterLabel>
+            <translation><!-- Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Income</masterLabel>
+            <translation><!-- Fixed Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Index and Quantitative Investments</masterLabel>
+            <translation><!-- Index and Quantitative Investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infrastructure</masterLabel>
+            <translation><!-- Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Listed Property</masterLabel>
+            <translation><!-- Listed Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Manager</masterLabel>
+            <translation><!-- Multi-Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Strategy</masterLabel>
+            <translation><!-- Multi-Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offshore</masterLabel>
+            <translation><!-- Offshore --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legal Vehicle --></label>
+        <name>SLC_LegalVehicle__c</name>
+        <picklistValues>
+            <masterLabel>Segregated</masterLabel>
+            <translation><!-- Segregated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit Trust</masterLabel>
+            <translation><!-- Unit Trust --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Health --></label>
+        <name>SLC_OpportunityHealth__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Additional Information Required</masterLabel>
+            <translation><!-- Additional Information Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Presentation Date --></label>
+        <name>SLC_PresentationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Lost or Won --></label>
+        <name>SLC_ReasonLostWon__c</name>
+        <picklistValues>
+            <masterLabel>Lost to Competitor</masterLabel>
+            <translation><!-- Lost to Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Response</masterLabel>
+            <translation><!-- No Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance</masterLabel>
+            <translation><!-- Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation><!-- Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team experience</masterLabel>
+            <translation><!-- Team experience --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response Due Date --></label>
+        <name>SLC_ResponseDueDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Submitted --></label>
+        <name>SLC_ResponseSubmitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mandate Type --></label>
+        <name>SLI_MandateTypeProduct__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Mandate Type --></label>
+        <name>SLI_MandateType__c</name>
+        <picklistValues>
+            <masterLabel>Absolute Plus</masterLabel>
+            <translation><!-- Absolute Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balanced</masterLabel>
+            <translation><!-- Balanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonds</masterLabel>
+            <translation><!-- Bonds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diversified Credit</masterLabel>
+            <translation><!-- Diversified Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global Bonds</masterLabel>
+            <translation><!-- Global Bonds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global Equity</masterLabel>
+            <translation><!-- Global Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Income Funds</masterLabel>
+            <translation><!-- Income Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Index - Equity</masterLabel>
+            <translation><!-- Index - Equity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Index - Global</masterLabel>
+            <translation><!-- Index - Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Index - Multi Factor</masterLabel>
+            <translation><!-- Index - Multi Factor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inflation Linked bonds</masterLabel>
+            <translation><!-- Inflation Linked bonds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Aid</masterLabel>
+            <translation><!-- Medical Aid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Money Market</masterLabel>
+            <translation><!-- Money Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Income</masterLabel>
+            <translation><!-- Property Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA Equity</masterLabel>
+            <translation><!-- SA Equity --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>SLR_Channel__c</name>
+        <picklistValues>
+            <masterLabel>Independent Financial Advisor</masterLabel>
+            <translation><!-- Independent Financial Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberty Agent</masterLabel>
+            <translation><!-- Liberty Agent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberty Entrepreneurs</masterLabel>
+            <translation><!-- Liberty Entrepreneurs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linked Companies</masterLabel>
+            <translation><!-- Linked Companies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Bank Branches</masterLabel>
+            <translation><!-- Other Bank Branches --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBFC Call Centre</masterLabel>
+            <translation><!-- SBFC Call Centre --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBSA Bank Branches</masterLabel>
+            <translation><!-- SBSA Bank Branches --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Bank Financial Consultant (SBFC)</masterLabel>
+            <translation><!-- Standard Bank Financial Consultant (SBFC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stanfin Africa</masterLabel>
+            <translation><!-- Stanfin Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wealth and Investments</masterLabel>
+            <translation><!-- Wealth and Investments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesale</masterLabel>
+            <translation><!-- Wholesale --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned From Group --></label>
+        <name>ortoo_qra__Assigned_From_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned From User (Deprecated) --></label>
+        <name>ortoo_qra__Assigned_From_OwnerUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned From Owner --></label>
+        <name>ortoo_qra__Assigned_From_Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q-assign Last Assigned Date --></label>
+        <name>ortoo_qra__Q_assign_Last_Assigned_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q-assign Reviewed Days --></label>
+        <name>ortoo_qra__Reviewed_Days__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Liberty Default Opportunity Record Type --></description>
+        <label><!-- Default Opportunity --></label>
+        <name>AW_DefaultOpportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This is a business opportunity --></description>
+        <label><!-- Liberty Business Opportunity --></label>
+        <name>AW_LibertyBusinessOpportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- General --></label>
+        <name>FinServ__General</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Retirement Planning --></label>
+        <name>FinServ__RetirementPlanning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Opportunity (Wallet Share) --></label>
+        <name>FinServ__WalletShareOpportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Due Diligence --></label>
+        <name>SLC_DueDiligence</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- RFP / Quote / Tender --></description>
+        <label><!-- Institutional New Business --></label>
+        <name>SLI_NewBusiness</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- RFP / Quote / Tender --></description>
+        <label><!-- New Business --></label>
+        <name>SLR_NewBusiness</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- This Last Status Change date/time cannot be set to a date/time in the past. --></errorMessage>
+        <name>AW_LastStatusChangeInPast</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Internal referrers must be internal Salesforce users. --></errorMessage>
+        <name>FinServ__NonPortalUserReferrer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Enter an internal referrer or an external referrer. You can list only one referrer for each referral. --></errorMessage>
+        <name>FinServ__SingleReferredByEntryByRecord</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Object_Time_Machine --></label>
+        <name>grax__Object_Time_Machine</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Restore --></label>
+        <name>grax__Restore</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Take_Ownership --></label>
+        <name>ortoo_qra__Take_Ownership</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Take_Ownership_Detail --></label>
+        <name>ortoo_qra__Take_Ownership_Detail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Emails --></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

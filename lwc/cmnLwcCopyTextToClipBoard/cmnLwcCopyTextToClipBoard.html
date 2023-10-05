@@ -1,0 +1,35 @@
+<template>
+
+    <div class="script-action-container">
+        <div>
+            <lightning-icon class="icon-color" icon-name="utility:chat" alternative-text="script!" title="script" size="medium"></lightning-icon>
+        </div>
+
+        <div class="scrip-action-text-container">
+            <p class="script-action-content"><strong>Script: </strong>
+                <lightning-formatted-rich-text value={copyText}></lightning-formatted-rich-text>
+            </p>
+        </div>
+
+        <div>
+            <div>
+                <lightning-button variant="base" label="Copy text" title="Copy text to clipboard" onclick={getScriptText} class="slds-m-left_x-small"></lightning-button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="script-action-container">
+
+        <div>
+            <lightning-icon class="icon-color" icon-name="utility:mark_all_as_read" alternative-text="action!" title="action" size="medium"></lightning-icon>
+        </div>
+
+        <div class="scrip-action-text-container">
+            <p class="script-action-content"><strong>Action:</strong> {actionText}</p>
+        </div>
+
+    </div>
+
+</template>

@@ -1,0 +1,177 @@
+<apex:page cache="false" showChat="false" showHeader="false" >
+	
+	<script>
+		
+		$(function() {
+			$('#restore_selectObject-section .slds-col').removeClass('slds-grow-none');
+		});
+			
+	</script>
+	
+	<style>
+		
+		/*The following CSS is for overriding the existing CSS on VF GraxRestore and allows see better on small windows. */
+		
+		.slds-scope .slds-input-has-icon.slds-form-element__date .slds-input__icon, .slds-icon_container.slds-icon-utility-clock.slds-input__icon.slds-input__icon_right .slds-icon {
+			pointer-events: all;
+			cursor: pointer;
+			fill: #005fb2;
+		}
+	
+		.slds-scope .slds-input-has-icon.slds-form-element__date .slds-input__icon:hover {
+			fill: #005fb2;
+		}
+	
+		#restore_selectObject-section{
+			width:100% !important;
+		}
+	
+		#restore_selectObject-section .slds-combobox_container{
+			width: 100% !important;
+		}
+	
+		#fieldSelection{
+			margin-right: 10px;
+		}
+	
+		#restore_selectFields-section{
+			width:100% !important;
+			margin-right: 10px;
+		}
+	
+		article.slds-card.slds-card_boundary.forceBaseCard.flexipageCard{
+			height: 100% !important;
+		}
+	
+		article.slds-card.slds-card_boundary.forceBaseCard.flexipageCard iframe{
+			height: 77vh !important;
+		}
+	
+		#GRAXRestoreFilterGenerator_tbody .slds-combobox_container{
+			width: 100% !important;
+		}
+	
+		.slds-scope .slds-tabs_default__content {
+			padding: 0 !important;
+			margin-top: -40px !important;
+		}
+	
+		#restorePaginatorTotalRecordsPanel {
+			width: 100% !important;
+		}
+	
+		#graxDataRecords-section h3 span{
+			font-size: 16px;
+		}
+
+		@media (max-width:500px) {
+	
+			#restorePaginator .slds-button{
+				display: inline !important;
+			}
+	
+			#restorePaginator .slds-button-group a:nth-child(-n+1), #restorePaginator .slds-button-group a:nth-last-child(-n+1){
+				font-size: 0;
+			}
+	
+			#restorePaginator .slds-button-group a:nth-child(-n+2), #restorePaginator .slds-button-group a:nth-last-child(-n+2){
+				padding: 0 !important;
+				height: 35px;
+			}
+	
+			#restorePaginator .slds-button-group a:nth-child(-n+12):nth-child(n+7){
+				display: none !important;
+			}
+	
+			#filterRecords-section .slds-grid.slds-grid_vertical-align-center{
+				display: block;
+			}
+	
+			#GRAXRestoreFilterGenerator_tbody .slds-dropdown{
+				position: relative;
+			}
+	
+			#GRAXRestoreFilterGenerator_tbody .slds-form-element{
+				width: 100% !important;
+			}
+	
+			#sObjectDataTableContainer table{
+				display: block !important;
+			}
+			
+			
+			.slds-datepicker table {
+				table-layout: fixed;
+			}
+	
+			.slds-scope .slds-max-small-table_stacked tr {
+				text-align: center !important;
+			}
+	
+			#GRAXRestoreFilterGenerator_tbody tr{
+				display: table-row !important;
+			}
+	
+			.slds-scope .datepicker__month td {
+				display: table-cell !important;
+				text-align: center !important;
+			}
+	
+			#GRAXRestoreFilterGenerator_tbody .slds-hint-parent{
+				display: grid !important;
+			}
+	
+			#fieldSelection .slds-form-element__control{
+				width: 100% !important;
+			}
+	
+			#fieldSelection{
+				margin-right: 0;
+			}
+	
+			#GRAXRestoreFilterGenerator .slds-datepicker td{
+				padding: 0 !important;
+				border: none !important;
+			}
+	
+			#GRAXRestoreFilterGenerator .slds-datepicker tr{
+				border: none !important;
+			}
+	
+			#GRAXRestoreFilterGenerator .timeInputContainer {
+				margin-left: 0;
+				margin-top: 5px;
+			}
+	
+			#sObjectDataTableContainer .restorePaginatorclass{
+				width: 270px;
+				margin: 0 auto;
+			}
+	
+			#restorePaginatorTotalRecordsPanel{
+				text-align: center !important;
+			}
+	
+			#sObjectDataTableContainer .slds-has-flexi-truncate{
+				max-width: 80vw;
+			}
+	
+			#sObjectDataTableContainer .slds-truncate{
+				white-space: inherit !important;
+			}
+		}
+	</style>
+
+	<apex:outputPanel layout="block">
+		<div id="globalSpinner" class="slds-spinner_container slds-is-fixed slds-hide">
+			<div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+				<span class="slds-assistive-text">Loading</span>
+				<div class="slds-spinner__dot-a"></div>
+				<div class="slds-spinner__dot-b"></div>
+			</div>
+		</div>
+	</apex:outputPanel>
+	
+	<apex:include pageName="grax__GRAXRestore"/>
+	
+</apex:page>

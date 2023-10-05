@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>When the case&apos;s owner gets assigned to a user, either by an assignment group or manual case creation, a flag will be set as true - to indicate a case is assigned.
+Special Case when the case is assigned manually case status is new. On change of case status to In-progress, the flag gets updated.</description>
+    <environments>Default</environments>
+    <interviewLabel>RSC_FLOW_SetRe {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RSC_FLOW_FlagAssignedRetailCases</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>This will update the Is Assigned flag on the case object, to indicate that a service agent has been assigned to a case.  In other words, the owner of the case has changed from a queue to agent user.</description>
+        <name>RSC_FlagCaseAssigned</name>
+        <label>Flag Case as Assigned to Owner</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <inputAssignments>
+            <field>RSC_IsAssigned__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_FlagCaseAssigned</targetReference>
+        </connector>
+        <filterFormula> {!$Record.RecordType.DeveloperName} = &apos;RSC_Retail&apos;
+&amp;&amp; BEGINS({!$Record.OwnerId}, &quot;005&quot;) 			   
+&amp;&amp; ISPICKVAL({!$Record.Status}, &quot;In Progress&quot;)
+&amp;&amp;(ISCHANGED({!$Record.OwnerId})  || ISCHANGED({!$Record.Status}) || ISNEW())</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

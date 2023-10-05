@@ -1,0 +1,39 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:AB
+
+TC_LAST_NO_USED:0002
+
+-->
+<apex:page lightningStylesheets="true" controller="ortoo_qra.AboutController" title="QA About" tabStyle="ortoo_qra__About__tab">
+    <!--<apex:slds />-->
+    <!--<div class="slds-scope">-->
+        
+    
+     <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+    <apex:form id="theForm">
+        <apex:sectionHeader title="Ortoo : Q-assign" subtitle="About"/>
+        <apex:pageBlock title="About Q-assign" id="pageView">
+            <apex:pageBlockSection title="Information" columns="1" collapsible="false">
+                For further information about app, including help and support, please visit the App Exchange:
+                <apex:outputLink html-ortoo-elem-id="QAAB0001" value="https://appexchange.salesforce.com/listingDetail?listingId=a0N30000003IUgVEAW" target="_blank">Ortoo Q-assign on AppExchange</apex:outputLink>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="User Guides" columns="1" collapsible="false">
+                Click on the link below for the latest Ortoo User Guide:
+                <apex:outputLink html-ortoo-elem-id="QAAB0002" value="https://qassignhelp.ortooapps.com?id=null"  target="_blank">Ortoo Q-assign Quick Start Guide</apex:outputLink>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Version" columns="1" collapsible="false">
+                {!packageVersion}
+                <br/><br/>
+                {!copyrightNotice}
+                <br/><br/>
+                {!productReleaseNumberAndName}
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+   <!--</div>-->
+</apex:page>

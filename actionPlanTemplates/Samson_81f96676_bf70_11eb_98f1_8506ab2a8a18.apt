@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Meeting at 1 pm today</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Samson</name>
+    <targetEntityType>01I4J000001XYYq</targetEntityType>
+    <uniqueName>Samson_81f96676_bf70_11eb_98f1_8506ab2a8a18</uniqueName>
+</ActionPlanTemplate>

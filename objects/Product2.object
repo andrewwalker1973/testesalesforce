@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Add</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Add</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Add</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>SLC_Fund_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>SLC_Strategy__c</fields>
+        <fields>SLC_JSECode__c</fields>
+        <fields>SLC_ISINCode__c</fields>
+        <fields>SLC_Class__c</fields>
+        <fields>SLC_Launch__c</fields>
+        <label>STANLIB Fund Compact Layout</label>
+    </compactLayouts>
+    <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DisplayUrl</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ExternalDataSourceId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ExternalId</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Family</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>QuantityUnitOfMeasure</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SLC_Class__c</fullName>
+        <externalId>false</externalId>
+        <label>Class</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>A</fullName>
+                    <default>false</default>
+                    <label>A</label>
+                </value>
+                <value>
+                    <fullName>A1</fullName>
+                    <default>false</default>
+                    <label>A1</label>
+                </value>
+                <value>
+                    <fullName>B</fullName>
+                    <default>false</default>
+                    <label>B</label>
+                </value>
+                <value>
+                    <fullName>B1</fullName>
+                    <default>false</default>
+                    <label>B1</label>
+                </value>
+                <value>
+                    <fullName>B12</fullName>
+                    <default>false</default>
+                    <label>B12</label>
+                </value>
+                <value>
+                    <fullName>B13</fullName>
+                    <default>false</default>
+                    <label>B13</label>
+                </value>
+                <value>
+                    <fullName>B2</fullName>
+                    <default>false</default>
+                    <label>B2</label>
+                </value>
+                <value>
+                    <fullName>B3</fullName>
+                    <default>false</default>
+                    <label>B3</label>
+                </value>
+                <value>
+                    <fullName>B4</fullName>
+                    <default>false</default>
+                    <label>B4</label>
+                </value>
+                <value>
+                    <fullName>B5</fullName>
+                    <default>false</default>
+                    <label>B5</label>
+                </value>
+                <value>
+                    <fullName>B6</fullName>
+                    <default>false</default>
+                    <label>B6</label>
+                </value>
+                <value>
+                    <fullName>B7</fullName>
+                    <default>false</default>
+                    <label>B7</label>
+                </value>
+                <value>
+                    <fullName>B8</fullName>
+                    <default>false</default>
+                    <label>B8</label>
+                </value>
+                <value>
+                    <fullName>B9</fullName>
+                    <default>false</default>
+                    <label>B9</label>
+                </value>
+                <value>
+                    <fullName>C3</fullName>
+                    <default>false</default>
+                    <label>C3</label>
+                </value>
+                <value>
+                    <fullName>D</fullName>
+                    <default>false</default>
+                    <label>D</label>
+                </value>
+                <value>
+                    <fullName>R</fullName>
+                    <default>false</default>
+                    <label>R</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SLC_FactsheetUrl__c</fullName>
+        <description>Url link to Stanlib Fund Factsheet hosted online.</description>
+        <externalId>false</externalId>
+        <label>Factsheet URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>SLC_FundCode__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Fund Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_ISINCode__c</fullName>
+        <externalId>false</externalId>
+        <label>ISIN Code</label>
+        <length>12</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_JSECode__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Johannesburg Stock Exchange code for fund class</description>
+        <externalId>true</externalId>
+        <label>JSE Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_Launch__c</fullName>
+        <externalId>false</externalId>
+        <label>Launch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SLC_ParentFund__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The parent Fund record this Share Class is derived from</description>
+        <externalId>false</externalId>
+        <label>Parent Fund</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>STANLIB Fund</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Products (Parent Fund)</relationshipLabel>
+        <relationshipName>Share_Classes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_RecommendedInvestmentPeriod__c</fullName>
+        <externalId>false</externalId>
+        <label>Recommended Investment Period</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 Month</fullName>
+                    <default>false</default>
+                    <label>1 Month</label>
+                </value>
+                <value>
+                    <fullName>6 Months</fullName>
+                    <default>false</default>
+                    <label>6 Months</label>
+                </value>
+                <value>
+                    <fullName>1 Year</fullName>
+                    <default>false</default>
+                    <label>1 Year</label>
+                </value>
+                <value>
+                    <fullName>3 Years</fullName>
+                    <default>false</default>
+                    <label>3 Years</label>
+                </value>
+                <value>
+                    <fullName>5 Years</fullName>
+                    <default>false</default>
+                    <label>5 Years</label>
+                </value>
+                <value>
+                    <fullName>7 Years</fullName>
+                    <default>false</default>
+                    <label>7 Years</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SLC_RiskRating__c</fullName>
+        <externalId>false</externalId>
+        <label>Risk Rating</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conservative</fullName>
+                    <default>false</default>
+                    <label>Conservative</label>
+                </value>
+                <value>
+                    <fullName>Moderately Conservative</fullName>
+                    <default>false</default>
+                    <label>Moderately Conservative</label>
+                </value>
+                <value>
+                    <fullName>Moderately Aggressive</fullName>
+                    <default>false</default>
+                    <label>Moderately Aggressive</label>
+                </value>
+                <value>
+                    <fullName>Aggressive</fullName>
+                    <default>false</default>
+                    <label>Aggressive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SLC_Strategy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Franchise</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Only STANLIB strategy products can be inserted here.</errorMessage>
+            <filterItems>
+                <field>Product2.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>STANLIB Strategy</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Products</relationshipLabel>
+        <relationshipName>Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLI_Capability__c</fullName>
+        <externalId>false</externalId>
+        <label>Capability</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Africa</fullName>
+                    <default>false</default>
+                    <label>Africa</label>
+                </value>
+                <value>
+                    <fullName>3rd Party Balanced</fullName>
+                    <default>false</default>
+                    <label>3rd Party Balanced</label>
+                </value>
+                <value>
+                    <fullName>3rd Party Equity</fullName>
+                    <default>false</default>
+                    <label>3rd Party Equity</label>
+                </value>
+                <value>
+                    <fullName>Balanced</fullName>
+                    <default>false</default>
+                    <label>Balanced</label>
+                </value>
+                <value>
+                    <fullName>Equity Fund</fullName>
+                    <default>false</default>
+                    <label>Equity Fund</label>
+                </value>
+                <value>
+                    <fullName>Fixed Income Franchise</fullName>
+                    <default>false</default>
+                    <label>Fixed Income Franchise</label>
+                </value>
+                <value>
+                    <fullName>Bond</fullName>
+                    <default>false</default>
+                    <label>Bond</label>
+                </value>
+                <value>
+                    <fullName>Bond Fund</fullName>
+                    <default>false</default>
+                    <label>Bond Fund</label>
+                </value>
+                <value>
+                    <fullName>Income</fullName>
+                    <default>false</default>
+                    <label>Income</label>
+                </value>
+                <value>
+                    <fullName>Income Fund</fullName>
+                    <default>false</default>
+                    <label>Income Fund</label>
+                </value>
+                <value>
+                    <fullName>Inflation linked bond fund</fullName>
+                    <default>false</default>
+                    <label>Inflation linked bond fund</label>
+                </value>
+                <value>
+                    <fullName>LDI</fullName>
+                    <default>false</default>
+                    <label>LDI</label>
+                </value>
+                <value>
+                    <fullName>LDI Funds</fullName>
+                    <default>false</default>
+                    <label>LDI Funds</label>
+                </value>
+                <value>
+                    <fullName>Money Market</fullName>
+                    <default>false</default>
+                    <label>Money Market</label>
+                </value>
+                <value>
+                    <fullName>Money Market Funds</fullName>
+                    <default>false</default>
+                    <label>Money Market Funds</label>
+                </value>
+                <value>
+                    <fullName>Preference Share</fullName>
+                    <default>false</default>
+                    <label>Preference Share</label>
+                </value>
+                <value>
+                    <fullName>STANLIB Equity Fund</fullName>
+                    <default>false</default>
+                    <label>STANLIB Equity Fund</label>
+                </value>
+                <value>
+                    <fullName>TAA</fullName>
+                    <default>false</default>
+                    <label>TAA</label>
+                </value>
+                <value>
+                    <fullName>Customised Quantitative Strategies</fullName>
+                    <default>false</default>
+                    <label>Customised Quantitative Strategies</label>
+                </value>
+                <value>
+                    <fullName>Enhanced Strategies</fullName>
+                    <default>false</default>
+                    <label>Enhanced Strategies</label>
+                </value>
+                <value>
+                    <fullName>Factor Strategies</fullName>
+                    <default>false</default>
+                    <label>Factor Strategies</label>
+                </value>
+                <value>
+                    <fullName>Index Strategies</fullName>
+                    <default>false</default>
+                    <label>Index Strategies</label>
+                </value>
+                <value>
+                    <fullName>Infrastructure</fullName>
+                    <default>false</default>
+                    <label>Infrastructure</label>
+                </value>
+                <value>
+                    <fullName>LIBFIN</fullName>
+                    <default>false</default>
+                    <label>LIBFIN</label>
+                </value>
+                <value>
+                    <fullName>Local Property</fullName>
+                    <default>false</default>
+                    <label>Local Property</label>
+                </value>
+                <value>
+                    <fullName>Property</fullName>
+                    <default>false</default>
+                    <label>Property</label>
+                </value>
+                <value>
+                    <fullName>White Label</fullName>
+                    <default>false</default>
+                    <label>White Label</label>
+                </value>
+                <value>
+                    <fullName>Alternatives</fullName>
+                    <default>false</default>
+                    <label>Alternatives</label>
+                </value>
+                <value>
+                    <fullName>Cash - Inter</fullName>
+                    <default>false</default>
+                    <label>Cash - Inter</label>
+                </value>
+                <value>
+                    <fullName>Multi-Manager</fullName>
+                    <default>false</default>
+                    <label>Multi-Manager</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>STOUT</fullName>
+                    <default>false</default>
+                    <label>STOUT</label>
+                </value>
+                <value>
+                    <fullName>Structured</fullName>
+                    <default>false</default>
+                    <label>Structured</label>
+                </value>
+                <value>
+                    <fullName>Unit Trust Feeder</fullName>
+                    <default>false</default>
+                    <label>Unit Trust Feeder</label>
+                </value>
+                <value>
+                    <fullName>Absolute Income</fullName>
+                    <default>false</default>
+                    <label>Absolute Income</label>
+                </value>
+                <value>
+                    <fullName>Other Absolute Return</fullName>
+                    <default>false</default>
+                    <label>Other Absolute Return</label>
+                </value>
+                <value>
+                    <fullName>Other Multi-Strategy</fullName>
+                    <default>false</default>
+                    <label>Other Multi-Strategy</label>
+                </value>
+                <value>
+                    <fullName>Global Property</fullName>
+                    <default>false</default>
+                    <label>Global Property</label>
+                </value>
+                <value>
+                    <fullName>Offshore</fullName>
+                    <default>false</default>
+                    <label>Offshore</label>
+                </value>
+                <value>
+                    <fullName>Offshore UT Feeder</fullName>
+                    <default>false</default>
+                    <label>Offshore UT Feeder</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SLR_FeeExclVat__c</fullName>
+        <externalId>false</externalId>
+        <label>Fee (excl VAT)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StockKeepingUnit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <listViews>
+        <fullName>AllProducts</fullName>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+        <columns>PRODUCT2.DESCRIPTION</columns>
+        <columns>PRODUCT2.FAMILY</columns>
+        <columns>SLC_JSECode__c</columns>
+        <columns>SLC_FundCode__c</columns>
+        <columns>PRODUCT2.EXTERNAL_ID</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Products</label>
+    </listViews>
+    <listViews>
+        <fullName>SLC_FundClass</fullName>
+        <columns>SLC_ParentFund__c</columns>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>SLC_Class__c</columns>
+        <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+        <columns>SLC_JSECode__c</columns>
+        <columns>SLC_ISINCode__c</columns>
+        <columns>SLC_FactsheetUrl__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PRODUCT2.RECORD_TYPE</field>
+            <operation>equals</operation>
+            <value>Product2.SLC_ShareClass</value>
+        </filters>
+        <label>STANLIB Fund Class</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLR_Retail_Distribution</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SLC_Strategies</fullName>
+        <columns>PRODUCT2.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PRODUCT2.RECORD_TYPE</field>
+            <operation>equals</operation>
+            <value>Product2.SLC_Strategy</value>
+        </filters>
+        <label>STANLIB Strategies</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLR_Retail_Distribution</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>STANLIB_Funds</fullName>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>SLC_Strategy__c</columns>
+        <columns>SLC_FactsheetUrl__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PRODUCT2.RECORD_TYPE</field>
+            <operation>equals</operation>
+            <value>Product2.SLC_Fund</value>
+        </filters>
+        <label>STANLIB Funds</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLR_Retail_Distribution</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>SLC_Fund</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SLC_Fund_Compact_Layout</compactLayoutAssignment>
+        <label>STANLIB Fund</label>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QuantityUnitOfMeasure</picklist>
+            <values>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_Class__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_RecommendedInvestmentPeriod__c</picklist>
+            <values>
+                <fullName>1 Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 Years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 Years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 Years</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_RiskRating__c</picklist>
+            <values>
+                <fullName>Aggressive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conservative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Aggressive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Conservative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLI_Capability__c</picklist>
+            <values>
+                <fullName>3rd Party Balanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Party Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Absolute Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternatives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Balanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bond Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash - Inter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customised Quantitative Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhanced Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equity Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Factor Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income Franchise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Index Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inflation linked bond fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDI Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIBFIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Money Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Money Market Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offshore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offshore UT Feeder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Absolute Return</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Multi-Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preference Share</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STANLIB Equity Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STOUT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Structured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit Trust Feeder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White Label</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SLC_ShareClass</fullName>
+        <active>true</active>
+        <description>The Share Class records of STANLIB funds</description>
+        <label>STANLIB Share Class</label>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QuantityUnitOfMeasure</picklist>
+            <values>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_Class__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_RecommendedInvestmentPeriod__c</picklist>
+            <values>
+                <fullName>1 Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 Years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 Years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 Years</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_RiskRating__c</picklist>
+            <values>
+                <fullName>Aggressive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conservative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Aggressive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Conservative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLI_Capability__c</picklist>
+            <values>
+                <fullName>3rd Party Balanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Party Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Absolute Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternatives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Balanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bond Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash - Inter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customised Quantitative Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhanced Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equity Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Factor Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income Franchise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Index Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inflation linked bond fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDI Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIBFIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Money Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Money Market Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offshore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offshore UT Feeder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Absolute Return</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Multi-Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preference Share</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STANLIB Equity Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STOUT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Structured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit Trust Feeder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White Label</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SLC_Strategy</fullName>
+        <active>true</active>
+        <label>STANLIB Strategy</label>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QuantityUnitOfMeasure</picklist>
+            <values>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_Class__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_RecommendedInvestmentPeriod__c</picklist>
+            <values>
+                <fullName>1 Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 Years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 Years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 Years</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_RiskRating__c</picklist>
+            <values>
+                <fullName>Aggressive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conservative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Aggressive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Conservative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLI_Capability__c</picklist>
+            <values>
+                <fullName>3rd Party Balanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Party Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Absolute Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Africa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternatives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Balanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bond Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash - Inter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customised Quantitative Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhanced Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equity Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Factor Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income Franchise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Global Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Index Strategies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inflation linked bond fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDI Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIBFIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Money Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Money Market Funds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi-Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offshore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offshore UT Feeder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Absolute Return</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Multi-Strategy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preference Share</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STANLIB Equity Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STOUT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Structured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit Trust Feeder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>White Label</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.DESCRIPTION</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.FAMILY</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.FAMILY</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.DESCRIPTION</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.FAMILY</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

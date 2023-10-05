@@ -1,0 +1,65 @@
+<template>
+    <template if:true={adviserPerformance}>
+        <lightning-card title="Production Measures">
+            <template if:true={hasProductionMeasure}>
+                <lightning-button label="View latest activity details" slot="actions" onclick={navigateToRecord} data-id="activityDetailsButton"></lightning-button>
+                <div class="slds-grid slds-grid_vertical-align-center slds-p-horizontal_small slds-p-top_medium">
+                    <div class="slds-p-right_x-large slds-text-align_center">
+                        <template if:true={isRepresentative}>
+                            <div class="slds-p-bottom_xx-small">Representative</div>
+                            <img width="70" src={representativeIcon}></img>
+                        </template>
+                        <template if:true={isFinancialAdviser}>
+                            <div class="slds-p-bottom_xx-small">Financial Adviser</div>
+                            <img width="70" src={financialAdviserIcon}></img>
+                        </template>
+                        <template if:true={isSeniorFa}>
+                            <div class="slds-p-bottom_xx-small">Senior Financial Adviser</div>
+                            <img width="70" src={seniorFaIcon}></img>
+                        </template>
+                        <template if:true={isExecutiveFa}>
+                            <div class="slds-p-bottom_xx-small">Executive Financial Adviser</div>
+                            <img width="70" src={executiveFaIcon}></img>
+                        </template>
+                        <template if:true={isAchiever}>
+                            <div class="slds-p-bottom_xx-small">Achiever</div>
+                            <img width="70" src={achieverIcon}></img>
+                        </template>
+                    </div>
+                    <div>
+                        <div><strong>Tenure:</strong> {adviserPerformance.productionMeasureTenure}</div>
+                        <div><strong>Adviser Quality Code:</strong> {adviserPerformance.productionMeasureAQC}</div>
+                    </div>
+                </div>
+                <template if:true={adviserPerformance.productionMeasureSatisfactionScore}>
+                    <div class="slds-p-horizontal_small slds-p-top_medium">
+                        <div><strong>Average Satisfaction Score: </strong>
+                            {adviserPerformance.productionMeasureSatisfactionScore}
+                        </div>
+                        <div>
+                            <c-aw-Lwc-star-rating
+                                    rating-value={adviserPerformance.productionMeasureSatisfactionScore}></c-aw-Lwc-star-rating>
+                        </div>
+                        <div class="slds-p-top_small">
+                            <lightning-button label={label.viewSurveysReportBtnLabel} onclick={navigateToRecord}
+                                              data-id="surveysReportButton"></lightning-button>
+                        </div>
+                    </div>
+                </template>
+                <template if:false={adviserPerformance.productionMeasureSatisfactionScore}>
+                    <div class="slds-p-horizontal_small slds-p-top_medium">
+                        <div><strong>Average Satisfaction Score:</strong> No Average Satisfaction Score data found</strong></div>
+                    </div>
+                </template>
+            </template>
+            <template if:false={hasProductionMeasure}>
+                <div class="slds-grid slds-grid_vertical-align-center slds-p-horizontal_small">
+                    We could not find your activity measure details. Please contact your system administrator.
+                </div>
+            </template>
+        </lightning-card>
+    </template>
+    <template if:true={adviserPerformanceError}>
+        We could not find your activity measure details. Please contact your system administrator.
+    </template>
+</template>

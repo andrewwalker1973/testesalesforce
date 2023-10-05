@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template to be used for Nurses when a medical appointment is cancelled</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Medical Appointment Cancelled Nurses</name>
+    <style>none</style>
+    <subject>SMS Medical Appointment Cancelled Nurses</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

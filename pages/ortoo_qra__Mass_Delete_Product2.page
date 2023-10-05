@@ -1,0 +1,2 @@
+<apex:page standardController="Product2" extensions="ortoo_qra.MassDeleteRecords" recordSetVar="sobjects" standardStylesheets="false" sidebar="false" applyBodyTag="false" docType="html-5.0">
+</apex:page>

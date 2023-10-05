@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedServiceLiveAgent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <embeddedServiceConfig>SD_UGLibertyHealthSupportDesk</embeddedServiceConfig>
+    <embeddedServiceQuickActions>
+        <embeddedServiceLiveAgent>SD_UGLibertyHealthSupportDesk</embeddedServiceLiveAgent>
+        <order>1</order>
+        <quickActionDefinition>Snapins_Case_OfflineCaseQuickAction_08h4J00000000lo_1595450978723</quickActionDefinition>
+        <quickActionType>OfflineCase</quickActionType>
+    </embeddedServiceQuickActions>
+    <enabled>true</enabled>
+    <fontSize>Medium</fontSize>
+    <isOfflineCaseEnabled>true</isOfflineCaseEnabled>
+    <isQueuePositionEnabled>false</isQueuePositionEnabled>
+    <liveChatButton>SD_UGLibertyHealthSupportDesk</liveChatButton>
+    <liveChatDeployment>live_agent_setup_flow</liveChatDeployment>
+    <masterLabel>SD_UGLibertyHealthSupportDesk</masterLabel>
+    <prechatEnabled>false</prechatEnabled>
+    <scenario>Service</scenario>
+    <smallCompanyLogoImg>https://liberty-group--c.documentforce.com/servlet/servlet.ImageServer?id=0154J000000K0Cp&amp;oid=00D4J000000ESqJ&amp;lastMod=1595433496000</smallCompanyLogoImg>
+</EmbeddedServiceLiveAgent>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>TFS_280_x_280_hi_res_trns</masterLabel>
+    <originNetwork>Liberty Client Portal</originNetwork>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>TFS 280 x 280 hi res trns.png</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

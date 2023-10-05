@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set groups for Liberty Onboarding Supervisor Group includes all the custom and relevant field service permission sets for supervisor</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Onboarding Supervisor Group</label>
+    <permissionSets>FSL_Dispatcher_License</permissionSets>
+    <permissionSets>FSL_Dispatcher_Permissions</permissionSets>
+    <permissionSets>SC_LibertyOnboardingSupervisor</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

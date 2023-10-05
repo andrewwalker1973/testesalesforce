@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Webservice Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Webservice Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Add Stack Trace to Exceptions --></label>
+        <name>CMN_AddStackTraceToExceptions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Key --></label>
+        <name>CMN_AdditionalKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- ApiKey --></label>
+        <name>CMN_ApiKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Backoff Period (sec) --></label>
+        <name>CMN_BackoffPeriod__c</name>
+    </fields>
+    <fields>
+        <label><!-- ClientID --></label>
+        <name>CMN_ClientID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Secret --></label>
+        <name>CMN_Client_Secret__c</name>
+    </fields>
+    <fields>
+        <label><!-- CompanyID --></label>
+        <name>CMN_CompanyID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint URL --></label>
+        <name>CMN_EndpointUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Retries No. --></label>
+        <name>CMN_MaxRetriesNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Named Credential --></label>
+        <name>CMN_NamedCredential__c</name>
+    </fields>
+    <fields>
+        <label><!-- Password --></label>
+        <name>CMN_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Path --></label>
+        <name>CMN_Path__c</name>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>CMN_Username__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

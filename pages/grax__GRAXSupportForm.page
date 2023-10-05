@@ -1,0 +1,115 @@
+<apex:page showHeader="false" sidebar="false">
+	<div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<!-- Import the Design System style sheet -->
+		<apex:slds />
+
+		<style>
+			#GRAXHelpLinkPanel {
+				padding-bottom: 15px;
+				padding-top: 7px;
+			}
+
+			#GRAXHelpLinkPanel h3 a {
+				position: absolute;
+				right: 5px;
+			}
+		</style>
+
+		<div id="GRAXHelpLinkPanel">
+			<h3>
+				<a href="https://documentation.grax.io/docs/grax-support" target="_blank">GRAX Help</a>
+			</h3>
+			<br/>
+			<h3>
+				<a href="https://www.grax.com" target="_blank">GRAX Website</a>
+			</h3>
+		</div>
+
+		<!--  ----------------------------------------------------------------------  -->
+		<!--  NOTE: Please add the following <FORM> element to your page.             -->
+		<!--  ----------------------------------------------------------------------  -->
+		<apex:outputPanel rendered="{!ISBLANK($CurrentPage.parameters.ThankYou)}">
+			<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" id="supportForm">
+
+				<input type="hidden" name="orgid" value="00D4600000172yZ" />
+
+				<input type="hidden" name="retURL" value="{!$CurrentPage.URL + '?ThankYou=1'}" />
+
+				<input type="hidden" id="00N4600000FDzxy" name="00N4600000FDzxy"  value="1" />
+
+				<!--  ----------------------------------------------------------------------  -->
+				<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+				<!--  these lines if you wish to test in debug mode.                          -->
+				<!--  <input type="hidden" name="debug" value=1>                              -->
+				<!--  <input type="hidden" name="debugEmail"                                  -->
+				<!--  value="jhorty@hardingpoint.com">                                        -->
+				<!--  ----------------------------------------------------------------------  -->
+
+				<div class="slds-form-element__control">
+					<label for="name" class="slds-form-element__label">Contact Name*</label>
+					<input required="required" id="name" maxlength="80" name="name" size="20" type="text" class="slds-input" value="{!$User.FirstName + ' ' + $User.LastName}"/>
+				</div>
+				<br/>
+
+				<div class="slds-form-element__control">
+					<label for="email" class="slds-form-element__label">Email*</label>
+					<input required="required" id="email" maxlength="80" name="email" size="20" type="text" class="slds-input" value="{!$User.Email}"/>
+				</div>
+				<br/>
+
+				<div class="slds-form-element__control">
+					<label for="phone" class="slds-form-element__label">Phone</label>
+					<input id="phone" maxlength="40" name="phone" size="20" type="text" class="slds-input" value="{!$User.Phone}"/>
+				</div>
+				<br/>
+
+				<div class="slds-form-element__control">
+					<label for="priority" class="slds-form-element__label">Priority*</label>
+					<select required="required"  id="priority" name="priority" class="slds-input">
+						<option value="Non Production Issue / Question">Non Production Issue / Question</option>
+						<option value="Non Critical Production Issue">Non Critical Production Issue</option>
+						<option value="Critical Production Issue">Critical Production Issue</option>
+					</select>
+				</div>
+				<br/>
+
+				<div class="slds-form-element__control">
+					<label for="subject" class="slds-form-element__label">Summary*</label>
+					<input required="required" id="subject" maxlength="80" name="subject" size="20" type="text" class="slds-input"/>
+				</div>
+				<br/>
+
+				<div class="slds-form-element__control">
+					<label for="description" class="slds-form-element__label">Description*</label>
+					<textarea required="required" name="description" class="slds-input"></textarea>
+				</div>
+				<br/>
+
+
+				<br/>
+				<div class="slds-form-element__control">
+					<button type="submit" class="slds-button slds-button_brand">Submit</button>
+				</div>
+				<br/>
+			</form>
+		</apex:Outputpanel>
+
+		<apex:outPutPanel rendered="{!$CurrentPage.parameters.ThankYou=='1'}">
+			<form action="/apex/{!$CurrentPage.Name}" method="POST" id="backToSupportForm">
+				<div class="slds-box">
+					<div class="slds-inline_icon_text slds-grid" style="background-color: #f4f6f9; padding: .75rem 1rem;">
+						<div class="slds-col slds-align-middle slds-text-color_succes slds-text-heading_small" style="font-weight:bold;">
+							<p style="margin-left:5px;">
+								Thank you for submitting your inquiry.  A GRAX Support Manager will contact you shortly.
+								<br/>
+								If you want to submit another ticket, please click on the button below.
+							</p>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<button type="submit" class="slds-button slds-button_brand">Submit another ticket</button>
+			</form>
+		</apex:outPutPanel>
+	</div>
+</apex:page>

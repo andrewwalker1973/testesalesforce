@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <description>Checks if the case is Retail and also not created by integration user.</description>
+        <name>RSC_IsRetail</name>
+        <label>Is Retail</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <defaultConnectorLabel>Not Retail</defaultConnectorLabel>
+        <rules>
+            <name>RSC_IsRetailCase</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_GetParentCase.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_RetialRecordType</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RSC_GetParentCase.LastModifiedBy.Profile.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_ProfileName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RSC_GetParentCase.RSC_WorkflowCaseNumber__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_SendCommentsToExternalSystem</targetReference>
+            </connector>
+            <label>Is Retail Case</label>
+        </rules>
+    </decisions>
+    <description>Flow used to Sync Case comments with external system</description>
+    <environments>Default</environments>
+    <interviewLabel>Synchronise Case Comments {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Synchronise Case Comments</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Used to send the comments to external system</description>
+        <name>RSC_SendCommentsToExternalSystem</name>
+        <label>Send Comments To External System</label>
+        <locationX>50</locationX>
+        <locationY>575</locationY>
+        <inputAssignments>
+            <field>CMN_Service__c</field>
+            <value>
+                <elementReference>RSC_ServiceName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CMN_TriggeringObjectId__c</field>
+            <value>
+                <elementReference>$Record.CMN_Case__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CMN_Type__c</field>
+            <value>
+                <stringValue>Outbound</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CMN_WebserviceCallQueue__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>used to get the parent case associated to the Case Comment</description>
+        <name>RSC_GetParentCase</name>
+        <label>Get Parent Case</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_IsRetail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CMN_Case__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_GetParentCase</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CMN_IsExternalComment__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>CMN_CaseComment__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Store the profile name of the user who created the case to distinguish between the Case Outbound and Case Inbound Sync</description>
+        <name>RSC_ProfileName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Liberty Service Account</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the name the case record type so that the flow is ringfenced for Retail Cases</description>
+        <name>RSC_RetialRecordType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>RSC_Retail</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Used to store the name of the service to be invoked</description>
+        <name>RSC_ServiceName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>RSC_API_SynchroniseCase</stringValue>
+        </value>
+    </variables>
+</Flow>

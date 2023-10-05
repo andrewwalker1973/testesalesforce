@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>true</sorted>
+    <standardValue>
+        <fullName>Beneficiary</fullName>
+        <default>false</default>
+        <label>AW Beneficiary</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Board Member</fullName>
+        <default>false</default>
+        <label>AW Board Member</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Client</fullName>
+        <default>false</default>
+        <label>AW Client</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dependent</fullName>
+        <default>false</default>
+        <label>AW Dependent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Domestic Partner</fullName>
+        <default>false</default>
+        <label>AW Domestic Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee</fullName>
+        <default>false</default>
+        <label>AW Employee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Grantor</fullName>
+        <default>false</default>
+        <label>AW Grantor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>AW Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Spouse</fullName>
+        <default>false</default>
+        <label>AW Spouse</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Actuarial consultant</fullName>
+        <default>false</default>
+        <label>STANLIB Actuarial consultant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Administrator</fullName>
+        <default>false</default>
+        <label>STANLIB Administrator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Asset consultant</fullName>
+        <default>false</default>
+        <label>STANLIB Asset consultant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB Authorized Signatory – Administrator</fullName>
+        <default>false</default>
+        <label>STANLIB Authorized Signatory – Administrator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB Authorized Signatory – Director</fullName>
+        <default>false</default>
+        <label>STANLIB Authorized Signatory – Director</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB Authorized Signatory – Trustee</fullName>
+        <default>false</default>
+        <label>STANLIB Authorized Signatory – Trustee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Broker</fullName>
+        <default>false</default>
+        <label>STANLIB Broker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB Cash Broker</fullName>
+        <default>false</default>
+        <label>STANLIB Cash Broker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Chairman</fullName>
+        <default>false</default>
+        <label>STANLIB Chairman</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Client relationship manager</fullName>
+        <default>false</default>
+        <label>STANLIB Client relationship manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB Director</fullName>
+        <default>false</default>
+        <label>STANLIB Director</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB Discretionary Fund Manager</fullName>
+        <default>false</default>
+        <label>STANLIB Discretionary Fund Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee Benefit consultant</fullName>
+        <default>false</default>
+        <label>STANLIB Employee Benefit consultant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Portfolio manager</fullName>
+        <default>false</default>
+        <label>STANLIB Portfolio manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Principal officer</fullName>
+        <default>false</default>
+        <label>STANLIB Principal officer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Support specialist</fullName>
+        <default>false</default>
+        <label>STANLIB Support specialist</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trustee</fullName>
+        <default>false</default>
+        <label>STANLIB Trustee</label>
+    </standardValue>
+</StandardValueSet>

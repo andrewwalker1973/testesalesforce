@@ -1,0 +1,8 @@
+<template>
+	<div class="slds-clearfix slds-p-top_medium">
+		<div class="slds-float_right">
+			<lightning-button if:false={hideBackButton} label={previousTitle} onclick={prevScreen} variant="brand"></lightning-button>
+			<lightning-button class="slds-m-left_small" disabled={isNextDisabled} label={nextTitle} onclick={nextScreen} variant="brand"></lightning-button>
+		</div>
+	</div>
+</template>

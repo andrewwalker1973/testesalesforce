@@ -1,0 +1,137 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:CL
+
+TC_LAST_NO_USED:0004
+
+-->
+<apex:page lightningStylesheets="true" controller="ortoo_qra.CustomLookupPopupController" sidebar="false" showheader="false" title="Search ~">
+<style>
+   .bPageTitle 
+   {
+      margin: 0;
+      padding: 0;
+   }
+   .bPageTitle .ptBody 
+   {
+      background-color: transparent;
+      color: #000;
+      padding: 0;
+   }
+
+   .content 
+   {
+      float: left;
+      vertical-align: middle;
+      padding-left: 5px;
+      width: 70%;
+   }
+
+   .pageTitleIcon, .individualPalette .lookupBlock .pageTitleIcon 
+   {
+      background-image: url(/img/sprites/master.png);
+      background-position: 0 -1202px;
+      width: 32px;
+      height: 32px;
+   }
+
+   .pageTitleIcon 
+   {
+      margin-top: 5px;
+   }
+   .lookup 
+   {
+      padding: 0 0;
+   }
+   .hasMotif 
+   {
+      margin: 0 10px;
+   }
+
+   .lookupTab
+   {
+      background: #fff url(/img/alohaSkin/lookup_bg.png) repeat-x;
+      padding: 0;
+   }
+   div.srch 
+   {
+      padding: 4px 3px;
+      font-family: 'Arial','Helvetica',sans-serif;
+      font-weight: bold;
+      font-size: 118%;
+   }
+</style>
+<script language="javascript">
+   window.onload = new function() 
+   { 
+      // bring popup window to front
+      window.focus(); 
+      var ele=document.getElementById('{!JSENCODE($Component.form.block.section.query)}');
+      if (ele)
+      {
+         ele.focus();
+      }
+   }
+   
+   function fillIn(name, id)
+   {
+      var winMain=window.opener;
+      if (null==winMain)
+      {
+         winMain=window.parent.opener;
+      }
+      var ele=winMain.document.getElementById('{!JSENCODE($CurrentPage.parameters.namefield)}');
+      ele.value=name;
+      ele=winMain.document.getElementById('{!JSENCODE($CurrentPage.parameters.idfield)}');
+      ele.value=id;
+      CloseWindow();
+   }
+
+   function CloseWindow()
+   {
+      var winMain=window.opener;
+      if (null==winMain)
+      {
+         winMain=window.parent.opener;
+      }
+      winMain.closeLookupPopup();
+   }
+</script>
+
+ 	
+  <apex:form id="form" styleClass="lookupTab">  
+     <div class='lookup'>
+		<div class="bPageTitle">
+			<div class="ptBody secondaryPalette">
+				<div class="content"><img src="/img/s.gif" alt="" class="pageTitleIcon" title="" />
+				<h1>Lookup</h1>
+				</div>
+			</div>
+		</div>
+		<div class="pBody">
+			<apex:inputText html-ortoo-elem-id="QACL0001" value="{!query}" id="query" html-placeholder="Search..." size="20"/> 
+            <apex:commandButton html-ortoo-elem-id="QACL0002" value="Go" action="{!runQuery}"/>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	
+     <div style="width 100%">
+       <apex:commandbutton html-ortoo-elem-id="QACL0003" value="Clear Search" action="{!Reload}"/><br/><br/>
+        <apex:pageBlock title="{!searchObjectLabel}" id="pb">
+         <apex:pageMessages />
+          <div class='lookup'>
+              <apex:pageBlockTable html-ortoo-elem-id="QACL0004" value="{!searchRecordList}" var="record">
+                <apex:column headerValue="{!searchObjectNameFieldLabel}">
+                  <apex:outputLink value="#" onclick="fillIn('{!JSENCODE(record[searchObjectNameField])}', '{!if(isQueue != 'QUEUE',record['id'],record['QueueId'])}')">{!record[searchObjectNameField]}</apex:outputLink>       
+                </apex:column>
+              </apex:pageBlockTable>    
+         </div>
+       </apex:pageBlock>
+     </div>
+   </apex:form>
+</apex:page>

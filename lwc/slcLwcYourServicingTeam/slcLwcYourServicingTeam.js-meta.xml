@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Your Servicing Team LWC on Experience Cloud</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Your Servicing Team LWC</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage, lightning__RecordPage, lightning__HomePage, lightningCommunity__Default">
+            <property name="headshotHeightOwner" type="string" label="Photo height: BDM/CFM" default="200px" description="Height of BDM/CFM photo. Default is 200px"/>
+            <property name="headshotWidthOwner" type="string" label="Photo width: BDM/CFM" default="200px" description="Width of BDM/CFM photo. Default is 200px"/>
+            <property name="headshotHeightServicing" type="string" label="Photo height: Servicing" default="200px" description="Height of Servicing Team photo. Default is 200px"/>
+            <property name="headshotWidthServicing" type="string" label="Photo width: Servicing" default="200px" description="Width of Servicing Team photo. Default is 200px"/>
+            <property name="headshotHeightEscalation" type="string" label="Photo height: Escalation" default="200px" description="Height of Escalation Team photo. Default is 200px"/>
+            <property name="headshotWidthEscalation" type="string" label="Photo width: Escalation" default="200px" description="Width of Escalation Team photo. Default is 200px"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

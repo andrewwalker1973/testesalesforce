@@ -1,0 +1,17 @@
+<apex:page >
+    <script type="text/javascript" src="{!$Resource.jquery}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.jqueryui,'jquery-ui.min.js')}"></script>
+     <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+  <apex:pageBlock >
+  	<apex:pageBlockSection >
+    	<apex:pageBlockSectionItem >
+        	<c:customHelpTextLabel labelValue="Available" helpTextID="Available" helpText="Hello World"/>
+        	<outputText>hadjshakjdhk</outputText>
+        
+        
+        </apex:pageBlockSectionItem>  
+      
+    </apex:pageBlockSection>  
+    
+  </apex:pageBlock>
+</apex:page>

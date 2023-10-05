@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>Account_Is_New_Or_Person_Birthdate_Changed</name>
+        <label>Account Is New Or Person Birthdate Changed</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>RSC_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_AccountIsNewOrPersonBirthdateChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_PopulateDateOfBirthSearchField</targetReference>
+            </connector>
+            <label>RSC_Yes</label>
+        </rules>
+    </decisions>
+    <description>An update of Date of Birth text field is triggered when Date Of Birth field on Account is inserted or updated. The date Of birth text field is used in Einstein search</description>
+    <formulas>
+        <name>RSC_AccountIsNewOrPersonBirthdateChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>(ISNEW()) || ISCHANGED({!$Record.PersonBirthdate})</expression>
+    </formulas>
+    <formulas>
+        <name>RSC_DateOfBirthSearch</name>
+        <dataType>String</dataType>
+        <expression>LPAD(TEXT(DAY ({!$Record.PersonBirthdate})),2,&quot;0&quot;)&amp;&quot;/&quot;&amp;LPAD(TEXT(MONTH({!$Record.PersonBirthdate})),2,&quot;0&quot;)&amp;&quot;/&quot;&amp;TEXT(YEAR({!$Record.PersonBirthdate}))</expression>
+    </formulas>
+    <interviewLabel>Populate Date Of Birth Text Field {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Populate Date Of Birth Text Field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Populate Date Of Birth Search field when Date Of Birth is added or updated</description>
+        <name>RSC_PopulateDateOfBirthSearchField</name>
+        <label>Populate Date Of Birth Search Field</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>CMN_DateOfBirthSearch__c</field>
+            <value>
+                <elementReference>RSC_DateOfBirthSearch</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Account_Is_New_Or_Person_Birthdate_Changed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>PersonBirthdate</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

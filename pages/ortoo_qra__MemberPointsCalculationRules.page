@@ -1,0 +1,557 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:MP
+
+TC_LAST_NO_USED:0085
+
+-->
+<apex:page lightningStylesheets="true" standardController="ortoo_qra__Member_Point_Criteria__c" extensions="ortoo_qra.MemberPointsCalculationRulesExtension" id="thepage">
+    <apex:variable var="uiTheme" value="lightningDesktop" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+        <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+    </apex:variable>
+    <apex:form id="theform">
+        <style>
+             .fieldSelectionPopup
+            {
+                background-color: white;
+                border-width: 2px;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: #666;
+                z-index: 9999;
+                padding:10px;
+                position: fixed ;
+                top: 50%;
+                left: 50%;
+                width: Auto;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            .fieldSelectionPopupBackground
+            {
+                background-color:black;
+                opacity: 0.20;
+                filter: alpha(opacity = 20);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 9998;
+            }
+            .fieldSelectionLoader
+            {
+                line-height: 12px;
+                width: 18px;
+                font-size: 8pt;
+                font-family: tahoma;
+                margin-top: 25px;
+                margin-right: 10px;
+                position:absolute;
+                top:0;
+                right:0;
+            }
+
+            .pbTitle {
+                display: none;
+            }
+
+            .center-btn {
+                text-align: center;
+            }
+        </style>
+        <apex:inputText id="elementonfocus" style="display:none"/>
+        <apex:sectionHeader title="Member Points Scoring Rule"/>
+            &nbsp;&#171;&nbsp;
+        <apex:outputLink html-ortoo-elem-id="QAMP0001" value="/{!assignmentGroupId}">Back to Parent : {!assignmentGroup.Name}</apex:outputLink>
+        <br/><br/>
+        <apex:pagemessages id="pg_msg"/>
+        <apex:pageBlock id="calculation_rule_pb">
+            
+                
+            
+            <apex:pageBlockButtons location="top">
+            <div class="center-btn">
+                <apex:commandButton html-ortoo-elem-id="QAMP0002" value="Save" action="{!saveRule}" rendered="{!editIsActive}"/>
+                <apex:commandButton html-ortoo-elem-id="QAMP0003" value="Cancel" action="{!cancelRule}" rendered="{!editIsActive}"/>
+                <apex:commandButton html-ortoo-elem-id="QAMP0004" value="Edit" action="{!editRule}" rerender="calculation_rule_pb" rendered="{!AND(NOT(editIsActive),EditIsAllowed)}"/>
+                <apex:commandButton html-ortoo-elem-id="QAMP0005" value="Delete" action="{!deleteRule}" rendered="{!AND(NOT(editIsActive),DeleteIsAllowed)}"/>
+            </div>
+            </apex:pageBlockButtons>
+             <apex:pageBlockSection id="condition_pbs" columns="1" title="IF" rendered="{!editIsActive}" collapsible="false" >
+                 <apex:pageBlockSectionItem helpText="{!objectHelpText}">
+                     <c:customHelpTextLabel labelValue="Left Value 1" helpTextID="Left_Value1" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0006" value="{!rule.ortoo_qra__Left1_Value1_Type__c}" size="1">
+                             <apex:selectOptions value="{!ValueOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="condition_pbs" status="object_status"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="object_status">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+                         <!-- <apex:selectList value="{!rule.ortoo_qra__Left1_Value1__c}" size="1" rendered="{!Value1DataRendered == 1}">
+                             <apex:selectOptions value="{!fieldOptions1}"/>
+                         </apex:selectList> -->
+                         <apex:inputText html-ortoo-elem-id="QAMP0007" style="width:270px" value="{!LeftValue1Display}" rendered="{!Value1DataRendered == 1}" html-readonly="true">
+                            <apex:actionSupport event="onclick" reRender="popup" action="{!fieldSelectionShowPopup}" >
+                                <apex:param name="fieldNo" value="1"/>
+                            </apex:actionSupport>
+                        </apex:inputText>
+                         <apex:inputField html-ortoo-elem-id="QAMP0008" value="{!rule.ortoo_qra__Left1_Value1__c}"  rendered="{!Value1DataRendered == 2}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                     <apex:outputText html-ortoo-elem-id="QAMP0009" value=""/>
+                     <apex:selectList html-ortoo-elem-id="QAMP0010" value="{!rule.ortoo_qra__Left1_Math_V1_to_V2__c}" size="1">
+                         <apex:selectOptions value="{!MathOptions}"/>
+                         <apex:actionSupport event="onchange" reRender="condition_pbs"/>
+                     </apex:selectList>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!objectHelpText}" rendered="{!rule.ortoo_qra__Left1_Math_V1_to_V2__c != ''}">
+                     <c:customHelpTextLabel labelValue="Left Value 2" helpTextID="Left_Value2" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0011" value="{!rule.ortoo_qra__Left1_Value2_Type__c}" size="1">
+                             <apex:selectOptions value="{!ValueOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="condition_pbs" status="object_status2"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="object_status2">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+                         <!-- <apex:selectList value="{!rule.ortoo_qra__Left1_Value2__c}" size="1" rendered="{!Value2DataRendered == 1}">
+                             <apex:selectOptions value="{!fieldOptions2}"/>
+                         </apex:selectList> -->
+                         <apex:inputText html-ortoo-elem-id="QAMP0012" style="width:270px" value="{!LeftValue2Display}" rendered="{!Value2DataRendered == 1}" html-readonly="true">
+                            <apex:actionSupport event="onclick" reRender="popup" action="{!fieldSelectionShowPopup}" >
+                                <apex:param name="fieldNo" value="2"/>
+                            </apex:actionSupport>
+                        </apex:inputText>
+                         <apex:inputField html-ortoo-elem-id="QAMP0013" value="{!rule.ortoo_qra__Left1_Value2__c}"  rendered="{!Value2DataRendered == 2}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem rendered="{!showCalculationOptions1}">
+                     <apex:outputText html-ortoo-elem-id="QAMP0014" value="Calculate Using" />
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0015" value="{!rule.ortoo_qra__Left1_Calculate_Using_Hours__c}" size="1">
+                             <apex:selectOptions value="{!CalculateUsingHoursOptions}"/>
+                         </apex:selectList>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <br/>
+                 <apex:pageBlockSectionItem helpText="{!operatorHelpText}">
+                     <c:customHelpTextLabel labelValue="Operator" helpTextID="Operator" helpText="{!operatorHelpText}"/>
+                     <apex:selectList html-ortoo-elem-id="QAMP0016" value="{!rule.ortoo_qra__Operator__c}" size="1">
+                         <apex:selectOptions value="{!operatorOptions}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                 <br/>
+                 <apex:pageBlockSectionItem helpText="{!objectHelpText}">
+                     <c:customHelpTextLabel labelValue="Right Value 1" helpTextID="Right_Value1" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0017" value="{!rule.ortoo_qra__Right1_Value1_Type__c}" size="1">
+                             <apex:selectOptions value="{!ValueOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="condition_pbs" status="object_status3"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="object_status3">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+                         <!-- <apex:selectList value="{!rule.ortoo_qra__Right1_Value1__c}" size="1" rendered="{!Value3DataRendered == 1}">
+                             <apex:selectOptions value="{!fieldOptions3}"/>
+                         </apex:selectList> -->
+                         <apex:inputText html-ortoo-elem-id="QAMP0018" style="width:270px" value="{!RightValue1Display}" rendered="{!Value3DataRendered == 1}" html-readonly="true">
+                            <apex:actionSupport event="onclick" reRender="popup" action="{!fieldSelectionShowPopup}" >
+                                <apex:param name="fieldNo" value="3"/>
+                            </apex:actionSupport>
+                        </apex:inputText>
+                         <apex:inputField html-ortoo-elem-id="QAMP0019" value="{!rule.ortoo_qra__Right1_Value1__c}"  rendered="{!Value3DataRendered == 2}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                     <apex:outputText html-ortoo-elem-id="QAMP0020" value=""/>
+                     <apex:selectList html-ortoo-elem-id="QAMP0021" value="{!rule.ortoo_qra__Right1_Math_V1_to_V2__c}" size="1">
+                         <apex:selectOptions value="{!MathOptions}"/>
+                         <apex:actionSupport event="onchange" reRender="condition_pbs"/>
+                     </apex:selectList>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!objectHelpText}" rendered="{!rule.ortoo_qra__Right1_Math_V1_to_V2__c != ''}">
+                     <c:customHelpTextLabel labelValue="Right Value 2" helpTextID="Right_Value2" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0022" value="{!rule.ortoo_qra__Right1_Value2_Type__c}" size="1">
+                             <apex:selectOptions value="{!ValueOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="condition_pbs" status="object_status4"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="object_status4">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+                         <!-- <apex:selectList value="{!rule.ortoo_qra__Right1_Value2__c}" size="1" rendered="{!Value4DataRendered == 1}">
+                             <apex:selectOptions value="{!fieldOptions4}"/>
+                         </apex:selectList> -->
+                         <apex:inputText html-ortoo-elem-id="QAMP0023" style="width:270px" value="{!RightValue2Display}" rendered="{!Value4DataRendered == 1}" html-readonly="true">
+                            <apex:actionSupport event="onclick" reRender="popup" action="{!fieldSelectionShowPopup}" >
+                                <apex:param name="fieldNo" value="4"/>
+                            </apex:actionSupport>
+                        </apex:inputText>
+                         <apex:inputField html-ortoo-elem-id="QAMP0024" value="{!rule.ortoo_qra__Right1_Value2__c}"  rendered="{!Value4DataRendered == 2}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem rendered="{!showCalculationOptions2}">
+                     <apex:outputText html-ortoo-elem-id="QAMP0025" value="Calculate Using" />
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0026" value="{!rule.ortoo_qra__Right1_Calculate_Using_Hours__c}" size="1">
+                             <apex:selectOptions value="{!CalculateUsingHoursOptions}"/>
+                         </apex:selectList>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+             <apex:pageBlockSection id="add_point_pbs" columns="1" title="Add Points" rendered="{!editIsActive}" collapsible="false" >
+                <apex:pageBlockSectionItem helpText="{!addPointsTypeHelpText}">
+                     <c:customHelpTextLabel labelValue="Points Type" helpTextID="Points_Type" helpText="{!addPointsTypeHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0027" value="{!rule.ortoo_qra__Add_Points__c}" size="1">
+                             <apex:selectOptions value="{!addPointTypeOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="add_point_pbs, from_to_date_pbs" status="type_status"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="type_status">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+                     </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsValueHelpText}" rendered="{!IF(pointsType == '1',true,false)}">
+                    <c:customHelpTextLabel labelValue="Fixed Value" helpTextID="Fixed_Value" helpText="{!addPointsValueHelpText}"/>
+                    <apex:inputField html-ortoo-elem-id="QAMP0028" value="{!rule.ortoo_qra__Add_Points_Fixed_Value__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsObjectHelpText}" rendered="{!IF(pointsType == '2',true,false)}">
+                     <c:customHelpTextLabel labelValue="Object" helpTextID="Object" helpText="{!addPointsObjectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0029" value="{!rule.ortoo_qra__Add_Points_Object__c}" size="1" >
+                             <apex:selectOptions value="{!ObjectOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="add_point_pbs" status="add_point_object_status"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="add_point_object_status">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+                     </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsFieldHelpText}" rendered="{!IF(pointsType == '2',true,false)}">
+                     <c:customHelpTextLabel labelValue="Field" helpTextID="Field" helpText="{!addPointsFieldHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0030" value="{!rule.ortoo_qra__Add_Points_Field_Name__c}" size="1" >
+                             <apex:selectOptions value="{!addPointsFieldOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="add_point_pbs" />
+                         </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsMultiplierHelpText}" rendered="{!IF(pointsType == '2',true,false)}">
+                     <c:customHelpTextLabel labelValue="Multiplier" helpTextID="Multiplier" helpText="{!addPointsMultiplierHelpText}"/>
+                     <apex:inputfield html-ortoo-elem-id="QAMP0031" value="{!rule.ortoo_qra__Add_Points_Multiplier__c}" style="width:50px;"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsNumericValueFieldHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="Numeric Value Field" helpTextID="Numeric_Value_Field" helpText="{!addPointsNumericValueFieldHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0032" value="{!rule.ortoo_qra__Add_Points_Numeric_Value_Field__c}" size="1" >
+                             <apex:selectOptions value="{!addPointsNumericalFieldOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="add_point_pbs" />
+                         </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsDateFieldHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="Date Field" helpTextID="Date_Field" helpText="{!addPointsDateFieldHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0033" value="{!rule.ortoo_qra__Add_Points_Date_Field__c}" size="1" >
+                             <apex:selectOptions value="{!addPointsDateFieldOptions}"/>
+                             <apex:actionSupport event="onchange" reRender="add_point_pbs" />
+                         </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="from_to_date_pbs" rendered="{!editIsActive}" columns="1">
+                <apex:pageBlockSectionItem helpText="{!addPointsFromDateHelpText}" rendered="{!IF(pointsType == '3',true,false)}" id="from_date_item">
+                     <c:customHelpTextLabel labelValue="From Date" helpTextID="From_Date" helpText="{!addPointsFromDateHelpText}"/>
+                     <apex:outputPanel >
+                        <apex:selectList html-ortoo-elem-id="QAMP0034" value="{!rule.ortoo_qra__Add_Points_From_Date_Type__c}" size="1">
+                            <apex:selectOptions value="{!dateFormatOptions}" />
+                            <apex:actionSupport event="onchange" reRender="from_to_date_pbs"/>
+                        </apex:selectList>
+                        <apex:outputPanel html-ortoo-elem-id="QAMP0035" rendered="{!rule.ortoo_qra__Add_Points_From_Date_Type__c != 'any_date'}">
+                            &nbsp;&nbsp;&nbsp;| Offset:&nbsp;
+                            <apex:inputField html-ortoo-elem-id="QAMP0036" value="{!rule.ortoo_qra__Add_Points_From_Date__c}" style="width:50px;"/>
+                         </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsToDateHelpText}" rendered="{!IF(pointsType == '3',true,false)}"  id="to_date_item">
+                     <c:customHelpTextLabel labelValue="To Date" helpTextID="To_Date" helpText="{!addPointsToDateHelpText}"/>
+                     <apex:outputPanel >
+                        <apex:selectList html-ortoo-elem-id="QAMP0037" value="{!rule.ortoo_qra__Add_Points_To_Date_Type__c}" size="1">
+                            <apex:selectOptions value="{!dateFormatOptions}" />
+                            <apex:actionSupport event="onchange" reRender="from_to_date_pbs"/>
+                        </apex:selectList>
+                        <apex:outputPanel html-ortoo-elem-id="QAMP0038" rendered="{!rule.ortoo_qra__Add_Points_To_Date_Type__c != 'any_date'}">
+                            &nbsp;&nbsp;&nbsp;| Offset:&nbsp;
+                            <apex:inputField html-ortoo-elem-id="QAMP0039" value="{!rule.ortoo_qra__Add_Points_To_Date__c}" style="width:50px;"/>
+                         </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsDateMultiplierHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="Multiplier" helpTextID="Multiplier" helpText="{!addPointsDateMultiplierHelpText}"/>
+                     <apex:inputfield html-ortoo-elem-id="QAMP0040" value="{!rule.ortoo_qra__Add_Points_Multiplier__c}" style="width:50px;"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!NumberOfTimesToRunThisRuleHelpText}">
+                     <c:customHelpTextLabel labelValue="Number Of Times to Run this Rule" helpTextID="NumberOfTimesToRun" helpText="{!NumberOfTimesToRunThisRuleHelpText}"/>
+                     <apex:outputPanel >
+                        <apex:selectList html-ortoo-elem-id="QAMP0041" value="{!rule.ortoo_qra__Number_of_Times_to_Run_This_Rule__c}" size="1">
+                            <apex:selectOptions value="{!numberOfTimesToRunOptions}" />
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+             <apex:pageBlockSection id="action_on_error_pbs" columns="1" title="Action on Error" rendered="{!editIsActive}" collapsible="false" >
+                <apex:pageBlockSectionItem helpText="{!actionOnErrorTextHelpText}">
+                     <c:customHelpTextLabel labelValue="Action on Error" helpTextID="Action_Error" helpText="{!actionOnErrorTextHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAMP0042" value="{!rule.ortoo_qra__Action_on_Error__c}" size="1">
+                             <apex:selectOptions value="{!actionOnErrorOptions}"/>
+                                <apex:actionSupport event="onchange" reRender="action_on_error_pbs" status="error_status"/>
+                            </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="error_status">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+                     </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!actionOnErrorValueHelpText}" rendered="{!IF(actionOnError == '1',true,false)}">
+                     <c:customHelpTextLabel labelValue="Value" helpTextID="Value" helpText="{!actionOnErrorValueHelpText}"/>
+                     <apex:inputfield html-ortoo-elem-id="QAMP0043" value="{!rule.ortoo_qra__Action_on_Error_Fixed_Value__c}" />
+                </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+             <apex:pageBlockSection columns="1" id="view_condition_pbs" rendered="{!NOT(editIsActive)}" title="IF" collapsible="false">
+                 <apex:pageBlockSectionItem helpText="{!objectHelpText}">
+                     <c:customHelpTextLabel labelValue="Left Value 1" helpTextID="Left_Value1" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:outputText html-ortoo-elem-id="QAMP0044" value="{!leftVal1Type}" /> 
+                         <apex:outputText html-ortoo-elem-id="QAMP0045" value="{!ifFieldName1}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                     <apex:outputText html-ortoo-elem-id="QAMP0046" value=""/>
+                     <apex:outputText html-ortoo-elem-id="QAMP0047" value="{!rule.ortoo_qra__Left1_Math_V1_to_V2__c}"/>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem rendered="{!rule.ortoo_qra__Left1_Math_V1_to_V2__c != ''}" helpText="{!objectHelpText}">
+                     <c:customHelpTextLabel labelValue="Left Value 2" helpTextID="Left_Value2" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:outputText html-ortoo-elem-id="QAMP0048" value="{!leftVal2Type}" /> 
+                         <apex:outputText html-ortoo-elem-id="QAMP0049" value="{!ifFieldName2}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem rendered="{!showCalculationOptions1}">
+                     <apex:outputText html-ortoo-elem-id="QAMP0050" value="Calculate Using" />
+                     <apex:outputText html-ortoo-elem-id="QAMP0051" value="{!rule.ortoo_qra__Left1_Calculate_Using_Hours__c}" />
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!operatorHelpText}">
+                     <c:customHelpTextLabel labelValue="Operator" helpTextID="Operator" helpText="{!operatorHelpText}"/>
+                     <apex:outputText html-ortoo-elem-id="QAMP0052" value="{!rule.ortoo_qra__Operator__c}" />
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!objectHelpText}">
+                     <c:customHelpTextLabel labelValue="Right Value 1" helpTextID="Right_Value1" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:outputText html-ortoo-elem-id="QAMP0053" value="{!rightVal1Type}" /> 
+                         <apex:outputText html-ortoo-elem-id="QAMP0054" value="{!ifFieldName3}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                     <apex:outputText html-ortoo-elem-id="QAMP0055" value=""/>
+                     <apex:outputText html-ortoo-elem-id="QAMP0056" value="{!rule.ortoo_qra__Right1_Math_V1_to_V2__c}"/>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem rendered="{!rule.ortoo_qra__Right1_Math_V1_to_V2__c != ''}" helpText="{!objectHelpText}">
+                     <c:customHelpTextLabel labelValue="Right Value 2" helpTextID="Right_Value2" helpText="{!objectHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:outputText html-ortoo-elem-id="QAMP0057" value="{!rightVal2Type}" /> 
+                         <apex:outputText html-ortoo-elem-id="QAMP0058" value="{!ifFieldName4}"/>
+                     </apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem rendered="{!showCalculationOptions2}">
+                     <apex:outputText html-ortoo-elem-id="QAMP0059" value="Calculate Using" />
+                     <apex:outputText html-ortoo-elem-id="QAMP0060" value="{!rule.ortoo_qra__Right1_Calculate_Using_Hours__c}" />
+                 </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+             <apex:pageBlockSection id="view_add_point_pbs" columns="1" title="Add Points" rendered="{!NOT(editIsActive)}" collapsible="false" >
+                <apex:pageBlockSectionItem helpText="{!addPointsTypeHelpText}">
+                     <c:customHelpTextLabel labelValue="Points Type" helpTextID="Points_Type" helpText="{!addPointsTypeHelpText}"/>
+                     <apex:outputField html-ortoo-elem-id="QAMP0061" value="{!rule.ortoo_qra__Add_Points__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsValueHelpText}" rendered="{!IF(pointsType == '1',true,false)}">
+                    <c:customHelpTextLabel labelValue="Fixed Value" helpTextID="Fixed_Value" helpText="{!addPointsValueHelpText}"/>
+                    <apex:outputField html-ortoo-elem-id="QAMP0062" value="{!rule.ortoo_qra__Add_Points_Fixed_Value__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsObjectHelpText}" rendered="{!IF(pointsType == '2',true,false)}">
+                     <c:customHelpTextLabel labelValue="Object" helpTextID="Object" helpText="{!addPointsObjectHelpText}"/>
+                     <apex:outputText html-ortoo-elem-id="QAMP0063" value="{!addPointsObjectLabel}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsFieldHelpText}" rendered="{!IF(pointsType == '2',true,false)}">
+                     <c:customHelpTextLabel labelValue="Field" helpTextID="Field" helpText="{!addPointsFieldHelpText}"/>
+                     <apex:outputText html-ortoo-elem-id="QAMP0064" value="{!addPointsFieldLabel}" />
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!addPointsMultiplierHelpText}" rendered="{!IF(pointsType == '2',true,false)}">
+                     <c:customHelpTextLabel labelValue="Multiplier" helpTextID="Multiplier" helpText="{!addPointsMultiplierHelpText}"/>
+                     <apex:outputField html-ortoo-elem-id="QAMP0065" value="{!rule.ortoo_qra__Add_Points_Multiplier__c}" />
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!addPointsNumericValueFieldHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="Numeric Value Field" helpTextID="Numeric_Value_Field" helpText="{!addPointsNumericValueFieldHelpText}"/>
+                     <apex:outputText html-ortoo-elem-id="QAMP0066" value="{!addPointsNumericValueFieldLabel}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsDateFieldHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="Date Field" helpTextID="Date_Field" helpText="{!addPointsDateFieldHelpText}"/>
+                      <apex:outputText html-ortoo-elem-id="QAMP0067" value="{!addPointsDateFieldLabel}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsFromDateHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="From Date" helpTextID="From_Date" helpText="{!addPointsFromDateHelpText}"/>
+                     <apex:outputPanel >
+                         <apex:outputText html-ortoo-elem-id="QAMP0068" value="{!addPointsFromDateTypeLabel}" />
+                         &nbsp;&nbsp;&nbsp;| Offset:&nbsp; 
+                         <apex:outputText html-ortoo-elem-id="QAMP0069" value="{!IF(rule.ortoo_qra__Add_Points_From_Date__c == '', '(none)', rule.ortoo_qra__Add_Points_From_Date__c)}" rendered="{!rule.ortoo_qra__Add_Points_From_Date_Type__c != 'any_date'}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsToDateHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="To Date" helpTextID="To_Date" helpText="{!addPointsToDateHelpText}"/>
+                     <apex:outputPanel >
+                        <apex:outputText html-ortoo-elem-id="QAMP0070" value="{!addPointsToDateTypeLabel}" />
+                        &nbsp;&nbsp;&nbsp;| Offset:&nbsp;
+                        <apex:outputText html-ortoo-elem-id="QAMP0071" value="{!IF(rule.ortoo_qra__Add_Points_To_Date__c == '', '(none)', rule.ortoo_qra__Add_Points_To_Date__c)}" rendered="{!rule.ortoo_qra__Add_Points_To_Date_Type__c != 'any_date'}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!addPointsDateMultiplierHelpText}" rendered="{!IF(pointsType == '3',true,false)}">
+                     <c:customHelpTextLabel labelValue="Multiplier" helpTextID="Multiplier" helpText="{!addPointsDateMultiplierHelpText}"/>
+                     <apex:outputfield html-ortoo-elem-id="QAMP0072" value="{!rule.ortoo_qra__Add_Points_Multiplier__c}" />
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!NumberOfTimesToRunThisRuleHelpText}">
+                     <c:customHelpTextLabel labelValue="Number Of Times to Run this Rule" helpTextID="NumberOfTimesToRun" helpText="{!NumberOfTimesToRunThisRuleHelpText}"/>
+                     <apex:outputfield html-ortoo-elem-id="QAMP0073" value="{!rule.ortoo_qra__Number_of_Times_to_Run_This_Rule__c}" style="width:50px;"/>
+                </apex:pageBlockSectionItem>
+             </apex:pageBlockSection>
+              <apex:pageBlockSection id="view_action_on_error_pbs" columns="1" title="Action on Error" rendered="{!NOT(editIsActive)}" collapsible="false" >
+                 <apex:pageBlockSectionItem helpText="{!actionOnErrorTextHelpText}">
+                     <c:customHelpTextLabel labelValue="Action on Error" helpTextID="Action_Error" helpText="{!actionOnErrorTextHelpText}"/>
+                     <apex:outputField html-ortoo-elem-id="QAMP0074" Value="{!rule.ortoo_qra__Action_on_Error__c}" />
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem helpText="{!actionOnErrorValueHelpText}" rendered="{!IF(actionOnError == '1',true,false)}">
+                     <c:customHelpTextLabel labelValue="Value" helpTextID="Value" helpText="{!actionOnErrorValueHelpText}"/>
+                     <apex:outputField html-ortoo-elem-id="QAMP0075" value="{!rule.ortoo_qra__Action_on_Error_Fixed_Value__c}" />
+                </apex:pageBlockSectionItem>
+              </apex:pageBlockSection>
+              <apex:outputPanel id="popup">
+                <apex:outputPanel styleClass="fieldSelectionPopupBackground" layout="block" rendered="{!fieldSelectionDisplayPopup}"/>
+                <apex:outputPanel styleClass="fieldSelectionPopup" layout="block" rendered="{!fieldSelectionDisplayPopup}">
+                    <div class="inner_container">
+                    <table>
+                        <tr>
+                            <td>
+                                <apex:outputLabel html-ortoo-elem-id="QAMP0076" >Select <span class="my-class">{!lookup_objectName_label}</span> Field</apex:outputLabel> 
+                                <br/>
+                                <br/>
+                                <apex:selectList html-ortoo-elem-id="QAMP0077" value="{!fieldApiName}" size="12">
+                                    <apex:selectOptions value="{!ObjectFieldOptionswithLookup}">
+                                    </apex:selectOptions>
+                                    <apex:actionSupport event="onchange" action="{!onChangeOfFieldAPIName}" reRender="lookup_field_block" status="showlookup"/>
+                                </apex:selectList>
+                            </td>
+                            <td>
+                               <apex:outputPanel id="lookup_field_block" >
+                                    <apex:outputLabel html-ortoo-elem-id="QAMP0078" rendered="{!isLookupFieldSelected == true}">{!relatedFieldPicklistHeading}</apex:outputLabel> 
+                                    <br/>
+                                    <br/>
+                                    <apex:selectList html-ortoo-elem-id="QAMP0079" value="{!referenceFieldApiName}" size="12" rendered="{!isLookupFieldSelected == true}">
+                                        <apex:selectOptions value="{!referenceToFieldOptions}">
+                                        </apex:selectOptions>
+                                    </apex:selectList>
+                                </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:actionStatus id="showlookup">
+                                    <apex:facet name="start">
+                                        <div class="fieldSelectionLoader">
+                                            <img src="/img/loading.gif"/>
+                                        </div>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div style="float:right;display:block;margin-right:0px;clear:left;">
+                                    <apex:commandButton html-ortoo-elem-id="QAMP0080" value="Select" action="{!closefieldSelectionPopup}" rerender="condition_pbs,popup" status="button_action"/>
+                                    &nbsp;
+                                    <apex:commandButton html-ortoo-elem-id="QAMP0081" value="Cancel" action="{!cancelfieldSelectionPopup}" rerender="condition_pbs,popup" status="button_action"/>
+                                    &nbsp;
+                                    <apex:actionStatus id="button_action">
+                                    <apex:facet name="start">
+                                        <img src="/img/loading.gif"/>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    </div><!-- Inner Container -->  
+                </apex:outputPanel>
+            </apex:outputPanel>
+            <apex:pageBlockButtons location="bottom">
+            <div class="center-btn">
+                <apex:commandButton html-ortoo-elem-id="QAMP0082" value="Save" action="{!saveRule}" rendered="{!editIsActive}"/>
+                <apex:commandButton html-ortoo-elem-id="QAMP0083" value="Cancel" action="{!cancelRule}" rendered="{!editIsActive}"/>
+                <apex:commandButton html-ortoo-elem-id="QAMP0084" value="Edit" action="{!editRule}" rerender="calculation_rule_pb" rendered="{!AND(NOT(editIsActive),EditIsAllowed)}"/>
+                <apex:commandButton html-ortoo-elem-id="QAMP0085" value="Delete" action="{!deleteRule}" rendered="{!AND(NOT(editIsActive),DeleteIsAllowed)}"/>
+            </div>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+        <script type="text/javascript">
+              document.addEventListener('DOMContentLoaded', setFocus, false);
+              function setFocus() 
+              {
+                document.getElementById('thepage:theform:elementonfocus').focus();
+              }
+              function resetFromDate()
+              {
+                    var from_date_element = document.getElementById("thepage:theform:calculation_rule_pb:add_point_pbs:from_date_item:from_date_field");
+                    if(from_date_element)
+                    {
+                        from_date_element.value ="";
+                    }
+                    fromDateFormatChange();
+              }
+              function resetToDate()
+              {
+                    var from_date_element = document.getElementById("thepage:theform:calculation_rule_pb:add_point_pbs:to_date_item:to_date_field");
+                    if(from_date_element)
+                    {
+                        from_date_element.value ="";
+                    }
+                    toDateFormatChange();
+              }
+    </script>
+</apex:page>

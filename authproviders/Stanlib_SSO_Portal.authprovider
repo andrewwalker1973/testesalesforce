@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://login.test.stanlib.com/connect/authorize</authorizeUrl>
+    <consumerKey>salesforce_dev</consumerKey>
+    <consumerSecret>Placeholder_Value</consumerSecret>
+    <defaultScopes>openid profile offline_access sso</defaultScopes>
+    <executionUser>integration.user@liberty.co.za</executionUser>
+    <friendlyName>Stanlib Synthesis SSO Portal</friendlyName>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <logoutUrl>https://login.test.stanlib.com/Account/Logout</logoutUrl>
+    <providerType>OpenIdConnect</providerType>
+    <registrationHandler>SLC_Auth_Synthesis_Portal</registrationHandler>
+    <sendAccessTokenInHeader>true</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>true</sendClientCredentialsInHeader>
+    <sendSecretInApis>false</sendSecretInApis>
+    <tokenUrl>https://login.test.stanlib.com/connect/token</tokenUrl>
+    <userInfoUrl>https://login.test.stanlib.com/connect/userinfo</userInfoUrl>
+</AuthProvider>

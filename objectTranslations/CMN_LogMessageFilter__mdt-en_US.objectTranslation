@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Log Message Filter</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Log Message Filters</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>CMN_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regex to Find --></label>
+        <name>CMN_RegexToFind__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regex To Replace With --></label>
+        <name>CMN_RegexToReplaceWith__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

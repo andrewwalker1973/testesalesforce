@@ -1,0 +1,16 @@
+<aura:component implements="forceCommunity:layout" description="Case Content Layout" access="global">
+    <aura:attribute name="header" type="Aura.Component[]" required="false"></aura:attribute>
+    <aura:attribute name="content" type="Aura.Component[]" required="false"></aura:attribute>
+    
+    <div class="slds-col--padded contentRegion comm-layout-column">
+        <div class="slds-grid slds-wrap case-list">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+                {!v.header}
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                {!v.content}
+            </div>
+        </div>
+    </div>
+    
+</aura:component>

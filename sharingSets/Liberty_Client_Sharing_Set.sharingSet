@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>Account</object>
+        <objectField>PersonContact</objectField>
+        <userField>Account.PersonContact</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
+        <object>Case</object>
+        <objectField>Account.PersonContact</objectField>
+        <userField>Account.PersonContact</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>FinServ__AssetsAndLiabilities__c</object>
+        <objectField>FinServ__PrimaryOwner__c.PersonContact</objectField>
+        <userField>Account.PersonContact</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>FinServ__FinancialAccountTransaction__c</object>
+        <objectField>FinServ__FinancialAccount__c.FinServ__PrimaryOwner__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>FinServ__FinancialAccount__c</object>
+        <objectField>FinServ__PrimaryOwner__c.PersonContact</objectField>
+        <userField>Account.PersonContact</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>FinServ__FinancialGoal__c</object>
+        <objectField>FinServ__PrimaryOwner__c.PersonContact</objectField>
+        <userField>Account.PersonContact</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Edit</accessLevel>
+        <object>FinServ__LifeEvent__c</object>
+        <objectField>FinServ__Client__c.PersonContact</objectField>
+        <userField>Account.PersonContact</userField>
+    </accessMappings>
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
+        <object>InsurancePolicy</object>
+        <objectField>AW_MasterAccount__c</objectField>
+        <userField>Account</userField>
+    </accessMappings>
+    <name>Liberty Client Sharing Set</name>
+    <profiles>liberty client community user</profiles>
+</SharingSet>

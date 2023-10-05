@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <SObjectType>Case</SObjectType>
+    <active>true</active>
+    <description>Process to start tracking retail outbound cases that needs to be resolved within 18 hour SLA, once a case has been assigned from the queue to a servicing agent.</description>
+    <entryStartDateField>Case.CreatedDate</entryStartDateField>
+    <exitCriteriaFilterItems>
+        <field>Case.Status</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </exitCriteriaFilterItems>
+    <isVersionDefault>false</isVersionDefault>
+    <milestones>
+        <milestoneCriteriaFilterItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.RSC_IsAssigned__c</field>
+            <operation>equals</operation>
+            <value>true</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>RSC Time to Resolve</milestoneName>
+        <minutesToComplete>1080</minutesToComplete>
+        <timeTriggers>
+            <actions>
+                <name>RSC_UpdateCasePriorityToMedium</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>-540</timeLength>
+            <workflowTimeTriggerUnit>Minutes</workflowTimeTriggerUnit>
+        </timeTriggers>
+        <timeTriggers>
+            <actions>
+                <name>RSC_UpdateCasePriorityToHigh</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>-216</timeLength>
+            <workflowTimeTriggerUnit>Minutes</workflowTimeTriggerUnit>
+        </timeTriggers>
+        <useCriteriaStartTime>true</useCriteriaStartTime>
+    </milestones>
+    <name>rsc 18 hours sla</name>
+    <versionMaster>55225000000El8U</versionMaster>
+    <versionNumber>1</versionNumber>
+</EntitlementProcess>

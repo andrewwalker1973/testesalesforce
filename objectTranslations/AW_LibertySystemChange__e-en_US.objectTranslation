@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Liberty System Change</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Liberty System Changes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Client Identification Number --></label>
+        <name>AW_ClientIdentificationNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Identification Type --></label>
+        <name>AW_ClientIdentificationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultant Code --></label>
+        <name>AW_ConsultantCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Type --></label>
+        <name>AW_EventType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source ID --></label>
+        <name>AW_SourceID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System --></label>
+        <name>AW_SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label><!-- UACF ID --></label>
+        <name>AW_UACFID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

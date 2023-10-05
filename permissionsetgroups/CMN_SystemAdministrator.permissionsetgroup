@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission Set Group to be assigned to all the users with System Administrator profile</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>System Administrator</label>
+    <permissionSets>AW_AccountPropensityModelAccess</permissionSets>
+    <permissionSets>AW_Default</permissionSets>
+    <permissionSets>AW_LibertyFscInsurance</permissionSets>
+    <permissionSets>AW_ProspectSyncAdmin</permissionSets>
+    <permissionSets>CMN_LoginFrequency</permissionSets>
+    <permissionSets>FinServ__ApexAuraAccess</permissionSets>
+    <permissionSets>FinServ__FinancialServicesCloudStandard</permissionSets>
+    <permissionSets>LTB_LibertyTrailheadUser</permissionSets>
+    <permissionSets>LibertyMarketing_Cloud_Connected_App</permissionSets>
+    <permissionSets>RSC_LibertyRetailServiceConsoleManage</permissionSets>
+    <permissionSets>RSC_LibertyRetailServicingAgent</permissionSets>
+    <permissionSets>SLSC_ServiceConsultant</permissionSets>
+    <permissionSets>STANLIB_Institutional_Distribution_User</permissionSets>
+    <permissionSets>STANLIB_Retail_Distribution_User</permissionSets>
+    <permissionSets>et4ae5__ExactTarget_Integration</permissionSets>
+    <permissionSets>et4ae5__ExactTarget_Integration_Admin</permissionSets>
+    <permissionSets>force__ActionPlans</permissionSets>
+    <permissionSets>force__DocumentChecklist</permissionSets>
+    <permissionSets>force__EventMonitoringWaveUser</permissionSets>
+    <permissionSets>force__FSCInsurance</permissionSets>
+    <permissionSets>force__SalesCloudEinsteinAll</permissionSets>
+    <permissionSets>grax__GRAX_Admin</permissionSets>
+    <permissionSets>grax__GRAX_Advanced_User</permissionSets>
+    <permissionSets>grax__GRAX_Archive_Master</permissionSets>
+    <permissionSets>grax__GRAX_Community_User</permissionSets>
+    <permissionSets>grax__GRAX_Configuration_Admin</permissionSets>
+    <permissionSets>grax__GRAX_Data_Admin</permissionSets>
+    <permissionSets>grax__GRAX_Limited_Admin</permissionSets>
+    <permissionSets>grax__GRAX_User</permissionSets>
+    <permissionSets>ortoo_qra__Q_assign_Administrator</permissionSets>
+    <permissionSets>trailheadapp__Th_Badge_Admin</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

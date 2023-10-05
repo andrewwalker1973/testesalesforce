@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDataset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <application>Account_Propensity_Model_Adviser_App</application>
+    <description>Created from the Account Propensity Model Retrieve Result recipe.</description>
+    <masterLabel>Account Propensity Model Result Data</masterLabel>
+    <type>default</type>
+</WaveDataset>

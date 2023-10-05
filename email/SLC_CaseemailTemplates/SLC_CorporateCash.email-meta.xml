@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>STANLIB Manco Corporate Cash auto-response template</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>STANLIB_CaseLetterhead</letterhead>
+    <name>STANLIB Corporate Cash</name>
+    <style>freeForm</style>
+    <subject>Your case {!Case.CaseNumber} has been created - STANLIB Corporate Cash</subject>
+    <textOnly>Dear Valued Adviser,
+
+Thank you for contacting STANLIB Corporate Cash.
+
+This is an automatic acknowledgement that we have received your email. We will respond to you within 24 hours.
+
+Kind Regards,
+STANLIB Corporate Cash
+
+{!Case.Email_Thread}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

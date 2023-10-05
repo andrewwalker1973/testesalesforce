@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <description>This is used to store the updated associated contract extension in a collection variable.</description>
+        <name>SC_AddAssociatedContractExtensionToCollection</name>
+        <label>Add Associated Contract Extension to Collection</label>
+        <locationX>138</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>SC_AssociatedContractExtensionRecords</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SC_GetAssociatedContractExtensionRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_IterateOnFoundAssociatedContracts</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>This is used to update the associated contract extension Case Record Type to Case&apos;s record type and Owner Id to Case&apos;s owner.</description>
+        <name>SC_AssignCaseRecordTypeAndOwnerIdFields</name>
+        <label>Assign Case Record Type and Owner Id Fields</label>
+        <locationX>138</locationX>
+        <locationY>1175</locationY>
+        <assignmentItems>
+            <assignToReference>SC_GetAssociatedContractExtensionRecords.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SC_GetAssociatedContractExtensionRecords.SC_CaseRecordType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.RecordType.DeveloperName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_AddAssociatedContractExtensionToCollection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set the fields Case Record Type and Case Extension Owner on case extension.</description>
+        <name>SC_SetRequiredCaseExtensionValues</name>
+        <label>Set Required Case Extension Values</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignmentItems>
+            <assignToReference>SC_GetRelatedCaseExtension.SC_CaseRecordType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.RecordType.DeveloperName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SC_GetRelatedCaseExtension.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_UpdateTheCaseExtensionRecord</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This is used to check if associated contracts are found for a case.</description>
+        <name>SC_AssociatedContractsFound</name>
+        <label>Associated Contracts Found?</label>
+        <locationX>182</locationX>
+        <locationY>815</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FoundAssociatedContracts</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SC_GetAssociatedContract</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_IterateOnFoundAssociatedContracts</targetReference>
+            </connector>
+            <label>Associated Contracts Found</label>
+        </rules>
+    </decisions>
+    <description>This flow is used to update the case extension and associated contract extension on case owner change.
+@author:- vikrant.goswami@accenture.com
+@date:- July, 2022</description>
+    <environments>Default</environments>
+    <interviewLabel>Sync Case Owner To Extension Records On Case Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sync Case Owner To Extension Records On Case Update</label>
+    <loops>
+        <description>This is used to loop over the associated contracts to get the associated contract extension records.</description>
+        <name>SC_IterateOnFoundAssociatedContracts</name>
+        <label>Iterate on Found Associated Contracts</label>
+        <locationX>50</locationX>
+        <locationY>935</locationY>
+        <collectionReference>SC_GetAssociatedContract</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>SC_GetAssociatedContractExtensionRecords</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>SC_UpdateAssociatedContractExtensionRecords</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>This is used to get the associated contract related to the case.</description>
+        <name>SC_GetAssociatedContract</name>
+        <label>Get Associated Contract</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SC_AssociatedContractsFound</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SC_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SC_AssociatedContractExtension__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>SC_AssociatedContract__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>This is used to get the associated contract extension records.</description>
+        <name>SC_GetAssociatedContractExtensionRecords</name>
+        <label>Get Associated Contract Extension Records</label>
+        <locationX>138</locationX>
+        <locationY>1055</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SC_AssignCaseRecordTypeAndOwnerIdFields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SC_IterateOnFoundAssociatedContracts.SC_AssociatedContractExtension__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SC_AssociatedContractExtension__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>This is used to get the case extension record related to the case.</description>
+        <name>SC_GetRelatedCaseExtension</name>
+        <label>Get Related Case Extension</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SC_SetRequiredCaseExtensionValues</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SC_CaseExtension__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SC_CaseExtension__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>This is used to update all the associated contract extension records.</description>
+        <name>SC_UpdateAssociatedContractExtensionRecords</name>
+        <label>Update Associated Contract Extension Records</label>
+        <locationX>50</locationX>
+        <locationY>1511</locationY>
+        <inputReference>SC_AssociatedContractExtensionRecords</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the case extension record with assigned values.</description>
+        <name>SC_UpdateTheCaseExtensionRecord</name>
+        <label>Update the Case Extension Record</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <connector>
+            <targetReference>SC_GetAssociatedContract</targetReference>
+        </connector>
+        <inputReference>SC_GetRelatedCaseExtension</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SC_GetRelatedCaseExtension</targetReference>
+        </connector>
+        <filterFormula>( ISNEW() &amp;&amp;  ( NOT( ISBLANK({!$Record.SC_CaseExtension__c}) )  &amp;&amp; ( {!$Record.RecordType.DeveloperName} = &apos;RSC_Retail&apos; ) ) ) || ( ( ISCHANGED({!$Record.SC_CaseExtension__c}) || ISCHANGED({!$Record.OwnerId}) ) &amp;&amp; ( NOT(ISBLANK({!$Record.SC_CaseExtension__c}))  &amp;&amp; ( {!$Record.RecordType.DeveloperName} = &apos;RSC_Retail&apos; ) ) )</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>This is used to store the associated contract extension records.</description>
+        <name>SC_AssociatedContractExtensionRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SC_AssociatedContractExtension__c</objectType>
+    </variables>
+</Flow>

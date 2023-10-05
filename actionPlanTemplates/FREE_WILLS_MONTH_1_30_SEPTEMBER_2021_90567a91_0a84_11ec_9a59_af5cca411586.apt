@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>From 1 -30 September 2021, STL will be offering all employees and clients Will Drafting at no cost – provided STL is the nominated executor and the application form must be lodged on or before the 30th September 2021.</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>FREE WILLS MONTH 1 -30 SEPTEMBER 2021</name>
+    <targetEntityType>Campaign</targetEntityType>
+    <uniqueName>FREE_WILLS_MONTH_1_30_SEPTEMBER_2021_90567a91_0a84_11ec_9a59_af5cca411586</uniqueName>
+</ActionPlanTemplate>

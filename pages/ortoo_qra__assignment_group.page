@@ -1,0 +1,2 @@
+<apex:page lightningStylesheets="true" standardController="ortoo_qra__Assignment_Group__c"  id="thePage" title="Assignment Groups" >
+</apex:page>

@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Decline</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Decline</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Decline</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewEvent</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewEvent</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewEvent</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewSfdcEvent</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewSfdcEvent</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewSfdcEvent</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Today</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Today</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Today</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>AW_LibertyCompactLayout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AW_LibertyCompactLayout</fullName>
+        <fields>Subject</fields>
+        <fields>StartDateTime</fields>
+        <fields>EndDateTime</fields>
+        <fields>IsAllDayEvent</fields>
+        <fields>Location</fields>
+        <fields>ActivityDate</fields>
+        <fields>WhoId</fields>
+        <fields>WhatId</fields>
+        <fields>OwnerId</fields>
+        <fields>AW_Review__c</fields>
+        <label>Liberty Compact Layout</label>
+    </compactLayouts>
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>ActivityDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ActivityDateTime</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Attendees</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>DurationInMinutes</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>EndDateTime</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>EventSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>IsAllDayEvent</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>IsPrivate</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence2</fullName>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Location</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>ShowAs</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>StartDateTime</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>MyRecentEvents</fullName>
+        <columns>START_DATE_TIME</columns>
+        <columns>END_DATE_TIME</columns>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ALL_DAY</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:60</value>
+        </filters>
+        <label>My Recent Events</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsRecentEvents</fullName>
+        <columns>START_DATE_TIME</columns>
+        <columns>END_DATE_TIME</columns>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ALL_DAY</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <label>My Team&apos;s Recent Events</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsUpcomingEvents</fullName>
+        <columns>START_DATE_TIME</columns>
+        <columns>END_DATE_TIME</columns>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ALL_DAY</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY,NEXT_N_DAYS:30</value>
+        </filters>
+        <label>My Team&apos;s Upcoming Events</label>
+    </listViews>
+    <listViews>
+        <fullName>MyUpcomingEvents</fullName>
+        <columns>START_DATE_TIME</columns>
+        <columns>END_DATE_TIME</columns>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ALL_DAY</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY,NEXT_N_DAYS:60</value>
+        </filters>
+        <label>My Upcoming Events</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysAgenda</fullName>
+        <columns>START_DATE_TIME</columns>
+        <columns>END_DATE_TIME</columns>
+        <columns>SUBJECT</columns>
+        <columns>WHO_NAME</columns>
+        <columns>WHAT_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ALL_DAY</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>DUE_DATE</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>END_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today&apos;s Agenda</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>FinServ__AdvisorEvent</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>AW_LibertyCompactLayout</compactLayoutAssignment>
+        <description>Default event record type for Advisor profile</description>
+        <label>Advisor Event</label>
+        <picklistValues>
+            <picklist>AW_Change_of_Consultant_Form__c</picklist>
+            <values>
+                <fullName>Not Submitted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ClientInteractionOutcome__c</picklist>
+            <values>
+                <fullName>Appointment Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Doesn%27t Want Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Contacted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Details Incorrect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I Don%27t Want This Orphan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Client_Interaction_Outcome_Feedback__c</picklist>
+            <values>
+                <fullName>Change of Broker Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change of Broker Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not Interested in seeing an Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred %5C Moving Forward with Appointment in future</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disclosure Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liberty Systems Updated with Disclosure Information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_TaskCategory__c</picklist>
+            <values>
+                <fullName>Adviser</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Orphan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Regarding__c</picklist>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RSC_OnHoldReasons__c</picklist>
+            <values>
+                <fullName>Anniversary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annuity Transfer Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistance Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Document Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Scanning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Departments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overnight Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refer To Department Name</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Systematic Override</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Underwriting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Verification</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLR_MeetingSuccess__c</picklist>
+            <values>
+                <fullName>Highly Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AW_Event_Free_Text</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FinServ__ClientAssociateEvent</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>AW_LibertyCompactLayout</compactLayoutAssignment>
+        <description>Default event record type for Client Associate profile</description>
+        <label>Client Associate Event</label>
+        <picklistValues>
+            <picklist>AW_Change_of_Consultant_Form__c</picklist>
+            <values>
+                <fullName>Not Submitted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ClientInteractionOutcome__c</picklist>
+            <values>
+                <fullName>Appointment Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Doesn%27t Want Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Contacted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Details Incorrect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I Don%27t Want This Orphan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Client_Interaction_Outcome_Feedback__c</picklist>
+            <values>
+                <fullName>Change of Broker Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change of Broker Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not Interested in seeing an Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred %5C Moving Forward with Appointment in future</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disclosure Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liberty Systems Updated with Disclosure Information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_TaskCategory__c</picklist>
+            <values>
+                <fullName>Adviser</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Orphan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Regarding__c</picklist>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RSC_OnHoldReasons__c</picklist>
+            <values>
+                <fullName>Anniversary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annuity Transfer Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistance Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Document Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Scanning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Departments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overnight Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refer To Department Name</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Systematic Override</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Underwriting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Verification</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLR_MeetingSuccess__c</picklist>
+            <values>
+                <fullName>Highly Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AW_Event_Free_Text</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SLI_Event</fullName>
+        <active>true</active>
+        <label>SLI Event</label>
+        <picklistValues>
+            <picklist>AW_Change_of_Consultant_Form__c</picklist>
+            <values>
+                <fullName>Not Submitted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ClientInteractionOutcome__c</picklist>
+            <values>
+                <fullName>Appointment Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appointment Rescheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appointment Seen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Called</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Contacted Successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Doesn%27t Want Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Contacted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Details Incorrect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I Don%27t Want This Orphan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Unwanted %5C Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Client_Interaction_Outcome_Feedback__c</picklist>
+            <values>
+                <fullName>Change of Broker Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change of Broker Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not Interested in seeing an Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred %5C Moving Forward with Appointment in future</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disclosure Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liberty Systems Updated with Disclosure Information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_TaskCategory__c</picklist>
+            <values>
+                <fullName>Adviser</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Orphan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Regarding__c</picklist>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RSC_OnHoldReasons__c</picklist>
+            <values>
+                <fullName>Anniversary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annuity Transfer Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistance Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Document Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Scanning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Departments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overnight Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refer To Department Name</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Systematic Override</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Underwriting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Verification</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLR_MeetingSuccess__c</picklist>
+            <values>
+                <fullName>Highly Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AW_Event_Free_Text</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Due Diligence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expression of Interest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negotiations Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Receive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SLR_Event</fullName>
+        <active>true</active>
+        <description>Event for STANLIB Retail Distribution Users</description>
+        <label>SLR Event</label>
+        <picklistValues>
+            <picklist>AW_Change_of_Consultant_Form__c</picklist>
+            <values>
+                <fullName>Not Submitted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ClientInteractionOutcome__c</picklist>
+            <values>
+                <fullName>Appointment Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appointment Rescheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appointment Seen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Made</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Called</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Contacted Successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Doesn%27t Want Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Contacted - Reallocate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Details Incorrect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I Don%27t Want This Orphan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Unwanted %5C Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Client_Interaction_Outcome_Feedback__c</picklist>
+            <values>
+                <fullName>Change of Broker Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change of Broker Submitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not Interested in seeing an Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred %5C Moving Forward with Appointment in future</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disclosure Signed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liberty Systems Updated with Disclosure Information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_TaskCategory__c</picklist>
+            <values>
+                <fullName>Adviser</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Orphan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Regarding__c</picklist>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RSC_OnHoldReasons__c</picklist>
+            <values>
+                <fullName>Anniversary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annuity Transfer Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approval Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistance Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Decision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Document Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Scanning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Departments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overnight Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refer To Department Name</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Systematic Override</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Underwriting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Verification</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLR_MeetingSuccess__c</picklist>
+            <values>
+                <fullName>Highly Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AW_Event_Free_Text</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>ortoo_qra__Take_Ownership_Detail</fullName>
+        <availability>online</availability>
+        <description>Q-assign: Gives ownership to the user pressing the button and updates Q-assign stats.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Take Ownership</masterLabel>
+        <openType>sidebar</openType>
+        <page>ortoo_qra__Take_Ownership_Event_Detail</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

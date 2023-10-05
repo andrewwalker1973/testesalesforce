@@ -1,0 +1,1843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AW_LP_FinancialGoalPage</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tracks a client&apos;s goal.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>WM_Client_FinancialGoal</fullName>
+        <description>Client profile&apos;s Goals tab</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_PriorityLevel__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__TargetDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__TargetValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__ActualValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_Shortfall__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Financial Goal</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>WM_Household_FinancialGoal</fullName>
+        <description>Household profile&apos;s Goals tab</description>
+        <displayedFields>
+            <field>FinServ__PrimaryOwner__r.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__TargetValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__ActualValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__TargetDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Financial Goal</label>
+    </fieldSets>
+    <fields>
+        <fullName>AW_AmountNeededFV__c</fullName>
+        <description>Amount Needed for Future Value</description>
+        <externalId>false</externalId>
+        <label>Amount Needed FV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_AmountNeededPV__c</fullName>
+        <description>Amount Needed for Present Value</description>
+        <externalId>false</externalId>
+        <label>Amount Needed PV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_AnnualEscalation__c</fullName>
+        <description>Percentage of Annual Escalation</description>
+        <externalId>false</externalId>
+        <label>Annual Escalation</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_Apply_Goal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The box is auto checked when the Financial Goal is achieved.</description>
+        <externalId>false</externalId>
+        <label>Apply Goal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_AssetsAndLiabilities__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>ability to Link/manually add a product</description>
+        <externalId>false</externalId>
+        <label>Assets and Liabilities</label>
+        <referenceTo>FinServ__AssetsAndLiabilities__c</referenceTo>
+        <relationshipLabel>Financial Goals</relationshipLabel>
+        <relationshipName>Financial_Goals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_CPI_Percentage__c</fullName>
+        <description>Percentage CPI</description>
+        <externalId>false</externalId>
+        <label>CPI</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_Created_Date_From_Source__c</fullName>
+        <description>This field is designed to capture the date when the financial goal was created from a specific source</description>
+        <externalId>false</externalId>
+        <label>Created Date From Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_FNA__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The related FNA</description>
+        <externalId>false</externalId>
+        <label>FNA</label>
+        <referenceTo>AW_FNA__c</referenceTo>
+        <relationshipLabel>Financial Goals</relationshipLabel>
+        <relationshipName>Financial_Goals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_Frequency_Months__c</fullName>
+        <description>Enter the frequency of months</description>
+        <externalId>false</externalId>
+        <label>Frequency (Months)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_GoalPicture__c</fullName>
+        <description>Describe the goal [ Here you can attach pictures as well ]</description>
+        <externalId>false</externalId>
+        <label>Goal Picture</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AW_GoalTypeIfOther__c</fullName>
+        <description>Type Goal if selected Others</description>
+        <externalId>false</externalId>
+        <label>Goal Type if Other</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Goal_Start_Date__c</fullName>
+        <description>Starting date for Goal</description>
+        <externalId>false</externalId>
+        <label>Goal Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_Goal_Type__c</fullName>
+        <description>Select Goal Type</description>
+        <externalId>false</externalId>
+        <label>Goal Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Risk</fullName>
+                    <default>false</default>
+                    <label>Risk</label>
+                </value>
+                <value>
+                    <fullName>Investment</fullName>
+                    <default>false</default>
+                    <label>Investment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Growth_Strategy__c</fullName>
+        <description>Short description of Growth Strategy</description>
+        <externalId>false</externalId>
+        <label>Growth Strategy</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_IsCreator__c</fullName>
+        <description>Used to identify if the logged in user is the creator</description>
+        <externalId>false</externalId>
+        <formula>CreatedById = $User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Creator</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_IsInvestmentGoal__c</fullName>
+        <description>Check if this is an investment is a financial goal</description>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(AW_ProductType__c, &apos;Investment&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Investment Goal</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_IsProtectionGoal__c</fullName>
+        <description>Is this a protection goal?</description>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(AW_ProductType__c, &apos;Protection&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Protection Goal</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_Last_Updated_Date_from_Source__c</fullName>
+        <description>Date of Last Update from Source</description>
+        <externalId>false</externalId>
+        <label>Last Updated Date From Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AW_LifeEventLink__c</fullName>
+        <description>Link for Life Event</description>
+        <externalId>false</externalId>
+        <label>Life Event Link</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccountId__c</fullName>
+        <description>Used to store the Master Account Id, if Master Account Exists for the Active Account</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(FinServ__PrimaryOwner__r.FinServ__Status__c , &apos;Active&apos;), NOT(ISNULL(FinServ__PrimaryOwner__r.AW_ParentAccount__r.Id))),FinServ__PrimaryOwner__r.AW_ParentAccount__r.Id,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AW_MasterAccountId</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the Master Account Details</description>
+        <externalId>false</externalId>
+        <label>MasterAccount</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Financial Goals (MasterAccount)</relationshipLabel>
+        <relationshipName>Financial_Goals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_Nominal_Calculated_Value__c</fullName>
+        <description>The calculated nominal value of goal</description>
+        <externalId>false</externalId>
+        <label>Nominal Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_OtherValue__c</fullName>
+        <description>This field will be used to capture the value of other assets that are not associated with an investment or risk product, i.e. cash on hand, collections etc.</description>
+        <externalId>false</externalId>
+        <label>Other Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Owner_UACFID__c</fullName>
+        <description>The UACFID of Owner</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.AW_UACFID__c</formula>
+        <label>Owner UACFID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ParentAccountOwnerId__c</fullName>
+        <description>Used to store the Parent Account Owner Id</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(FinServ__PrimaryOwner__r.Id)),FinServ__PrimaryOwner__r.OwnerId,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AW_ParentAccountOwnerId</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PercentageComplete__c</fullName>
+        <description>The percentage completion of financial goal</description>
+        <externalId>false</externalId>
+        <formula>IF(FinServ__TargetValue__c=0,0,FinServ__ActualValue__c / FinServ__TargetValue__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percentage Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_PriorityLevel__c</fullName>
+        <description>Select the Priority Level</description>
+        <externalId>false</externalId>
+        <label>Priority Level</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_ProbabilityOfOutcome__c</fullName>
+        <description>Probability % of favourable outcome</description>
+        <externalId>false</externalId>
+        <label>Probability of Outcome</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_ProductType__c</fullName>
+        <description>Select Product Type</description>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Investment</fullName>
+                    <default>false</default>
+                    <label>Investment</label>
+                </value>
+                <value>
+                    <fullName>Protection</fullName>
+                    <default>false</default>
+                    <label>Protection</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_ProvideForDependents__c</fullName>
+        <description>The amount payable to dependents upon death</description>
+        <externalId>false</externalId>
+        <label>Provide for Dependents</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Real_Calculated_Value__c</fullName>
+        <description>The real calculated goal value</description>
+        <externalId>false</externalId>
+        <label>Real Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Recurrence_Count__c</fullName>
+        <description>The count of recurrence</description>
+        <externalId>false</externalId>
+        <label>Recurrence Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RelatedOpportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field provides a way to link a specific &apos;Financial Goal&apos; record to a related &apos;Opportunity&apos; record</description>
+        <externalId>false</externalId>
+        <label>Related Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Financial Goals</relationshipLabel>
+        <relationshipName>Financial_Goals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_RiskNeedExistingValue__c</fullName>
+        <description>Displays the value of the existing cover that may be in place for a specific Risk Need</description>
+        <externalId>false</externalId>
+        <formula>FinServ__ActualValue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Existing Cover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_RiskNeedLastUpdate__c</fullName>
+        <description>Displays the date at which the values of the Risk Need was last updated</description>
+        <externalId>false</externalId>
+        <formula>FinServ__TargetDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Last Update</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_RiskNeed__c</fullName>
+        <description>Displays the total value required to reach the total Risk Need identified</description>
+        <externalId>false</externalId>
+        <formula>FinServ__TargetValue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Need</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Save_Until__c</fullName>
+        <description>Till which time does the customer wants to save</description>
+        <externalId>false</externalId>
+        <label>Save Until</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Saving_For__c</fullName>
+        <description>What is the customer saving for?</description>
+        <externalId>false</externalId>
+        <label>Saving For</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_SettleEstate__c</fullName>
+        <description>The amount allocated to cover costs occurred when settling the estate</description>
+        <externalId>false</externalId>
+        <label>Settle Estate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Shortfall__c</fullName>
+        <description>This field calculates the Shortfall/Surplus value which is the Target Value - Actual Value. The amount required to meet the target amount/ the amount exceeding the target amount</description>
+        <externalId>false</externalId>
+        <formula>FinServ__ActualValue__c - FinServ__TargetValue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shortfall/Surplus</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_SortingDate__c</fullName>
+        <description>Used by lightning component to sort life events and goals</description>
+        <externalId>false</externalId>
+        <formula>FinServ__TargetDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sorting Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_Source_System_Name__c</fullName>
+        <description>Select Source System Name</description>
+        <externalId>false</externalId>
+        <label>Source System Name</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>AW_Source_System_Names</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Suggested_Contribution__c</fullName>
+        <description>The suggested amount to contribute</description>
+        <externalId>false</externalId>
+        <label>Suggested Contribution</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Target_Return_Percentage__c</fullName>
+        <description>Percentage of Targeted Return</description>
+        <externalId>false</externalId>
+        <label>Target Return</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_Target_Value_PV__c</fullName>
+        <description>Target Value Present Value</description>
+        <externalId>false</externalId>
+        <label>Target Value (PV)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Taxable__c</fullName>
+        <description>Taxability Description</description>
+        <externalId>false</externalId>
+        <label>Taxable</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TermOfProvision__c</fullName>
+        <description>Term for Provision</description>
+        <externalId>false</externalId>
+        <label>Term of Provision</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TotalAssetAmount__c</fullName>
+        <description>Roll up field on Assets</description>
+        <externalId>false</externalId>
+        <label>Total Assets Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalFinancialAmount__c</fullName>
+        <description>This field will be rolled up of current value on Financial Account</description>
+        <externalId>false</externalId>
+        <label>Total Financial Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalInsuranceAmount__c</fullName>
+        <description>This field will be rolled up of current value on Insurance Policy</description>
+        <externalId>false</externalId>
+        <label>Total Insurance Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalLiabilitiesAmount__c</fullName>
+        <description>This field will be rolled up of current value on Asset &amp; Liabilties</description>
+        <externalId>false</externalId>
+        <label>Total Liabilities Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Total_Current_Market_Value__c</fullName>
+        <description>The current market value</description>
+        <externalId>false</externalId>
+        <label>Recommended Lumpsum Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Total_Goal_Amount__c</fullName>
+        <description>This field is used to store the total goal amount for a financial goal</description>
+        <externalId>false</externalId>
+        <label>Total Goal Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Type_Description__c</fullName>
+        <description>Enter Description</description>
+        <externalId>false</externalId>
+        <label>Type Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__ActualValue__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of the asset allocated to the Goal - This is pre-populated when linking a Financial Account to a goal.</inlineHelpText>
+        <label>Actual Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__CompletionDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>256</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FinServ__Household__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Household that this goal is associated with.</description>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Household</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Household Financial Goals</relationshipLabel>
+        <relationshipName>HouseholdFinancialGoals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__InitialValue__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Initial Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__PrimaryOwner__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Primary Owner</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>IndustriesIndividual</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.FinServ__IndividualType__c</field>
+                <operation>equals</operation>
+                <value>Individual</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Client Financial Goals</relationshipLabel>
+        <relationshipName>ClientFinancialGoals</relationshipName>
+        <required>true</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__SourceSystemId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Source System ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>true</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__TargetDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The date at which you want to reach a 100% completion on the goal.</inlineHelpText>
+        <label>Target Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__TargetValue__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The target value that you would like to reach for this specific goal.</inlineHelpText>
+        <label>Target Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>AW_ProductType__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Retirement</fullName>
+                    <default>false</default>
+                    <label>Retirement</label>
+                </value>
+                <value>
+                    <fullName>Saving for a rainy day</fullName>
+                    <default>false</default>
+                    <label>Saving for a rainy day</label>
+                </value>
+                <value>
+                    <fullName>Lifestyle goals</fullName>
+                    <default>false</default>
+                    <label>Lifestyle goals</label>
+                </value>
+                <value>
+                    <fullName>Self-Improvement goals</fullName>
+                    <default>false</default>
+                    <label>Self-Improvement goals</label>
+                </value>
+                <value>
+                    <fullName>Life Cover - Lump sum</fullName>
+                    <default>false</default>
+                    <label>Life Cover - Lump sum</label>
+                </value>
+                <value>
+                    <fullName>Critical Illness - Lump sum</fullName>
+                    <default>false</default>
+                    <label>Critical Illness - Lump sum</label>
+                </value>
+                <value>
+                    <fullName>Disability Cover - Lump sum</fullName>
+                    <default>false</default>
+                    <label>Disability Cover - Lump sum</label>
+                </value>
+                <value>
+                    <fullName>Temporary Sickness - Income</fullName>
+                    <default>false</default>
+                    <label>Temporary Sickness - Income</label>
+                </value>
+                <value>
+                    <fullName>Disability Cover - Income</fullName>
+                    <default>false</default>
+                    <label>Disability Cover - Income</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Investment</controllingFieldValue>
+                <valueName>Retirement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Investment</controllingFieldValue>
+                <valueName>Saving for a rainy day</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Investment</controllingFieldValue>
+                <valueName>Lifestyle goals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Investment</controllingFieldValue>
+                <valueName>Self-Improvement goals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Investment</controllingFieldValue>
+                <controllingFieldValue>Protection</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Protection</controllingFieldValue>
+                <valueName>Life Cover - Lump sum</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Protection</controllingFieldValue>
+                <valueName>Critical Illness - Lump sum</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Protection</controllingFieldValue>
+                <valueName>Disability Cover - Lump sum</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Protection</controllingFieldValue>
+                <valueName>Temporary Sickness - Income</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Protection</controllingFieldValue>
+                <valueName>Disability Cover - Income</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <label>Financial Goal</label>
+    <listViews>
+        <fullName>FinServ__All</fullName>
+        <columns>NAME</columns>
+        <columns>FinServ__Type__c</columns>
+        <columns>FinServ__Description__c</columns>
+        <columns>FinServ__ActualValue__c</columns>
+        <columns>FinServ__TargetValue__c</columns>
+        <columns>FinServ__PrimaryOwner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Financial Goal Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Financial Goals</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>AW_Capital_Goal</fullName>
+        <active>true</active>
+        <label>Capital Goal</label>
+        <picklistValues>
+            <picklist>AW_Goal_Type__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PriorityLevel__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Type__c</picklist>
+            <values>
+                <fullName>Critical Illness - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saving for a rainy day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Improvement goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Sickness - Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AW_Income_Goal</fullName>
+        <active>true</active>
+        <label>Income Goal</label>
+        <picklistValues>
+            <picklist>AW_Goal_Type__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PriorityLevel__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Type__c</picklist>
+            <values>
+                <fullName>Critical Illness - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saving for a rainy day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Improvement goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Sickness - Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AW_Liberty_Client_Goal</fullName>
+        <active>true</active>
+        <label>Liberty Client Goal</label>
+        <picklistValues>
+            <picklist>AW_Goal_Type__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PriorityLevel__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Type__c</picklist>
+            <values>
+                <fullName>Critical Illness - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saving for a rainy day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Improvement goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Sickness - Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AW_RiskCapitalGoal</fullName>
+        <active>true</active>
+        <description>This Record Type will be used when a Risk Capital Goal is created</description>
+        <label>Risk Capital Goal</label>
+        <picklistValues>
+            <picklist>AW_Goal_Type__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PriorityLevel__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Type__c</picklist>
+            <values>
+                <fullName>Critical Illness - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saving for a rainy day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Improvement goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Sickness - Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AW_RiskIncomeGoal</fullName>
+        <active>true</active>
+        <description>Represents a Risk Income Goal</description>
+        <label>Risk Income Goal</label>
+        <picklistValues>
+            <picklist>AW_Goal_Type__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PriorityLevel__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Type__c</picklist>
+            <values>
+                <fullName>Critical Illness - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover - Lump sum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saving for a rainy day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self-Improvement goals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temporary Sickness - Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>FinServ__Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>FinServ__Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>FinServ__PrimaryOwner__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__PrimaryOwner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AW_ProductType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__ActualValue__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__TargetValue__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>AW_Goaltypenorother</fullName>
+        <active>true</active>
+        <description>When Other is not selected in Type picklist, but Other Goal Type field is filled out.</description>
+        <errorConditionFormula>AND
+(
+	OR
+	(
+		ISCHANGED(AW_GoalTypeIfOther__c),
+		ISNEW()
+	),
+	
+	NOT(ISBLANK(AW_GoalTypeIfOther__c)),
+	TEXT(FinServ__Type__c) &lt;&gt; &quot;Other&quot;
+)</errorConditionFormula>
+        <errorDisplayField>AW_GoalTypeIfOther__c</errorDisplayField>
+        <errorMessage>Cannot enter Other Goal Type if Other is not selected as Type.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AW_OtherGoalType</fullName>
+        <active>true</active>
+        <description>Prompt to the user to specify the goal when selecting other goal type</description>
+        <errorConditionFormula>AND
+(
+  ISPICKVAL( FinServ__Type__c , &apos;Other&apos;),
+  ISBLANK( AW_GoalTypeIfOther__c )  
+)</errorConditionFormula>
+        <errorDisplayField>AW_GoalTypeIfOther__c</errorDisplayField>
+        <errorMessage>Please fill Other Goal Type.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

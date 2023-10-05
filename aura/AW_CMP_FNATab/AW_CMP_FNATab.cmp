@@ -1,0 +1,4 @@
+<aura:component implements="lightning:isUrlAddressable,force:appHostable" controller="AW_CTR_GetAvalonURL" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" />
+</aura:component>

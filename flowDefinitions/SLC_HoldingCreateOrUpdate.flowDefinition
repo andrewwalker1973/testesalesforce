@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>13</activeVersionNumber>
+    <description>Inserts relevant SLC_Target__c records to the Holding record that launches flow.</description>
+    <masterLabel>Holding - Create or Update</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,27 @@
+/**
+ * Created by pczerminski on 03.12.2020.
+ */
+ .stars {
+    position: relative;
+    display:inline-block;
+    font-size: 35pt;
+	height: 1em;
+    line-height: 1em;
+}
+
+.stars:before {
+    content: "\2606\2606\2606\2606\2606";
+    color: #fcd45d;
+    z-index:0;
+}
+
+.stars:after {
+    content: "\2605\2605\2605\2605\2605";
+    position:absolute;
+    left:0;
+    top:0;
+    overflow:hidden;
+    width:var(--w,50%);
+    color:  #fcd45d;
+    z-index:1;
+}

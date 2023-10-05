@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Quoted Solution</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Quoted Solutions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Annuity Frequency --></label>
+        <name>AW_Annuity_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half-Annually</masterLabel>
+            <translation><!-- Half-Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single</masterLabel>
+            <translation><!-- Single --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Benefit Category --></label>
+        <name>AW_Benefit_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefit Type --></label>
+        <name>AW_Benefit_Type__c</name>
+        <picklistValues>
+            <masterLabel>Absolute Impairment</masterLabel>
+            <translation><!-- Absolute Impairment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Impairment (Term)</masterLabel>
+            <translation><!-- Absolute Impairment (Term) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Impairment Plus</masterLabel>
+            <translation><!-- Absolute Impairment Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Impairment Plus (Term)</masterLabel>
+            <translation><!-- Absolute Impairment Plus (Term) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Income Protector</masterLabel>
+            <translation><!-- Absolute Income Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Protector (OD)</masterLabel>
+            <translation><!-- Absolute Protector (OD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Protector (OOD)</masterLabel>
+            <translation><!-- Absolute Protector (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Protector (Term) (OOD)</masterLabel>
+            <translation><!-- Absolute Protector (Term) (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Protector Plus (OD)</masterLabel>
+            <translation><!-- Absolute Protector Plus (OD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Protector Plus (OOD)</masterLabel>
+            <translation><!-- Absolute Protector Plus (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Absolute Protector Plus (Term) (OOD)</masterLabel>
+            <translation><!-- Absolute Protector Plus (Term) (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonus Cover benefit</masterLabel>
+            <translation><!-- Bonus Cover benefit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Disability (OD)</masterLabel>
+            <translation><!-- Capital Disability (OD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Disability (OOD)</masterLabel>
+            <translation><!-- Capital Disability (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Disability (Term) (OOD)</masterLabel>
+            <translation><!-- Capital Disability (Term) (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Disability Plus (OD)</masterLabel>
+            <translation><!-- Capital Disability Plus (OD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Disability Plus (OOD)</masterLabel>
+            <translation><!-- Capital Disability Plus (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Disability Plus (Term) (OOD)</masterLabel>
+            <translation><!-- Capital Disability Plus (Term) (OOD) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child Living Lifestyle</masterLabel>
+            <translation><!-- Child Living Lifestyle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EduCator</masterLabel>
+            <translation><!-- EduCator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Absolute Income Protector</masterLabel>
+            <translation><!-- Extended Absolute Income Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female Living Lifestyle</masterLabel>
+            <translation><!-- Female Living Lifestyle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Protector</masterLabel>
+            <translation><!-- Financial Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Free Child Illness Protector</masterLabel>
+            <translation><!-- Free Child Illness Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Free Claim Booster</masterLabel>
+            <translation><!-- Free Claim Booster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funeral Benefit</masterLabel>
+            <translation><!-- Funeral Benefit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Future Protector</masterLabel>
+            <translation><!-- Future Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guaranteed Dependant Protecto</masterLabel>
+            <translation><!-- Guaranteed Dependant Protecto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitalisation Lifestyle Enhancer</masterLabel>
+            <translation><!-- Hospitalisation Lifestyle Enhancer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Impairment</masterLabel>
+            <translation><!-- Impairment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Impairment Plus</masterLabel>
+            <translation><!-- Impairment Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Income Protector benefit</masterLabel>
+            <translation><!-- Income Protector benefit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Cover</masterLabel>
+            <translation><!-- Life Cover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Cover (Term)</masterLabel>
+            <translation><!-- Life Cover (Term) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle (Term 65)</masterLabel>
+            <translation><!-- Living Lifestyle (Term 65) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle (Term)</masterLabel>
+            <translation><!-- Living Lifestyle (Term) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle (WOL)</masterLabel>
+            <translation><!-- Living Lifestyle (WOL) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle Dependant Protector</masterLabel>
+            <translation><!-- Living Lifestyle Dependant Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle Plus (Term 65)</masterLabel>
+            <translation><!-- Living Lifestyle Plus (Term 65) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle Plus (Term)</masterLabel>
+            <translation><!-- Living Lifestyle Plus (Term) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle Plus (WOL)</masterLabel>
+            <translation><!-- Living Lifestyle Plus (WOL) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Lifestyle Protector benefit</masterLabel>
+            <translation><!-- Living Lifestyle Protector benefit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MediCator</masterLabel>
+            <translation><!-- MediCator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium Protector - Death</masterLabel>
+            <translation><!-- Premium Protector - Death --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium Protector - Disability</masterLabel>
+            <translation><!-- Premium Protector - Disability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium Protector - Retrenchment</masterLabel>
+            <translation><!-- Premium Protector - Retrenchment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewable Life Cover</masterLabel>
+            <translation><!-- Renewable Life Cover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retrenchment Protector</masterLabel>
+            <translation><!-- Retrenchment Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retrenchment Protector (12-months)</masterLabel>
+            <translation><!-- Retrenchment Protector (12-months) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Maternity Pause Option</masterLabel>
+            <translation><!-- The Maternity Pause Option --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Overhead Expenses Protector</masterLabel>
+            <translation><!-- The Overhead Expenses Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vital Living</masterLabel>
+            <translation><!-- Vital Living --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vital Living Plus</masterLabel>
+            <translation><!-- Vital Living Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness Bonus</masterLabel>
+            <translation><!-- Wellness Bonus --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Number --></label>
+        <name>AW_Contract_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Status --></label>
+        <name>AW_Contract_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cons Code Not found</masterLabel>
+            <translation><!-- Cons Code Not found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cons Code closed</masterLabel>
+            <translation><!-- Cons Code closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Downloaded Successfully</masterLabel>
+            <translation><!-- Contract Downloaded Successfully --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Not On Mainframe Master Files</masterLabel>
+            <translation><!-- Contract Not On Mainframe Master Files --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Number is Zero</masterLabel>
+            <translation><!-- Contract Number is Zero --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract found on Intermediate files</masterLabel>
+            <translation><!-- Contract found on Intermediate files --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate Contract. Already exists on NB files</masterLabel>
+            <translation><!-- Duplicate Contract. Already exists on NB files --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid Contract Number</masterLabel>
+            <translation><!-- Invalid Contract Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invalid Product</masterLabel>
+            <translation><!-- Invalid Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linked Life Contract not found</masterLabel>
+            <translation><!-- Linked Life Contract not found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Load/CC Outstanding</masterLabel>
+            <translation><!-- Load/CC Outstanding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logged</masterLabel>
+            <translation><!-- Logged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mainframe Process Too Far Advanced. Load New Set</masterLabel>
+            <translation><!-- Mainframe Process Too Far Advanced. Load New Set --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Client Role Specified</masterLabel>
+            <translation><!-- No Client Role Specified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Control Record found. Upload again</masterLabel>
+            <translation><!-- No Control Record found. Upload again --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Upload</masterLabel>
+            <translation><!-- Ready for Upload --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repeat upload. No records in upload file</masterLabel>
+            <translation><!-- Repeat upload. No records in upload file --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repeat upload. PC file corrupt</masterLabel>
+            <translation><!-- Repeat upload. PC file corrupt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Error. Contact Hotseat</masterLabel>
+            <translation><!-- System Error. Contact Hotseat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload Initiated</masterLabel>
+            <translation><!-- Upload Initiated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload Successful to Mainframe</masterLabel>
+            <translation><!-- Upload Successful to Mainframe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload Unsuccessful</masterLabel>
+            <translation><!-- Upload Unsuccessful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upload not Allowed</masterLabel>
+            <translation><!-- Upload not Allowed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Income Escalation --></label>
+        <name>AW_Income_Escalation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Life Assured --></label>
+        <name>AW_Life_Assured__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nett Annuity Amount --></label>
+        <name>AW_Nett_Annuity_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Name --></label>
+        <name>AW_Quote_Name__c</name>
+        <relationshipLabel><!-- Quoted Solutions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Recurring Premium Amount --></label>
+        <name>AW_Recurring_Premium_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Premium Escalation --></label>
+        <name>AW_Recurring_Premium_Escalation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Premium Frequency --></label>
+        <name>AW_Recurring_Premium_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half-Annually</masterLabel>
+            <translation><!-- Half-Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single</masterLabel>
+            <translation><!-- Single --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Single Premium Amount --></label>
+        <name>AW_Single_Premium_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Name --></label>
+        <name>AW_Source_System_Name__c</name>
+        <picklistValues>
+            <masterLabel>Avalon</masterLabel>
+            <translation><!-- Avalon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BPNB</masterLabel>
+            <translation><!-- BPNB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC</masterLabel>
+            <translation><!-- SFDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>atWork</masterLabel>
+            <translation><!-- atWork --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sum Assured --></label>
+        <name>AW_Sum_Assured__c</name>
+    </fields>
+    <fields>
+        <label><!-- TF External Id --></label>
+        <name>AW_TF_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Withdrawal Amount --></label>
+        <name>AW_Withdrawal_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Withdrawal Frequency --></label>
+        <name>AW_Withdrawal_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half-Annually</masterLabel>
+            <translation><!-- Half-Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single</masterLabel>
+            <translation><!-- Single --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Withdrawal Increase --></label>
+        <name>AW_Withdrawal_Increase__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

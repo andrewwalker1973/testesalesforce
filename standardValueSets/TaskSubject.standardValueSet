@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>AW_Task_free_text</fullName>
+        <default>true</default>
+        <label>Please Type In Free Text</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Report Back</fullName>
+        <default>false</default>
+        <label>Report Back</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Expression of Interest</fullName>
+        <default>false</default>
+        <label>Expression of Interest</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Request Receive</fullName>
+        <default>false</default>
+        <label>Request Receive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Due Diligence</fullName>
+        <default>false</default>
+        <label>Due Diligence</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Client Presentation</fullName>
+        <default>false</default>
+        <label>Client Presentation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Negotiations Complete</fullName>
+        <default>false</default>
+        <label>Negotiations Complete</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_ClientAnswered</fullName>
+        <default>false</default>
+        <label>Client Answered</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_ClientAnsweredandRequestedReschedule</fullName>
+        <default>false</default>
+        <label>Client Answered and Requested Reschedule</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_Engaged</fullName>
+        <default>false</default>
+        <label>Engaged</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_NoAnswer</fullName>
+        <default>false</default>
+        <label>No Answer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_NotContactableServiceNotAvailable</fullName>
+        <default>false</default>
+        <label>Not Contactable - Service Not Available</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_NumberNotInService</fullName>
+        <default>false</default>
+        <label>Number Not In Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_ServiceComplaint</fullName>
+        <default>false</default>
+        <label>Service Complaint</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_Voicemail</fullName>
+        <default>false</default>
+        <label>Voicemail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>RSC_OutboundTask_WrongNumber</fullName>
+        <default>false</default>
+        <label>Wrong Number</label>
+    </standardValue>
+</StandardValueSet>

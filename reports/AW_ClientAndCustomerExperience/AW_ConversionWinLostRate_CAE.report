@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(
+
+OR(
+	AND(
+	ISBLANK(AW_AdviserTarget__c.AW_ActualNumberOfLeadConverted__c:SUM),
+	ISBLANK(AW_AdviserTarget__c.AW_ActualNumberOfLeadOpen__c:SUM)
+	),
+AW_AdviserTarget__c.AW_ActualNumberOfLeadConverted__c:SUM+AW_AdviserTarget__c.AW_ActualNumberOfLeadOpen__c:SUM =0
+),
+NULL,
+AW_AdviserTarget__c.AW_ActualNumberOfLeadConverted__c:SUM/(AW_AdviserTarget__c.AW_ActualNumberOfLeadConverted__c:SUM+AW_AdviserTarget__c.AW_ActualNumberOfLeadOpen__c:SUM)
+)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Average Lead Conversion Rate</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average Lead Conversion Rate</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(
+
+OR(
+	AND(
+	ISBLANK(AW_AdviserTarget__c.AW_ActualOpportunitiesWon__c:SUM),
+	ISBLANK(AW_AdviserTarget__c.AW_ActualOpportunitiesOpen__c:SUM)
+	),
+AW_AdviserTarget__c.AW_ActualOpportunitiesWon__c:SUM+AW_AdviserTarget__c.AW_ActualOpportunitiesOpen__c:SUM =0
+),
+NULL,
+AW_AdviserTarget__c.AW_ActualOpportunitiesWon__c:SUM/(AW_AdviserTarget__c.AW_ActualOpportunitiesWon__c:SUM+AW_AdviserTarget__c.AW_ActualOpportunitiesOpen__c:SUM)
+)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Average Opportunity Won Rate</description>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average Opportunity Won Rate</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>AW_AdviserTarget__c.AW_DateFrom__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AW_AdviserTarget__c.AW_ActualNumberOfLeadConverted__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AW_AdviserTarget__c.AW_ActualNumberOfLeadOpen__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AW_AdviserTarget__c.AW_ActualOpportunitiesWon__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AW_AdviserTarget__c.AW_ActualOpportunitiesOpen__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>AW_AdviserTarget__c.AW_DateFrom__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_MONTHS:5,THIS_MONTH</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>AW_AdviserTarget__c.AW_DateFrom__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Average Conversion , Win Rate</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AW_AdviserTarget__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

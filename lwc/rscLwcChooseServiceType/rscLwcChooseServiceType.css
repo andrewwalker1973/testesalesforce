@@ -1,0 +1,9 @@
+/**
+ * Created by meghana.g.n on 9/27/2021.
+ */
+
+.required-field:before
+{
+	color   : #FF0000;
+	content : "*";
+}

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>AW_Advice_Centre_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share Accounts owned by the Advice Centre with Advisers from the Advice Centre</description>
+        <label>Advice Centre Accounts</label>
+        <sharedTo>
+            <group>AW_Advice_Centre</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>0054J0000058pO8</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AW_Edit_Orphan_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <description>Allow Lead Management Users to edit Orphan Accounts</description>
+        <label>Edit Orphan Accounts</label>
+        <sharedTo>
+            <role>AW_Liberty_Lead_Manager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>AW_Account_Ownership__c</field>
+            <operation>equals</operation>
+            <value>Orphan</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SC_MasterAccountSharingRuleforServiceConsoleUsers</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Sharing Rule created to give Read Only access of Master Account records to service console users with role (Group Executive: Client and Adviser Service Centre) and their internal subordinates users.</description>
+        <label>Master Account Sharing Rule for Service Console Users</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>RSC_ZA_Retail_ClientandAdviserServiceCentre</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Liberty Master - Business Client,Liberty Master - Individual Client,Liberty Practice Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLI_ProspectAccounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Stanlib Institutional Prospect Accounts</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistribution</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SLC_Prospect__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Stanlib Institutional Person Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLR_IFWRecordSharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Ability for BDM&apos;s to see records of type IFA &amp; Wholesale</description>
+        <label>STANLIB IFW Record Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>SLR_Retail_Distribution</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Stanlib Retail Person Account</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SLR_Channel__c</field>
+            <operation>equals</operation>
+            <value>Wholesale,Independent Financial Advisor</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLR_ProspectAccounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Stanlib Retail Prospect Accounts</label>
+        <sharedTo>
+            <role>SLR_Retail_Distribution</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>SLC_Prospect__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Stanlib Retail Person Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLR_RetailDistributionCompanySharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Record based sharing rule for STANLIB Company account</description>
+        <label>SLR Retail Distribution Company Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLR_Retail_Distribution</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Stanlib Company Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLSC_STANLIB_Manco_End_Client</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Sharing rule created to provide access to the records for Stanlib MANCO users irrespective of their role.</description>
+        <label>STANLIB Manco End Client</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Retail_MANCO</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Stanlib MANCO End Client</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLSC_STANLIB_Retail_Person_Account</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Sharing rule to access the records along the Stanlib retail users.</description>
+        <label>STANLIB Retail Person Account</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Retail_MANCO</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Stanlib Retail Person Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>SLR_RetailDistributionLead</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Allows Retail Distribution Lead to have edit access to all record within the Retail Distribution hierarchy</description>
+        <label>Retail Distribution Lead</label>
+        <sharedTo>
+            <group>SLR_RetailDistributionLead</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>SLR_Retail_Distribution</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SLR_ThirdPartyAdminSharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>This sharing rule defines the record access to the members in the Third Party Admin role hierarchy.</description>
+        <label>Third Party Admin Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLR_ThirdPartyAdmin</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>SLR_ThirdPartyAdmin</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

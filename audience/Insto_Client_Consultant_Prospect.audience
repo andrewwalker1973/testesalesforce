@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Insto Client + Consultant + Prospect</audienceName>
+    <container>STANLIB Client Portal</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <audienceDeveloperName>STANLIB_Institutional_Consultant_User</audienceDeveloperName>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Audience</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>2</criteriaNumber>
+            <criterionValue>
+                <audienceDeveloperName>Retail_Customer</audienceDeveloperName>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Audience</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>3</criteriaNumber>
+            <criterionValue>
+                <audienceDeveloperName>STANLIB_Prospect_User_Institutional</audienceDeveloperName>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Audience</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AnyCriterionMatches</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+</Audience>

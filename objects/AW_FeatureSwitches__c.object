@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>A Hierarchical Custom setting that can be used by developers to switch off features (i.e. disable code, validation rules etc)</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AW_AdviserTargetsOn__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This feature switch will toggle on or off code that manages Adviser Target and Performance objects</description>
+        <externalId>false</externalId>
+        <label>Adviser Targets On</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_Create_Community_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to indicate whether a community user should be created or not</description>
+        <externalId>false</externalId>
+        <label>Create Community User</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_DisableAccountAPICall__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field related to disabling or enabling an account API call in a system</description>
+        <externalId>false</externalId>
+        <label>Disable Account API Call</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_DisableAccountValidationRules__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When the checkbox is checked, it indicates that the account validation rules should be disabled.</description>
+        <externalId>false</externalId>
+        <label>Disable Account Validation Rules</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_DisableAdviserPerformanceValidation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When this checkbox field is checked, it indicates that the system should bypass or ignore the validation rules related to adviser performance</description>
+        <externalId>false</externalId>
+        <label>Disable Adviser Performance Validation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_DisableAdviserTargetValidationRule__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When this checkbox is enabled or checked, it indicates that the adviser target validation rule should be disabled</description>
+        <externalId>false</externalId>
+        <label>Disable Adviser Target Validation Rule</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_DisableAllAPICalls__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When the checkbox is checked, it indicates that all API calls within the system should be disabled</description>
+        <externalId>false</externalId>
+        <label>Disable All API Calls</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_DoNotAuthenticateWithAzureB2C__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This switch will ensure that a user who has a FederationId is not redirected to Authenticate with Azure B2C</description>
+        <externalId>false</externalId>
+        <label>Do Not Authenticate With Azure B2C</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Feature Switches</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>SETUP_OWNER_NAME</columns>
+        <columns>AW_AdviserTargetsOn__c</columns>
+        <columns>AW_DisableAccountAPICall__c</columns>
+        <columns>AW_DisableAccountValidationRules__c</columns>
+        <columns>AW_DisableAdviserPerformanceValidation__c</columns>
+        <columns>AW_DisableAdviserTargetValidationRule__c</columns>
+        <columns>AW_DisableAllAPICalls__c</columns>
+        <columns>AW_DoNotAuthenticateWithAzureB2C__c</columns>
+        <columns>SETUP_TYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>Get_user_profile</name>
+        <label>Get user profile</label>
+        <locationX>248</locationX>
+        <locationY>217</locationY>
+        <defaultConnector>
+            <targetReference>agent_login</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>profile_check</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>liberty servicing agent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>liberty servicing supervisor</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_Get_Current_Status</targetReference>
+            </connector>
+            <label>profile check</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks to see if user presence status is available.</description>
+        <name>RSC_IsStatusAvailable</name>
+        <label>Is Status Available</label>
+        <locationX>555</locationX>
+        <locationY>463</locationY>
+        <defaultConnector>
+            <targetReference>RSC_NotAvailable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Unavailable</defaultConnectorLabel>
+        <rules>
+            <name>RSC_Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_Choose_Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Available</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_IsAvailable</targetReference>
+            </connector>
+            <label>Available</label>
+        </rules>
+    </decisions>
+    <description>Including new decision</description>
+    <dynamicChoiceSets>
+        <name>RSC_Statuses_Choices</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>RSC_Status__c</picklistField>
+        <picklistObject>ortoo_qra__User_Attributes__c</picklistObject>
+    </dynamicChoiceSets>
+    <interviewLabel>RSC_FLOW_Q_AssignPresenceStatuses {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RSC_FLOW_QAssignPresenceStatuses</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>RSC_Get_Current_Status</name>
+        <label>Get Current Status</label>
+        <locationX>433</locationX>
+        <locationY>217</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_SetNewStatus</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ortoo_qra__User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ortoo_qra__User_Attributes__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>RSC_IsAvailable</name>
+        <label>Is Available</label>
+        <locationX>688</locationX>
+        <locationY>342</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RSC_Get_Current_Status.ortoo_qra__User__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ortoo_qra__Assignment_Group_Is_Active__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>RSC_NotAvailable</name>
+        <label>Not Available</label>
+        <locationX>805</locationX>
+        <locationY>538</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RSC_Get_Current_Status.ortoo_qra__User__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>ortoo_qra__Assignment_Group_Is_Active__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>RSC_UpdateMemberAttribute</name>
+        <label>Update Member Attribute</label>
+        <locationX>442</locationX>
+        <locationY>461</locationY>
+        <connector>
+            <targetReference>RSC_IsStatusAvailable</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ortoo_qra__User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RSC_Status__c</field>
+            <value>
+                <elementReference>RSC_Choose_Status</elementReference>
+            </value>
+        </inputAssignments>
+        <object>ortoo_qra__User_Attributes__c</object>
+    </recordUpdates>
+    <screens>
+        <name>agent_login</name>
+        <label>User login</label>
+        <locationX>49</locationX>
+        <locationY>223</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>user_message</name>
+            <fieldText>&lt;p&gt;{!$User.FirstName} - You don&apos;t have access to this widget, please contact your System Administrator or Supervisor.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>RSC_SetNewStatus</name>
+        <label>Set New Status</label>
+        <locationX>436</locationX>
+        <locationY>331</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>RSC_UpdateMemberAttribute</targetReference>
+        </connector>
+        <fields>
+            <name>RSC_UserDetails</name>
+            <fieldText>&lt;p&gt;&lt;b style=&quot;font-size: 16px; color: rgb(0, 0, 0);&quot;&gt;{!$User.FirstName} &lt;/b&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;{!$User.LastName}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span
+				style=&quot;font-size: 12px;&quot;&gt;Current Status: {!RSC_Get_Current_Status.RSC_Status__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>RSC_Choose_Status</name>
+            <choiceReferences>RSC_Statuses_Choices</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Choose Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>130</locationX>
+        <locationY>55</locationY>
+        <connector>
+            <targetReference>Get_user_profile</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>A Hierarchical Custom setting that can be used by developers to switch off features (i.e. disable code, validation rules etc)</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CMN_APIsToDisableList1__c</fullName>
+        <description>Used to indicate if one or more API&apos;s should be disabled; the field is a comma delimited list in the form APIName1,APIName2 etc.</description>
+        <externalId>false</externalId>
+        <label>APIs To Disable List 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CMN_APIsToDisableList2__c</fullName>
+        <description>Used to indicate if one or more API&apos;s should be disabled; the field is a comma delimited list in the form APIName1,APIName2 etc.</description>
+        <externalId>false</externalId>
+        <label>APIs To Disable List 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CMN_APIsToDisableList3__c</fullName>
+        <description>Used to indicate if one or more API&apos;s should be disabled; the field is a comma delimited list in the form APIName1,APIName2 etc.</description>
+        <externalId>false</externalId>
+        <label>APIs To Disable List 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CMN_APIsToMockList1__c</fullName>
+        <description>Used to indicate if one or more API&apos;s should return mocked responses; the field is a comma delimited list in the form APIName1,APIName2 etc.</description>
+        <externalId>false</externalId>
+        <label>APIs To Mock List 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CMN_APIsToMockList2__c</fullName>
+        <description>Used to indicate if one or more API&apos;s should return mocked responses; the field is a comma delimited list in the form APIName1,APIName2 etc.</description>
+        <externalId>false</externalId>
+        <label>APIs To Mock List 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CMN_APIsToMockList3__c</fullName>
+        <description>Used to indicate if one or more API&apos;s should return mocked responses; the field is a comma delimited list in the form APIName1,APIName2 etc.</description>
+        <externalId>false</externalId>
+        <label>APIs To Mock List 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CMN_DisableAllOutboundAPICalls__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When switched on for a user or profile then every outbound API Call will be disabled</description>
+        <externalId>false</externalId>
+        <label>Disable All Outbound API Calls</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_MockAllOutboundAPICalls__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set this to ensure all API calls (for user, profile or org) are returning mocked responses.</description>
+        <externalId>false</externalId>
+        <label>Mock All Outbound API Calls</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>CMN Feature Switches</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>SETUP_OWNER_NAME</columns>
+        <columns>CMN_MockAllOutboundAPICalls__c</columns>
+        <columns>CMN_DisableAllOutboundAPICalls__c</columns>
+        <columns>CMN_APIsToMockList1__c</columns>
+        <columns>CMN_APIsToMockList2__c</columns>
+        <columns>CMN_APIsToMockList3__c</columns>
+        <columns>CMN_APIsToDisableList1__c</columns>
+        <columns>CMN_APIsToDisableList2__c</columns>
+        <columns>CMN_APIsToDisableList3__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,146 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:EO
+
+TC_LAST_NO_USED:0010
+
+-->
+<apex:page lightningStylesheets="true" controller="ortoo_qra.EditOOOController" sidebar="false" title="Edit OOO Event" showHeader="true" id="thePage">
+
+    <script type="text/javascript" src="{!$Resource.jquery}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.jqueryui,'jquery-ui.min.js')}"></script>
+    <script>
+        function proceed(){
+            var validation_err =  document.getElementById('thePage:error_messages').innerHTML;
+            if(validation_err == '') 
+            {
+                window.opener.location.href="/apex/UserAssignmentStatus";
+                window.top.close();
+            }
+        }
+    </script>
+    <apex:variable var="uiTheme" value="lightningDesktop" rendered="{!isLightiningTheme== 'Theme4d'}">
+        <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+    </apex:variable>
+    <style>
+        .labelCol{
+            width: 40% !important;
+        }
+        .labelCol30{
+            width: 30% !important;
+        }
+        .bPageHeader {
+            display:none;
+        }
+        #contentWrapper {
+            min-width: unset;
+        }
+        body.sfdcBody{
+            background : unset;
+        }
+        .hasMotif {
+            margin: unset;
+        }
+        .noSidebarCell, .sidebarCell .fixed {
+            padding: unset;
+        }
+        .homeTab .brdPalette {
+            border-top-color: unset;
+        }
+        .bodyDiv .outerNoSidebar {
+            padding : unset;
+        }
+        body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock{
+            -moz-border-radius: unset;
+            -webkit-border-radius: unset;
+        }
+        .homeTab .bPageBlock {
+            border-top: unset;
+        }
+        .detailPage .bPageBlock, .editPage .bPageBlock{
+            border-top-width: 7px;
+        }
+        body .bPageBlock {
+            padding : unset;
+            padding-bottom: 9px;
+        }
+        .bPageBlock {
+            border-top:unset: 
+        }
+        body .bPageFooter a, body .bPageFooter {
+            display:none;
+        }
+
+        .pbTitle {
+            display: none;
+        }
+
+        .center-btn {
+            text-align: center;
+        }
+    </style>
+    <apex:pageMessages id="error_messages"/>
+    <apex:form id="TheForm">
+        <apex:pageBlock id="edit_block">
+
+            <apex:pageBlockButtons location="top">
+                <div class="center-btn">
+                    <apex:commandButton html-ortoo-elem-id="QAEO0001" action="{!SaveOOOEvent}" value="Save" oncomplete="proceed();" rerender="edit_block"/>
+                    <apex:commandButton html-ortoo-elem-id="QAEO0002" action="{!CancelOOOEvent}" onclick="window.top.close();" value="Cancel" immediate="true"/>
+                </div>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Edit Event" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="Subject" helpTextID="My_upcoming_OOO_Calendar_Entries" helpText="Default"/>
+                    <apex:outputPanel >
+                        <apex:inputField html-ortoo-elem-id="QAEO0003" value="{!currentevent.Subject}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="Location" helpTextID="My_upcoming_OOO_Calendar_Entries" helpText="Default"/>
+                    <apex:outputPanel >
+                        <apex:inputField html-ortoo-elem-id="QAEO0004" value="{!currentevent.Location}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="Start Date" helpTextID="My_upcoming_OOO_Calendar_Entries" helpText="Default"/>
+                    <apex:outputPanel >
+                          <apex:inputField html-ortoo-elem-id="QAEO0005" value="{!currentevent.StartDateTime}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="End Date" helpTextID="My_upcoming_OOO_Calendar_Entries" helpText="Default"/>
+                    <apex:outputPanel >
+                          <apex:inputField html-ortoo-elem-id="QAEO0006" value="{!currentevent.EndDateTime}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="Show As" helpTextID="My_upcoming_OOO_Calendar_Entries" helpText="Default"/>
+                    <apex:outputPanel >
+                        <apex:selectList html-ortoo-elem-id="QAEO0007" value="{!currentEvent.ShowAs}" size="1" multiselect="false">
+                            <apex:selectOption itemValue="OutOfOffice" itemLabel="Out Of Office"></apex:selectOption>
+                            <apex:selectOption itemValue="Busy" itemLabel="Busy"></apex:selectOption>
+                            <apex:selectOption itemValue="Free" itemLabel="Free"></apex:selectOption>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="Description" helpTextID="My_upcoming_OOO_Calendar_Entries" helpText="Default"/>
+                    <apex:outputPanel >
+                        <apex:inputField html-ortoo-elem-id="QAEO0008" value="{!currentEvent.Description}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <div class="center-btn">
+                    <apex:commandButton html-ortoo-elem-id="QAEO0009" action="{!SaveOOOEvent}" value="Save" oncomplete="proceed();" rerender="edit_block"/>
+                    <apex:commandButton html-ortoo-elem-id="QAEO0010" action="{!CancelOOOEvent}" onclick="window.top.close();" value="Cancel" immediate="true"/>
+                </div>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

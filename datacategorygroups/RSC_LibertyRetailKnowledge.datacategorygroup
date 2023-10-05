@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Retail Servicing</label>
+            <name>Retail_Servicing</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Retail Script</label>
+            <name>Retail_Script</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <description>Category for Knowledge articles used by internal Service Console user</description>
+    <label>Liberty Retail Knowledge</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

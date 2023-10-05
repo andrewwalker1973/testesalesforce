@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>CDF1:AVG</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>100% means each user took the custom action</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Percent of Users clicked Custom Action</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>PromptAction$PublishedDate</field>
+    </columns>
+    <columns>
+        <field>PromptAction$StepCount</field>
+    </columns>
+    <columns>
+        <field>PromptAction$User</field>
+    </columns>
+    <columns>
+        <field>PromptAction$User.Profile</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>PromptAction$TimesActionTaken</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CDF1</field>
+    </columns>
+    <customDetailFormulas>
+        <calculatedFormula>IF(PromptAction.TimesActionTaken &gt; 0, 1, 0)</calculatedFormula>
+        <dataType>Double</dataType>
+        <description>1 if took custom action, 0 if no</description>
+        <developerName>CDF1</developerName>
+        <label>Number of Users clicked Custom Action</label>
+        <scale>0</scale>
+    </customDetailFormulas>
+    <description>Identify the percent of users who click the custom action button on each walkthrough, grouped by walkthrough. Note that some walkthroughs may not have a custom action button</description>
+    <filter>
+        <criteriaItems>
+            <column>PromptAction$DisplayType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Docked,Floating</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>PromptAction$Name</field>
+        <sortByName>FORMULA1</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>CustomSummaryFormula</sortType>
+    </groupingsDown>
+    <name>Percent Action Taken by Walkthrough</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>In_App_Guidance_with_User_Data_WT_Package_V1__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CDF1</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>PromptAction$PublishedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

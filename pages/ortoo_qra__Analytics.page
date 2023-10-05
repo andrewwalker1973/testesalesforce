@@ -1,0 +1,17 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:AN
+
+TC_LAST_NO_USED:0011
+
+-->
+<apex:page lightningStylesheets="true" controller="ortoo_qra.AnalyticsController"  title="QA Analytics (Deprecated)" sidebar="False" id="thepage" tabstyle="ortoo_qra__QA_Analytics__tab">
+        <script type="text/javascript" src="{!URLFOR($Resource.googlecharts,'googlecharts/jsapi')}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.googlecharts,'googlecharts/loader.js')}"></script>
+        <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+        <apex:sectionHeader subtitle="QA Analytics is now deprecated, please use standard Salesforce Reports and Dashboards for analytics. Please contact Ortoo Support (support@ortooapps.com) if you have any questions."/>
+</apex:page>

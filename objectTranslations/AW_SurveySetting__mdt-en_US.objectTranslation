@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Survey Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Survey Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Community Network ID --></label>
+        <name>AW_CommunityNetworkID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Community URL --></label>
+        <name>AW_CommunityURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Survey ID --></label>
+        <name>AW_SurveyID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

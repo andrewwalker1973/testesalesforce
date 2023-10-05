@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Balanced - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Balanced - FAQ</name>
+        <parentName></parentName>
+        <position>33</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Balanced - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Balanced - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>38</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Balanced - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Balanced - Portfolio Management</name>
+        <parentName></parentName>
+        <position>32</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Balanced - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Balanced - Research And Trading</name>
+        <parentName></parentName>
+        <position>36</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Columbia Threadneedle - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Columbia Threadneedle - FAQ</name>
+        <parentName></parentName>
+        <position>43</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Columbia Threadneedle - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Columbia Threadneedle - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>40</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Columbia Threadneedle - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Columbia Threadneedle - Portfolio Management</name>
+        <parentName></parentName>
+        <position>41</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Columbia Threadneedle - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Columbia Threadneedle - Research And Trading</name>
+        <parentName></parentName>
+        <position>42</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Credit Alternatives - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Credit Alternatives - FAQ</name>
+        <parentName></parentName>
+        <position>34</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Credit Alternatives - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Credit Alternatives - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>39</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Credit Alternatives - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Credit Alternatives - Portfolio Management</name>
+        <parentName></parentName>
+        <position>35</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Credit Alternatives - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Credit Alternatives - Research And Trading</name>
+        <parentName></parentName>
+        <position>37</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Economic Insights - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Economic Insights - FAQ</name>
+        <parentName></parentName>
+        <position>44</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Economic Insights - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Economic Insights - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>45</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Economic Insights - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Economic Insights - Portfolio Management</name>
+        <parentName></parentName>
+        <position>46</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Economic Insights - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Economic Insights - Research And Trading</name>
+        <parentName></parentName>
+        <position>47</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Equity - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Equity - FAQ</name>
+        <parentName></parentName>
+        <position>51</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Equity - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Equity - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>48</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Equity - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Equity - Portfolio Management</name>
+        <parentName></parentName>
+        <position>49</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Equity - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Equity - Research And Trading</name>
+        <parentName></parentName>
+        <position>50</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Fixed Income - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Fixed Income - FAQ</name>
+        <parentName></parentName>
+        <position>79</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Fixed Income - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Fixed Income - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>76</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Fixed Income - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Fixed Income - Portfolio Management</name>
+        <parentName></parentName>
+        <position>77</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Fixed Income - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Fixed Income - Research And Trading</name>
+        <parentName></parentName>
+        <position>78</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Index Investments - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Index Investments - FAQ</name>
+        <parentName></parentName>
+        <position>55</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Index Investments - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Index Investments - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>52</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Index Investments - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Index Investments - Portfolio Management</name>
+        <parentName></parentName>
+        <position>53</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Index Investments - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Index Investments - Research And Trading</name>
+        <parentName></parentName>
+        <position>54</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Infrastructure - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Infrastructure - FAQ</name>
+        <parentName></parentName>
+        <position>59</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Infrastructure - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Infrastructure - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>56</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Infrastructure - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Infrastructure - Portfolio Management</name>
+        <parentName></parentName>
+        <position>57</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Infrastructure - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Infrastructure - Research And Trading</name>
+        <parentName></parentName>
+        <position>58</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:JPM</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>JPM</name>
+        <parentName></parentName>
+        <position>31</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Latest STANLIB Updates</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Latest STANLIB Updates</name>
+        <parentName></parentName>
+        <position>30</position>
+        <topicDescription>To be used as a Feature Topics collection exposed on the site homepage</topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Listed Property - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Listed Property - FAQ</name>
+        <parentName></parentName>
+        <position>63</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Listed Property - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Listed Property - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>60</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Listed Property - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Listed Property - Portfolio Management</name>
+        <parentName></parentName>
+        <position>61</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Listed Property - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Listed Property - Research And Trading</name>
+        <parentName></parentName>
+        <position>62</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-manager - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-manager - FAQ</name>
+        <parentName></parentName>
+        <position>67</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-manager - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-manager - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>64</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-manager - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-manager - Portfolio Management</name>
+        <parentName></parentName>
+        <position>65</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-manager - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-manager - Research And Trading</name>
+        <parentName></parentName>
+        <position>66</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-strategy - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-strategy - FAQ</name>
+        <parentName></parentName>
+        <position>71</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-strategy - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-strategy - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>68</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-strategy - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-strategy - Portfolio Management</name>
+        <parentName></parentName>
+        <position>69</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Multi-strategy - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Multi-strategy - Research And Trading</name>
+        <parentName></parentName>
+        <position>70</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Publications - FAQ</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Publications - FAQ</name>
+        <parentName></parentName>
+        <position>75</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Publications - Franchise Leadership</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Publications - Franchise Leadership</name>
+        <parentName></parentName>
+        <position>72</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Publications - Portfolio Management</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Publications - Portfolio Management</name>
+        <parentName></parentName>
+        <position>73</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Content:Publications - Research And Trading</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Publications - Research And Trading</name>
+        <parentName></parentName>
+        <position>74</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>STANLIB Client Portal.Featured:Latest STANLIB Updates</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Latest STANLIB Updates</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription>To be used as a Feature Topics collection exposed on the site homepage</topicDescription>
+    </managedTopic>
+</ManagedTopics>

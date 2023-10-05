@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <loginFooterText>Liberty Group Limited</loginFooterText>
+    <loginLogo>Communities_Shared_Document_Folder1/CAAAAWyCQ3AlAAAAAAAAAAAAAAAAAAAAAAAA3BLaK9jB_kVJ3_RsG0FrY6akMimm6EiI4TMxxRD8tX23.png</loginLogo>
+    <loginLogoName>CAAAAWyCQ3AlAAAAAAAAAAAAAAAAAAAAAAAA3BLaK9jB_kVJ3-RsG0FrY6akMimm6EiI4TMxxRD8tX-GH7v7Slt0dQgXXtrOBPhRMgXM7nLuCI08RwGrEv6DhKPXU0rSXu3yup6pcNdmLwtr.png</loginLogoName>
+    <loginPrimaryColor>#2670C8</loginPrimaryColor>
+    <loginQuaternaryColor>#FFFFFF</loginQuaternaryColor>
+    <network>Liberty Client Portal</network>
+    <primaryColor>#1797C0</primaryColor>
+    <primaryComplementColor>#FFFFFF</primaryComplementColor>
+    <quaternaryColor>#B1BAC1</quaternaryColor>
+    <quaternaryComplementColor>#222222</quaternaryComplementColor>
+    <secondaryColor>#51606E</secondaryColor>
+    <tertiaryColor>#DDE4E9</tertiaryColor>
+    <tertiaryComplementColor>#222222</tertiaryComplementColor>
+    <zeronaryColor>#51606E</zeronaryColor>
+    <zeronaryComplementColor>#FFFFFF</zeronaryComplementColor>
+</NetworkBranding>

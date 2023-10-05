@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to configure settings for Orphan Lead and Account Reallocation</description>
+    <fields>
+        <fullName>AW_AveragePerformanceThreshold__c</fullName>
+        <description>This is used to calculate the average performance of an adviser</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Average Performance Threshold</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_BranchIdFieldAPIName__c</fullName>
+        <description>This is used to store the lead/account branch api name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Branch Id Field API Name</label>
+        <length>80</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_OwnerUACFIdFieldAPIName__c</fullName>
+        <description>This is used to store the api name of the Adviser UACF ID field on account/Lead Objects.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Owner UACF Id Field API Name</label>
+        <length>80</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_SLADurationInMilliseconds__c</fullName>
+        <description>This is used to store the time frame in milliseconds</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>SLA Duration In Milliseconds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_WeightForLeadConversionRate__c</fullName>
+        <description>This is used to store weight for lead conversion rate</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Weight For Lead Conversion Rate</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_WeightForOpportunityWinRate__c</fullName>
+        <description>This is used to store weight for opportunity win rate</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Weight For Opportunity Win Rate</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Reallocation Setting</label>
+    <pluralLabel>Reallocation Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

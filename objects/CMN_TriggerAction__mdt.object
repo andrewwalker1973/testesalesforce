@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>After_Delete__c</fullName>
+        <description>Enter the name of the sObject you want to have this action execute on during the after delete context</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the sObject you want to have this action execute on during the after delete context</inlineHelpText>
+        <label>After Delete</label>
+        <referenceTo>CMN_TriggerSetting__mdt</referenceTo>
+        <relationshipLabel>After Delete</relationshipLabel>
+        <relationshipName>After_Delete_Actions</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>After_Insert__c</fullName>
+        <description>Enter the name of the sObject you want to have this action execute on during the after insert context</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the sObject you want to have this action execute on during the after insert context</inlineHelpText>
+        <label>After Insert</label>
+        <referenceTo>CMN_TriggerSetting__mdt</referenceTo>
+        <relationshipLabel>After Insert</relationshipLabel>
+        <relationshipName>After_Insert_Actions</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>After_Undelete__c</fullName>
+        <description>Enter the name of the sObject you want to have this action execute on during the after undelete context</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the sObject you want to have this action execute on during the after undelete context</inlineHelpText>
+        <label>After Undelete</label>
+        <referenceTo>CMN_TriggerSetting__mdt</referenceTo>
+        <relationshipLabel>After Undelete</relationshipLabel>
+        <relationshipName>After_Undelete_Actions</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>After_Update__c</fullName>
+        <description>Enter the name of the sObject you want to have this action execute on during the after update context</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the sObject you want to have this action execute on during the after update context</inlineHelpText>
+        <label>After Update</label>
+        <referenceTo>CMN_TriggerSetting__mdt</referenceTo>
+        <relationshipLabel>After Update</relationshipLabel>
+        <relationshipName>After_Update_Actions</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Allow_Flow_Recursion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this box to allow the flow to execute recursively</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Check this box to allow the flow to execute recursively</inlineHelpText>
+        <label>Allow Flow Recursion?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apex_Class_Name__c</fullName>
+        <description>Enter the name of the Apex Class which defines the action to be taken</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the Apex Class which defines the action to be taken</inlineHelpText>
+        <label>Apex Class Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Before_Delete__c</fullName>
+        <description>Enter the name of the sObject you want to have this action execute on during the before delete context</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the sObject you want to have this action execute on during the before delete context</inlineHelpText>
+        <label>Before Delete</label>
+        <referenceTo>CMN_TriggerSetting__mdt</referenceTo>
+        <relationshipLabel>Before Delete</relationshipLabel>
+        <relationshipName>Before_Delete_Actions</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Before_Insert__c</fullName>
+        <description>Enter the name of the sObject you want to have this action execute on during the before insert context</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the sObject you want to have this action execute on during the before insert context</inlineHelpText>
+        <label>Before Insert</label>
+        <referenceTo>CMN_TriggerSetting__mdt</referenceTo>
+        <relationshipLabel>Before Insert</relationshipLabel>
+        <relationshipName>Before_Insert_Actions</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Before_Update__c</fullName>
+        <description>Enter the name of the sObject you want to have this action execute on during the before update context</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of the sObject you want to have this action execute on during the before update context</inlineHelpText>
+        <label>Before Update</label>
+        <referenceTo>CMN_TriggerSetting__mdt</referenceTo>
+        <relationshipLabel>Before Update</relationshipLabel>
+        <relationshipName>Before_Update_Actions</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bypass_Execution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set this to true to bypass this Trigger Action from being called</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Set this to true to bypass this Trigger Action from being called</inlineHelpText>
+        <label>Bypass Execution</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Bypass_Permission__c</fullName>
+        <description>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will be bypassed if the running user has the custom permission identified.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will be bypassed if the running user has the custom permission identified.</inlineHelpText>
+        <label>Bypass Permission</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Description</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Flow_Name__c</fullName>
+        <description>Enter the name of a flow you would like to execute. The flow name specified must have two resources called &quot;newList&quot; and &quot;oldList&quot; which are collections of sObjects to work properly.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the name of a flow you would like to execute. The flow name specified must have two resources called &quot;newList&quot; and &quot;oldList&quot; which are collections of sObjects to work properly.</inlineHelpText>
+        <label>Flow Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Required_Permission__c</fullName>
+        <description>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will  only execute if the running user has the custom permission identified.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will  only execute if the running user has the custom permission identified.</inlineHelpText>
+        <label>Required Permission</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Trigger Action</label>
+    <pluralLabel>Trigger Actions</pluralLabel>
+    <validationRules>
+        <fullName>CMN_Description_is_Required</fullName>
+        <active>true</active>
+        <description>You must enter a description for this Trigger Action.</description>
+        <errorConditionFormula>ISBLANK(Description__c)</errorConditionFormula>
+        <errorDisplayField>Description__c</errorDisplayField>
+        <errorMessage>You must enter a description for this Trigger Action.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CMN_Flow_Name</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(ISBLANK( Flow_Name__c ))  &amp;&amp;  Apex_Class_Name__c != &quot;CMN_TRH_RunFlow&quot;</errorConditionFormula>
+        <errorMessage>The Apex Class Name must equal &quot;CMN_TRH_RunFlow&quot; if the Flow Name is populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CMN_Must_Choose_A_Context</fullName>
+        <active>false</active>
+        <description>Throws an error if the user does not choose at least one context</description>
+        <errorConditionFormula>ISBLANK(Before_Insert__c)
+&amp;&amp;
+ISBLANK(After_Insert__c)
+&amp;&amp;
+ISBLANK(Before_Update__c)
+&amp;&amp;
+ISBLANK(After_Update__c)
+&amp;&amp;
+ISBLANK(Before_Delete__c)
+&amp;&amp;
+ISBLANK(After_Delete__c)
+&amp;&amp;
+ISBLANK(After_Undelete__c)</errorConditionFormula>
+        <errorMessage>You must select at least one context</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CMN_Only_One_Context</fullName>
+        <active>true</active>
+        <description>Throws an error if the user selects more than one context.</description>
+        <errorConditionFormula>OR(
+	NOT(ISBLANK(Before_Insert__c)) &amp;&amp;
+	OR(
+		NOT(ISBLANK(After_Insert__c)),
+		NOT(ISBLANK(Before_Update__c)),
+		NOT(ISBLANK(After_Update__c)),
+		NOT(ISBLANK(Before_Delete__c)),
+		NOT(ISBLANK(After_Delete__c)),
+		NOT(ISBLANK(After_Undelete__c))
+	),
+	NOT(ISBLANK(After_Insert__c)) &amp;&amp;
+	OR(
+		NOT(ISBLANK(Before_Insert__c)),
+		NOT(ISBLANK(Before_Update__c)),
+		NOT(ISBLANK(After_Update__c)),
+		NOT(ISBLANK(Before_Delete__c)),
+		NOT(ISBLANK(After_Delete__c)),
+		NOT(ISBLANK(After_Undelete__c))
+	),
+	NOT(ISBLANK(Before_Update__c)) &amp;&amp;
+	OR(
+		NOT(ISBLANK(Before_Insert__c)),
+		NOT(ISBLANK(After_Insert__c)),
+		NOT(ISBLANK(After_Update__c)),
+		NOT(ISBLANK(Before_Delete__c)),
+		NOT(ISBLANK(After_Delete__c)),
+		NOT(ISBLANK(After_Undelete__c))
+	),
+	NOT(ISBLANK(After_Update__c)) &amp;&amp;
+	OR(
+		NOT(ISBLANK(Before_Insert__c)),
+		NOT(ISBLANK(After_Insert__c)),
+		NOT(ISBLANK(Before_Update__c)),
+		NOT(ISBLANK(Before_Delete__c)),
+		NOT(ISBLANK(After_Delete__c)),
+		NOT(ISBLANK(After_Undelete__c))
+	),
+	NOT(ISBLANK(Before_Delete__c)) &amp;&amp;
+	OR(
+		NOT(ISBLANK(Before_Insert__c)),
+		NOT(ISBLANK(After_Insert__c)),
+		NOT(ISBLANK(Before_Update__c)),
+		NOT(ISBLANK(After_Update__c)),
+		NOT(ISBLANK(After_Delete__c)),
+		NOT(ISBLANK(After_Undelete__c))
+	),
+	NOT(ISBLANK(After_Delete__c)) &amp;&amp;
+	OR(
+		NOT(ISBLANK(Before_Insert__c)),
+		NOT(ISBLANK(After_Insert__c)),
+		NOT(ISBLANK(Before_Update__c)),
+		NOT(ISBLANK(After_Update__c)),
+		NOT(ISBLANK(Before_Delete__c)),
+		NOT(ISBLANK(After_Undelete__c))
+	),
+	NOT(ISBLANK(After_Undelete__c)) &amp;&amp;
+	OR(
+		NOT(ISBLANK(Before_Insert__c)),
+		NOT(ISBLANK(After_Insert__c)),
+		NOT(ISBLANK(Before_Update__c)),
+		NOT(ISBLANK(After_Update__c)),
+		NOT(ISBLANK(Before_Delete__c)),
+		NOT(ISBLANK(After_Delete__c))
+	)
+)</errorConditionFormula>
+        <errorMessage>You can only choose one context</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CMN_Recursion_Only_For_Flows</fullName>
+        <active>true</active>
+        <description>Throws an error if the &quot;Allow Flow Recursion&quot; checkbox is checked without a &quot;Flow Name&quot;.</description>
+        <errorConditionFormula>Allow_Flow_Recursion__c == true &amp;&amp; ISBLANK( Flow_Name__c )</errorConditionFormula>
+        <errorMessage>You can only mark &quot;Allow Flow Recursion&quot; checkbox as &quot;True&quot; when you have a value for &quot;Flow Name&quot;.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

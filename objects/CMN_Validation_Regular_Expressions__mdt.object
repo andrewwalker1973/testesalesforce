@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Store regular expression you want to use in validation rules</description>
+    <fields>
+        <fullName>CMN_Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicates if this regular expression should be applied in a validation rule.Allows administrators or code to switch off validation rules if necessary</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_Regular_Expression__c</fullName>
+        <description>The regular expression to be used</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Regular Expression</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <label>Validation Regular Expression</label>
+    <pluralLabel>Validation Regular Expressions</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

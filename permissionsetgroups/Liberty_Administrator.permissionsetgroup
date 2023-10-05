@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission Set Group for Liberty Administrators</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Administrator</label>
+    <permissionSets>CMN_Administrator</permissionSets>
+    <permissionSets>CMN_ObjectShare</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

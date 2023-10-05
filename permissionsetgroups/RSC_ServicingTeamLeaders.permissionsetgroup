@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permissions for a Team Leader required to support the Retail Servicing Console app</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Retail Servicing Console Servicing Team Leaders</label>
+    <permissionSets>FinServ__FinancialServicesCloudStandard</permissionSets>
+    <permissionSets>RSC_LibertyQAssignManager</permissionSets>
+    <permissionSets>RSC_LibertyQassignStatusUser</permissionSets>
+    <permissionSets>RSC_LibertyRetailServiceConsoleManage</permissionSets>
+    <permissionSets>force__ActionPlans</permissionSets>
+    <permissionSets>force__DocumentChecklist</permissionSets>
+    <permissionSets>force__FSCInsurance</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

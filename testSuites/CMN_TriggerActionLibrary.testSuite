@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>CMN_FACTORY_TriggerAction_TEST</testClassName>
+    <testClassName>CMN_FLOW_AddObjectError_TEST</testClassName>
+    <testClassName>CMN_FLOW_BypassTrigger_TEST</testClassName>
+    <testClassName>CMN_FLOW_CheckTriggerIsBypassed_TEST</testClassName>
+    <testClassName>CMN_FLOW_ClearAllTriggerBypasses_TEST</testClassName>
+    <testClassName>CMN_FLOW_ClearBypass_TEST</testClassName>
+    <testClassName>CMN_TRA_BaseObject_TEST</testClassName>
+    <testClassName>CMN_TRA_RunFlow_TEST</testClassName>
+</ApexTestSuite>

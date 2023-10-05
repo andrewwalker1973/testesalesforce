@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Custom Metadata Object for storing credit score rating band values and image urls for displaying different rating bands.
+Created By - vikrant.goswami@accenture.com
+Date - August, 2021</description>
+    <fields>
+        <fullName>AW_ImageURL__c</fullName>
+        <description>Custom metadata field to store the image url for a credit score rating band.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Image URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>AW_Threshold__c</fullName>
+        <description>Custom Metadata field to store the threshold value for a credit score rating band.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Threshold</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>CreditScoreRating</label>
+    <listViews>
+        <fullName>All_Records</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>AW_Threshold__c</columns>
+        <columns>AW_ImageURL__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Records</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>CreditScoreRatings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

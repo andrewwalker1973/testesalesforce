@@ -1,0 +1,1 @@
+Liberty: Policy Number: {!ServiceAppointment.SC_COMMS_PolicyNumber__c} - We have already received the blood/medical tests for {!ServiceAppointment.SC_COMMS_ClientTitle__c} {!ServiceAppointment.SC_COMMS_ClientName__c} {!ServiceAppointment.SC_COMMS_ClientSurname__c}. For queries call 0860557232. Regards, Liberty. Licensed Life Insurer and Authorised FSP (2409). T&Cs apply.

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created by Lightning App Builder</description>
+    <flexiPage>ortoo_qra__QA_Users</flexiPage>
+    <icon>ortoo_qra__ortoo/ortoo_qra__Ortoo_icon.png</icon>
+    <label>QA Users (Beta)</label>
+    <motif>Custom344: TV Widescreen</motif>
+</CustomTab>

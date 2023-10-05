@@ -1,0 +1,678 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:CP
+
+TC_LAST_NO_USED:0116
+
+-->
+<apex:page lightningStylesheets="true" controller="ortoo_qra.AssignmentConfigurationController" 
+tabstyle="ortoo_qra__Assignment_Configuration__tab"  id="thePage" title="QA Control Panel" >
+	<script type="text/javascript" src="{!$Resource.jquery}"></script>
+    <apex:includeScript value="{! $Resource.Popper }"/>
+    <script type="text/javascript" src="{!URLFOR($Resource.jqueryui,'jquery-ui.min.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.bootstrapforMultiSelect,'js/bootstrap.min.js')}"></script>
+    <link href="{!URLFOR($Resource.bootstrapforMultiSelect, 'css/bootstrap.min.css')}" rel="stylesheet" media="screen"/>
+    <link href="{!URLFOR($Resource.multiselect, 'multiselect/css/multi-select.css')}" rel="stylesheet" media="screen"/>
+	<link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+	<apex:form id="HeaderSection">
+		<style> 
+			.my-class		 
+			{
+				font-weight:bold;
+			}
+			.ms-container
+			{
+				width:300px; !important;
+			}
+			.fieldSelectionLoader
+			{
+				line-height: 12px;
+				width: 18px;
+				font-size: 8pt;
+				font-family: tahoma;
+				margin-top: 25px;
+				margin-right: 10px;
+				position:absolute;
+				top:0;
+				right:0;
+			}
+			
+			.topborder .apexp .bPageBlock 
+			{
+				border-top: 3px solid #eeee !important;
+			}
+			.slds-truncate
+			{
+				text-overflow: ellipsis;
+				white-space: pre-line;
+				overflow: hidden;
+			}
+			body .slds-vf-data-table .headerRow th, body .slds-vf-data-table thead th
+			{
+				white-space: unset;
+				vertical-align: top;
+			}
+
+			.multiselect-native-select div {
+				display: inline;
+
+			}
+
+			.multiselect-native-select .btn {
+				width: 200px;
+
+			}
+
+			.global {
+				height: 100px ;
+			}
+
+			.pbBody, .slds-vf-scope .pbBody 
+			{
+				overflow: hidden;
+			}
+			
+			.dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                min-width: 160px;
+                background-color: #f1f1f1;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1; 
+                padding: 5px;            
+            }
+            
+            .show {
+                display: block;
+            }
+
+            .dropbtn > i {
+                pointer-events: none;
+            }
+
+            .dropbtn {
+                background-color: white;
+                border-radius: 3px;
+                border: 1px solid rgb(221, 219, 218);
+                
+            }
+
+			.no_title .pbTitle
+			{
+				display: none;
+			} 
+		</style>
+		
+		<apex:variable var="uiTheme" value="lightningDesktop" 
+		rendered="{!IF((($User.UIThemeDisplayed == 'Theme4d') || ($User.UIThemeDisplayed == 'Theme4u')),true,false)}">
+		</apex:variable>	
+			  
+		<script type="text/javascript" src="{!URLFOR($Resource.multiselect,'multiselect/js/jquery.multi-select.js')}"></script>
+		<script>
+			function loadMultiPicklist()
+			{  
+				j$('.multiList').multiselect();
+			}
+			
+			var j$ = jQuery.noConflict();
+
+			var lastOpened = '';   
+			function showLinks(buttonId)
+			{
+				
+				if(lastOpened !== buttonId + '-dropdown' && lastOpened !== '')
+				{
+					if (document.getElementById(lastOpened).classList.contains('show')) {
+						document.getElementById(lastOpened).classList.remove('show');
+					}
+				}
+				
+				document.getElementById(buttonId + '-dropdown').classList.toggle("show"); 
+				lastOpened = buttonId + '-dropdown';
+				return false;
+			}
+			function selectAllCheckboxes(obj,receivedInputID)
+			{
+				var inputCheckBox = document.getElementsByTagName("input");                  
+				for(var i=0; i<inputCheckBox.length; i++){          
+					if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+						inputCheckBox[i].checked = obj.checked;
+					}
+				}
+			}
+			function updateParentCheckbox( obj, parentID )
+			{
+				if ( obj.checked == false )
+				{
+					var inputCheckBox = document.getElementsByTagName( "input" );
+					{
+						if( inputCheckBox[ i ].id.indexOf( parentID ) != -1 )
+						{
+							inputCheckBox[ i ].checked = false;
+						}
+					}
+				}
+			}
+				
+            function clearParentCheckbox( parentID )
+            {
+                var inputCheckBox = document.getElementsByTagName( "input" );
+                for ( var i = 0; i < inputCheckBox.length; i++ )
+                {
+                    if( inputCheckBox[ i ].id.indexOf( parentID ) != -1 )
+                    {
+                        inputCheckBox[ i ].checked = false;
+                        break;
+                    }
+                }
+            }
+		</script>
+		<apex:sectionHeader title="Q-assign Control Panel" subtitle="{!$Organization.Name}" />
+	</apex:form>
+	<apex:tabPanel switchType="client" selectedTab="Schedulers" id="theTabPanel">
+        <apex:tab label="Schedulers Overview" name="Schedulers" id="Schedulers">
+			<apex:form id="BodySectionForSchedulersOverview">
+				<apex:pageBlock id="schedulers-overview-block" title="Quick Overview of All Schedulers">
+					<apex:pageMessages id="showMsg"></apex:pageMessages> 
+						<span class="no_title">
+							<apex:actionRegion id="schedulersInfoTable1">
+								<apex:pageBlock id="schedulersInfoTable">
+									<span></span>
+									<apex:pageBlockButtons location="top">
+										<div style="text-align: center;">
+											<apex:outputLink html-ortoo-elem-id="QACP0084" styleClass="btn" rendered="{!createIsAllowed}" value="{!URLFOR($Action.ortoo_qra__Assignment_Configuration__c.New, null, [EditConfiguration='true'] , false)}" target="_parent">
+												Create a New Scheduler
+											</apex:outputLink>
+											<apex:commandButton html-ortoo-elem-id="QACP0084" value="Refresh" reRender="schedulersInfoTable,showMsg" action="{!refreshTable}"  status="buttonStatus"/>
+										</div>
+									</apex:pageBlockButtons>
+									<apex:pageBlockButtons location="Top" >
+										<span style=" float: left;" >			
+											<apex:commandButton html-ortoo-elem-id="QACP0085" value="Enable" rendered="{!IF(AND(editIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}" action="{!enableSchedulers}" status="buttonStatus"/>
+											<apex:commandButton html-ortoo-elem-id="QACP0086" value="Disable" rendered="{!IF(AND(editIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}"  action="{!disableSchedulers}" reRender="schedulersInfoTable,showMsg" status="buttonStatus"/>
+										</span>
+										<span style=" float: right;">	
+												<apex:outputText html-ortoo-elem-id="QACP0086" >Total Records:<b> {!totalRecords} </b>| Page<b> {!selectedPage} </b> of <b> {!totalpages} </b></apex:outputText>
+												<apex:selectList html-ortoo-elem-id="QACP0087" size="1" value="{!bottomPageSize}" >
+													<apex:selectOptions html-ortoo-elem-id="QACP0088" value="{!pageSizeOptions}" />		
+													<apex:actionSupport event="onchange" status="buttonStatus" reRender="schedulersInfoTable" action="{!resetPageSizeBottom}"/>
+												</apex:selectList>
+												<apex:commandButton html-ortoo-elem-id="QACP0089" value="<< First"  action="{!firstPage}" reRender="schedulersInfoTable" disabled="{!!canGoToPrevious}" status="buttonStatus"/>
+												<apex:commandButton html-ortoo-elem-id="QACP0090" value="< Previous"  action="{!previousPage}" reRender="schedulersInfoTable" disabled="{!!canGoToPrevious}" status="buttonStatus"/>
+												<apex:commandButton html-ortoo-elem-id="QACP0091" value="Next >" action="{!nextPage}" reRender="schedulersInfoTable" disabled="{!!canGoToNext}" status="buttonStatus"/>
+												<apex:commandButton html-ortoo-elem-id="QACP0092" value="Last >>"  action="{!lastPage}" reRender="schedulersInfoTable" disabled="{!!canGoToNext}" status="buttonStatus"/>
+												<apex:actionStatus id="buttonStatus">
+																<apex:facet name="start">
+																	<img src= "/img/loading.gif"/>
+																</apex:facet>
+																<apex:facet name="stop">
+																</apex:facet>
+												</apex:actionStatus> 
+										</span>
+									</apex:pageBlockButtons>
+									<apex:pageBlockTable html-ortoo-elem-id="QACP0093" id="infoTable" value="{!schedulerInfoForTable}" var="schedulerRow">
+										<br/><br/>
+										<apex:column >
+											<apex:facet name="header">
+												<apex:outputPanel html-ortoo-elem-id="QACP0094" rendered="{!IF(AND(editIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}">
+													<apex:inputCheckbox id="parentCB" onclick="selectAllCheckboxes(this, 'inputId')" />
+													<script>clearParentCheckbox('parentCB');</script>
+												</apex:outputPanel>
+											</apex:facet>
+											<apex:inputCheckbox html-ortoo-elem-id="QACP0095" value="{!schedulerRow.isSelected}" id="inputId" onclick="updateParentCheckbox(this, 'parentCB')"  rendered="{!IF(AND(editIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}"/>
+										</apex:column>                
+										<apex:column headerValue="Action" rendered="{!IF(AND(editIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="Shows the available actions that can be taken for this Scheduler.">
+                                            		<apex:outputText >Action</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:outputPanel >
+												<apex:commandLink status="Status" reRender="schedulersInfoTable,showMsg">
+													<apex:outputLink html-ortoo-elem-id="QACP0096" value="apex/SchedulerDetail?id={!schedulerRow.schedulerRowRecord.id}&EditConfiguration=true" target="_blank">
+														Edit
+													</apex:outputLink>
+													<apex:param name="editIsActive" value="true" />
+												</apex:commandLink>
+											</apex:outputPanel>
+											<apex:outputText value=" | "/>
+											<apex:outputPanel >
+												<apex:commandLink html-ortoo-elem-id="QACP0097" status="Status" action="{!toggleSchedulerRecord}" reRender="schedulersInfoTable,showMsg">
+													<apex:outputText value="{!IF(schedulerRow.schedulerRowRecord.ortoo_qra__Enabled__c, 'Disable', 'Enable')}" />
+													<apex:param name="rowSchedulerId" value="{!schedulerRow.schedulerRowRecord.id}" assignTo="{!selectedSchedulerId}"/>
+												</apex:commandLink>
+											</apex:outputPanel>
+											<apex:actionStatus id="Status">
+												<apex:facet name="start">
+													<img src="/img/loading.gif" />                 
+												</apex:facet>   
+											</apex:actionStatus>
+										</apex:column>
+										<apex:column headerValue="Scheduler Number/Name">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="The name of this Scheduler.">
+                                            		<apex:outputText >Scheduler Name</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:image html-ortoo-elem-id="QACP0098" value="{!$Resource.ortoo_qra__green_spot}" rendered="{!schedulerRow.schedulerRowRecord.ortoo_qra__Enabled__c}"/>
+                        					<apex:image html-ortoo-elem-id="QACP0099" value="{!$Resource.ortoo_qra__red_spot}" rendered="{!!schedulerRow.schedulerRowRecord.ortoo_qra__Enabled__c}"/>
+											&nbsp;
+											<apex:outputLink html-ortoo-elem-id="QACP0100"  value="/{!schedulerRow.schedulerRowRecord.id}" target="_blank">
+												{!schedulerRow.schedulerRowRecord.ortoo_qra__Scheduler_Number__c} - {!schedulerRow.schedulerRowRecord.name}
+											</apex:outputLink>
+										</apex:column>
+										<apex:column headerValue="Enabled">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="Shows whether this Scheduler is actively running (enabled) or not (disabled).">
+                                            		<apex:outputText >Enabled</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:outputText html-ortoo-elem-id="QACP0100" value="{!IF(schedulerRow.schedulerRowRecord.ortoo_qra__Enabled__c, 'Yes', 'No')}"/>
+										</apex:column>
+										<apex:column headerValue="Health">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="Shows the current health status of this Scheduler. Indicates if this Scheduler is running in Safe Mode, otherwise it displays a status of healthy.">
+                                            		<apex:outputText >Health</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:outputText html-ortoo-elem-id="QACP0101" value="{!IF(schedulerRow.schedulerRowRecord.ortoo_qra__Enabled__c, schedulerRow.health, '-')}" style="color:{!IF(!schedulerRow.schedulerRowRecord.ortoo_qra__SM_Enabled__c, 'Green', 'Red')}"/>
+										</apex:column>
+										<apex:column headerValue="Owner">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="The user that owns this Scheduler.">
+                                            		<apex:outputText >Owner</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:outputText html-ortoo-elem-id="QACP0102" value="{!schedulerRow.schedulerRowRecord.owner.name}"/>
+										</apex:column>                
+										<apex:column headerValue="Frequency (Minutes)">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="Shows how often this Scheduler runs (in minutes). For example, a value of 60 means that this Scheduler runs once per hour.">
+                                            		<apex:outputText >Frequency (Minutes)</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:outputText html-ortoo-elem-id="QACP0103" value="{!schedulerRow.schedulerRowRecord.ortoo_qra__Schedule_Frequency_Minutes__c }"/>
+										</apex:column>         
+										<apex:column headerValue="Next Run Time">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="The time that an enabled Scheduler is next due to run (should occur within approximately 30 seconds of this time). When this Scheduler is disabled, no time is shown.">
+                                            		<apex:outputText >Next Run Time</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:outputText html-ortoo-elem-id="QACP0104" value="{!schedulerRow.nextScheduledAssignmentMsg}"/>
+										</apex:column>         
+										<apex:column headerValue="Assignment Groups (Enabled/Total)">
+											<apex:facet name="header" >
+                                        		<apex:outputPanel title="The number of enabled Assignment Groups for this Scheduler / the total number of Assignment Groups for this Scheduler.">
+                                            		<apex:outputText >Assignment Groups (Enabled/Total)</apex:outputText>
+                                        		</apex:outputPanel>
+                                    		</apex:facet>
+											<apex:outputLink html-ortoo-elem-id="QACP0105"  value="/{!schedulerRow.schedulerRowRecord.id}" target="_blank">
+												{!schedulerRow.numberOfEnabledAgsInThisScheduler}/{!schedulerRow.totalAgsInThisScheduler}
+											</apex:outputLink>	
+											<!-- <div style="width: 100%;" role="dialog" data-animation="false" data-toggle="popover" data-trigger="hover"
+												data-placement="left" data-content="{!UsersList.AGInfoListAsString}">
+												<apex:outputLink value="{!URLFOR('apex/ortoo_qra__UserAssignmentStatus', null, [userId=UsersList.id])}" target="_blank">
+												{!UsersList.agsEnabledTotal}
+												</apex:outputLink>
+											</div> -->
+										</apex:column>
+										<br/><br/>
+									</apex:pageBlockTable>
+									<!-- <script>
+										$(function () { $('[data-toggle="popover"]').popover({html:true,sanitize:false}) })
+									</script> -->
+
+									<apex:pageBlockButtons location="Bottom">
+										<div style="text-align: center;">
+											<apex:outputLink html-ortoo-elem-id="QACP0106" styleClass="btn" rendered="{!CreateIsAllowed}" value="{!URLFOR($Action.ortoo_qra__Assignment_Configuration__c.New, null, [EditConfiguration='true'] , false)}" target="_parent">
+												Create a New Scheduler
+											</apex:outputLink>
+											<apex:commandButton html-ortoo-elem-id="QACP0107" value="Refresh" reRender="schedulersInfoTable,showMsg" action="{!refreshTable}"  status="buttonStatus"/>
+										</div>
+									</apex:pageBlockButtons>
+									<apex:pageBlockButtons location="Bottom">
+										<span style=" float: left; margin-left: 1rem;">
+											<apex:commandButton html-ortoo-elem-id="QACP0108" value="Enable" action="{!enableSchedulers}" rendered="{!IF(AND(editIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}"  reRender="schedulersInfoTable,showMsg" status="buttonStatus"/>
+											<apex:commandButton html-ortoo-elem-id="QACP0109" value="Disable" action="{!disableSchedulers}" rendered="{!IF(AND(editIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}" reRender="schedulersInfoTable,showMsg" status="buttonStatus"/>
+										</span>
+										<span style=" float: right; margin-right: 1rem;">
+											<apex:outputText html-ortoo-elem-id="QACP0110" >Total Records:<b> {!totalRecords} </b>| Page<b> {!selectedPage} </b> of <b> {!totalpages} </b></apex:outputText>
+											<apex:selectList html-ortoo-elem-id="QACP0111" size="1" value="{!selectedPageSize}">
+												<apex:selectOptions html-ortoo-elem-id="QACP0112" value="{!pageSizeOptions}" />		
+												<apex:actionSupport event="onchange" status="buttonStatus" reRender="schedulersInfoTable" action="{!resetPageSizeTop}"/>
+											</apex:selectList>
+											<apex:commandButton html-ortoo-elem-id="QACP0113" value="<< First"  action="{!firstPage}" reRender="schedulersInfoTable" disabled="{!!canGoToPrevious}" status="buttonStatus"/>
+											<apex:commandButton html-ortoo-elem-id="QACP0114" value="< Previous"  action="{!previousPage}" reRender="schedulersInfoTable" disabled="{!!canGoToPrevious}" status="buttonStatus"/>
+											<apex:commandButton html-ortoo-elem-id="QACP0115" value="Next >" action="{!nextPage}" reRender="schedulersInfoTable" disabled="{!!canGoToNext}" status="buttonStatus"/>
+											<apex:commandButton html-ortoo-elem-id="QACP0116" value="Last >>"  action="{!lastPage}" reRender="schedulersInfoTable" disabled="{!!canGoToNext}" status="buttonStatus"/>
+											<apex:actionStatus id="buttonStatus">
+															<apex:facet name="start">
+																<img src= "/img/loading.gif"/>
+															</apex:facet>
+															<apex:facet name="stop">
+															</apex:facet>
+											</apex:actionStatus> 
+										</span>
+									</apex:pageBlockButtons>
+								
+								</apex:pageBlock>
+							</apex:actionRegion>
+						</span> 
+					
+				</apex:pageBlock>
+			</apex:form>
+		</apex:tab>
+        <apex:tab label="Global Settings" name="GlobalSettings" id="GlobalSettings">
+			<apex:form id="BodySectionForGlobalSettings">
+				<apex:pageBlock id="global-settings-block" title="GLOBAL - impacts all Schedulers / Assignment Groups"
+					rendered="{!globalEditIsNotActive}">
+					<apex:pageBlockSection columns="1" collapsible="false" title="Scheduler Settings and Status" id="global-settings">
+						<apex:pageBlockSectionItem helpText="{!SchedulerMasterSwitch_HelpText}">
+							<apex:outputPanel >
+								<c:customHelpTextLabel labelValue="Global Scheduler Master Switch" helpTextID="Master_Switch" helpText="{!SchedulerMasterSwitch_HelpText}"/>
+							</apex:outputPanel>
+							<apex:outputPanel >
+								<apex:outputText value="{!QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c}" />
+								&nbsp;
+								<apex:image value="{!$Resource.ortoo_qra__green_spot}"
+									title="Global Scheduler Master is active"
+									html-ortoo-elem-id="QACP0001"
+									rendered="{!QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'On'}" />
+								<apex:image value="{!$Resource.ortoo_qra__red_spot}"
+									html-ortoo-elem-id="QACP0002"
+									title="Global Scheduler Master is inactive"
+									rendered="{!QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'Off'}" />
+								<apex:outputpanel >
+									<apex:commandButton html-ortoo-elem-id="QACP0003" action="{!GlobalSwitch}"
+										value="Switch On" immediate="true" style="margin-left:5px;" status="switchstatus" rerender="scheduler_status, License,status-buttons,watcher_status,global-settings,scheduler-block"
+										rendered="{!IF(AND(QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'Off', IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" />
+									<apex:commandButton html-ortoo-elem-id="QACP0004" action="{!GlobalSwitch}" 
+										value="Switch Off" immediate="true" style="margin-left:5px;" status="switchstatus" rerender="scheduler_status, License,status-buttons,watcher_status,global-settings,scheduler-block"
+										rendered="{!IF(AND(QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'On', IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" />
+									<apex:outputPanel >
+										<apex:actionStatus id="switchstatus">
+											<apex:facet name="start">
+												<img src="/img/loading.gif" />
+											</apex:facet>
+										</apex:actionStatus>
+									</apex:outputPanel>	
+									<apex:outputPanel rendered="{!errorMassage != ''}" id="error-massage">
+									<apex:outputText html-ortoo-elem-id="QACP0005" value="{!errorMassage}" style="color:#cc3300;font-weight:600;margin-left:6px;" />
+									</apex:outputPanel>	
+								</apex:outputpanel>	
+								<apex:outputPanel >
+									<apex:outputLabel value=" Service Status: "  style="margin-left:20px;" title="{!serviceStatusTitleText}"/> 
+									<apex:outputText html-ortoo-elem-id="QACP0006" value="Running" rendered="{!getServiceStatus == 'On'}" style="margin-right:7px; background-color:rgb(165, 245, 165)"/>
+									<apex:outputText html-ortoo-elem-id="QACP0007" value="Off" rendered="{!getServiceStatus == 'Off'}" style="margin-right:7px; background-color:rgb(240, 142, 142) "/>
+									<apex:outputText html-ortoo-elem-id="QACP0008" value="Partial" rendered="{!getServiceStatus == 'Partial'}" style="margin-right:7px; background-color:rgb(238, 206, 111)"/>
+								</apex:outputPanel>
+							</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem helpText="{!ContextUser_HelpText}">
+							<c:customHelpTextLabel labelValue="Context User" helpTextID="Context_User" helpText="{!ContextUser_HelpText}"/>
+							<apex:outputText html-ortoo-elem-id="QACP0009"  value="{!contextUser}" />
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem helpText="{!GeneralEmail_HelpText}">
+							<c:customHelpTextLabel labelValue="General Notifications Email Address" helpTextID="General_Notifications" helpText="{!GeneralEmail_HelpText}"/>
+							<apex:outputpanel >
+							<apex:outputText html-ortoo-elem-id="QACP0010"  value="{!QAGlobalSettingConfig.ortoo_qra__General_Notifications_Email_Address__c}" />
+							<apex:outputpanel rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" >
+								<apex:commandButton html-ortoo-elem-id="QACP0011"  action="{!EditGlobalConfiguration}" status="loading1"
+									value="Edit" immediate="true" style="margin-left:5px;" reRender="BodySectionForGlobalSettings"
+									rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" />
+									<apex:actionStatus id="loading1">
+										<apex:facet name="start">
+											<img src="/img/loading.gif" />
+										</apex:facet>
+									</apex:actionStatus>
+									</apex:outputpanel>
+							</apex:outputpanel>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem helpText="{!NotifyOrtooSupport_HelpText}">
+							<c:customHelpTextLabel labelValue="Notify Ortoo Support of errors" helpTextID="Notify_Support" helpText="{!NotifyOrtooSupport_HelpText}"/>
+							<apex:outputPanel >
+								<apex:outputField html-ortoo-elem-id="QACP0012"  value="{!QAGlobalSettingConfig.ortoo_qra__Notify_Ortoo_Support_of_errors__c}"/>
+							</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem helpText="{!ManagerBH_HelpText}">
+							<c:customHelpTextLabel labelValue="Global Scheduler Scheduled Hours (Manager Process)" helpTextID="ManagerBH" helpText="{!ManagerBH_HelpText}"/>
+							<apex:outputpanel >
+								<apex:outputField html-ortoo-elem-id="QACP0013" value="{!QAGlobalSettingConfig.ortoo_qra__Manager_Job_Business_Hours_Schedule__c}" label="Global Scheduler Scheduled Hours (Manager Process)"/>
+								<apex:outputpanel rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" >
+									<apex:commandButton html-ortoo-elem-id="QACP0014" action="{!EditGlobalConfiguration}"  status="loading"
+										value="Edit" immediate="true" style="margin-left:5px;" reRender="BodySectionForGlobalSettings"
+										rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" />
+									<apex:actionStatus id="loading">
+										<apex:facet name="start">
+											<img src="/img/loading.gif" />
+										</apex:facet>
+									</apex:actionStatus>
+								</apex:outputpanel>
+							</apex:outputpanel>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem >
+							<c:customHelpTextLabel labelValue="Maximum Number of Active Schedulers Allowed" helpTextID="Max_Schedulers" helpText="{!maxSchedulers_HelpText}"/>
+							<apex:outputText html-ortoo-elem-id="QACP0009"  value="{!maxNumberOfSchedulers}" />
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+					
+					<apex:pageBlockSection columns="1" id="status-buttons" collapsible="false" title="Process Monitor">
+						<apex:pageBlockSectionItem >
+							<apex:outputpanel />
+								<apex:outputpanel >
+							<apex:commandButton html-ortoo-elem-id="QACP0015" action="{!RestartWatchers}" rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}"
+								value="Restart Watchers" rerender="watcher_status,messages" status="watcherStatus" immediate="true" disabled="{!IF(QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'Off',true,false)}"  />
+							<apex:commandButton html-ortoo-elem-id="QACP0016" action="{!RestartManager}" rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}"
+								value="Restart Manager" immediate="true" rerender="watcher_status,messages" status="watcherStatus" disabled="{!IF(QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'Off',true,false)}" />
+							<apex:commandButton html-ortoo-elem-id="QACP0017" value="Refresh" immediate="true" rerender="watcher_status,watcherstatusOutputPanel,messages" action="{!removeManagerMessages}" status="watcherStatus"  disabled="{!IF(QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'Off',true,false)}"/>
+							
+							&nbsp;
+							<apex:actionStatus id="runStatus">
+								<apex:facet name="stop">
+									<apex:commandButton html-ortoo-elem-id="QACP0076" action="{!runManagerSynchronously}" rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}"
+									style="margin-bottom: 2px;" value="Run Manager Manually Now" immediate="true" rerender="watcher_status,messages,warnings_area,scheduler_status" status="runStatus" disabled="{!IF(QAGlobalSettingConfig.ortoo_qra__Global_Scheduler_Master_Switch__c == 'Off',true,false)}" />	
+								</apex:facet>
+								<apex:facet name="start">
+									<apex:commandButton html-ortoo-elem-id="QACP0079" value="Running..." disabled="true" status="runStatus" style="margin-bottom: 2px;"/>
+								</apex:facet>
+							</apex:actionStatus>
+							<apex:outputPanel id="messages">
+								<apex:outputText html-ortoo-elem-id="QACP0077" value="{!managerSuccessMessage}" rendered="{!managerSuccessMessage != null}" style="margin-right:2px; color:green; white-space: nowrap"/>
+								<apex:outputText html-ortoo-elem-id="QACP0078" value="{!managerErrorMessage}" rendered="{!managerSuccessMessage == null && managerErrorMessage != null}" style="margin-right:2px; color:red; white-space: nowrap"/>
+							</apex:outputPanel>	
+								<apex:outputPanel id="watcherstatusOutputPanel">
+									<apex:actionStatus id="watcherStatus">
+										<apex:facet name="start">
+											<img src="/img/loading.gif" />
+										</apex:facet>
+									</apex:actionStatus>
+								</apex:outputPanel>
+								</apex:outputpanel>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem >
+							<apex:pageBlockTable id="watcher_status" value="{!WatcherAndManagerJobStatusList}"
+							columnsWidth="25% 20%" var="wm" width="100%">
+							<apex:column >
+								<apex:facet name="header">Background Process</apex:facet>
+								<apex:outputText html-ortoo-elem-id="QACP0018" value="{!wm.backgroundProcess}" />
+							</apex:column>
+							<apex:column >
+								<apex:facet name="header">Details</apex:facet>
+								<apex:outputText html-ortoo-elem-id="QACP0019" value="{!wm.details}" />
+							</apex:column>
+						</apex:pageBlockTable>
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+
+					<apex:pageBlockSection columns="1" id="default_user_settings_view" collapsible="false" title="Default User Settings">
+						<apex:pageBlockSectionItem >
+							<c:customHelpTextLabel labelValue="Default OOO / non-working times setting for Users" helpTextID="Default_OOO" helpText="{!DefaultOOO_HelpText}"/>
+							<apex:outputPanel >
+								<apex:outputText html-ortoo-elem-id="QACP0020" value="{!QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Source__c}"></apex:outputText>
+								<apex:outputpanel rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" >
+									<apex:commandButton html-ortoo-elem-id="QACP0021" action="{!EditGlobalConfiguration}" status="loading3"
+										value="Edit" immediate="true" style="margin-left:5px;" reRender="BodySectionForGlobalSettings"
+										rendered="{!IF(AND(IsCurrentUserAManagerOrAdmin, globalEditIsAllowed), TRUE, FALSE)}" />
+										<apex:actionStatus id="loading3">
+										<apex:facet name="start">
+											<img src="/img/loading.gif" />
+										</apex:facet>
+									</apex:actionStatus>
+								</apex:outputpanel>
+							</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem rendered="{!isCalendarSelected}">
+							<c:customHelpTextLabel labelValue="Which Calendar Entries are OOO / Unavailable?" helpTextID="Calendar_Items_Treated_as_OOO" helpText="{!DefaultOOOWhichCalendar_HelpText}"/>
+							<apex:outputText html-ortoo-elem-id="QACP0022" value="{!QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Calendar_Items_Type__c}"></apex:outputText>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem rendered="{!isCalendarSelected && QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Calendar_Items_Type__c == 'Just specific types of calendar Items'}">
+							<c:customHelpTextLabel labelValue="Filter" helpTextID="Filter_OOO_Calendar_Items_By" helpText="{!FilterOOOCalendarItemsBy_HelpText}" />
+							<apex:outputPanel >
+								<apex:outputLabel value="Show Time As"></apex:outputLabel>
+								&nbsp;
+								<apex:outputLabel value="equals"></apex:outputLabel>
+								&nbsp;
+								<b><apex:outputLabel html-ortoo-elem-id="QACP0023" value="{!filterValueForView}"></apex:outputLabel></b>
+							</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+
+					<apex:pageBlockSection collapsible="false" title="Q-assign License Usage"
+						columns="1"
+						rendered="{!globalEditIsNotActive}"
+						id="License">
+
+						<apex:pageBlockSectionItem helpText="{!TotalLicenseCount_HelpText}">
+							<c:customHelpTextLabel labelValue="Total Q-assign Licenses " helpTextID="Nunique" helpText="{!TotalLicenseCount_HelpText}"/>
+							<apex:outputText html-ortoo-elem-id="QACP0024" value="{!totalLicenseCount}" />
+						</apex:pageBlockSectionItem>
+
+						<apex:pageBlockSectionItem helpText="{!TotalUsedLicenseCount_HelpText}">
+							<c:customHelpTextLabel labelValue="Total Licenses Used" helpTextID="Uunique" helpText="{!TotalUsedLicenseCount_HelpText}"/>
+							<apex:outputText html-ortoo-elem-id="QACP0025" value="{!totalUsedLicenseCount} ({!getUsersInAGsCount} Member Users + {!getQueuesInAGsCount} Member Queues + {!getNonAGMembersCount} Other Users with licenses)" />
+						</apex:pageBlockSectionItem> 
+
+						<apex:pageBlockSectionItem helpText="{!LicensesAvailableCount_HelpText}">
+							<c:customHelpTextLabel labelValue="Total Unused Licenses Available" helpTextID="LAunique" helpText="{!LicensesAvailableCount_HelpText}"/>
+							<apex:outputText html-ortoo-elem-id="QACP0026" value="{!licensesAvailable}" />
+						</apex:pageBlockSectionItem> 
+						
+					</apex:pageBlockSection>
+					<apex:pageBlockSection id="warnings_area" title="Errors & Warnings Messages"
+						rendered="{!globalEditIsNotActive}"
+						columns="1" collapsible="false">
+						<!--<apex:actionPoller reRender="warnings_area" interval="15"/>-->
+						{!ErrorsAndWarnings_HelpText}
+						<apex:pageBlockTable html-ortoo-elem-id="QACP0027" value="{!warningsAndErrors}"
+								columnsWidth="100px" var="msg" width="100%">
+								<apex:column >
+									<apex:facet name="header">Type</apex:facet>
+									<apex:outputText value="{!msg.msgType}" />
+								</apex:column>
+								<apex:column >
+									<apex:facet name="header">Details</apex:facet>
+									<apex:outputText value="{!msg.details}" />
+								</apex:column>
+						</apex:pageBlockTable>
+					</apex:pageBlockSection>
+				</apex:pageBlock>
+				<apex:pageBlock title="Global" id="EditSettings" mode="edit"
+					rendered="{!globalEditIsActive}">
+					<apex:pageBlockButtons location="top">
+						<apex:commandButton html-ortoo-elem-id="QACP0060" action="{!SaveQAGlobalSettings}" value="Save" reRender="BodySectionForGlobalSettings" />
+						<apex:commandButton html-ortoo-elem-id="QACP0061" action="{!CancelEditQAGlobalSettings}"
+							value="Cancel" immediate="true" reRender="BodySectionForGlobalSettings" />
+					</apex:pageBlockButtons>
+					<apex:pageMessages />
+					<apex:pageBlockSection columns="1" title="Global Scheduler Settings">
+						<apex:pageBlockSectionItem helpText="{!GeneralEmail_HelpText}">
+							<c:customHelpTextLabel labelValue="General Notifications Email Address" helpTextID="General_Notifications_Email" helpText="{!GeneralEmail_HelpText}"/>
+							<apex:inputField html-ortoo-elem-id="QACP0062" style="width: 40%;" value="{!QAGlobalSettingConfig.ortoo_qra__General_Notifications_Email_Address__c}" />
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem helpText="{!NotifyOrtooSupport_HelpText}">
+							<c:customHelpTextLabel labelValue="Notify Ortoo Support of errors" helpTextID="Notify_Support" helpText="{!NotifyOrtooSupport_HelpText}"/>
+							<apex:inputCheckbox html-ortoo-elem-id="QACP0063" value="{!QAGlobalSettingConfig.ortoo_qra__Notify_Ortoo_Support_of_errors__c}" />
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem >
+							<c:customHelpTextLabel labelValue="Global Scheduler Scheduled Hours (Manager Process)" helpTextID="ManagerBH" helpText="{!ManagerBH_HelpText}"/>
+							<apex:inputField html-ortoo-elem-id="QACP0064" value="{!QAGlobalSettingConfig.ortoo_qra__Manager_Job_Business_Hours_Schedule__c}" label=""/>
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+					
+					<apex:pageBlockSection columns="1"  id="default_user_settings" collapsible="false" title="Default User Settings">
+						<apex:pageBlockSectionItem >
+							<c:customHelpTextLabel labelValue="Default OOO / non-working times setting for Users" helpTextID="Default_OOO" helpText="{!DefaultOOO_HelpText}"/>
+							<apex:outputPanel >
+								<apex:selectList html-ortoo-elem-id="QACP0065" value="{!QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Source__c}" size="1">
+									<apex:selectOptions value="{!nonWorkingTimesOptions}"></apex:selectOptions>
+									<apex:actionSupport event="onchange" reRender="default_user_settings" status="OOOEntries_refresh" oncomplete="loadMultiPicklist();"></apex:actionSupport>
+								</apex:selectList>
+								<apex:actionStatus id="OOOEntries_refresh">
+										<apex:facet name="start">
+												<img src="/img/loading.gif" />                  
+											</apex:facet>
+								</apex:actionStatus>
+							</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem rendered="{!isCalendarSelected}">
+							<c:customHelpTextLabel labelValue="Which Calendar Entries are OOO / Unavailable?" helpTextID="Calendar_Items_Treated_as_OOO" helpText="{!DefaultOOOWhichCalendar_HelpText}"/>
+							<apex:outputPanel >
+							<apex:selectList html-ortoo-elem-id="QACP0066" value="{!QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Calendar_Items_Type__c}" size="1">
+								<apex:selectOptions value="{!OOOEntriesOptions}"></apex:selectOptions>
+								<apex:actionSupport event="onchange" reRender="default_user_settings" status="filters_section" oncomplete="loadMultiPicklist();"></apex:actionSupport>
+							</apex:selectList>
+							<apex:actionStatus id="filters_section">
+								<apex:facet name="start">
+									<img src="/img/loading.gif" />                  
+								</apex:facet>
+								</apex:actionStatus>
+							</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+
+						<apex:pageBlockSectionItem rendered="{!isCalendarSelected && isSpecificTypesOfCalendarItemsSelected}">
+							<c:customHelpTextLabel labelValue="Filter" helpTextID="filter_OOO" helpText="Filter"/>
+							<apex:outputPanel id="DefaultFiltersTable">
+								<apex:variable var="rowNumber" value="{!0}"/>
+								<apex:pageBlockTable html-ortoo-elem-id="QACP0067" value="{!globalFilterWrappers}" var="filter" rendered="{!globalFilterWrappers.size > 0}">
+									<apex:column headerValue="Field">
+										<apex:selectList html-ortoo-elem-id="QACP0068" value="{!filter.leftField}">
+											<apex:selectOption itemValue="ShowAs" itemLabel="Show Time As"></apex:selectOption>
+										</apex:selectList>
+										
+									</apex:column>
+									<apex:column headerValue="Operator">
+										<apex:selectList html-ortoo-elem-id="QACP0069" value="{!filter.operator}">
+											<apex:selectOption itemValue="equals" itemLabel="equals"></apex:selectOption>
+										</apex:selectList>
+									</apex:column>
+									<apex:column headerValue="Value">
+										<apex:selectList html-ortoo-elem-id="QACP0070" value="{!filter.values}" multiselect="true" styleClass="multiList">
+											<apex:selectOption itemValue="OutOfOffice" itemLabel="Out Of Office"></apex:selectOption>
+											<apex:selectOption itemValue="Busy" itemLabel="Busy"></apex:selectOption>
+											<apex:selectOption itemValue="Free" itemLabel="Free"></apex:selectOption>
+										
+									</apex:selectList>
+									</apex:column>
+								</apex:pageBlockTable>
+							</apex:outputPanel>
+						</apex:pageBlockSectionItem>
+						<div style="height: 100px">
+							
+						</div>
+					</apex:pageBlockSection>
+				</apex:pageBlock>
+			</apex:form>
+		</apex:tab>
+	</apex:tabPanel>
+</apex:page>

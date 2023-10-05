@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiscoveryGoal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <deployedModels>
+        <active>true</active>
+        <aiModel>Maximize_Life_Cover_Target_Variable</aiModel>
+        <classificationThreshold>0.305</classificationThreshold>
+        <label>AW_PredictedLifeCoverPropensityScore</label>
+        <name>Life_Cover_TV4</name>
+    </deployedModels>
+    <label>AW_PredictedLifeCoverPropensityScore</label>
+    <outcome>
+        <field>Life_Cover_TV4</field>
+        <fieldLabel>Life Cover Target Variable</fieldLabel>
+        <goal>Maximize</goal>
+    </outcome>
+    <predictionType>Classification</predictionType>
+</DiscoveryGoal>

@@ -1,0 +1,64 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:TA
+
+TC_LAST_NO_USED:0003
+
+-->
+<apex:page lightningStylesheets="true" standardController="Account" extensions="ortoo_qra.TakeOwnership" recordSetVar="sobjects" sidebar="false" applyBodyTag="false" docType="html-5.0">
+<apex:includeScript value="/support/console/33.0/integration.js"/> 
+<apex:includeScript value="/soap/ajax/29.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/29.0/apex.js"/> 
+    
+    <style>
+    	.custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    
+    
+    
+    </style>
+    
+    <apex:form >
+        <apex:outputPanel id="confirmDialog">
+        <apex:outputPanel styleClass="popupBackground" layout="block"/>
+            <apex:outputPanel html-ortoo-elem-id="QATA0001" styleClass="custPopup" layout="block">
+                {!IF (noOfSelectedRecords > 0, 'Are you sure you want to take ownership of ' +  TEXT(noOfSelectedRecords) + ' records?', 'Please select at least 1 record') }
+                <br/><br/><br/>
+                <apex:commandButton html-ortoo-elem-id="QATA0002" value="Confirm" rendered="{!noOfSelectedRecords > 0}" action="{!takeOwnership}" id="takeOwnership"/>
+                <apex:commandButton html-ortoo-elem-id="QATA0003" value="{! IF(noOfSelectedRecords > 0, 'Cancel', 'Back')}" action="{!cancel}" id="cancel"/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+ 
+    </apex:form>
+
+</apex:page>

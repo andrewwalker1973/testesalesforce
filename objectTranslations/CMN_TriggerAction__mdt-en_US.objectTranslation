@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Trigger Action</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Trigger Actions</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter the name of the sObject you want to have this action execute on during the after delete context --></help>
+        <label><!-- After Delete --></label>
+        <name>After_Delete__c</name>
+        <relationshipLabel><!-- After Delete --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the sObject you want to have this action execute on during the after insert context --></help>
+        <label><!-- After Insert --></label>
+        <name>After_Insert__c</name>
+        <relationshipLabel><!-- After Insert --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the sObject you want to have this action execute on during the after undelete context --></help>
+        <label><!-- After Undelete --></label>
+        <name>After_Undelete__c</name>
+        <relationshipLabel><!-- After Undelete --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the sObject you want to have this action execute on during the after update context --></help>
+        <label><!-- After Update --></label>
+        <name>After_Update__c</name>
+        <relationshipLabel><!-- After Update --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Check this box to allow the flow to execute recursively --></help>
+        <label><!-- Allow Flow Recursion? --></label>
+        <name>Allow_Flow_Recursion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the Apex Class which defines the action to be taken --></help>
+        <label><!-- Apex Class Name --></label>
+        <name>Apex_Class_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the sObject you want to have this action execute on during the before delete context --></help>
+        <label><!-- Before Delete --></label>
+        <name>Before_Delete__c</name>
+        <relationshipLabel><!-- Before Delete --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the sObject you want to have this action execute on during the before insert context --></help>
+        <label><!-- Before Insert --></label>
+        <name>Before_Insert__c</name>
+        <relationshipLabel><!-- Before Insert --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of the sObject you want to have this action execute on during the before update context --></help>
+        <label><!-- Before Update --></label>
+        <name>Before_Update__c</name>
+        <relationshipLabel><!-- Before Update --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Set this to true to bypass this Trigger Action from being called --></help>
+        <label><!-- Bypass Execution --></label>
+        <name>Bypass_Execution__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will be bypassed if the running user has the custom permission identified. --></help>
+        <label><!-- Bypass Permission --></label>
+        <name>Bypass_Permission__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name of a flow you would like to execute. The flow name specified must have two resources called &quot;newList&quot; and &quot;oldList&quot; which are collections of sObjects to work properly. --></help>
+        <label><!-- Flow Name --></label>
+        <name>Flow_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will  only execute if the running user has the custom permission identified. --></help>
+        <label><!-- Required Permission --></label>
+        <name>Required_Permission__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must enter a description for this Trigger Action. --></errorMessage>
+        <name>CMN_Description_is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Apex Class Name must equal &quot;CMN_TRH_RunFlow&quot; if the Flow Name is populated. --></errorMessage>
+        <name>CMN_Flow_Name</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select at least one context --></errorMessage>
+        <name>CMN_Must_Choose_A_Context</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can only choose one context --></errorMessage>
+        <name>CMN_Only_One_Context</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can only mark &quot;Allow Flow Recursion&quot; checkbox as &quot;True&quot; when you have a value for &quot;Flow Name&quot;. --></errorMessage>
+        <name>CMN_Recursion_Only_For_Flows</name>
+    </validationRules>
+</CustomObjectTranslation>

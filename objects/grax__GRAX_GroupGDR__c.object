@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>grax__Can_Delete_GRAX_Record__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <formula>(
+  (grax__GRAX_Schedule_Process__c = null &amp;&amp; grax__Execution_Unique_Key__c != null) ||
+  (
+    (
+      NOT(grax__GRAX_Schedule_Process__r.grax__Is_Running__c) &amp;&amp;
+      NOT(ISPICKVAL(grax__GRAX_Schedule_Process__r.grax__Status__c, &apos;Completed - Errors sending data&apos;)) &amp;&amp;
+      DATEVALUE(CreatedDate) &lt; TODAY() - 15
+    ) ||
+    (
+      grax__GRAX_Schedule_Process__r.grax__Execution_Unique_Key_Helper__c != grax__Execution_Unique_Key__c &amp;&amp;
+      NOT(grax__GRAX_Schedule_Process__r.grax__Is_Running__c)
+    ) ||
+    (
+      grax__GRAX_Schedule_Process__r.grax__Can_Delete_GRAX_Records__c &amp;&amp;
+      NOT(ISPICKVAL(grax__GRAX_Schedule_Process__r.grax__Status__c, &apos;Completed - Errors sending data&apos;)) &amp;&amp;
+      (
+        ISPICKVAL(grax__Status__c, &apos;Sent Successful&apos;) ||
+        (
+          ISPICKVAL(grax__Status__c, &apos;Not Sent&apos;) &amp;&amp;
+          NOT(grax__GRAX_Schedule_Process__r.grax__Is_Running__c)
+        )
+      )
+    )
+  )
+)</formula>
+        <label>Can Delete GRAX Record?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Error_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Error_Message</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of the Error message received</inlineHelpText>
+        <label>Error Message</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>grax__Execution_Unique_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label>Execution Unique Key</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__File_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>File_Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_Schedule_Process__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GRAX Schedule Process</label>
+        <referenceTo>grax__GRAX_Schedule_Process__c</referenceTo>
+        <relationshipLabel>GRAX Group GDRs</relationshipLabel>
+        <relationshipName>GRAX_Group_GDRs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Group_Unique_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>true</externalId>
+        <label>Group Unique Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Is_Current_Execution_Record__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines if the GRAX Group GDR record belongs to the current Execution Unique Key, on the parent GRAX Schedule Process record</description>
+        <externalId>false</externalId>
+        <formula>NOT(ISBLANK(grax__Execution_Unique_Key__c)) &amp;&amp; grax__GRAX_Schedule_Process__r.grax__Execution_Unique_Key__c == grax__Execution_Unique_Key__c</formula>
+        <label>Is Current Execution Record</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Last_Sent_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last_Sent_Date</description>
+        <externalId>false</externalId>
+        <label>Last Sent Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Object_Backup_Completed__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies that all the expected GDRs were generated for the object over all the hierarchy tree</description>
+        <externalId>false</externalId>
+        <label>Object Backup Completed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Records__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># Records</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Salesforce_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Salesforce_Object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Salesforce object which is being backed up</inlineHelpText>
+        <label>Salesforce Object</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>grax__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of this related process</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Sent</fullName>
+                    <default>false</default>
+                    <label>Not Sent</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+                <value>
+                    <fullName>Sent Successful</fullName>
+                    <default>false</default>
+                    <label>Sent Successful</label>
+                </value>
+                <value>
+                    <fullName>Not Processed - Queuable Jobs Full</fullName>
+                    <default>false</default>
+                    <label>Not Processed - Queuable Jobs Full</label>
+                </value>
+                <value>
+                    <fullName>Processing</fullName>
+                    <default>false</default>
+                    <label>Processing</label>
+                </value>
+                <value>
+                    <fullName>Retry</fullName>
+                    <default>false</default>
+                    <label>Retry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>grax__of_Times_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <description># of Attempts in sending this record to GRAX</description>
+        <externalId>false</externalId>
+        <label># of Times Sent</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>GRAX Group GDR</label>
+    <nameField>
+        <displayFormat>GGDR-{000000}</displayFormat>
+        <label>GRAX GroupGDR Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>GRAX Group GDRs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

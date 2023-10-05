@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Risk</fullName>
+        <default>false</default>
+        <label>Risk</label>
+    </customValue>
+    <customValue>
+        <fullName>Retirement</fullName>
+        <default>false</default>
+        <label>Retirement</label>
+    </customValue>
+    <customValue>
+        <fullName>Investment</fullName>
+        <default>false</default>
+        <label>Investment</label>
+    </customValue>
+    <customValue>
+        <fullName>Gap Cover</fullName>
+        <default>false</default>
+        <label>Gap Cover</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical Aid</fullName>
+        <default>false</default>
+        <label>Medical Aid</label>
+    </customValue>
+    <customValue>
+        <fullName>Will</fullName>
+        <default>false</default>
+        <label>Will</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Assurance</fullName>
+        <default>false</default>
+        <label>Business Assurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Short Term Insurance</fullName>
+        <default>false</default>
+        <label>Short Term Insurance</label>
+    </customValue>
+    <masterLabel>Product Interest</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

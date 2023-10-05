@@ -1,0 +1,11 @@
+<template>
+	<lightning-layout vertical-align="end">
+		<lightning-input type="file" accept={acceptedFormats} label="File Upload" onchange={uploadFile}></lightning-input>
+	</lightning-layout>
+	<div class="slds-var-m-around_small">
+		<template if:true={uploadedFileName}>
+			{uploadedFileName}
+		</template>
+	</div>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

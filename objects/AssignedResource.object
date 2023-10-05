@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>SC_TodaysAppointment__c</fullName>
+        <description>Formula to Determine related Service Appointment is Scheduled for Today</description>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(ServiceAppointment.Status,&apos;Dispatched&apos;) &amp;&amp; (DATEVALUE(ServiceAppointment.SchedStartTime)==TODAY()) &amp;&amp; ( ServiceAppointment.RecordType.DeveloperName == &apos;SC_ServiceAppointment&apos;) &amp;&amp; (ServiceAppointment.CMN_COMMS_WorkOrder__r.Case.RSC_ServiceType__r.Name == &apos;Medical Appointment&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Todays Appointment</label>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

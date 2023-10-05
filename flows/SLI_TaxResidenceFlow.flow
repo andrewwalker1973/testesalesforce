@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>TaxResidence</name>
+        <label>TaxResidence</label>
+        <locationX>528</locationX>
+        <locationY>440</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SLI_CountryOfTaxResidence__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>South Africa</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>TaxResidenceUpdate</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>STANLIBSTANLIB</name>
+        <label>STANLIB</label>
+        <locationX>426</locationX>
+        <locationY>387</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>STANLIB</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Stanlib Institutional Account</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SLI_CountryOfIncorporation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>South Africa</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>TaxResidence</targetReference>
+            </connector>
+            <label>STANLIB</label>
+        </rules>
+    </decisions>
+    <description>Autopopulate the Tax Residence Field if Country of Incorporation is set to &quot;South Africa&quot;</description>
+    <environments>Default</environments>
+    <interviewLabel>SLI_TaxResidenceFlow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SLI_TaxResidenceFlow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>TaxResidenceUpdate</name>
+        <label>TaxResidenceUpdate</label>
+        <locationX>630</locationX>
+        <locationY>448</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>304</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>STANLIBSTANLIB</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

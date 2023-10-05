@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Direct Advice Centre Leads Queue</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>AW_Advice_Centre</publicGroup>
+        </publicGroups>
+        <users>
+            <user>andre.motsisi@liblink.co.za</user>
+            <user>barend.visser@liberty.co.za</user>
+            <user>casbeth.tsiri@liblink.co.za</user>
+            <user>keenan.davy@liblink.co.za</user>
+            <user>lester.maddocks@liblink.co.za</user>
+            <user>phomolo.ntomane@liblink.co.za</user>
+            <user>thabo.tsotetsi@liberty.co.za</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

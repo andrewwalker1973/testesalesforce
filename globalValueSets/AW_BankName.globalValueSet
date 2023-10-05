@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>48</fullName>
+        <default>false</default>
+        <label>ABSA Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>478</fullName>
+        <default>false</default>
+        <label>Albaraka Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>2</fullName>
+        <default>false</default>
+        <label>Allied Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>50</fullName>
+        <default>false</default>
+        <label>Bank Windhoek Ltd</label>
+    </customValue>
+    <customValue>
+        <fullName>128</fullName>
+        <default>false</default>
+        <label>Banque Indosuez South Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>6</fullName>
+        <default>false</default>
+        <label>Barclays Bank Lesotho</label>
+    </customValue>
+    <customValue>
+        <fullName>471</fullName>
+        <default>false</default>
+        <label>Bidvest Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>8</fullName>
+        <default>false</default>
+        <label>BOE Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>9</fullName>
+        <default>false</default>
+        <label>Cape Of Good Hope Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>445</fullName>
+        <default>false</default>
+        <label>Capitec Bank Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>121</fullName>
+        <default>false</default>
+        <label>Citibank</label>
+    </customValue>
+    <customValue>
+        <fullName>215</fullName>
+        <default>false</default>
+        <label>Citizen Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>11</fullName>
+        <default>false</default>
+        <label>Commercial Bank Of Namibia</label>
+    </customValue>
+    <customValue>
+        <fullName>56</fullName>
+        <default>false</default>
+        <label>Community Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>508</fullName>
+        <default>false</default>
+        <label>Discovery Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>55</fullName>
+        <default>false</default>
+        <label>FBC Fidelity Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>490</fullName>
+        <default>false</default>
+        <label>Finbond Mutual Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>12</fullName>
+        <default>false</default>
+        <label>Firstcorp Merchant Bank Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>14</fullName>
+        <default>false</default>
+        <label>Firstrand Bank Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>15</fullName>
+        <default>false</default>
+        <label>Firstrand Bank Of Namibia</label>
+    </customValue>
+    <customValue>
+        <fullName>73</fullName>
+        <default>false</default>
+        <label>Firstrand Bank Of Swaziland</label>
+    </customValue>
+    <customValue>
+        <fullName>479</fullName>
+        <default>false</default>
+        <label>Grinrod Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>18</fullName>
+        <default>false</default>
+        <label>Habib Overseas Bank Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>138</fullName>
+        <default>false</default>
+        <label>HBZ Bank Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>219</fullName>
+        <default>false</default>
+        <label>Investec Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>52</fullName>
+        <default>false</default>
+        <label>Ithala Development Finance Corporation</label>
+    </customValue>
+    <customValue>
+        <fullName>487</fullName>
+        <default>false</default>
+        <label>JP Morgan Chase Bank Na Johannesburg Branch</label>
+    </customValue>
+    <customValue>
+        <fullName>20</fullName>
+        <default>false</default>
+        <label>Lesotho Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>42</fullName>
+        <default>false</default>
+        <label>Meeg Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>21</fullName>
+        <default>false</default>
+        <label>Mercantile Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>467</fullName>
+        <default>false</default>
+        <label>Mtn Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>25</fullName>
+        <default>false</default>
+        <label>Nedbank</label>
+    </customValue>
+    <customValue>
+        <fullName>174</fullName>
+        <default>false</default>
+        <label>Nedbank Lesotho</label>
+    </customValue>
+    <customValue>
+        <fullName>469</fullName>
+        <default>false</default>
+        <label>Nedbank Namibia Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>175</fullName>
+        <default>false</default>
+        <label>Nedbank Swaziland</label>
+    </customValue>
+    <customValue>
+        <fullName>26</fullName>
+        <default>false</default>
+        <label>Nedfin Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>433</fullName>
+        <default>false</default>
+        <label>Old Mutual Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>493</fullName>
+        <default>false</default>
+        <label>Olympus Mobile</label>
+    </customValue>
+    <customValue>
+        <fullName>24</fullName>
+        <default>false</default>
+        <label>Peoples Bank Ltd Inc Nbs</label>
+    </customValue>
+    <customValue>
+        <fullName>431</fullName>
+        <default>false</default>
+        <label>PEP Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>53</fullName>
+        <default>false</default>
+        <label>Permanent Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>432</fullName>
+        <default>false</default>
+        <label>Royal Bank Of Scotland</label>
+    </customValue>
+    <customValue>
+        <fullName>32</fullName>
+        <default>false</default>
+        <label>Saambou Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>33</fullName>
+        <default>false</default>
+        <label>Santambank</label>
+    </customValue>
+    <customValue>
+        <fullName>31</fullName>
+        <default>false</default>
+        <label>SA Reserve Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>495</fullName>
+        <default>false</default>
+        <label>Sasfin Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>461</fullName>
+        <default>false</default>
+        <label>South African Post Office</label>
+    </customValue>
+    <customValue>
+        <fullName>47</fullName>
+        <default>false</default>
+        <label>Stanbic Bank Swaziland</label>
+    </customValue>
+    <customValue>
+        <fullName>34</fullName>
+        <default>false</default>
+        <label>Standard Bank Namibia</label>
+    </customValue>
+    <customValue>
+        <fullName>35</fullName>
+        <default>false</default>
+        <label>Standard Bank Of Bophuthatswana</label>
+    </customValue>
+    <customValue>
+        <fullName>38</fullName>
+        <default>false</default>
+        <label>Standard Bank Swaziland</label>
+    </customValue>
+    <customValue>
+        <fullName>459</fullName>
+        <default>false</default>
+        <label>Standard Chartered Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>74</fullName>
+        <default>false</default>
+        <label>Standard Lesotho Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>480</fullName>
+        <default>false</default>
+        <label>State Bank Of India</label>
+    </customValue>
+    <customValue>
+        <fullName>40</fullName>
+        <default>false</default>
+        <label>SWA Building Society</label>
+    </customValue>
+    <customValue>
+        <fullName>41</fullName>
+        <default>false</default>
+        <label>Swaziland Development And Savings Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>1</fullName>
+        <default>false</default>
+        <label>The African Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>476</fullName>
+        <default>false</default>
+        <label>The Hongkong &amp; Shanghai Banking Corporation</label>
+    </customValue>
+    <customValue>
+        <fullName>4</fullName>
+        <default>false</default>
+        <label>The South African Bank Of Athens</label>
+    </customValue>
+    <customValue>
+        <fullName>37</fullName>
+        <default>false</default>
+        <label>The Standard Bank Of South Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>43</fullName>
+        <default>false</default>
+        <label>The Trust Bank Of Africa</label>
+    </customValue>
+    <customValue>
+        <fullName>512</fullName>
+        <default>false</default>
+        <label>Tyme Digital</label>
+    </customValue>
+    <customValue>
+        <fullName>452</fullName>
+        <default>false</default>
+        <label>U Bank Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>45</fullName>
+        <default>false</default>
+        <label>Unibank</label>
+    </customValue>
+    <customValue>
+        <fullName>482</fullName>
+        <default>false</default>
+        <label>VBS Mutual Bank</label>
+    </customValue>
+    <customValue>
+        <fullName>49</fullName>
+        <default>false</default>
+        <label>Volkskas Bank</label>
+    </customValue>
+    <masterLabel>Bank Name</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

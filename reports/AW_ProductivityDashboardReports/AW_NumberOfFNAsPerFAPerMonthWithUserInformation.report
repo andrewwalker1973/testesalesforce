@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>(RowCount / AW_FNA__c.Owner.Name:UNIQUE)</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Total number of FNAs done in a month divided by unique FA&apos;s</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average Number of FNA&apos;s per FA</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>(AW_FNA__c.Owner.Name:UNIQUE - PREVGROUPVAL (AW_FNA__c.Owner.Name:UNIQUE, AW_FNA__c.CreatedDate)) 
+/ PREVGROUPVAL(AW_FNA__c.Owner.Name:UNIQUE, AW_FNA__c.CreatedDate)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Growth percentage of FNA monthly</description>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>AW_FNA__c$CreatedDate</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Growth Percentage</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartType>Line</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>AW_FNA__c$CreatedDate</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>AW_FNA__c$Owner</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$Id</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$Name</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$AW_Account__c.Owner.AW_ConsultantCode__c</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$AW_Account__c.Owner.AW_Branch__c</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$AW_Account__c.Owner.AW_Region__c</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$AW_Account__c.PersonContact.AW_IdentificationNumber__c</field>
+    </columns>
+    <description>Number of FNAs per FNA per month-the average number of FNAS completed per FA - the total number of FNAs done in a month divided by the total number of advisers who have done FNAs</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>AW_FNA__c$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Number of FNAs per FA per Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_FNAWithUserInformation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AW_FNA__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

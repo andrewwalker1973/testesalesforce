@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>The class name of the trigger handler that should be disable</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CMN_ClassName__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The class name of the trigger handler that should be disabled</description>
+        <externalId>true</externalId>
+        <label>Class Name</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CMN_TriggersToDisable</label>
+    <listViews>
+        <fullName>CMN_TriggersToDisable</fullName>
+        <columns>NAME</columns>
+        <columns>CMN_ClassName__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Triggers to Disable</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

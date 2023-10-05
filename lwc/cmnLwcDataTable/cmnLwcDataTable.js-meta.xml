@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="csvListOfMaskedFields" label="List of Masked Fields" type="String" role="inputOnly" />
+            <property name="csvListOfShownFields" label="List of Shown Fields" type="String" role="inputOnly" description="Optionally include fields you wish to be shown on the table" />
+            <property name="rowId" label="Id Field of Payload" type="String" role="inputOnly"/>
+            <property name="inputPayload" label="Input Payload" type="String" role="inputOnly" required="true"/>
+            <property name="isDynamic" label="Is Dynamic" type="Boolean" role="inputOnly"/>
+            <property name="isMultipleSelect" label="Is Multi-Select Table" type="Boolean" role="inputOnly" required="true"/>
+            <property name="isReadOnly" label="Is a Read Only Table?" type="Boolean" role="inputOnly" />
+            <property name="canCopySelectedTableRows" label="Can Copy Selected Rows?" role="inputOnly" type="Boolean"/>
+            <property name="sortedBy" label="Sorted By Column" type="String" role="inputOnly"/>
+            <property name="sortDirection" label="Sorted Direction" type="String" role="inputOnly"/>
+            <property name="outputPayload" label="Output Payload" type="String" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

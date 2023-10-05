@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assetIcon>/analytics/wave/web/proto/images/app/icons/1.png</assetIcon>
+    <folder>Admin_Tracking_App</folder>
+    <masterLabel>Admin Tracking App</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>kobus.debruyn@liberty.co.za</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <templateOrigin>sfdc_internal__AdminAnalytics</templateOrigin>
+    <templateVersion>52.0</templateVersion>
+</WaveApplication>

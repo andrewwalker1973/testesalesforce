@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Consultant Code --></label>
+        <name>AW_ConsultantCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>AW_DateofBirth__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>AW_FirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>AW_Gender__c</name>
+    </fields>
+    <fields>
+        <label><!-- Identification Number --></label>
+        <name>AW_IdentificationNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initials --></label>
+        <name>AW_Initials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>AW_LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marital Status --></label>
+        <name>AW_MaritalStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation --></label>
+        <name>AW_Occupation__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDB ID --></label>
+        <name>AW_PDBID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage Split --></label>
+        <name>AW_PercentageSplit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>AW_Relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role Code --></label>
+        <name>AW_RoleCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salutation --></label>
+        <name>AW_Salutation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Name --></label>
+        <name>AW_SecondName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country of Citizenship --></label>
+        <name>CMN_CountryOfCitizenship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country of Incorporation --></label>
+        <name>CMN_CountryOfIncorporation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country of Issue --></label>
+        <name>CMN_CountryOfIssue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Incorporation --></label>
+        <name>CMN_DateOfIncorporation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>CMN_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiry Date --></label>
+        <name>CMN_ExpiryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fifth Name --></label>
+        <name>CMN_FifthName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fourth Name --></label>
+        <name>CMN_FourthName__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Immediate Expenses Benefit will accelerate a proportion of the Life Cover. R 50000.00 of the Death Value will be paid to the Client on the death of the First Life Assured. A 2-year waiting period from the date that the Life Cover benefit was taken out applies to the Immediate Expenses Benefit. --></help>
+        <label><!-- Immediate Expense Benefit --></label>
+        <name>CMN_ImmediateExpenseBenefit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Date --></label>
+        <name>CMN_IssueDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>CMN_Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation Risk Category --></label>
+        <name>CMN_OccupationRiskCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Type --></label>
+        <name>CMN_OrganisationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Name --></label>
+        <name>CMN_OrganizationName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Passport Number --></label>
+        <name>CMN_PassportNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>CMN_PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Race --></label>
+        <name>CMN_Race__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Number --></label>
+        <name>CMN_RegistrationNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Smoker --></label>
+        <name>CMN_Smoker__c</name>
+    </fields>
+    <fields>
+        <label><!-- South African Resident --></label>
+        <name>CMN_SouthAfricanResidentIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suffix --></label>
+        <name>CMN_Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Name --></label>
+        <name>CMN_ThirdName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wedding Anniversary --></label>
+        <name>CMN_WeddingAnniversary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Phone --></label>
+        <name>CMN_WorkPhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Household Insurance Policy Participants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Party Name --></label>
+        <name>RSC_PartyName__c</name>
+    </fields>
+</CustomObjectTranslation>

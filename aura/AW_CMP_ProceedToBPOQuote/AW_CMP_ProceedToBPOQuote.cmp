@@ -1,0 +1,21 @@
+<!--
+ - Created by dpucerea on 22/11/2020.
+ -->
+
+<aura:component description="AW_CMP_ProceedToBPOQuote" controller="AW_CTRL_ImplementGoal"
+				implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
+	<aura:attribute name="isLoading" type="Boolean"/>
+	<aura:attribute name="selectedQuote" type="Object" default=""/>
+	<aura:attribute name="pageReference" type="Object" default="false"/>
+	<lightning:navigation aura:id="navService"/>
+
+	<lightning:button variant="brand" label="{!$Label.c.AW_ProceedToBPOQuotesAndEP}" title="{!$Label.c.AW_ProceedToBPOQuotesAndEP}" class="slds-size_1-of-1"
+					  onclick="{! c.proceedToBPO }"/>
+
+	<aura:if isTrue="{!v.isLoading}">
+		<div class="exampleHolder">
+			<lightning:spinner alternativeText="Loading" size="medium"/>
+		</div>
+	</aura:if>
+
+</aura:component>

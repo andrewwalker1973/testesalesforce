@@ -1,0 +1,6 @@
+<template>
+	<c-rsc-lwc-choose-email-recipients client={client} financial-advisor={financialAdvisor} third-party={thirdParty}></c-rsc-lwc-choose-email-recipients>
+	<c-rsc-lwc-choose-c-p-p-policies-table policies={policies}></c-rsc-lwc-choose-c-p-p-policies-table>
+	<c-cmn-lwc-flow-footer is-child-component='true' next-title='Send' onflowscreenevent={handleNavigationEvent}
+						   previous-title='Cancel'></c-cmn-lwc-flow-footer>
+</template>

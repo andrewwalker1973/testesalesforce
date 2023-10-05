@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Holding</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Holdings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Recent Holdings --></label>
+        <name>Recent_Holdings__c</name>
+    </fields>
+    <fields>
+        <label><!-- BDM Target --></label>
+        <name>SLC_BdmTarget__c</name>
+        <relationshipLabel><!-- Holdings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>SLC_EffectiveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fund Class --></label>
+        <name>SLC_FundClass__c</name>
+        <relationshipLabel><!-- Holdings (Fund Class) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Fund --></label>
+        <name>SLC_Fund__c</name>
+        <relationshipLabel><!-- Holdings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agent --></label>
+        <name>SLR_Agent__c</name>
+        <relationshipLabel><!-- Holdings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AuM Native --></label>
+        <name>SLR_AumNative__c</name>
+    </fields>
+    <fields>
+        <label><!-- AuM ZAR --></label>
+        <name>SLR_AumZar__c</name>
+    </fields>
+    <fields>
+        <label><!-- BDM Target Matches --></label>
+        <name>SLR_BdmTargetMatches__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage --></label>
+        <name>SLR_Brokerage__c</name>
+        <relationshipLabel><!-- Holdings (Brokerage) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>SLR_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>SLR_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>SLR_ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>SLR_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inflow Base --></label>
+        <name>SLR_InflowBase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Netflow Base --></label>
+        <name>SLR_NetflowBase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Netflows excl. Reinvestments Native --></label>
+        <name>SLR_NetflowsExclReinvestmentsNative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Netflows Excl. Reinvestments ZAR --></label>
+        <name>SLR_NetflowsExclReinvestments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Netflows incl. Reinvestments Native --></label>
+        <name>SLR_NetflowsInclReinvestmentsNative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Netflows incl. Reinvestments ZAR --></label>
+        <name>SLR_NetflowsinclReinvestments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outflow Base --></label>
+        <name>SLR_OutflowBase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platform --></label>
+        <name>SLR_Platform__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue --></label>
+        <name>SLR_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strategy Target Matches --></label>
+        <name>SLR_StrategyTargetMatches__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strategy Target --></label>
+        <name>SLR_StrategyTarget__c</name>
+        <relationshipLabel><!-- Holdings (Strategy Target) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

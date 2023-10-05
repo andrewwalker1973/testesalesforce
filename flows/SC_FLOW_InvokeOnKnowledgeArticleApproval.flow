@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>SC_UpdateServiceTypeRecords</name>
+        <label>Update Service Type Records</label>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
+        <actionName>SC_FLOW_UpdateServiceTypeArticle</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>knowledgeArticleId</name>
+            <value>
+                <elementReference>$Record.KnowledgeArticleId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>serviceTypeIds</name>
+            <value>
+                <elementReference>ServiceTypeRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SC_FLOW_UpdateServiceTypeArticle</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>SC_StoreServiceTypeRecordId</name>
+        <label>Store Service Type Record Id</label>
+        <locationX>138</locationX>
+        <locationY>815</locationY>
+        <assignmentItems>
+            <assignToReference>ServiceTypeRecordId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>SC_IterateServiceRecords.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_IterateServiceRecords</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>SC_CheckServiceTypeRecords</name>
+        <label>Check Service Type Records</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>Service Type Records Not Present</defaultConnectorLabel>
+        <rules>
+            <name>SC_ServiceTypeRecordsPresent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SC_GetServiceTypeRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_IterateServiceRecords</targetReference>
+            </connector>
+            <label>Service Type Records Present</label>
+        </rules>
+    </decisions>
+    <description>This flow will be triggered when Knowledge Article is published using Approval Process and it will update the Service Type with latest Knowledge Article.</description>
+    <environments>Default</environments>
+    <interviewLabel>SC_FLOW_InvokeOnKnowledgeArticleApproval {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SC_FLOW_InvokeOnKnowledgeArticleApproval</label>
+    <loops>
+        <name>SC_IterateServiceRecords</name>
+        <label>Iterate Service Records</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <collectionReference>SC_GetServiceTypeRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>SC_StoreServiceTypeRecordId</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>SC_UpdateServiceTypeRecords</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>SC_GetKnowledgeArticleVersion</name>
+        <label>Get Knowledge Article Version</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SC_GetServiceTypeRecords</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>PublishStatus</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Online</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>KnowledgeArticleId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.KnowledgeArticleId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>KnowledgeArticleVersion</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>SC_GetServiceTypeRecords</name>
+        <label>Get Service Type Records</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SC_CheckServiceTypeRecords</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SC_KnowledgeArticle__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>SC_GetKnowledgeArticleVersion.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>SC_ServiceType__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SC_GetKnowledgeArticleVersion</targetReference>
+        </connector>
+        <filterFormula>AND(
+{!$Record.RecordType.DeveloperName} = &apos;SC_RetailAgentScript&apos;,
+ISCHANGED({!$Record.SC_ArticleApprovalTime__c})
+)</filterFormula>
+        <object>Knowledge__kav</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Variable use to store multiple Service Type Record Id</description>
+        <name>ServiceTypeRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

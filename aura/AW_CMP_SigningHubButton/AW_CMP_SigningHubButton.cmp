@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable" controller="AW_CTR_GetSigningHubURL" access="global">
+    <lightning:utilityBarAPI aura:id="UtilityBarEx" />
+    <div style="position: absolute; left: 55px; top: 180px;"> 
+        <button style="border-style: none">
+            <img src="{!$Resource.AW_SigningHubImage}" width="210" height="60" onclick="{!c.handleClick }" />
+        </button>
+    </div>
+</aura:component>

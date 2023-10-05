@@ -1,0 +1,27 @@
+<aura:component
+		controller="AW_FNA_TOOL_Land_Page_Controller"
+		implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+		description="c:AW_FNA_TOOL_Land_Page component"
+		access="global"
+>
+	<!--an "init" handler to handle the first "v.pageReference" value -->
+	<aura:handler
+			action="{!c.onPageReferenceChange}"
+			name="init"
+			value="{!this}"
+	/>
+	<lightning:spinner
+			aura:id="mySpinner"
+			alternativeText="Processing.."
+			variant="brand"
+			size="large"
+			class="slds-hide"
+	/>
+
+	<!--Attribute Declaration-->
+	<aura:attribute
+			name="fnaId"
+			type="String"
+			access="global"
+	/>
+</aura:component>

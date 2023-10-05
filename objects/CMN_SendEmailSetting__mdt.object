@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CMN_OrganizationWideAddressDisplayName__c</fullName>
+        <description>Display name of the email address</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The display name of the organization-wide email address associated with the outgoing email.</inlineHelpText>
+        <label>Organization-Wide Address Display Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ToEmailAddresses__c</fullName>
+        <description>Who the email is addressed to</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>A list of email addresses or object IDs of the contacts, leads, and users you’re sending the email to.</inlineHelpText>
+        <label>To Email Addresses</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Send Email Setting</label>
+    <pluralLabel>Send Email Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

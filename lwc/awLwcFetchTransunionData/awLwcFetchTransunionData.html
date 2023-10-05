@@ -1,0 +1,42 @@
+<!--
+* @description LWC Component to fetch the Transunion Data
+*
+* @author vishakha.saini@accenture.com
+*
+* @date March 2022
+* -->
+
+<!-- AwLwc Fetch Transunion Data -->
+<template>
+	<!-- Spinner -->
+	<template if:true={isSpinner}>
+		<lightning-spinner alternative-text="Loading..." size="medium" variant="brand"></lightning-spinner>
+	</template>
+	<template if:true={showModal}>
+		<lightning-quick-action-panel class="slds-modal_small" header="Credit Bureau Consent">
+			<p><b>Please ensure that the Lead's First Name, Last Name and Identification Number is correct when requesting the Credit Bureau information.</b>
+			</p><br>
+			<div class="slds-m-horizontal_medium">
+				<lightning-input checked={creditBureauConsent} label="Credit Bureau Consent" name="creditConsent" onchange={handleConsent}
+								 type="checkbox"></lightning-input>
+				<br>
+				<p><b>Credit Bureau Consent Status : </b>{creditBureauCallStatus} <br>
+					<b>Date and Time of Last Call : </b>{creditBureauLastCallDatetime}<br>
+					<b>Reason for Failure : </b>{creditBureauRequestMessage}</p><br><br>
+				<slot class="slds-text-body_small" name="body">
+					<p><i>Explanations<br>
+						None: No Credit Bureau Information requested and available<br>
+						Successful: Credit Bureau Information requested and received<br>
+						Failed: Credit Bureau Information requested but not received<br></i>
+					</p>
+				</slot>
+			</div>
+			<div slot="footer">
+				<div class="slds-clearfix">
+					<lightning-button class="slds-float_right" label="Submit" onclick={handleSubmit} variant="brand"></lightning-button>
+					<lightning-button class="slds-float_right slds-m-right_xx-small" label="Close" onclick={handleClose} variant="brand"></lightning-button>
+				</div>
+			</div>
+		</lightning-quick-action-panel>
+	</template>
+</template>

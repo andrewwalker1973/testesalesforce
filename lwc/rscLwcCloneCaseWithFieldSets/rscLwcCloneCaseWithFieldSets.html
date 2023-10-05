@@ -1,0 +1,53 @@
+<template>
+	<lightning-quick-action-panel title="Clone Case">
+		<div if:true={isLoading}>
+			<lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+		</div>
+		<section aria-describedby="modal-content-id-2" aria-labelledby="modal-heading-02" aria-modal="true" class="slds-modal slds-fade-in-open" role="dialog"
+				 tabindex="-1">
+			<div class="slds-modal__container customModal">
+				<header class="slds-modal__header">
+					<div class="slds-grid slds-grid_vertical-align-center">
+						<div class="slds-col">
+							<h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-02">
+								Clone Case </h2>
+						</div>
+					</div>
+				</header>
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+					<c-rsc-lwc-display-fields-section display-related-to-parent-checkbox={showRelatedToParentCheckbox} invoked-from-flow={invokedFromFlow} is-clone='true'
+													  object-api-name="Case" 
+													  onstepchange={handleStepChange} record-id={recordId} 
+													  look-up-fields={lookUpFields} look-up-display-format={lookUpDisplayFormat} 
+													  record-type-id={recordTypeId}></c-rsc-lwc-display-fields-section>
+				</div>
+
+				<footer class="slds-modal__footer">
+					<div class="slds-clearfix">
+						<template if:true={showNextButton}>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Next" onclick={handleNext}
+											  variant="brand"></lightning-button>
+						</template>
+
+						<template if:true={showSaveButtons}>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Save" onclick={handleSave}
+											  variant="brand"></lightning-button>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Save and New" onclick={handleSaveAndNew}
+											  variant="brand"></lightning-button>
+						</template>
+
+						<template if:true={showPreviousButton}>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Previous" onclick={handlePrevious}
+											  variant="brand"></lightning-button>
+						</template>
+
+						<lightning-button class="slds-p-around_x-small slds-float_left" label="Cancel" onclick={handleCancel}
+										  variant="brand"></lightning-button>
+					</div>
+				</footer>
+			</div>
+		</section>
+	</lightning-quick-action-panel>
+	<c-cmn-lwc-redirect></c-cmn-lwc-redirect>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

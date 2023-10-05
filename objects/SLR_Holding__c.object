@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Holding object to represent fund flows for STANLIB&apos;s Retail Distribution workstream</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Recent_Holdings__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( SLC_EffectiveDate__c =  $Setup.MaxDate__c.Max_Date__c , TRUE,FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Recent Holdings</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SLC_BdmTarget__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to related Holding records with Target records that are assigned to individual BDMs</description>
+        <externalId>false</externalId>
+        <label>BDM Target</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria.</errorMessage>
+            <filterItems>
+                <field>SLC_Target__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>BDM Target</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>SLC_Target__c</referenceTo>
+        <relationshipLabel>Holdings</relationshipLabel>
+        <relationshipName>Holdings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_EffectiveDate__c</fullName>
+        <description>Effective date of the AUM and Net flows</description>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SLC_FundClass__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>STANLIB Unit Trust fund class identifier (JSE Code)</description>
+        <externalId>false</externalId>
+        <label>Fund Class</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>STANLIB Share Class</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Holdings (Fund Class)</relationshipLabel>
+        <relationshipName>HoldingsFundClass</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_Fund__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>STANLIB Unit Trust fund name</description>
+        <externalId>false</externalId>
+        <label>Fund</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>STANLIB Fund</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Holdings</relationshipLabel>
+        <relationshipName>Holdings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLR_Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Financial broker</description>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Stanlib Retail Person Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Holdings</relationshipLabel>
+        <relationshipName>Holdings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLR_AumNative__c</fullName>
+        <description>Assets under management in native currency of the fund</description>
+        <externalId>false</externalId>
+        <label>AuM Native</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_AumZar__c</fullName>
+        <description>Assets under management in South African Rands</description>
+        <externalId>false</externalId>
+        <label>AuM ZAR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLR_BdmTargetMatches__c</fullName>
+        <description>Holding Bdm Target Matches</description>
+        <externalId>false</externalId>
+        <formula>IF(SLC_BdmTarget__r.OwnerId = SLR_Agent__r.OwnerId, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BDM Target Matches</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SLR_Brokerage__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Place where Financial Broker Works</description>
+        <externalId>false</externalId>
+        <label>Brokerage</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Stanlib Company Account</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Holdings (Brokerage)</relationshipLabel>
+        <relationshipName>HoldingsBrokerage</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLR_Comment__c</fullName>
+        <description>Gives user the ability to comment on a Holding record.</description>
+        <externalId>false</externalId>
+        <label>Comment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SLR_Currency__c</fullName>
+        <description>Native currency of Holding record</description>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_ExternalId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Used as the unique identifier from STANLIB&apos;s external data warehouse</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_Franchise__c</fullName>
+        <description>Calculates Franchise from Fund&gt;Strategy value for Retail Portal reports</description>
+        <externalId>false</externalId>
+        <formula>SLC_Fund__r.SLC_Strategy__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Franchise</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_Frequency__c</fullName>
+        <description>Frequency of the data update (e.g. monthly)</description>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_InflowBase__c</fullName>
+        <description>Inflow on Holding at month end.</description>
+        <externalId>false</externalId>
+        <label>Inflow Base</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowBase__c</fullName>
+        <description>Inflow minus Outflow for the Effective Period</description>
+        <externalId>false</externalId>
+        <label>Netflow Base</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsExclReinvestmentsNative__c</fullName>
+        <description>Client inflows less client outflows excluding reinvestments in native currency of the fund</description>
+        <externalId>false</externalId>
+        <label>Netflows excl. Reinvestments Native</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsExclReinvestments__c</fullName>
+        <description>Client inflows less client outflows excluding reinvestmentsin South African Rands</description>
+        <externalId>false</externalId>
+        <label>Netflows Excl. Reinvestments ZAR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsInclReinvestmentsNative__c</fullName>
+        <description>Client inflows less client outflows including reinvestments in native currency of the fund</description>
+        <externalId>false</externalId>
+        <label>Netflows incl. Reinvestments Native</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsinclReinvestments__c</fullName>
+        <description>Client inflows less client outflows including reinvestments in South African Rands</description>
+        <externalId>false</externalId>
+        <label>Netflows incl. Reinvestments ZAR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLR_OutflowBase__c</fullName>
+        <description>Outlfow on Holding at month end.</description>
+        <externalId>false</externalId>
+        <label>Outflow Base</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_Platform__c</fullName>
+        <description>Name of the Linked Investment Service Provider</description>
+        <externalId>false</externalId>
+        <label>Platform</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_Revenue__c</fullName>
+        <description>Revenue excluding Value Added Tax</description>
+        <externalId>false</externalId>
+        <label>Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_SourceSystem__c</fullName>
+        <description>STANLIB Retail Data Integration. Indicates where which system the Holding record information was sourced from.</description>
+        <externalId>false</externalId>
+        <label>Source System</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_StrategyTargetMatches__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( SLR_StrategyTarget__r.SLR_Strategy__c=  SLC_Fund__r.SLC_Strategy__c , TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Strategy Target Matches</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SLR_StrategyTarget__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to related Holding record with Strategy Target records.</description>
+        <externalId>false</externalId>
+        <label>Strategy Target</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>SLC_Target__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Strategy Target</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>SLC_Target__c</referenceTo>
+        <relationshipLabel>Holdings (Strategy Target)</relationshipLabel>
+        <relationshipName>StrategyHoldings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Holding</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>SLR_Agent__c</columns>
+        <columns>SLR_Brokerage__c</columns>
+        <columns>SLC_Fund__c</columns>
+        <columns>SLC_FundClass__c</columns>
+        <columns>SLC_EffectiveDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Retail_Client_List_View</fullName>
+        <columns>NAME</columns>
+        <columns>SLR_Agent__c</columns>
+        <columns>SLR_AumZar__c</columns>
+        <columns>SLR_InflowBase__c</columns>
+        <columns>SLR_OutflowBase__c</columns>
+        <columns>SLR_NetflowBase__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>Retail Client List View</label>
+    </listViews>
+    <listViews>
+        <fullName>SLR_My_Holdings</fullName>
+        <columns>NAME</columns>
+        <columns>SLC_EffectiveDate__c</columns>
+        <columns>SLR_InflowBase__c</columns>
+        <columns>SLR_OutflowBase__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>My Holdings</label>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Holding Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Holdings</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>SLR_Agent__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLR_Brokerage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_Fund__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_FundClass__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_EffectiveDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLR_AumZar__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

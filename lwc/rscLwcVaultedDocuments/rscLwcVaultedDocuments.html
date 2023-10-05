@@ -1,0 +1,255 @@
+<template>
+	<lightning-card>
+		<div if:true={isLoading}>
+			<lightning-spinner alternative-text={helpText} class="spinner-medium" data-text={helpText} size="medium" variant="brand"></lightning-spinner>
+		</div>
+		<div class="slds-p-horizontal_large slds-border_bottom">
+			<div class="slds-grid slds-grid_vertical-align-center">
+				<div class="slds-col">
+					<div class="slds-grid slds-grid_vertical-align-center">
+						<div class="slds-col_bump-left slds-m-bottom_x-small">
+							<lightning-icon alternative-text="Document Checklist Item" class="icon-bgcolor slds-m-right_medium" icon-name="standard:entitlement"
+											size="medium"></lightning-icon>
+						</div>
+						<div class="slds-col">
+							<h2 class="slds-text-heading_small slds-p-bottom_xx-small">
+								Document Checklist Items </h2>
+						</div>
+						<div class="slds-clearfix">
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="New" onclick={handleNew} slot="actions"
+											  variant="brand"></lightning-button>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Delink" onclick={handleReasonSelection} slot="actions"
+											  variant="brand"></lightning-button>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Link" onclick={handleLink} slot="actions"
+											  variant="brand"></lightning-button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slds-card__body slds-card__body_inner slds-m-top_medium">
+			<lightning-datatable columns={columns} data={documentItemList} data-id="DocumentList" default-sort-direction={defaultSortDirection} key-field="Id"
+								 onrowaction={handleRowAction} onrowselection={handleSelection} onsort={handleOnSort} sorted-by={sortedBy}
+								 sorted-direction={sortDirection}></lightning-datatable>
+		</div>
+
+		<lightning-card if:true={isReasonSelection}>
+			<div class="slds-container_small">
+				<section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open"
+						 role="dialog" tabindex="-1">
+					<div class="slds-modal__container customModal">
+						<header class="slds-modal__header">
+							<div class="slds-grid slds-grid_vertical-align-center">
+								<div class="slds-col">
+									<h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-reason">
+										{label.selectReasonHeading} </h2>
+								</div>
+							</div>
+						</header>
+						<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-reason">
+							<lightning-textarea data-field="delink-reason" label={label.selectReasonInputHeading} name="input-reason"
+												required></lightning-textarea>
+						</div>
+						<footer class="slds-modal__footer">
+							<div class="slds-clearfix">
+								<lightning-button class="slds-p-around_x-small slds-float_right" label="Cancel" onclick={handleCloseConfirmation}
+												  variant="neutral">
+
+								</lightning-button>
+								<lightning-button class="slds-p-around_x-small slds-float_right" label="Next" onclick={handleConfirmation}
+												  variant="brand"></lightning-button>
+							</div>
+						</footer>
+					</div>
+				</section>
+				<div class="slds-backdrop slds-backdrop_open"></div>
+			</div>
+		</lightning-card>
+
+		<lightning-card if:true={isConfirmation}>
+			<div class="slds-container_small">
+				<section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open"
+						 role="dialog" tabindex="-1">
+					<div class="slds-modal__container customModal">
+						<header class="slds-modal__header">
+							<div class="slds-grid slds-grid_vertical-align-center">
+								<lightning-icon alternative-text="Warning!" icon-name="utility:warning" title="warning variant"
+												variant="warning"></lightning-icon>
+								<div class="slds-col">
+									<h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-01">
+										{label.warningHeaderMessage} </h2>
+								</div>
+							</div>
+						</header>
+						<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+							<h1>
+								<b>{label.deleteChecklistItemWarningMessage}
+								</b>
+							</h1>
+							<br/>
+							<lightning-datatable columns={deleteColumns} data={selectedItemsToDelete} hide-checkbox-column="true" key-field="Id"
+												 show-row-number-column="true"></lightning-datatable>
+
+						</div>
+						<footer class="slds-modal__footer">
+							<div class="slds-clearfix">
+								<lightning-button class="slds-p-around_x-small slds-float_right" label="Cancel" onclick={handleCloseConfirmation}
+												  variant="neutral">
+
+								</lightning-button>
+								<lightning-button class="slds-p-around_x-small slds-float_right" label="Confirm" onclick={handleDelete}
+												  variant="brand"></lightning-button>
+							</div>
+						</footer>
+					</div>
+				</section>
+				<div class="slds-backdrop slds-backdrop_open"></div>
+			</div>
+		</lightning-card>
+
+		<lightning-card if:true={isLink}>
+			<section aria-describedby="modal-content-id-2" aria-labelledby="modal-heading-02" aria-modal="true" class="slds-modal slds-fade-in-open"
+					 role="dialog" tabindex="-1">
+				<div class="slds-modal__container customModal">
+					<div if:true={isLoading}>
+						<lightning-spinner alternative-text={helpText} class="spinner-medium" data-text={helpText} size="medium"
+										   variant="brand"></lightning-spinner>
+					</div>
+					<header class="slds-modal__header">
+						<div class="slds-grid slds-grid_vertical-align-center">
+							<div class="slds-col">
+								<h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-02">
+									Vaulted Documents </h2>
+							</div>
+						</div>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+						<lightning-datatable columns={vaultedColumns} data={filteredDocumentList} default-sort-direction={defaultSortDirection} key-field="Id"
+											 onrowselection={handleVaultedSelection} onsort={handleOnSort} sorted-by={sortedBy}
+											 sorted-direction={sortDirection}></lightning-datatable>
+					</div>
+					<footer class="slds-modal__footer">
+						<div class="slds-clearfix">
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Cancel" onclick={handleCloseLink}
+											  variant="neutral"></lightning-button>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Save" onclick={handleSave}
+											  variant="brand"></lightning-button>
+						</div>
+					</footer>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open"></div>
+		</lightning-card>
+
+		<lightning-card if:true={isUpload}>
+			<div class="slds-container_small">
+				<section aria-describedby="modal-content-id-3" aria-labelledby="modal-heading-03" aria-modal="true" class="slds-modal slds-fade-in-open"
+						 role="dialog" tabindex="-1">
+					<div class="slds-modal__container">
+						<div if:true={isLoading}>
+							<lightning-spinner alternative-text={helpText} class="spinner-medium" data-text={helpText} size="medium"
+											   variant="brand"></lightning-spinner>
+						</div>
+						<header class="slds-modal__header">
+							<div class="slds-col">
+								<h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-03">
+									Upload Document on CheckList Item </h2>
+							</div>
+						</header>
+						<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+							<lightning-layout-item padding="around-small" size="6">
+								<c-cmn-lwc-file-uploader accepted-formats = {acceptedFormats} onuploadfile = {handleFileUploaderEvent}></c-cmn-lwc-file-uploader>
+							</lightning-layout-item>
+						</div>
+						<footer class="slds-modal__footer">
+							<div class="slds-clearfix">
+								<lightning-button class="slds-p-around_x-small slds-float_right" label="Save" onclick={handleFetchFiles}
+												  variant="brand"></lightning-button>
+
+								<lightning-button class="slds-p-around_x-small slds-float_right" label="Cancel" onclick={handleUploadClose}
+												  variant="neutral"></lightning-button>
+							</div>
+						</footer>
+					</div>
+				</section>
+				<div class="slds-backdrop slds-backdrop_open"></div>
+			</div>
+		</lightning-card>
+
+		<template if:true={createOrEditModal}>
+			<section aria-describedby="modal-content-id-4" aria-labelledby="modal-heading-04" aria-modal="true" class="slds-modal slds-fade-in-open"
+					 role="dialog" tabindex="-1">
+				<div class="slds-modal__container">
+					<div if:true={isLoading}>
+						<lightning-spinner alternative-text={helpText} class="spinner-medium" data-text={helpText} size="medium"
+										   variant="brand"></lightning-spinner>
+					</div>
+					<div if:true={isLoadingReclassify}>
+						<lightning-spinner alternative-text={helpText} class="spinner-medium" data-text={helpText} size="medium"
+										   variant="brand"></lightning-spinner>
+					</div>
+					<header class="slds-modal__header">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleClose} title="Close">
+							<lightning-icon alternative-text="close" icon-name="utility:close" size="small" variant="inverse"></lightning-icon>
+						</button>
+						<template if:false={isEdit}>
+							<h2 class="slds-text-heading_medium slds-hyphenate">Create New Document Checklist Item </h2>
+						</template>
+						<template if:true={isEdit}>
+							<h2 class="slds-text-heading_medium slds-hyphenate">Edit {currentListItemName} </h2>
+						</template>
+					</header>
+					<div class="slds-theme_default slds-p-around_medium">
+						<lightning-record-edit-form object-api-name="DocumentChecklistItem" record-id={currentListItemId}>
+							<lightning-layout multiple-rows style="height: max-content;">
+								<lightning-layout-item padding="around-small" size="6">
+									<lightning-input-field data-field="current-listitem-type" field-name="DocumentTypeId" onchange={handleTypeChange}
+														   required=true></lightning-input-field>
+								</lightning-layout-item>
+								<lightning-layout-item padding="around-small" size="6">
+									<lightning-input-field data-field="current-listitem-name" field-name="Name"
+														   value={currentListItemName}></lightning-input-field>
+								</lightning-layout-item>
+								<lightning-layout-item padding="around-small" size="6">
+									<lightning-combobox label="Status" name="status" onchange={handleStatusChange} options={statusValues}
+														value={currentListItemStatus}></lightning-combobox>
+								</lightning-layout-item>
+								<lightning-layout-item>
+									<div class="slds-p-around_x-large slds-size_12-of-12">
+										<template if:true={isEdit}>
+											<lightning-input checked={documentRequired} label="Required" onchange={handleRequired} type="checkbox"
+															 value={documentRequired}></lightning-input>
+										</template>
+									</div>
+								</lightning-layout-item>
+								<template if:false={isEdit}>
+									<lightning-layout-item padding="around-small" size="6">
+										<c-cmn-lwc-file-uploader accepted-formats = {acceptedFormats} onuploadfile = {handleFileUploaderEvent}></c-cmn-lwc-file-uploader>
+									</lightning-layout-item>
+								</template>
+								<template if:true={showReason}>
+									<lightning-layout-item padding="around-small" size="12">
+										<lightning-input-field data-field="current-listitem-reason" field-name="CMN_Reason__c" required="true"
+															   value={currentListItemReason}></lightning-input-field>
+									</lightning-layout-item>
+								</template>
+								<lightning-input-field class="slds-hide" data-field="current-listitem-id" field-name="Id"
+													   value={currentListItemId}></lightning-input-field>
+							</lightning-layout>
+						</lightning-record-edit-form>
+					</div>
+					<footer class="slds-modal__footer">
+						<div class="slds-clearfix">
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Save" onclick={handleSave}
+											  variant="brand"></lightning-button>
+							<lightning-button class="slds-p-around_x-small slds-float_right" label="Cancel" onclick={handleClose}
+											  variant="neutral"></lightning-button>
+						</div>
+					</footer>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open"></div>
+		</template>
+	</lightning-card>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

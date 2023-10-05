@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AW_LP_AdviserPerformance</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>AW_LP_AdviserPerformance</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>AW_AdviserPerformance</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AW_AdviserPerformance</fullName>
+        <fields>OwnerId</fields>
+        <fields>AW_StartDate__c</fields>
+        <fields>AW_EndDate__c</fields>
+        <fields>AW_NetPCR__c</fields>
+        <fields>AW_RiskPCR__c</fields>
+        <fields>AW_LeadConversionRate__c</fields>
+        <fields>AW_OpportunityWinRate__c</fields>
+        <label>Adviser Performance Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Various measures used to track activity by  advisers and sales leaders. The information is drawn from external systems as well as activity within Salesforce. The activity measures are collected weekly and aggregated to a parent object monthly.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AW_AP_CompositeID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Used as a foreign key to uniquely identify AP rows. 
+Format: WW-YYYY-ConsultantCode</description>
+        <externalId>true</externalId>
+        <label>AP CompositeID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AW_AdviserTarget__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Targeted set for the Adviser</description>
+        <externalId>false</externalId>
+        <label>Activity Measure Total</label>
+        <referenceTo>AW_AdviserTarget__c</referenceTo>
+        <relationshipLabel>Activity Measure Actuals</relationshipLabel>
+        <relationshipName>Adviser_Performance</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_AverageFAVP__c</fullName>
+        <description>This is used to store average FAVP value</description>
+        <externalId>false</externalId>
+        <label>AQC</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ClientSatisfactionScore__c</fullName>
+        <description>Year average rating based on clients surveys</description>
+        <externalId>false</externalId>
+        <label>Client Satisfaction Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ConsultantCode__c</fullName>
+        <description>13 Digit Consultant Code</description>
+        <externalId>true</externalId>
+        <label>Consultant Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_EndDate__c</fullName>
+        <description>This indicates the end date of the activity measurement period</description>
+        <externalId>false</externalId>
+        <formula>DATE(VALUE(AW_Year__c),1,1)- WEEKDAY(DATE(VALUE(AW_Year__c),1,1)) + AW_WeekNumber__c*7+1</formula>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearNetRiskActivitiesTargetYTD__c</fullName>
+        <description>Full Year&apos;s Net Risk Activities Target achieved</description>
+        <externalId>false</externalId>
+        <label>% Full Year Net Risk Act. Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearPCNetRetailActivityTargetYTD__c</fullName>
+        <description>This holds Full Year Percentage Net Retail Activity Target YTD.</description>
+        <externalId>false</externalId>
+        <label>% Full Year Net Retail Act. Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearPCRiskNetPCRTargetYTD__c</fullName>
+        <description>Year To Date Target set for the  full year PCR</description>
+        <externalId>false</externalId>
+        <label>% Full Year Net Risk PCR Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearPercentageNetPCRTargetYTD__c</fullName>
+        <description>Full Year&apos;s Net Risk Activities Target achieved Year to Date as a percentage</description>
+        <externalId>false</externalId>
+        <label>% Full Year Net PCR Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearTargetPCR__c</fullName>
+        <description>The  target PCRs to be achieved  for the year </description>
+        <externalId>false</externalId>
+        <label>Full Year Target Net PCR</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearTargetRetailActivities__c</fullName>
+        <description>The target of the retail activities to be achieved  for the full year</description>
+        <externalId>false</externalId>
+        <label>Full Year Target Net Retail Activities</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearTargetRiskActivities__c</fullName>
+        <description>The target of the retail activities to be achieved  for the full year</description>
+        <externalId>false</externalId>
+        <label>Full Year Target Net Risk Activities</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_FullYearTargetRiskPCR__c</fullName>
+        <description>The target Risk PCRs for  has been set for the the full year  </description>
+        <externalId>false</externalId>
+        <label>Full Year Target Net Risk PCR</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_IsLatestActuals__c</fullName>
+        <description>To check if this is the accurate and UpToDate data</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.AW_LastPerformanceAPIRunDate__c  =  AW_EndDate__c</formula>
+        <label>Is Latest Actuals</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_LAPExpTenure__c</fullName>
+        <description>This  is used to store LAP Experience Tenure</description>
+        <externalId>false</externalId>
+        <label>Tenure</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_LastMELAPValidatingYTD__c</fullName>
+        <description>Last MELAP  Validation</description>
+        <externalId>false</externalId>
+        <label>Last ME LAP Validating YTD</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_LastYearsProductionClubStatus__c</fullName>
+        <description>Status of Last Year&apos;s Production Club</description>
+        <externalId>false</externalId>
+        <label>Production Club based on previous year</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_LeadConversionRate__c</fullName>
+        <description>This is a calculated value where Lead Conversion Rate is a percent of lead converted of the total number of leads</description>
+        <externalId>false</externalId>
+        <formula>AW_NumberOfLeadConverted__c /  (AW_NumberOfOpenLeads__c +  AW_NumberOfLeadConverted__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Lead Conversion Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_NetPCRActualYTD__c</fullName>
+        <description>Year To Date Net PCR value achieved</description>
+        <externalId>false</externalId>
+        <label>Actual  Net PCR YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NetPCRRequiredForValidationYTD__c</fullName>
+        <description>Net PCR value required for Validation Year To Date</description>
+        <externalId>false</externalId>
+        <label>Net PCR Required for Validation YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NetPCR__c</fullName>
+        <description>The Net PCR achieved for this week</description>
+        <externalId>false</externalId>
+        <label>Net PCR</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NetRetailActivitiesYTD__c</fullName>
+        <description>Net Retail Activities achieved for the Year To Date</description>
+        <externalId>false</externalId>
+        <label>Actual Net Retail Activities YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NetRiskActivitiesYTD__c</fullName>
+        <description>Net Risk Activities achieved Year To Date</description>
+        <externalId>false</externalId>
+        <label>Actual Net Risk Activities YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NumberOfLeadConverted__c</fullName>
+        <description>Number of leads converted by adviser</description>
+        <externalId>false</externalId>
+        <label>Number of Lead Converted</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NumberOfNewLeads__c</fullName>
+        <description>This indicates the number of new leads for the month</description>
+        <externalId>false</externalId>
+        <label>Number of New Leads</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NumberOfNewOpportunities__c</fullName>
+        <description>Count of number of new opportunities</description>
+        <externalId>false</externalId>
+        <label>Number of New Opportunities</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NumberOfOpenLeads__c</fullName>
+        <description>This indicates the number of open leads for the month</description>
+        <externalId>false</externalId>
+        <label>Number of Open Leads</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NumberOfOpportunitiesOpen__c</fullName>
+        <description>Number of Opportunities Open for Adviser</description>
+        <externalId>false</externalId>
+        <label>Number of Open Opportunities</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_NumberOfOpportunitiesWon__c</fullName>
+        <description>Number of Opportunities Won by Adviser</description>
+        <externalId>false</externalId>
+        <label>Number of Opportunities Won</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_OnPBS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To check if adviser is on PBS</description>
+        <externalId>false</externalId>
+        <label>On PBS</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_OpportunityWinRate__c</fullName>
+        <description>Opportunity Win rate of Adviser shown as a percentage</description>
+        <externalId>false</externalId>
+        <formula>AW_NumberOfOpportunitiesWon__c /(  AW_NumberOfOpportunitiesWon__c + AW_NumberOfOpportunitiesOpen__c )</formula>
+        <label>Actual Opportunity Win Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_PercentageNetPCRTargetYTD__c</fullName>
+        <description>Year To Date  Net PCRT Target Percentage achieved</description>
+        <externalId>false</externalId>
+        <label>% Net PCR Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_PercentageRetailActivitiesTargetYTD__c</fullName>
+        <description>The percentage of the retail activities target achieved up to this week</description>
+        <externalId>false</externalId>
+        <label>% Net Retail Activities Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_PercentageRiskActivitiesTargetYTD__c</fullName>
+        <description>The percentage of the retail activities target which has been achieved for the year up to this week</description>
+        <externalId>false</externalId>
+        <label>% Net Risk Activities Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_PercentageRiskNetPCRTargetYTD__c</fullName>
+        <description>Year To Date Net Risk PCR Percentage achieved</description>
+        <externalId>false</externalId>
+        <label>% Net Risk PCR Target YTD</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_RD_StartDate__c</fullName>
+        <description>This Field replicates the Start Date field( AW_StartDate__c). This was created in order to use this as a Dashboard filter( Converted from Date data type to Date/Time data type ).</description>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE( AW_StartDate__c )</formula>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AW_RetailActivities__c</fullName>
+        <description>The retail activities for this week</description>
+        <externalId>false</externalId>
+        <label>Net Retail Activity Count</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RiskActivities__c</fullName>
+        <description>The risk activities for this week</description>
+        <externalId>false</externalId>
+        <label>Net Risk Activity Count</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RiskNetPCRYTD__c</fullName>
+        <description>Risk Net PCR achieved Year To Date</description>
+        <externalId>false</externalId>
+        <label>Actual Net Risk PCR YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RiskPCR__c</fullName>
+        <description>The Risk PCRs achieved for the week</description>
+        <externalId>false</externalId>
+        <label>Net Risk PCR</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_StartDate__c</fullName>
+        <description>Start Date of the data  record</description>
+        <externalId>false</externalId>
+        <formula>IF
+(
+	DATE(VALUE(AW_Year__c),1,1)&gt; DATE(VALUE(AW_Year__c),1,1)- WEEKDAY(DATE(VALUE(AW_Year__c),1,1))+( AW_WeekNumber__c -1)*7+1,
+	DATE(VALUE(AW_Year__c),1,1),
+	DATE(VALUE(AW_Year__c),1,1)- WEEKDAY(DATE(VALUE(AW_Year__c),1,1))+( AW_WeekNumber__c -1)*7+2
+)</formula>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_TargetPCRYTD__c</fullName>
+        <description>The portion of the Target year&apos;s PCRs which is expected to have been achieved up to this week</description>
+        <externalId>false</externalId>
+        <label>Target Net PCR YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TargetRetailActivitiesYTD__c</fullName>
+        <description>The target of the retail activities expected to have been achieved up to this week</description>
+        <externalId>false</externalId>
+        <label>Target Net Retail Activities YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TargetRiskActivitiesYTD__c</fullName>
+        <description>The target of the risk activities expected to have been achieved for the year up to this week</description>
+        <externalId>false</externalId>
+        <label>Target Net Risk Activities YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TargetRiskPCRYTD__c</fullName>
+        <description>The target Risk PCRs which is expected to have been achieved up to the week</description>
+        <externalId>false</externalId>
+        <label>Target Net Risk PCR YTD</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_UACFID__c</fullName>
+        <description>owner will be assigned based on UACFID</description>
+        <externalId>false</externalId>
+        <label>UACFID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_WeekNumber__c</fullName>
+        <description>This field stores the week number.</description>
+        <externalId>false</externalId>
+        <label>Week Number</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Year__c</fullName>
+        <description>This is used to store year in which the calculation was done</description>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Activity Measure Actual</label>
+    <listViews>
+        <fullName>AW_AllAdviserPerformance</fullName>
+        <columns>NAME</columns>
+        <columns>AW_StartDate__c</columns>
+        <columns>AW_EndDate__c</columns>
+        <columns>AW_WeekNumber__c</columns>
+        <columns>AW_NetPCR__c</columns>
+        <columns>AW_NetPCRActualYTD__c</columns>
+        <columns>AW_TargetPCRYTD__c</columns>
+        <columns>AW_RiskPCR__c</columns>
+        <columns>AW_RiskNetPCRYTD__c</columns>
+        <columns>AW_TargetRiskPCRYTD__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Actuals</label>
+    </listViews>
+    <listViews>
+        <fullName>AW_MyAdviserPerformance</fullName>
+        <columns>NAME</columns>
+        <columns>AW_StartDate__c</columns>
+        <columns>AW_EndDate__c</columns>
+        <columns>AW_WeekNumber__c</columns>
+        <columns>AW_NetPCR__c</columns>
+        <columns>AW_NetPCRActualYTD__c</columns>
+        <columns>AW_TargetPCRYTD__c</columns>
+        <columns>AW_RiskPCR__c</columns>
+        <columns>AW_RiskNetPCRYTD__c</columns>
+        <columns>AW_TargetRiskPCRYTD__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Actuals</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AP-{0000}</displayFormat>
+        <label>Measure Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Activity Measure Actuals</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>AW_AdviserTarget__c</searchFilterFields>
+        <searchFilterFields>AW_ConsultantCode__c</searchFilterFields>
+        <searchFilterFields>AW_EndDate__c</searchFilterFields>
+        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
+        <searchFilterFields>AW_WeekNumber__c</searchFilterFields>
+        <searchResultsAdditionalFields>AW_StartDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AW_EndDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>AW_NetPCRActualYTD__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>AW_OwnerWeekNumberYear_PreventEdit</fullName>
+        <active>true</active>
+        <description>This validation rule prevent update of Consultant Code, Owner, Year and Week Number fields as these field would impact the composite key external ID field.</description>
+        <errorConditionFormula>AND
+(
+	NOT($Setup.AW_FeatureSwitches__c.AW_DisableAdviserPerformanceValidation__c), 
+	NOT(ISNEW()),
+	OR
+	(
+		ISCHANGED(AW_WeekNumber__c),
+		ISCHANGED(AW_Year__c),
+		ISCHANGED(OwnerId),
+		ISCHANGED(AW_UACFID__c)
+	)
+)</errorConditionFormula>
+        <errorMessage>You may not update system controlled fields once the record is created.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

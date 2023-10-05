@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Target</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Targets</value>
+    </caseValues>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>SLC_EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>SLC_StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Amount --></label>
+        <name>SLC_TargetAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target % --></label>
+        <name>SLC_TargetPercent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Year --></label>
+        <name>SLC_TargetYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- AUM --></label>
+        <name>SLR_AumStrategyRollup__c</name>
+    </fields>
+    <fields>
+        <label><!-- AUM --></label>
+        <name>SLR_BdmHoldingsRollup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strategy --></label>
+        <name>SLR_Strategy__c</name>
+        <relationshipLabel><!-- Targets --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <description><!-- Target for individual Business Development Manager users for STANLIB&apos;s Retail Distribution team --></description>
+        <label><!-- BDM Target --></label>
+        <name>SLR_BdmTarget</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Targets set against STANLIB Retail Distribution&apos;s Fund Strategies. --></description>
+        <label><!-- Strategy Target --></label>
+        <name>SLR_StrategyTarget</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

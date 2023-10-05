@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Custom Metadata used to store the fieldsets required for specific Lightning Web Component</description>
+    <fields>
+        <fullName>CMN_LWCActiveSections__c</fullName>
+        <description>Field used to store the comma separated values of the Accordions to be made active by default</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>LWC Active Sections</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CMN_LWCFieldSets__c</fullName>
+        <description>Field used to store the comma separated fieldsets which can be used in lightning web component</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>LWC FieldSets</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Lightning Web Components FieldSet</label>
+    <pluralLabel>Lightning Web Components FieldSets</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

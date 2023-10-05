@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Set Share From Id and Share With Id when an Object Share Configuration record is created. These fields will be used in Matching / Duplicate Rule(s).</description>
+    <environments>Default</environments>
+    <interviewLabel>Object Share Set Share From Id and Share With Id {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Object Share Set Share From Id and Share With Id</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Set Share From Id and Share With Id based on Share From and Share With lookups</description>
+        <name>CMN_SetShareFromIdAndShareWithId</name>
+        <label>Set Share From Id and Share With Id</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>CMN_ShareFromId__c</field>
+            <value>
+                <elementReference>$Record.CMN_ShareFrom__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CMN_ShareWithId__c</field>
+            <value>
+                <elementReference>$Record.CMN_ShareWith__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CMN_SetShareFromIdAndShareWithId</targetReference>
+        </connector>
+        <object>CMN_ObjectShareConfiguration__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

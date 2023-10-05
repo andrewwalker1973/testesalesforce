@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>SendEmail</name>
+        <label>SendEmail</label>
+        <locationX>339</locationX>
+        <locationY>587</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>OrgWideEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>WelcomeSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>WelcomeEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <constants>
+        <name>OrgWideEmail</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>noreply@stanlib.com</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>CheckProfile</name>
+        <label>CheckProfile</label>
+        <locationX>669</locationX>
+        <locationY>371</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckPortalProfile</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>STANLIB Portal User</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckStanlibUser</targetReference>
+            </connector>
+            <label>CheckPortalProfile</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckStanlibUser</name>
+        <label>CheckStanlibUser</label>
+        <locationX>471</locationX>
+        <locationY>479</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>IsPortalUser</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SendEmail</targetReference>
+            </connector>
+            <label>IsPortalUser</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>SLI_IsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Stanlib Send Welcome Email New Registration {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Stanlib Send Welcome Email New Registration</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>543</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>CheckProfile</targetReference>
+        </connector>
+        <object>User</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>WelcomeEmail</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0&quot;&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+      ReadMsgBody{
+        width: 100%;
+      }
+      .ExternalClass {
+        width: 100%;
+      }
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+        line-height: 100%;
+      }
+      body {
+        -webkit-text-size-adjust:100%;
+        -ms-text-size-adjust:100%;
+        margin:0 !important;
+      }
+      p {
+        margin: 1em 0;
+      }
+      table td {
+        border-collapse: collapse;
+      }
+      img {
+        outline:0;
+      }
+      a img {
+        border:none;
+      }
+      @-ms-viewport{
+        width: device-width;
+      }
+    &lt;/style&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+      @media only screen and (max-width: 480px) {
+        .container {
+          width: 100% !important;
+        }
+        .footer {
+          width:auto !important;
+          margin-left:0;
+        }
+        .mobile-hidden {
+          display:none !important;
+        }
+        .logo {
+          display:block !important;
+          padding:0 !important;
+        }
+        img {
+          max-width:100% !important;
+          height:auto !important;
+          max-height:auto !important;
+        }
+        .header img{
+          max-width:100% !important;
+          height:auto !important;
+          max-height:auto !important;
+        }
+        .photo img {
+          width:100% !important;
+          max-width:100% !important;
+          height:auto !important;
+        }
+        .drop {
+          display:block !important;
+          width: 100% !important;
+          float:left;
+          clear:both;
+        }
+        .footerlogo {
+          display:block !important;
+          width: 100% !important;
+          padding-top:15px;
+          float:left;
+          clear:both;
+        }
+        .nav4, .nav5, .nav6 {
+          display: none !important;
+        }
+        .tableBlock {
+          width:100% !important;
+        }
+        .responsive-td {
+          width:100% !important;
+          display:block !important;
+          padding:0 !important;
+        }
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+body, .tb_properties{font-family: Arial !important; font-size: 14px !important; color: #EDF0F8 !important; line-height: 1.15 !important; padding: 0px 30px !important; }.buttonstyles{font-family: Arial, helvetica, sans-serif !important; font-size: 14px !important; color: #1C2C34 !important; padding: 10px !important; }h1{font-family: Arial !important; font-size: 14px !important; color: #EDF0F8 !important; line-height: 1.15 !important; }h2{font-family: Arial !important; font-size: 14px !important; color: #EDF0F8 !important; line-height: 1.15 !important; }h3{font-family: Arial !important; font-size: 14px !important; color: #EDF0F8 !important; line-height: 1.15 !important; }a:not(.buttonstyles){line-height: 1.15 !important; }.mobile-hidden{display: none !important; }.responsive-td {width: 100% !important; display: block !important; padding: 0 !important;}
+/* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+      }
+      @media only screen and (max-width: 640px) {
+        .container {
+          width:100% !important;
+        }
+        .mobile-hidden {
+          display:none !important;
+        }
+        .logo {
+          display:block !important;
+          padding:0 !important;
+        }
+        .photo img {
+          width:100% !important;
+          height:auto !important;
+        }
+        .nav5, .nav6 {
+          display: none !important;
+        }
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    &lt;/style&gt;
+    &lt;!--[if mso]&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+/* Begin Outlook Font Fix */
+              body, table, td {
+                 font-family : Arial, helvetica, sans-serif;
+                 line-height : 115%;
+                 font-size : 14px;
+                 color : #EDF0F8;
+              }
+/* End Outlook Font Fix */
+&lt;/style&gt;
+&lt;![endif]--&gt;
+  &lt;!-- start:processor:head --&gt;&lt;!-- start:processor:body:head --&gt;&lt;style&gt;body{background:#fff0}.a11yHidden{max-height:0;overflow:hidden;opacity:0}table.mso{border-collapse:collapse;padding:0;table-layout:fixed}.sc-box-sizing{display:inherit}&lt;/style&gt;&lt;style&gt;
+u + .body .ie-form{display:block!important}@media screen and (max-width:801px) and (min-width:800px) and (orientation: landscape) and (min-device-width: 801px){u + .body .ie-form{display:none!important} }u + .body .ie-radio-check{vertical-align:top;opacity:.99;width:auto;height:auto;float:left;border-radius:initial}u + .body .ie-btn{display:block}u + .body .ie-gmailhide{display:none!important}u + .body .ie-rating-group{display:none}u + .body .ie-rating-default{display:inline;height:0;width:0;opacity:0}
+u + .body .ie-rating-group-gmail{display:block!important}u + .body .ie-rating-group-gmail input{vertical-align:middle;float:none}u + .body .ie-rating-group-gmail .ie-btn{display:inline-block}noinput{display:inline!important}.ie-radio-check{display:inline-block;opacity:0;width:0;height:0;margin:0;margin:0 0 0 -9999px;float:left;position:absolute;-webkit-appearance:none}#MessageWebViewDiv .ie-radio-check{display:block}
+.ie-radio-check:focus + .ie-btn-wrap .ie-btn,.ie-radio-check:focus + .ie-btn,.ie-rating-group .ie-radio-check:focus + .ie-btn,.ie-rating-default:focus + .ie-input-group .ie-rating-group &gt; label &gt; .ie-btn-wrap .ie-btn{outline:Highlight auto 2px;outline:-webkit-focus-ring-color auto 5px}.ie-btn-wrap,.ie-frm-btn,select,.ie-dropdown-i{cursor:pointer}*.ie-input-wraper{display:block}*.ie-label{display:block}.ie-b-label,.ie-btn,.ie-gmail-btn-wrap{display:inline-block;vertical-align:middle;
+word-wrap:normal}.ie-b-label-box{width:100%;vertical-align:middle}.ie-input{display:inline-block;box-sizing:border-box}.ie-text-in{font:inherit;color:inherit;background:inherit;border:none;width:100%;height:100%;box-sizing:border-box;vertical-align:top}fieldset{border:none;padding:0;margin:0}legend{width:100%;padding:0;text-align:inherit}.ie-btn-wrap{display:inline-block}.ie-btn-label-before{vertical-align:bottom;display:inline-block}.ie-btn-label-after{vertical-align:top;display:inline-block}
+.ie-rating-default{display:none}.ie-rating-default:checked{display:block}.ie-frm-btn{display:inline-block;text-align:center;font:inherit;border:none;padding:0;background:none;-webkit-appearance:none}.ie-icon{font-family:monospace;text-align:center}.ie-icon-star{font-family:arial}*.sc-c1b4h981-ic-label-box-sizing{padding:15px 0px 5px;font-weight:bold}*.sc-text-c1b4h981-ic-description{margin:0px;padding-top:5px;padding-bottom:5px}*.sc-text-c1b4h981-ic-required{color:#ff0000;font-weight:bold;
+display:inline-block}.sc-block-c1b4h981-ic-star-rating-label{display:block}*.sc-c1b4h981-ic-star-rating-label-box-sizing{text-align:center}.ie-input-c1b4h981-ic-text-select{width:100%;max-width:100%}.ie-input-c1b4h981-ic-text-select .ie-text-in{height:30px;border:1px solid #cccccc }.ie-input-c1b4h981-ic-textarea{width:100%;max-width:100%}.ie-input-c1b4h981-ic-textarea .ie-text-in{height:80px}*.ie-frm-btn-c1b4h981-ic-submit{width:auto;margin:15px 0px;padding:5px 10px;color:#ffffff;
+text-decoration:none;background:#309ddd}.ie-btn-c1b4h981-ic-star-rating,.ie-r-btn-c1b4h981-ic-star-rating,input:checked + .ie-input-group .ie-r-btn-c1b4h981-ic-star-rating,input:checked + .ie-btn-wrap + label .ie-r-btn-c1b4h981-ic-star-rating{margin-right:5px;margin-left:5px;font-size:60px;color:#dcdbda;line-height:1em}
+.ie-rating-group-gmail label:hover .ie-r-btn-c1b4h981-ic-star-rating,.ie-radio-check:focus + .ie-btn-c1b4h981-ic-star-rating,.ie-btn-c1b4h981-ic-star-rating:hover,#rebel .ie-r-btn-c1b4h981-ic-star-rating:hover{color:#cccccc}
+&lt;/style&gt;&lt;style&gt;@media only screen and (max-width:450px){.ie-btn-c1b4h981-ic-star-rating,.ie-r-btn-c1b4h981-ic-star-rating,input:checked + .ie-input-group .ie-r-btn-c1b4h981-ic-star-rating,input:checked + .ie-btn-wrap + label .ie-r-btn-c1b4h981-ic-star-rating{font-size:38px!important} }&lt;/style&gt;&lt;style&gt;
+.&amp; input:focus,.&amp; textarea:focus,.&amp; button:focus,.&amp; select:focus,.&amp; .ie-radio-check:focus + .ie-btn-wrap .ie-btn,.&amp; .ie-radio-check:focus + .ie-btn,.&amp; .ie-rating-group .ie-radio-check:focus + .ie-btn,.&amp; .ie-rating-default:focus + .ie-input-group .ie-rating-group &gt; label &gt; .ie-btn-wrap .ie-btn{outline:Highlight auto 5px}.&amp; .ie-text-in{padding-top:0!important;padding-bottom:0!important;padding-right:0!important}&lt;/style&gt;&lt;style&gt;
+#interactive:checked+#rebel .ie-form{display:block!important}@media screen and (max-width: 800px){.&amp; #interactive:checked+#rebel .ie-form{display:none!important} }#MessageWebViewDiv #rebel#rebel .ie-form,.edo-email-view #rebel#rebel .ie-form,.edo #rebel#rebel .ie-form,#msgBody #rebel#rebel .ie-form,.netease_mail_readhtml #interactive:checked+#rebel .ie-form{display:none!important}@media (hover: hover) and (pointer: fine){
+_:-webkit-full-screen,_::-webkit-full-page-media,_:future,:root .body:not(.Singleton) #rebel#rebel .ie-form{display:none!important} }@supports (justify-content: center){.ie-icon{display:inline-flex;align-items:center;justify-content:center} }.ie-icon svg{width:1em;height:1.1em;vertical-align:text-top;margin:0 auto}body[style] &gt; div[style^=&quot;margin: 16px 0&quot;][style$=&quot;font-size: 80%&quot;] .ie-icon svg,.ie-form:not([rebel]) .ie-icon svg{display:none}
+body[style] &gt; div[style^=&quot;margin: 16px 0&quot;][style$=&quot;font-size: 80%&quot;] .ie-icon-star:after,.ie-form:not([rebel]) .ie-icon-star:after{content:&apos;\2605&apos;}body[style] &gt; div[style^=&quot;margin: 16px 0&quot;][style$=&quot;font-size: 80%&quot;] .ie-icon-heart:after,.ie-form:not([rebel]) .ie-icon-heart:after{content:&apos;\2665&apos;}body[style] &gt; div[style^=&quot;margin: 16px 0&quot;][style$=&quot;font-size: 80%&quot;] .ie-icon-check:after,.ie-form:not([rebel]) .ie-icon-check:after{content:&apos;\2713&apos;}
+body[style] &gt; div[style^=&quot;margin: 16px 0&quot;][style$=&quot;font-size: 80%&quot;] .ie-icon-cross:after,.ie-form:not([rebel]) .ie-icon-cross:after{content:&apos;\2715&apos;}body[style] &gt; div[style^=&quot;margin: 16px 0&quot;][style$=&quot;font-size: 80%&quot;] .ie-icon-square:after,.ie-form:not([rebel]) .ie-icon-square:after{content:&apos;\25A0&apos;}body[style] &gt; div[style^=&quot;margin: 16px 0&quot;][style$=&quot;font-size: 80%&quot;] .ie-icon-circle:after,.ie-form:not([rebel]) .ie-icon-circle:after{content:&apos;\25cf&apos;}
+input:checked + .ie-btn-wrap .ie-btn-c1b4h981-ic-star-rating,input:checked + .ie-btn-c1b4h981-ic-star-rating,#rebel input:checked + .ie-btn-wrap .ie-r-btn-c1b4h981-ic-star-rating,.ie-r-btn-c1b4h981-ic-star-rating{color:#309ddd}
+&lt;/style&gt;&lt;noscript&gt; &lt;style&gt;#interactive:checked+#rebel .ie-form{display:none!important}#interactive:checked+#rebel .ie-formFallback{display:block!important}&lt;/style&gt; &lt;/noscript&gt;&lt;!-- end:processor:body:head --&gt;&lt;!-- end:processor:head --&gt;&lt;/head&gt;
+  &lt;body bgcolor=&quot;#EDEFF0&quot; text=&quot;#808080&quot; style=&quot;margin: 0px; -webkit-text-size-adjust:none;background-color : #EDEFF0; font-family : Arial, helvetica, sans-serif; line-height : 115%; font-size : 14px; color : #EDF0F8; padding : 0px 30px; &quot; class=&quot;body&quot;&gt;&lt;!-- start:processor:prepend --&gt;&lt;!-- start:processor:body:prepend --&gt;&lt;!--[if mso]&gt;&lt;!--&gt;&lt;input type=&quot;radio&quot; name=&quot;limited&quot; id=&quot;interactive&quot; style=&quot;display:none;mso-hide:all;&quot; checked&gt;&lt;!--&lt;![endif]--&gt;&lt;div id=&quot;rebel&quot;&gt;&lt;!-- end:processor:body:prepend --&gt;&lt;!-- end:processor:prepend --&gt;
+    &lt;div style=&quot;font-size:0; line-height:0;&quot;&gt;
+      &lt;custom name=&quot;opencounter&quot; type=&quot;tracking&quot;&gt;
+        &lt;custom name=&quot;usermatch&quot; type=&quot;tracking&quot; /&gt;
+        &lt;/div&gt;
+      &lt;table width=&quot;100%&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; align=&quot;center&quot;&gt;
+        &lt;tr&gt;
+          &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;
+            &lt;custom type=&quot;header&quot; /&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td align=&quot;center&quot;&gt;
+            &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot; width=&quot;600&quot; class=&quot;container&quot; align=&quot;center&quot;&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;!-- added the border style here --&gt;
+                  &lt;table style=&quot;background-color : #FFFFFF; border : 0px;font-size : 14px; font-family : Arial, helvetica, sans-serif; line-height : 115%; color : #EDF0F8; &quot; class=&quot;tb_properties border_style&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#FFFFFF&quot; width=&quot;100%&quot;&gt;
+                    &lt;!-- end of comment --&gt;
+                    &lt;tr&gt;
+                      &lt;td align=&quot;center&quot; valign=&quot;top&quot;&gt;
+                        &lt;table align=&quot;left&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+                          &lt;tr&gt;
+                            &lt;!-- added padding here --&gt;
+                            &lt;td class=&quot;content_padding&quot; style=&quot;border:0px;padding : 0px; &quot;&gt;
+                              &lt;!-- end of comment --&gt;
+                              &lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+                                &lt;tr&gt;
+                                  &lt;td align=&quot;left&quot; class=&quot;header&quot; valign=&quot;top&quot;&gt;
+                                    &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;border: 0px; background-color: transparent; min-width: 100%; &quot; class=&quot;slot-styling&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 0px; &quot; class=&quot;slot-styling camarker-inner&quot;&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #F6F7F8; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; role=&quot;presentation&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;img data-assetid=&quot;8251035&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/1/94ae65bc-204a-4632-8074-c46e997b776f.png&quot; alt=&quot;Welcome to our client portal&quot; width=&quot;600&quot; style=&quot;display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                                  &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                  &lt;td align=&quot;left&quot; class=&quot;&quot; valign=&quot;top&quot;&gt;
+                                    &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: transparent; border: 0px; min-width: 100%; &quot; class=&quot;slot-styling&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 0px; &quot; class=&quot;slot-styling camarker-inner&quot;&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #FFFFFF; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 30px 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;div style=&quot;line-height: 150%;&quot;&gt;
+ &lt;div style=&quot;line-height: 115%;&quot;&gt;
+  &lt;br&gt;
+  &lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;Dear {!$Record.FirstName},&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+  &lt;br&gt;
+  &lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;We are excited that you have chosen to join our client portal. By now you would have received an email from us containing your login details and a step-by-step guide on how to set up your password via &lt;u&gt;&lt;b&gt;&lt;a alias=&quot;&quot; conversion=&quot;false&quot; data-linkto=&quot;https://&quot; href=&quot;https://login.stanlib.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dstanlibprod%26redirect_uri%3Dhttps%253A%252F%252Fsecure.stanlib.com%252Fweb%252F%2523%252Fsignin-oidc%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520sso%2520offline_access%26nonce%3D429351c13a096edfed23ff20096e36c011YYAq6oF%26state%3D4eb9bc88218ab436b7c78f702e1baa2810DYEmZFW%26code_challenge%3DKY2m_rjPXF-Ji_5XgYpNPhLtUAthzn6WMMpXpl-ecYQ%26code_challenge_method%3DS256&quot; style=&quot;color:#2B3341;text-decoration:none;&quot; title=&quot;&quot;&gt;STANLIB online&lt;/a&gt;&lt;/b&gt;&lt;/u&gt;.&lt;br&gt;
+  &lt;br&gt;
+  If you&amp;rsquo;ve not received this email, you can let us know by emailing &lt;u&gt;&lt;b&gt;&lt;a alias=&quot;&quot; conversion=&quot;false&quot; data-linkto=&quot;mailto:&quot; href=&quot;mailto:contact@stanlib.com?subject=Welcome%20to%20our%20client%20portal&quot; style=&quot;color:#2B3341;text-decoration:none;&quot; title=&quot;&quot;&gt;contact@stanlib.com&lt;/a&gt;&lt;/b&gt;&lt;/u&gt; for assistance.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+  &amp;nbsp;&lt;br&gt;
+  &amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #EDEFF0; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 15px 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;span style=&quot;color: #EDEFF0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #FFFFFF; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 30px 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;div style=&quot;line-height: 150%;&quot;&gt;
+ &lt;div style=&quot;line-height: 115%;&quot;&gt;
+  &lt;br&gt;
+  &lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-size:18px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;&lt;b&gt;What can you expect?&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;The portal was designed for you, our client. Appreciating your needs are unique to you, you will be able to personalize your experience based on your interests. The first time you log in, you will be asked to set up your content and communication preferences.&lt;br&gt;
+  &lt;br&gt;
+  This will allow you to select what information you receive on email and see on the portal home page. You will also enjoy the following other value adding features:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+  &amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 150%;&quot;&gt;
+ &lt;div style=&quot;line-height: 115%;&quot;&gt;
+  &amp;nbsp;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;&quot;&gt;
+   
+    &lt;tr&gt;
+     &lt;td style=&quot;vertical-align: middle; background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 10%;&quot;&gt;
+      &lt;p style=&quot;text-align: center;&quot;&gt;
+       &lt;img alt=&quot;Product 1&quot; data-assetid=&quot;8240270&quot; height=&quot;17&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/2/1e9699b6-6ab8-4461-8e78-1b29a2e0dd07.png&quot; style=&quot;height: 17px; width: 21px; padding: 0px; text-align: center;&quot; width=&quot;21&quot;&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 35%; height: 20px;&quot;&gt;
+      &lt;div&gt;
+       &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;line-height:107%&quot;&gt;Portfolio Team information&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td style=&quot;width: 5%;&quot;&gt;
+     &lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 10%; text-align: center;&quot;&gt;
+      &lt;img alt=&quot;Product 1&quot; data-assetid=&quot;8240273&quot; height=&quot;17&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/2/05cf55ce-42b3-4f60-9f69-13328fe0ce44.png&quot; style=&quot;height: 17px; width: 15px; padding: 0px; text-align: center;&quot; width=&quot;15&quot;&gt;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 35%; height: 20px;&quot;&gt;
+      &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height:107%&quot;&gt;Events &amp;amp; Webinars&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&amp;nbsp;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;&quot;&gt;
+   
+    &lt;tr&gt;
+     &lt;td style=&quot;vertical-align: middle; background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 10%; height: 20px;&quot;&gt;
+      &lt;p style=&quot;text-align: center;&quot;&gt;
+       &lt;img alt=&quot;Product 1&quot; data-assetid=&quot;8240268&quot; height=&quot;17&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/2/f97d3e98-07a7-4282-b049-7fb02bdffba7.png&quot; style=&quot;height: 17px; width: 16px; padding: 0px; text-align: center;&quot; width=&quot;16&quot;&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 35%; height: 20px;&quot;&gt;
+      &lt;font color=&quot;#2b3341&quot; face=&quot;Arial, Helvetica, sans-serif&quot;&gt;Insights &amp;amp; Thinking&lt;/font&gt;&lt;/td&gt;&lt;td style=&quot;width: 5%;&quot;&gt;
+      &lt;br&gt;
+      &amp;nbsp;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 10%; text-align: center; height: 20px;&quot;&gt;
+      &lt;img alt=&quot;Product 1&quot; data-assetid=&quot;8240271&quot; height=&quot;17&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/2/a8d7b326-ef7b-4bee-b619-6551e22b5add.png&quot; style=&quot;height: 17px; width: 19px; padding: 0px; text-align: center;&quot; width=&quot;19&quot;&gt;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 35%; height: 20px;&quot;&gt;
+      &lt;font color=&quot;#2b3341&quot; face=&quot;Arial, Helvetica, sans-serif&quot;&gt;Sales and Servicing Teams&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&amp;nbsp;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;&quot;&gt;
+   
+    &lt;tr&gt;
+     &lt;td style=&quot;vertical-align: middle; background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 10%;&quot;&gt;
+      &lt;p style=&quot;text-align: center;&quot;&gt;
+       &lt;img alt=&quot;Product 1&quot; data-assetid=&quot;8240269&quot; height=&quot;17&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/2/e1e2f592-31ab-4b01-8b8f-cac685babcc9.png&quot; style=&quot;height: 17px; width: 18px; padding: 0px; text-align: center;&quot; width=&quot;18&quot;&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 35%; vertical-align: middle;&quot;&gt;
+      &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;line-height:107%&quot;&gt;Investment Information&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 5%;&quot;&gt;
+      &lt;br&gt;
+      &lt;span style=&quot;color:#2b3341;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 10%; text-align: center;&quot;&gt;
+      &lt;img alt=&quot;Product 1&quot; data-assetid=&quot;8240272&quot; height=&quot;17&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/2/e0e8d76f-f53e-4b48-8eb4-8cf3f67bd893.png&quot; style=&quot;height: 17px; width: 17px; padding: 0px; text-align: center;&quot; width=&quot;17&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;background-color: rgb(237, 239, 240); border-color: rgb(237, 239, 240); width: 35%;&quot;&gt;
+      &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;line-height:107%&quot;&gt;Portfolio Data &amp;amp; Reporting&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+  &amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #EDEFF0; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 15px 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;span style=&quot; width:100%;color: #EDEFF0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #FFFFFF; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 30px 20px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;div style=&quot;line-height: 150%;&quot;&gt;
+ &lt;div style=&quot;line-height: 115%;&quot;&gt;
+  &lt;div style=&quot;line-height: 150%;&quot;&gt;
+   &lt;div style=&quot;line-height: 115%;&quot;&gt;
+    &lt;br&gt;
+    &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:18px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;&lt;b&gt;Next steps?&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;br&gt;
+    &amp;nbsp;&lt;/span&gt;&lt;table align=&quot;center&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;&quot;&gt;
+     
+      &lt;tr&gt;
+       &lt;td style=&quot;width: 45%; vertical-align: top;&quot;&gt;
+        &lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;Step 1&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;
+        &lt;br&gt;
+        &lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;Log into STANLIB Online by clicking login in the top right corner of the screen at &lt;/span&gt;&lt;u&gt;&lt;b&gt;&lt;a alias=&quot;&quot; conversion=&quot;false&quot; data-linkto=&quot;https://&quot; href=&quot;https://www.stanlib.com&quot; style=&quot;color:#2B3341;text-decoration:none;&quot; title=&quot;&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;https://www.stanlib.com&lt;/span&gt;&lt;/a&gt;&lt;/b&gt;&lt;/u&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 10%;&quot;&gt;
+        &lt;br&gt;
+        &lt;span style=&quot;color:#2b3341;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 40%; text-align: center; vertical-align: middle;&quot;&gt;
+        &lt;img alt=&quot;1&quot; data-assetid=&quot;8251120&quot; height=&quot;149&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/1/5f13d50b-4414-43fd-9897-7ecaf8cea23e.png&quot; style=&quot;height: 149px; width: 270px; padding: 0px; text-align: center; float: left;&quot; width=&quot;270&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #FFFFFF; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 15px 30px 20px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;hr style=&quot;width:80%;text-align:centre;margin-centre:0&quot;&gt;
+&lt;div style=&quot;line-height: 150%;&quot;&gt;
+ &lt;div style=&quot;line-height: 115%;&quot;&gt;
+  &lt;div style=&quot;line-height: 150%;&quot;&gt;
+   &lt;div style=&quot;line-height: 115%;&quot;&gt;
+    &lt;br&gt;
+    &amp;nbsp;&lt;table align=&quot;center&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;&quot;&gt;
+     
+      &lt;tr&gt;
+       &lt;td style=&quot;width: 44%; text-align: left; vertical-align: top;&quot;&gt;
+        &lt;img alt=&quot;1&quot; data-assetid=&quot;8251121&quot; height=&quot;148&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/1/c73d1243-63fe-4697-a9c9-6753002376cf.png&quot; style=&quot;height: 148px; width: 268px; padding: 0px; text-align: center;&quot; width=&quot;268&quot;&gt;&lt;/td&gt;&lt;td style=&quot;width: 10%;&quot;&gt;
+        &lt;br&gt;
+        &lt;span style=&quot;color:#2b3341;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 47%; text-align: left; vertical-align: top;&quot;&gt;
+        &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;Step 2&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;br&gt;
+        &lt;br&gt;
+        &lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;Once you have logged in, access the client portal by clicking on the client portal link in the top menu. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+    &amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;hr style=&quot;width:80%;text-align:centre;margin-centre:0&quot;&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #FFFFFF; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 30px 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;div style=&quot;line-height: 150%;&quot;&gt;
+ &lt;div style=&quot;line-height: 115%;&quot;&gt;
+  &lt;div style=&quot;line-height: 150%;&quot;&gt;
+   &lt;div style=&quot;line-height: 115%;&quot;&gt;
+    &lt;table align=&quot;center&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;&quot;&gt;
+     
+      &lt;tr&gt;
+       &lt;td style=&quot;width: 45%; vertical-align: top;&quot;&gt;
+        &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;Step 3&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+        &lt;br&gt;
+        &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;Set your preferences, and explore the various features we have made available to you.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 10%;&quot;&gt;
+        &lt;br&gt;
+        &lt;span style=&quot;color:#2b3341;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;width: 40%; text-align: center; vertical-align: middle;&quot;&gt;
+        &lt;table align=&quot;center&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width:100%;&quot;&gt;
+         
+          &lt;tr&gt;
+           &lt;td style=&quot;width: 45%;&quot;&gt;
+            &lt;img alt=&quot;1&quot; data-assetid=&quot;8251122&quot; height=&quot;149&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/1/e0a82797-2625-445b-b425-a6182549f38a.png&quot; style=&quot;height: 149px; width: 270px; padding: 0px; text-align: center;&quot; width=&quot;270&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+    &amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #EDEFF0; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 15px 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;span style=&quot;color: #EDEFF0&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #FFFFFF; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 30px 0px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;div style=&quot;line-height: 150%;&quot;&gt;
+ &lt;div style=&quot;line-height: 115%;&quot;&gt;
+  &lt;div style=&quot;line-height: 150%;&quot;&gt;
+   &lt;div style=&quot;line-height: 115%;&quot;&gt;
+    &lt;img alt=&quot;1&quot; data-assetid=&quot;8240315&quot; height=&quot;79&quot; src=&quot;https://image.comms.stanlib.com/lib/fe341171756404797d1174/m/2/cff385a8-ec29-4b1e-bd1d-ea554f8852c4.png&quot; style=&quot;height: 79px; width: 80px; padding: 0px; text-align: center;&quot; width=&quot;80&quot;&gt;&lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;font-size:18px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;&lt;b&gt;Got feedback? &lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;line-height: 1.3;&quot;&gt;As this portal was built for you, we would love to receive your feedback which you can do by reaching out to your service team via the Contact us menu item on the client portal. Looking forward to seeing you there.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+    &lt;br&gt;
+    &lt;span style=&quot;font-family: Arial, Helvetica, sans-serif; color: rgb(43, 51, 65);&quot;&gt;Best regards,&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;br&gt;
+  &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;b&gt;STANLIB Distribution&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+  &amp;nbsp;&lt;/span&gt;&lt;br&gt;
+  &amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                                  &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                  &lt;td align=&quot;left&quot; class=&quot;&quot; valign=&quot;top&quot;&gt;
+                                    &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: transparent; min-width: 100%; border-top: 0px; border-right: 0px; border-bottom: 2px solid transparent; border-left: 0px; &quot; class=&quot;slot-styling&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 0px; &quot; class=&quot;slot-styling camarker-inner&quot;&gt;&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #EDEFF0; border: 0px; min-width: 100%; &quot; class=&quot;stylingblock-content-wrapper&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 10px 30px; &quot; class=&quot;stylingblock-content-wrapper camarker-inner&quot;&gt;&lt;div style=&quot;text-align: center;&quot;&gt;
+ &lt;br&gt;
+ &lt;span style=&quot;font-size:11px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;Please do not reply directly to this e-mail. This e-mail was sent from a notification-only address that cannot accept incoming e-mail. For questions and support: &lt;/span&gt;&lt;b&gt;&lt;a alias=&quot;contact@stanlib.com&quot; conversion=&quot;false&quot; data-linkto=&quot;mailto:&quot; href=&quot;mailto:contact@stanlib.com?subject=&quot; style=&quot;color:#777f88;text-decoration:none;&quot; title=&quot;contact@stanlib.com&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;contact@stanlib.com&lt;/span&gt;&lt;/a&gt;&lt;/b&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+ &lt;br&gt;
+ &lt;a alias=&quot;Disclaimer&quot; conversion=&quot;false&quot; data-linkto=&quot;https://&quot; href=&quot;https://www.stanlib.com/disclaimer/&quot; style=&quot;color:#2B3341;text-decoration:none;font-weight:normal;line-height:100%;&quot; title=&quot;Disclaimer&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;Disclaimer&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt; | &lt;/span&gt;&lt;a alias=&quot;Terms and Conditions&quot; conversion=&quot;false&quot; data-linkto=&quot;https://&quot; href=&quot;https://stanlib.com/secure/src/assets/files/documents/STANLIB_Website_User_Agreement.pdf&quot; style=&quot;color:#2B3341;text-decoration:none;font-weight:normal;line-height:100%;&quot; title=&quot;Terms and Conditions&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;Terms and Conditions&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt; | &lt;/span&gt;&lt;a alias=&quot;Privacy and Security Statement&quot; conversion=&quot;false&quot; data-linkto=&quot;https://&quot; href=&quot;https://www.stanlib.com/privacy-security/&quot; style=&quot;color:#2B3341;text-decoration:none;font-weight:normal;line-height:100%;&quot; title=&quot;Privacy and Security Statement&quot;&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt;Privacy and Security Statement&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;color:#2b3341;&quot;&gt; | &amp;nbsp;Promotion of Access to Information Act&lt;br&gt;
+ &lt;br&gt;
+ &amp;copy; STANLIB&amp;nbsp;is an authorised financial services provider&lt;br&gt;
+ 17 Melrose Boulevard Melrose Arch, Johannesburg, 2196.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+ &lt;span style=&quot;color:#2b3341;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;
+ &lt;span style=&quot;color:#2b3341;&quot;&gt;&lt;span style=&quot;font-size:11px;&quot;&gt;&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif;&quot;&gt;The new Protection of Personal Information Act (POPIA) is designed to protect how your personal information is stored, processed and used and came into effect on 1 July 2021. In compliance with the act, STANLIB now gives you the opportunity to decide if you want to continue to receive communication from us. No action is required if you wish to continue receiving communication from us. If you wish to opt-out, please click on the opt-out link below.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                                  &lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                  &lt;td align=&quot;left&quot; class=&quot;&quot; valign=&quot;top&quot;&gt;
+                                    &lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot; role=&quot;presentation&quot; style=&quot;background-color: #FFFFFF; min-width: 100%; &quot; class=&quot;slot-styling&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding: 0px; &quot; class=&quot;slot-styling camarker-inner&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                                  &lt;/td&gt;
+                                &lt;/tr&gt;
+                              &lt;/table&gt;
+                            &lt;/td&gt;
+                          &lt;/tr&gt;
+                        &lt;/table&gt;
+                      &lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=&quot;top&quot;&gt;
+            &lt;custom type=&quot;footer&quot; /&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+      &lt;!-- start:processor:append --&gt;&lt;!-- start:processor:body:append --&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;display:none&quot;&gt; &lt;symbol id=&quot;ie-star&quot;&gt; &lt;polygon points=&quot;10, 0, 3, 20, 20, 8, 0, 8, 17, 20&quot; fill=&quot;currentColor&quot;&gt;&lt;/polygon&gt; &lt;/symbol&gt; &lt;/svg&gt;&lt;/div&gt;&lt;!-- end:processor:body:append --&gt;&lt;!-- end:processor:append --&gt;&lt;/body&gt;
+    &lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>WelcomeSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Welcome to the STANLIB client portal</text>
+    </textTemplates>
+</Flow>

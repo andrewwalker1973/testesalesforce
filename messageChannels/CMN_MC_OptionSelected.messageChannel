@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Indicator that an option has been selected on a page which has the CmnLwcWebServiceFlowFooter LWC</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>The indication that a row option has been selected</description>
+        <fieldName>optionSelected</fieldName>
+    </lightningMessageFields>
+    <masterLabel>CMN_MC_OptionSelected</masterLabel>
+</LightningMessageChannel>

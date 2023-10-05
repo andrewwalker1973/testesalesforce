@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>GRAX by Harding Point Settings. https://grax.io</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>grax__Cloud_Platform_Server__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Cloud Platform Server Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cloud Platform Server Name</inlineHelpText>
+        <label>Cloud Platform Server</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__EnableDeleteTab__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Delete Tab</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__EnableObjectTracking__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show File Objects for Bulk</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_API_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GRAX API Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_Cloud_Path__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GRAX Cloud Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_Flow_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GRAX Flow URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>grax__HerokuAuthorizedUserId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Heroku Authorized User Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Heroku_App_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Heroku Application Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Heroku Application Name</inlineHelpText>
+        <label>Heroku App Name</label>
+        <length>55</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__LastSendArchivedRecordsToGRAX__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The last date, and, time, when &quot;GRAXBatchToSetAsArchivedDeletedData&quot; APEX Class&apos; process, succesfully ran, sending archived records, to GRAX.</description>
+        <externalId>false</externalId>
+        <label>LastSendArchivedRecordsToGRAX</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__LastUpdateAsyncBackedUpRecords__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The last date, and, time, when &quot;GRAXBatchToUpdateAsyncBackedUpRecords&quot; APEX Class&apos; process, succesfully ran, identifying Async Objects records that were correctly backed-up, in GRAX.</description>
+        <externalId>false</externalId>
+        <label>LastUpdateAsyncBackedUpRecords</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__LogAllErrors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>LogAllErrors</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__MaxNumberOfBulkGSPRunning__c</fullName>
+        <defaultValue>5</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This value will be used to set the maximum number jobs using the bulk api that can be running at same time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This value will be used to set the maximum number jobs using the bulk api that can be running at same time</inlineHelpText>
+        <label>MaxNumberOfBulkGSPRunning</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__MaxNumberOfRecordsPerPayload__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This value will be used to set the maximum number of records sent to GRAX in a single Payload. Values could be: 1, 2, 5, 10, 20, 25, 50, 100, 200, 400, 500, 1000, 2000</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This value will be used to set the maximum number of records sent to GRAX in a single Payload. Values could be: 1, 2, 5, 10, 20, 25, 50, 100, 200, 400, 500, 1000, 2000</inlineHelpText>
+        <label>MaxNumberOfRecordsPerPayload</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__ShowSalesforceSidebar__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If false, the Salesforce&apos;s sidebar will be hidden. If true, the Salesforce&apos;s sidebar will show up. This is a workaround for customers having issues with the &quot;GRAX&quot; Application&apos;s Setup page&apos;s performance, when the Salesforce&apos;s sidebar is present.</description>
+        <externalId>false</externalId>
+        <label>Show Salesforce Sidebar</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Use_Bulk_API__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Use Bulk API</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>GRAX Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

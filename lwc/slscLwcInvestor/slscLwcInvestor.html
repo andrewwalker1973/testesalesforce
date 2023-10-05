@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title='Holding Details' icon-name='custom:custom16'>
+        <slot>
+            <div class="slds-p-top_large">
+                <lightning-spinner if:true={spinner} alternative-text="loading"></lightning-spinner>
+            </div>
+
+            <template if:true={holdingDetails}>
+                <div class="slds-p-around_medium">
+                    <c-slsc-lwc-record-view-form records={holdingDetails}></c-slsc-lwc-record-view-form>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-p-left_large slds-p-bottom_large">
+                    {error}
+                </div>
+            </template>
+
+        </slot>
+    </lightning-card>
+</template>

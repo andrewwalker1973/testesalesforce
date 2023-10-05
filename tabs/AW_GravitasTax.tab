@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Users can access the Gravitas Tax website</description>
+    <frameHeight>600</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Gravitas Tax</label>
+    <motif>Custom12: Circle</motif>
+    <url>https://gravitastax.co.za/</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

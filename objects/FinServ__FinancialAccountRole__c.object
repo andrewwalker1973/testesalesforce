@@ -1,0 +1,4253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>RSC_FinancialAccountRole</fullName>
+        <fields>RSC_PartyName__c</fields>
+        <fields>Name</fields>
+        <fields>FinServ__FinancialAccount__c</fields>
+        <fields>AW_RoleDOB__c</fields>
+        <fields>CMN_DateOfIncorporation__c</fields>
+        <fields>CMN_Mobile__c</fields>
+        <fields>CMN_Email__c</fields>
+        <label>RSC_FinancialAccountRole</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Represents the role occupied by a person or organizational entity that is involved with a financial account, such as a beneficiary or trustee.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>WM_Client_FinancialAccountRole</fullName>
+        <description>Client profile&apos;s Financials tab.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__FinancialAccount__r.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Role__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Active__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Financial Account Role</label>
+    </fieldSets>
+    <fields>
+        <fullName>AW_RoleDOB__c</fullName>
+        <description>Date of Birth of the Person Involved</description>
+        <externalId>false</externalId>
+        <label>Birth Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_RoleFirstName__c</fullName>
+        <description>This field is used to capture the first name associated with a financial account role</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RoleIdentificationNumber__c</fullName>
+        <description>Identification of the Role</description>
+        <externalId>false</externalId>
+        <label>Identification Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RoleInitials__c</fullName>
+        <description>Initials of the person who is assigned the role</description>
+        <externalId>false</externalId>
+        <label>Initials</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RoleLastName__c</fullName>
+        <description>This field stores the last name associated with a financial account role</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RoleTitle__c</fullName>
+        <description>This field represents the title or role associated with a financial account role</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BALANCE__c</fullName>
+        <externalId>false</externalId>
+        <formula>FinServ__FinancialAccount__r.FinServ__Balance__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BALANCE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_ConsultantCode__c</fullName>
+        <description>Used for integration to populate Consultant Code from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Consultant Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_CountryOfCitizenship__c</fullName>
+        <description>Used for integration to populate Country of Citizenship from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Country of Citizenship</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_CountryOfIncorporation__c</fullName>
+        <description>Used for integration to populate Country of Incorporation from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Country of Incorporation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_CountryOfIssue__c</fullName>
+        <description>Used for integration to populate Country of Issue from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Country of Issue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_DateOfIncorporation__c</fullName>
+        <description>Used for integration to populate Date of Incorporation from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Date of Incorporation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_Email__c</fullName>
+        <description>Used for integration to populate Email from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ExpiryDate__c</fullName>
+        <description>Used for integration to populate Expiry Date from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_FifthName__c</fullName>
+        <description>Used for integration to populate Fifth Name from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Fifth Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_FourthName__c</fullName>
+        <description>Used for integration to populate Fourth Name from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Fourth Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_Gender__c</fullName>
+        <description>Used for integration to populate Gender from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_IssueDate__c</fullName>
+        <description>Used for integration to populate Issue Date from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Issue Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_MaritalStatus__c</fullName>
+        <description>Used for integration to populate Marital Status from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Marital Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_Mobile__c</fullName>
+        <description>Used for integration to populate Mobile Number from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Mobile</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>CMN_OccupationRiskCategory__c</fullName>
+        <description>Used for integration to populate Occupation Risk Category from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Occupation Risk Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_Occupation__c</fullName>
+        <description>Used for integration to populate Occupation from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Occupation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_OrganisationType__c</fullName>
+        <description>Used for integration to populate Organisation Type from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Organization Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>CC</fullName>
+                    <default>false</default>
+                    <label>CC</label>
+                </value>
+                <value>
+                    <fullName>FOR_CO</fullName>
+                    <default>false</default>
+                    <label>FOR_CO</label>
+                </value>
+                <value>
+                    <fullName>FOR_TRUST</fullName>
+                    <default>false</default>
+                    <label>FOR_TRUST</label>
+                </value>
+                <value>
+                    <fullName>INC</fullName>
+                    <default>false</default>
+                    <label>INC</label>
+                </value>
+                <value>
+                    <fullName>NPC</fullName>
+                    <default>false</default>
+                    <label>NPC</label>
+                </value>
+                <value>
+                    <fullName>NPO</fullName>
+                    <default>false</default>
+                    <label>NPO</label>
+                </value>
+                <value>
+                    <fullName>PUB_CO</fullName>
+                    <default>false</default>
+                    <label>PUB_CO</label>
+                </value>
+                <value>
+                    <fullName>PVT_CO</fullName>
+                    <default>false</default>
+                    <label>PVT_CO</label>
+                </value>
+                <value>
+                    <fullName>SOC</fullName>
+                    <default>false</default>
+                    <label>SOC</label>
+                </value>
+                <value>
+                    <fullName>TRUST</fullName>
+                    <default>false</default>
+                    <label>TRUST</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CMN_OrganizationName__c</fullName>
+        <description>Used for integration to populate Organization Name from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Organization Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_PDBID__c</fullName>
+        <description>Used for integration to populate the PDB Entity ID from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>PDB ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_PassportNumber__c</fullName>
+        <description>Used for integration to populate Passport Number from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Passport Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_PercentageSplit__c</fullName>
+        <description>Used for integration to populate Percentage Split from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Percentage Split</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CMN_PhoneNumber__c</fullName>
+        <description>Used for integration to populate Roles Phone Number from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>CMN_Race__c</fullName>
+        <description>Used for integration to populate Race from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Race</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_RegistrationNumber__c</fullName>
+        <description>Used for integration to populate Company Registration Number from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Registration Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_RelationshipToLifeAssured__c</fullName>
+        <description>Used for integration to populate Relationship to Owner from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Relationship to Life Assured</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adopted Brother</fullName>
+                    <default>false</default>
+                    <label>Adopted Brother</label>
+                </value>
+                <value>
+                    <fullName>Adopted Daughter</fullName>
+                    <default>false</default>
+                    <label>Adopted Daughter</label>
+                </value>
+                <value>
+                    <fullName>Adopted Mother</fullName>
+                    <default>false</default>
+                    <label>Adopted Mother</label>
+                </value>
+                <value>
+                    <fullName>Adopted Sister</fullName>
+                    <default>false</default>
+                    <label>Adopted Sister</label>
+                </value>
+                <value>
+                    <fullName>Adopted Son</fullName>
+                    <default>false</default>
+                    <label>Adopted Son</label>
+                </value>
+                <value>
+                    <fullName>Aunt</fullName>
+                    <default>false</default>
+                    <label>Aunt</label>
+                </value>
+                <value>
+                    <fullName>Brother</fullName>
+                    <default>false</default>
+                    <label>Brother</label>
+                </value>
+                <value>
+                    <fullName>Brother-In-Law</fullName>
+                    <default>false</default>
+                    <label>Brother-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Business Associate</fullName>
+                    <default>false</default>
+                    <label>Business Associate</label>
+                </value>
+                <value>
+                    <fullName>Child</fullName>
+                    <default>false</default>
+                    <label>Child</label>
+                </value>
+                <value>
+                    <fullName>Co-Director</fullName>
+                    <default>false</default>
+                    <label>Co-Director</label>
+                </value>
+                <value>
+                    <fullName>Co-Shareholder</fullName>
+                    <default>false</default>
+                    <label>Co-Shareholder</label>
+                </value>
+                <value>
+                    <fullName>Common Law Spouse</fullName>
+                    <default>false</default>
+                    <label>Common Law Spouse</label>
+                </value>
+                <value>
+                    <fullName>Common-Law-Husband</fullName>
+                    <default>false</default>
+                    <label>Common-Law-Husband</label>
+                </value>
+                <value>
+                    <fullName>Common-Law-Wife</fullName>
+                    <default>false</default>
+                    <label>Common-Law-Wife</label>
+                </value>
+                <value>
+                    <fullName>Cousin</fullName>
+                    <default>false</default>
+                    <label>Cousin</label>
+                </value>
+                <value>
+                    <fullName>Creditor</fullName>
+                    <default>false</default>
+                    <label>Creditor</label>
+                </value>
+                <value>
+                    <fullName>Daughter</fullName>
+                    <default>false</default>
+                    <label>Daughter</label>
+                </value>
+                <value>
+                    <fullName>Daughter-In-Law</fullName>
+                    <default>false</default>
+                    <label>Daughter-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Debtor</fullName>
+                    <default>false</default>
+                    <label>Debtor</label>
+                </value>
+                <value>
+                    <fullName>Domestic Helper</fullName>
+                    <default>false</default>
+                    <label>Domestic Helper</label>
+                </value>
+                <value>
+                    <fullName>Employee</fullName>
+                    <default>false</default>
+                    <label>Employee</label>
+                </value>
+                <value>
+                    <fullName>Employer</fullName>
+                    <default>false</default>
+                    <label>Employer</label>
+                </value>
+                <value>
+                    <fullName>Ex-Husband</fullName>
+                    <default>false</default>
+                    <label>Ex-Husband</label>
+                </value>
+                <value>
+                    <fullName>Ex-Wife</fullName>
+                    <default>false</default>
+                    <label>Ex-Wife</label>
+                </value>
+                <value>
+                    <fullName>Father</fullName>
+                    <default>false</default>
+                    <label>Father</label>
+                </value>
+                <value>
+                    <fullName>Father-In-Law</fullName>
+                    <default>false</default>
+                    <label>Father-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Fiance (Male)</fullName>
+                    <default>false</default>
+                    <label>Fiance (Male)</label>
+                </value>
+                <value>
+                    <fullName>Fiancee (Female)</fullName>
+                    <default>false</default>
+                    <label>Fiancee (Female)</label>
+                </value>
+                <value>
+                    <fullName>Foster Daughter</fullName>
+                    <default>false</default>
+                    <label>Foster Daughter</label>
+                </value>
+                <value>
+                    <fullName>Foster Father</fullName>
+                    <default>false</default>
+                    <label>Foster Father</label>
+                </value>
+                <value>
+                    <fullName>Foster Mother</fullName>
+                    <default>false</default>
+                    <label>Foster Mother</label>
+                </value>
+                <value>
+                    <fullName>Foster Sister</fullName>
+                    <default>false</default>
+                    <label>Foster Sister</label>
+                </value>
+                <value>
+                    <fullName>Foster Son</fullName>
+                    <default>false</default>
+                    <label>Foster Son</label>
+                </value>
+                <value>
+                    <fullName>Friend - Female</fullName>
+                    <default>false</default>
+                    <label>Friend - Female</label>
+                </value>
+                <value>
+                    <fullName>Friend - Male</fullName>
+                    <default>false</default>
+                    <label>Friend - Male</label>
+                </value>
+                <value>
+                    <fullName>Godchild</fullName>
+                    <default>false</default>
+                    <label>Godchild</label>
+                </value>
+                <value>
+                    <fullName>Godfather</fullName>
+                    <default>false</default>
+                    <label>Godfather</label>
+                </value>
+                <value>
+                    <fullName>Godmother</fullName>
+                    <default>false</default>
+                    <label>Godmother</label>
+                </value>
+                <value>
+                    <fullName>Granddaughter</fullName>
+                    <default>false</default>
+                    <label>Granddaughter</label>
+                </value>
+                <value>
+                    <fullName>Grandfather</fullName>
+                    <default>false</default>
+                    <label>Grandfather</label>
+                </value>
+                <value>
+                    <fullName>Grandmother</fullName>
+                    <default>false</default>
+                    <label>Grandmother</label>
+                </value>
+                <value>
+                    <fullName>Grandnephew</fullName>
+                    <default>false</default>
+                    <label>Grandnephew</label>
+                </value>
+                <value>
+                    <fullName>Grand-Niece</fullName>
+                    <default>false</default>
+                    <label>Grand-Niece</label>
+                </value>
+                <value>
+                    <fullName>Grandson</fullName>
+                    <default>false</default>
+                    <label>Grandson</label>
+                </value>
+                <value>
+                    <fullName>Grandson-In-Law</fullName>
+                    <default>false</default>
+                    <label>Grandson-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Great Grand Daughter</fullName>
+                    <default>false</default>
+                    <label>Great Grand Daughter</label>
+                </value>
+                <value>
+                    <fullName>Great Grandson</fullName>
+                    <default>false</default>
+                    <label>Great Grandson</label>
+                </value>
+                <value>
+                    <fullName>Great-Grandnephew</fullName>
+                    <default>false</default>
+                    <label>Great-Grandnephew</label>
+                </value>
+                <value>
+                    <fullName>Great-Nephew</fullName>
+                    <default>false</default>
+                    <label>Great-Nephew</label>
+                </value>
+                <value>
+                    <fullName>Great-Niece</fullName>
+                    <default>false</default>
+                    <label>Great-Niece</label>
+                </value>
+                <value>
+                    <fullName>Guarantor</fullName>
+                    <default>false</default>
+                    <label>Guarantor</label>
+                </value>
+                <value>
+                    <fullName>Guardian</fullName>
+                    <default>false</default>
+                    <label>Guardian</label>
+                </value>
+                <value>
+                    <fullName>Half-Brother</fullName>
+                    <default>false</default>
+                    <label>Half-Brother</label>
+                </value>
+                <value>
+                    <fullName>Half Sister</fullName>
+                    <default>false</default>
+                    <label>Half Sister</label>
+                </value>
+                <value>
+                    <fullName>Husband</fullName>
+                    <default>false</default>
+                    <label>Husband</label>
+                </value>
+                <value>
+                    <fullName>Mother</fullName>
+                    <default>false</default>
+                    <label>Mother</label>
+                </value>
+                <value>
+                    <fullName>Niece</fullName>
+                    <default>false</default>
+                    <label>Niece</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Sister</fullName>
+                    <default>false</default>
+                    <label>Sister</label>
+                </value>
+                <value>
+                    <fullName>Sister-In-Law</fullName>
+                    <default>false</default>
+                    <label>Sister-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Son</fullName>
+                    <default>false</default>
+                    <label>Son</label>
+                </value>
+                <value>
+                    <fullName>Son-In-Law</fullName>
+                    <default>false</default>
+                    <label>Son-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Spouse</fullName>
+                    <default>false</default>
+                    <label>Spouse</label>
+                </value>
+                <value>
+                    <fullName>Step-Brother</fullName>
+                    <default>false</default>
+                    <label>Step-Brother</label>
+                </value>
+                <value>
+                    <fullName>Step-Daughter</fullName>
+                    <default>false</default>
+                    <label>Step-Daughter</label>
+                </value>
+                <value>
+                    <fullName>Step-Father</fullName>
+                    <default>false</default>
+                    <label>Step-Father</label>
+                </value>
+                <value>
+                    <fullName>Step-Granddaughter</fullName>
+                    <default>false</default>
+                    <label>Step-Granddaughter</label>
+                </value>
+                <value>
+                    <fullName>Step-Grandmother</fullName>
+                    <default>false</default>
+                    <label>Step-Grandmother</label>
+                </value>
+                <value>
+                    <fullName>Step-Grandson</fullName>
+                    <default>false</default>
+                    <label>Step-Grandson</label>
+                </value>
+                <value>
+                    <fullName>Step Mother</fullName>
+                    <default>false</default>
+                    <label>Step Mother</label>
+                </value>
+                <value>
+                    <fullName>Step Sister</fullName>
+                    <default>false</default>
+                    <label>Step Sister</label>
+                </value>
+                <value>
+                    <fullName>Step Son</fullName>
+                    <default>false</default>
+                    <label>Step Son</label>
+                </value>
+                <value>
+                    <fullName>Uncle</fullName>
+                    <default>false</default>
+                    <label>Uncle</label>
+                </value>
+                <value>
+                    <fullName>Wife</fullName>
+                    <default>false</default>
+                    <label>Wife</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CMN_RelationshipToOwner__c</fullName>
+        <description>Used for integration to populate Relationship from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Relationship To Owner</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adopted Brother</fullName>
+                    <default>false</default>
+                    <label>Adopted Brother</label>
+                </value>
+                <value>
+                    <fullName>Adopted Daughter</fullName>
+                    <default>false</default>
+                    <label>Adopted Daughter</label>
+                </value>
+                <value>
+                    <fullName>Adopted Mother</fullName>
+                    <default>false</default>
+                    <label>Adopted Mother</label>
+                </value>
+                <value>
+                    <fullName>Adopted Sister</fullName>
+                    <default>false</default>
+                    <label>Adopted Sister</label>
+                </value>
+                <value>
+                    <fullName>Adopted Son</fullName>
+                    <default>false</default>
+                    <label>Adopted Son</label>
+                </value>
+                <value>
+                    <fullName>Aunt</fullName>
+                    <default>false</default>
+                    <label>Aunt</label>
+                </value>
+                <value>
+                    <fullName>Brother</fullName>
+                    <default>false</default>
+                    <label>Brother</label>
+                </value>
+                <value>
+                    <fullName>Brother-In-Law</fullName>
+                    <default>false</default>
+                    <label>Brother-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Business Associate</fullName>
+                    <default>false</default>
+                    <label>Business Associate</label>
+                </value>
+                <value>
+                    <fullName>Child</fullName>
+                    <default>false</default>
+                    <label>Child</label>
+                </value>
+                <value>
+                    <fullName>Co-Director</fullName>
+                    <default>false</default>
+                    <label>Co-Director</label>
+                </value>
+                <value>
+                    <fullName>Co-Shareholder</fullName>
+                    <default>false</default>
+                    <label>Co-Shareholder</label>
+                </value>
+                <value>
+                    <fullName>Common Law Spouse</fullName>
+                    <default>false</default>
+                    <label>Common Law Spouse</label>
+                </value>
+                <value>
+                    <fullName>Common-Law-Husband</fullName>
+                    <default>false</default>
+                    <label>Common-Law-Husband</label>
+                </value>
+                <value>
+                    <fullName>Common-Law-Wife</fullName>
+                    <default>false</default>
+                    <label>Common-Law-Wife</label>
+                </value>
+                <value>
+                    <fullName>Cousin</fullName>
+                    <default>false</default>
+                    <label>Cousin</label>
+                </value>
+                <value>
+                    <fullName>Creditor</fullName>
+                    <default>false</default>
+                    <label>Creditor</label>
+                </value>
+                <value>
+                    <fullName>Daughter</fullName>
+                    <default>false</default>
+                    <label>Daughter</label>
+                </value>
+                <value>
+                    <fullName>Daughter-In-Law</fullName>
+                    <default>false</default>
+                    <label>Daughter-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Debtor</fullName>
+                    <default>false</default>
+                    <label>Debtor</label>
+                </value>
+                <value>
+                    <fullName>Domestic Helper</fullName>
+                    <default>false</default>
+                    <label>Domestic Helper</label>
+                </value>
+                <value>
+                    <fullName>Employee</fullName>
+                    <default>false</default>
+                    <label>Employee</label>
+                </value>
+                <value>
+                    <fullName>Employer</fullName>
+                    <default>false</default>
+                    <label>Employer</label>
+                </value>
+                <value>
+                    <fullName>Executor</fullName>
+                    <default>false</default>
+                    <label>Executor</label>
+                </value>
+                <value>
+                    <fullName>Ex-Husband</fullName>
+                    <default>false</default>
+                    <label>Ex-Husband</label>
+                </value>
+                <value>
+                    <fullName>Ex-Wife</fullName>
+                    <default>false</default>
+                    <label>Ex-Wife</label>
+                </value>
+                <value>
+                    <fullName>Father</fullName>
+                    <default>false</default>
+                    <label>Father</label>
+                </value>
+                <value>
+                    <fullName>Father-In-Law</fullName>
+                    <default>false</default>
+                    <label>Father-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Fiance (Male)</fullName>
+                    <default>false</default>
+                    <label>Fiance (Male)</label>
+                </value>
+                <value>
+                    <fullName>Fiancee (Female)</fullName>
+                    <default>false</default>
+                    <label>Fiancee (Female)</label>
+                </value>
+                <value>
+                    <fullName>Financial Advisor</fullName>
+                    <default>false</default>
+                    <label>Financial Advisor</label>
+                </value>
+                <value>
+                    <fullName>Foster Daughter</fullName>
+                    <default>false</default>
+                    <label>Foster Daughter</label>
+                </value>
+                <value>
+                    <fullName>Foster Father</fullName>
+                    <default>false</default>
+                    <label>Foster Father</label>
+                </value>
+                <value>
+                    <fullName>Foster Mother</fullName>
+                    <default>false</default>
+                    <label>Foster Mother</label>
+                </value>
+                <value>
+                    <fullName>Foster Sister</fullName>
+                    <default>false</default>
+                    <label>Foster Sister</label>
+                </value>
+                <value>
+                    <fullName>Foster Son</fullName>
+                    <default>false</default>
+                    <label>Foster Son</label>
+                </value>
+                <value>
+                    <fullName>Friend - Female</fullName>
+                    <default>false</default>
+                    <label>Friend - Female</label>
+                </value>
+                <value>
+                    <fullName>Friend - Male</fullName>
+                    <default>false</default>
+                    <label>Friend - Male</label>
+                </value>
+                <value>
+                    <fullName>Godchild</fullName>
+                    <default>false</default>
+                    <label>Godchild</label>
+                </value>
+                <value>
+                    <fullName>Godfather</fullName>
+                    <default>false</default>
+                    <label>Godfather</label>
+                </value>
+                <value>
+                    <fullName>Godmother</fullName>
+                    <default>false</default>
+                    <label>Godmother</label>
+                </value>
+                <value>
+                    <fullName>Granddaughter</fullName>
+                    <default>false</default>
+                    <label>Granddaughter</label>
+                </value>
+                <value>
+                    <fullName>Grandfather</fullName>
+                    <default>false</default>
+                    <label>Grandfather</label>
+                </value>
+                <value>
+                    <fullName>Grandmother</fullName>
+                    <default>false</default>
+                    <label>Grandmother</label>
+                </value>
+                <value>
+                    <fullName>Grandnephew</fullName>
+                    <default>false</default>
+                    <label>Grandnephew</label>
+                </value>
+                <value>
+                    <fullName>Grand-Niece</fullName>
+                    <default>false</default>
+                    <label>Grand-Niece</label>
+                </value>
+                <value>
+                    <fullName>Grandson</fullName>
+                    <default>false</default>
+                    <label>Grandson</label>
+                </value>
+                <value>
+                    <fullName>Grandson-In-Law</fullName>
+                    <default>false</default>
+                    <label>Grandson-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Great Grand Daughter</fullName>
+                    <default>false</default>
+                    <label>Great Grand Daughter</label>
+                </value>
+                <value>
+                    <fullName>Great Grandson</fullName>
+                    <default>false</default>
+                    <label>Great Grandson</label>
+                </value>
+                <value>
+                    <fullName>Great-Grandnephew</fullName>
+                    <default>false</default>
+                    <label>Great-Grandnephew</label>
+                </value>
+                <value>
+                    <fullName>Great-Nephew</fullName>
+                    <default>false</default>
+                    <label>Great-Nephew</label>
+                </value>
+                <value>
+                    <fullName>Great-Niece</fullName>
+                    <default>false</default>
+                    <label>Great-Niece</label>
+                </value>
+                <value>
+                    <fullName>Guarantor</fullName>
+                    <default>false</default>
+                    <label>Guarantor</label>
+                </value>
+                <value>
+                    <fullName>Guardian</fullName>
+                    <default>false</default>
+                    <label>Guardian</label>
+                </value>
+                <value>
+                    <fullName>Half-Brother</fullName>
+                    <default>false</default>
+                    <label>Half-Brother</label>
+                </value>
+                <value>
+                    <fullName>Half Sister</fullName>
+                    <default>false</default>
+                    <label>Half Sister</label>
+                </value>
+                <value>
+                    <fullName>Husband</fullName>
+                    <default>false</default>
+                    <label>Husband</label>
+                </value>
+                <value>
+                    <fullName>Lawyer/Attorney</fullName>
+                    <default>false</default>
+                    <label>Lawyer/Attorney</label>
+                </value>
+                <value>
+                    <fullName>Mother</fullName>
+                    <default>false</default>
+                    <label>Mother</label>
+                </value>
+                <value>
+                    <fullName>Niece</fullName>
+                    <default>false</default>
+                    <label>Niece</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Sister</fullName>
+                    <default>false</default>
+                    <label>Sister</label>
+                </value>
+                <value>
+                    <fullName>Sister-In-Law</fullName>
+                    <default>false</default>
+                    <label>Sister-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Son</fullName>
+                    <default>false</default>
+                    <label>Son</label>
+                </value>
+                <value>
+                    <fullName>Son-In-Law</fullName>
+                    <default>false</default>
+                    <label>Son-In-Law</label>
+                </value>
+                <value>
+                    <fullName>Spouse</fullName>
+                    <default>false</default>
+                    <label>Spouse</label>
+                </value>
+                <value>
+                    <fullName>Step-Brother</fullName>
+                    <default>false</default>
+                    <label>Step-Brother</label>
+                </value>
+                <value>
+                    <fullName>Step-Daughter</fullName>
+                    <default>false</default>
+                    <label>Step-Daughter</label>
+                </value>
+                <value>
+                    <fullName>Step-Father</fullName>
+                    <default>false</default>
+                    <label>Step-Father</label>
+                </value>
+                <value>
+                    <fullName>Step-Granddaughter</fullName>
+                    <default>false</default>
+                    <label>Step-Granddaughter</label>
+                </value>
+                <value>
+                    <fullName>Step-Grandmother</fullName>
+                    <default>false</default>
+                    <label>Step-Grandmother</label>
+                </value>
+                <value>
+                    <fullName>Step-Grandson</fullName>
+                    <default>false</default>
+                    <label>Step-Grandson</label>
+                </value>
+                <value>
+                    <fullName>Step Mother</fullName>
+                    <default>false</default>
+                    <label>Step Mother</label>
+                </value>
+                <value>
+                    <fullName>Step Sister</fullName>
+                    <default>false</default>
+                    <label>Step Sister</label>
+                </value>
+                <value>
+                    <fullName>Step Son</fullName>
+                    <default>false</default>
+                    <label>Step Son</label>
+                </value>
+                <value>
+                    <fullName>Trust Fund</fullName>
+                    <default>false</default>
+                    <label>Trust Fund</label>
+                </value>
+                <value>
+                    <fullName>Uncle</fullName>
+                    <default>false</default>
+                    <label>Uncle</label>
+                </value>
+                <value>
+                    <fullName>Wife</fullName>
+                    <default>false</default>
+                    <label>Wife</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CMN_Relationship__c</fullName>
+        <description>Used for integration to populate Relationship from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Relationship</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_SecondName__c</fullName>
+        <description>Used for integration to populate Second Name from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Second Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_Suffix__c</fullName>
+        <description>Used for integration to populate Company Suffix from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Suffix</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>(PTY) LTD</fullName>
+                    <default>false</default>
+                    <label>(PTY) LTD</label>
+                </value>
+                <value>
+                    <fullName>CC</fullName>
+                    <default>false</default>
+                    <label>CC</label>
+                </value>
+                <value>
+                    <fullName>INC</fullName>
+                    <default>false</default>
+                    <label>INC</label>
+                </value>
+                <value>
+                    <fullName>LTD</fullName>
+                    <default>false</default>
+                    <label>LTD</label>
+                </value>
+                <value>
+                    <fullName>NPC</fullName>
+                    <default>false</default>
+                    <label>NPC</label>
+                </value>
+                <value>
+                    <fullName>SOC</fullName>
+                    <default>false</default>
+                    <label>SOC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CMN_TaxNumber__c</fullName>
+        <description>Used for integration to populate Tax Number from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Tax Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ThirdName__c</fullName>
+        <description>Used for integration to populate Third Name from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Third Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_WeddingAnniversary__c</fullName>
+        <description>Used for integration to populate Marriage Date from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Wedding Anniversary</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_WorkPhoneNumber__c</fullName>
+        <description>Used for integration to populate Work Number from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Work Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>DATE_OPENED__c</fullName>
+        <externalId>false</externalId>
+        <formula>FinServ__FinancialAccount__r.FinServ__OpenDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DATE OPENED</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FINANCIAL_ACCOUNT_NAME__c</fullName>
+        <externalId>false</externalId>
+        <formula>FinServ__FinancialAccount__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FINANCIAL ACCOUNT NAME</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the organizational entity or person currently occupies this role.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Editable__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether this field is read-only or editable.</description>
+        <externalId>false</externalId>
+        <label>Editable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>End date when the organizational entity or person relinquished this role.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__FinancialAccount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Financial account that this role is related to.</description>
+        <externalId>false</externalId>
+        <label>Financial Account</label>
+        <referenceTo>FinServ__FinancialAccount__c</referenceTo>
+        <relationshipLabel>Financial Account Roles</relationshipLabel>
+        <relationshipName>FinancialAccountRoles</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>FinServ__RelatedAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Name of the organizational entity that is involved with the financial account.</description>
+        <externalId>false</externalId>
+        <label>Related Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Financial Account Roles</relationshipLabel>
+        <relationshipName>FinancialAccountRoles</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__RelatedContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Name of the person who is involved with the financial account.</description>
+        <externalId>false</externalId>
+        <label>Related Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Financial Account Roles</relationshipLabel>
+        <relationshipName>FinancialAccountRoles</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Role that describes how the organizational entity or person is involved with the financial account.</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Absolute Cessionary</fullName>
+                    <default>false</default>
+                    <label>Absolute Cessionary</label>
+                </value>
+                <value>
+                    <fullName>Antenuptial Cession</fullName>
+                    <default>false</default>
+                    <label>Antenuptial Cession</label>
+                </value>
+                <value>
+                    <fullName>Beneficiary</fullName>
+                    <default>false</default>
+                    <label>Beneficiary</label>
+                </value>
+                <value>
+                    <fullName>Child</fullName>
+                    <default>false</default>
+                    <label>Child</label>
+                </value>
+                <value>
+                    <fullName>Child Life Assured</fullName>
+                    <default>false</default>
+                    <label>Child Life Assured</label>
+                </value>
+                <value>
+                    <fullName>Collateral Cessionary</fullName>
+                    <default>false</default>
+                    <label>Collateral Cessionary</label>
+                </value>
+                <value>
+                    <fullName>Educator - Child Life Assured</fullName>
+                    <default>false</default>
+                    <label>Educator - Child Life Assured</label>
+                </value>
+                <value>
+                    <fullName>Extended Life</fullName>
+                    <default>false</default>
+                    <label>Extended Life</label>
+                </value>
+                <value>
+                    <fullName>Consultant</fullName>
+                    <default>false</default>
+                    <label>Financial Advisor</label>
+                </value>
+                <value>
+                    <fullName>Joint Life</fullName>
+                    <default>false</default>
+                    <label>Joint Life</label>
+                </value>
+                <value>
+                    <fullName>Joint Owner</fullName>
+                    <default>false</default>
+                    <label>Joint Owner</label>
+                </value>
+                <value>
+                    <fullName>Life Assured</fullName>
+                    <default>false</default>
+                    <label>Life Assured</label>
+                </value>
+                <value>
+                    <fullName>Main Life</fullName>
+                    <default>false</default>
+                    <label>Main Life</label>
+                </value>
+                <value>
+                    <fullName>Member</fullName>
+                    <default>false</default>
+                    <label>Member</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Other Cessionary</fullName>
+                    <default>false</default>
+                    <label>Other Cessionary</label>
+                </value>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>Parent</fullName>
+                    <default>false</default>
+                    <label>Parent</label>
+                </value>
+                <value>
+                    <fullName>Payee</fullName>
+                    <default>false</default>
+                    <label>Payee</label>
+                </value>
+                <value>
+                    <fullName>Payer</fullName>
+                    <default>false</default>
+                    <label>Payer</label>
+                </value>
+                <value>
+                    <fullName>Payor</fullName>
+                    <default>false</default>
+                    <label>Payor</label>
+                </value>
+                <value>
+                    <fullName>Policy Holder</fullName>
+                    <default>false</default>
+                    <label>Policy Holder</label>
+                </value>
+                <value>
+                    <fullName>Primary Life Assured</fullName>
+                    <default>false</default>
+                    <label>Primary Life Assured</label>
+                </value>
+                <value>
+                    <fullName>Primary Life Assured Beneficiary</fullName>
+                    <default>false</default>
+                    <label>Primary Life Assured Beneficiary</label>
+                </value>
+                <value>
+                    <fullName>Secondary Life Assured</fullName>
+                    <default>false</default>
+                    <label>Secondary Life Assured</label>
+                </value>
+                <value>
+                    <fullName>Secondary Life Assured Beneficiary</fullName>
+                    <default>false</default>
+                    <label>Secondary Life Assured Beneficiary</label>
+                </value>
+                <value>
+                    <fullName>Spouse</fullName>
+                    <default>false</default>
+                    <label>Spouse</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__SourceSystemId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Source System ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__StartDate__c</fullName>
+        <defaultValue>today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Start date when the organizational entity or person assumed this role.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>HELD_AWAY__c</fullName>
+        <externalId>false</externalId>
+        <formula>FinServ__FinancialAccount__r.FinServ__HeldAway__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HELD AWAY</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>FinServ__FinancialAccount__r.FinServ__OwnerType__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PartyName__c</fullName>
+        <description>Used to display concatenate string First Name + Last Name or Organisation name on compact layout</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(AW_RoleFirstName__c),CMN_OrganizationName__c ,AW_RoleFirstName__c &amp; &quot; &quot; &amp; AW_RoleLastName__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Party Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ConsultantCode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates the associated consultant code.</description>
+        <externalId>false</externalId>
+        <label>Consultant Code</label>
+        <referenceTo>SC_ConsultantCodes__c</referenceTo>
+        <relationshipLabel>Financial Account Roles</relationshipLabel>
+        <relationshipName>Financial_Account_Roles</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_ConsultantStatus__c</fullName>
+        <description>Indicates the agreement status of associated consultant.</description>
+        <externalId>false</externalId>
+        <label>Consultant Status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FinServ__FinancialAccount__r.FinServ__FinancialAccountType__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Financial Account Role</label>
+    <nameField>
+        <displayFormat>FAR-{000000000}</displayFormat>
+        <label>Role Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Financial Account Roles</pluralLabel>
+    <recordTypes>
+        <fullName>AW_LibertyFinancialAccountRole</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>RSC_FinancialAccountRole</compactLayoutAssignment>
+        <description>Record type to be used for Integration with Compass, Lifestyle and Ilanga</description>
+        <label>Liberty Financial Account Role</label>
+        <picklistValues>
+            <picklist>CMN_OrganisationType__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOR_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOR_TRUST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PUB_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVT_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRUST</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_RelationshipToLifeAssured__c</picklist>
+            <values>
+                <fullName>Adopted Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Shareholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common Law Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creditor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Helper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiance %28Male%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiancee %28Female%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grand Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guarantor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_RelationshipToOwner__c</picklist>
+            <values>
+                <fullName>Adopted Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Shareholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common Law Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creditor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Helper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiance %28Male%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiancee %28Female%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grand Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guarantor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lawyer%2FAttorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_Suffix__c</picklist>
+            <values>
+                <fullName>%28PTY%29 LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Role__c</picklist>
+            <values>
+                <fullName>Absolute Cessionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Antenuptial Cession</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collateral Cessionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Educator - Child Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extended Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Holder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Life Assured Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Life Assured Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FinServ__AccountRole</fullName>
+        <active>true</active>
+        <description>Role occupied by an organizational entity, such as a corporation or LLC</description>
+        <label>Account Role</label>
+        <picklistValues>
+            <picklist>CMN_OrganisationType__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOR_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOR_TRUST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PUB_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVT_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRUST</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_RelationshipToLifeAssured__c</picklist>
+            <values>
+                <fullName>Adopted Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Shareholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common Law Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creditor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Helper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiance %28Male%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiancee %28Female%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grand Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guarantor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_RelationshipToOwner__c</picklist>
+            <values>
+                <fullName>Adopted Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Shareholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common Law Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creditor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Helper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiance %28Male%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiancee %28Female%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grand Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guarantor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lawyer%2FAttorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_Suffix__c</picklist>
+            <values>
+                <fullName>%28PTY%29 LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Role__c</picklist>
+            <values>
+                <fullName>Absolute Cessionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Antenuptial Cession</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collateral Cessionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Life Assured Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Life Assured Beneficiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FinServ__ContactRole</fullName>
+        <active>true</active>
+        <description>Role occupied by a person</description>
+        <label>Contact Role</label>
+        <picklistValues>
+            <picklist>CMN_OrganisationType__c</picklist>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOR_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FOR_TRUST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PUB_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVT_CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRUST</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_RelationshipToLifeAssured__c</picklist>
+            <values>
+                <fullName>Adopted Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Shareholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common Law Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creditor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Helper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiance %28Male%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiancee %28Female%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grand Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guarantor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_RelationshipToOwner__c</picklist>
+            <values>
+                <fullName>Adopted Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adopted Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Shareholder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common Law Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Common-Law-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creditor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debtor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Helper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ex-Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiance %28Male%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiancee %28Female%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foster Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Female</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend - Male</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Godmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grand-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandfather</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandson-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grand Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Grandnephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Great-Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guarantor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Half-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lawyer%2FAttorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son-In-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Granddaughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandmother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Step-Grandson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust Fund</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_Suffix__c</picklist>
+            <values>
+                <fullName>%28PTY%29 LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Role__c</picklist>
+            <values>
+                <fullName>Absolute Cessionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Antenuptial Cession</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collateral Cessionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Life Assured Beneficiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Life Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Life Assured Beneficiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts />
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>FinServ__CannotCreateInactiveRecord</fullName>
+        <active>true</active>
+        <description>Ensures that a record cannot be created as Inactive</description>
+        <errorConditionFormula>ISBLANK(FinServ__EndDate__c) &amp;&amp; NOT(FinServ__Active__c)</errorConditionFormula>
+        <errorMessage>A Financial Account Role cannot be created as Inactive</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__FARCannotBeModified</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(OR(ISCHANGED(FinServ__RelatedAccount__c),ISCHANGED(FinServ__RelatedContact__c),ISCHANGED(FinServ__FinancialAccount__c),ISCHANGED(FinServ__Role__c)),NOT(ISNEW()))</errorConditionFormula>
+        <errorMessage>This record cannot be edited. To update role information, you can deactivate this record and create a new one.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__InactiveFARCannotBeEdited</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(PRIORVALUE(FinServ__Active__c) == false,NOT(ISNEW()))</errorConditionFormula>
+        <errorMessage>Inactive record cannot be edited. To update FAR, you can create a new one.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__InactiveRecordCannotBeReactivated</fullName>
+        <active>true</active>
+        <description>Ensures that inactive records cannot be reactivated.</description>
+        <errorConditionFormula>1!=1</errorConditionFormula>
+        <errorMessage>Inactive Financial Roles cannot be reactivated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__OwnershipRolesCannotBeDeactivated</fullName>
+        <active>true</active>
+        <description>Enforces that changes to primary roles cannot be deactivated.</description>
+        <errorConditionFormula>(FinServ__Editable__c == false) &amp;&amp;
+        (ISCHANGED( FinServ__Active__c ))</errorConditionFormula>
+        <errorMessage>This record cannot be deactivated because ownership can be updated on the financial account only.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__OwnershipRolesCannotBeModified</fullName>
+        <active>true</active>
+        <description>Enforces that changes to Related Contact, Related Account, Role fields are not allowed when fields are non editable.</description>
+        <errorConditionFormula>1!=1</errorConditionFormula>
+        <errorMessage>This record cannot be modified because ownership can be specified on the financial account only.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__RelatedAccountOrContactRequired</fullName>
+        <active>true</active>
+        <description>Enforce selection of the correct lookup relationship: either a Related Account or Related Contact.</description>
+        <errorConditionFormula>ISBLANK(FinServ__RelatedContact__c) &amp;&amp; ISBLANK( FinServ__RelatedAccount__c)</errorConditionFormula>
+        <errorMessage>Either Related Account or Related Contact is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__RoleIsMandatory</fullName>
+        <active>true</active>
+        <description>Enforces that the Role__c field is mandatory when a FinancialAccountRole__c object is created.</description>
+        <errorConditionFormula>ISBLANK(TEXT(FinServ__Role__c))</errorConditionFormula>
+        <errorMessage>Role is required.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,1613 @@
+{
+  "version" : "53.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "inceptionDateString", "inceptionDateTenureBucket", "movementDateCalculated", "inforceIndicatorFlag", "ownerNationalIdCalculated", "movent_ind", "productNameCalculated", "movementDateTenureBucket", "frequencyCalculated", "personMarketConsentCalculated", "consult_sales_cd1", "prsn_mrtl_sts_dsc", "inceptionDateNewest", "sb_match", "prsn_brth_dt", "owner_natl_id", "ageBucket", "oldestInceptionDate", "incp_dt", "cont_no", "maturityDateTenureBucket", "prod_name", "standardBankMatch", "inforce_ind", "acr_product_group", "inforceIndicatorCalculated", "ownerNationalIdProductNameKey", "source", "frequency", "newestMaturityDateCalculated", "inceptionDateOldestCalculated", "movementInceptionDateBucket", "mty_dt", "Column1", "asOfDate", "nullFilter", "prsn_pdb_id", "newestInceptionDate", "prsn_mrkt_cnsnt", "policyNumberCalculated", "product_group_category", "acrProductGroupCalculated", "prsn_gndr_dsc", "movent_dt", "policyTermBucket", "educationInactivePolicy", "annuityAgeOfCustomer", "inceptionDateEpoc", "investmentGatewayInvestmentPlan", "yearsSinceFirstBondProduct", "investmentInactivePolicy", "api", "Inactive_Policy", "bondAgeOfCustomer", "yearsSinceFirstRetirementAnnuityProduct", "policyExpireDuration", "yearsSinceLastEducationProduct", "investmentGatewayInvestmentPlanFlag", "investmentInvestmentBuilder", "totalRetirementAnnuityPremium", "investmentLibertyEvolveInvestmentPlanFlag", "policyTerm", "inceptionDateTenure", "retirementAnnuityRetirementAnnuityBuilder", "investmentInvestmentPlanFlag", "activePolicy", "investmentFlexibleInvestmentPlan", "yearsSinceLastAnnuityProduct", "otherInvestmentProducts", "investmentInvestmentBuilderFlag", "yearsSinceLastRetirementAnnuityProduct", "movementInceptionDate", "totalInvestmentPremium", "bondGuaranteedCapitalBond", "frequencyLumpsumCalculated", "frequencyMonthlyCalculated", "retirementAnnuityInactivePolicy", "yearsSinceFirstInvestmentProduct", "annuityInactivePolicy", "totalAnnuityPremium", "dateOfBirth", "retirementAnnuityRetirementAnnuityBuilderFlag", "annuityFlexibleAnnuity", "investmentAgeOfCustomer", "investmentLibertyEvolveInvestmentPlan", "bondGuaranteedCapitalBondFlag", "yearsSinceNewestPolicyStart", "annuityAnnuityFlag", "annuityAnnuity", "annuityDependentVariable", "educationEducationPlanFlag", "movementDateTenure", "annuityFlexibleAnnuityFlag", "educationDependentVariable", "retirementAnnuityLibertyRetirementAnnuity", "educationEducationPlan", "educationAgeOfCustomer", "investmentFlexibleInvestmentPlanFlag", "maturityDateTenure", "educationActivePolicy", "investmentDependentVariable", "retirementAnnuityDependentVariable", "retirementAnnuityAgeOfCustomer", "yearsSinceFirstAnnuityProduct", "retirementAnnuityLibertyEvolveRetirementAnnuity", "yearsSinceLastBondProduct", "riskGroupFlag", "bondInactivePolicy", "annuityActivePolicy", "retirementAnnuityLibertyRetirementAnnuityFlag", "yearsSinceLastInvestmentProduct", "investmentActivePolicy", "investmentInvestmentPlan", "yearsSinceFirstEducationProduct", "yearsSinceOldestPolicyStart", "bondDependentVariable", "retirementAnnuityActivePolicy", "movementInceptionDateDiffereence", "bondActivePolicy", "retirementAnnuityLibertyEvolveRetirementAnnuityFlag", "age" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Transformed Data",
+          "name" : "AW_AccountPropensityModelTransformedData"
+        }
+      }
+    },
+    "EXTRACT0" : {
+      "action" : "extractGrains",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "grainExtractions" : [ ]
+      }
+    },
+    "AGGREGATE1" : {
+      "action" : "aggregate",
+      "sources" : [ "EXTRACT0" ],
+      "parameters" : {
+        "aggregations" : [ {
+          "action" : "SUM",
+          "source" : "investmentFlexibleInvestmentPlan",
+          "name" : "SUM_investmentFlexibleInvestmentPlan",
+          "label" : "Sum of Investment Flexible Investment Plan"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentInvestmentBuilder",
+          "name" : "SUM_investmentInvestmentBuilder",
+          "label" : "Sum of Investment Investment Builder"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentLibertyEvolveInvestmentPlan",
+          "name" : "SUM_investmentLibertyEvolveInvestmentPlan",
+          "label" : "Sum of Investment Liberty Evolve Investment Plan"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentGatewayInvestmentPlan",
+          "name" : "SUM_investmentGatewayInvestmentPlan",
+          "label" : "Sum of Investment Gateway Investment Plan"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentInvestmentPlan",
+          "name" : "SUM_investmentInvestmentPlan",
+          "label" : "Sum of Investment Investment Plan"
+        }, {
+          "action" : "SUM",
+          "source" : "retirementAnnuityLibertyRetirementAnnuity",
+          "name" : "SUM_retirementAnnuityLibertyRetirementAnnuity",
+          "label" : "Sum of Retirement Annuity Liberty Retirement Annuity"
+        }, {
+          "action" : "SUM",
+          "source" : "retirementAnnuityLibertyEvolveRetirementAnnuity",
+          "name" : "SUM_retirementAnnuityLibertyEvolveRetirementAnnuity",
+          "label" : "Sum of Retirement Annuity Liberty Evolve Retirement Annuity"
+        }, {
+          "action" : "SUM",
+          "source" : "retirementAnnuityRetirementAnnuityBuilder",
+          "name" : "SUM_retirementAnnuityRetirementAnnuityBuilder",
+          "label" : "Sum of Retirement Annuity Retirement Annuity Builder"
+        }, {
+          "action" : "SUM",
+          "source" : "annuityAnnuity",
+          "name" : "SUM_annuityAnnuity",
+          "label" : "Sum of Annuity Annuity"
+        }, {
+          "action" : "SUM",
+          "source" : "annuityFlexibleAnnuity",
+          "name" : "SUM_annuityFlexibleAnnuity",
+          "label" : "Sum of Annuity Flexible Annuity"
+        }, {
+          "action" : "SUM",
+          "source" : "educationEducationPlan",
+          "name" : "SUM_educationEducationPlan",
+          "label" : "Sum of Education Education Plan"
+        }, {
+          "action" : "SUM",
+          "source" : "bondGuaranteedCapitalBond",
+          "name" : "SUM_bondGuaranteedCapitalBond",
+          "label" : "Sum of Bond Guaranteed Capital Bond"
+        }, {
+          "action" : "SUM",
+          "source" : "activePolicy",
+          "name" : "SUM_activePolicy",
+          "label" : "Sum of Active Policy"
+        }, {
+          "action" : "SUM",
+          "source" : "Inactive_Policy",
+          "name" : "SUM_Inactive_Policy",
+          "label" : "Sum of inactive Policy"
+        }, {
+          "action" : "COUNT",
+          "source" : "policyNumberCalculated",
+          "name" : "COUNT_policyNumberCalculated",
+          "label" : "Count of Policy Number Calculated"
+        }, {
+          "action" : "SUM",
+          "source" : "frequencyLumpsumCalculated",
+          "name" : "SUM_frequencyLumpsumCalculated",
+          "label" : "Sum of Frequency Lumpsum Calculated"
+        }, {
+          "action" : "SUM",
+          "source" : "frequencyMonthlyCalculated",
+          "name" : "SUM_frequencyMonthlyCalculated",
+          "label" : "Sum of Frequency Monthly Calculated"
+        }, {
+          "action" : "SUM",
+          "source" : "totalInvestmentPremium",
+          "name" : "SUM_totalInvestmentPremium",
+          "label" : "Sum of Total Investment Premium"
+        }, {
+          "action" : "SUM",
+          "source" : "totalRetirementAnnuityPremium",
+          "name" : "SUM_totalRetirementAnnuityPremium",
+          "label" : "Sum of Total Retirement Annuity premium"
+        }, {
+          "action" : "SUM",
+          "source" : "totalAnnuityPremium",
+          "name" : "SUM_totalAnnuityPremium",
+          "label" : "Sum of Total Annuity Premium"
+        }, {
+          "action" : "MAX",
+          "source" : "annuityDependentVariable",
+          "name" : "MAX_annuityDependentVariable",
+          "label" : "Maximum Annuity Dependent Variable"
+        }, {
+          "action" : "MAX",
+          "source" : "bondDependentVariable",
+          "name" : "MAX_bondDependentVariable",
+          "label" : "Maximum Bond Dependent Variable"
+        }, {
+          "action" : "MAX",
+          "source" : "investmentDependentVariable",
+          "name" : "MAX_investmentDependentVariable",
+          "label" : "Maximum Investment Dependent Variable"
+        }, {
+          "action" : "MAX",
+          "source" : "educationDependentVariable",
+          "name" : "MAX_educationDependentVariable",
+          "label" : "Maximum Education Dependent Variable"
+        }, {
+          "action" : "MAX",
+          "source" : "retirementAnnuityDependentVariable",
+          "name" : "MAX_retirementAnnuityDependentVariable",
+          "label" : "Maximum Retirement Annuity Dependent Variable"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceFirstAnnuityProduct",
+          "name" : "MAX_yearsSinceFirstAnnuityProduct",
+          "label" : "Maximum Years Since First Annuity Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceFirstBondProduct",
+          "name" : "MAX_yearsSinceFirstBondProduct",
+          "label" : "Maximum Years Since First Bond Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceFirstEducationProduct",
+          "name" : "MAX_yearsSinceFirstEducationProduct",
+          "label" : "Maximum Years Since First Education Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceFirstInvestmentProduct",
+          "name" : "MAX_yearsSinceFirstInvestmentProduct",
+          "label" : "Maximum Years Since First Investment Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceFirstRetirementAnnuityProduct",
+          "name" : "MAX_yearsSinceFirstRetirementAnnuityProduct",
+          "label" : "Maximum Years Since First Retirement Annuity Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceLastAnnuityProduct",
+          "name" : "MAX_yearsSinceLastAnnuityProduct",
+          "label" : "Maximum Years Since Last Annuity Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceLastBondProduct",
+          "name" : "MAX_yearsSinceLastBondProduct",
+          "label" : "Maximum Years Since Last Bond Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceLastEducationProduct",
+          "name" : "MAX_yearsSinceLastEducationProduct",
+          "label" : "Maximum Years Since Last Education Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceLastInvestmentProduct",
+          "name" : "MAX_yearsSinceLastInvestmentProduct",
+          "label" : "Maximum Years Since Last Investment Product"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceLastRetirementAnnuityProduct",
+          "name" : "MAX_yearsSinceLastRetirementAnnuityProduct",
+          "label" : "Maximum Years Since Last Retirement Annuity Product"
+        }, {
+          "action" : "SUM",
+          "source" : "retirementAnnuityActivePolicy",
+          "name" : "SUM_retirementAnnuityActivePolicy",
+          "label" : "Sum of Retirement Annuity Active Policy"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentActivePolicy",
+          "name" : "SUM_investmentActivePolicy",
+          "label" : "Sum of Investment Active Policy"
+        }, {
+          "action" : "MAX",
+          "source" : "retirementAnnuityAgeOfCustomer",
+          "name" : "MAX_retirementAnnuityAgeOfCustomer",
+          "label" : "Maximum Retirement Annuity Age Of Customer"
+        }, {
+          "action" : "MAX",
+          "source" : "investmentAgeOfCustomer",
+          "name" : "MAX_investmentAgeOfCustomer",
+          "label" : "Maximum Investment Age Of Customer"
+        }, {
+          "action" : "MAX",
+          "source" : "annuityAgeOfCustomer",
+          "name" : "MAX_annuityAgeOfCustomer",
+          "label" : "Maximum Annuity Age Of Customer"
+        }, {
+          "action" : "MAX",
+          "source" : "riskGroupFlag",
+          "name" : "MAX_riskGroupFlag",
+          "label" : "Maximum Risk Group Flag"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceOldestPolicyStart",
+          "name" : "MAX_yearsSinceOldestPolicyStart",
+          "label" : "Maximum Years Since Oldest Policy Start"
+        }, {
+          "action" : "MAX",
+          "source" : "yearsSinceNewestPolicyStart",
+          "name" : "MAX_yearsSinceNewestPolicyStart",
+          "label" : "Maximum Years Since Newest Policy Start"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentFlexibleInvestmentPlanFlag",
+          "name" : "countPoliciesInvestmentFlexibleInvestmentPlanFlag",
+          "label" : "Count Policies Investment Flexible Investment Plan Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentGatewayInvestmentPlanFlag",
+          "name" : "countPoliciesInvestmentGatewayInvestmentPlanFlag",
+          "label" : "Count Policies Investment Gateway Investment Plan Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentInvestmentBuilderFlag",
+          "name" : "countPoliciesInvestmentInvestmentBuilderFlag",
+          "label" : "Count Policies Investment Investment Builder Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentLibertyEvolveInvestmentPlanFlag",
+          "name" : "countPoliciesInvestmentLibertyEvolveInvestmentPlanFlag",
+          "label" : "Count Policies Investment Liberty Evolve Investment Plan Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "investmentInvestmentPlanFlag",
+          "name" : "countPoliciesInvestmentInvestmentPlanFlag",
+          "label" : "Count Policies Investment Investment Plan Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "retirementAnnuityLibertyRetirementAnnuityFlag",
+          "name" : "countPoliciesRetirementAnnuityLibertyRetirementAnnuityFlag",
+          "label" : "Count Policies Retirement Annuity Liberty Retirement Annuity Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "retirementAnnuityLibertyEvolveRetirementAnnuityFlag",
+          "name" : "countPoliciesRetirementAnnuityLibertyEvolveRetirementAnnuityFlag",
+          "label" : "Count Policies Retirement Annuity Liberty Evolve Retirement Annuity Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "retirementAnnuityRetirementAnnuityBuilderFlag",
+          "name" : "countPoliciesRetirementAnnuityRetirementAnnuityBuilderFlag",
+          "label" : "Count Policies Retirement Annuity Retirement Annuity Builder Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "annuityFlexibleAnnuityFlag",
+          "name" : "countPoliciesAnnuityFlexibleAnnuityFlag",
+          "label" : "Count Policies Annuity Flexible Annuity Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "annuityAnnuityFlag",
+          "name" : "countPoliciesAnnuityAnnuityFlag",
+          "label" : "Count Policies Annuity Annuity Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "educationEducationPlanFlag",
+          "name" : "countPoliciesEducationEducationPlanFlag",
+          "label" : "Count Policies Education Education Plan Flag"
+        }, {
+          "action" : "SUM",
+          "source" : "bondGuaranteedCapitalBondFlag",
+          "name" : "SUM_bondGuaranteedCapitalBondFlag",
+          "label" : "Sum of Bond Guaranteed Capital Bond Flag"
+        } ],
+        "groupings" : [ "ownerNationalIdCalculated", "prsn_gndr_dsc", "prsn_mrtl_sts_dsc", "ageBucket" ],
+        "pivots" : [ ],
+        "nodeType" : "STANDARD"
+      }
+    },
+    "FORMULA0" : {
+      "action" : "formula",
+      "sources" : [ "AGGREGATE1" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula",
+          "label" : "Policy Number Count Capped",
+          "formulaExpression" : "case \r\n    when COUNT_policyNumberCalculated >= 15\r\n    then 15\r\n    else\r\n    COUNT_policyNumberCalculated\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA1" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula_formula",
+          "label" : "Frequency Monthly Capped",
+          "formulaExpression" : "case \r\n    when SUM_frequencyMonthlyCalculated > 8\r\n    then 8\r\n    else\r\n    SUM_frequencyMonthlyCalculated\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA2" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA1" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula_formula_formula",
+          "label" : "Frequency Lumpsum Capped",
+          "formulaExpression" : "case\r\n    when SUM_frequencyLumpsumCalculated >= 8\r\n    then 8\r\n    else\r\n    SUM_frequencyLumpsumCalculated\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA3" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA2" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula_formula_formula_formula",
+          "label" : "Maximum Years First Investment Product Capped",
+          "formulaExpression" : "case\r\n    when MAX_yearsSinceFirstInvestmentProduct >= 60\r\n    then 60\r\n    else\r\nMAX_yearsSinceFirstInvestmentProduct\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA4" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA3" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula_formula_formula_formula_formula",
+          "label" : "Maximum Years First Annuity Product Capped",
+          "formulaExpression" : "case \r\n    when MAX_yearsSinceFirstAnnuityProduct >= 40\r\n    then\r\n    40\r\n    else\r\nMAX_yearsSinceFirstAnnuityProduct\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA5" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA4" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula",
+          "label" : "Investment Active Policy Capped",
+          "formulaExpression" : "case\r\n    when SUM_investmentActivePolicy >= 20\r\n    then 20\r\n    else\r\n    SUM_investmentActivePolicy\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA6" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA5" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula_formula",
+          "label" : "Maximum Years last Investment Product Capped",
+          "formulaExpression" : "case\r\n    when MAX_yearsSinceLastInvestmentProduct >= 60\r\n    then 60\r\n    else\r\nMAX_yearsSinceLastInvestmentProduct\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "BUCKET0" : {
+      "action" : "bucket",
+      "sources" : [ "FORMULA6" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_yearsSinceFirstRetirementAnnuityProduct_bucket",
+          "label" : "Maximum Years Since First Retirement Annuity Product Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_yearsSinceFirstRetirementAnnuityProduct",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "0",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "1-3Yrs",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 3.0
+            }, {
+              "value" : "3-5yrs",
+              "rangeStart" : 3.0,
+              "rangeEnd" : 5.0
+            }, {
+              "value" : "5-7ys",
+              "rangeStart" : 5.0,
+              "rangeEnd" : 7.0
+            }, {
+              "value" : "7-10yrs",
+              "rangeStart" : 7.0,
+              "rangeEnd" : 10.0
+            }, {
+              "value" : "10-15yrs",
+              "rangeStart" : 10.0,
+              "rangeEnd" : 15.0
+            }, {
+              "value" : "15-25yrs",
+              "rangeStart" : 15.0,
+              "rangeEnd" : 25.0
+            }, {
+              "value" : "25-35yrs",
+              "rangeStart" : 25.0,
+              "rangeEnd" : 35.0
+            }, {
+              "value" : "greater than 35yrs",
+              "rangeStart" : 35.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "FORMULA7" : {
+      "action" : "formula",
+      "sources" : [ "BUCKET0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "MAX_investmentAgeOfCustomer_formula",
+          "label" : "Maximum Investment Age Of Customer capped",
+          "formulaExpression" : "case\r\n\twhen \r\n    MAX_investmentAgeOfCustomer <= 0 \r\n\tthen 0\r\n\telse\r\nMAX_investmentAgeOfCustomer\r\nend",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "BUCKET1" : {
+      "action" : "bucket",
+      "sources" : [ "FORMULA7" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_investmentAgeOfCustomer_formula_bucket",
+          "label" : "Age First Investment Product Bought Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_investmentAgeOfCustomer_formula",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "Product not Bought",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "Less than 18",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 19.0
+            }, {
+              "value" : "Between 18-30",
+              "rangeStart" : 19.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "Between 30-40",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 40.0
+            }, {
+              "value" : "Between 40-50",
+              "rangeStart" : 40.0,
+              "rangeEnd" : 50.0
+            }, {
+              "value" : "Between 50-60",
+              "rangeStart" : 50.0,
+              "rangeEnd" : 60.0
+            }, {
+              "value" : "Greater than 60",
+              "rangeStart" : 60.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET2" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET1" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_retirementAnnuityAgeOfCustomer_bucket",
+          "label" : " Age first Retirement Annuity BoughtBucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_retirementAnnuityAgeOfCustomer",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "Product not Bought",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "less than 18yrs",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 19.0
+            }, {
+              "value" : "Between 18-30yrs",
+              "rangeStart" : 19.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "Between 30-40yrs",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 40.0
+            }, {
+              "value" : "Between 40-50yrs",
+              "rangeStart" : 40.0,
+              "rangeEnd" : 50.0
+            }, {
+              "value" : "Between 50-60yrs",
+              "rangeStart" : 50.0,
+              "rangeEnd" : 60.0
+            }, {
+              "value" : "Greater than 60yrs",
+              "rangeStart" : 60.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET3" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET2" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_annuityAgeOfCustomer_bucket",
+          "label" : " Age first Annuity Product Bought Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_annuityAgeOfCustomer",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "Product not Bought",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "Less than 18",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 19.0
+            }, {
+              "value" : "Between 18-30yrs",
+              "rangeStart" : 19.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "Between 30-40yrs",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 40.0
+            }, {
+              "value" : "Between 40-50yrs",
+              "rangeStart" : 40.0,
+              "rangeEnd" : 50.0
+            }, {
+              "value" : "Between 50-60yrs",
+              "rangeStart" : 50.0,
+              "rangeEnd" : 60.0
+            }, {
+              "value" : "Greater than 60yrs",
+              "rangeStart" : 60.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET4" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET3" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_yearsSinceFirstInvestmentProduct_bucket",
+          "label" : "Maximum Years Since First Investment Product Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_yearsSinceFirstInvestmentProduct",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "0",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "1-5yrs",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 5.0
+            }, {
+              "value" : "5-10yrs",
+              "rangeStart" : 5.0,
+              "rangeEnd" : 10.0
+            }, {
+              "value" : "10-15yrs",
+              "rangeStart" : 10.0,
+              "rangeEnd" : 15.0
+            }, {
+              "value" : "15-20yrs",
+              "rangeStart" : 15.0,
+              "rangeEnd" : 20.0
+            }, {
+              "value" : "20-25yrs",
+              "rangeStart" : 20.0,
+              "rangeEnd" : 25.0
+            }, {
+              "value" : "25-30yrs",
+              "rangeStart" : 25.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "30-35yrs",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 35.0
+            }, {
+              "value" : "Greater than 35yrs",
+              "rangeStart" : 35.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET5" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET4" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_yearsSinceLastInvestmentProduct_bucket",
+          "label" : "Maximum Years Since Last Investment Product Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_yearsSinceLastInvestmentProduct",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "0",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "1-5yrs",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 5.0
+            }, {
+              "value" : "5-10yrs",
+              "rangeStart" : 5.0,
+              "rangeEnd" : 10.0
+            }, {
+              "value" : "10-15yrs",
+              "rangeStart" : 10.0,
+              "rangeEnd" : 15.0
+            }, {
+              "value" : "15-20yrs",
+              "rangeStart" : 15.0,
+              "rangeEnd" : 20.0
+            }, {
+              "value" : "20-25yrs",
+              "rangeStart" : 20.0,
+              "rangeEnd" : 25.0
+            }, {
+              "value" : "25-30yrs",
+              "rangeStart" : 25.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "30-35yrs",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 35.0
+            }, {
+              "value" : "Greater than 35yrs",
+              "rangeStart" : 35.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET6" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET5" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_yearsSinceLastRetirementAnnuityProduct_bucket",
+          "label" : "Maximum Years Since Last Retirement Annuity Product Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_yearsSinceLastRetirementAnnuityProduct",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "0",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "1-5yrs",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 5.0
+            }, {
+              "value" : "5-10yrs",
+              "rangeStart" : 5.0,
+              "rangeEnd" : 10.0
+            }, {
+              "value" : "10-15yrs",
+              "rangeStart" : 10.0,
+              "rangeEnd" : 15.0
+            }, {
+              "value" : "15-20yrs",
+              "rangeStart" : 15.0,
+              "rangeEnd" : 20.0
+            }, {
+              "value" : "20-25yrs",
+              "rangeStart" : 20.0,
+              "rangeEnd" : 25.0
+            }, {
+              "value" : "25-30yrs",
+              "rangeStart" : 25.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "30-35yrs",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 35.0
+            }, {
+              "value" : "Greater than 35yrs",
+              "rangeStart" : 35.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET7" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET6" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_yearsSinceFirstAnnuityProduct_bucket",
+          "label" : "Maximum Years Since First Annuity Product Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_yearsSinceFirstAnnuityProduct",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "0",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "1-5yrs",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 5.0
+            }, {
+              "value" : "5-10yrs",
+              "rangeStart" : 5.0,
+              "rangeEnd" : 10.0
+            }, {
+              "value" : "10-15yrs",
+              "rangeStart" : 10.0,
+              "rangeEnd" : 15.0
+            }, {
+              "value" : "15-20yrs",
+              "rangeStart" : 15.0,
+              "rangeEnd" : 20.0
+            }, {
+              "value" : "20-25yrs",
+              "rangeStart" : 20.0,
+              "rangeEnd" : 25.0
+            }, {
+              "value" : "25-30yrs",
+              "rangeStart" : 25.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "30-35yrs",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 35.0
+            }, {
+              "value" : "Greater than 35yrs",
+              "rangeStart" : 35.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET8" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET7" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "MAX_yearsSinceLastAnnuityProduct_bucket",
+          "label" : "Maximum Years Since Last Annuity Product Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "MAX_yearsSinceLastAnnuityProduct",
+              "type" : "NUMBER"
+            },
+            "buckets" : [ {
+              "value" : "0",
+              "rangeEnd" : 1.0
+            }, {
+              "value" : "1-5yrs",
+              "rangeStart" : 1.0,
+              "rangeEnd" : 5.0
+            }, {
+              "value" : "5-10yrs",
+              "rangeStart" : 5.0,
+              "rangeEnd" : 10.0
+            }, {
+              "value" : "10-15yrs",
+              "rangeStart" : 10.0,
+              "rangeEnd" : 15.0
+            }, {
+              "value" : "15-20yrs",
+              "rangeStart" : 15.0,
+              "rangeEnd" : 20.0
+            }, {
+              "value" : "20-25yrs",
+              "rangeStart" : 20.0,
+              "rangeEnd" : 25.0
+            }, {
+              "value" : "25-30yrs",
+              "rangeStart" : 25.0,
+              "rangeEnd" : 30.0
+            }, {
+              "value" : "30-35yrs",
+              "rangeStart" : 30.0,
+              "rangeEnd" : 35.0
+            }, {
+              "value" : "Greater than 35 yrs",
+              "rangeStart" : 35.0
+            } ]
+          }
+        } ]
+      }
+    },
+    "FORMULA8" : {
+      "action" : "formula",
+      "sources" : [ "BUCKET8" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "MAX_yearsSinceOldestPolicyStart_formula",
+          "label" : "Tenure",
+          "formulaExpression" : "case \r\n    when MAX_yearsSinceOldestPolicyStart >= 40\r\n    then 40\r\n    else\r\n    MAX_yearsSinceOldestPolicyStart\r\nend",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA9" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA8" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "MAX_yearsSinceNewestPolicyStart_formula",
+          "label" : "Maximum Years Since Newest Policy Start Capped",
+          "formulaExpression" : "case \r\n    when MAX_yearsSinceNewestPolicyStart >= 40\r\n    then 40\r\n    else\r\n    MAX_yearsSinceNewestPolicyStart\r\nend",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA10" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA9" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "MAX_investmentDependentVariable_formula",
+          "label" : "Investment Target Variable ",
+          "formulaExpression" : "case \r\n    when MAX_investmentDependentVariable = 1\r\n    then 'YES'\r\n    when MAX_investmentDependentVariable = 0\r\n   then 'NO'\r\n    else\r\n    MAX_investmentDependentVariable\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA11" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA10" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "MAX_retirementAnnuityDependentVariable_formula",
+          "label" : "Retirement Annuity Target Variable ",
+          "formulaExpression" : "case \r\n    when MAX_retirementAnnuityDependentVariable = 1\r\n    then 'YES'\r\n    else\r\n    'NO'\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA12" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA11" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "MAX_annuityDependentVariable_formula",
+          "label" : "Annuity Target Variable",
+          "formulaExpression" : "case \r\n    when MAX_annuityDependentVariable = 1\r\n    then 'YES'\r\n    else\r\n    'NO'\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA13" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA12" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "MAX_bondDependentVariable_formula",
+          "label" : "Bond Target Variable",
+          "formulaExpression" : "case \r\n    when MAX_bondDependentVariable = 1\r\n    then 'YES'\r\n    else\r\n    'NO'\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA14" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA13" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "MAX_educationDependentVariable_formula",
+          "label" : "Education Target Variable",
+          "formulaExpression" : "case \r\n    when MAX_educationDependentVariable = 1\r\n    then 'YES'\r\n    else\r\n    'NO'\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA15" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA14" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula1",
+          "label" : "Count Policies Investment Group",
+          "formulaExpression" : "countPoliciesInvestmentFlexibleInvestmentPlanFlag + countPoliciesInvestmentGatewayInvestmentPlanFlag + countPoliciesInvestmentInvestmentBuilderFlag + countPoliciesInvestmentInvestmentPlanFlag + countPoliciesInvestmentLibertyEvolveInvestmentPlanFlag",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA16" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA15" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula1_formula",
+          "label" : "Count Policies Retirement Annuity Group",
+          "formulaExpression" : "countPoliciesRetirementAnnuityLibertyRetirementAnnuityFlag+ countPoliciesRetirementAnnuityLibertyEvolveRetirementAnnuityFlag + countPoliciesRetirementAnnuityRetirementAnnuityBuilderFlag",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA17" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA16" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula1_formula_formula",
+          "label" : "Count Policies Annuity Group",
+          "formulaExpression" : "countPoliciesAnnuityAnnuityFlag + countPoliciesAnnuityFlexibleAnnuityFlag",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA18" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA17" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula1_formula_formula_formula",
+          "label" : "Count Policies Annuity Group Capped",
+          "formulaExpression" : "case\r\n    when ownerNationalIdCalculated_formula1_formula_formula >= 5\r\n    then 5\r\n    else\r\n    ownerNationalIdCalculated_formula1_formula_formula\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA19" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA18" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ownerNationalIdCalculated_formula1_formula1",
+          "label" : "Count Policies Investment Group Capped",
+          "formulaExpression" : "case\r\n    when ownerNationalIdCalculated_formula1 >= 15\r\n    then 15\r\n    else\r\n    ownerNationalIdCalculated_formula1\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "FORMULA19", "LOAD_DATASET3" ],
+      "schema" : {
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "ownerNationalIdCalculated" ],
+        "rightQualifier" : "Joined_dat",
+        "rightKeys" : [ "ownerNationalIdCalculated" ]
+      }
+    },
+    "LOAD_DATASET3" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "inceptionDateString", "inceptionDateTenureBucket", "movementDateCalculated", "inforceIndicatorFlag", "ownerNationalIdCalculated", "movent_ind", "productNameCalculated", "movementDateTenureBucket", "frequencyCalculated", "personMarketConsentCalculated", "consult_sales_cd1", "prsn_mrtl_sts_dsc", "inceptionDateNewest", "sb_match", "prsn_brth_dt", "owner_natl_id", "ageBucket", "oldestInceptionDate", "incp_dt", "cont_no", "maturityDateTenureBucket", "prod_name", "standardBankMatch", "inforce_ind", "acr_product_group", "inforceIndicatorCalculated", "ownerNationalIdProductNameKey", "source", "frequency", "newestMaturityDateCalculated", "inceptionDateOldestCalculated", "movementInceptionDateBucket", "mty_dt", "Column1", "asOfDate", "nullFilter", "prsn_pdb_id", "newestInceptionDate", "prsn_mrkt_cnsnt", "policyNumberCalculated", "product_group_category", "acrProductGroupCalculated", "prsn_gndr_dsc", "movent_dt", "policyTermBucket", "educationInactivePolicy", "annuityAgeOfCustomer", "inceptionDateEpoc", "investmentGatewayInvestmentPlan", "yearsSinceFirstBondProduct", "investmentInactivePolicy", "api", "Inactive_Policy", "bondAgeOfCustomer", "yearsSinceFirstRetirementAnnuityProduct", "policyExpireDuration", "yearsSinceLastEducationProduct", "investmentGatewayInvestmentPlanFlag", "investmentInvestmentBuilder", "totalRetirementAnnuityPremium", "investmentLibertyEvolveInvestmentPlanFlag", "policyTerm", "inceptionDateTenure", "retirementAnnuityRetirementAnnuityBuilder", "investmentInvestmentPlanFlag", "activePolicy", "investmentFlexibleInvestmentPlan", "yearsSinceLastAnnuityProduct", "otherInvestmentProducts", "investmentInvestmentBuilderFlag", "yearsSinceLastRetirementAnnuityProduct", "movementInceptionDate", "totalInvestmentPremium", "bondGuaranteedCapitalBond", "frequencyLumpsumCalculated", "frequencyMonthlyCalculated", "retirementAnnuityInactivePolicy", "yearsSinceFirstInvestmentProduct", "annuityInactivePolicy", "totalAnnuityPremium", "dateOfBirth", "retirementAnnuityRetirementAnnuityBuilderFlag", "annuityFlexibleAnnuity", "investmentAgeOfCustomer", "investmentLibertyEvolveInvestmentPlan", "bondGuaranteedCapitalBondFlag", "yearsSinceNewestPolicyStart", "annuityAnnuityFlag", "annuityAnnuity", "annuityDependentVariable", "educationEducationPlanFlag", "movementDateTenure", "annuityFlexibleAnnuityFlag", "educationDependentVariable", "retirementAnnuityLibertyRetirementAnnuity", "educationEducationPlan", "educationAgeOfCustomer", "investmentFlexibleInvestmentPlanFlag", "maturityDateTenure", "educationActivePolicy", "investmentDependentVariable", "retirementAnnuityDependentVariable", "retirementAnnuityAgeOfCustomer", "yearsSinceFirstAnnuityProduct", "retirementAnnuityLibertyEvolveRetirementAnnuity", "yearsSinceLastBondProduct", "riskGroupFlag", "bondInactivePolicy", "annuityActivePolicy", "retirementAnnuityLibertyRetirementAnnuityFlag", "yearsSinceLastInvestmentProduct", "investmentActivePolicy", "investmentInvestmentPlan", "yearsSinceFirstEducationProduct", "yearsSinceOldestPolicyStart", "bondDependentVariable", "retirementAnnuityActivePolicy", "movementInceptionDateDiffereence", "bondActivePolicy", "retirementAnnuityLibertyEvolveRetirementAnnuityFlag", "age" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Transformed Data",
+          "name" : "AW_AccountPropensityModelTransformedData"
+        }
+      }
+    },
+    "JOIN1" : {
+      "action" : "join",
+      "sources" : [ "JOIN0", "AGGREGATE5" ],
+      "schema" : {
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "ownerNationalIdCalculated" ],
+        "rightQualifier" : "Joined_dat1",
+        "rightKeys" : [ "ownerNationalIdCalculated" ]
+      }
+    },
+    "LOAD_DATASET4" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "ownerNationalIdProductNameKey", "source", "frequency", "inceptionDateTenureBucket", "movementDateCalculated", "inforceIndicatorFlag", "ownerNationalIdCalculated", "newestMaturityDateCalculated", "inceptionDateOldestCalculated", "movementInceptionDateBucket", "movent_ind", "productNameCalculated", "mty_dt", "movementDateTenureBucket", "frequencyCalculated", "Column1", "personMarketConsentCalculated", "consult_sales_cd1", "prsn_mrtl_sts_dsc", "inceptionDateNewest", "asOfDate", "nullFilter", "sb_match", "prsn_brth_dt", "owner_natl_id", "prsn_pdb_id", "ageBucket", "oldestInceptionDate", "newestInceptionDate", "incp_dt", "cont_no", "prsn_mrkt_cnsnt", "policyNumberCalculated", "maturityDateTenureBucket", "product_group_category", "acrProductGroupCalculated", "prod_name", "standardBankMatch", "prsn_gndr_dsc", "inforce_ind", "movent_dt", "policyTermBucket", "acr_product_group", "inforceIndicatorCalculated", "bondGuaranteedCapitalBondFlag", "inceptionDateEpoc", "annuityAnnuityFlag", "annuityAnnuity", "investmentGatewayInvestmentPlan", "educationEducationPlanFlag", "movementDateTenure", "api", "annuityFlexibleAnnuityFlag", "retirementAnnuityLibertyRetirementAnnuity", "policyExpireDuration", "educationEducationPlan", "investmentFlexibleInvestmentPlanFlag", "investmentGatewayInvestmentPlanFlag", "maturityDateTenure", "countExcludePolicy", "investmentInvestmentBuilder", "investmentLibertyEvolveInvestmentPlanFlag", "policyTerm", "inceptionDateTenure", "retirementAnnuityRetirementAnnuityBuilder", "retirementAnnuityLibertyEvolveRetirementAnnuity", "investmentInvestmentPlanFlag", "investmentFlexibleInvestmentPlan", "riskGroupFlag", "investmentInvestmentBuilderFlag", "movementInceptionDate", "retirementAnnuityLibertyRetirementAnnuityFlag", "bondGuaranteedCapitalBond", "investmentInvestmentPlan", "frequencyLumpsumCalculated", "frequencyMonthlyCalculated", "dateOfBirth", "retirementAnnuityRetirementAnnuityBuilderFlag", "years_exclude_policy", "annuityFlexibleAnnuity", "movementInceptionDateDiffereence", "investmentLibertyEvolveInvestmentPlan", "retirementAnnuityLibertyEvolveRetirementAnnuityFlag", "age" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Transformed Filtered Data",
+          "name" : "AW_AccountPropensityModelTransformedFilteredData"
+        }
+      }
+    },
+    "EXTRACT2" : {
+      "action" : "extractGrains",
+      "sources" : [ "LOAD_DATASET4" ],
+      "parameters" : {
+        "grainExtractions" : [ ]
+      }
+    },
+    "AGGREGATE5" : {
+      "action" : "aggregate",
+      "sources" : [ "EXTRACT2" ],
+      "parameters" : {
+        "aggregations" : [ {
+          "action" : "SUM",
+          "source" : "countExcludePolicy",
+          "name" : "SUM_countExcludePolicy",
+          "label" : "Sum of Count Exclude Policy"
+        } ],
+        "groupings" : [ "ownerNationalIdCalculated" ],
+        "pivots" : [ ],
+        "nodeType" : "STANDARD"
+      }
+    },
+    "FORMULA20" : {
+      "action" : "formula",
+      "sources" : [ "JOIN1" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Joined_dat1.SUM_countExcludePolicy_formula",
+          "label" : "Sum of Count Exclude Policy Capped",
+          "formulaExpression" : "case \r\n    when \"Joined_dat1.SUM_countExcludePolicy\" >=15\r\n    then 15\r\n    else\r\n\"Joined_dat1.SUM_countExcludePolicy\"\r\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "FORMULA20" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Aggregated Data",
+          "name" : "AW_AccountPropensityModelAggregatedData",
+          "folderName" : "Account_Propensity_Model_App"
+        }
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "Account Propensity Model Transformed Data",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "graph" : {
+          "LOAD_DATASET0" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "AGGREGATE0" : {
+        "label" : "Aggregate",
+        "type" : "AGGREGATE",
+        "top" : 112,
+        "left" : 252,
+        "graph" : {
+          "EXTRACT0" : null,
+          "AGGREGATE1" : null
+        },
+        "connectors" : [ {
+          "source" : "EXTRACT0",
+          "target" : "AGGREGATE1"
+        } ]
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 392,
+        "graph" : {
+          "FORMULA0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA1" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA2" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA3" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA4" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA5" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA6" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "BUCKET0" : null,
+          "FORMULA7" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "BUCKET1" : null,
+          "BUCKET2" : null,
+          "BUCKET3" : null,
+          "BUCKET4" : null,
+          "BUCKET5" : null,
+          "BUCKET6" : null,
+          "BUCKET7" : null,
+          "BUCKET8" : null,
+          "FORMULA8" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA9" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA10" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA11" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA12" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA13" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA14" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA15" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA16" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA17" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA18" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA19" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA0",
+          "target" : "FORMULA1"
+        }, {
+          "source" : "FORMULA1",
+          "target" : "FORMULA2"
+        }, {
+          "source" : "FORMULA2",
+          "target" : "FORMULA3"
+        }, {
+          "source" : "FORMULA3",
+          "target" : "FORMULA4"
+        }, {
+          "source" : "FORMULA4",
+          "target" : "FORMULA5"
+        }, {
+          "source" : "FORMULA5",
+          "target" : "FORMULA6"
+        }, {
+          "source" : "FORMULA6",
+          "target" : "BUCKET0"
+        }, {
+          "source" : "BUCKET0",
+          "target" : "FORMULA7"
+        }, {
+          "source" : "FORMULA7",
+          "target" : "BUCKET1"
+        }, {
+          "source" : "BUCKET1",
+          "target" : "BUCKET2"
+        }, {
+          "source" : "BUCKET2",
+          "target" : "BUCKET3"
+        }, {
+          "source" : "BUCKET3",
+          "target" : "BUCKET4"
+        }, {
+          "source" : "BUCKET4",
+          "target" : "BUCKET5"
+        }, {
+          "source" : "BUCKET5",
+          "target" : "BUCKET6"
+        }, {
+          "source" : "BUCKET6",
+          "target" : "BUCKET7"
+        }, {
+          "source" : "BUCKET7",
+          "target" : "BUCKET8"
+        }, {
+          "source" : "BUCKET8",
+          "target" : "FORMULA8"
+        }, {
+          "source" : "FORMULA8",
+          "target" : "FORMULA9"
+        }, {
+          "source" : "FORMULA9",
+          "target" : "FORMULA10"
+        }, {
+          "source" : "FORMULA10",
+          "target" : "FORMULA11"
+        }, {
+          "source" : "FORMULA11",
+          "target" : "FORMULA12"
+        }, {
+          "source" : "FORMULA12",
+          "target" : "FORMULA13"
+        }, {
+          "source" : "FORMULA13",
+          "target" : "FORMULA14"
+        }, {
+          "source" : "FORMULA14",
+          "target" : "FORMULA15"
+        }, {
+          "source" : "FORMULA15",
+          "target" : "FORMULA16"
+        }, {
+          "source" : "FORMULA16",
+          "target" : "FORMULA17"
+        }, {
+          "source" : "FORMULA17",
+          "target" : "FORMULA18"
+        }, {
+          "source" : "FORMULA18",
+          "target" : "FORMULA19"
+        } ]
+      },
+      "JOIN0" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 532
+      },
+      "LOAD_DATASET3" : {
+        "label" : "Account Propensity Model Transformed Data",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 112,
+        "graph" : {
+          "LOAD_DATASET3" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN1" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 672
+      },
+      "LOAD_DATASET4" : {
+        "label" : "Account Propensity Model Transformed Filtered Data",
+        "type" : "LOAD_DATASET",
+        "top" : 392,
+        "left" : 112,
+        "graph" : {
+          "LOAD_DATASET4" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "AGGREGATE4" : {
+        "label" : "Aggregate",
+        "type" : "AGGREGATE",
+        "top" : 392,
+        "left" : 252,
+        "graph" : {
+          "EXTRACT2" : null,
+          "AGGREGATE5" : null
+        },
+        "connectors" : [ {
+          "source" : "EXTRACT2",
+          "target" : "AGGREGATE5"
+        } ]
+      },
+      "TRANSFORM1" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 812,
+        "graph" : {
+          "FORMULA20" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT0" : {
+        "label" : "Output",
+        "type" : "OUTPUT",
+        "top" : 252,
+        "left" : 952
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET0",
+      "target" : "AGGREGATE0"
+    }, {
+      "source" : "AGGREGATE0",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "JOIN0"
+    }, {
+      "source" : "LOAD_DATASET3",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "JOIN1"
+    }, {
+      "source" : "AGGREGATE4",
+      "target" : "JOIN1"
+    }, {
+      "source" : "LOAD_DATASET4",
+      "target" : "AGGREGATE4"
+    }, {
+      "source" : "JOIN1",
+      "target" : "TRANSFORM1"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "OUTPUT0"
+    } ],
+    "hiddenColumns" : [ {
+      "fieldName" : "investmentDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "retirementAnnuityDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "retirementAnnuityAgeOfCustomer",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "yearsSinceFirstAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "retirementAnnuityLibertyEvolveRetirementAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "yearsSinceLastBondProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "riskGroupFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "bondInactivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "annuityActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "yearsSinceLastInvestmentProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "investmentActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "investmentInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "yearsSinceFirstEducationProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "yearsSinceOldestPolicyStart",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "bondDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "retirementAnnuityLibertyRetirementAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "retirementAnnuityActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "movementInceptionDateDiffereence",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "bondActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "retirementAnnuityLibertyEvolveRetirementAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    }, {
+      "fieldName" : "age",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelTransformedData"
+    } ]
+  }
+}

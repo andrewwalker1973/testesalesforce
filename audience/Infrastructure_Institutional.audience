@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Infrastructure</audienceName>
+    <container>STANLIB Client Portal</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <entityField>Contact.$Contact.SLC_Subscription_Preferences__c.$SLC_Subscription_Preferences__c.SLC_PC_Infrastructure__c</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Yes</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AllCriteriaMatch</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+    <targets>
+        <target>
+            <groupName>5d99cc57-5479-4f4c-a657-780133dc8075$#$d800e8fe-c4a4-4c8f-a8fe-2c61ab726634</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Portfolio_Team_Insights_CMS_Single_Item_3_Component</targetValue>
+        </target>
+    </targets>
+</Audience>

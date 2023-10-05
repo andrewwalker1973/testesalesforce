@@ -1,0 +1,49 @@
+<!--
+* @description LWC Component used to view link and authorize advise and AtWork
+*
+* @author k.marakalala@accenture.com
+*
+* @date March 2023
+* -->
+<template>
+	<div class="slds-clearfix">
+		<lightning-button class="slds-float_right" label="Access Advice+" onclick={onclickAdvice} variant="brand"></lightning-button>
+		<div style="right:5px;position:relative;">
+			<lightning-button class="slds-float_right" label="Access atWork" onclick={onclickAdviceAtWork} variant="neutral"></lightning-button>
+		</div>
+	</div>
+
+	<div if:true={displayConfirmationDialog}>
+		<section aria-modal="true" class="slds-modal slds-fade-in-open slds-modal_medium" role="dialog" tabindex="-1">
+			<div if:true={loader}>
+				<lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+			</div>
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeConfirmationDialog} title="Close">
+						<lightning-icon icon-name="utility:close" size="medium"></lightning-icon>
+						<span class="slds-assistive-text">Close</span>
+					</button>
+					<h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-01">
+						Financial Needs Analysis </h2>
+				</header>
+				<div class="slds-modal__content slds-var-p-around_medium" id="modal-content-id-1">
+					<div class="slds-grid slds-wrap slds-wrap slds-gutters">
+						<div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+							<lightning-input data-field="atwork-username" label="Your atWork username"
+											 message-when-value-missing="Your atWork username is required" required value={atWorkIdUsername}></lightning-input>
+						</div>
+					</div>
+				</div>
+				<footer class="slds-modal__footer">
+					<lightning-button label="Cancel" onclick={closeConfirmationDialog} variant="neutral"></lightning-button>
+
+					<lightning-button label="View Financial Needs Analysis" onclick={getAtWorkURL} variant="brand"></lightning-button>
+				</footer>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</div>
+
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

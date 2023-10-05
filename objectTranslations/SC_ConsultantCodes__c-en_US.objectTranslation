@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Consultant Code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Consultant Codes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Adviser Email --></label>
+        <name>RSC_AdviserEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adviser First Name --></label>
+        <name>RSC_AdviserFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adviser Last Name --></label>
+        <name>RSC_AdviserLastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Number --></label>
+        <name>SC_AgreementNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreement Status --></label>
+        <name>SC_AgreementStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brokerage --></label>
+        <name>SC_Brokerage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Id --></label>
+        <name>SC_ContactId__c</name>
+        <relationshipLabel><!-- Consultant Codes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SRS BelongsTo ID --></label>
+        <name>SC_SRSBelongsToID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SC_AssociatedContract</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>SC_AssociatedContract</fullName>
+        <fields>SC_Case__c</fields>
+        <fields>SC_PolicyNumber__c</fields>
+        <fields>SC_PolicyType__c</fields>
+        <fields>SC_ProductType__c</fields>
+        <fields>SC_Status__c</fields>
+        <fields>SC_CommencementDate__c</fields>
+        <fields>SC_Premium__c</fields>
+        <label>SC_AssociatedContract</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction Object to associate Cases with the Financial Accounts &amp; Insurance Policies.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>SC_AssociatedContractExtension__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associated Contract Lookup field</description>
+        <externalId>false</externalId>
+        <label>Associated Contract Extension</label>
+        <referenceTo>SC_AssociatedContractExtension__c</referenceTo>
+        <relationshipLabel>Associated Contracts</relationshipLabel>
+        <relationshipName>Associated_Contracts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_Case__c</fullName>
+        <description>Contains the servicing case number associated to a particular contract.</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Policies</relationshipLabel>
+        <relationshipName>Associated_Contracts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>SC_CommencementDate__c</fullName>
+        <description>Contains the commencement date of the contract associated to a a particular servicing case.</description>
+        <externalId>false</externalId>
+        <formula>IF(SC_InsurancePolicy__c &lt;&gt; null &amp;&amp; SC_FinancialAccount__c = null,  SC_InsurancePolicy__r.AW_CommencementDate__c, IF(SC_FinancialAccount__c &lt;&gt; null &amp;&amp; SC_InsurancePolicy__c = null,  SC_FinancialAccount__r.FinServ__OpenDate__c, null) )</formula>
+        <label>Commencement Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SC_FinancialAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contains the financial accounts associated to a particular servicing case.</description>
+        <externalId>false</externalId>
+        <label>Financial Account</label>
+        <referenceTo>FinServ__FinancialAccount__c</referenceTo>
+        <relationshipLabel>Associated Contracts</relationshipLabel>
+        <relationshipName>Associated_Contracts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_InsurancePolicy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contains the insurance policies associated to a particular servicing case.</description>
+        <externalId>false</externalId>
+        <label>Insurance Policy</label>
+        <referenceTo>InsurancePolicy</referenceTo>
+        <relationshipLabel>Associated Contracts</relationshipLabel>
+        <relationshipName>Associated_Contracts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_PolicyIntermediatedStatus__c</fullName>
+        <description>Indicates whether the Policy is Intermediated or orphan.</description>
+        <externalId>false</externalId>
+        <formula>IF(SC_InsurancePolicy__c &lt;&gt; null &amp;&amp; SC_FinancialAccount__c = null, SC_InsurancePolicy__r.SC_ConsultantStatus__c, 
+IF(SC_FinancialAccount__c &lt;&gt; null &amp;&amp;SC_InsurancePolicy__c = null, 
+ SC_FinancialAccount__r.SC_ConsultantStatus__c, &apos;&apos;) )</formula>
+        <label>Policy Intermediated Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_PolicyNumber__c</fullName>
+        <description>Contains the policy number  associated to a particular servicing case.</description>
+        <externalId>false</externalId>
+        <formula>IF(SC_InsurancePolicy__c &lt;&gt; null &amp;&amp; SC_FinancialAccount__c = null, SC_InsurancePolicy__r.Name,  IF( SC_FinancialAccount__c  &lt;&gt; null &amp;&amp; SC_InsurancePolicy__c = null,   SC_FinancialAccount__r.FinServ__FinancialAccountNumber__c, &apos;&apos;) )</formula>
+        <label>Policy Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_PolicyType__c</fullName>
+        <description>Contains the policy type  of the policy associated to a particular servicing case.</description>
+        <externalId>false</externalId>
+        <formula>IF(SC_InsurancePolicy__c &lt;&gt; null &amp;&amp; SC_FinancialAccount__c = null, &apos;Risk Product&apos;, IF( SC_FinancialAccount__c &lt;&gt; null &amp;&amp; SC_InsurancePolicy__c = null, &apos;Investment Product&apos;, &apos;&apos;) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Policy Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_Premium__c</fullName>
+        <description>Contains the premium of the policy associated to a particular servicing case.</description>
+        <externalId>false</externalId>
+        <formula>IF(SC_InsurancePolicy__c &lt;&gt; null &amp;&amp; SC_FinancialAccount__c = null,  SC_InsurancePolicy__r.PremiumAmount, IF(SC_FinancialAccount__c &lt;&gt; null &amp;&amp;SC_InsurancePolicy__c = null,  SC_FinancialAccount__r.FinServ__Premium__c, 0.00) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Premium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SC_ProductType__c</fullName>
+        <description>Contains the product type of the policy associated to a particular servicing case.</description>
+        <externalId>false</externalId>
+        <formula>IF(SC_InsurancePolicy__c &lt;&gt; null  &amp;&amp; SC_FinancialAccount__c = null,   TEXT(SC_InsurancePolicy__r.PolicyType), IF( SC_FinancialAccount__c &lt;&gt; null &amp;&amp; SC_InsurancePolicy__c = null,  TEXT(SC_FinancialAccount__r.FinServ__FinancialAccountType__c), &apos;&apos;) )</formula>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_Status__c</fullName>
+        <description>Contains the status of the policy associated to a particular servicing case.</description>
+        <externalId>false</externalId>
+        <formula>IF(SC_InsurancePolicy__c &lt;&gt; null &amp;&amp; SC_FinancialAccount__c = null, TEXT(SC_InsurancePolicy__r.Status), IF(SC_FinancialAccount__c &lt;&gt; null &amp;&amp;SC_InsurancePolicy__c = null, TEXT( SC_FinancialAccount__r.FinServ__Status__c), &apos;&apos;) )</formula>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Associated Contract</label>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>Associated Contract Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Associated Contracts</pluralLabel>
+    <searchLayouts />
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,3289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>RSC_InsurancePolicyCoverage</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AW_CoverageName</fullName>
+        <fields>CoverageName</fields>
+        <fields>Name</fields>
+        <fields>AW_Amount__c</fields>
+        <fields>AW_Type__c</fields>
+        <label>Coverage Name</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>RSC_InsurancePolicyCoverage</fullName>
+        <fields>CoverageName</fields>
+        <fields>Name</fields>
+        <fields>InsurancePolicyId</fields>
+        <fields>AW_StartDate__c</fields>
+        <fields>AW_EndDate__c</fields>
+        <fields>CMN_Status__c</fields>
+        <fields>CMN_ContributionAmount__c</fields>
+        <label>RSC_InsurancePolicyCoverage</label>
+    </compactLayouts>
+    <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AW_Amount__c</fullName>
+        <description>Amount of Coverage</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_BenefitAmount__c</fullName>
+        <description>Benefit Amount</description>
+        <externalId>false</externalId>
+        <label>Benefit Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_CoverCategory__c</fullName>
+        <description>Select Cover Category</description>
+        <externalId>false</externalId>
+        <label>Cover Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Protection</fullName>
+                    <default>false</default>
+                    <label>Protection</label>
+                </value>
+                <value>
+                    <fullName>Retirement</fullName>
+                    <default>false</default>
+                    <label>Retirement</label>
+                </value>
+                <value>
+                    <fullName>Investment</fullName>
+                    <default>false</default>
+                    <label>Investment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_CoverSubCategory__c</fullName>
+        <description>Select Cover Sub Category</description>
+        <externalId>false</externalId>
+        <label>Cover Sub Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Life Cover</fullName>
+                    <default>false</default>
+                    <label>Life Cover</label>
+                </value>
+                <value>
+                    <fullName>Policy Protection</fullName>
+                    <default>false</default>
+                    <label>Policy Protection</label>
+                </value>
+                <value>
+                    <fullName>Retirement Annuity</fullName>
+                    <default>false</default>
+                    <label>Retirement Annuity</label>
+                </value>
+                <value>
+                    <fullName>Feature</fullName>
+                    <default>false</default>
+                    <label>Feature</label>
+                </value>
+                <value>
+                    <fullName>Income Protection - Monthly Income Benefit</fullName>
+                    <default>false</default>
+                    <label>Income Protection - Monthly Income Benefit</label>
+                </value>
+                <value>
+                    <fullName>Income Protection - Lump Sum Benefit</fullName>
+                    <default>false</default>
+                    <label>Income Protection - Lump Sum Benefit</label>
+                </value>
+                <value>
+                    <fullName>Lifestyle Protection</fullName>
+                    <default>false</default>
+                    <label>Lifestyle Protection</label>
+                </value>
+                <value>
+                    <fullName>Income Protection - Annual Income Benefit</fullName>
+                    <default>false</default>
+                    <label>Income Protection - Annual Income Benefit</label>
+                </value>
+                <value>
+                    <fullName>Income</fullName>
+                    <default>false</default>
+                    <label>Income</label>
+                </value>
+                <value>
+                    <fullName>Wellness Bonus</fullName>
+                    <default>false</default>
+                    <label>Wellness Bonus</label>
+                </value>
+                <value>
+                    <fullName>Endowment</fullName>
+                    <default>false</default>
+                    <label>Endowment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_EndDate__c</fullName>
+        <description>Insurance Policy Coverage End Date</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_IncomeProtection1st24MonthsBenefits__c</fullName>
+        <description>A checkbox which returns TRUE if either of the Income Protection First 24 Months benefit Type Codes are selected.</description>
+        <externalId>false</externalId>
+        <formula>OR(
+ISPICKVAL( AW_TypeCode__c , &quot;102&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Income Protection 1st 24 Months Benefits</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_IncomeProtectionAfter24MnthsBenefits__c</fullName>
+        <description>A checkbox which returns TRUE if either of the Income Protection After 24 Months benefit Type Codes are selected.</description>
+        <externalId>false</externalId>
+        <formula>OR(
+ISPICKVAL( AW_TypeCode__c , &quot;104&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Income Protection After24 Mnths Benefits</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_IncomeProtectionLumpsumBenefits__c</fullName>
+        <description>A checkbox which returns TRUE if either of the Income Protection Lumpsum benefit Type Codes are selected. Used on a rollup summary on the Insurance Policy Object.</description>
+        <externalId>false</externalId>
+        <formula>OR(
+  ISPICKVAL( AW_TypeCode__c, &quot;7&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;007&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;20&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;020&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;21&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;021&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;22&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;022&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;23&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;023&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;27&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;027&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;28&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;028&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;46&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;046&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;47&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;047&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;48&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;048&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;53&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;053&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;54&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;054&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;55&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;055&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;77&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;077&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;78&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;078&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;84&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;084&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;85&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;085&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;86&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;086&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;94&quot;),
+		ISPICKVAL( AW_TypeCode__c, &quot;094&quot;),
+  ISPICKVAL( AW_TypeCode__c, &quot;100&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;101&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;105&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;106&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;107&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;109&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;111&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;112&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;113&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;114&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;115&quot;), 
+  ISPICKVAL( AW_TypeCode__c, &quot;116&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Income Protection (Lumpsum) Benefits</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_IncomeProtectionMonthlyBenefits__c</fullName>
+        <description>A checkbox which returns TRUE if either of the Income Protection Monthly benefit Type Codes are selected. Used on a rollup summary on the Insurance Policy Object.</description>
+        <externalId>false</externalId>
+        <formula>OR(
+ISPICKVAL( AW_TypeCode__c, &quot;17&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;017&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;19&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;019&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;29&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;029&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;35&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;035&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;36&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;036&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;37&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;037&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;42&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;042&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;43&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;043&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;59&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;059&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;70&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;070&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;71&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;071&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;72&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;072&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;79&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;079&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;102&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;103&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;104&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;108&quot;)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Income Protection (Monthly) Benefits</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_InsurancePolicyParticipant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Insurance Policy Participant</description>
+        <externalId>false</externalId>
+        <label>Insurance Policy Participant</label>
+        <referenceTo>InsurancePolicyParticipant</referenceTo>
+        <relationshipLabel>Insurance Policy Coverages</relationshipLabel>
+        <relationshipName>InsurancePolicyCoverages</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_LifeCoverBenefits__c</fullName>
+        <description>A checkbox which returns TRUE if either of the Life Cover benefit Type Codes are selected. Used on a rollup summary on the Insurance Policy Object.</description>
+        <externalId>false</externalId>
+        <formula>OR(
+  ISPICKVAL( AW_TypeCode__c , &quot;1&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;001&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;3&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;004&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;4&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;003&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;8&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;008&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;9&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;009&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;10&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;010&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;11&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;011&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;14&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;014&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;031&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;31&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;034&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;34&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;052&quot;),
+		ISPICKVAL( AW_TypeCode__c , &quot;52&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;110&quot;),
+  ISPICKVAL( AW_TypeCode__c , &quot;119&quot;),
+  ISPICKVAL( AW_Type__c , &quot;FUNERAL - PAID UP OPTION&quot;),
+  ISPICKVAL( AW_Type__c , &quot;ACCIDENTAL DEATH&quot;),
+  ISPICKVAL( AW_Type__c , &quot;TOMBSTONE&quot;),
+  ISPICKVAL( AW_Type__c , &quot;INKOMO&quot;)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Life Cover Benefits</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_LifestyleProtectionBenefits__c</fullName>
+        <description>A checkbox which returns TRUE if either of the Lifestyle Protection benefit Type Codes are selected. Used on a rollup summary on the Insurance Policy Object.</description>
+        <externalId>false</externalId>
+        <formula>OR(
+ISPICKVAL( AW_TypeCode__c, &quot;6&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;006&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;25&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;025&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;26&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;026&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;30&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;030&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;38&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;038&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;39&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;039&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;40&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;040&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;41&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;041&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;44&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;044&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;45&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;045&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;50&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;050&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;56&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;056&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;60&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;060&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;61&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;061&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;62&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;062&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;63&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;063&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;64&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;064&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;65&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;065&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;66&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;066&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;67&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;067&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;68&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;068&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;69&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;069&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;74&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;074&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;75&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;075&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;80&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;080&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;81&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;081&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;82&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;082&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;83&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;083&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;117&quot;),
+ISPICKVAL( AW_TypeCode__c, &quot;118&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lifestyle Protection Benefits</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_OriginalBenefitAmount__c</fullName>
+        <description>Original Benefit Amount for Insurance Policy Coverage</description>
+        <externalId>false</externalId>
+        <label>Original Benefit Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_StartDate__c</fullName>
+        <description>Insurance Policy Coverage Start Date</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_StatusCode__c</fullName>
+        <description>Insurance Policy Status Code</description>
+        <externalId>false</externalId>
+        <label>Status Code</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_StatusReasonCode__c</fullName>
+        <description>Insurance Policy Coverage Status Change Reason Code</description>
+        <externalId>false</externalId>
+        <label>Status Reason Code</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Term__c</fullName>
+        <description>Insurance Policy Term</description>
+        <externalId>false</externalId>
+        <label>Term</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TypeCode__c</fullName>
+        <description>Select Type</description>
+        <externalId>false</externalId>
+        <label>Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>6</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <label>7</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>8</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <label>9</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10</label>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                    <label>11</label>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                    <label>12</label>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                    <label>14</label>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                    <label>15</label>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                    <label>16</label>
+                </value>
+                <value>
+                    <fullName>17</fullName>
+                    <default>false</default>
+                    <label>17</label>
+                </value>
+                <value>
+                    <fullName>18</fullName>
+                    <default>false</default>
+                    <label>18</label>
+                </value>
+                <value>
+                    <fullName>19</fullName>
+                    <default>false</default>
+                    <label>19</label>
+                </value>
+                <value>
+                    <fullName>20</fullName>
+                    <default>false</default>
+                    <label>20</label>
+                </value>
+                <value>
+                    <fullName>21</fullName>
+                    <default>false</default>
+                    <label>21</label>
+                </value>
+                <value>
+                    <fullName>22</fullName>
+                    <default>false</default>
+                    <label>22</label>
+                </value>
+                <value>
+                    <fullName>23</fullName>
+                    <default>false</default>
+                    <label>23</label>
+                </value>
+                <value>
+                    <fullName>24</fullName>
+                    <default>false</default>
+                    <label>24</label>
+                </value>
+                <value>
+                    <fullName>25</fullName>
+                    <default>false</default>
+                    <label>25</label>
+                </value>
+                <value>
+                    <fullName>26</fullName>
+                    <default>false</default>
+                    <label>26</label>
+                </value>
+                <value>
+                    <fullName>27</fullName>
+                    <default>false</default>
+                    <label>27</label>
+                </value>
+                <value>
+                    <fullName>28</fullName>
+                    <default>false</default>
+                    <label>28</label>
+                </value>
+                <value>
+                    <fullName>29</fullName>
+                    <default>false</default>
+                    <label>29</label>
+                </value>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                    <label>30</label>
+                </value>
+                <value>
+                    <fullName>31</fullName>
+                    <default>false</default>
+                    <label>31</label>
+                </value>
+                <value>
+                    <fullName>32</fullName>
+                    <default>false</default>
+                    <label>32</label>
+                </value>
+                <value>
+                    <fullName>33</fullName>
+                    <default>false</default>
+                    <label>33</label>
+                </value>
+                <value>
+                    <fullName>34</fullName>
+                    <default>false</default>
+                    <label>34</label>
+                </value>
+                <value>
+                    <fullName>35</fullName>
+                    <default>false</default>
+                    <label>35</label>
+                </value>
+                <value>
+                    <fullName>36</fullName>
+                    <default>false</default>
+                    <label>36</label>
+                </value>
+                <value>
+                    <fullName>37</fullName>
+                    <default>false</default>
+                    <label>37</label>
+                </value>
+                <value>
+                    <fullName>38</fullName>
+                    <default>false</default>
+                    <label>38</label>
+                </value>
+                <value>
+                    <fullName>39</fullName>
+                    <default>false</default>
+                    <label>39</label>
+                </value>
+                <value>
+                    <fullName>40</fullName>
+                    <default>false</default>
+                    <label>40</label>
+                </value>
+                <value>
+                    <fullName>41</fullName>
+                    <default>false</default>
+                    <label>41</label>
+                </value>
+                <value>
+                    <fullName>42</fullName>
+                    <default>false</default>
+                    <label>42</label>
+                </value>
+                <value>
+                    <fullName>43</fullName>
+                    <default>false</default>
+                    <label>43</label>
+                </value>
+                <value>
+                    <fullName>44</fullName>
+                    <default>false</default>
+                    <label>44</label>
+                </value>
+                <value>
+                    <fullName>45</fullName>
+                    <default>false</default>
+                    <label>45</label>
+                </value>
+                <value>
+                    <fullName>46</fullName>
+                    <default>false</default>
+                    <label>46</label>
+                </value>
+                <value>
+                    <fullName>47</fullName>
+                    <default>false</default>
+                    <label>47</label>
+                </value>
+                <value>
+                    <fullName>48</fullName>
+                    <default>false</default>
+                    <label>48</label>
+                </value>
+                <value>
+                    <fullName>49</fullName>
+                    <default>false</default>
+                    <label>49</label>
+                </value>
+                <value>
+                    <fullName>50</fullName>
+                    <default>false</default>
+                    <label>50</label>
+                </value>
+                <value>
+                    <fullName>51</fullName>
+                    <default>false</default>
+                    <label>51</label>
+                </value>
+                <value>
+                    <fullName>52</fullName>
+                    <default>false</default>
+                    <label>52</label>
+                </value>
+                <value>
+                    <fullName>53</fullName>
+                    <default>false</default>
+                    <label>53</label>
+                </value>
+                <value>
+                    <fullName>54</fullName>
+                    <default>false</default>
+                    <label>54</label>
+                </value>
+                <value>
+                    <fullName>55</fullName>
+                    <default>false</default>
+                    <label>55</label>
+                </value>
+                <value>
+                    <fullName>56</fullName>
+                    <default>false</default>
+                    <label>56</label>
+                </value>
+                <value>
+                    <fullName>57</fullName>
+                    <default>false</default>
+                    <label>57</label>
+                </value>
+                <value>
+                    <fullName>58</fullName>
+                    <default>false</default>
+                    <label>58</label>
+                </value>
+                <value>
+                    <fullName>59</fullName>
+                    <default>false</default>
+                    <label>59</label>
+                </value>
+                <value>
+                    <fullName>60</fullName>
+                    <default>false</default>
+                    <label>60</label>
+                </value>
+                <value>
+                    <fullName>61</fullName>
+                    <default>false</default>
+                    <label>61</label>
+                </value>
+                <value>
+                    <fullName>62</fullName>
+                    <default>false</default>
+                    <label>62</label>
+                </value>
+                <value>
+                    <fullName>63</fullName>
+                    <default>false</default>
+                    <label>63</label>
+                </value>
+                <value>
+                    <fullName>64</fullName>
+                    <default>false</default>
+                    <label>64</label>
+                </value>
+                <value>
+                    <fullName>65</fullName>
+                    <default>false</default>
+                    <label>65</label>
+                </value>
+                <value>
+                    <fullName>66</fullName>
+                    <default>false</default>
+                    <label>66</label>
+                </value>
+                <value>
+                    <fullName>67</fullName>
+                    <default>false</default>
+                    <label>67</label>
+                </value>
+                <value>
+                    <fullName>68</fullName>
+                    <default>false</default>
+                    <label>68</label>
+                </value>
+                <value>
+                    <fullName>69</fullName>
+                    <default>false</default>
+                    <label>69</label>
+                </value>
+                <value>
+                    <fullName>70</fullName>
+                    <default>false</default>
+                    <label>70</label>
+                </value>
+                <value>
+                    <fullName>71</fullName>
+                    <default>false</default>
+                    <label>71</label>
+                </value>
+                <value>
+                    <fullName>72</fullName>
+                    <default>false</default>
+                    <label>72</label>
+                </value>
+                <value>
+                    <fullName>73</fullName>
+                    <default>false</default>
+                    <label>73</label>
+                </value>
+                <value>
+                    <fullName>74</fullName>
+                    <default>false</default>
+                    <label>74</label>
+                </value>
+                <value>
+                    <fullName>75</fullName>
+                    <default>false</default>
+                    <label>75</label>
+                </value>
+                <value>
+                    <fullName>77</fullName>
+                    <default>false</default>
+                    <label>77</label>
+                </value>
+                <value>
+                    <fullName>78</fullName>
+                    <default>false</default>
+                    <label>78</label>
+                </value>
+                <value>
+                    <fullName>79</fullName>
+                    <default>false</default>
+                    <label>79</label>
+                </value>
+                <value>
+                    <fullName>80</fullName>
+                    <default>false</default>
+                    <label>80</label>
+                </value>
+                <value>
+                    <fullName>81</fullName>
+                    <default>false</default>
+                    <label>81</label>
+                </value>
+                <value>
+                    <fullName>82</fullName>
+                    <default>false</default>
+                    <label>82</label>
+                </value>
+                <value>
+                    <fullName>83</fullName>
+                    <default>false</default>
+                    <label>83</label>
+                </value>
+                <value>
+                    <fullName>84</fullName>
+                    <default>false</default>
+                    <label>84</label>
+                </value>
+                <value>
+                    <fullName>85</fullName>
+                    <default>false</default>
+                    <label>85</label>
+                </value>
+                <value>
+                    <fullName>86</fullName>
+                    <default>false</default>
+                    <label>86</label>
+                </value>
+                <value>
+                    <fullName>87</fullName>
+                    <default>false</default>
+                    <label>87</label>
+                </value>
+                <value>
+                    <fullName>88</fullName>
+                    <default>false</default>
+                    <label>88</label>
+                </value>
+                <value>
+                    <fullName>89</fullName>
+                    <default>false</default>
+                    <label>89</label>
+                </value>
+                <value>
+                    <fullName>90</fullName>
+                    <default>false</default>
+                    <label>90</label>
+                </value>
+                <value>
+                    <fullName>91</fullName>
+                    <default>false</default>
+                    <label>91</label>
+                </value>
+                <value>
+                    <fullName>92</fullName>
+                    <default>false</default>
+                    <label>92</label>
+                </value>
+                <value>
+                    <fullName>93</fullName>
+                    <default>false</default>
+                    <label>93</label>
+                </value>
+                <value>
+                    <fullName>94</fullName>
+                    <default>false</default>
+                    <label>94</label>
+                </value>
+                <value>
+                    <fullName>95</fullName>
+                    <default>false</default>
+                    <label>95</label>
+                </value>
+                <value>
+                    <fullName>96</fullName>
+                    <default>false</default>
+                    <label>96</label>
+                </value>
+                <value>
+                    <fullName>97</fullName>
+                    <default>false</default>
+                    <label>97</label>
+                </value>
+                <value>
+                    <fullName>98</fullName>
+                    <default>false</default>
+                    <label>98</label>
+                </value>
+                <value>
+                    <fullName>99</fullName>
+                    <default>false</default>
+                    <label>99</label>
+                </value>
+                <value>
+                    <fullName>100</fullName>
+                    <default>false</default>
+                    <label>100</label>
+                </value>
+                <value>
+                    <fullName>101</fullName>
+                    <default>false</default>
+                    <label>101</label>
+                </value>
+                <value>
+                    <fullName>102</fullName>
+                    <default>false</default>
+                    <label>102</label>
+                </value>
+                <value>
+                    <fullName>103</fullName>
+                    <default>false</default>
+                    <label>103</label>
+                </value>
+                <value>
+                    <fullName>104</fullName>
+                    <default>false</default>
+                    <label>104</label>
+                </value>
+                <value>
+                    <fullName>105</fullName>
+                    <default>false</default>
+                    <label>105</label>
+                </value>
+                <value>
+                    <fullName>106</fullName>
+                    <default>false</default>
+                    <label>106</label>
+                </value>
+                <value>
+                    <fullName>107</fullName>
+                    <default>false</default>
+                    <label>107</label>
+                </value>
+                <value>
+                    <fullName>108</fullName>
+                    <default>false</default>
+                    <label>108</label>
+                </value>
+                <value>
+                    <fullName>109</fullName>
+                    <default>false</default>
+                    <label>109</label>
+                </value>
+                <value>
+                    <fullName>110</fullName>
+                    <default>false</default>
+                    <label>110</label>
+                </value>
+                <value>
+                    <fullName>111</fullName>
+                    <default>false</default>
+                    <label>111</label>
+                </value>
+                <value>
+                    <fullName>112</fullName>
+                    <default>false</default>
+                    <label>112</label>
+                </value>
+                <value>
+                    <fullName>113</fullName>
+                    <default>false</default>
+                    <label>113</label>
+                </value>
+                <value>
+                    <fullName>114</fullName>
+                    <default>false</default>
+                    <label>114</label>
+                </value>
+                <value>
+                    <fullName>115</fullName>
+                    <default>false</default>
+                    <label>115</label>
+                </value>
+                <value>
+                    <fullName>116</fullName>
+                    <default>false</default>
+                    <label>116</label>
+                </value>
+                <value>
+                    <fullName>117</fullName>
+                    <default>false</default>
+                    <label>117</label>
+                </value>
+                <value>
+                    <fullName>118</fullName>
+                    <default>false</default>
+                    <label>118</label>
+                </value>
+                <value>
+                    <fullName>119</fullName>
+                    <default>false</default>
+                    <label>119</label>
+                </value>
+                <value>
+                    <fullName>120</fullName>
+                    <default>false</default>
+                    <label>120</label>
+                </value>
+                <value>
+                    <fullName>121</fullName>
+                    <default>false</default>
+                    <label>121</label>
+                </value>
+                <value>
+                    <fullName>122</fullName>
+                    <default>false</default>
+                    <label>122</label>
+                </value>
+                <value>
+                    <fullName>123</fullName>
+                    <default>false</default>
+                    <label>123</label>
+                </value>
+                <value>
+                    <fullName>124</fullName>
+                    <default>false</default>
+                    <label>124</label>
+                </value>
+                <value>
+                    <fullName>125</fullName>
+                    <default>false</default>
+                    <label>125</label>
+                </value>
+                <value>
+                    <fullName>126</fullName>
+                    <default>false</default>
+                    <label>126</label>
+                </value>
+                <value>
+                    <fullName>127</fullName>
+                    <default>false</default>
+                    <label>127</label>
+                </value>
+                <value>
+                    <fullName>128</fullName>
+                    <default>false</default>
+                    <label>128</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Type__c</fullName>
+        <description>Select Insurance Policy Coverage Amount</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ABSOLUTE IMPAIRMENT</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE IMPAIRMENT</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE IMPAIRMENT (TERM)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE IMPAIRMENT (TERM)</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE IMPAIRMENT PLUS (TERM)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE IMPAIRMENT PLUS (TERM)</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE IMPARMENT PLUS</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE IMPARMENT PLUS</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE INCOME PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE INCOME PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE PROTECTOR (OD)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE PROTECTOR (OD)</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE PROTECTOR (OOD)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE PROTECTOR (OOD)</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE PROTECTOR (OOD)(TERM)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE PROTECTOR (OOD)(TERM)</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE PROTECTOR PLUS (OD)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE PROTECTOR PLUS (OD)</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE PROTECTOR PLUS (OOD)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE PROTECTOR PLUS (OOD)</label>
+                </value>
+                <value>
+                    <fullName>ABSOLUTE PROTECTOR PLUS (OOD)(TERM)</fullName>
+                    <default>false</default>
+                    <label>ABSOLUTE PROTECTOR PLUS (OOD)(TERM)</label>
+                </value>
+                <value>
+                    <fullName>ACCIDENTAL DEATH</fullName>
+                    <default>false</default>
+                    <label>ACCIDENTAL DEATH</label>
+                </value>
+                <value>
+                    <fullName>ACCIDENT BENEFIT</fullName>
+                    <default>false</default>
+                    <label>ACCIDENT BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>CAPITAL DISABILITY (OD)</fullName>
+                    <default>false</default>
+                    <label>CAPITAL DISABILITY (OD)</label>
+                </value>
+                <value>
+                    <fullName>CAPITAL DISABILITY (OOD)</fullName>
+                    <default>false</default>
+                    <label>CAPITAL DISABILITY (OOD)</label>
+                </value>
+                <value>
+                    <fullName>CAPITAL DISABILITY (OOD)(TERM)</fullName>
+                    <default>false</default>
+                    <label>CAPITAL DISABILITY (OOD)(TERM)</label>
+                </value>
+                <value>
+                    <fullName>CAPITAL DISABILITY PLUS (OD)</fullName>
+                    <default>false</default>
+                    <label>CAPITAL DISABILITY PLUS (OD)</label>
+                </value>
+                <value>
+                    <fullName>CAPITAL DISABILITY PLUS (OOD)</fullName>
+                    <default>false</default>
+                    <label>CAPITAL DISABILITY PLUS (OOD)</label>
+                </value>
+                <value>
+                    <fullName>CAPITAL DISABILITY PLUS (OOD)(TERM)</fullName>
+                    <default>false</default>
+                    <label>CAPITAL DISABILITY PLUS (OOD)(TERM)</label>
+                </value>
+                <value>
+                    <fullName>CAREABILITY BENEFIT</fullName>
+                    <default>false</default>
+                    <label>CAREABILITY BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>CHILD LIVING LIFESTYLE</fullName>
+                    <default>false</default>
+                    <label>CHILD LIVING LIFESTYLE</label>
+                </value>
+                <value>
+                    <fullName>CONTINUATION</fullName>
+                    <default>false</default>
+                    <label>CONTINUATION</label>
+                </value>
+                <value>
+                    <fullName>CONTRIBUTION WAIVER ON DEATH</fullName>
+                    <default>false</default>
+                    <label>CONTRIBUTION WAIVER ON DEATH</label>
+                </value>
+                <value>
+                    <fullName>CONTRIB WAIVER PAYER DTH/DSB</fullName>
+                    <default>false</default>
+                    <label>CONTRIB WAIVER PAYER DTH/DSB</label>
+                </value>
+                <value>
+                    <fullName>CONVERSION</fullName>
+                    <default>false</default>
+                    <label>CONVERSION</label>
+                </value>
+                <value>
+                    <fullName>CONVERTIBLE LEVEL TERM</fullName>
+                    <default>false</default>
+                    <label>CONVERTIBLE LEVEL TERM</label>
+                </value>
+                <value>
+                    <fullName>Critical Illness Cover</fullName>
+                    <default>false</default>
+                    <label>Critical Illness Cover</label>
+                </value>
+                <value>
+                    <fullName>Disability Lump</fullName>
+                    <default>false</default>
+                    <label>Disability Lump</label>
+                </value>
+                <value>
+                    <fullName>Disability Monthly</fullName>
+                    <default>false</default>
+                    <label>Disability Monthly</label>
+                </value>
+                <value>
+                    <fullName>EDUCATOR (OD)</fullName>
+                    <default>false</default>
+                    <label>EDUCATOR (OD)</label>
+                </value>
+                <value>
+                    <fullName>EDUCATOR (OOD)</fullName>
+                    <default>false</default>
+                    <label>EDUCATOR (OOD)</label>
+                </value>
+                <value>
+                    <fullName>EDUCATOR DEATH</fullName>
+                    <default>false</default>
+                    <label>EDUCATOR DEATH</label>
+                </value>
+                <value>
+                    <fullName>ENABILITY BENEFIT</fullName>
+                    <default>false</default>
+                    <label>ENABILITY BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>ENDOWMENT</fullName>
+                    <default>false</default>
+                    <label>ENDOWMENT</label>
+                </value>
+                <value>
+                    <fullName>EXTENDED ABS INC PROT</fullName>
+                    <default>false</default>
+                    <label>EXTENDED ABS INC PROT</label>
+                </value>
+                <value>
+                    <fullName>FAMILY BENEFIT</fullName>
+                    <default>false</default>
+                    <label>FAMILY BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>FAMILY PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>FAMILY PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>FEMABILITY BENEFIT</fullName>
+                    <default>false</default>
+                    <label>FEMABILITY BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>FEMALE LIVING LIFESTYLE</fullName>
+                    <default>false</default>
+                    <label>FEMALE LIVING LIFESTYLE</label>
+                </value>
+                <value>
+                    <fullName>FINANCIAL PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>FINANCIAL PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>FUNERAL BENEFIT</fullName>
+                    <default>false</default>
+                    <label>FUNERAL BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>FUNERAL - PAID UP OPTION</fullName>
+                    <default>false</default>
+                    <label>FUNERAL - PAID UP OPTION</label>
+                </value>
+                <value>
+                    <fullName>FUTURE PROTECTOR - ALL</fullName>
+                    <default>false</default>
+                    <label>FUTURE PROTECTOR - ALL</label>
+                </value>
+                <value>
+                    <fullName>FUTURE PROTECTOR - DEATH</fullName>
+                    <default>false</default>
+                    <label>FUTURE PROTECTOR - DEATH</label>
+                </value>
+                <value>
+                    <fullName>FUTURE PROTECTOR - DISABILITY</fullName>
+                    <default>false</default>
+                    <label>FUTURE PROTECTOR - DISABILITY</label>
+                </value>
+                <value>
+                    <fullName>FUTURE PROTECTOR - DREAD DISEASE</fullName>
+                    <default>false</default>
+                    <label>FUTURE PROTECTOR - DREAD DISEASE</label>
+                </value>
+                <value>
+                    <fullName>GUARANTEED DEPENDANT PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>GUARANTEED DEPENDANT PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>GUARANTEED INSURABILITY BENEFIT</fullName>
+                    <default>false</default>
+                    <label>GUARANTEED INSURABILITY BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>GUARANTEED REVIEWABLE LIFESTYLE</fullName>
+                    <default>false</default>
+                    <label>GUARANTEED REVIEWABLE LIFESTYLE</label>
+                </value>
+                <value>
+                    <fullName>HOSPITALISATION LIFESTYLE ENHANCER</fullName>
+                    <default>false</default>
+                    <label>HOSPITALISATION LIFESTYLE ENHANCER</label>
+                </value>
+                <value>
+                    <fullName>IMMEDIATE EXPENSES BENEFIT</fullName>
+                    <default>false</default>
+                    <label>IMMEDIATE EXPENSES BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>IMMEDIATE EXPENSES BENEFIT(TERM)</fullName>
+                    <default>false</default>
+                    <label>IMMEDIATE EXPENSES BENEFIT(TERM)</label>
+                </value>
+                <value>
+                    <fullName>IMPAIRMENT</fullName>
+                    <default>false</default>
+                    <label>IMPAIRMENT</label>
+                </value>
+                <value>
+                    <fullName>IMPAIRMENT PLUS</fullName>
+                    <default>false</default>
+                    <label>IMPAIRMENT PLUS</label>
+                </value>
+                <value>
+                    <fullName>INCOME DISABILITY</fullName>
+                    <default>false</default>
+                    <label>INCOME DISABILITY</label>
+                </value>
+                <value>
+                    <fullName>INCOME DISABILITY TOP-UP OPTION</fullName>
+                    <default>false</default>
+                    <label>INCOME DISABILITY TOP-UP OPTION</label>
+                </value>
+                <value>
+                    <fullName>INKOMO</fullName>
+                    <default>false</default>
+                    <label>INKOMO</label>
+                </value>
+                <value>
+                    <fullName>L.L. ENHANCER</fullName>
+                    <default>false</default>
+                    <label>L.L. ENHANCER</label>
+                </value>
+                <value>
+                    <fullName>L.L. OPTIMUM BENEFIT 65</fullName>
+                    <default>false</default>
+                    <label>L.L. OPTIMUM BENEFIT 65</label>
+                </value>
+                <value>
+                    <fullName>L.L. OPTIMUM BENEFIT WOL</fullName>
+                    <default>false</default>
+                    <label>L.L. OPTIMUM BENEFIT WOL</label>
+                </value>
+                <value>
+                    <fullName>L.L. OPTIMUM PLUS WOL</fullName>
+                    <default>false</default>
+                    <label>L.L. OPTIMUM PLUS WOL</label>
+                </value>
+                <value>
+                    <fullName>LEVEL TERM CONTINUATION</fullName>
+                    <default>false</default>
+                    <label>LEVEL TERM CONTINUATION</label>
+                </value>
+                <value>
+                    <fullName>LEVEL TERM CONVERTIBLE/CONTINUATION</fullName>
+                    <default>false</default>
+                    <label>LEVEL TERM CONVERTIBLE/CONTINUATION</label>
+                </value>
+                <value>
+                    <fullName>LEVEL TERM NON-CONVERTIBLE</fullName>
+                    <default>false</default>
+                    <label>LEVEL TERM NON-CONVERTIBLE</label>
+                </value>
+                <value>
+                    <fullName>LIFE COVER</fullName>
+                    <default>false</default>
+                    <label>LIFE COVER</label>
+                </value>
+                <value>
+                    <fullName>LIFE COVER(TERM)</fullName>
+                    <default>false</default>
+                    <label>LIFE COVER(TERM)</label>
+                </value>
+                <value>
+                    <fullName>LIFESTYLE INCOME PROTECTOR - ESC</fullName>
+                    <default>false</default>
+                    <label>LIFESTYLE INCOME PROTECTOR - ESC</label>
+                </value>
+                <value>
+                    <fullName>LIFESTYLE INCOME PROTECTOR - LEVEL</fullName>
+                    <default>false</default>
+                    <label>LIFESTYLE INCOME PROTECTOR - LEVEL</label>
+                </value>
+                <value>
+                    <fullName>LIFESTYLE PORTFOLIO PRESERVER</fullName>
+                    <default>false</default>
+                    <label>LIFESTYLE PORTFOLIO PRESERVER</label>
+                </value>
+                <value>
+                    <fullName>LIP GIB BENEFIT</fullName>
+                    <default>false</default>
+                    <label>LIP GIB BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>LIP OVERHEAD BENEFIT</fullName>
+                    <default>false</default>
+                    <label>LIP OVERHEAD BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE (65)</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE (65)</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE (WOL)</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE (WOL)</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE DEPENDANT PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE DEPENDANT PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE EXTENDED OPTION</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE EXTENDED OPTION</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE OPTIMUM PLUS 65</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE OPTIMUM PLUS 65</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE PLUS (65)</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE PLUS (65)</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE PLUS (WOL)</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE PLUS (WOL)</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>LIVING LIFESTYLE TOP-UP OPTION</fullName>
+                    <default>false</default>
+                    <label>LIVING LIFESTYLE TOP-UP OPTION</label>
+                </value>
+                <value>
+                    <fullName>L L (WITH TOP UP &amp; EXT)(TERM)</fullName>
+                    <default>false</default>
+                    <label>L L (WITH TOP UP &amp; EXT)(TERM)</label>
+                </value>
+                <value>
+                    <fullName>L L PLUS (WITH TOP UP &amp; EXT)(TERM)</fullName>
+                    <default>false</default>
+                    <label>L L PLUS (WITH TOP UP &amp; EXT)(TERM)</label>
+                </value>
+                <value>
+                    <fullName>LL PLUS TERM</fullName>
+                    <default>false</default>
+                    <label>LL PLUS TERM</label>
+                </value>
+                <value>
+                    <fullName>LL TERM</fullName>
+                    <default>false</default>
+                    <label>LL TERM</label>
+                </value>
+                <value>
+                    <fullName>LL TERM2</fullName>
+                    <default>false</default>
+                    <label>LL TERM2</label>
+                </value>
+                <value>
+                    <fullName>LONG TERM PROTECTOR PLUS</fullName>
+                    <default>false</default>
+                    <label>LONG TERM PROTECTOR PLUS</label>
+                </value>
+                <value>
+                    <fullName>LSTYLE PORT PRES + OCC DISB</fullName>
+                    <default>false</default>
+                    <label>LSTYLE PORT PRES + OCC DISB</label>
+                </value>
+                <value>
+                    <fullName>MATERNITY PAUSE OPTION</fullName>
+                    <default>false</default>
+                    <label>MATERNITY PAUSE OPTION</label>
+                </value>
+                <value>
+                    <fullName>MEDICAL LIFESTYLE BENEFIT</fullName>
+                    <default>false</default>
+                    <label>MEDICAL LIFESTYLE BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>MEDICAL LIFESTYLE EXTRA COVER</fullName>
+                    <default>false</default>
+                    <label>MEDICAL LIFESTYLE EXTRA COVER</label>
+                </value>
+                <value>
+                    <fullName>MEDICATOR ABSOLUTE IMPAIRMENT</fullName>
+                    <default>false</default>
+                    <label>MEDICATOR ABSOLUTE IMPAIRMENT</label>
+                </value>
+                <value>
+                    <fullName>MEDICATOR ABSOLUTE IMPAIRMENT PLUS</fullName>
+                    <default>false</default>
+                    <label>MEDICATOR ABSOLUTE IMPAIRMENT PLUS</label>
+                </value>
+                <value>
+                    <fullName>MEDICATOR DEATH</fullName>
+                    <default>false</default>
+                    <label>MEDICATOR DEATH</label>
+                </value>
+                <value>
+                    <fullName>MEDICATOR DISABILITY OD</fullName>
+                    <default>false</default>
+                    <label>MEDICATOR DISABILITY OD</label>
+                </value>
+                <value>
+                    <fullName>MEDICATOR DISABILITY OOD</fullName>
+                    <default>false</default>
+                    <label>MEDICATOR DISABILITY OOD</label>
+                </value>
+                <value>
+                    <fullName>MEDICATOR DISABILITY PLUS OD</fullName>
+                    <default>false</default>
+                    <label>MEDICATOR DISABILITY PLUS OD</label>
+                </value>
+                <value>
+                    <fullName>MEDICATOR DISABILITY PLUS OOD</fullName>
+                    <default>false</default>
+                    <label>MEDICATOR DISABILITY PLUS OOD</label>
+                </value>
+                <value>
+                    <fullName>MORTGAGE PROTECTION</fullName>
+                    <default>false</default>
+                    <label>MORTGAGE PROTECTION</label>
+                </value>
+                <value>
+                    <fullName>OCC. DIS. CONTRIB WAIVER</fullName>
+                    <default>false</default>
+                    <label>OCC. DIS. CONTRIB WAIVER</label>
+                </value>
+                <value>
+                    <fullName>OCCUPATIONAL DISABILITY</fullName>
+                    <default>false</default>
+                    <label>OCCUPATIONAL DISABILITY</label>
+                </value>
+                <value>
+                    <fullName>OVERHEAD EXPENSES BENEFIT</fullName>
+                    <default>false</default>
+                    <label>OVERHEAD EXPENSES BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>OVERHEAD EXPENSES PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>OVERHEAD EXPENSES PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>OWN OCCUPATIONAL DISABILITY</fullName>
+                    <default>false</default>
+                    <label>OWN OCCUPATIONAL DISABILITY</label>
+                </value>
+                <value>
+                    <fullName>PENTA PLUS</fullName>
+                    <default>false</default>
+                    <label>PENTA PLUS</label>
+                </value>
+                <value>
+                    <fullName>PREMIUM PROTECTOR (DEATH)</fullName>
+                    <default>false</default>
+                    <label>PREMIUM PROTECTOR (DEATH)</label>
+                </value>
+                <value>
+                    <fullName>PREMIUM PROTECTOR (DISABILITY)</fullName>
+                    <default>false</default>
+                    <label>PREMIUM PROTECTOR (DISABILITY)</label>
+                </value>
+                <value>
+                    <fullName>PREM PROTECTOR - (RETRENCH)</fullName>
+                    <default>false</default>
+                    <label>PREM PROTECTOR - (RETRENCH)</label>
+                </value>
+                <value>
+                    <fullName>RENEWABLE LIFE</fullName>
+                    <default>false</default>
+                    <label>RENEWABLE LIFE</label>
+                </value>
+                <value>
+                    <fullName>RETIREMENT ANNUITY NON-LIFE</fullName>
+                    <default>false</default>
+                    <label>RETIREMENT ANNUITY NON-LIFE</label>
+                </value>
+                <value>
+                    <fullName>RETIREMENT ANNUITY WITH LIFE</fullName>
+                    <default>false</default>
+                    <label>RETIREMENT ANNUITY WITH LIFE</label>
+                </value>
+                <value>
+                    <fullName>RETRENCHMENT PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>RETRENCHMENT PROTECTOR</label>
+                </value>
+                <value>
+                    <fullName>RETRENCHMENT PROTECTOR 12 MONTHS</fullName>
+                    <default>false</default>
+                    <label>RETRENCHMENT PROTECTOR 12 MONTHS</label>
+                </value>
+                <value>
+                    <fullName>TEMPORARY INCOME DISABILITY</fullName>
+                    <default>false</default>
+                    <label>TEMPORARY INCOME DISABILITY</label>
+                </value>
+                <value>
+                    <fullName>TERM SELECT</fullName>
+                    <default>false</default>
+                    <label>TERM SELECT</label>
+                </value>
+                <value>
+                    <fullName>TOMBSTONE</fullName>
+                    <default>false</default>
+                    <label>TOMBSTONE</label>
+                </value>
+                <value>
+                    <fullName>TOTAL DISABILITY</fullName>
+                    <default>false</default>
+                    <label>TOTAL DISABILITY</label>
+                </value>
+                <value>
+                    <fullName>VITAL LIVING BENEFIT</fullName>
+                    <default>false</default>
+                    <label>VITAL LIVING BENEFIT</label>
+                </value>
+                <value>
+                    <fullName>VITAL LIVING PLUS</fullName>
+                    <default>false</default>
+                    <label>VITAL LIVING PLUS</label>
+                </value>
+                <value>
+                    <fullName>WELLNESS BONUS BENEFIT</fullName>
+                    <default>false</default>
+                    <label>WELLNESS BONUS BENEFIT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BenefitPaymentFrequency</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CMN_AutomaticContributionIncreasePerc__c</fullName>
+        <description>Used for integration to populate Automatic Contribution Increase Percentage (ACI) for a Benefit from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Automatic Contribution Increase %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CMN_BenefitClassification__c</fullName>
+        <description>Used for integration to populate Benefit Classification from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Benefit Classification</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ContributionAmount__c</fullName>
+        <description>Used for integration to populate Contribution Amount from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Contribution Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_ExclusionIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Exclusion Indicator  from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Exclusion Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_IncomeDisabilityClaimPercentage__c</fullName>
+        <description>Used for integration to populate Income Disability Claim % from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Income Disability Claim %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CMN_LoadContributionAmount__c</fullName>
+        <description>Used for integration to populate Load Contribution Amount from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Load Contribution Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_LoadingIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Loading Indicator from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Loading Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_PortfolioName__c</fullName>
+        <description>Used for integration to populate Portfolio Name from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Portfolio Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_StatusReason__c</fullName>
+        <description>Used for integration to populate Status Reason from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Status Reason</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_Status__c</fullName>
+        <description>Used for integration to populate Status from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_TerminalIllnessValue__c</fullName>
+        <description>Used for integration to populate Terminal Illness Value from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Terminal Illness Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_WaitingPeriod__c</fullName>
+        <description>Used for integration to populate Waiting Period from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Waiting Period</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CategoryCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CategoryGroup</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CategoryGroupType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CoverageName</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DeathBenefitOptionType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DeductibleAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ExpirationDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IncomeOptionType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>InsurancePolicyAssetId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>InsurancePolicyId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>LimitAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LimitDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LimitPercentage</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LimitRange</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PremiumAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystem</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystemIdentifier</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StandardFeeAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StandardPremiumAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StandardTaxAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TermFeeAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TermPremiumAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TermTaxAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalStandardAmount</fullName>
+    </fields>
+    <listViews>
+        <fullName>All_InsurancePolicyCoverages</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Insurance Policy Coverages</label>
+    </listViews>
+    <listViews>
+        <fullName>All_InsurancePolicyCoverages</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Insurance Policy Coverages</label>
+    </listViews>
+    <recordTypes>
+        <fullName>CMN_LibertyInsurancePolicyCoverage</fullName>
+        <active>true</active>
+        <description>Record type to be used for Integration with Compass &amp; Lifestyle.</description>
+        <label>Liberty Insurance Policy Coverage</label>
+        <picklistValues>
+            <picklist>AW_CoverCategory__c</picklist>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_CoverSubCategory__c</picklist>
+            <values>
+                <fullName>Endowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Feature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Protection - Annual Income Benefit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Protection - Lump Sum Benefit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Protection - Monthly Income Benefit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lifestyle Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wellness Bonus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_TypeCode__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>101</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>102</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>103</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>104</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>105</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>106</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>107</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>108</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>109</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>111</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>112</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>113</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>114</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>115</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>116</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>117</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>118</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>119</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>121</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>122</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>123</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>124</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>125</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>126</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>127</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>128</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>33</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>34</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>35</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>37</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>39</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>41</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>42</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>43</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>44</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>46</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>47</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>51</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>54</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>57</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>58</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>59</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>61</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>62</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>63</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>64</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>66</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>67</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>68</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>69</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>70</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>71</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>72</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>73</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>74</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>75</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>77</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>78</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>79</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>81</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>82</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>83</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>84</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>85</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>86</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>87</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>88</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>89</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>91</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>92</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>93</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>94</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>95</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>96</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>97</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>98</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>99</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Type__c</picklist>
+            <values>
+                <fullName>ABSOLUTE IMPAIRMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE IMPAIRMENT %28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE IMPAIRMENT PLUS %28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE IMPARMENT PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE INCOME PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE PROTECTOR %28OD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE PROTECTOR %28OOD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE PROTECTOR %28OOD%29%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE PROTECTOR PLUS %28OD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE PROTECTOR PLUS %28OOD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ABSOLUTE PROTECTOR PLUS %28OOD%29%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ACCIDENT BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAPITAL DISABILITY %28OD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAPITAL DISABILITY %28OOD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAPITAL DISABILITY %28OOD%29%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAPITAL DISABILITY PLUS %28OD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAPITAL DISABILITY PLUS %28OOD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAPITAL DISABILITY PLUS %28OOD%29%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAREABILITY BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHILD LIVING LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CONTINUATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CONTRIB WAIVER PAYER DTH%2FDSB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CONTRIBUTION WAIVER ON DEATH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CONVERSION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CONVERTIBLE LEVEL TERM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EDUCATOR %28OD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EDUCATOR %28OOD%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EDUCATOR DEATH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ENABILITY BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EXTENDED ABS INC PROT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAMILY BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAMILY PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FEMABILITY BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FEMALE LIVING LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FINANCIAL PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FUNERAL BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FUTURE PROTECTOR - ALL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FUTURE PROTECTOR - DEATH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FUTURE PROTECTOR - DISABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FUTURE PROTECTOR - DREAD DISEASE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GUARANTEED DEPENDANT PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GUARANTEED INSURABILITY BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GUARANTEED REVIEWABLE LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HOSPITALISATION LIFESTYLE ENHANCER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMMEDIATE EXPENSES BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMMEDIATE EXPENSES BENEFIT%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMPAIRMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMPAIRMENT PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INCOME DISABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INCOME DISABILITY TOP-UP OPTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L L %28WITH TOP UP %26 EXT%29%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L L PLUS %28WITH TOP UP %26 EXT%29%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L%2EL%2E ENHANCER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L%2EL%2E OPTIMUM BENEFIT 65</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L%2EL%2E OPTIMUM BENEFIT WOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L%2EL%2E OPTIMUM PLUS WOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEVEL TERM CONTINUATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEVEL TERM CONVERTIBLE%2FCONTINUATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LEVEL TERM NON-CONVERTIBLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFE COVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFE COVER%28TERM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFESTYLE INCOME PROTECTOR - ESC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFESTYLE INCOME PROTECTOR - LEVEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFESTYLE PORTFOLIO PRESERVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIP GIB BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIP OVERHEAD BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE %2865%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE %28WOL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE DEPENDANT PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE EXTENDED OPTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE OPTIMUM PLUS 65</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE PLUS %2865%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE PLUS %28WOL%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVING LIFESTYLE TOP-UP OPTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LONG TERM PROTECTOR PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LSTYLE PORT PRES %2B OCC DISB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MATERNITY PAUSE OPTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICAL LIFESTYLE BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICAL LIFESTYLE EXTRA COVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICATOR ABSOLUTE IMPAIRMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICATOR ABSOLUTE IMPAIRMENT PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICATOR DEATH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICATOR DISABILITY OD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICATOR DISABILITY OOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICATOR DISABILITY PLUS OD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICATOR DISABILITY PLUS OOD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MORTGAGE PROTECTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCC%2E DIS%2E CONTRIB WAIVER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OCCUPATIONAL DISABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OVERHEAD EXPENSES BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OVERHEAD EXPENSES PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OWN OCCUPATIONAL DISABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PENTA PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PREM PROTECTOR - %28RETRENCH%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PREMIUM PROTECTOR %28DEATH%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PREMIUM PROTECTOR %28DISABILITY%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RENEWABLE LIFE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RETIREMENT ANNUITY NON-LIFE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RETIREMENT ANNUITY WITH LIFE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RETRENCHMENT PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RETRENCHMENT PROTECTOR 12 MONTHS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TEMPORARY INCOME DISABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TERM SELECT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOTAL DISABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VITAL LIVING BENEFIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VITAL LIVING PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WELLNESS BONUS BENEFIT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BenefitPaymentFrequency</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annual%28twice a year%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Monthly%28twice a month%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category</picklist>
+            <values>
+                <fullName>Clause</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discount</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Limit Component</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rider</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CategoryGroup</picklist>
+            <values>
+                <fullName>Additional Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bundled Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forms and Endorsements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Section 2%2FLiability Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Section-1 Property Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uninsured Motorist Insurance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CategoryGroupType</picklist>
+            <values>
+                <fullName>Bodily Injury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comprehensive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Payments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Damage</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DeathBenefitOptionType</picklist>
+            <values>
+                <fullName>Adjustable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decreasing based on a commuted value</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IncomeOptionType</picklist>
+            <values>
+                <fullName>Carry Forward</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Specified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deposit At interest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dividend Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indexed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LimitRange</picklist>
+            <values>
+                <fullName>100%2F200%2F50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2F30%2F5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>200%2F500%2F100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25%2F50%2F25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50%2F100%2F50</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CoverageName</customTabListAdditionalFields>
+        <customTabListAdditionalFields>InsurancePolicy</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PremiumAmount</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CoverageName</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>InsurancePolicy</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PremiumAmount</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CoverageName</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>InsurancePolicy</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PremiumAmount</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>CoverageName</searchFilterFields>
+        <searchResultsAdditionalFields>CoverageName</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>InsurancePolicy</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PremiumAmount</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

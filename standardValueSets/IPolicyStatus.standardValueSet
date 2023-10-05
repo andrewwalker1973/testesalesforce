@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>IN FORCE</fullName>
+        <default>true</default>
+        <label>In Force</label>
+    </standardValue>
+    <standardValue>
+        <fullName>UNISSUED</fullName>
+        <default>false</default>
+        <label>Unissued</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NOT TAKEN UP</fullName>
+        <default>false</default>
+        <label>Not Taken Up</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SETTLEMENT PENDING</fullName>
+        <default>false</default>
+        <label>Settlement pending</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SUSPENSE</fullName>
+        <default>false</default>
+        <label>Suspense</label>
+    </standardValue>
+    <standardValue>
+        <fullName>OUT OF FORCE</fullName>
+        <default>false</default>
+        <label>Out of Force</label>
+    </standardValue>
+</StandardValueSet>

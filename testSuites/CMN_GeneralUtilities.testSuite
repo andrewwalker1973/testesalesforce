@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>CMN_EMAIL_Sender_TEST</testClassName>
+    <testClassName>CMN_UTIL_Array_TEST</testClassName>
+    <testClassName>CMN_UTIL_Boolean_TEST</testClassName>
+    <testClassName>CMN_UTIL_Character_TEST</testClassName>
+    <testClassName>CMN_UTIL_Comparators_TEST</testClassName>
+    <testClassName>CMN_UTIL_Date_TEST</testClassName>
+    <testClassName>CMN_UTIL_Logger_TEST</testClassName>
+    <testClassName>CMN_UTIL_Map_TEST</testClassName>
+    <testClassName>CMN_UTIL_NumberRange_TEST</testClassName>
+    <testClassName>CMN_UTIL_Number_TEST</testClassName>
+    <testClassName>CMN_UTIL_Random_TEST</testClassName>
+    <testClassName>CMN_UTIL_Security_TEST</testClassName>
+    <testClassName>CMN_UTIL_Set_TEST</testClassName>
+    <testClassName>CMN_UTIL_SObjectDescribe_TEST</testClassName>
+    <testClassName>CMN_UTIL_SObjectIndex_TEST</testClassName>
+    <testClassName>CMN_UTIL_Stack_TEST</testClassName>
+    <testClassName>CMN_UTIL_StopWatch_TEST</testClassName>
+    <testClassName>CMN_UTIL_StringBuffer_TEST</testClassName>
+    <testClassName>CMN_UTIL_StringBuilder_TEST</testClassName>
+    <testClassName>CMN_UTIL_String_TEST</testClassName>
+    <testClassName>CMN_UTIL_System_TEST</testClassName>
+    <testClassName>CMN_UTIL_Word_TEST</testClassName>
+</ApexTestSuite>

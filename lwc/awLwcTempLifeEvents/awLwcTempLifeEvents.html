@@ -1,0 +1,103 @@
+<template>
+
+    <div class="slds-m-bottom_large align-right">
+        <lightning-button label="Add Life Event" onclick={newpersonLifeEvent}></lightning-button>
+    </div>
+
+    <lightning-card>
+        <div class="slds-p-horizontal_large">
+            <div class="timeline-container">
+                <template if:true={personLifeEventList}>
+                    <template for:each={personLifeEventList} for:item="lifeevent" class="slds-m-bottom_large">
+                        <div class="icon-container" key={lifeevent.Id}>
+                            <lightning-icon onclick={editLifeEvent} data-recordid={lifeevent.Id}
+                                            icon-name={lifeevent.AW_Client_Community_Icon__c} size="large"
+                                            class="timeline-icon">
+                            </lightning-icon>
+                            <div class="icon-label icon-label-heading">{lifeevent.Name}</div>
+                            <div class="icon-label">
+                                <lightning-formatted-date-time value={lifeevent.EventDate} year="numeric" month="short"
+                                                               day="2-digit">
+                                </lightning-formatted-date-time>
+                            </div>
+                        </div>
+                        <div class="icon-line" key={lifeevent.Id}></div>
+                    </template>
+                </template>
+                <template if:true={personLifeEventListError}>
+                    {personLifeEventListError.error}
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+
+
+    <!--Edit Goal Dialog -->
+    <div if:true={displayPersonEventDialog}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close"
+                            onclick={closeDialog}>
+                        <lightning-icon icon-name="utility:close" size="medium">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                        Life Event Details
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-grid slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-input label="Life Event Name" value={personLifeEventName}
+                                             data-field="life-event-name"
+                                             required>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-input label="Description" value={personLifeEventDescription}
+                                             data-field="life-event-description">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-input label="Date" type="date" value={personLifeEventDate}
+                                             data-field="life-event-date">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-combobox label="Impact (Positive/Negative)" value={personLifeEventImpact}
+                                                placeholder="Select Impact" options={personLifeEventImpactOptions}
+                                                data-field="life-event-impact">
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-combobox label="Priority level" value={personLifeEventPriority}
+                                                placeholder="Select Priority level"
+                                                options={personLifeEventPriorityOptions}
+                                                data-field="life-event-priority">
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-textarea label="Impact on Outcome/Goals" value={personLifeEventImpactDes}
+                                                data-field="life-event-impactdes">
+                            </lightning-textarea>
+                        </div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" variant="neutral" onclick={closeDialog}>
+                    </lightning-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <lightning-button label="Save Life Event" variant="brand" onclick={savePersonLifeEvent}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+
+    <c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

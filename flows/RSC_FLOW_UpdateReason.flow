@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>RSC_CheckRecordTypeName</name>
+        <label>Check Record Type Name</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Do Nothing</defaultConnectorLabel>
+        <rules>
+            <name>RSC_CheckRetailRecordType</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_RecordTypeNameForCaseDocument</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_UpdateReason</targetReference>
+            </connector>
+            <label>Is Case Document?</label>
+        </rules>
+    </decisions>
+    <description>This flow is used to clear the reason field as blank when the status is changed to something other than &quot;Rejected.</description>
+    <formulas>
+        <description>Sets a text field to NULL</description>
+        <name>RSC_NullText</name>
+        <dataType>String</dataType>
+        <expression>NULL</expression>
+    </formulas>
+    <interviewLabel>RSC_UpdateReason {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RSC_FLOW_UpdateReason</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>SC_UpdateReason</name>
+        <label>Clear Reason</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>CMN_Reason__c</field>
+            <value>
+                <elementReference>RSC_NullText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_CheckRecordTypeName</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Rejected</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CMN_Reason__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>DocumentChecklistItem</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Document Checklist item Record Type Developer Name</description>
+        <name>RSC_RecordTypeNameForCaseDocument</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>SC_CaseDocument</stringValue>
+        </value>
+    </variables>
+</Flow>

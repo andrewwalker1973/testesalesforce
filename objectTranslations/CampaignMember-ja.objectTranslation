@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Adviser Branch --></label>
+        <name>AW_AdviserBranch__c</name>
+    </fields>
+    <fields>
+        <label><!-- HasClicked --></label>
+        <name>AW_HasClicked__c</name>
+    </fields>
+    <fields>
+        <label><!-- HasOpened --></label>
+        <name>AW_HasOpened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity --></label>
+        <name>et4ae5__Activity__c</name>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation>送信済み</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsubscribed</masterLabel>
+            <translation>購読取り消し済み</translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You may not add campaign members to a campaign which is cancelled, not active or after it has ended. --></errorMessage>
+        <name>AW_CampaignMember_Prevent</name>
+    </validationRules>
+</CustomObjectTranslation>

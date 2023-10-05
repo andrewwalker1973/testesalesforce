@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>SLSC_Broker</fullName>
+        <default>false</default>
+        <label>Broker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLSC_BrokerConsultant</fullName>
+        <default>false</default>
+        <label>Broker Consultant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLSC_BrokerDistributionManager</fullName>
+        <default>false</default>
+        <label>Broker Distribution Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLSC_Executors</fullName>
+        <default>false</default>
+        <label>Executors</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLSC_Investor</fullName>
+        <default>false</default>
+        <label>Investor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLSC_NonClient</fullName>
+        <default>false</default>
+        <label>Non Client</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLSC_PersonalAssistant</fullName>
+        <default>false</default>
+        <label>Personal Assistant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Complaint</fullName>
+        <default>false</default>
+        <label>Complaint</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Problem</fullName>
+        <default>false</default>
+        <label>Problem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Question</fullName>
+        <default>false</default>
+        <label>Question</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Service Request</fullName>
+        <default>false</default>
+        <label>Service Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Feature Request</fullName>
+        <default>false</default>
+        <label>Feature Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Form Request</fullName>
+        <default>false</default>
+        <label>Form Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contact Client</fullName>
+        <default>false</default>
+        <label>Contact Client</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-up</fullName>
+        <default>false</default>
+        <label>Follow-up</label>
+    </standardValue>
+</StandardValueSet>

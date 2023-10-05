@@ -1,0 +1,7 @@
+<!--
+ - Aura component to create new case using the Utility Item
+ -->
+<aura:component implements="force:lightningQuickAction,force:appHostable,flexipage:availableForAllPageTypes" >
+    <c:rscLwcCreateNewCase onclose="{!c.closeQA}"></c:rscLwcCreateNewCase>
+    <lightning:utilityBarAPI aura:id="utilityBar" />
+</aura:component>

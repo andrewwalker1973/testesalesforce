@@ -1,0 +1,1428 @@
+{
+  "version" : "58.0",
+  "nodes" : {
+    "Combined_View_3rd_Feb_2023_copy0" : {
+      "action" : "save",
+      "sources" : [ "TO_DIMENSION17_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Risk Output As Dataset",
+          "name" : "AW_RiskOutputAsDataset",
+          "folderName" : "SharedApp"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "Feature_engineering_needs_01_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "All_feature_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Child_Education_Cover_Cat",
+          "label" : "Child_Education_Cover_Cat",
+          "formulaExpression" : "case when Child_Education_Cover_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_02_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_01_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Family_Funeral_Cat",
+          "label" : "Family_Funeral_Cat",
+          "formulaExpression" : "case when Family_Funeral_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_03_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_02_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Future_Insurability_Cat",
+          "label" : "Future_Insurability_Cat",
+          "formulaExpression" : "case when Future_Insurability_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_04_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_03_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Income_Disability_Cat",
+          "label" : "Income_Disability_Cat",
+          "formulaExpression" : "case when Income_Disability_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_05_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_04_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Medical_Aid_Premiums_Cover_Cat",
+          "label" : "Medical_Aid_Premiums_Cover_Cat",
+          "formulaExpression" : "case when Medical_Aid_Premiums_Cover_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_06_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_05_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Medical_Cover_Cat",
+          "label" : "Medical_Cover_Cat",
+          "formulaExpression" : "case when Medical_Cover_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_07_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_06_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Others_Cat",
+          "label" : "Others_Cat",
+          "formulaExpression" : "case when Others_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_08_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_07_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Policy_Holder_Disablement_Cat",
+          "label" : "Policy_Holder_Disablement_Cat",
+          "formulaExpression" : "case when Policy_Holder_Disablement_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_09_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_08_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Policy_Holder_dread_disease_Cat",
+          "label" : "Policy_Holder_dread_disease_Cat",
+          "formulaExpression" : "case when Policy_Holder_dread_disease_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_10_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_09_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Policy_Premiums_Cover_Cat",
+          "label" : "Policy_Premiums_Cover_Cat",
+          "formulaExpression" : "case when Policy_Premiums_Cover_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_11_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_10_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Post_Retirement_Cat",
+          "label" : "Post_Retirement_Cat",
+          "formulaExpression" : "case when Post_Retirement_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_12_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_11_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Pregnancy_Complications_Cat",
+          "label" : "Pregnancy_Complications_Cat",
+          "formulaExpression" : "case when Pregnancy_Complications_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_13_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_12_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Savings_plan_Cat",
+          "label" : "Savings_plan_Cat",
+          "formulaExpression" : "case when Savings_plan_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_14_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_13_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Life_Cover_Cat",
+          "label" : "Life_Cover_Cat",
+          "formulaExpression" : "case when Life_Cover_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_15_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_14_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Product_Count_Sum",
+          "label" : "Product_Count_Sum",
+          "formulaExpression" : "Child_Education_Cover_Past + Family_Funeral_Past + Future_Insurability_Past + Income_Disability_Past + Medical_Aid_Premiums_Cover_Past + Medical_Cover_Past + Policy_Holder_Disablement_Past + Policy_Holder_dread_disease_Past + Policy_Premiums_Cover_Past + Post_Retirement_Past + Pregnancy_Complications_Past + Savings_plan_Past + Life_Cover_Past",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "Feature_engineering_needs_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Feature_engineering_needs_15_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Life_Style_Cat",
+          "label" : "Life_Style_Cat",
+          "formulaExpression" : "case when Life_Style_Past = 0 then 0 else 1 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "All_feature_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "all_new",
+          "label" : "all_new",
+          "formulaExpression" : "'all_new'",
+          "precision" : 255
+        } ]
+      }
+    },
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "CompleteRisk.prsn_brth_dt", "DIV_NAME", "CompleteRisk.prsn_mrkt_cnsnt", "CompleteRisk.pla_natl_id", "CompleteRisk.payer_natl_id", "CompleteRisk.prsn_gndr_dsc", "CompleteRisk.channel", "Purchase_Date_api", "Product_Group", "RiskDates.Column1", "movent_ind", "Age_Individual_api", "CompleteRisk.book_type", "CompleteRisk.pla_post_code", "Product_Name", "CompleteRisk.movent_dt", "CompleteRisk.is_sbg_client", "RiskDates.inception_date", "pillar", "REGION_NAME", "BENEFIT_STATUS", "BENEFIT_TYPE", "CompleteRisk.owner_post_code", "CompleteRisk.prod_typ_cd", "owner_natl_id", "CompleteRisk.Unnamed_0", "CompleteRisk.Catchment_Area_y", "CompleteRisk.Catchment_Area_x", "Needs_comb.BENEFIT_TYPE_Formula", "cont_no", "Inception_date_string_api", "LIFE_ASSURED_TYPE", "Needs_comb.Groupings_Formula", "Frequency", "CompleteRisk.owner_natl_id", "Previous_Product_Bought", "RiskDates.Owner_Natl_ID", "CompleteRisk.prsn_mrtl_sts_dsc", "RiskDates.inception_date_formula", "all", "CompleteRisk.Gender_Type_Desc_x", "CompleteRisk.cont_no", "CompleteRisk.Gender_Type_Desc_y", "CompleteRisk.paidto_dt", "CompleteRisk.prod_name", "Inception_date_updated_formula", "CompleteRisk.Marital_Type_Desc_y", "CompleteRisk.Marital_Type_Desc_x", "CompleteRisk.Province_x", "Consultant_Status", "CompleteRisk.Province_y", "contract_number", "CompleteRisk.owner_natl", "CompleteRisk.sb_match", "RiskDates.Benefit_name", "Consultant_Code", "RiskDates.cont_no", "CompleteRisk.incp_dt", "CompleteRisk.movent_ind", "CompleteRisk.line_buss", "CompleteRisk.inforce_ind", "Income_Disability_TV14", "Family_Funeral_Past", "Premium", "ID_Dummy", "Income_Disability_Past", "Savings_plan_Past", "RiskDates.Benefit_duration_in_force_in_months_as_at_2022_02_28", "CompleteRisk.consult_cd", "Savings_plan_TV10", "Post_Retirement_TV15", "RiskDates.inception_date_formula_formula_formula", "Inception_date_length", "Policy_Holder_Dread_Disease_TV1", "Pregnancy_Complications_TV12", "Others_TV7", "Post_Retirement_Past", "Age_Tenure_Bucket_Greater_than_60_yrs", "Pregnancy_Complications_Past", "CompleteRisk.party_id", "Policy_Holder_dread_disease_Past", "Row_ID_Creation", "CompleteRisk.prsn_pdb_id", "Policy_Premiums_Cover_TV8", "Sum_Assured", "Life_Cover_Past", "Purchase_Group", "Life_Style_Past", "Age_at_purchase_api", "Medical_Cover_TV6", "CompleteRisk.premium", "CompleteRisk.proto_no", "CompleteRisk.sum_assured", "Age_Tenure_Bucket_Between_26_35yrs", "CompleteRisk.owner", "Policy_Holder_Disablement_TV3", "Life_Cover_TV4", "Family_Funeral_TV9", "Child_Education_Cover_TV5", "Duplicate_Need_flag", "CompleteRisk.tenure", "CompleteRisk.pla_id", "Total_Policy_Value", "Policy_Holder_Disablement_Past", "Others_Past", "CompleteRisk.net_income", "Medical_Aid_Premiums_Cover_TV13", "Age_Tenure_Bucket_Between_36_45yrs", "Age_Tenure_Bucket_Between_46_60yrs", "Child_Education_Cover_Past", "Medical_Aid_Premiums_Cover_Past", "Age_Tenure_Bucket_less_than_or_equal_to_25yrs", "Future_Insurability_TV11", "CompleteRisk.owner_id", "CompleteRisk.payer_id", "Medical_Cover_Past", "Life_Style_need_TV2", "Policy_Premiums_Cover_Past", "Product_Type_Code", "Future_Insurability_Past" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Risk Output",
+          "name" : "AW_RiskOutput"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "DROP_FIELDS0_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Feature_engineering_needs_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Product_Type_Code" ]
+        }
+      }
+    },
+    "DROP_FIELDS1_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "CompleteRisk.dropDuplicates" ]
+        }
+      }
+    },
+    "DROP_FIELDS2_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS1_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "all" ]
+        }
+      }
+    },
+    "DROP_FIELDS3_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS2_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "RiskDates.inception_date_formula" ]
+        }
+      }
+    },
+    "DROP_FIELDS4_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS3_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "RiskDates.inception_date" ]
+        }
+      }
+    },
+    "DROP_FIELDS5_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS4_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Consultant_Status" ]
+        }
+      }
+    },
+    "DROP_FIELDS6_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS5_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "DIV_NAME" ]
+        }
+      }
+    },
+    "DROP_FIELDS7_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS6_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Column1" ]
+        }
+      }
+    },
+    "DROP_FIELDS8_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS7_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "pillar" ]
+        }
+      }
+    },
+    "DROP_FIELDS9_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS8_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Unnamed_0" ]
+        }
+      }
+    },
+    "DROP_FIELDS10_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS9_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Needs_comb.client_need" ]
+        }
+      }
+    },
+    "DROP_FIELDS11_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS10_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "RiskDates.Owner_Natl_ID" ]
+        }
+      }
+    },
+    "DROP_FIELDS12_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS11_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "CompleteRisk.owner_natl_id" ]
+        }
+      }
+    },
+    "DROP_FIELDS13_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS12_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "RiskDates.cont_no" ]
+        }
+      }
+    },
+    "DROP_FIELDS14_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS13_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "RiskDates.Column1" ]
+        }
+      }
+    },
+    "DROP_FIELDS15_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS14_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Life_Style_Cat", "Life_Style_Past", "Life_Style_need_TV2" ]
+        }
+      }
+    },
+    "TO_DIMENSION3_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "DROP_FIELDS15_copy0_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Life_Cover_Cat_to_dimension",
+          "newProperties" : {
+            "name" : "Life_Cover_Cat"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Life_Cover_Cat" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Life_Cover_Cat",
+          "newProperties" : {
+            "label" : "Life_Cover_Cat",
+            "name" : "Life_Cover_Cat_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION4_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION3_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Life_Cover_Past_to_dimension",
+          "newProperties" : {
+            "name" : "Life_Cover_Past"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Life_Cover_Past" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Life_Cover_Past",
+          "newProperties" : {
+            "label" : "Life_Cover_Past",
+            "name" : "Life_Cover_Past_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION5_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION4_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Life_Cover_TV4_to_dimension",
+          "newProperties" : {
+            "name" : "Life_Cover_TV4"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Life_Cover_TV4" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Life_Cover_TV4",
+          "newProperties" : {
+            "label" : "Life Cover Target Variable",
+            "name" : "Life_Cover_TV4_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION6_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION5_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Child_Education_Cover_Cat_to_dimension",
+          "newProperties" : {
+            "name" : "Child_Education_Cover_Cat"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Child_Education_Cover_Cat" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Child_Education_Cover_Cat",
+          "newProperties" : {
+            "label" : "Child_Education_Cover_Cat",
+            "name" : "Child_Education_Cover_Cat_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION7_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION6_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Child_Education_Cover_Past_to_dimension",
+          "newProperties" : {
+            "name" : "Child_Education_Cover_Past"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Child_Education_Cover_Past" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Child_Education_Cover_Past",
+          "newProperties" : {
+            "label" : "Child_Education_Cover_Past",
+            "name" : "Child_Education_Cover_Past_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION8_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION7_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Child_Education_Cover_TV5_to_dimension",
+          "newProperties" : {
+            "name" : "Child_Education_Cover_TV5"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Child_Education_Cover_TV5" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Child_Education_Cover_TV5",
+          "newProperties" : {
+            "label" : "Child Education Target Variable",
+            "name" : "Child_Education_Cover_TV5_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION9_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION8_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Premiums_Cover_Cat_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Premiums_Cover_Cat"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Premiums_Cover_Cat" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Premiums_Cover_Cat",
+          "newProperties" : {
+            "label" : "Policy_Premiums_Cover_Cat",
+            "name" : "Policy_Premiums_Cover_Cat_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION10_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION9_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Premiums_Cover_Past_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Premiums_Cover_Past"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Premiums_Cover_Past" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Premiums_Cover_Past",
+          "newProperties" : {
+            "label" : "Policy_Premiums_Cover_Past",
+            "name" : "Policy_Premiums_Cover_Past_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION11_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION10_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Premiums_Cover_TV8_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Premiums_Cover_TV8"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Premiums_Cover_TV8" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Premiums_Cover_TV8",
+          "newProperties" : {
+            "label" : "Policy Premiums Target Variable",
+            "name" : "Policy_Premiums_Cover_TV8_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION12_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION11_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Disablement_Cat_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Holder_Disablement_Cat"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Holder_Disablement_Cat" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Disablement_Cat",
+          "newProperties" : {
+            "label" : "Policy_Holder_Disablement_Cat",
+            "name" : "Policy_Holder_Disablement_Cat_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION13_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION12_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_dread_disease_Cat_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Holder_dread_disease_Cat"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Holder_dread_disease_Cat" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_dread_disease_Cat",
+          "newProperties" : {
+            "label" : "Policy_Holder_dread_disease_Cat",
+            "name" : "Policy_Holder_dread_disease_Cat_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION14_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION13_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Disablement_Past_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Holder_Disablement_Past"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Holder_Disablement_Past" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Disablement_Past",
+          "newProperties" : {
+            "label" : "Policy_Holder_Disablement_Past",
+            "name" : "Policy_Holder_Disablement_Past_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION15_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION14_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Disablement_TV3_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Holder_Disablement_TV3"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Holder_Disablement_TV3" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Disablement_TV3",
+          "newProperties" : {
+            "label" : "Policy Holder Disablement Target Variable",
+            "name" : "Policy_Holder_Disablement_TV3_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION16_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION15_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_dread_disease_Past_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Holder_dread_disease_Past"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Holder_dread_disease_Past" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_dread_disease_Past",
+          "newProperties" : {
+            "label" : "Policy_Holder_dread_disease_Past",
+            "name" : "Policy_Holder_dread_disease_Past_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION17_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION16_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Dread_Disease_TV1_to_dimension",
+          "newProperties" : {
+            "name" : "Policy_Holder_Dread_Disease_TV1"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Policy_Holder_Dread_Disease_TV1" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Policy_Holder_Dread_Disease_TV1",
+          "newProperties" : {
+            "label" : "Policy Holder Dread Disease Target Variable",
+            "name" : "Policy_Holder_Dread_Disease_TV1_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "FORMULA0_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FILTER1_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "owner_natl_id" ],
+        "orderBy" : [ {
+          "fieldName" : "Product_Count_Sum",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Rank_api",
+          "label" : "Rank",
+          "formulaExpression" : "rank()",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "FILTER0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "FORMULA0_copy0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "NUMBER",
+          "field" : "Rank_api",
+          "operator" : "EQUAL",
+          "operands" : [ "1" ]
+        } ]
+      }
+    },
+    "OUTPUT0_copy0" : {
+      "action" : "save",
+      "sources" : [ "FILTER0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Risk Scoring Input Data",
+          "name" : "AW_RiskScoringInputData",
+          "folderName" : "SharedApp"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "FILTER1_copy0" : {
+      "action" : "filter",
+      "sources" : [ "TO_DIMENSION17_copy0_copy0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Needs_comb.Groupings_Formula",
+          "operator" : "EQUAL",
+          "operands" : [ "Child Education Cover", "Family Funeral", "Future Insurability", "Income Disability", "Life Cover", "Medical Aid Premiums Cover", "Medical Cover", "Policy Holder Disablement", "Policy Holder Dread Disease", "Policy Premiums Cover", "Post retirement", "Pregnancy Complications", "Savings plan" ]
+        } ]
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "Combined_View_3rd_Feb_2023_copy0" : {
+        "label" : "Model Development Dataset",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 112.19999999999999,
+        "left" : 672.3
+      },
+      "TRANSFORM5_copy0_copy0" : {
+        "label" : "Feature Engineering Needs",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 112.30000000000001,
+        "left" : 392.6,
+        "graph" : {
+          "Feature_engineering_needs_01_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_02_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_03_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_04_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_05_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_06_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_07_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_08_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_09_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_10_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_11_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_12_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_13_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_14_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Feature_engineering_needs_15_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Feature_engineering_needs_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ {
+          "source" : "Feature_engineering_needs_01_copy0_copy0",
+          "target" : "Feature_engineering_needs_02_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_02_copy0_copy0",
+          "target" : "Feature_engineering_needs_03_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_03_copy0_copy0",
+          "target" : "Feature_engineering_needs_04_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_04_copy0_copy0",
+          "target" : "Feature_engineering_needs_05_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_05_copy0_copy0",
+          "target" : "Feature_engineering_needs_06_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_06_copy0_copy0",
+          "target" : "Feature_engineering_needs_07_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_07_copy0_copy0",
+          "target" : "Feature_engineering_needs_08_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_08_copy0_copy0",
+          "target" : "Feature_engineering_needs_09_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_09_copy0_copy0",
+          "target" : "Feature_engineering_needs_10_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_10_copy0_copy0",
+          "target" : "Feature_engineering_needs_11_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_11_copy0_copy0",
+          "target" : "Feature_engineering_needs_12_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_12_copy0_copy0",
+          "target" : "Feature_engineering_needs_13_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_13_copy0_copy0",
+          "target" : "Feature_engineering_needs_14_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_14_copy0_copy0",
+          "target" : "Feature_engineering_needs_15_copy0_copy0"
+        }, {
+          "source" : "Feature_engineering_needs_15_copy0_copy0",
+          "target" : "Feature_engineering_needs_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM6_copy0_copy0" : {
+        "label" : "All feature",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 112.19999999999999,
+        "left" : 252.89999999999998,
+        "graph" : {
+          "All_feature_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "LOAD_DATASET0" : {
+        "label" : "Risk Output",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM8_copy0_copy0_copy0" : {
+        "label" : "Transform 8",
+        "type" : "TRANSFORM",
+        "top" : 112.4,
+        "left" : 531.9,
+        "graph" : {
+          "DROP_FIELDS0_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS1_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS2_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS3_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS4_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS5_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS6_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS7_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS8_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS9_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS10_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS11_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS12_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS13_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS14_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS15_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "TO_DIMENSION3_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION4_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION5_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION6_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION7_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION8_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION9_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION10_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION11_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION12_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION13_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION14_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION15_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION16_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_DIMENSION17_copy0_copy0" : {
+            "label" : "To Text"
+          }
+        },
+        "connectors" : [ {
+          "source" : "DROP_FIELDS0_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS1_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS1_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS2_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS2_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS3_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS3_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS4_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS4_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS5_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS5_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS6_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS6_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS7_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS7_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS8_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS8_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS9_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS9_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS10_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS10_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS11_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS11_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS12_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS12_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS13_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS13_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS14_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS14_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS15_copy0_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS15_copy0_copy0_copy0",
+          "target" : "TO_DIMENSION3_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION3_copy0_copy0",
+          "target" : "TO_DIMENSION4_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION4_copy0_copy0",
+          "target" : "TO_DIMENSION5_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION5_copy0_copy0",
+          "target" : "TO_DIMENSION6_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION6_copy0_copy0",
+          "target" : "TO_DIMENSION7_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION7_copy0_copy0",
+          "target" : "TO_DIMENSION8_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION8_copy0_copy0",
+          "target" : "TO_DIMENSION9_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION9_copy0_copy0",
+          "target" : "TO_DIMENSION10_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION10_copy0_copy0",
+          "target" : "TO_DIMENSION11_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION11_copy0_copy0",
+          "target" : "TO_DIMENSION12_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION12_copy0_copy0",
+          "target" : "TO_DIMENSION13_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION13_copy0_copy0",
+          "target" : "TO_DIMENSION14_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION14_copy0_copy0",
+          "target" : "TO_DIMENSION15_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION15_copy0_copy0",
+          "target" : "TO_DIMENSION16_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION16_copy0_copy0",
+          "target" : "TO_DIMENSION17_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM0_copy0" : {
+        "label" : "Transform 0",
+        "type" : "TRANSFORM",
+        "top" : 252.2,
+        "left" : 671.2,
+        "graph" : {
+          "FORMULA0_copy0" : {
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "FILTER0_copy0" : {
+        "label" : "Filter 0",
+        "type" : "FILTER",
+        "top" : 252.39999999999998,
+        "left" : 811.2
+      },
+      "OUTPUT0_copy0" : {
+        "label" : "Customer Scoring Dataset",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 252.39999999999998,
+        "left" : 951.2
+      },
+      "FILTER1_copy0" : {
+        "label" : "Filter 1",
+        "type" : "FILTER",
+        "top" : 252.39999999999998,
+        "left" : 532
+      }
+    },
+    "connectors" : [ {
+      "source" : "TRANSFORM6_copy0_copy0",
+      "target" : "TRANSFORM5_copy0_copy0"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "TRANSFORM6_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM5_copy0_copy0",
+      "target" : "TRANSFORM8_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM8_copy0_copy0_copy0",
+      "target" : "Combined_View_3rd_Feb_2023_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0",
+      "target" : "FILTER0_copy0"
+    }, {
+      "source" : "FILTER0_copy0",
+      "target" : "OUTPUT0_copy0"
+    }, {
+      "source" : "FILTER1_copy0",
+      "target" : "TRANSFORM0_copy0"
+    }, {
+      "source" : "TRANSFORM8_copy0_copy0_copy0",
+      "target" : "FILTER1_copy0"
+    } ],
+    "hiddenColumns" : [ ]
+  },
+  "runMode" : "full"
+}

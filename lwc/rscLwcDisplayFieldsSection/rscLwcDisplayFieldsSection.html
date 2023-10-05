@@ -1,0 +1,102 @@
+<template>
+	<div if:true={isLoading}>
+		<lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+	</div>
+	<div class="slds-grid">
+		<div class="slds-col">
+			<template if:true={showAssignedToMe}>
+				<lightning-input checked={assignToMeValue} class='slds-p-around_small slds-large-size_1-of-2' label="Assign this case to myself" onchange={handleAssignToMe}
+								 type="checkbox" value={assignToMeValue}></lightning-input>
+			</template>
+		</div>
+		<div class="slds-col">
+			<template if:true={showRelatedToParentCheckbox}>
+				<lightning-input checked={relatedToParentCheckBoxValue} class='alignRight slds-p-around_small slds-large-size_1-of-2' disabled={invokedFromFlow}
+								 label="Is Related to Parent?" onchange={handleRelatedToParentChange} type="checkbox" value={relatedToParentCheckBoxValue}></lightning-input>
+			</template>
+		</div>
+	</div>
+	<template if:true={showFinalScreen}>
+		<div><h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-03" style="text-align:center;">
+			Kindly confirm your inputs</h2></div>
+		<br/><br/>
+	</template>
+	<!-- Editable section with all fields added in the field set-->
+	<template if:true={showFirstScreen}>
+		<c-cmn-lwc-create-form data-my-id="in1" fields={displayFields} object-name={objectApiName} onvaluechanged={onFormValueChanged}
+							   record-type-id={recordTypeId} look-up-fields={lookUpFields} look-up-display-format={lookUpDisplayFormat}></c-cmn-lwc-create-form>
+		<c-rsc-lwc-choose-service-type onservicetypeselection={handleServiceTypeSelection} selected-department={selectedDepartment} selected-service-type={selectedServiceType}
+									   selected-service-type-name={serviceTypeName} stop-triggering-event-on-previous={isPreviousClicked}></c-rsc-lwc-choose-service-type>
+		<lightning-accordion active-section-name={activeSections} allow-multiple-sections-open class="slds-m-around_xx-small">
+			<!--Client Detail Section-->
+			<div if:true={isClientDetails}>
+				<lightning-accordion-section class="sectionBackground" label={labels.ClientDetails} name="clientDetails">
+					<c-cmn-lwc-create-form data-my-id="in2" fields={displayClientFields} object-name="SC_CaseExtension__c"
+										   onvaluechanged={onFormValueChanged}></c-cmn-lwc-create-form>
+				</lightning-accordion-section>
+			</div>
+			<!--Financial Advisor Detail Section-->
+			<div if:true={isConsultantDetails}>
+				<lightning-accordion-section class="sectionBackground" label={labels.FinancialAdviserDetails} name="FinancialAdviserDetails">
+					<c-cmn-lwc-create-form data-my-id="in3" fields={displayFinancialAdvisorFields} object-name="SC_AssociatedContractExtension__c"
+										   onvaluechanged={onFormValueChanged}></c-cmn-lwc-create-form>
+				</lightning-accordion-section>
+			</div>
+			<lightning-accordion-section class="sectionBackground" label={labels.AdditionalComments} name="comments">
+				<lightning-textarea data-name="Comments" label={labels.InternalCaseComments}></lightning-textarea>
+			</lightning-accordion-section>
+		</lightning-accordion>
+	</template>
+
+	<!-- Section to select the contracts -->
+	<template if:true={showSecondScreen}>
+		<c-rsc-lwc-display-contracts-section client-id={clientId} pre-selected-rows={secondScreenSelectedPolicyIds} preselect-fetched-rows={isCloneMode}
+											 record-id={recordId}></c-rsc-lwc-display-contracts-section>
+	</template>
+
+	<!-- Section to select the Documents -->
+	<template if:true={showThirdScreen}>
+		<lightning-card class="slds-p-around_small slds-m-around_small" icon-name="standard:entitlement" title="Documents To Link" variant="narrow">
+			<lightning-datatable columns={documentColumns} data={displayDocuments} data-name="Documents" default-sort-direction={defaultSortDirection} key-field="Id"
+								 onsort={handleOnDocTableSort} selected-rows={preSelectedDocumentIds} sorted-by={sortedBy} sorted-direction={sortDirection}></lightning-datatable>
+		</lightning-card>
+	</template>
+	<!-- Read-only section to display the values of the selected fields-->
+	<template if:true={showFinalScreen}>
+		<div class="slds-p-around_medium">
+			<h2 class='slds-text-heading_medium'>Case Details</h2>
+		</div>
+		<div class="slds-box">
+			<lightning-datatable columns={caseTableColumns} data={displayConfirmationTableRow} hide-checkbox-column="true" key-field="Origin"></lightning-datatable>
+		</div>
+
+		<div class="slds-p-around_medium">
+			<h2 class='slds-text-heading_medium'>Requester Details</h2>
+		</div>
+		<div class="slds-box">
+			<lightning-datatable columns={requesterTableColumns} data={displayConfirmationTableRow} hide-checkbox-column="true" key-field="Id"></lightning-datatable>
+		</div>
+
+		<template if:true={showSelectedPolicies}>
+			<div class="slds-p-around_medium">
+				<h2 class='slds-text-heading_medium'>Associated Contract Details</h2>
+			</div>
+			<div class="slds-box">
+				<lightning-datatable columns={policyTableColumns} data={secondScreenSelectedPolicies} hide-checkbox-column="true" key-field="Id"></lightning-datatable>
+			</div>
+		</template>
+		<template if:true={showSelectedDocuments}>
+			<div class="slds-p-around_medium">
+				<h2 class='slds-text-heading_medium'>Document Details</h2>
+			</div>
+			<div class="slds-box">
+				<lightning-datatable columns={documentColumns} data={thirdScreenSelectedDocuments} hide-checkbox-column="true" key-field="Id"></lightning-datatable>
+			</div>
+		</template>
+	</template>
+	<!---section of medical requirement s---->
+	<template if:true={showMedicalRequirementScreen}>
+		<lightning-flow flow-api-name={labels.NextActionOnCase} flow-input-variables={flowInputVariables} onstatuschange={handleStatusChange}></lightning-flow>
+	</template>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

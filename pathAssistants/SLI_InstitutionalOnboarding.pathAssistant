@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>STANLIB Institutional Onboarding</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>FinServ__FinancialAccount__c</fieldNames>
+        <info>&lt;p&gt;At this stage, the financial account should be linked to the &amp;#39;Financial Account&amp;#39; field of this opportunity to signify the opening of the Trading Account.&lt;/p&gt;</info>
+        <picklistValueName>Account Opening</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Check the &lt;strong&gt;Documents for you to upload&lt;/strong&gt; list on the right for any documents you may need to upload at this stage.&lt;/li&gt;&lt;li&gt;Check the &lt;strong&gt;Documents for you to approve&lt;/strong&gt; list on the right for any documents you may need to approve at this stage.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Use the &lt;strong&gt;Document Checklist Items&lt;/strong&gt; component at the bottom of the page to &lt;strong&gt;Upload&lt;/strong&gt; any documents, or &lt;strong&gt;Download &lt;/strong&gt;any documents you may need to review for approval.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Once all documents have a status of &lt;strong&gt;Accepted&lt;/strong&gt; in the &lt;strong&gt;Document Checklist Items&lt;/strong&gt; component at the bottom of the page, you will able to move to the next stage.&lt;/p&gt;</info>
+        <picklistValueName>Document Preparation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>SLI_FICAApproved__c</fieldNames>
+        <info>&lt;ul&gt;&lt;li&gt;Refer to the &lt;strong&gt;Open Tasks&lt;/strong&gt; list on the right to complete all tasks before moving to the next stage.&lt;/li&gt;&lt;li&gt;Tick the &lt;strong&gt;FICA Approved&lt;/strong&gt; checkbox once all necessary responses have been received.&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>FICA Approval</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Mark &amp;#39;Funds Received&amp;#39; on the linked financial account and complete all tasks raised by checking the &amp;#39;Open Tasks&amp;#39; list on the right-hand side of your screen.&lt;/p&gt;</info>
+        <picklistValueName>Funds Received</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;At this stage, check all details associated with the opportunity are as expected. If not, update them before proceeding to the next stage.&lt;/p&gt;</info>
+        <picklistValueName>Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>SLI_InstitutionalOnboarding</recordTypeName>
+</PathAssistant>

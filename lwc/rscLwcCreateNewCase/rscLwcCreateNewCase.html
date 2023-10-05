@@ -1,0 +1,26 @@
+<template>
+	<div if:true={isLoading}>
+		<lightning-spinner alternative-text="Loading..." class="spinner-medium" data-text="Loading..." size="medium" variant="brand"></lightning-spinner>
+	</div>
+	<div class='slds-m-horizontal_small slds-m-bottom_small'>
+		<c-rsc-lwc-display-fields-section object-api-name="Case" look-up-fields={lookUpFields} look-up-display-format={lookUpDisplayFormat}
+										  onclient_id_change={handleClientIdChange} onservice_type_change={handleServiceTypeChange} onclose_flow_change={handleCloseFlowScreen}
+										  onstepchange={handleStepChange} record-type-id={recordTypeId}></c-rsc-lwc-display-fields-section>
+	</div>
+	<div slot="footer">
+		<template if:true={showNextButton}>
+			<lightning-button class="slds-p-around_x-small slds-float_right" label="Next" onclick={handleNext} variant="brand"></lightning-button>
+		</template>
+		<template if:true={showSaveButtons}>
+			<lightning-button class="slds-p-around_x-small slds-float_right" label="Save" onclick={handleCreate} variant="brand"></lightning-button>
+		</template>
+		<template if:true={showPreviousButton}>
+			<lightning-button class="slds-p-around_x-small slds-float_right" label="Previous" onclick={handlePrevious} variant="brand"></lightning-button>
+		</template>
+		<template if:false={hideCancelButton}>
+			<lightning-button class="slds-p-around_x-small slds-float_right" label="Cancel" onclick={handleCancel} variant="brand"></lightning-button>
+		</template>
+	</div>
+	<c-cmn-lwc-redirect></c-cmn-lwc-redirect>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

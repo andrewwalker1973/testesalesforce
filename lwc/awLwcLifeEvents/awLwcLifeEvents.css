@@ -1,0 +1,55 @@
+.slds-modal__content {
+  overflow: initial;
+}
+
+.timeline-container {
+    display: flex;
+  }
+  
+  .timeline-icon {
+    background-color: #5681ee;
+    padding: 12px;
+    color: #fff;
+  }
+
+  .timeline-icon:hover {
+    background-color: #01154e;
+    cursor: pointer;
+  }
+  
+  .icon-line {
+    width: 100%;
+    position: relative;
+    margin: 0px 0px 70px 0px;
+    border-bottom: 2px solid #dadada;
+  }
+
+  .timeline-container .icon-line:last-child {
+    display: none;
+  }
+  
+  .icon-container {
+    position: relative;
+    top: 3px;
+    text-align: center;
+  }
+  
+  .icon-label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 120px;
+    text-align: center;
+  }
+
+  .icon-label-heading{
+    font-weight: 700;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.align-right {
+  text-align: right;
+}

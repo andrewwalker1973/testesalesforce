@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>FNA Investment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>FNA Investments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>AW_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- FNA --></label>
+        <name>AW_FNA__c</name>
+        <relationshipLabel><!-- FNA Investments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initial Investment --></label>
+        <name>AW_InitialInvestment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Updated Date On Source --></label>
+        <name>AW_LastUpdatedDatefromSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lump Sum FV --></label>
+        <name>AW_LumpSumFV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lump Sum PV --></label>
+        <name>AW_LumpSumPV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Premium --></label>
+        <name>AW_MonthlyPremium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Name --></label>
+        <name>AW_Source_System_Name__c</name>
+        <picklistValues>
+            <masterLabel>Avalon</masterLabel>
+            <translation><!-- Avalon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BPNB</masterLabel>
+            <translation><!-- BPNB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC</masterLabel>
+            <translation><!-- SFDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>atWork</masterLabel>
+            <translation><!-- atWork --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source System Id --></label>
+        <name>AW_TF_Source_System_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term Type --></label>
+        <name>AW_TermType__c</name>
+        <picklistValues>
+            <masterLabel>Months</masterLabel>
+            <translation><!-- Months --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Term --></label>
+        <name>AW_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated by MuleSoft --></label>
+        <name>AW_UpdatedByMulesoft__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Adviser Performance API Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Adviser Performance API Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>AW_StartDate__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

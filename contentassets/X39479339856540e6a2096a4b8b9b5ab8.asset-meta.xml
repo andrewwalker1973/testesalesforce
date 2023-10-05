@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>X39479339856540e6a2096a4b8b9b5ab8</masterLabel>
+    <originNetwork>Liberty Client Portal</originNetwork>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>39479339-8565-40e6-a209-6a4b8b9b5ab8.jpg</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

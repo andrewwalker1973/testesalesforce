@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Action button on the case record to put a case on hold</description>
+    <flowDefinition>RSC_FLOW_CaseOnHold</flowDefinition>
+    <label>On Hold</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

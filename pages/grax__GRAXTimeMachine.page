@@ -1,0 +1,5 @@
+<apex:page cache="false" showChat="false" showHeader="{!ISNULL($CurrentPage.parameters.isEmbedded)}" lightningStylesheets="true" sidebar="{!ISNULL($CurrentPage.parameters.isEmbedded)}" docType="html-5.0">
+
+	<apex:include pageName="grax__GRAXAudit"/>
+
+</apex:page>

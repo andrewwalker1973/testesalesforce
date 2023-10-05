@@ -1,0 +1,51 @@
+<!-- 
+@ Func Area: Liberty Workbench
+@ Author: Roshni Seejarim
+@ Date: 10 February 2020
+@ User Story: ST-3471
+@ Description: Allow Adviser to access the Libery Learning University login page
+-->
+<apex:page >
+    <head>
+        <style>
+            body {
+            background-image: url('{!URLFOR($Resource.AW_PageBackgrounds,'LearningUniversity.png')}') !important;
+            background-repeat: no-repeat !important;
+            background-color: #3c3e4c !important;
+            background-position-x: right !important;
+            background-size: 1280px !important;
+            }
+            
+            .action-box {
+            	background-color: #00154e;
+            	color: #FFFFFF;
+            }
+            
+            .vh {
+            	height: 100vh;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <apex:slds />
+        <div class="slds-grid slds-wrap slds-p-around_large vh slds-grid_vertical-align-center">
+            <div class="slds-col slds-size_5-of-12 action-box">
+                <div class="slds-grid slds-grid_vertical-align-center slds-var-p-around_large">
+                    <div class="slds-col">
+                        <div>
+                            You can access the Learning University from here for continous professional development
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12 slds-text-align_right">
+                        <a target="_blank" class="slds-button slds-button_brand" href="https://learning.liberty.co.za"> 
+                            Start learning
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_7-of-12">
+            </div>
+        </div>
+    </body>
+</apex:page>

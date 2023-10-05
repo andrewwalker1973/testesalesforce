@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>An update of Date of Birth text field is triggered when Date Of Birth field on Account is inserted or updated. The date Of birth text field is used in Einstein search</description>
+    <masterLabel>RSC_FLOW_Populate Date Of Birth Text Field</masterLabel>
+</FlowDefinition>

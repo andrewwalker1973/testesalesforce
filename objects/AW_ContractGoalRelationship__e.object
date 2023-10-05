@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This event is published using a Flow (AW_FLOW_PublishContractGoalRelationship), when a Contract (Financial Account) is linked or unlinked to a Goal.</description>
+    <eventType>HighVolume</eventType>
+    <fields>
+        <fullName>AW_ContractNumber__c</fullName>
+        <description>This field is used to store the contract number, which is assigned to FinancialAccountNumber in the flow AW_FLOW_PublishContractGoalRelationship</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Contract Number</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_GoalNumber__c</fullName>
+        <description>This field stores the value of Source System ID of the financial goal linked to the Contract (Financial Account).</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Goal Number</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Contract Goal Relationship</label>
+    <pluralLabel>Contract Goal Relationships</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>AW_NewOpportunityOrStageIsChanged</name>
+        <label>New Opportunity Or Stage Is Changed?</label>
+        <locationX>578</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_NewOpportunityOrStageChanged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AW_OpportunityIsNewOrStageChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdateLastStatusChangeFromStageAndToStage</targetReference>
+            </connector>
+            <label>New Opportunity Or Stage Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>AW_UpdateClosedDate</name>
+        <label>Update Closed Date</label>
+        <locationX>314</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_ClosedWon</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdateClosedDateTime</targetReference>
+            </connector>
+            <label>Closed Won</label>
+        </rules>
+        <rules>
+            <name>AW_FromStageEqualsClosedWonAndToStageDoesNotEqualsClosedWon</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AW_FromStage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AW_ToStage__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdateClosedDateToNull</targetReference>
+            </connector>
+            <label>From Stage Equals &apos;Closed Won&apos; And To Stage Does Not Equals &apos;Closed Won&apos;?</label>
+        </rules>
+    </decisions>
+    <description>The flow is used to update Opportunity fields when the stage changes. The flow is not made to run for fast field updates because the &apos;AW_TEST_TH_Opportunity&apos; class was failing as we get the opportunity stage as &apos;Closed Won&apos; after the update or saving the record.
+@author latika.kharbanda@accenture.com
+@date August 2021</description>
+    <formulas>
+        <name>AW_OpportunityIsNewOrStageChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>(ISNEW()) || ISCHANGED({!$Record.StageName})</expression>
+    </formulas>
+    <interviewLabel>Update Opportunity Fields On Stage Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Opportunity Fields On Stage Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>AW_UpdateClosedDateTime</name>
+        <label>Update Closed Date To Current Date/Time</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <inputAssignments>
+            <field>AW_ClosedDate__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AW_UpdateClosedDateToNull</name>
+        <label>Update Closed Date To Null</label>
+        <locationX>314</locationX>
+        <locationY>695</locationY>
+        <inputAssignments>
+            <field>AW_ClosedDate__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AW_UpdateLastStatusChangeFromStageAndToStage</name>
+        <label>Update Last Status Change, From Stage And To Stage</label>
+        <locationX>314</locationX>
+        <locationY>455</locationY>
+        <connector>
+            <targetReference>AW_UpdateClosedDate</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AW_FromStage__c</field>
+            <value>
+                <elementReference>$Record__Prior.StageName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AW_LastStatusChange__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AW_ToStage__c</field>
+            <value>
+                <elementReference>$Record.StageName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AW_NewOpportunityOrStageIsChanged</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

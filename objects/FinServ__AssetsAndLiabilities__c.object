@@ -1,0 +1,3109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AW_LP_AssetsAndLiabilitiesRecordPage</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Assets or liabilities that are not represented in a client&apos;s financial accounts, such as real estate or collectibles.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>WM_Client_Assets_Liabilities</fullName>
+        <description>Client profile&apos;s Financials tab</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecordType.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecordType.DeveloperName</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__OwnerType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Assets &amp; Liabilities</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>WM_Household_Assets_Liabilities</fullName>
+        <description>Household profile&apos;s Financials tab</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__PrimaryOwner__r.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__AssetsAndLiabilitiesType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Amount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Assets &amp; Liabilities</label>
+    </fieldSets>
+    <fields>
+        <fullName>AW_AUMSourceExternalId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Asset Under Management Source External ID</description>
+        <externalId>true</externalId>
+        <label>AUM Source External Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AW_AccountNumber__c</fullName>
+        <description>The account number of the bank in which the Asset or Liability is placed</description>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_AccountType__c</fullName>
+        <description>A picklist to select the account type</description>
+        <externalId>false</externalId>
+        <label>Account Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Savings</fullName>
+                    <default>false</default>
+                    <label>Savings</label>
+                </value>
+                <value>
+                    <fullName>Cheque</fullName>
+                    <default>false</default>
+                    <label>Cheque</label>
+                </value>
+                <value>
+                    <fullName>Business</fullName>
+                    <default>false</default>
+                    <label>Business</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Address__c</fullName>
+        <description>Address of the Asset/Liability</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AW_AssetName__c</fullName>
+        <description>This field describes the asset name and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Asset Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_AvailableBalance__c</fullName>
+        <description>This field describes the available balance of stated bank account and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Available Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_BankName__c</fullName>
+        <description>This field describes the bank in which the account is hold and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Bank Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Benefit__c</fullName>
+        <description>This field describes the benefit types and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Benefits</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Life Cover</fullName>
+                    <default>false</default>
+                    <label>Life Cover</label>
+                </value>
+                <value>
+                    <fullName>Critical Illness</fullName>
+                    <default>false</default>
+                    <label>Critical Illness</label>
+                </value>
+                <value>
+                    <fullName>Disability Monthly</fullName>
+                    <default>false</default>
+                    <label>Disability Monthly</label>
+                </value>
+                <value>
+                    <fullName>Disability Lump</fullName>
+                    <default>false</default>
+                    <label>Disability Lump</label>
+                </value>
+                <value>
+                    <fullName>Current Value</fullName>
+                    <default>false</default>
+                    <label>Current Value</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_BondRepaymentAmount__c</fullName>
+        <description>The amount required for bond repayment</description>
+        <externalId>false</externalId>
+        <label>Bond Repayment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_CompanyLiabilityType__c</fullName>
+        <description>This field describes the type of liability and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>CompanyLiability Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Loan</fullName>
+                    <default>false</default>
+                    <label>Loan</label>
+                </value>
+                <value>
+                    <fullName>Credit Card</fullName>
+                    <default>false</default>
+                    <label>Credit Card</label>
+                </value>
+                <value>
+                    <fullName>Vehicle</fullName>
+                    <default>false</default>
+                    <label>Vehicle</label>
+                </value>
+                <value>
+                    <fullName>Home</fullName>
+                    <default>false</default>
+                    <label>Home</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Company__c</fullName>
+        <description>This field describes the company with which the asset/liability is from  and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Company</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ContractNumber__c</fullName>
+        <description>Contract Number Related to the current record</description>
+        <externalId>false</externalId>
+        <label>Contract Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Currency__c</fullName>
+        <description>This field describes the describes the currency of the asset/liability and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ZAR - South African Rand</fullName>
+                    <default>false</default>
+                    <label>ZAR - South African Rand</label>
+                </value>
+                <value>
+                    <fullName>USD - United States Dollar</fullName>
+                    <default>false</default>
+                    <label>USD - United States Dollar</label>
+                </value>
+                <value>
+                    <fullName>EUR - European Euro</fullName>
+                    <default>false</default>
+                    <label>EUR - European Euro</label>
+                </value>
+                <value>
+                    <fullName>GBP - British Pound</fullName>
+                    <default>false</default>
+                    <label>GBP - British Pound</label>
+                </value>
+                <value>
+                    <fullName>CAD - Canadian Dollar</fullName>
+                    <default>false</default>
+                    <label>CAD - Canadian Dollar</label>
+                </value>
+                <value>
+                    <fullName>CHF - Switzerland Franc</fullName>
+                    <default>false</default>
+                    <label>CHF - Switzerland Franc</label>
+                </value>
+                <value>
+                    <fullName>JPY - Japanese Yen</fullName>
+                    <default>false</default>
+                    <label>JPY - Japanese Yen</label>
+                </value>
+                <value>
+                    <fullName>NZD - New Zealand Dollar</fullName>
+                    <default>false</default>
+                    <label>NZD - New Zealand Dollar</label>
+                </value>
+                <value>
+                    <fullName>RON - Romanian Leu</fullName>
+                    <default>false</default>
+                    <label>RON - Romanian Leu</label>
+                </value>
+                <value>
+                    <fullName>BGN - Bulgarian Lev</fullName>
+                    <default>false</default>
+                    <label>BGN - Bulgarian Lev</label>
+                </value>
+                <value>
+                    <fullName>TRY - Turkish Lira</fullName>
+                    <default>false</default>
+                    <label>TRY - Turkish Lira</label>
+                </value>
+                <value>
+                    <fullName>AUD - Australian dollar</fullName>
+                    <default>false</default>
+                    <label>AUD - Australian dollar</label>
+                </value>
+                <value>
+                    <fullName>CZK - Czech Republic Koruna</fullName>
+                    <default>false</default>
+                    <label>CZK - Czech Republic Koruna</label>
+                </value>
+                <value>
+                    <fullName>DKK - Danish Krone</fullName>
+                    <default>false</default>
+                    <label>DKK - Danish Krone</label>
+                </value>
+                <value>
+                    <fullName>HKD - Hong Kong Dollar</fullName>
+                    <default>false</default>
+                    <label>HKD - Hong Kong Dollar</label>
+                </value>
+                <value>
+                    <fullName>HUF - Hungarian Forint</fullName>
+                    <default>false</default>
+                    <label>HUF - Hungarian Forint</label>
+                </value>
+                <value>
+                    <fullName>ILS - Israeli Shekel</fullName>
+                    <default>false</default>
+                    <label>ILS - Israeli Shekel</label>
+                </value>
+                <value>
+                    <fullName>MXN - Mexican Peso</fullName>
+                    <default>false</default>
+                    <label>MXN - Mexican Peso</label>
+                </value>
+                <value>
+                    <fullName>NOK - Norwegian krone</fullName>
+                    <default>false</default>
+                    <label>NOK - Norwegian krone</label>
+                </value>
+                <value>
+                    <fullName>PLN - Polish Zloty</fullName>
+                    <default>false</default>
+                    <label>PLN - Polish Zloty</label>
+                </value>
+                <value>
+                    <fullName>RUB - Russian Ruble</fullName>
+                    <default>false</default>
+                    <label>RUB - Russian Ruble</label>
+                </value>
+                <value>
+                    <fullName>SEK - Swedish krona</fullName>
+                    <default>false</default>
+                    <label>SEK - Swedish krona</label>
+                </value>
+                <value>
+                    <fullName>SGD - Singaporean dollar</fullName>
+                    <default>false</default>
+                    <label>SGD - Singaporean dollar</label>
+                </value>
+                <value>
+                    <fullName>BRL - Brazilian Real</fullName>
+                    <default>false</default>
+                    <label>BRL - Brazilian Real</label>
+                </value>
+                <value>
+                    <fullName>CNY - Chinese Yuan</fullName>
+                    <default>false</default>
+                    <label>CNY - Chinese Yuan</label>
+                </value>
+                <value>
+                    <fullName>HRK - Croatian Kuna</fullName>
+                    <default>false</default>
+                    <label>HRK - Croatian Kuna</label>
+                </value>
+                <value>
+                    <fullName>IDR - Indonesian Rupiah</fullName>
+                    <default>false</default>
+                    <label>IDR - Indonesian Rupiah</label>
+                </value>
+                <value>
+                    <fullName>INR - Indian Rupee</fullName>
+                    <default>false</default>
+                    <label>INR - Indian Rupee</label>
+                </value>
+                <value>
+                    <fullName>KRW - South Korean Won</fullName>
+                    <default>false</default>
+                    <label>KRW - South Korean Won</label>
+                </value>
+                <value>
+                    <fullName>MYR - Malaysian Ringgit</fullName>
+                    <default>false</default>
+                    <label>MYR - Malaysian Ringgit</label>
+                </value>
+                <value>
+                    <fullName>PHP - Philippine Peso</fullName>
+                    <default>false</default>
+                    <label>PHP - Philippine Peso</label>
+                </value>
+                <value>
+                    <fullName>THB - Thai Baht</fullName>
+                    <default>false</default>
+                    <label>THB - Thai Baht</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_CurrentValue__c</fullName>
+        <description>Current Value of the Asset/Liability</description>
+        <externalId>false</externalId>
+        <label>Current Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_DerivingRentalIncome__c</fullName>
+        <description>The amount of deriving rental income</description>
+        <externalId>false</externalId>
+        <label>Deriving Rental Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_FinancialGoal__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Goal lookup on Asset &amp; Liabilities</description>
+        <externalId>false</externalId>
+        <label>Financial Goal</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>FinServ__FinancialGoal__c.FinServ__PrimaryOwner__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.FinServ__PrimaryOwner__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>FinServ__FinancialGoal__c</referenceTo>
+        <relationshipLabel>Assets and Liabilities</relationshipLabel>
+        <relationshipName>Assets_and_Liabilities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_InceptionDate__c</fullName>
+        <description>Inception date of the Asset/Liability</description>
+        <externalId>false</externalId>
+        <label>Inception Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_InterestRate__c</fullName>
+        <description>Interest Rate of the Asset/Liability</description>
+        <externalId>false</externalId>
+        <label>Interest Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_InvestmentName__c</fullName>
+        <description>The Name of the Investment</description>
+        <externalId>false</externalId>
+        <label>Investment Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_InvestmentValue__c</fullName>
+        <description>This field describes the value invested in the asset and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Investment Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_LastUpdatedDatefromSource__c</fullName>
+        <description>Last date the record was updated</description>
+        <externalId>false</externalId>
+        <label>Last Updated Date From Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AW_LiabilityAmount__c</fullName>
+        <description>This field describes the amount of liability and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Liability Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_LiabilityName__c</fullName>
+        <description>This field describes the name of the liability and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Liability Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_LiabilityTerm__c</fullName>
+        <description>The term for which liability (Time)</description>
+        <externalId>false</externalId>
+        <label>Liability Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Linked_Expense__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the expense linked to this record</description>
+        <externalId>false</externalId>
+        <label>Linked Expense</label>
+        <referenceTo>AW_Expense__c</referenceTo>
+        <relationshipLabel>Assets and Liabilities (Linked Expense)</relationshipLabel>
+        <relationshipName>Assets_and_Liabilities1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_Linked_Income__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the income linked to this record</description>
+        <externalId>false</externalId>
+        <label>Linked Income</label>
+        <referenceTo>AW_Income__c</referenceTo>
+        <relationshipLabel>Assets and Liabilities</relationshipLabel>
+        <relationshipName>Assets_and_Liabilities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_Linked_Liabiltiy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A Lookup to the Liability which is linked to this record</description>
+        <externalId>false</externalId>
+        <label>Linked Liability</label>
+        <referenceTo>FinServ__AssetsAndLiabilities__c</referenceTo>
+        <relationshipLabel>Assets and Liabilities (Linked Liability)</relationshipLabel>
+        <relationshipName>Assets_and_Liabilities1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccountId__c</fullName>
+        <description>Used to store the Master Account Id, if Master Account Exists for the Active Account</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(FinServ__PrimaryOwner__r.FinServ__Status__c , &apos;Active&apos;), NOT(ISNULL(FinServ__PrimaryOwner__r.AW_ParentAccount__r.Id))),FinServ__PrimaryOwner__r.AW_ParentAccount__r.Id,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AW_MasterAccountId</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the Master Account Details</description>
+        <externalId>false</externalId>
+        <label>MasterAccount</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Assets and Liabilities (MasterAccount)</relationshipLabel>
+        <relationshipName>Assets_and_Liabilities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_MonthlyRepayment__c</fullName>
+        <description>This field describes the monthly repayment amount associated with the asset/liability and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Monthly Repayment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_OutstandingAmount__c</fullName>
+        <description>The outstanding amount for the current record</description>
+        <externalId>false</externalId>
+        <label>Outstanding Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Owner_UACFID__c</fullName>
+        <description>Record Owner&apos;s liberty UACFID</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.AW_UACFID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner UACFID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ParentAccountOwnerId__c</fullName>
+        <description>Used to store the Parent Account Owner Id</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(FinServ__PrimaryOwner__r.Id)),FinServ__PrimaryOwner__r.OwnerId,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AW_ParentAccountOwnerId</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Premium__c</fullName>
+        <description>This field describes the asset premium and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Premium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ProductName__c</fullName>
+        <description>This field describes the product name and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ProductType__c</fullName>
+        <description>A picklist to select the product types</description>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unassigned</fullName>
+                    <default>false</default>
+                    <label>Unassigned</label>
+                </value>
+                <value>
+                    <fullName>Endowment</fullName>
+                    <default>false</default>
+                    <label>Endowment</label>
+                </value>
+                <value>
+                    <fullName>Financial Protector</fullName>
+                    <default>false</default>
+                    <label>Financial Protector</label>
+                </value>
+                <value>
+                    <fullName>Interest only investment</fullName>
+                    <default>false</default>
+                    <label>Interest only investment</label>
+                </value>
+                <value>
+                    <fullName>LISP</fullName>
+                    <default>false</default>
+                    <label>LISP</label>
+                </value>
+                <value>
+                    <fullName>Living Annuity</fullName>
+                    <default>false</default>
+                    <label>Living Annuity</label>
+                </value>
+                <value>
+                    <fullName>Pension</fullName>
+                    <default>false</default>
+                    <label>Pension</label>
+                </value>
+                <value>
+                    <fullName>Pension Preserver</fullName>
+                    <default>false</default>
+                    <label>Pension Preserver</label>
+                </value>
+                <value>
+                    <fullName>Property</fullName>
+                    <default>false</default>
+                    <label>Property</label>
+                </value>
+                <value>
+                    <fullName>Provident</fullName>
+                    <default>false</default>
+                    <label>Provident</label>
+                </value>
+                <value>
+                    <fullName>Provident Preserver</fullName>
+                    <default>false</default>
+                    <label>Provident Preserver</label>
+                </value>
+                <value>
+                    <fullName>Retirement Annuity (RA)</fullName>
+                    <default>false</default>
+                    <label>Retirement Annuity (RA)</label>
+                </value>
+                <value>
+                    <fullName>Risk Protection</fullName>
+                    <default>false</default>
+                    <label>Risk Protection</label>
+                </value>
+                <value>
+                    <fullName>Unit trust</fullName>
+                    <default>false</default>
+                    <label>Unit trust</label>
+                </value>
+                <value>
+                    <fullName>Unlisted asset</fullName>
+                    <default>false</default>
+                    <label>Unlisted asset</label>
+                </value>
+                <value>
+                    <fullName>Shares</fullName>
+                    <default>false</default>
+                    <label>Shares</label>
+                </value>
+                <value>
+                    <fullName>Banking</fullName>
+                    <default>false</default>
+                    <label>Banking</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_PropertyName__c</fullName>
+        <description>This field describes the name of the property owned and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Property Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PurchasePrice__c</fullName>
+        <description>The price in which the Asset/Liability was purchased</description>
+        <externalId>false</externalId>
+        <label>Purchase Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_RentalIncomeAmount__c</fullName>
+        <description>This field describes the amount of rental income and is filled from FNA Sync</description>
+        <externalId>false</externalId>
+        <label>Rental Income Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ShareWithMyAdviser__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Allows the community user to share assets and liabilities with the adviser</description>
+        <externalId>false</externalId>
+        <label>Share with my adviser</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_Source_System_Name__c</fullName>
+        <description>A picklist to select source system name</description>
+        <externalId>false</externalId>
+        <label>Source System Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>AW_Source_System_Names</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_UpdatedByMulesoft__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check MuleSoft Update Status</description>
+        <externalId>false</externalId>
+        <label>Updated by MuleSoft</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Amount of an asset (positive) or liability (negative).</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__AssetsAndLiabilitiesSource__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yodlee</fullName>
+                    <default>false</default>
+                    <label>Yodlee</label>
+                </value>
+                <value>
+                    <fullName>Manual Entry</fullName>
+                    <default>false</default>
+                    <label>Manual Entry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__AssetsAndLiabilitiesType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Auto Loan</fullName>
+                    <default>false</default>
+                    <label>Auto Loan</label>
+                </value>
+                <value>
+                    <fullName>Mortgage</fullName>
+                    <default>false</default>
+                    <label>Mortgage</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Personal Loan</fullName>
+                    <default>false</default>
+                    <label>Personal Loan</label>
+                </value>
+                <value>
+                    <fullName>Real Estate</fullName>
+                    <default>false</default>
+                    <label>Real Estate</label>
+                </value>
+                <value>
+                    <fullName>Equipment</fullName>
+                    <default>false</default>
+                    <label>Equipment</label>
+                </value>
+                <value>
+                    <fullName>Automobile</fullName>
+                    <default>false</default>
+                    <label>Automobile</label>
+                </value>
+                <value>
+                    <fullName>Collection</fullName>
+                    <default>false</default>
+                    <label>Collection</label>
+                </value>
+                <value>
+                    <fullName>Gold</fullName>
+                    <default>false</default>
+                    <label>Gold</label>
+                </value>
+                <value>
+                    <fullName>Jewelry</fullName>
+                    <default>false</default>
+                    <label>Jewelry</label>
+                </value>
+                <value>
+                    <fullName>Cash</fullName>
+                    <default>false</default>
+                    <label>Cash</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__FinancialAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Financial account that this asset or liability is related to.</description>
+        <externalId>false</externalId>
+        <label>Financial Account</label>
+        <referenceTo>FinServ__FinancialAccount__c</referenceTo>
+        <relationshipLabel>Assets and Liabilities</relationshipLabel>
+        <relationshipName>AssetsAndLiabilities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Household__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Household that this asset or liability rolls up to.</description>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>IndustriesHousehold</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Household Assets and Liabilities</relationshipLabel>
+        <relationshipName>HouseholdAssetsAndLiabilities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__JointOwner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Joint Owner</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>IndustriesIndividual</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Joint Owner</relationshipLabel>
+        <relationshipName>JointOwner</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__OwnerType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Owner Type</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__Ownership__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Ownership</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Individual</fullName>
+                    <default>false</default>
+                    <label>Individual</label>
+                </value>
+                <value>
+                    <fullName>Joint</fullName>
+                    <default>false</default>
+                    <label>Joint</label>
+                </value>
+                <value>
+                    <fullName>Trust</fullName>
+                    <default>false</default>
+                    <label>Trust</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__PrimaryOwner__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Primary Owner</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>notEqual</operation>
+                <value>IndustriesHousehold</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Client Assets and Liabilities</relationshipLabel>
+        <relationshipName>ClientAssetsAndLiabilities</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__SourceSystemId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Source System ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Assets and Liabilities</label>
+    <listViews>
+        <fullName>FinServ__All</fullName>
+        <columns>NAME</columns>
+        <columns>FinServ__Description__c</columns>
+        <columns>FinServ__Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Asset or Liability Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Assets and Liabilities</pluralLabel>
+    <recordTypes>
+        <fullName>FinServ__Liability</fullName>
+        <active>true</active>
+        <description>Debt owed, such as a mortgage</description>
+        <label>Liability</label>
+        <picklistValues>
+            <picklist>AW_AccountType__c</picklist>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Benefit__c</picklist>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Current Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Lump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_CompanyLiabilityType__c</picklist>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicle</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Currency__c</picklist>
+            <values>
+                <fullName>AUD - Australian dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BGN - Bulgarian Lev</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRL - Brazilian Real</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD - Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF - Switzerland Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY - Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CZK - Czech Republic Koruna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK - Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR - European Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP - British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD - Hong Kong Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HRK - Croatian Kuna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HUF - Hungarian Forint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IDR - Indonesian Rupiah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILS - Israeli Shekel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR - Indian Rupee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPY - Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KRW - South Korean Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MXN - Mexican Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYR - Malaysian Ringgit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK - Norwegian krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD - New Zealand Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP - Philippine Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLN - Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RON - Romanian Leu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RUB - Russian Ruble</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK - Swedish krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD - Singaporean dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>THB - Thai Baht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRY - Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD - United States Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR - South African Rand</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Endowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Protector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest only investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LISP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement Annuity %28RA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit trust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlisted asset</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesSource__c</picklist>
+            <values>
+                <fullName>Manual Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yodlee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesType__c</picklist>
+            <values>
+                <fullName>Auto Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Loan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Ownership__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FinServ__NonfinancialAsset</fullName>
+        <active>true</active>
+        <description>Asset not represented in financial accounts, such as real estate or collectibles</description>
+        <label>Asset</label>
+        <picklistValues>
+            <picklist>AW_AccountType__c</picklist>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Benefit__c</picklist>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Current Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Lump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_CompanyLiabilityType__c</picklist>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicle</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Currency__c</picklist>
+            <values>
+                <fullName>AUD - Australian dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BGN - Bulgarian Lev</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRL - Brazilian Real</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD - Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF - Switzerland Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY - Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CZK - Czech Republic Koruna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK - Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR - European Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP - British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD - Hong Kong Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HRK - Croatian Kuna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HUF - Hungarian Forint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IDR - Indonesian Rupiah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILS - Israeli Shekel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR - Indian Rupee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPY - Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KRW - South Korean Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MXN - Mexican Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYR - Malaysian Ringgit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK - Norwegian krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD - New Zealand Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP - Philippine Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLN - Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RON - Romanian Leu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RUB - Russian Ruble</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK - Swedish krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD - Singaporean dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>THB - Thai Baht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRY - Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD - United States Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR - South African Rand</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Endowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Protector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest only investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LISP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement Annuity %28RA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit trust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlisted asset</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesSource__c</picklist>
+            <values>
+                <fullName>Manual Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yodlee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesType__c</picklist>
+            <values>
+                <fullName>Automobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewelry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Ownership__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Liabilities</fullName>
+        <active>true</active>
+        <description>Debt owed, such as a home loan</description>
+        <label>Liabilities</label>
+        <picklistValues>
+            <picklist>AW_AccountType__c</picklist>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Benefit__c</picklist>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Current Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Lump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_CompanyLiabilityType__c</picklist>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicle</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Currency__c</picklist>
+            <values>
+                <fullName>AUD - Australian dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BGN - Bulgarian Lev</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRL - Brazilian Real</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD - Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF - Switzerland Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY - Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CZK - Czech Republic Koruna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK - Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR - European Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP - British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD - Hong Kong Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HRK - Croatian Kuna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HUF - Hungarian Forint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IDR - Indonesian Rupiah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILS - Israeli Shekel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR - Indian Rupee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPY - Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KRW - South Korean Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MXN - Mexican Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYR - Malaysian Ringgit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK - Norwegian krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD - New Zealand Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP - Philippine Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLN - Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RON - Romanian Leu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RUB - Russian Ruble</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK - Swedish krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD - Singaporean dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>THB - Thai Baht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRY - Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD - United States Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR - South African Rand</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Endowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Protector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest only investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LISP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement Annuity %28RA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit trust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlisted asset</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesSource__c</picklist>
+            <values>
+                <fullName>Manual Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yodlee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesType__c</picklist>
+            <values>
+                <fullName>Auto Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewelry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Ownership__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Other_Assets</fullName>
+        <active>true</active>
+        <description>Other Assets Record Type</description>
+        <label>Other Assets</label>
+        <picklistValues>
+            <picklist>AW_AccountType__c</picklist>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Benefit__c</picklist>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Current Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Lump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_CompanyLiabilityType__c</picklist>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicle</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Currency__c</picklist>
+            <values>
+                <fullName>AUD - Australian dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BGN - Bulgarian Lev</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRL - Brazilian Real</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD - Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF - Switzerland Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY - Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CZK - Czech Republic Koruna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK - Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR - European Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP - British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD - Hong Kong Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HRK - Croatian Kuna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HUF - Hungarian Forint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IDR - Indonesian Rupiah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILS - Israeli Shekel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR - Indian Rupee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPY - Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KRW - South Korean Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MXN - Mexican Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYR - Malaysian Ringgit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK - Norwegian krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD - New Zealand Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP - Philippine Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLN - Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RON - Romanian Leu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RUB - Russian Ruble</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK - Swedish krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD - Singaporean dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>THB - Thai Baht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRY - Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD - United States Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR - South African Rand</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Endowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Protector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest only investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LISP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement Annuity %28RA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit trust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlisted asset</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesSource__c</picklist>
+            <values>
+                <fullName>Manual Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yodlee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesType__c</picklist>
+            <values>
+                <fullName>Auto Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewelry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Ownership__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Property_Asset</fullName>
+        <active>true</active>
+        <description>Property Asset Record Type</description>
+        <label>Property (Asset)</label>
+        <picklistValues>
+            <picklist>AW_AccountType__c</picklist>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Benefit__c</picklist>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Current Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Lump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_CompanyLiabilityType__c</picklist>
+            <values>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vehicle</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Currency__c</picklist>
+            <values>
+                <fullName>AUD - Australian dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BGN - Bulgarian Lev</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BRL - Brazilian Real</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAD - Canadian Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHF - Switzerland Franc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CNY - Chinese Yuan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CZK - Czech Republic Koruna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DKK - Danish Krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUR - European Euro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBP - British Pound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HKD - Hong Kong Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HRK - Croatian Kuna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HUF - Hungarian Forint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IDR - Indonesian Rupiah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ILS - Israeli Shekel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INR - Indian Rupee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPY - Japanese Yen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KRW - South Korean Won</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MXN - Mexican Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MYR - Malaysian Ringgit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOK - Norwegian krone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NZD - New Zealand Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP - Philippine Peso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLN - Polish Zloty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RON - Romanian Leu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RUB - Russian Ruble</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEK - Swedish krona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SGD - Singaporean dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>THB - Thai Baht</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TRY - Turkish Lira</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>USD - United States Dollar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZAR - South African Rand</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductType__c</picklist>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Endowment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Protector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interest only investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LISP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pension Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provident Preserver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement Annuity %28RA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Risk Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shares</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unit trust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlisted asset</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesSource__c</picklist>
+            <values>
+                <fullName>Manual Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yodlee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetsAndLiabilitiesType__c</picklist>
+            <values>
+                <fullName>Auto Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewelry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mortgage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Loan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__Ownership__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trust</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>FinServ__Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>FinServ__Amount__c</customTabListAdditionalFields>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>FinServ__Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>FinServ__Amount__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__Amount__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>FinServ__NoJointOwnerForIndividualAccounts</fullName>
+        <active>true</active>
+        <description>Error message when a joint owner is entered for an individually owned account.</description>
+        <errorConditionFormula>AND(ISPICKVAL(FinServ__Ownership__c , &quot;Individual&quot;), NOT(ISBLANK(FinServ__JointOwner__c)))</errorConditionFormula>
+        <errorMessage>Individually owned accounts can&apos;t have a joint owner.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FinServ__PrimaryAndJointOwnerCannotBeSame</fullName>
+        <active>true</active>
+        <description>Check to see if Primary Owner and the Joint Owner are the same person</description>
+        <errorConditionFormula>FinServ__PrimaryOwner__c = FinServ__JointOwner__c</errorConditionFormula>
+        <errorMessage>The primary and joint owner must be different.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

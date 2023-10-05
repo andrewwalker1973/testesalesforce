@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>STANLIB Manco Case Status Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>SLC_InternalReviewStatus__c</fieldNames>
+        <picklistValueName>Internal Review</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>SLSC_Case</recordTypeName>
+</PathAssistant>

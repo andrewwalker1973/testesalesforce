@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Template Email</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Template Email</name>
+    <targetEntityType>Campaign</targetEntityType>
+    <uniqueName>Template_Email_29f6490a_42db_11ec_a291_57d9c432e5b2</uniqueName>
+</ActionPlanTemplate>

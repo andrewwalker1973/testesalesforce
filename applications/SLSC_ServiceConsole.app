@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>SLSC_Case_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#00A2AD</headerColor>
+        <logo>Stanlib_Logowhite2</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Provide Intelligent Servicing to STANLIB&apos;s clients</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>STANLIB Service Console</label>
+    <navType>Console</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_ServiceConsole</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLC_ProspectCase</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLI_STANLIBInstitutionalOnboarding</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLI_InstitutionalOnboardingCase</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Portal User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLI_STANLIBInstitutionalOnboarding</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLI_InstitutionalOnboardingCase</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_Account_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.SLI_StanlibInstitutionalAccount</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_Account_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.SLI_StanlibConsultantAccount</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_Account_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>Account.SLR_Company</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_Case_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLSC_Case</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_ServiceConsole</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.STANLIB_Case</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_ServiceConsole</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.STANLIB_Case</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_Case_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLSC_Case</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_MancoEndClientPage</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.SLSC_Client</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_MancoFinancialAccountPage</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>FinServ__FinancialAccount__c</pageOrSobjectType>
+        <recordType>FinServ__FinancialAccount__c.SLSC_FinancialAccount</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_Case_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLSC_Case</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_ServiceConsole</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.STANLIB_Retail_Case</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_ServiceConsole</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.STANLIB_Retail_Case</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_ServiceConsole</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.STANLIB_Case</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_ServiceConsole</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.STANLIB_Retail_Case</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLI_STANLIBInstitutionalOnboarding</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLI_InstitutionalOnboardingCase</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLI_STANLIBInstitutionalOnboarding</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+        <recordType>Case.SLI_InstitutionalOnboardingCase</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_MancoEndClientPage</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.SLSC_Client</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_FinancialHolding</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>FinServ__FinancialHolding__c</pageOrSobjectType>
+        <recordType>FinServ__FinancialHolding__c.SLSC_FinancialHolding</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_FinancialHolding</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>FinServ__FinancialHolding__c</pageOrSobjectType>
+        <recordType>FinServ__FinancialHolding__c.SLSC_FinancialHolding</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_Person_Account_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.SLR_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_Person_Account_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.SLR_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_Person_Account_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.SLI_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLC_Person_Account_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Account</pageOrSobjectType>
+        <recordType>PersonAccount.SLI_PersonAccount</recordType>
+        <type>Flexipage</type>
+        <profile>Liberty Administrator</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>SLSC_MancoFinancialAccountPage</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>FinServ__FinancialAccount__c</pageOrSobjectType>
+        <recordType>FinServ__FinancialAccount__c.SLSC_FinancialAccount</recordType>
+        <type>Flexipage</type>
+        <profile>STANLIB Standard User</profile>
+    </profileActionOverrides>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>FinServ__FinancialAccount__c</tabs>
+    <tabs>FinServ__FinancialHolding__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>STANLIB_Service_Console_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>FinServ__FinancialAccount__c</tab>
+        </mappings>
+        <mappings>
+            <tab>FinServ__FinancialHolding__c</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Account</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Case</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Dashboard</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-report</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>

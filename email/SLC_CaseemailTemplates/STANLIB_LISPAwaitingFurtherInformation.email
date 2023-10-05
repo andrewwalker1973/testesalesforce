@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div style=""><font face="arial">Dear {!Case.Contact},</font></div><div style=""><font face="arial"><br></font></div><div style=""><font face="arial">We have made good progress but need additional information, {!Case.OwnerFullName} has reached out to you with the details.</font></div><div style=""><font face="arial"><br></font></div><div style=""><font face="arial">If you have any questions, please do not hesitate to call us on {!Case.OwnerPhone}, with your reference number {!Case.CaseNumber}.</font></div><div style=""><font face="arial"><br></font></div><div style=""><font face="arial">Regards,</font></div><div style=""><font face="arial">STANLIB Client Experience: LISP</font></div><div style=""><br></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial" style="" size="1">{!Case.Email_Thread}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div>]]></td>
+</tr>
+</table>

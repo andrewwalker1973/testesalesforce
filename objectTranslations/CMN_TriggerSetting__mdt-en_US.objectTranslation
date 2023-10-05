@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Trigger Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Trigger Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Set this to true to bypass all Trigger Actions from being called on this sObject --></help>
+        <label><!-- Bypass Execution --></label>
+        <name>CMN_BypassExecution__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will be bypassed if the running user has the custom permission identified. --></help>
+        <label><!-- Bypass Permission --></label>
+        <name>CMN_BypassPermission__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the API Name of the object for this trigger. If this object is part of a managed package, do not include the prefix. --></help>
+        <label><!-- Object API Name --></label>
+        <name>CMN_ObjectApiName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the namespace object for this trigger. --></help>
+        <label><!-- Object Namespace --></label>
+        <name>CMN_ObjectNamespace__c</name>
+    </fields>
+    <fields>
+        <help><!-- Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will only execute if the running user has the custom permission identified. --></help>
+        <label><!-- Required Permission --></label>
+        <name>CMN_RequiredPermission__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

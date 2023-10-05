@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Did You Know - Bulk Mail</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;You can send up to 1000 branded and personalised bulk emails. Look out for the Send List Email button at the top of this page to get started. You can also set up templates so you never have to retype a recurring message again.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Have Fun!&lt;/p&gt;</body>
+        <customApplication>AW_LibertyWorkbench</customApplication>
+        <delayDays>7</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Did you know!</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Did You Know - Bulk Mail</masterLabel>
+        <publishedDate>2020-02-13</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2020-01-24</startDate>
+        <targetPageKey1>Contact</targetPageKey1>
+        <targetPageKey2>list</targetPageKey2>
+        <targetPageType>standard__objectPage</targetPageType>
+        <timesToDisplay>5</timesToDisplay>
+        <title>Bulk Email</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

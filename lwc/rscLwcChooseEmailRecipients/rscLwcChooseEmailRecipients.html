@@ -1,0 +1,43 @@
+<template>
+	<p>{header}</p>
+	<lightning-layout>
+		<lightning-layout-item size='4'>
+			<lightning-input checked={clientSelected} disabled={disableClient} label="Client" name="Client" onchange={setClientSelected}
+							 type="checkbox"></lightning-input>
+		</lightning-layout-item>
+		<lightning-layout-item size='4'>
+			{clientDisplay.name}
+		</lightning-layout-item>
+		<lightning-layout-item size='4'>
+			{clientDisplay.email}
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<lightning-layout>
+		<lightning-layout-item size='4'>
+			<lightning-input checked={financialAdvisorSelected} disabled={disableFinancialAdvisor} label="Financial Adviser" name="Financial Adviser"
+							 onchange={setFinancialAdvisorSelected} type="checkbox"></lightning-input>
+		</lightning-layout-item>
+		<lightning-layout-item size='4'>
+			{financialDisplay.name}
+		</lightning-layout-item>
+		<lightning-layout-item size='4'>
+			{financialDisplay.email}
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<lightning-layout>
+		<lightning-layout-item size='4'>
+			<lightning-input checked={thirdPartySelected} disabled={disableThirdParty} label="Third Party" name="Third Party" onchange={setThirdPartySelected}
+							 type="checkbox"></lightning-input>
+		</lightning-layout-item>
+		<lightning-layout-item size='4'>
+			{thirdPartyDisplay.name}
+		</lightning-layout-item>
+		<lightning-layout-item size='4'>
+			{thirdPartyDisplay.email}
+		</lightning-layout-item>
+	</lightning-layout>
+	<br/>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

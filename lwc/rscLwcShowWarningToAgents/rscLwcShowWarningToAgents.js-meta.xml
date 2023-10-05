@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>Lightning web component to show warning if the logged-in agent is not owner of the case.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Rsc Lwc Show Warning To Agents</masterLabel>
+    <targets>
+		<target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>

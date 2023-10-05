@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Can Delete GRAX Record? --></label>
+        <name>grax__Can_Delete_GRAX_Record__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of the Error message received --></help>
+        <label><!-- Error Message --></label>
+        <name>grax__Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Unique Key --></label>
+        <name>grax__Execution_Unique_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- File_Id --></label>
+        <name>grax__File_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Schedule Process --></label>
+        <name>grax__GRAX_Schedule_Process__c</name>
+        <relationshipLabel><!-- GRAX Group GDRs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Group Unique Key --></label>
+        <name>grax__Group_Unique_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Current Execution Record --></label>
+        <name>grax__Is_Current_Execution_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Sent Date --></label>
+        <name>grax__Last_Sent_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Backup Completed --></label>
+        <name>grax__Object_Backup_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Records --></label>
+        <name>grax__Records__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of Salesforce object which is being backed up --></help>
+        <label><!-- Salesforce Object --></label>
+        <name>grax__Salesforce_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>grax__Status__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Processed - Queuable Jobs Full</masterLabel>
+            <translation><!-- Not Processed - Queuable Jobs Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Sent</masterLabel>
+            <translation><!-- Not Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retry</masterLabel>
+            <translation><!-- Retry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent Successful</masterLabel>
+            <translation><!-- Sent Successful --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # of Times Sent --></label>
+        <name>grax__of_Times_Sent__c</name>
+    </fields>
+</CustomObjectTranslation>

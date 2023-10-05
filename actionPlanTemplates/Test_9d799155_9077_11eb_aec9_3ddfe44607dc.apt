@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>DocumentChecklistItem</itemEntityType>
+            <name>Name</name>
+            <valueLiteral>NB</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <isRequired>false</isRequired>
+        <itemEntityType>DocumentChecklistItem</itemEntityType>
+        <name>NB</name>
+        <uniqueName>NB_b6d2acb3_9077_11eb_aec9_c7726fedab62</uniqueName>
+    </actionPlanTemplateItem>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Test</name>
+    <targetEntityType>Lead</targetEntityType>
+    <uniqueName>Test_9d799155_9077_11eb_aec9_3ddfe44607dc</uniqueName>
+</ActionPlanTemplate>

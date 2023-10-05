@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <description>This decision will check if Financial Goal exist or not</description>
+        <name>AW_CheckFinancialGoal</name>
+        <label>Check Financial Goal</label>
+        <locationX>182</locationX>
+        <locationY>551</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AW_GetAccountQuote.AW_Planned_Solution__r.AW_Financial_Goal__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdateContract</targetReference>
+            </connector>
+            <label>Exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>This condition will check the Financial Account record type is &apos;InvestmentAccount&apos; and Financial Goal</description>
+        <name>AW_CheckRecordTypeAndFinancialGoal</name>
+        <label>Check Record Type and Financial Goal</label>
+        <locationX>380</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_InvestmentAccount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>InvestmentAccount</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AW_FinancialGoal__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_GetAccountQuote</targetReference>
+            </connector>
+            <label>Investment Account</label>
+        </rules>
+    </decisions>
+    <description>This flow is triggered when Financial Account(Contract) is inserted and link it to Financial Goal if Financial Account Number matches the Quote contract number</description>
+    <environments>Default</environments>
+    <interviewLabel>Link Contract To Financial Goal {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Link Contract To Financial Goal</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>This will fetch the quote linked to the Account</description>
+        <name>AW_GetAccountQuote</name>
+        <label>Get Account Quote</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AW_CheckFinancialGoal</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.FinServ__PrimaryOwner__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AW_Product_Category__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Investment</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AW_Contract_Numbers__c</field>
+            <operator>Contains</operator>
+            <value>
+                <elementReference>$Record.FinServ__FinancialAccountNumber__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Quote</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>This step will link the Contract(Financial Account) to Financial Goal</description>
+        <name>AW_UpdateContract</name>
+        <label>Update Contract</label>
+        <locationX>50</locationX>
+        <locationY>671</locationY>
+        <inputAssignments>
+            <field>AW_FinancialGoal__c</field>
+            <value>
+                <elementReference>AW_GetAccountQuote.AW_Planned_Solution__r.AW_Financial_Goal__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AW_CheckRecordTypeAndFinancialGoal</targetReference>
+        </connector>
+        <object>FinServ__FinancialAccount__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

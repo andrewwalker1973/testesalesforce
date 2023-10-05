@@ -1,0 +1,88 @@
+<!--
+* @description Aura parent component for the Implement Financial Goal Modal.
+*
+* @author dpucerea nihal.desai@accenture.com vishakha.saini@accenture.com pavan.t@lntinfotech.com
+*
+* @date November 2020, February 2022, May 2022 , June 2022
+-->
+
+<aura:component description="AW_CMP_ImplementGoalFinancialGoal" controller="AW_CTRL_ImplementGoal">
+	<aura:attribute name="isFinancialGoalOpenChild" type="Boolean"/>
+	<aura:attribute name="isPlannedSolutionOpenChild" type="Boolean"/>
+	<aura:attribute name="isQuoteOpenChild" type="Boolean"/>
+
+	<aura:attribute name="parentAccountId" type="String"/>
+	<aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+	<aura:attribute name="financialGoalLabels" type="Map"/>
+	<aura:attribute name="sObjectTypeChild" type="String"/>
+	<aura:attribute name="financialGoalColumns" type="List"/>
+	<aura:attribute name="financialGoalData" type="List"/>
+	<aura:attribute name="isFinancialGoalEmpty" type="Boolean"/>
+	<aura:attribute name="isLoading" type="Boolean" default="true"/>
+	<aura:attribute name="isContinueDisabled" type="Boolean" default="true"/>
+	<aura:attribute name="selectedFinancialGoal" type="Object"/>
+	<aura:attribute name="riskPlanningTypes" type="Array"/>
+	<aura:attribute name="isRiskPlanningSelected" type="Boolean" default="false"/>
+	<aura:attribute name="isRiskGoal" type="Boolean" default="false"/>
+	<aura:attribute name="riskGoalData" type="Object"/>
+	<aura:attribute name="selectedPlannedSolution" type="Object"/>
+	<aura:attribute name="riskGoalIds" type="List"/>
+	<aura:attribute name="navigateToRecordId" type="String"/>
+
+	<aura:attribute name="goalButtonNameChild" type="String"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+			 class="slds-modal slds-fade-in-open slds-modal_medium">
+		<div class="slds-modal__container">
+			<header class="slds-modal__header">
+				<lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModal }" alternativeText="close" variant="bare-inverse"
+									  class="slds-modal__close"/>
+				<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+					{!$Label.c.AW_FinancialGoalSelection}
+				</h2>
+				<p>{!$Label.c.AW_FinancialGoalHelpText}</p>
+			</header>
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+				<aura:if isTrue="{!v.isLoading}">
+					<div class="exampleHolder">
+						<lightning:spinner alternativeText="Loading" size="medium" class="slds-is-relative slds-align_absolute-center slds-p-around_medium"/>
+					</div>
+					<aura:set attribute="else">
+						<aura:if isTrue="{!v.isFinancialGoalEmpty}">
+							<div class="slds-text-body_regular slds-text-align_center">
+								{!$Label.c.AW_EmptyFinancialGoalList}
+							</div>
+							<aura:set attribute="else">
+								<div>
+									<lightning:datatable data="{! v.financialGoalData }" columns="{! v.financialGoalColumns }" keyField="Id"
+														 maxRowSelection="{! v.maxRowSelection }" onrowselection="{! c.handleRowActionGoal }"/>
+								</div>
+								<aura:if isTrue="{!not(empty(v.riskPlanningTypes))}">
+									<div>
+										<lightning:datatable keyField="Id" data="{! v.riskPlanningTypes }" hideCheckboxColumn="false" hideTableHeader="true"
+															 columns="{! v.financialGoalColumns }" maxRowSelection="0"/>
+									</div>
+								</aura:if>
+							</aura:set>
+						</aura:if>
+					</aura:set>
+				</aura:if>
+			</div>
+			<footer class="slds-modal__footer">
+				<button class="slds-button slds-button_neutral" onclick="{! c.closeModal }">
+					{!$Label.c.AW_Cancel}
+				</button>
+				<aura:if isTrue="{!v.isFinancialGoalEmpty}">
+					<aura:set attribute="else">
+						<button class="slds-button slds-button_brand" onclick="{! c.openGoalModal }" disabled="{!v.isContinueDisabled}">
+							{!$Label.c.AW_Continue}
+						</button>
+					</aura:set>
+				</aura:if>
+			</footer>
+		</div>
+	</section>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

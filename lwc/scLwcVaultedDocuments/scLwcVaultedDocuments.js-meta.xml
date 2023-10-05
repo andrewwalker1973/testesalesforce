@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="scLwcVaultedDocuments">
+    <apiVersion>53.0</apiVersion>
+    <description>List view of vaulted documents to ensure they have been securely placed in the vault.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>SC Lwc Vaulted Documents</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>

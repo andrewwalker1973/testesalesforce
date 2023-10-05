@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>SLC_ClientAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Name of Client the Client Expense is attributed to.</description>
+        <externalId>false</externalId>
+        <label>Client</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.IsPersonAccount</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Expenses (Client)</relationshipLabel>
+        <relationshipName>Expense_Attributions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_ClientName__c</fullName>
+        <description>Name and surname of STANLIB client benefitting from expenditure incurred by STANLIB Employee. (Reference to Person Account)</description>
+        <externalId>false</externalId>
+        <formula>SLC_ClientAccount__r.FirstName &amp;&quot; &quot;&amp;  SLC_ClientAccount__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_DateOfExpense__c</fullName>
+        <description>Date on which expense was incurred.</description>
+        <externalId>false</externalId>
+        <label>Date of Expense</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SLC_EntityName__c</fullName>
+        <description>Name of entity associated with client that receives benefit of expenditure incurred by STANLIB Employee.</description>
+        <externalId>false</externalId>
+        <formula>SLC_ClientAccount__r.AW_ParentAccount__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Entity Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_ExpenseName__c</fullName>
+        <description>Captures a memorable description of the Expense as the Expense Name.</description>
+        <externalId>false</externalId>
+        <formula>SLC_Expense__r.SLC_ExpenseName__c</formula>
+        <label>Expense Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_ExpenseSplit__c</fullName>
+        <description>Captures expense split amount</description>
+        <externalId>false</externalId>
+        <label>Expense Split</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLC_Expense__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related Master Expense record</description>
+        <externalId>false</externalId>
+        <label>Expense</label>
+        <referenceTo>SLC_Expense__c</referenceTo>
+        <relationshipLabel>Client Expenses</relationshipLabel>
+        <relationshipName>Client_Expenses</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_FspEntityNumber__c</fullName>
+        <description>FSP registration number of entity associated with client benefitting from expenditure incurred by STANLIB Employee.</description>
+        <externalId>false</externalId>
+        <formula>SLC_ClientAccount__r.AW_ParentAccount__r.SLI_RegistrationFSPNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FSP Entity Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_IsClientExpenseOwnerLoggedInUser__c</fullName>
+        <description>Checks if the Client Expense belongs to the logged in user for &apos;My Client Expenses&apos; List View</description>
+        <externalId>false</externalId>
+        <formula>SLC_StanlibEmployee__c == $User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Client Expense Owner logged in User</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SLC_NatureOfExpense__c</fullName>
+        <description>Description of what the expenditure incurred by STANLIB Employee entailed, eg. &apos;Client lunch&apos;</description>
+        <externalId>false</externalId>
+        <label>Nature of Expense</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>SLC_NatureOfExpense</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SLC_StanlibEmployee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>STANLIB Employee who was responsible for incurring expense on client.</description>
+        <externalId>false</externalId>
+        <label>STANLIB Employee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Client_Expenses</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_YTDClientExpensesRollup__c</fullName>
+        <description>Gets value of expense allowance for the client from their Account record.</description>
+        <externalId>false</externalId>
+        <formula>SLC_ClientAccount__r.SLC_YtdClientExpensesRollupDlrs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>YTD Client Expenses Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLC_YTDExpenseStatus__c</fullName>
+        <description>Visual indication of the total expenditure incurred against the STANLIB client for the year. 
+Red status= total expenditure exceeds annual limit of R1000
+Yellow status= total expenditure is nearing R1000  annual limit (over R900)
+Green status= total expenditure is under R900</description>
+        <externalId>false</externalId>
+        <formula>IF(SLC_YTDClientExpensesRollup__c &gt;= 1000,
+IMAGE(&quot;/img/samples/color_red.gif&quot;,&quot;red&quot;, 16, 100),
+IF(SLC_YTDClientExpensesRollup__c &gt;= 900,
+IMAGE(&quot;/img/samples/color_yellow.gif&quot;,&quot;yellow&quot;, 16, 100),
+IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;green&quot;, 16, 100)
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>YTD Expense Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Client Expense</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>SLC_Expense__c</columns>
+        <columns>SLC_ClientName__c</columns>
+        <columns>SLC_StanlibEmployee__c</columns>
+        <columns>SLC_NatureOfExpense__c</columns>
+        <columns>SLC_ExpenseSplit__c</columns>
+        <columns>SLC_DateOfExpense__c</columns>
+        <columns>SLC_YTDExpenseStatus__c</columns>
+        <columns>SLC_YTDClientExpensesRollup__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>SLC_MyClientExpenses</fullName>
+        <columns>NAME</columns>
+        <columns>SLC_ExpenseName__c</columns>
+        <columns>SLC_ClientName__c</columns>
+        <columns>SLC_DateOfExpense__c</columns>
+        <columns>SLC_FspEntityNumber__c</columns>
+        <columns>SLC_EntityName__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SLC_IsClientExpenseOwnerLoggedInUser__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Client Expenses</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CEXP-{000000}</displayFormat>
+        <label>Client Expense Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Client Expenses</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>SLC_ClientExpense</fullName>
+        <active>true</active>
+        <description>Stanlib Client Expense</description>
+        <label>Client Expense</label>
+        <picklistValues>
+            <picklist>SLC_NatureOfExpense__c</picklist>
+            <values>
+                <fullName>Breakfast meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STANLIB hosted event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sporting event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff discussion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>NewFromDocument</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Import</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+        <searchResultsAdditionalFields>SLC_ClientAccount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_Expense__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_EntityName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_FspEntityNumber__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_YTDClientExpensesRollup__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SLC_YTDExpenseStatus__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

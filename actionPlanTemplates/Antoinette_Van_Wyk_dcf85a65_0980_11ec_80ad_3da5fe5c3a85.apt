@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Do Annuity from Attie, discuss income requirements.</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Antoinette Van Wyk</name>
+    <targetEntityType>Opportunity</targetEntityType>
+    <uniqueName>Antoinette_Van_Wyk_dcf85a65_0980_11ec_80ad_3da5fe5c3a85</uniqueName>
+</ActionPlanTemplate>

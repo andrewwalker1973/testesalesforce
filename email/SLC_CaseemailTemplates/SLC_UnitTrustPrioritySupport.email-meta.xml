@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>STANLIB Manco Unit Trust Priority Support auto-response template</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>STANLIB_CaseLetterhead</letterhead>
+    <name>STANLIB Unit Trust Priority Support</name>
+    <style>freeForm</style>
+    <subject>Your case {!Case.CaseNumber} has been created - STANLIB Unit Trust Priority Support</subject>
+    <textOnly>Dear Valued Adviser,
+
+Thank you for contacting STANLIB Unit Trust Priority.
+
+This is an automatic acknowledgement that we have received your email. We will respond to you within four hours. For urgent assistance, please use our Priority Line on 0860 110 248.
+
+Please note this mailbox is exclusively for queries and cannot accept instructions of a financial nature. If you sent financial instructions to it, we will not be held liable for any delays in processing them. To ensure quick turnaround times, please ensure you upload instructions on our online online portal, or email instructions@stanlib.com.
+
+Online self-service:
+
+Our secure paperless digital transacting allows you to load all instructions on our online portal. This will ensure your instructions are processed in real time, and you will be able to track their progress.
+
+
+Kind Regards,
+STANLIB Unit Trust Priority
+
+www.stanlib.com
+
+{!Case.Email_Thread}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

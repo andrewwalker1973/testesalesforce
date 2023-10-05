@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Includes all permission sets for read only access on nurses booking objects</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Onboarding Read Only Group</label>
+    <mutingPermissionSets>SC_LibertyOnboardingReadOnlyGroupMuted</mutingPermissionSets>
+    <permissionSets>FSL_Resource_License</permissionSets>
+    <permissionSets>FSL_Resource_Permissions</permissionSets>
+    <permissionSets>SC_LibertyOnboardingView</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,163 @@
+<template>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+	<template if:true={checkForFieldDifferences}>
+		<article class="slds-card">
+			<div class="slds-card__header slds-grid">
+				<lightning-icon icon-name="utility:info_alt" size="small"></lightning-icon>
+				<div class="slds-media__body slds-p-left_xx-small">
+					<template if:true={disableUpdateDifferencesButton}>
+						<h2 class="slds-card__header-title" style="color:#969492;">
+							<span>Liberty Client detail are same as your client detail</span>
+						</h2>
+					</template>
+					<template if:false={disableUpdateDifferencesButton}>
+						<h2 class="slds-card__header-title" style="color:#FFBF00;">
+							<span>Liberty Client detail different to your client detail</span>
+						</h2>
+					</template>
+				</div>
+				<div class="slds-no-flex">
+					<lightning-button variant="brand" class="slds-button" label={updateDifferenceButtonLabel} title="Update Differences" onclick={updateDifferencesModal}
+									  disabled={disableUpdateDifferencesButton}></lightning-button>
+				</div>
+			</div>
+			<lightning-accordion active-section-name={activeSections} allow-multiple-sections-open="true" class="slds-p-bottom_medium accordion-background">
+				<template for:each={fieldSetDifferenceDTOList} for:index="index" for:item="fieldSection">
+					<lightning-accordion-section class="sectionBackground" key={fieldSection.key} label={fieldSection.sectionName} name={fieldSection.sectionApiName}>
+						<lightning-layout multiple-rows>
+							<template for:each={fieldSection.fieldDetails} for:item="fieldSetItem">
+								<lightning-layout-item key={fieldSetItem.Key} padding="around-small" size="6">
+
+									<div class="slds-form__item" role="listitem">
+										<div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+											<span class="slds-form-element__label">{fieldSetItem.fieldLabel}</span>
+											<div class="slds-form-element__control">
+												<template if:true={fieldSetItem.hasFieldDifference}>
+													<template if:true={fieldSetItem.isMasterBlank}>
+														<div class="slds-form-element__static fieldDifferenceBackground">{blankString}
+														</div>
+													</template>
+													<template if:false={fieldSetItem.isMasterBlank}>
+														<template if:true={fieldSetItem.isCurrencyField}>
+															<lightning-formatted-number currency-code="ZAR" format-style="currency" class="fieldDifferenceBackground"
+																						value={fieldSetItem.fieldDisplayValue}></lightning-formatted-number>
+														</template>
+														<template if:false={fieldSetItem.isCurrencyField}>
+															<div class="slds-form-element__static fieldDifferenceBackground">
+																{fieldSetItem.fieldDisplayValue}
+															</div>
+														</template>
+													</template>
+												</template>
+												<template if:false={fieldSetItem.hasFieldDifference}>
+													<template if:true={fieldSetItem.isCurrencyField}>
+														&nbsp;<lightning-formatted-number currency-code="ZAR" format-style="currency"
+																						  value={fieldSetItem.fieldDisplayValue}></lightning-formatted-number>
+													</template>
+													<template if:false={fieldSetItem.isCurrencyField}>
+														<div class="slds-form-element__static">
+															{fieldSetItem.fieldDisplayValue}
+														</div>
+													</template>
+												</template>
+											</div>
+										</div>
+									</div>
+								</lightning-layout-item>
+							</template>
+						</lightning-layout>
+					</lightning-accordion-section>
+				</template>
+			</lightning-accordion>
+		</article>
+	</template>
+	<template if:true={checkParentAccountId}>
+		<div class="slds-card__header slds-grid">
+			<lightning-icon icon-name="utility:info_alt" size="small"></lightning-icon>
+			<div class="slds-media__body slds-p-left_xx-small">
+				<template if:true={accountHasPolicies}>
+					<i style="font-size:16px;">{contactSupportMessage}</i>
+				</template>
+				<template if:false={accountHasPolicies}>
+					<i style="font-size:16px;">{masterAccountNotFoundMessage}</i>
+				</template>
+			</div>
+		</div>
+	</template>
+	<template if:true={isModalOpen}>
+		<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+				 class="slds-modal slds-fade-in-open slds-modal_small">
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+						<lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+						<span class="slds-assistive-text">Close</span>
+					</button>
+					<h5 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Merge from Master Account
+						to Your Client Account</h5>
+				</header>
+				<template if:true={isSpinnerLoading}>
+					<lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+				</template>
+				<div id="modal-content-id-1" class="slds-scrollable slds-is-relative">
+					<table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+						<thead>
+						<tr class="slds-line-height_reset">
+							<th class="" scope="col">
+								<div class="slds-truncate" title="Field">Field</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="Liberty Client">Liberty Client</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="My Client">My Client</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="Select to update">Select to update</div>
+							</th>
+						</tr>
+						</thead>
+						<tbody>
+						<template for:each={fieldDifferenceList} for:index="index" for:item="fieldItem">
+							<tr class="slds-hint-parent" key={fieldItem.fieldAPIName}>
+								<td data-label="Field Name">
+									<div class="slds-truncate" style="font-weight:bold;" title="Field Name">
+										{fieldItem.fieldLabel}
+									</div>
+								</td>
+								<td data-label="Master Value">
+									<template if:true={fieldItem.isCurrencyField}>
+										<lightning-formatted-number currency-code="ZAR" format-style="currency" value={fieldItem.fieldDisplayValue}></lightning-formatted-number>
+									</template>
+									<template if:false={fieldItem.isCurrencyField}>
+										<div class="slds-truncate" title="Master Value">{fieldItem.fieldDisplayValue}</div>
+									</template>
+								</td>
+								<td data-label="Child Value">
+									<div class="slds-truncate" data-cv={fieldItem.fieldAPIName} title="Child Value">
+										<template if:true={fieldItem.isCurrencyField}>
+											&nbsp;<lightning-formatted-number currency-code="ZAR" format-style="currency"
+																			  value={fieldItem.childFieldDisplayValue}></lightning-formatted-number>
+										</template>
+										<template if:false={fieldItem.isCurrencyField}>
+											&nbsp;{fieldItem.childFieldDisplayValue}
+										</template>
+									</div>
+								</td>
+								<td data-label="Field Difference">
+									<lightning-input data-id={fieldItem.fieldAPIName} type="checkbox" onchange={handleFieldSelectionChange} label=""></lightning-input>
+								</td>
+							</tr>
+						</template>
+						</tbody>
+					</table>
+				</div>
+				<footer class="slds-modal__footer">
+					<lightning-button variant="neutral" class="slds-button" label="Cancel" onclick={closeModal}></lightning-button>
+					<lightning-button variant="brand" class="slds-button" label="Update" onclick={updateAccountDetails} disabled={disableUpdateButton}></lightning-button>
+				</footer>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</template>
+</template>

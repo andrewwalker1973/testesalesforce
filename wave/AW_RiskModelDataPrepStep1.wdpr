@@ -1,0 +1,1549 @@
+{
+  "version" : "58.0",
+  "nodes" : {
+    "Contract_number_copy0" : {
+      "action" : "formula",
+      "sources" : [ "TO_DATE1_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "contract_number",
+          "label" : "contract_number",
+          "formulaExpression" : "replace(cont_no, '.0', '')",
+          "precision" : 255
+        } ]
+      }
+    },
+    "Benefits_Start_Date_copy0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "name" : "Benefits_start_dates"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "Join_1_copy0" : {
+      "action" : "join",
+      "sources" : [ "Contract_number_copy0", "Benefits_Start_Date_copy0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Incep_date_api", "Inception_Date_api", "Incep_year_api", "PLA_Natl_ID", "PaidtoDate", "Inforce_ind", "Inforce_ind_1", "Inforce_ind2", "Payer_ID", "Incep_month_api", "Unnamed_0_1" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "contract_number" ],
+        "rightQualifier" : "RiskDates",
+        "rightKeys" : [ "cont_no" ]
+      }
+    },
+    "Join_2_copy0" : {
+      "action" : "join",
+      "sources" : [ "Join_1_copy0", "LOAD_DATASET1" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Unnamed_0", "Needs_comb.pillar", "Needs_comb.life_event_that_triggers_payment", "Needs_comb.client_need", "Needs_comb.lump_sum_income_indemnity", "Needs_comb.Product_Name", "Needs_comb.open_closed_to_new_business" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "BENEFIT_TYPE" ],
+        "rightQualifier" : "Needs_comb",
+        "rightKeys" : [ "BENEFIT_TYPE_Formula" ]
+      }
+    },
+    "Tenure_Age_Buckets_1_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "TO_DIMENSION2_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Age_Tenure_Bucket_less_than_or_equal_to_25yrs",
+          "label" : "Age_Tenure_Bucket_less_than_or_equal_to_25yrs",
+          "formulaExpression" : "case when \"Age_Individual_api\" <= 25 then 1 else 0 end",
+          "precision" : 4,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Tenure_Age_Buckets_2_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Tenure_Age_Buckets_1_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Age_Tenure_Bucket_Between_26_35yrs",
+          "label" : "Age_Tenure_Bucket_Between_26_35yrs",
+          "formulaExpression" : "case when \"Age_Individual_api\" >= 26 AND \"Age_Individual_api\" <= 35 then 1 else 0 end",
+          "precision" : 4,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Tenure_Age_Buckets_3_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Tenure_Age_Buckets_2_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Age_Tenure_Bucket_Between_36_45yrs",
+          "label" : "Age_Tenure_Bucket_Between_36_45yrs",
+          "formulaExpression" : "case when \"Age_Individual_api\" >= 36 AND \r\n\"Age_Individual_api\" <= 45 then 1 else 0 end",
+          "precision" : 4,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Tenure_Age_Buckets_4_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Tenure_Age_Buckets_3_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Age_Tenure_Bucket_Between_46_60yrs",
+          "label" : "Age_Tenure_Bucket_Between_46_60yrs",
+          "formulaExpression" : "case when \"Age_Individual_api\" >= 46 AND \r\n\"Age_Individual_api\" <= 60 then 1 else 0 end",
+          "precision" : 4,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Tenure_Age_Buckets_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Tenure_Age_Buckets_4_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Age_Tenure_Bucket_Greater_than_60_yrs",
+          "label" : "Age_Tenure_Bucket_Greater_than_60_yrs",
+          "formulaExpression" : "case when \"Age_Individual_api\" > 60 then 1 else 0 end",
+          "precision" : 4,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_01_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Tenure_Age_Buckets_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Policy_Holder_Dread_Disease_TV1",
+          "label" : "Policy Holder Dread Disease Target Variable",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Policy Holder Dread Disease' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_02_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_01_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Life_Style_need_TV2",
+          "label" : "Life_Style_need_TV2",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Life Style' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_03_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_02_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Policy_Holder_Disablement_TV3",
+          "label" : "Policy Holder Disablement Target Variable",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Policy Holder Disablement' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_04_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_03_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Life_Cover_TV4",
+          "label" : "Life Cover Target Variable",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Life Cover' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_05_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_04_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Child_Education_Cover_TV5",
+          "label" : "Child Education Target Variable",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Child Education Cover' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_06_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_05_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Medical_Cover_TV6",
+          "label" : "Medical_Cover_TV6",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Medical Cover' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_07_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_06_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Others_TV7",
+          "label" : "Others_TV7",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Others' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_08_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_07_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Policy_Premiums_Cover_TV8",
+          "label" : "Policy Premiums Target Variable",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Policy Premiums Cover' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_09_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_08_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Family_Funeral_TV9",
+          "label" : "Family_Funeral_TV9",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Family Funeral' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_10_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_09_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Savings_plan_TV10",
+          "label" : "Savings_plan_TV10",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Savings plan' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_11_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_10_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Future_Insurability_TV11",
+          "label" : "Future_Insurability_TV11",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Future Insurability' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_12_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_11_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Pregnancy_Complications_TV12",
+          "label" : "Pregnancy_Complications_TV12",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Pregnancy Complications' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_13_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_12_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Medical_Aid_Premiums_Cover_TV13",
+          "label" : "Medical_Aid_Premiums_Cover_TV13",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Medical Aid Premiums Cover' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_14_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_13_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Income_Disability_TV14",
+          "label" : "Income_Disability_TV14",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Income Disability' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "Target_Variable_Creations_AllNeeds_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_14_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Post_Retirement_TV15",
+          "label" : "Post_Retirement_TV15",
+          "formulaExpression" : "case when \"Needs_comb.Groupings_Formula\" = 'Post Retirement' then 1 else 0 end",
+          "precision" : 18,
+          "scale" : 0
+        } ]
+      }
+    },
+    "JOIN0_copy0" : {
+      "action" : "join",
+      "sources" : [ "Join_2_copy0", "LOAD_DATASET2" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "owner_natl_id" ],
+        "rightQualifier" : "CompleteRisk",
+        "rightKeys" : [ "owner_natl_id" ]
+      }
+    },
+    "FILTER2_copy0" : {
+      "action" : "filter",
+      "sources" : [ "JOIN0_copy0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Product_Name",
+          "operator" : "NOT",
+          "operands" : [ "Dual Dimensions 2", "GUARANTEED REVIEWABLE L" ]
+        }, {
+          "type" : "TEXT",
+          "field" : "BENEFIT_TYPE",
+          "operator" : "NOT",
+          "operands" : [ "life style" ]
+        }, {
+          "type" : "TEXT",
+          "field" : "Needs_comb.Groupings_Formula",
+          "operator" : "NOT",
+          "operands" : [ "Others" ]
+        }, {
+          "type" : "TEXT",
+          "field" : "BENEFIT_TYPE",
+          "operator" : "NOT",
+          "operands" : [ "-" ]
+        }, {
+          "type" : "TEXT",
+          "field" : "owner_natl_id",
+          "operator" : "NOT",
+          "operands" : [ "      2395264", "2395264" ]
+        } ]
+      }
+    },
+    "FORMULA0_copy0_copy1_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FILTER2_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "RiskDates.inception_date_formula",
+          "label" : "RiskDates.inception_date Formula",
+          "formulaExpression" : "string(\"RiskDates.inception_date\")",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA1_copy0_copy1_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA4" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "RiskDates.inception_date_formula_formula",
+          "label" : "RiskDates.inception_date Formula Formula",
+          "formulaExpression" : "coalesce(\"RiskDates.inception_date_formula\", null,Inception_date_string_api)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DATE_PATTERN_CONVERSION0_copy0_copy1_copy0_copy0" : {
+      "action" : "formatDate",
+      "sources" : [ "FORMULA1_copy0_copy1_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Inception_date_only_api",
+          "newProperties" : {
+            "typeProperties" : {
+              "type" : "DATETIME",
+              "format" : "yyyy-MM-dd"
+            }
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "RiskDates.inception_date_formula_formula" ]
+        }
+      },
+      "parameters" : {
+        "sourceField" : "RiskDates.inception_date_formula_formula",
+        "targetField" : {
+          "name" : "Inception_date_only_api",
+          "label" : "Inception_date_only"
+        },
+        "sourceFormats" : [ {
+          "regex" : "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[0-1])\\s([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$",
+          "groups" : [ "yyyy", "MM", "dd", "HH", "mm", "ss" ],
+          "construction" : [ "yyyy", "-", "MM", "-", "dd", " ", "HH", ":", "mm", ":", "ss" ]
+        } ],
+        "targetFormat" : {
+          "regex" : "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[0-1])$",
+          "groups" : [ "yyyy", "MM", "dd" ],
+          "construction" : [ "yyyy", "-", "MM", "-", "dd" ]
+        }
+      }
+    },
+    "FORMULA2_copy0_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "DATE_PATTERN_CONVERSION0_copy0_copy1_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "RiskDates.inception_date_formula_formula_formula",
+          "label" : "Age_Calculation",
+          "formulaExpression" : "datediff(\"CompleteRisk.prsn_brth_dt\", Inception_date_only_api)/365",
+          "precision" : 18,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA3_copy0_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA2_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Age_at_purchase_api",
+          "label" : "Age_at_purchase",
+          "formulaExpression" : "abs(round(\"RiskDates.inception_date_formula_formula_formula\",0))",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES0_copy0_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA3_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Inception_date_only_api",
+          "newProperties" : {
+            "label" : "Purchase_Date",
+            "name" : "Purchase_Date_api"
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION1_copy0_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "EDIT_ATTRIBUTES0_copy0_copy0_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "RiskDates.inception_date_formula_formula_formula_formula_to_dimension",
+          "newProperties" : {
+            "name" : "Age_at_purchase_api"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Age_at_purchase_api" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Age_at_purchase_api",
+          "newProperties" : {
+            "label" : "Age_Calculation Formula",
+            "name" : "RiskDates.inception_date_formula_formula_formula_formula_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "TO_MEASURE0_copy0_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION1_copy0_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "RiskDates.inception_date_formula_formula_formula_formula_to_measure",
+          "newProperties" : {
+            "name" : "Age_at_purchase_api"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Age_at_purchase_api" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Age_at_purchase_api",
+          "newProperties" : {
+            "label" : "Age_Calculation Formula",
+            "name" : "RiskDates.inception_date_formula_formula_formula_formula_to_measure",
+            "typeProperties" : {
+              "type" : "NUMBER",
+              "scale" : 2,
+              "precision" : 18
+            }
+          }
+        } ]
+      }
+    },
+    "TO_DIMENSION2_copy0_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_MEASURE0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Age_at_purchase_api",
+          "newProperties" : {
+            "label" : "Age_Calculation Formula To Text",
+            "name" : "Age_Individual_api",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "FORMULA4" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA0_copy0_copy1_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Inception_date_string_api",
+          "label" : "Inception_date_string",
+          "formulaExpression" : "string(Inception_date_updated_formula)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "OUTPUT2" : {
+      "action" : "save",
+      "sources" : [ "Target_Variable_Creations_AllNeeds_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Risk Output After Target Variable",
+          "name" : "AW_RiskOutputAfterTargetVariable",
+          "folderName" : "SharedApp"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "pillar", "life_event_that_triggers_payment", "client_need", "lump_sum_income_indemnity", "Product_Name", "open_closed_to_new_business", "BENEFIT_TYPE_Formula", "Groupings_Formula" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Needs",
+          "name" : "Needs"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "sb_match", "owner_natl", "payer_natl_id", "pla_natl_id", "channel", "prsn_brth_dt", "Unnamed_0", "owner_natl_id", "Province_x", "Province_y", "is_sbg_client", "incp_dt", "cont_no", "pla_post_code", "prsn_mrkt_cnsnt", "prod_typ_cd", "book_type", "movent_ind", "paidto_dt", "Marital_Type_Desc_x", "Marital_Type_Desc_y", "Catchment_Area_x", "Catchment_Area_y", "prod_name", "prsn_gndr_dsc", "owner_post_code", "line_buss", "prsn_mrtl_sts_dsc", "Gender_Type_Desc_x", "movent_dt", "Gender_Type_Desc_y", "owner_id", "pla_id", "sum_assured", "prsn_pdb_id", "premium", "consult_cd", "tenure", "owner", "inforce_ind", "proto_no", "party_id", "payer_id", "net_income" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Risk_data_Part1",
+          "name" : "Risk_Data_part1"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET0_copy0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Inception_Date", "Consultant_Status", "DIV_NAME", "owner_natl_id", "cont_no", "Product_Group", "movent_ind", "PLA_Natl_ID", "Product_Name", "PaidtoDate", "Consultant_Code", "LIFE_ASSURED_TYPE", "pillar", "REGION_NAME", "BENEFIT_STATUS", "BENEFIT_TYPE", "Inforce_ind", "Frequency", "Inforce_ind_1", "Inforce_ind2", "Payer_ID", "Unnamed_0_1", "Total_Policy_Value", "Premium", "Unnamed_0", "Sum_Assured", "Inception_date_length", "Product_Type_Code" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "CRD_Part2",
+          "name" : "CRD_Part2"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET1_copy0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Inception_Date", "Consultant_Status", "DIV_NAME", "owner_natl_id", "cont_no", "Product_Group", "movent_ind", "PLA_Natl_ID", "Product_Name", "PaidtoDate", "Consultant_Code", "LIFE_ASSURED_TYPE", "pillar", "REGION_NAME", "BENEFIT_STATUS", "BENEFIT_TYPE", "Inforce_ind", "Frequency", "Inforce_ind_1", "Inforce_ind2", "Payer_ID", "Unnamed_0_1", "Total_Policy_Value", "Premium", "Unnamed_0", "Sum_Assured", "Inception_date_length", "Product_Type_Code" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "CRD_Part1",
+          "name" : "CRD_Part1"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FORMULA0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "LOAD_DATASET1_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Inception_Date_new",
+          "label" : "Inception_date_new",
+          "formulaExpression" : "substr(Inception_Date, 1, 10)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Inception_Date",
+          "newProperties" : {
+            "label" : "Inception_date_disc",
+            "name" : "Inception_Date_disc"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES1_copy0" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Inception_Date_new",
+          "newProperties" : {
+            "label" : "Inception_Date",
+            "name" : "Inception_Date_api"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES3_copy0" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES1_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "PaidtoDate",
+          "newProperties" : {
+            "label" : "PaidtoDate",
+            "name" : "PaidtoDate",
+            "typeProperties" : {
+              "type" : "DATETIME",
+              "format" : "yyyy-MM-dd"
+            }
+          }
+        } ]
+      }
+    },
+    "DROP_FIELDS1" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES3_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Inception_Date_disc" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES2_copy0" : {
+      "action" : "schema",
+      "sources" : [ "LOAD_DATASET0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Inception_Date",
+          "newProperties" : {
+            "label" : "Inception_Date",
+            "name" : "Inception_Date_api"
+          }
+        } ]
+      }
+    },
+    "TO_DATE0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "EDIT_ATTRIBUTES2_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "PaidtoDate_to_date",
+          "newProperties" : {
+            "name" : "PaidtoDate"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "PaidtoDate" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "PaidtoDate",
+          "newProperties" : {
+            "label" : "PaidtoDate",
+            "name" : "PaidtoDate_to_date",
+            "typeProperties" : {
+              "type" : "DATETIME",
+              "format" : "yyyy-MM-dd"
+            }
+          }
+        } ]
+      }
+    },
+    "APPEND0_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "DROP_FIELDS1", "TO_DATE0_copy0" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "Inception_Date_disc",
+          "bottom" : "Inception_Date_api"
+        }, {
+          "top" : "Consultant_Status",
+          "bottom" : "Consultant_Status"
+        }, {
+          "top" : "DIV_NAME",
+          "bottom" : "DIV_NAME"
+        }, {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "cont_no",
+          "bottom" : "cont_no"
+        }, {
+          "top" : "Product_Group",
+          "bottom" : "Product_Group"
+        }, {
+          "top" : "movent_ind",
+          "bottom" : "movent_ind"
+        }, {
+          "top" : "PLA_Natl_ID",
+          "bottom" : "PLA_Natl_ID"
+        }, {
+          "top" : "Product_Name",
+          "bottom" : "Product_Name"
+        }, {
+          "top" : "Consultant_Code",
+          "bottom" : "Consultant_Code"
+        }, {
+          "top" : "LIFE_ASSURED_TYPE",
+          "bottom" : "LIFE_ASSURED_TYPE"
+        }, {
+          "top" : "pillar",
+          "bottom" : "pillar"
+        }, {
+          "top" : "REGION_NAME",
+          "bottom" : "REGION_NAME"
+        }, {
+          "top" : "BENEFIT_STATUS",
+          "bottom" : "BENEFIT_STATUS"
+        }, {
+          "top" : "BENEFIT_TYPE",
+          "bottom" : "BENEFIT_TYPE"
+        }, {
+          "top" : "Inforce_ind",
+          "bottom" : "Inforce_ind"
+        }, {
+          "top" : "Frequency",
+          "bottom" : "Frequency"
+        }, {
+          "top" : "Inforce_ind_1",
+          "bottom" : "Inforce_ind_1"
+        }, {
+          "top" : "Inforce_ind2",
+          "bottom" : "Inforce_ind2"
+        }, {
+          "top" : "Payer_ID",
+          "bottom" : "Payer_ID"
+        }, {
+          "top" : "Unnamed_0_1",
+          "bottom" : "Unnamed_0_1"
+        }, {
+          "top" : "Total_Policy_Value",
+          "bottom" : "Total_Policy_Value"
+        }, {
+          "top" : "Premium",
+          "bottom" : "Premium"
+        }, {
+          "top" : "Unnamed_0",
+          "bottom" : "Unnamed_0"
+        }, {
+          "top" : "Sum_Assured",
+          "bottom" : "Sum_Assured"
+        }, {
+          "top" : "Inception_date_length",
+          "bottom" : "Inception_date_length"
+        }, {
+          "top" : "Product_Type_Code",
+          "bottom" : "Product_Type_Code"
+        }, {
+          "top" : "Inception_Date_api",
+          "bottom" : "Inception_Date_api"
+        }, {
+          "top" : "PaidtoDate",
+          "bottom" : "PaidtoDate"
+        } ]
+      }
+    },
+    "FORMULA1_copy0" : {
+      "action" : "formula",
+      "sources" : [ "APPEND0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Incep_year_api",
+          "label" : "Incep_year",
+          "formulaExpression" : "substr(Inception_Date_api, 1, 4)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA2_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA1_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Incep_month_api",
+          "label" : "Incep_month",
+          "formulaExpression" : "substr(Inception_Date_api, 6, 2)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA3_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA2_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Incep_date_api",
+          "label" : "Incep_date",
+          "formulaExpression" : "substr(Inception_Date_api, 9, 2)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA4_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA3_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Inception_date_updated_formula",
+          "label" : "Inception_date_updated",
+          "formulaExpression" : "concat(Incep_year_api,'-',Incep_month_api,'-',Incep_date_api)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "TO_DATE1_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "FORMULA4_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Inception_date_updated_formula_to_date",
+          "newProperties" : {
+            "name" : "Inception_date_updated_formula"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Inception_date_updated_formula" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Inception_date_updated_formula",
+          "newProperties" : {
+            "label" : "Inception_date_updated",
+            "name" : "Inception_date_updated_formula_to_date",
+            "typeProperties" : {
+              "type" : "DATETIME",
+              "format" : "yyyy-MM-dd"
+            }
+          }
+        } ]
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "TRANSFORM0_copy0" : {
+        "label" : "Contract_number",
+        "description" : "removal of decimals from contract number for standardisation",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 254.10000000000002,
+        "graph" : {
+          "Contract_number_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "Benefits_Start_Date_copy0" : {
+        "label" : "Benefits_Start_Date",
+        "description" : "Input Dataset contains Benefits Starts Date",
+        "type" : "LOAD_DATASET",
+        "top" : 532,
+        "left" : 114.1,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "Join_1_copy0" : {
+        "label" : "Join_1",
+        "description" : "Joins data with actual benefits start dates",
+        "type" : "JOIN",
+        "top" : 392,
+        "left" : 394.1
+      },
+      "Join_2_copy0" : {
+        "label" : "Join_2",
+        "description" : "merge with need groupings",
+        "type" : "JOIN",
+        "top" : 392,
+        "left" : 534.1
+      },
+      "TRANSFORM0_copy1_copy0" : {
+        "label" : "Tenure_Age_Buckets",
+        "description" : "This node buckets age by it's tenure",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 1094.1,
+        "graph" : {
+          "Tenure_Age_Buckets_1_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Tenure_Age_Buckets_2_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Tenure_Age_Buckets_3_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Tenure_Age_Buckets_4_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Tenure_Age_Buckets_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ {
+          "source" : "Tenure_Age_Buckets_1_copy0_copy0",
+          "target" : "Tenure_Age_Buckets_2_copy0_copy0"
+        }, {
+          "source" : "Tenure_Age_Buckets_2_copy0_copy0",
+          "target" : "Tenure_Age_Buckets_3_copy0_copy0"
+        }, {
+          "source" : "Tenure_Age_Buckets_3_copy0_copy0",
+          "target" : "Tenure_Age_Buckets_4_copy0_copy0"
+        }, {
+          "source" : "Tenure_Age_Buckets_4_copy0_copy0",
+          "target" : "Tenure_Age_Buckets_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM0_copy2_copy0" : {
+        "label" : "Target_Variable_Creations_AllNeeds",
+        "description" : "This node creates all the target variable for Risk",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 1234.1,
+        "graph" : {
+          "Target_Variable_Creations_AllNeeds_01_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Target_Variable_Creations_AllNeeds_02_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_03_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Target_Variable_Creations_AllNeeds_04_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Target_Variable_Creations_AllNeeds_05_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Target_Variable_Creations_AllNeeds_06_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_07_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_08_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Target_Variable_Creations_AllNeeds_09_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_10_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_11_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_12_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_13_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_14_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Target_Variable_Creations_AllNeeds_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ {
+          "source" : "Target_Variable_Creations_AllNeeds_01_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_02_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_02_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_03_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_03_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_04_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_04_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_05_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_05_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_06_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_06_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_07_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_07_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_08_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_08_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_09_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_09_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_10_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_10_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_11_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_11_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_12_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_12_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_13_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_13_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_14_copy0_copy0"
+        }, {
+          "source" : "Target_Variable_Creations_AllNeeds_14_copy0_copy0",
+          "target" : "Target_Variable_Creations_AllNeeds_copy0_copy0"
+        } ]
+      },
+      "JOIN0_copy0" : {
+        "label" : "Join 0",
+        "description" : "merge with other contract and owner related features from FAVP data",
+        "type" : "JOIN",
+        "top" : 392,
+        "left" : 674.1
+      },
+      "FILTER2_copy0" : {
+        "label" : "Filter 2",
+        "description" : "This node remove unwanted field values from model development dataset",
+        "type" : "FILTER",
+        "top" : 392,
+        "left" : 814.1
+      },
+      "TRANSFORM0_copy0_copy1_copy0_copy0" : {
+        "label" : "Age Calculation",
+        "description" : "This node calculate Age at which purchase was done",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 954.1,
+        "graph" : {
+          "FORMULA0_copy0_copy1_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA1_copy0_copy1_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "DATE_PATTERN_CONVERSION0_copy0_copy1_copy0_copy0" : {
+            "label" : "Standardize date format"
+          },
+          "FORMULA2_copy0_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "DATE_DIFFERENCE_UI"
+            },
+            "label" : "Return Duration Between Dates"
+          },
+          "FORMULA3_copy0_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "EDIT_ATTRIBUTES0_copy0_copy0_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "TO_DIMENSION1_copy0_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "TO_MEASURE0_copy0_copy0_copy0" : {
+            "label" : "To Number"
+          },
+          "TO_DIMENSION2_copy0_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "FORMULA4" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA1_copy0_copy1_copy0_copy0",
+          "target" : "DATE_PATTERN_CONVERSION0_copy0_copy1_copy0_copy0"
+        }, {
+          "source" : "DATE_PATTERN_CONVERSION0_copy0_copy1_copy0_copy0",
+          "target" : "FORMULA2_copy0_copy0_copy0_copy0"
+        }, {
+          "source" : "FORMULA2_copy0_copy0_copy0_copy0",
+          "target" : "FORMULA3_copy0_copy0_copy0_copy0"
+        }, {
+          "source" : "FORMULA3_copy0_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES0_copy0_copy0_copy0_copy0"
+        }, {
+          "source" : "EDIT_ATTRIBUTES0_copy0_copy0_copy0_copy0",
+          "target" : "TO_DIMENSION1_copy0_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION1_copy0_copy0_copy0",
+          "target" : "TO_MEASURE0_copy0_copy0_copy0"
+        }, {
+          "source" : "TO_MEASURE0_copy0_copy0_copy0",
+          "target" : "TO_DIMENSION2_copy0_copy0_copy0"
+        }, {
+          "source" : "FORMULA4",
+          "target" : "FORMULA1_copy0_copy1_copy0_copy0"
+        }, {
+          "source" : "FORMULA0_copy0_copy1_copy0_copy0",
+          "target" : "FORMULA4"
+        } ]
+      },
+      "OUTPUT2" : {
+        "label" : "Output for Risk Step 2",
+        "description" : "This node create Output dataset with target variable for Risk",
+        "type" : "OUTPUT",
+        "top" : 392,
+        "left" : 1374.1
+      },
+      "LOAD_DATASET1" : {
+        "label" : "Needs",
+        "description" : "Benefits to needs mapping data",
+        "type" : "LOAD_DATASET",
+        "top" : 672,
+        "left" : 114.1,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET2" : {
+        "label" : "Contract_data",
+        "description" : "This Input dataset contains contract attributes and owner attributes",
+        "type" : "LOAD_DATASET",
+        "top" : 812,
+        "left" : 114.1,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET0_copy0" : {
+        "label" : "CRD_Part2",
+        "description" : "Benefits data subset part 2",
+        "type" : "LOAD_DATASET",
+        "top" : 112.80000000000001,
+        "left" : 111.69999999999999,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET1_copy0" : {
+        "label" : "CRD_Part1",
+        "description" : "Benefits subset data part 1",
+        "type" : "LOAD_DATASET",
+        "top" : 252.8,
+        "left" : 111.69999999999999,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM0_copy1" : {
+        "label" : "Transform 0",
+        "description" : "This Nodes creates Date in 'YYYY-MM-DD'",
+        "type" : "TRANSFORM",
+        "top" : 252.3,
+        "left" : 251.7,
+        "graph" : {
+          "FORMULA0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Inception_date"
+          },
+          "EDIT_ATTRIBUTES0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES1_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES3_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "DROP_FIELDS1" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA0_copy0",
+          "target" : "EDIT_ATTRIBUTES0_copy0"
+        }, {
+          "source" : "EDIT_ATTRIBUTES0_copy0",
+          "target" : "EDIT_ATTRIBUTES1_copy0"
+        }, {
+          "source" : "EDIT_ATTRIBUTES1_copy0",
+          "target" : "EDIT_ATTRIBUTES3_copy0"
+        }, {
+          "source" : "EDIT_ATTRIBUTES3_copy0",
+          "target" : "DROP_FIELDS1"
+        } ]
+      },
+      "TRANSFORM1_copy0" : {
+        "label" : "Transform 1",
+        "description" : "This node transform Date fields",
+        "type" : "TRANSFORM",
+        "top" : 112.30000000000001,
+        "left" : 251.7,
+        "graph" : {
+          "EDIT_ATTRIBUTES2_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "TO_DATE0_copy0" : {
+            "label" : "To Date"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES2_copy0",
+          "target" : "TO_DATE0_copy0"
+        } ]
+      },
+      "APPEND0_copy0" : {
+        "label" : "Append 0",
+        "description" : "Append transformation nodes",
+        "type" : "APPEND",
+        "top" : 252.3,
+        "left" : 391.7
+      },
+      "TRANSFORM2_copy0" : {
+        "label" : "Transform 2",
+        "description" : "This nodes creates Inception date field in YYYY-MM-DD format",
+        "type" : "TRANSFORM",
+        "top" : 252.3,
+        "left" : 531.7,
+        "graph" : {
+          "FORMULA1_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA2_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA3_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA4_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "TO_DATE1_copy0" : {
+            "label" : "To Date"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA1_copy0",
+          "target" : "FORMULA2_copy0"
+        }, {
+          "source" : "FORMULA2_copy0",
+          "target" : "FORMULA3_copy0"
+        }, {
+          "source" : "FORMULA3_copy0",
+          "target" : "FORMULA4_copy0"
+        }, {
+          "source" : "FORMULA4_copy0",
+          "target" : "TO_DATE1_copy0"
+        } ]
+      }
+    },
+    "connectors" : [ {
+      "source" : "TRANSFORM0_copy0",
+      "target" : "Join_1_copy0"
+    }, {
+      "source" : "Benefits_Start_Date_copy0",
+      "target" : "Join_1_copy0"
+    }, {
+      "source" : "Join_1_copy0",
+      "target" : "Join_2_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy1_copy0",
+      "target" : "TRANSFORM0_copy2_copy0"
+    }, {
+      "source" : "Join_2_copy0",
+      "target" : "JOIN0_copy0"
+    }, {
+      "source" : "JOIN0_copy0",
+      "target" : "FILTER2_copy0"
+    }, {
+      "source" : "FILTER2_copy0",
+      "target" : "TRANSFORM0_copy0_copy1_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0_copy1_copy0_copy0",
+      "target" : "TRANSFORM0_copy1_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy2_copy0",
+      "target" : "OUTPUT2"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "Join_2_copy0"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN0_copy0"
+    }, {
+      "source" : "LOAD_DATASET1_copy0",
+      "target" : "TRANSFORM0_copy1"
+    }, {
+      "source" : "LOAD_DATASET0_copy0",
+      "target" : "TRANSFORM1_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy1",
+      "target" : "APPEND0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy0",
+      "target" : "APPEND0_copy0"
+    }, {
+      "source" : "APPEND0_copy0",
+      "target" : "TRANSFORM2_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy0",
+      "target" : "TRANSFORM0_copy0"
+    } ],
+    "hiddenColumns" : [ ]
+  },
+  "runMode" : "full"
+}

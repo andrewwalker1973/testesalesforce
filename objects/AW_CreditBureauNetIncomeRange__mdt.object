@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata type is used to define range of Net Income in Transunion response for a lead coming from website.
+Created By- vikrant.goswami@accenture.com
+Date - September, 2021</description>
+    <fields>
+        <fullName>AW_Threshold__c</fullName>
+        <description>This field is used to capture the income threshold for different ranges of Credit Bureau Net Income for a website lead.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>CreditBureauNetIncomeRange</label>
+    <pluralLabel>CreditBureauNetIncomeRanges</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>istockphoto1182272501612x612</masterLabel>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>istockphoto-1182272501-612x612.jpg</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

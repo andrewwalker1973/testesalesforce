@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This object is created to store Survey related settings.</description>
+    <fields>
+        <fullName>AW_CommunityNetworkID__c</fullName>
+        <description>to store Community ID for creating Survey.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Community Network ID</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_CommunityURL__c</fullName>
+        <description>This field is used to store Liberty Client Portal community url.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Community URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>AW_SurveyID__c</fullName>
+        <description>to store Survey ID</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Survey ID</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Survey Setting</label>
+    <pluralLabel>Survey Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

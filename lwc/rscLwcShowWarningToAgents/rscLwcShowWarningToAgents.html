@@ -1,0 +1,11 @@
+<template>
+	<div class="slds-scoped-notification slds-media slds-media_center slds-theme_warning" if:true={showNotification} role="status">
+		<div class="slds-media__figure">
+			<lightning-icon alternative-text="Warning!" icon-name="utility:warning" size="small" title="warning" variant="inverse"></lightning-icon>
+		</div>
+		<div class="slds-media__body">
+			<p>{message}</p>
+		</div>
+	</div>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

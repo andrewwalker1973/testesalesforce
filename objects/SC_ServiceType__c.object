@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SC_ServiceType</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>SC_ServiceType</fullName>
+        <fields>Name</fields>
+        <fields>SC_Department__c</fields>
+        <fields>RSC_ActionPlanTemplate__c</fields>
+        <fields>SC_Entitlement__c</fields>
+        <fields>LastModifiedById</fields>
+        <label>SC_ServiceType</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom object created for Servicing Console app for the various service types</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>RSC_ActionPlanTemplate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field used to relate Action Plan Template with Service Type</description>
+        <externalId>false</externalId>
+        <label>Action Plan Template</label>
+        <referenceTo>ActionPlanTemplate</referenceTo>
+        <relationshipLabel>Service Types</relationshipLabel>
+        <relationshipName>ActionPlanTemplates</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RSC_AssociatedContractExtensionFieldSet__c</fullName>
+        <description>Field used to store the name of Associated Contract Extension fieldset.</description>
+        <externalId>false</externalId>
+        <label>Associated Contract Extension FieldSet</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_CaseExtensionFieldSet__c</fullName>
+        <description>Text field to store the API name of Case Extension Field Set name related to service type.</description>
+        <externalId>false</externalId>
+        <label>Case Extension FieldSet</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_Assignable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will indicate if the Service Type is currently supported or not</description>
+        <externalId>false</externalId>
+        <label>Assignable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SC_AssociatedContractExtCreationFieldSet__c</fullName>
+        <description>This field  store list of Associated Contract Extension  object&apos;s  fieldset api name of case extension to display fields on case creation page as a additional section</description>
+        <externalId>false</externalId>
+        <label>Contract Extension Creation FieldSet</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_AssociatedContractExtRecordType__c</fullName>
+        <description>This field will store the Associated Contract Extension&apos;s record type name (developer name)</description>
+        <externalId>false</externalId>
+        <label>Associated Contract Ext Record Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_CaseExtensionCreationFieldSet__c</fullName>
+        <description>This field  store list of case extension object&apos;s  fieldset api name of case extension to display fields on case creation page as a additional section</description>
+        <externalId>false</externalId>
+        <label>Case Extension Creation FieldSet</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_CaseExtensionRecordType__c</fullName>
+        <description>This field will store the Case Extension&apos;s record type name (developer name)</description>
+        <externalId>false</externalId>
+        <label>Case Extension Record Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_CommunicationsLabel__c</fullName>
+        <description>Field used to hold the wording of the email template to be sent to Papyrus with the Communication API structure.</description>
+        <externalId>false</externalId>
+        <label>Communications Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_Department__c</fullName>
+        <description>This field will store the department value based on the Service Type .</description>
+        <externalId>false</externalId>
+        <label>Department</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_Entitlement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The entitlement record to be associated with the service type.</description>
+        <externalId>false</externalId>
+        <label>Entitlement</label>
+        <referenceTo>Entitlement</referenceTo>
+        <relationshipLabel>Service Types</relationshipLabel>
+        <relationshipName>Service_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_KnowledgeArticle__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field to relate the knowledge article for any service type.</description>
+        <externalId>false</externalId>
+        <label>Knowledge Article</label>
+        <referenceTo>Knowledge__kav</referenceTo>
+        <relationshipLabel>Service Types</relationshipLabel>
+        <relationshipName>ServiceTypes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_LaunchStandardFlow__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Created to distinguish and run a specific flow/s instead of the standard ones if unchecked for selected service types.</description>
+        <externalId>false</externalId>
+        <label>Launch Standard Flow</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SC_NextActionOnCaseCreationScreen__c</fullName>
+        <description>This field story  screen flow api name for manual case creation next screen .</description>
+        <externalId>false</externalId>
+        <label>Next Action On Case Creation Screen</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ServiceType__c</fullName>
+        <description>This field stores the Service Type Code</description>
+        <externalId>false</externalId>
+        <label>Service Type</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_UnreachableSMSTemplate__c</fullName>
+        <description>Contain name of the SMS template.</description>
+        <externalId>false</externalId>
+        <label>Unreachable SMS Template</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SC_WorkType__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>To assign on work order&apos;s work type for  nurses on the road case creation while creating blood test data.</description>
+        <externalId>false</externalId>
+        <label>Work Type</label>
+        <referenceTo>WorkType</referenceTo>
+        <relationshipLabel>Service Types</relationshipLabel>
+        <relationshipName>SC_ServiceTypes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Service Type</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>SC_Department__c</columns>
+        <columns>RSC_ActionPlanTemplate__c</columns>
+        <columns>SC_ServiceType__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>SC_Assignable__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Service Type Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Service Types</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>RSC_ActionPlanTemplate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SC_ServiceType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mulesoft Field Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mulesoft Field Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Endpoint Title --></label>
+        <name>Endpoint_Title__c</name>
+        <picklistValues>
+            <masterLabel>Investor Account</masterLabel>
+            <translation><!-- Investor Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor BankDetails</masterLabel>
+            <translation><!-- Investor BankDetails --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor OnlineDetails</masterLabel>
+            <translation><!-- Investor OnlineDetails --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor SSO</masterLabel>
+            <translation><!-- Investor SSO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mulesoft ApiName --></label>
+        <name>Mulesoft_ApiName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- asd --></label>
+        <name>asdasd__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

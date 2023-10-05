@@ -1,0 +1,26 @@
+<!--
+* @description LWC Component to see the document in the SigningHub Portal through an Iframe.
+*
+* @author Accenture
+*
+* @date August 2021
+* -->
+
+<!-- AW LWC Signing Hub IFrame -->
+<template>
+    <lightning-quick-action-panel class="slds-modal_large">
+
+        <!-- Spinner -->
+        <template if:true={isSpinner}>
+            <lightning-spinner variant="brand" size="medium"></lightning-spinner>
+        </template>
+
+        <!-- SigningHub IFrame -->
+        <template if:true={packageId}>
+            <iframe id="signingHubIFrame" src={iFrameUrl} onload={iframeLoaded}></iframe>
+        </template>
+
+    </lightning-quick-action-panel>
+    <!-- Common LWC Toast component -->
+    <c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

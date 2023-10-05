@@ -1,0 +1,15 @@
+.slds-text-align_right{
+    text-align: -webkit-right;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fh-banner-border {
+        border-right: 2px solid #FFFFFF;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .mg-bottom-medium {
+        margin-bottom: 30px;
+    }
+}

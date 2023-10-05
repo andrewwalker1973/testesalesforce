@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Service Recovery /Complaints Consultant: Service Recovery/Complaints</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Service Recovery /Complaints Consultant: Service Recovery/Complaints</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>SLSC_Team_Leader_Service_Recovery_Complaints</parentRole>
+</Role>

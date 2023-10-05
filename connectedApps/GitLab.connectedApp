@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>support@gitlab.com</contactEmail>
+    <description>GitLab SFDX CI CD Standard Bank Group</description>
+    <label>GitLab</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
+        <certificate>MIID3DCCAsQCCQCOG/sA8TJAxzANBgkqhkiG9w0BAQsFADCBrzELMAkGA1UEBhMCWkExEDAOBgNVBAgMB0dhdXRlbmcxFTATBgNVBAcMDEpvaGFubmVzYnVyZzEYMBYGA1UECgwPTGliZXJ0eSBQdHkgTHRkMRwwGgYDVQQLDBNTYWxlc2ZvcmNlIFByYWN0aWNlMRAwDgYDVQQDDAdMaWJlcnR5MS0wKwYJKoZIhvcNAQkBFh5zYWxlc2ZvcmNlLmFkbWluQGxpYmVydHkuY28uemEwHhcNMTkwNDE3MDYzNzIyWhcNMjAwNDE2MDYzNzIyWjCBrzELMAkGA1UEBhMCWkExEDAOBgNVBAgMB0dhdXRlbmcxFTATBgNVBAcMDEpvaGFubmVzYnVyZzEYMBYGA1UECgwPTGliZXJ0eSBQdHkgTHRkMRwwGgYDVQQLDBNTYWxlc2ZvcmNlIFByYWN0aWNlMRAwDgYDVQQDDAdMaWJlcnR5MS0wKwYJKoZIhvcNAQkBFh5zYWxlc2ZvcmNlLmFkbWluQGxpYmVydHkuY28uemEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDOeXZFr+wfvMYhRfYsWxyoXnyxuacx3vUNy7WmV24fgfuqQJ7C3yfoWa/rAglcQWyYIkOPe7WzqzOV/1Ep4n3QsfEntfv5qV2+goPcrn1n6ZvfeyzjlHbaRtlT/dMxOAe3VVNrbysNrOqFlWTfrji0nh8wp70HU4/xVm3Y2zjgMy4z+SYMeigQYfPJUhUubmCxwaCR9AIbkNk7Rerdqz0jmrHOoDzgUkaIkm6Xoy0L+K4COmczxW7/mLAUFn6HUUFa90j75OBmYe758KyXKJ6GsvV8LfDCb4ETLs9OBx90wFsTmQhvTUf/X+s2M8LD+HuzfwMpL3p5LBXXvjZReEh1AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAF+3o20OKOiwXJiM4okhDXZ5aYSsm6B1nIlN+vvnYchqRzUZWj3JKXzYaWpBSg9TwiGkFAnGi5Z+xHzXWDTXmt7m8mjPQjIbJGSsktqR7kn2BC7tikFz4BaWpCV/hD0NGeKxoMQdYu8VUsAjDEIS+AaAsKd3a1F3xs666MRrkT3LekzPHEJLrUZezL6tuUVTDs+FfzGTPk5uAyPlzkdYsJTUIQP4ZRHG8S4tyvMn7TPzB/58gS/mPk6jdP2VWM/jOiCBHEgXyjsNVE2QbNMMuifEPsRvBhs9w3JqQgGMQ3DSNtf+r61YgdNxQ2h7Z8aTnSOqgJF7clhd0SrUk4PcRRY=</certificate>
+        <consumerKey>3MVG9tzQRhEbH_K1Ih04zBLV7G9ZGQ8wxr51kVlL5gDHmBfFnvry9Qdaq8BOjjxlqNywGXP3a3AgxhWmO9Ck6</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <permissionSetName>GitLab</permissionSetName>
+</ConnectedApp>

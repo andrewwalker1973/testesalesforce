@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="aw_CMP_Button">
+    <apiVersion>47.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Button</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage, lightning__RecordPage">
+            <property name="buttonLabel" label="Button Label" default="Button Label" type="String"/>
+            <property name="variant" label="Button Style" type="String" datasource=",base,brand,destructive,success"/>
+            <property name="stretch" label="Stretch Button" type="Boolean"/>
+            <property name="link" label="Link" default="https://www.salesforce.com" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

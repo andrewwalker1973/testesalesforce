@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Priority</name>
+            <valueLiteral>Normal</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ActivityDate</name>
+            <valueFormula>StartDate + 1</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Subject</name>
+            <valueLiteral>Change of financial adviser form</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <isRequired>true</isRequired>
+        <itemEntityType>Task</itemEntityType>
+        <name>Change of financial adviser form</name>
+        <uniqueName>Change_of_financial_adviser_form_50a4daa9_646f_11ea_ac5d_111ed2964330</uniqueName>
+    </actionPlanTemplateItem>
+    <description>Requirement to process a Stanlib change of consultant</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Stanlib  Change of Consultant</name>
+    <targetEntityType>Account</targetEntityType>
+    <uniqueName>Stanlib_Change_of_Consultant_944f7404_6469_11ea_ac5d_91bb6be292f6</uniqueName>
+</ActionPlanTemplate>

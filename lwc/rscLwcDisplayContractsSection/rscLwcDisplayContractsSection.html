@@ -1,0 +1,17 @@
+<template>
+	<!-- Main content -->
+	<lightning-card class='slds-m-around_small' icon-name={iconName} title={title} variant="narrow">
+		<!-- Error block -->
+		<template if:true={error}>
+			<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+				<span class="slds-assistive-text">error</span>
+				<p>{error}</p>
+			</div>
+		</template>
+		<!-- Data table  -->
+		<div class="slds-box slds-m-around_small">
+			<lightning-datatable columns={cols} data={contractList} key-field="id" selected-rows={preSelected}></lightning-datatable>
+		</div>
+	</lightning-card>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

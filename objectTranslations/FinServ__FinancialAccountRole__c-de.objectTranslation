@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Finanz-Accountrolle</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Finanz-Accountrollen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Finanz-Accountrolle</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Finanz-Accountrollen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Finanz-Accountrolle</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Finanz-Accountrollen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Finanz-Accountrolle</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Finanz-Accountrollen</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Financial Account Role --></label>
+        <name>WM_Client_FinancialAccountRole</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Birth Date --></label>
+        <name>AW_RoleDOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>AW_RoleFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Identification Number --></label>
+        <name>AW_RoleIdentificationNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initials --></label>
+        <name>AW_RoleInitials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>AW_RoleLastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>AW_RoleTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- BALANCE --></label>
+        <name>BALANCE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultant Code --></label>
+        <name>CMN_ConsultantCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country of Citizenship --></label>
+        <name>CMN_CountryOfCitizenship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country of Incorporation --></label>
+        <name>CMN_CountryOfIncorporation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country of Issue --></label>
+        <name>CMN_CountryOfIssue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Incorporation --></label>
+        <name>CMN_DateOfIncorporation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>CMN_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiry Date --></label>
+        <name>CMN_ExpiryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fifth Name --></label>
+        <name>CMN_FifthName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fourth Name --></label>
+        <name>CMN_FourthName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>CMN_Gender__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Date --></label>
+        <name>CMN_IssueDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marital Status --></label>
+        <name>CMN_MaritalStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>CMN_Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation Risk Category --></label>
+        <name>CMN_OccupationRiskCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Occupation --></label>
+        <name>CMN_Occupation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Type --></label>
+        <name>CMN_OrganisationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Name --></label>
+        <name>CMN_OrganizationName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Passport Number --></label>
+        <name>CMN_PassportNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage Split --></label>
+        <name>CMN_PercentageSplit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>CMN_PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Race --></label>
+        <name>CMN_Race__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Number --></label>
+        <name>CMN_RegistrationNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>CMN_Relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Name --></label>
+        <name>CMN_SecondName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suffix --></label>
+        <name>CMN_Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Number --></label>
+        <name>CMN_TaxNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Name --></label>
+        <name>CMN_ThirdName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wedding Anniversary --></label>
+        <name>CMN_WeddingAnniversary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Phone --></label>
+        <name>CMN_WorkPhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATE OPENED --></label>
+        <name>DATE_OPENED__c</name>
+    </fields>
+    <fields>
+        <label><!-- FINANCIAL ACCOUNT NAME --></label>
+        <name>FINANCIAL_ACCOUNT_NAME__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>FinServ__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Editable --></label>
+        <name>FinServ__Editable__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>FinServ__EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Account --></label>
+        <name>FinServ__FinancialAccount__c</name>
+        <relationshipLabel><!-- Financial Account Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Account --></label>
+        <name>FinServ__RelatedAccount__c</name>
+        <relationshipLabel><!-- Financial Account Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Contact --></label>
+        <name>FinServ__RelatedContact__c</name>
+        <relationshipLabel><!-- Financial Account Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>FinServ__Role__c</name>
+        <picklistValues>
+            <masterLabel>Accountant</masterLabel>
+            <translation>Steuerberater</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beneficiary</masterLabel>
+            <translation>Empfänger</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker</masterLabel>
+            <translation><!-- Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Manager</masterLabel>
+            <translation>Geschäftsmanager</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultant</masterLabel>
+            <translation><!-- Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation</masterLabel>
+            <translation>Kapitalgesellschaft</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation</masterLabel>
+            <translation>Stiftung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grantor</masterLabel>
+            <translation>Optionsverkäufer</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee</masterLabel>
+            <translation>Treuhänder</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source System ID --></label>
+        <name>FinServ__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>FinServ__StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- HELD AWAY --></label>
+        <name>HELD_AWAY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Type --></label>
+        <name>Owner_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Party Name --></label>
+        <name>RSC_PartyName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Rollennummer</nameFieldLabel>
+    <recordTypes>
+        <description><!-- Record type to be used for Integration with Compass, Lifestyle and Ilanga --></description>
+        <label><!-- Liberty Financial Account Role --></label>
+        <name>AW_LibertyFinancialAccountRole</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Role occupied by an organizational entity, such as a corporation or LLC --></description>
+        <label><!-- Account Role --></label>
+        <name>FinServ__AccountRole</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Role occupied by a person --></description>
+        <label><!-- Contact Role --></label>
+        <name>FinServ__ContactRole</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- A Financial Account Role cannot be created as Inactive --></errorMessage>
+        <name>FinServ__CannotCreateInactiveRecord</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This record cannot be edited. To update role information, you can deactivate this record and create a new one. --></errorMessage>
+        <name>FinServ__FARCannotBeModified</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Inactive record cannot be edited. To update FAR, you can create a new one. --></errorMessage>
+        <name>FinServ__InactiveFARCannotBeEdited</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Inactive Financial Roles cannot be reactivated. --></errorMessage>
+        <name>FinServ__InactiveRecordCannotBeReactivated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This record cannot be deactivated because ownership can be updated on the financial account only. --></errorMessage>
+        <name>FinServ__OwnershipRolesCannotBeDeactivated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This record cannot be modified because ownership can be specified on the financial account only. --></errorMessage>
+        <name>FinServ__OwnershipRolesCannotBeModified</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Either Related Account or Related Contact is required. --></errorMessage>
+        <name>FinServ__RelatedAccountOrContactRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Role is required. --></errorMessage>
+        <name>FinServ__RoleIsMandatory</name>
+    </validationRules>
+</CustomObjectTranslation>

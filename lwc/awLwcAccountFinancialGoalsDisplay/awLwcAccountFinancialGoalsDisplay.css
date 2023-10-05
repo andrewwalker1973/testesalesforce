@@ -1,0 +1,32 @@
+.accordion-background
+{
+	--slds-c-accordion-summary-color-background : #F3F3F3;
+
+}
+
+.card-boarder
+{
+	--slds-c-card-color-border : #000000;
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.heading-label
+{
+	color          : #444444;
+	font-size      : 0.75rem;
+	font-weight    : 400;
+	letter-spacing : .0625rem;
+	line-height    : 1.25;
+	text-transform : uppercase;
+
+
+}
+
+.heading-truncate
+{
+	max-width     : 100%;
+	overflow      : hidden;
+	text-overflow : ellipsis;
+	white-space   : nowrap;
+	
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>AW_CustomNotificationRecordsFound</name>
+        <label>Custom Notification Records Found?</label>
+        <locationX>182</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_RecordsFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AW_CustomNotificationRecordsToDelete</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_DeleteCustomNotificationRecords</targetReference>
+            </connector>
+            <label>Records Found</label>
+        </rules>
+    </decisions>
+    <description>Deletes custom time-based notification records by Parent Id.
+@author latika.kharbanda@accenture.com
+@date October 2021</description>
+    <interviewLabel>Delete Custom Time-Based Notification Records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delete Custom Time-Based Notification Records</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>AW_DeleteCustomNotificationRecords</name>
+        <label>Delete Custom Notification Records</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <inputReference>AW_CustomNotificationRecordsToDelete</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>AW_GetCustomNotificationRecords</name>
+        <label>Get Custom Notification Records</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AW_CustomNotificationRecordsFound</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AW_ParentId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>AW_ParentId</elementReference>
+            </value>
+        </filters>
+        <object>AW_CustomTimeBasedNotification__c</object>
+        <outputReference>AW_CustomNotificationRecordsToDelete</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AW_GetCustomNotificationRecords</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>AW_CustomNotificationRecordsToDelete</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AW_CustomTimeBasedNotification__c</objectType>
+    </variables>
+    <variables>
+        <name>AW_ParentId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

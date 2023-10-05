@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>DocumentChecklistItem</itemEntityType>
+            <name>Name</name>
+            <valueLiteral>Appointment of Beneficiary</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>DocumentChecklistItem</itemEntityType>
+            <name>DocumentTypeId</name>
+            <valueLiteral>0de4J000000bnLWQAY</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <isRequired>false</isRequired>
+        <itemEntityType>DocumentChecklistItem</itemEntityType>
+        <name>Appointment of Beneficiary</name>
+        <uniqueName>Appointment_of_Beneficiary_cad981fd_acd0_11ec_801f_ade574a0a1df</uniqueName>
+    </actionPlanTemplateItem>
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>DocumentChecklistItem</itemEntityType>
+            <name>Name</name>
+            <valueLiteral>Letter Of Authority</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>DocumentChecklistItem</itemEntityType>
+            <name>DocumentTypeId</name>
+            <valueLiteral>0de4J000000blm4QAA</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <isRequired>false</isRequired>
+        <itemEntityType>DocumentChecklistItem</itemEntityType>
+        <name>Letter Of Authority</name>
+        <uniqueName>Letter_Of_Authority_d0ff4cbb_acd0_11ec_801f_bf2e41f4f9b7</uniqueName>
+    </actionPlanTemplateItem>
+    <description>Documents required for Beneficiary Update</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Beneficiary Update</name>
+    <targetEntityType>01I4J000001jvL5</targetEntityType>
+    <uniqueName>Beneficiary_Update_bdfafc38_acd0_11ec_801f_71e4351ed155</uniqueName>
+</ActionPlanTemplate>

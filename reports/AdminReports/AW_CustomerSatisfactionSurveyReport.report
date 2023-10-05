@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SurveyQuestion.SurveyQuestionResponses$ResponseValue</field>
+    </columns>
+    <columns>
+        <field>SurveyQuestion.SurveyQuestionResponses$Invitation</field>
+    </columns>
+    <columns>
+        <field>SurveyQuestion.SurveyQuestionResponses$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>SurveyQuestion$CreatedBy</field>
+    </columns>
+    <description>Customer Satisfaction Survey Report</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SurveyQuestion.SurveyQuestionResponses$Response</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SurveyQuestion$QuestionName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Customer Satisfaction Survey Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_SurveyQuestionsAndResponse__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>SurveyQuestion$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

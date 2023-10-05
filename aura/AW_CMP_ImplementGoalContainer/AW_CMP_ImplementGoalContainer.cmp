@@ -1,0 +1,98 @@
+<aura:component description="AW_CMP_ImplementGoalContainer" controller="AW_CTRL_ImplementGoal"
+				implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
+	<aura:attribute name="sObjectType" type="String" default="{!v.sObjectName}"/>
+	<aura:attribute name="isAccountObject" type="boolean"/>
+	<aura:attribute name="isOpportunityObject" type="boolean"/>
+	<aura:attribute name="recordId" type="String"/>
+	<aura:attribute name="objectRecordId" type="String"/>
+
+	<aura:attribute name="isFinancialGoalOpen" type="boolean" default="false"/>
+	<aura:attribute name="isPlannedSolutionOpen" type="boolean" default="false"/>
+	<aura:attribute name="isQuoteOpen" type="boolean" default="false"/>
+	<!-- START: Below block variables  created as part of GI Redesign User stories  -->
+	<aura:attribute name="isServicingQuoteButtonVisible" type="boolean" default="false"/>
+	<aura:attribute name="isServicingQuoteContainerOpen" type="boolean" default="false"/>
+	<aura:attribute name="isImplementGoalButtonVisible" type="boolean" default="false"/>
+	<aura:attribute name="isRiskGoalButtonVisible" type="boolean" default="false"/>
+	<aura:attribute name="isFinancialGoalObject" type="boolean" default="false"/>
+	<aura:attribute name="opportunityId" type="String"/>
+	<aura:attribute name="accountRecord" type="Object"/>
+	<aura:attribute name="opportunityRecord" type="Object"/>
+	<aura:attribute name="financialGoalRecord" type="Object"/>
+	<aura:attribute name="recordLoadError" type="String"/>
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:if isTrue="{!v.isAccountObject}">
+		<force:recordData aura:id="recordLoader" recordId="{!v.recordId}" fields="FinServ__Status__c" targetFields="{!v.accountRecord}" targetError="{!v.recordLoadError}"
+						  recordUpdated="{!c.servicingQuoteButtonVisibility}"/>
+	</aura:if>
+	<aura:if isTrue="{!v.isOpportunityObject}">
+		<force:recordData aura:id="recordLoader" recordId="{!v.recordId}" fields="Account.FinServ__Status__c" targetFields="{!v.opportunityRecord}"
+						  targetError="{!v.recordLoadError}" recordUpdated="{!c.servicingQuoteButtonVisibility}"/>
+	</aura:if>
+
+	<aura:if isTrue="{!v.isFinancialGoalObject}">
+		<force:recordData aura:id="recordLoader" recordId="{!v.recordId}" fields="AW_Goal_Type__c" targetFields="{!v.financialGoalRecord}" targetError="{!v.recordLoadError}"
+						  recordUpdated="{!c.financialGoalButtonVisibility}"/>
+	</aura:if>
+
+	<!-- END: GI Redesign User stories  -->
+	<aura:attribute name="selectedFinancialGoalParent" type="Object"/>
+	<aura:attribute name="selectedPlannedSolutionParent" type="Object"/>
+	<aura:attribute name="selectedQuoteParent" type="Object"/>
+	<aura:attribute name="isRiskGoal" type="Boolean" default="false"/>
+	<aura:attribute name="accountId" type="String"/>
+	<aura:attribute name="goalButtonName" type="String"/>
+	<div class="slds-clearfix">
+		<aura:if isTrue="{!v.isImplementGoalButtonVisible}">
+			<lightning:button aura:id="implementGoalButton" variant="brand" label="{!$Label.c.AW_ImplementGoal}" title="{!$Label.c.AW_ImplementGoal}" onclick="{! c.openGoalModal }"
+							  class="slds-float_right"/>
+			<!-- AwLwc Link Unlink Contracts-->
+			<c:awLwcLinkUnlinkContracts goalRecordId="{!v.objectRecordId}" objectApiName="{!v.sObjectType}" accountRecordId="{!v.recordId}"
+										class="slds-float_right"></c:awLwcLinkUnlinkContracts>
+			<!-- AwLwc Link Unlink Contracts End-->
+		</aura:if>
+
+		<aura:if isTrue="{!v.isRiskGoalButtonVisible}">
+			<div style="left:-5px;position:relative;">
+				<lightning:button aura:id="riskGoalButton" variant="brand" label="{!$Label.c.AW_ImplementRiskGoal}" title="{!$Label.c.AW_ServicingQuoteButton}"
+								  onclick="{! c.openGoalModal }" class="slds-float_right"/>
+			</div>
+		</aura:if>
+		<aura:if isTrue="{!v.isServicingQuoteButtonVisible}">
+			<div style="right:10px;position:relative;">
+				<lightning:button variant="brand" label="{!$Label.c.AW_ServicingQuoteButton}" title="{!$Label.c.AW_ServicingQuoteButton}" onclick="{! c.openServicingContainer }"
+								  class="slds-float_right"/>
+			</div>
+		</aura:if>
+	</div>
+
+	<aura:if isTrue="{!v.isFinancialGoalOpen}">
+		<c:AW_CMP_ImplementGoalFinancialGoal isFinancialGoalOpenChild="{!v.isFinancialGoalOpen}" isPlannedSolutionOpenChild="{!v.isPlannedSolutionOpen}"
+											 isQuoteOpenChild="{!v.isQuoteOpen}" parentAccountId="{!v.recordId}" selectedFinancialGoal="{!v.selectedFinancialGoalParent}"
+											 selectedPlannedSolution="{!v.selectedPlannedSolutionParent}" sObjectTypeChild="{!v.sObjectName}" isRiskGoal="{!v.isRiskGoal}"
+											 goalButtonNameChild="{!v.goalButtonName}" navigateToRecordId="{!v.objectRecordId}"/>
+
+	</aura:if>
+
+	<aura:if isTrue="{!v.isPlannedSolutionOpen}">
+		<c:AW_CMP_ImplementGoalPlannedSolution isFinancialGoalOpenChild="{!v.isFinancialGoalOpen}" isPlannedSolutionOpenChild="{!v.isPlannedSolutionOpen}"
+											   isQuoteOpenChild="{!v.isQuoteOpen}" selectedFinancialGoal="{!v.selectedFinancialGoalParent}"
+											   selectedPlannedSolution="{!v.selectedPlannedSolutionParent}" sObjectTypeChild="{!v.sObjectName}"
+											   opportunityIdChild="{!v.opportunityId}" isRiskGoal="{!v.isRiskGoal}" navigateToRecordId="{!v.objectRecordId}"/>
+	</aura:if>
+
+	<aura:if isTrue="{!v.isQuoteOpen}">
+		<c:AW_CMP_ImplementGoalQuote isFinancialGoalOpenChild="{!v.isFinancialGoalOpen}" isPlannedSolutionOpenChild="{!v.isPlannedSolutionOpen}" isQuoteOpenChild="{!v.isQuoteOpen}"
+									 parentAccountId="{!v.recordId}" selectedFinancialGoal="{!v.selectedFinancialGoalParent}"
+									 selectedPlannedSolution="{!v.selectedPlannedSolutionParent}" selectedQuote="{!v.selectedQuoteParent}" isRiskGoal="{!v.isRiskGoal}"
+									 sObjectTypeChild="{!v.sObjectName}" navigateToRecordId="{!v.objectRecordId}"/>
+
+	</aura:if>
+
+	<aura:if isTrue="{!v.isServicingQuoteContainerOpen}">
+		<c:AW_CMP_ContractServicingQuoteContainer sObjectTypeChild="{!v.sObjectType}" parentRecordId="{!v.recordId}"
+												  isServicingQuoteContainerOpenChild="{!v.isServicingQuoteContainerOpen}" opportunityIdChild="{!v.opportunityId}"/>
+
+	</aura:if>
+
+</aura:component>

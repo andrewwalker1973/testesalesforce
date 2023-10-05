@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>STANLIB Manco Offshore Queires auto-response template</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>STANLIB_CaseLetterhead</letterhead>
+    <name>STANLIB Offshore Queries</name>
+    <style>freeForm</style>
+    <subject>Your case {!Case.CaseNumber} has been created - STANLIB Offshore Queries</subject>
+    <textOnly>Dear Valued Client,
+
+Thank you for your email.
+
+This is an automatic acknowledgement that we have received your email. Please note this mailbox is exclusively for Offshore queries. We will respond to you within 48 hours.
+
+This mailbox does not accept instructions of a financial nature. Should any transactions be sent to this mailbox, STANLIB will not be held liable for any related financial implication. All offshore instructions must be sent to offshoreinstructions@stanlib.com.
+
+To register for STANLIB online, please click on the link: online portal
+
+To get in touch with our client and broker support team please use the numbers below:
+
+Client Support Line: 0860 123 003 (SA only)
+Unit Trust Broker line: 0860 104 418 (SA only)
+
+
+Kind Regards,
+STANLIB Offshore
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{!Case.Email_Thread}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

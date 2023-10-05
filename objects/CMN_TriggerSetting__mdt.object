@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CMN_BypassExecution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set this to true to bypass all Trigger Actions from being called on this sObject</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Set this to true to bypass all Trigger Actions from being called on this sObject</inlineHelpText>
+        <label>Bypass Execution</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_BypassPermission__c</fullName>
+        <description>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will be bypassed if the running user has the custom permission identified.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will be bypassed if the running user has the custom permission identified.</inlineHelpText>
+        <label>Bypass Permission</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ObjectApiName__c</fullName>
+        <description>Enter the API Name of the object for this trigger. If this object is part of a managed package, do not include the prefix.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the API Name of the object for this trigger. If this object is part of a managed package, do not include the prefix.</inlineHelpText>
+        <label>Object API Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ObjectNamespace__c</fullName>
+        <description>Enter the namespace object for this trigger.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the namespace object for this trigger.</inlineHelpText>
+        <label>Object Namespace</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_RequiredPermission__c</fullName>
+        <description>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will only execute if the running user has the custom permission identified.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Optional. Enter the API name of a permission. If this field has a value, then the triggers on this object will only execute if the running user has the custom permission identified.</inlineHelpText>
+        <label>Required Permission</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Trigger Setting</label>
+    <pluralLabel>Trigger Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

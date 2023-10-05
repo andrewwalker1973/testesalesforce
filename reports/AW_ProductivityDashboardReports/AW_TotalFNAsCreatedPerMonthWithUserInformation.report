@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>AW_FNA__c$Owner</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$Id</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$Name</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$AW_Account__c.Owner.AW_ConsultantCode__c</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$AW_Account__c.Owner.AW_Branch__c</field>
+    </columns>
+    <columns>
+        <field>AW_FNA__c$AW_Account__c.Owner.AW_Region__c</field>
+    </columns>
+    <description>Count of FNA&apos;s completed by advisers - this is brought into Salesforce through the integration with atWORK and Advice + - this is viewable on the Accounts page</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>AW_FNA__c$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AW_FNA__c$AW_Source_System_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Total FNAs Created per Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_FNAWithUserInformation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>AW_FNA__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

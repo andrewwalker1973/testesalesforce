@@ -1,0 +1,39 @@
+<!-- /**
+* @description LWC Component that displays the communication logs for
+*			   all the cases that are associated to the specific client.
+*
+* @author jayanth.kumar.s@accenture.com
+*
+* @ADO storyNo: 259693
+*
+* @date February 2022
+* -->
+
+<template>
+	<lightning-card>
+		<div if:true={isLoading}>
+			<lightning-spinner alternative-text={helpText} class="spinner-medium" data-text={helpText} size="medium" variant="brand"></lightning-spinner>
+		</div>
+		<div class="slds-p-horizontal_large slds-border_bottom">
+			<div class="slds-grid slds-grid_vertical-align-center">
+				<div class="slds-col">
+					<div class="slds-grid slds-grid_vertical-align-center">
+						<div class="slds-col_bump-left slds-m-bottom_x-small">
+							<lightning-icon alternative-text="Communication Logs" class="slds-m-right_medium" icon-name="custom:custom55"
+											size="medium"></lightning-icon>
+						</div>
+						<div class="slds-col">
+							<h2 class="slds-text-heading_small slds-p-bottom_xx-small">
+								Communication Logs </h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slds-card__body slds-card__body_inner slds-m-top_medium">
+			<lightning-datatable columns={columns} data={displayCommunicationLogs} hide-checkbox-column="true" key-field="Id"
+								 show-row-number-column="true"></lightning-datatable>
+		</div>
+	</lightning-card>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

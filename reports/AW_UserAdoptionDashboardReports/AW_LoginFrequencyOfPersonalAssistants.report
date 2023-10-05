@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_71028034</developerName>
+        <masterLabel>Login Count Bucket</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>CMN_LoginFrequency__c$CMN_UniqueLoginCount__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>5</to>
+            </sourceValues>
+            <value>1-5 unique logins per month</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>5</from>
+                <to>15</to>
+            </sourceValues>
+            <value>6-15 unique logins per month</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>15</from>
+            </sourceValues>
+            <value>Greater than 15 unique logins per month</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CMN_LoginFrequency__c$CMN_UniqueLoginCount__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CMN_LoginFrequency__c$CMN_TotalLoginCount__c</field>
+    </columns>
+    <columns>
+        <field>CMN_LoginFrequency__c$CMN_User__c</field>
+    </columns>
+    <columns>
+        <field>CMN_LoginFrequency__c$CMN_User__c.AW_Region__c</field>
+    </columns>
+    <columns>
+        <field>CMN_LoginFrequency__c$CMN_User__c.AW_Branch__c</field>
+    </columns>
+    <columns>
+        <field>CMN_LoginFrequency__c$CMN_User__c.AW_ConsultantCode__c</field>
+    </columns>
+    <description>Displays the unique and total login count, grouped by login month and login count buckets of Personal Assistants</description>
+    <filter>
+        <criteriaItems>
+            <column>CMN_LoginFrequency__c$CMN_RD_LoginDate__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>LAST_N_MONTHS:12</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CMN_LoginFrequency__c$CMN_User__c.Profile</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Liberty Adviser Personal Assistant</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>CMN_LoginFrequency__c$CMN_RD_LoginDate__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_71028034</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Login Frequency of Personal Assistants</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CMN_LoginFrequencyWithUserInformation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CMN_LoginFrequency__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

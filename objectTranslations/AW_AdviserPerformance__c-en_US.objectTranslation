@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Activity Measure Actual</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Activity Measure Actuals</value>
+    </caseValues>
+    <fields>
+        <label><!-- AP CompositeID --></label>
+        <name>AW_AP_CompositeID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Measure Total --></label>
+        <name>AW_AdviserTarget__c</name>
+        <relationshipLabel><!-- Activity Measure Actuals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AQC --></label>
+        <name>AW_AverageFAVP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Satisfaction Score --></label>
+        <name>AW_ClientSatisfactionScore__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultant Code --></label>
+        <name>AW_ConsultantCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>AW_EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Full Year Net Risk Act. Target YTD --></label>
+        <name>AW_FullYearNetRiskActivitiesTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Full Year Net Retail Act. Target YTD --></label>
+        <name>AW_FullYearPCNetRetailActivityTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Full Year Net Risk PCR Target YTD --></label>
+        <name>AW_FullYearPCRiskNetPCRTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Full Year Net PCR Target YTD --></label>
+        <name>AW_FullYearPercentageNetPCRTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Year Target Net PCR --></label>
+        <name>AW_FullYearTargetPCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Year Target Net Retail Activities --></label>
+        <name>AW_FullYearTargetRetailActivities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Year Target Net Risk Activities --></label>
+        <name>AW_FullYearTargetRiskActivities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Year Target Net Risk PCR --></label>
+        <name>AW_FullYearTargetRiskPCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Latest Actuals --></label>
+        <name>AW_IsLatestActuals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tenure --></label>
+        <name>AW_LAPExpTenure__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last ME LAP Validating YTD --></label>
+        <name>AW_LastMELAPValidatingYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Production Club based on previous year --></label>
+        <name>AW_LastYearsProductionClubStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Lead Conversion Rate --></label>
+        <name>AW_LeadConversionRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual  Net PCR YTD --></label>
+        <name>AW_NetPCRActualYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net PCR Required for Validation YTD --></label>
+        <name>AW_NetPCRRequiredForValidationYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Net PCR --></label>
+        <name>AW_NetPCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Net Retail Activities YTD --></label>
+        <name>AW_NetRetailActivitiesYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Net Risk Activities YTD --></label>
+        <name>AW_NetRiskActivitiesYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Lead Converted --></label>
+        <name>AW_NumberOfLeadConverted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of New Leads --></label>
+        <name>AW_NumberOfNewLeads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of New Opportunities --></label>
+        <name>AW_NumberOfNewOpportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Open Leads --></label>
+        <name>AW_NumberOfOpenLeads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Open Opportunities --></label>
+        <name>AW_NumberOfOpportunitiesOpen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Opportunities Won --></label>
+        <name>AW_NumberOfOpportunitiesWon__c</name>
+    </fields>
+    <fields>
+        <label><!-- On PBS --></label>
+        <name>AW_OnPBS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Opportunity Win Rate --></label>
+        <name>AW_OpportunityWinRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Net PCR Target YTD --></label>
+        <name>AW_PercentageNetPCRTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Net Retail Activities Target YTD --></label>
+        <name>AW_PercentageRetailActivitiesTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Net Risk Activities Target YTD --></label>
+        <name>AW_PercentageRiskActivitiesTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Net Risk PCR Target YTD --></label>
+        <name>AW_PercentageRiskNetPCRTargetYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Net Retail Activities --></label>
+        <name>AW_RetailActivities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Net Risk Activities --></label>
+        <name>AW_RiskActivities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Net Risk PCR YTD --></label>
+        <name>AW_RiskNetPCRYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Net Risk PCR --></label>
+        <name>AW_RiskPCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>AW_StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Net PCR YTD --></label>
+        <name>AW_TargetPCRYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Net Retail Activities YTD --></label>
+        <name>AW_TargetRetailActivitiesYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Net Risk Activities YTD --></label>
+        <name>AW_TargetRiskActivitiesYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Net Risk PCR YTD --></label>
+        <name>AW_TargetRiskPCRYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- UACFID --></label>
+        <name>AW_UACFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Number --></label>
+        <name>AW_WeekNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>AW_Year__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- You may not update system controlled fields once the record is created. --></errorMessage>
+        <name>AW_OwnerWeekNumberYear_PreventEdit</name>
+    </validationRules>
+</CustomObjectTranslation>

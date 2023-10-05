@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Cases Available For Assignment</name>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>SC_AssociatedContractExtension__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>SC_CaseExtension__c</sobjectType>
+    </queueSobject>
+</Queue>

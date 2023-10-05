@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Cloud Platform Server Name --></help>
+        <label><!-- Cloud Platform Server --></label>
+        <name>grax__Cloud_Platform_Server__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Delete Tab --></label>
+        <name>grax__EnableDeleteTab__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show File Objects for Bulk --></label>
+        <name>grax__EnableObjectTracking__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX API Url --></label>
+        <name>grax__GRAX_API_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Cloud Path --></label>
+        <name>grax__GRAX_Cloud_Path__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Flow URL --></label>
+        <name>grax__GRAX_Flow_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Heroku Authorized User Id --></label>
+        <name>grax__HerokuAuthorizedUserId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Heroku Application Name --></help>
+        <label><!-- Heroku App Name --></label>
+        <name>grax__Heroku_App_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastSendArchivedRecordsToGRAX --></label>
+        <name>grax__LastSendArchivedRecordsToGRAX__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastUpdateAsyncBackedUpRecords --></label>
+        <name>grax__LastUpdateAsyncBackedUpRecords__c</name>
+    </fields>
+    <fields>
+        <label><!-- LogAllErrors --></label>
+        <name>grax__LogAllErrors__c</name>
+    </fields>
+    <fields>
+        <help><!-- This value will be used to set the maximum number jobs using the bulk api that can be running at same time --></help>
+        <label><!-- MaxNumberOfBulkGSPRunning --></label>
+        <name>grax__MaxNumberOfBulkGSPRunning__c</name>
+    </fields>
+    <fields>
+        <help><!-- This value will be used to set the maximum number of records sent to GRAX in a single Payload. Values could be: 1, 2, 5, 10, 20, 25, 50, 100, 200, 400, 500, 1000, 2000 --></help>
+        <label><!-- MaxNumberOfRecordsPerPayload --></label>
+        <name>grax__MaxNumberOfRecordsPerPayload__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Salesforce Sidebar --></label>
+        <name>grax__ShowSalesforceSidebar__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Bulk API --></label>
+        <name>grax__Use_Bulk_API__c</name>
+    </fields>
+</CustomObjectTranslation>

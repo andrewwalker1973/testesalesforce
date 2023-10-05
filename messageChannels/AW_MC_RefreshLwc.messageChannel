@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to communicate to Another LWC when it is to be refreshed</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Refresh Message</description>
+        <fieldName>refreshMessage</fieldName>
+    </lightningMessageFields>
+    <masterLabel>AW_MC_RefreshLwc</masterLabel>
+</LightningMessageChannel>

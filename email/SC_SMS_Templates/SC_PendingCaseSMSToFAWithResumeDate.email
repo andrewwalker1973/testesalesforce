@@ -1,0 +1,1 @@
+Liberty: Policy Number: {!Case.SC_COMMS_PolicyNumber__c} - We have pended the medical appointment request for {!Case.SC_COMMS_ClientTitle__c} {!Case.SC_COMMS_ClientName__c} {!Case.SC_COMMS_ClientSurname__c} until {!Case.SC_COMMS_ResumeDateAsText__c}. Reason: {!Case.SC_Reason__c}. For queries call 0860557232. Regards, Liberty. Licensed Life Insurer and Authorised FSP (2409).

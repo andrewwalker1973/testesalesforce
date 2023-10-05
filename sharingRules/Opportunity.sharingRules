@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>SLI_InstitutionalSupportAccess</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access given to users in Institutional Distribution Support Lead and subordinates roles</description>
+        <label>STANLIB Institutional Support Access</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistributionSupportLead</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistribution</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SLI_OpportunityReadWriteAccess</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Records owned by users in STANLIB Institutional Read Write Access public group give read/write access to other users in STANLIB Institutional Read Write Access public group</description>
+        <label>STANLIB Opportunity Read Write Access</label>
+        <sharedTo>
+            <group>SLI_InstitutionalReadWriteAccess</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SLI_InstitutionalReadWriteAccess</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SLI_RfpOpportunityAccess</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access given to users in RFP Team Lead and Subordinates role</description>
+        <label>STANLIB RFP Opportunity Access</label>
+        <sharedTo>
+            <roleAndSubordinates>SLI_RfpTeamLead</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistribution</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

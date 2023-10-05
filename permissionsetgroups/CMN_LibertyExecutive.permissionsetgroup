@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set group for users with &apos;Liberty Executive&apos; profile.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Executive</label>
+    <permissionSets>AW_Default</permissionSets>
+    <permissionSets>CMN_LoginFrequency</permissionSets>
+    <permissionSets>FinServ__FinancialServicesCloudStandard</permissionSets>
+    <permissionSets>force__ActionPlans</permissionSets>
+    <permissionSets>force__DocumentChecklist</permissionSets>
+    <permissionSets>force__FSCInsurance</permissionSets>
+    <permissionSets>force__SalesCloudEinsteinAll</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>STANLIB Manco Client Support auto-response template</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>STANLIB_CaseLetterhead</letterhead>
+    <name>STANLIB Client Support</name>
+    <style>freeForm</style>
+    <subject>Your case {!Case.CaseNumber} has been created - STANLIB Client Support</subject>
+    <textOnly>Dear Valued Investor,
+
+Thank you for getting in touch with STANLIB Client Support Centre.
+
+This is an automatic acknowledgement that we have received your email. We will respond to you within 24 hours. For urgent assistance, please use our Client Support Line on 0860 123 003.
+
+Please note this mailbox is exclusively for queries. If you send financial instructions to it, we will not be held liable for any delays in processing them. To ensure quick turnaround times, please ensure you upload instructions on our online portal, or email instructions@stanlib.com.
+
+Self-service options:
+
+Transact and obtain statements and tax certificates on our online portal
+Transact and obtain statements and tax certificates using our bot Stan
+Obtain statements and tax certificate by calling 0860 123 003
+WhatsApp us on 0860 123 003 to obtain a statement or tax certificate
+You can also SMS ‘’Balance” to 43939 to get the latest balance on your investment.
+
+Kind Regards,
+STANLIB Client Support
+www.stanlib.com
+
+{!Case.Email_Thread}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

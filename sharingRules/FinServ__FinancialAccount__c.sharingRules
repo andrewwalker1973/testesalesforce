@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>SC_FinancialAccountSharingRuleforServiceConsoleUsers</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing Rule is created to give Read Only access of Financial Account Records with Role (Group Executive: Client and Adviser Service Centre) and it&apos;s internal Subordinates users.</description>
+        <label>Financial Account Sharing Rule for Service Console Users</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>RSC_ZA_Retail_ClientandAdviserServiceCentre</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>CMN_MasterAccountRecordTypeName__c</field>
+            <operation>equals</operation>
+            <value>AW_LibertyMasterBusinessClient,AW_LibertyMasterIndividualClient</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLSC_STANLIB_Manco_Financial_Account</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule to have access to the records for all the users in under Retail Manco users and its subordinate users.</description>
+        <label>STANLIB Manco Financial Account</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Retail_MANCO</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>STANLIB Manco Financial Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

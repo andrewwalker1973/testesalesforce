@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>New Business</name>
+    <targetEntityType>Opportunity</targetEntityType>
+    <uniqueName>New_Business_9289f069_0980_11ec_80ad_2de91cbb5394</uniqueName>
+</ActionPlanTemplate>

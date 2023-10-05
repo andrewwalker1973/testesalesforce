@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ProductCodeAndCategoryMapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ProductCodeAndCategoryMappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product Category --></label>
+        <name>AW_ProductCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code --></label>
+        <name>AW_ProductCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>AW_ProductName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Sub Category --></label>
+        <name>AW_ProductSubCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prototype --></label>
+        <name>AW_Prototype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Object --></label>
+        <name>AW_SalesforceObject__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

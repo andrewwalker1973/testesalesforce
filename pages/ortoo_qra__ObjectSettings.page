@@ -1,0 +1,3 @@
+<apex:page lightningStylesheets="true" title="Object Settings">
+	<apex:sectionHeader title="Object settings have been merged into Assignment Groups. This page will be removed in a future release." />
+</apex:page>

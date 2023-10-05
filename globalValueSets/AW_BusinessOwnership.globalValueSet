@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Closed Corporation</fullName>
+        <default>false</default>
+        <label>Closed Corporation</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Company</fullName>
+        <default>false</default>
+        <label>Private Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Company</fullName>
+        <default>false</default>
+        <label>Public Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Non Profit Company</fullName>
+        <default>false</default>
+        <label>Non Profit Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Non Profit Organisation</fullName>
+        <default>false</default>
+        <label>Non Profit Organisation</label>
+    </customValue>
+    <customValue>
+        <fullName>Foreign Company</fullName>
+        <default>false</default>
+        <label>Foreign Company</label>
+    </customValue>
+    <customValue>
+        <fullName>State Owned Company</fullName>
+        <default>false</default>
+        <label>State Owned Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Liability Company</fullName>
+        <default>false</default>
+        <label>Personal Liability Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Foreign Trust</fullName>
+        <default>false</default>
+        <label>Foreign Trust</label>
+    </customValue>
+    <customValue>
+        <fullName>Local Trust</fullName>
+        <default>false</default>
+        <label>Local Trust</label>
+    </customValue>
+    <masterLabel>Business Ownership</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

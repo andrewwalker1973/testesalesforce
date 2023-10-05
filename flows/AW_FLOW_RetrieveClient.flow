@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>Retrieve Client Profile {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Retrieve Client Profile</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>AW_RetrieveClientProfile</name>
+        <label>Retrieve Client Profile</label>
+        <locationX>250</locationX>
+        <locationY>133</locationY>
+        <connector>
+            <targetReference>Finish_Screen</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CMN_Service__c</field>
+            <value>
+                <stringValue>AW_API_RestOutboundClientProfile</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CMN_TriggeringObjectId__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CMN_WebserviceCallQueue__c</object>
+    </recordCreates>
+    <screens>
+        <name>Finish_Screen</name>
+        <label>Finish Screen</label>
+        <locationX>426</locationX>
+        <locationY>169</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>AW_FinishText</name>
+            <fieldText>&lt;p&gt;The call has been initiated to retrieve master client profile from PDB.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>AW_RetrieveClientProfile</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

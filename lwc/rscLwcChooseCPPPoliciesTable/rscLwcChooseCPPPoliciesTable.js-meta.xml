@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>Rsc Lwc Choose Cpp Policies Table</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Rsc Lwc Choose Cpp Policies Table</masterLabel>
+
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <propertyType name="P" extends="SObject" label="Insurance Policy Type"
+                          description="Select InsurancePolicy object as data type"/>
+            <property name="policies" label="Policies" type="{P[]}" role="inputOnly"/>
+            <property name="resultsPerPage" label="Number of Results per page"
+                      description="Defaults to 10 if not provided" type="Integer" role="inputOnly"/>
+            <property name="selectedPolicies" label="Selected Policies" description="List of Selected Policy Ids"
+                      type="String[]" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

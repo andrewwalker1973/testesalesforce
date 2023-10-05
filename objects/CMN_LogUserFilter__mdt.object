@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Determine what log levels are logged and optionally, for what users. Asterisk &quot;*&quot; means all users.
+Note: log writing access levels are based on least-restrictive principal.</description>
+    <fields>
+        <fullName>CMN_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicate whether this filter will be applied</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_LogLevel__c</fullName>
+        <description>Specify which Log levels to be logged.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>INFO, DEBUG, WARN, ERROR</inlineHelpText>
+        <label>Active Log Levels</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_LogUser__c</fullName>
+        <defaultValue>&quot;*&quot;</defaultValue>
+        <description>The log record filtering applies only when this user is the active user. Use * for all users.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active Log User</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_UserType__c</fullName>
+        <description>Select the CMN User Type</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active User Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>true</default>
+                    <label>All Users</label>
+                </value>
+                <value>
+                    <fullName>UserId</fullName>
+                    <default>false</default>
+                    <label>UserId</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Username</fullName>
+                    <default>false</default>
+                    <label>Username</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Log User Filter</label>
+    <listViews>
+        <fullName>CMN_AllLogUserFilters</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>CMN_Active__c</columns>
+        <columns>CMN_LogLevel__c</columns>
+        <columns>CMN_LogUser__c</columns>
+        <columns>CMN_UserType__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Log User Filters</label>
+    </listViews>
+    <pluralLabel>Log User Filters</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

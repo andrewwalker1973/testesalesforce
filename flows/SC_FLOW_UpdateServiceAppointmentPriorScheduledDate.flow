@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <description>If service appointment status is dispatched so status reason will be update as a rescheduled</description>
+        <name>SC_CheckAppointmentStatusDispatched</name>
+        <label>Check Appointment Status Dispatched</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>SC_GetServiceAppointmentRecordType</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SC_ScheduleDateChanged</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SchedStartTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Canceled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Dispatched</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_UpdatePriorScheduledDate</targetReference>
+            </connector>
+            <label>Schedule Date Changed</label>
+        </rules>
+        <rules>
+            <name>SC_IsRescheduledAppointment</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dispatched</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SchedStartTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_UpdateRescheduledStatusDate</targetReference>
+            </connector>
+            <label>Is Rescheduled Appointment</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SC_IsServiceAppointmentRecordTypeFound</name>
+        <label>Is Service Appointment Record Type Found</label>
+        <locationX>710</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>SC_ServiceAppointmentRecordTypeFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>SC_ServiceAppointmentRecordType</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_UpdateServiceAppointmentRecordType</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Will update the Service Appointment Prior Start Time field. This field is used for sending communications to clients and advisers.</description>
+    <environments>Default</environments>
+    <interviewLabel>SC_FLOW_UpdateServiceAppointmentPriorScheduledDate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SC_FLOW_UpdateServiceAppointmentPriorScheduledDate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>SC_GetServiceAppointmentRecordType</name>
+        <label>Get Service Appointment Record Type</label>
+        <locationX>710</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SC_IsServiceAppointmentRecordTypeFound</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CMN_COMMS_WorkOrder__r.WorkType.SC_ServiceAppointmentRecordType__c</elementReference>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputReference>SC_ServiceAppointmentRecordType</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>SC_UpdatePriorScheduledDate</name>
+        <label>Update Prior Scheduled Date</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>SC_COMMS_PriorScheduledStartTime__c</field>
+            <value>
+                <elementReference>$Record__Prior.SchedStartTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updating Status reason is rescheduled and  comms prior scheduled  date</description>
+        <name>SC_UpdateRescheduledStatusDate</name>
+        <label>Update Rescheduled Status Date</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>SC_COMMS_PriorScheduledStartTime__c</field>
+            <value>
+                <elementReference>$Record__Prior.SchedStartTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SC_StatusReason__c</field>
+            <value>
+                <stringValue>Rescheduled</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>SC_UpdateServiceAppointmentRecordType</name>
+        <label>Update Service Appointment Record Type</label>
+        <locationX>578</locationX>
+        <locationY>611</locationY>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>SC_ServiceAppointmentRecordType.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SC_CheckAppointmentStatusDispatched</targetReference>
+        </connector>
+        <filterFormula>OR(
+AND(
+ISNEW(),
+NOT(ISNULL({!$Record.CMN_COMMS_WorkOrder__c}) ),
+NOT(ISNULL({!$Record.CMN_COMMS_WorkOrder__r.WorkTypeId}) ),
+NOT(ISNULL({!$Record.CMN_COMMS_WorkOrder__r.WorkType.SC_ServiceAppointmentRecordType__c}) )
+),
+AND(
+{!$Record.RecordType.DeveloperName} = &apos;SC_ServiceAppointment&apos;,
+OR(
+ISCHANGED({!$Record.SchedStartTime}), 
+ISCHANGED({!$Record.Status})
+)
+)
+)</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>SC_ServiceAppointmentRecordType</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>RecordType</objectType>
+    </variables>
+</Flow>

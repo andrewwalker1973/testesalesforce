@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AtWork Username --></label>
+        <name>AW_AtWorkUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch Id --></label>
+        <name>AW_BranchId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch --></label>
+        <name>AW_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Community Url --></label>
+        <name>AW_CommunityUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consultant Code --></label>
+        <name>AW_ConsultantCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Lead Allocation Date --></label>
+        <name>AW_LastLeadAllocationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Performance API Run Date --></label>
+        <name>AW_LastPerformanceAPIRunDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Lead Allocation --></label>
+        <name>AW_NumberOfLeadAllocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opt in/out --></label>
+        <name>AW_Opt_in_out__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receive Leads --></label>
+        <name>AW_ReceiveLeads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region Id --></label>
+        <name>AW_RegionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>AW_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Region Id --></label>
+        <name>AW_SubRegionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Region --></label>
+        <name>AW_SubRegion__c</name>
+    </fields>
+    <fields>
+        <label><!-- UACF ID --></label>
+        <name>AW_UACFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Id --></label>
+        <name>AW_UnitId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit --></label>
+        <name>AW_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referrer Score --></label>
+        <name>FinServ__ReferrerScore__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Marketing Cloud Page --></label>
+        <name>et4ae5__Default_ET_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default MID --></label>
+        <name>et4ae5__Default_MID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange Admin --></label>
+        <name>et4ae5__ExactTargetForAppExchangeAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange User --></label>
+        <name>et4ae5__ExactTargetForAppExchangeUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud Username --></label>
+        <name>et4ae5__ExactTargetUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- @deprecated --></label>
+        <name>et4ae5__ExactTarget_OAuth_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud Admin --></label>
+        <name>et4ae5__ValidExactTargetAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud User --></label>
+        <name>et4ae5__ValidExactTargetUser__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, user will be enabled for Q-assign Assignment Groups and can be assigned jobs if an active member of a Q-assign Assignment Group. If unchecked, the user will be inactive for Q-assign Assignment Groups and cannot be assigned jobs. --></help>
+        <label><!-- Available for Q-Assign --></label>
+        <name>ortoo_qra__Assignment_Group_Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can View Not Assigned Prospects --></label>
+        <name>pi__Can_View_Not_Assigned_Prospects__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Api Key --></label>
+        <name>pi__Pardot_Api_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Api Version --></label>
+        <name>pi__Pardot_Api_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot User Id --></label>
+        <name>pi__Pardot_User_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot User Key --></label>
+        <name>pi__Pardot_User_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot User Role --></label>
+        <name>pi__Pardot_User_Role__c</name>
+    </fields>
+</CustomObjectTranslation>

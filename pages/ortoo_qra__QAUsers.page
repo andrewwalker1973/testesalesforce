@@ -1,0 +1,319 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:QU
+
+TC_LAST_NO_USED:0022
+
+-->
+<apex:page controller="ortoo_qra.QAUsersController" title="QA Users">
+    
+    <script type="text/javascript" src="{!$Resource.jquery}"></script>
+    <apex:includeScript value="{! $Resource.Popper }"/>
+    <script type="text/javascript" src="{!URLFOR($Resource.jqueryui,'jquery-ui.min.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.bootstrapforMultiSelect,'js/bootstrap.min.js')}"></script>
+    <link href="{!URLFOR($Resource.bootstrapforMultiSelect, 'css/bootstrap.min.css')}" rel="stylesheet" media="screen"/>
+    <link href="{!URLFOR($Resource.multiselect, 'multiselect/css/multi-select.css')}" rel="stylesheet" media="screen"/>
+        <link href="{!URLFOR($Resource.Fontawesome, 'font-awesome/css/font-awesome.css')}" rel="stylesheet" media="screen"/>
+    <apex:variable var="uiTheme" value="lightningDesktop" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+        <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/> 
+        <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.Fontawesome, 'font-awesome/css/font-awesomev4-7-0.css')}"/>
+    </apex:variable>
+
+    <script> 
+        var lastOpened = '';   
+        function showLinks(buttonId)
+        {
+            
+            if(lastOpened !== buttonId + '-dropdown' && lastOpened !== '')
+            {
+                if (document.getElementById(lastOpened).classList.contains('show')) {
+                    document.getElementById(lastOpened).classList.remove('show');
+                }
+            }
+            
+            document.getElementById(buttonId + '-dropdown').classList.toggle("show"); 
+            lastOpened = buttonId + '-dropdown';
+            return false;
+        }
+        function selectAllCheckboxes(obj,receivedInputID)
+        {
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+        function updateParentCheckbox( obj, parentID )
+            {
+                if ( obj.checked == false )
+                {
+                    var inputCheckBox = document.getElementsByTagName( "input" );
+                    {
+                        if( inputCheckBox[ i ].id.indexOf( parentID ) != -1 )
+                        {
+                            inputCheckBox[ i ].checked = false;
+                        }
+                    }
+                }
+            }
+            
+            function clearParentCheckbox( parentID )
+            {
+                var inputCheckBox = document.getElementsByTagName( "input" );
+                for ( var i = 0; i < inputCheckBox.length; i++ )
+                {
+                    if( inputCheckBox[ i ].id.indexOf( parentID ) != -1 )
+                    {
+                        inputCheckBox[ i ].checked = false;
+                        break;
+                    }
+                }
+            }
+        </script>
+        <style>
+            .homeTab .bPageBlock {
+                border-top: 3px solid #602144;
+            }   
+            .popover{
+                min-width: 400px;
+                max-width: 600px;
+            }
+            .filter-padding-bottom {
+                padding-bottom: 5px;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                min-width: 160px;
+                background-color: #f1f1f1;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1; 
+                padding: 5px;            
+            }
+            
+            .show {
+                display: block;
+            }
+
+            .dropbtn > i {
+                pointer-events: none;
+            }
+
+            .dropbtn {
+                background-color: white;
+                border-radius: 3px;
+                border: 1px solid rgb(221, 219, 218);
+                
+            }
+            
+            .scrollBar{
+                max-height: 18rem;
+                overflow-y: auto;
+            }
+
+            .borderless td, .borderless th {
+                border: none !important;
+            }
+
+        </style>
+    <apex:pageBlock id="com" title="QA Users (Beta)" >
+        <h4>Please use the filters below to select and manage Q-assign users. Press Go button to search.</h4>
+        <apex:form >
+            <apex:actionRegion id="filtersData">
+            <table class="table borderless">
+                <tr>
+                    <td style="width: 250px; height: 50px;">
+                        <p class="filter-padding-bottom" >
+                            <c:customHelpTextLabel labelValue="Scheduler" helpTextID="scheduler" helpText="{!Scheduler_HelpText}"/>
+                        </p>
+                        <apex:selectList html-ortoo-elem-id="QAQU0001" html-class="form-control" size="1" value="{!selectedSchedulerOption}">
+                            <apex:selectOptions value="{!SchedulerOptions}" />		
+                        </apex:selectList>
+                    </td>
+                    <td style="width: 250px; height: 50px;">
+                        <p class="filter-padding-bottom">
+                            <c:customHelpTextLabel labelValue="Source Owner" helpTextID="srcOwner" helpText="{!SourceOwner_HelpText}"/>
+                        </p>
+                        <apex:selectList html-ortoo-elem-id="QAQU0002" html-class="form-control" size="1" value="{!selectedSourceOwnerOption}">
+                            <apex:selectOptions value="{!sourceOwnerOptions}" />
+                        </apex:selectList>
+                    </td>
+                    <td style="width: 250px; height: 50px;">
+                        <p class="filter-padding-bottom">
+                            <c:customHelpTextLabel labelValue="Object" helpTextID="object" helpText="{!Object_HelpText}"/>
+                        </p>
+                        <apex:selectList html-ortoo-elem-id="QAQU0003" html-class="form-control" size="1" value="{!selectedTargetObjectOption}">
+                            <apex:selectOptions value="{!targetObjectOptions}" />
+                        </apex:selectList>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 250px; height: 50px;">
+                        <p class="filter-padding-bottom">
+                            <c:customHelpTextLabel labelValue="Assignment Group" helpTextID="AGtext" helpText="{!AssignmentGroup_HelpText}"/>
+                        </p>
+                        <apex:selectList html-ortoo-elem-id="QAQU0004" html-class="form-control" size="1" value="{!selectedAssignmentGroupOption}">
+                            <apex:selectOptions value="{!AssignmentGroupOptions}" />		
+                        </apex:selectList>
+                    </td>
+                    <td>
+                        <p class="filter-padding-bottom">
+                            <c:customHelpTextLabel labelValue="Users Managed By" helpTextID="usersManagedBy" helpText="{!UsersManagedBy_HelpText}"/>
+                        </p>
+                        <apex:inputField html-ortoo-elem-id="QAQU0005" id="usersManagedBy" style="border-radius: 4px; width: 250px; font-size: 14px; padding: 6px 12px;" value="{!userObj.managerId}">
+                        </apex:inputField>
+                    </td>
+                    <td style="vertical-align: bottom; ">
+                        <apex:inputCheckbox html-ortoo-elem-id="QAQU0006" id="availableUsercheckbox" value="{!IsUsersAvailalbleSelected}" selected="false" label="Available Users Only" style=" width: 10%;  zoom: 200%; ">
+                        </apex:inputCheckbox>
+                        <apex:outputLabel value="Available Users Only" for="availableUsercheckbox" style="vertical-align: bottom; zoom:115%"/>
+                    </td>
+                    <td rowspan="2" style="vertical-align: bottom;">
+                        <apex:commandButton html-ortoo-elem-id="QAQU0007" value="Go" style="font-size: large; width: 68px;height: 40px;" reRender="userInfoTable,com" action="{!loadUserInfoTableReset}" status="filterStatus"></apex:commandButton>
+                        <apex:actionStatus id="filterStatus"  stopStyle="color: #000;font-size: .9em;font-weight: bold; white-space: nowrap" >
+                                    <apex:facet name="start">  
+                                        <img src= "/img/loading.gif"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop" >
+                                        {!totalRecords} users matched your search
+                                    </apex:facet> 
+                        </apex:actionStatus>
+                    </td> 
+                </tr>
+            </table>
+            </apex:actionRegion>
+
+        <apex:actionRegion id="userInfoTable1">
+            <apex:pageBlock id="userInfoTable">
+                <apex:pageMessages id="showMsg"></apex:pageMessages>   
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton html-ortoo-elem-id="QAQU0011" value="Make Available" action="{!makeUsersAvailable}" reRender="userInfoTable" status="buttonStatus"/>
+                    <apex:commandButton html-ortoo-elem-id="QAQU0012" value="Make Unavailable" action="{!makeUsersUnavailable}" reRender="userInfoTable" status="buttonStatus"/>
+                    
+                    <apex:commandButton html-ortoo-elem-id="QAQU0013" value="Previous" action="{!previousPage}" reRender="userInfoTable" status="buttonStatus"/>
+                    <apex:commandButton html-ortoo-elem-id="QAQU0014" value="Next" action="{!nextPage}" reRender="userInfoTable" status="buttonStatus" />
+                    <apex:actionStatus id="buttonStatus">
+                                        <apex:facet name="start">
+                                            <img src= "/img/loading.gif"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                        </apex:facet>
+                        </apex:actionStatus> 
+                    <span  style=" float: right;">
+                        <apex:outputText html-ortoo-elem-id="QAQU0015" >Total Records {!totalRecords} | Page {!selectedPage} of {!totalPages} | Page Size ></apex:outputText>
+                        <span></span>
+                        <!--<apex:selectList html-ortoo-elem-id="QAQU0016" size="1" value="{!selectedPageSize}">
+                            <apex:selectOptions value="{!pageSizeOptions}" />		
+                            <apex:actionSupport event="onchange" reRender="userInfoTable" action="{!loadUserInfoTable}"/>
+                        </apex:selectList>-->
+                    </span>
+                    
+                </apex:pageBlockButtons> 
+                <apex:pageBlockTable html-ortoo-elem-id="QAQU0008" id="pbUserInfo" value="{!currentPageUserInfo}" var="UsersList">
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:outputPanel >
+                                <apex:inputCheckbox id="parentCB" onclick="selectAllCheckboxes(this, 'inputId')"/>
+                                <script>clearParentCheckbox('parentCB');</script>
+                            </apex:outputPanel>
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!UsersList.isSelected}" id="inputId" onclick="updateParentCheckbox(this, 'parentCB')"/>
+                    </apex:column>                
+                    <apex:column headerValue="Action">
+                        <div class="dropdown">
+                            
+                            <button id="{!UsersList.Id}" class="slds-button slds-button_neutral dropbtn" onclick="showLinks(this.id); return false">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    
+                            </button>
+                                <div id="{!UsersList.Id + '-dropdown'}" class="dropdown-content">
+                                <apex:outputPanel >
+                                    <apex:commandLink status="Status" action="{!toggleUser}" reRender="userInfoTable">
+                                        <apex:outputText value="Toggle Availability" />
+                                        <apex:param name="rowUserId" value="{!UsersList.id}" assignTo="{!selectedUserId}"/>
+                                    </apex:commandLink>
+                                </apex:outputPanel>
+                                
+                                </div>
+                        </div>
+                        <apex:actionStatus id="Status">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                 
+                            </apex:facet>   
+                        </apex:actionStatus>
+                        
+                    </apex:column>
+                    <apex:column headerValue="User Name">
+                        <apex:outputLink value="{!URLFOR('apex/ortoo_qra__UserAssignmentStatus', null, [userId=UsersList.id])}" target="_blank">
+                            {!UsersList.name}
+                        </apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Available">
+                        <apex:outputText value="{!UsersList.available}"/>
+                    </apex:column>
+                    <apex:column headerValue="Logged In">
+                        <apex:outputText value="{!UsersList.loggedIn}"/>
+                    </apex:column>
+                    <apex:column headerValue="Idle Time">
+                        <apex:outputText value="{!UsersList.idleTime}"/>
+                    </apex:column>
+                    <apex:column headerValue="Default Shift">
+                        <apex:outputText value="{!UsersList.defaultShift}"/>
+                    </apex:column>                
+                    <apex:column headerValue="Global Quota Assigned (Month/Week/Day/Hour)">
+                        <apex:outputText value="{!UsersList.globalQuotaAssigned}"/>
+                    </apex:column>                
+                    <apex:column headerValue="Assignment Groups (Enabled/Total)">
+                        <div style="width: 100%;" role="dialog" data-animation="false" data-toggle="popover" data-trigger="hover"
+                            data-placement="left" data-content="{!UsersList.AGInfoListAsString}">
+                            <apex:outputLink value="{!URLFOR('apex/ortoo_qra__UserAssignmentStatus', null, [userId=UsersList.id])}" target="_blank">
+                            {!UsersList.agsEnabledTotal}
+                            </apex:outputLink>
+                        </div>
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton html-ortoo-elem-id="QAQU0017" value="Make Available" action="{!makeUsersAvailable}" reRender="userInfoTable" status="buttonStatus"/>
+                    <apex:commandButton html-ortoo-elem-id="QAQU0018" value="Make Unavailable" action="{!makeUsersUnavailable}" reRender="userInfoTable" status="buttonStatus"/>
+                    
+                    <apex:commandButton html-ortoo-elem-id="QAQU0019" value="Previous" action="{!previousPage}" reRender="userInfoTable" status="buttonStatus"/>
+                    <apex:commandButton html-ortoo-elem-id="QAQU0020" value="Next" action="{!nextPage}" reRender="userInfoTable" status="buttonStatus" />
+                    <apex:actionStatus id="buttonStatus">
+                                        <apex:facet name="start">
+                                            <img src= "/img/loading.gif"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                        </apex:facet>
+                        </apex:actionStatus> 
+                    <span  style=" float: right;">
+                        <apex:outputText html-ortoo-elem-id="QAQU0021" >Total Records {!totalRecords} | Page {!selectedPage} of {!totalPages} | Page size</apex:outputText>
+                        <span></span>
+                        <apex:selectList html-ortoo-elem-id="QAQU0022" size="1" value="{!selectedPageSize}">
+                            <apex:selectOptions value="{!pageSizeOptions}" />		
+                            <apex:actionSupport event="onchange" reRender="userInfoTable" action="{!loadUserInfoTable}"/>
+                        </apex:selectList>
+                    </span>
+                    
+                </apex:pageBlockButtons>
+                
+                <script>
+                    $(function () { $('[data-toggle="popover"]').popover({html:true,sanitize:false}) })
+                </script>
+            
+            </apex:pageBlock>
+        </apex:actionRegion>
+    </apex:form>
+    </apex:pageBlock>
+</apex:page>

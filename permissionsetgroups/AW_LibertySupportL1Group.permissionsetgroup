@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission sets that allow the user to view all data and perform additional support tasks</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Support L1 Group</label>
+    <permissionSets>AW_LibertySupportL1</permissionSets>
+    <permissionSets>LTB_LibertyTrailheadUser</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

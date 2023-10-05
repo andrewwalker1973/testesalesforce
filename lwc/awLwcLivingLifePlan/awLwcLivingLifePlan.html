@@ -1,0 +1,393 @@
+<template>
+    <!--TODO: Message when list is empty-->
+    <!--Timeline Goal/Life Events-->
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-icon new-goal">
+                <lightning-button onclick={newGoal} variant="brand" label="Create New Goal" title="New Goal"
+                    icon-name="utility:add" class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+        <div class="timeline-content right new-button-content"></div>
+        <template for:each={livingLifePlanList} for:item="item">
+            <div class="timeline-item" key={item.Id}>
+                <div class="timeline-icon calendar">
+                    <figure if:true={item.isPersonLifeEvent}>
+                        <header>
+                            <lightning-formatted-date-time value={item.EventDate} month="short">
+                            </lightning-formatted-date-time>&nbsp;'
+                            <lightning-formatted-date-time value={item.EventDate} year="2-digit">
+                            </lightning-formatted-date-time>
+                        </header>
+                        <section>
+                            <lightning-formatted-date-time value={item.EventDate} day="2-digit">
+                            </lightning-formatted-date-time>
+                        </section>
+                    </figure>
+                    <figure if:true={item.isGoal}>
+                        <header>
+                            <lightning-formatted-date-time value={item.FinServ__TargetDate__c} month="short">
+                            </lightning-formatted-date-time>&nbsp;'
+                            <lightning-formatted-date-time value={item.FinServ__TargetDate__c} year="2-digit">
+                            </lightning-formatted-date-time>
+                        </header>
+                        <section>
+                            <lightning-formatted-date-time value={item.FinServ__TargetDate__c} day="2-digit">
+                            </lightning-formatted-date-time>
+                        </section>
+                    </figure>
+                </div>
+
+                <!-- Goal Card -->
+                <template if:true={goalList}>
+                    <div if:true={item.isGoal} class="timeline-content right">
+                     <c-aw-lwc-display-image record-id={item.Id} site-path="/clientportal"></c-aw-lwc-display-image>
+                        <lightning-card>
+                            <div class="slds-p-horizontal_large slds-p-bottom_medium">
+                                <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                                    <div class="slds-col">
+                                        <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                                            <div class="slds-col_bump-left">
+                                                <lightning-icon icon-name="standard:goals"
+                                                    class="slds-m-right_medium goal-icon" alternative-text="Goal"
+                                                    size="medium">
+                                                </lightning-icon>
+                                            </div>
+                                            <div class="slds-col">
+                                                <h2 class="slds-text-heading_small slds-p-bottom_xx-small">
+                                                    {item.Name}
+                                                </h2>
+                                                <lightning-badge label={item.FinServ__Status__c}>
+                                                </lightning-badge>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col_bump-left">
+                                        <lightning-button-group>
+                                            <lightning-button-icon icon-name="utility:edit" variant="border-filled"
+                                                alternative-text="Edit" data-recordid={item.Id} onclick={editGoal}>
+                                            </lightning-button-icon>
+                                            <lightning-button-icon if:true={item.AW_IsCreator__c}
+                                                icon-name="utility:delete" variant="border-filled"
+                                                alternative-text="Delete" onclick={deleteGoal} data-createdbyid={item.CreatedById} data-recordid={item.Id}>
+                                            </lightning-button-icon>
+                                        </lightning-button-group>
+                                    </div>
+                                </div>
+
+                                <div class="slds-p-top_large slds-m-top_large card-content">
+                                    <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                                        <div class="slds-col">
+                                            <div class="slds-grid slds-wrap slds-p-bottom_medium">
+                                                <div class="slds-col slds-size_1-of-2">
+                                                    <div class="slds-text-heading--label">
+                                                        Type
+                                                    </div>
+                                                    <div class="slds-text-heading_small">
+                                                        {item.FinServ__Type__c}
+                                                    </div>
+                                                </div>
+
+                                                <div class="slds-col slds-size_1-of-2">
+                                                    <div class="slds-text-heading--label">
+                                                        Target Date
+                                                    </div>
+                                                    <div class="slds-text-heading_small">
+                                                        {item.FinServ__TargetDate__c}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_1-of-2">
+                                                    <div class="slds-text-heading--label">
+                                                        <template if:true={item.AW_IsProtectionGoal__c}>Actual Cover
+                                                            Value</template>
+                                                        <template if:true={item.AW_IsInvestmentGoal__c}>Actual
+                                                            Value</template>
+                                                    </div>
+                                                    <div class="slds-text-heading_small">
+                                                        <lightning-formatted-number value={item.FinServ__ActualValue__c}
+                                                            format-style="currency" currency-code="ZAR">
+                                                        </lightning-formatted-number>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-size_1-of-2">
+                                                    <div class="slds-text-heading--label">
+                                                        <template if:true={item.AW_IsProtectionGoal__c}>Recommended
+                                                            Cover
+                                                            Value</template>
+                                                        <template if:true={item.AW_IsInvestmentGoal__c}>Target
+                                                            Value</template>
+                                                    </div>
+                                                    <div class="slds-text-heading_small">
+                                                        <lightning-formatted-number value={item.FinServ__TargetValue__c}
+                                                            format-style="currency" currency-code="ZAR">
+                                                        </lightning-formatted-number>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-col slds-grow-none">
+                                            <c-aw-lwc-doughnut-chart
+                                                percentage-complete={item.AW_PercentageComplete__c}>
+                                            </c-aw-lwc-doughnut-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+
+                <!-- Person Life Event Card -->
+                <template if:true={personLifeEventList}>
+                    <div if:true={item.isPersonLifeEvent} class="timeline-content left">
+                        <lightning-card>
+                            <div class="slds-p-horizontal_large slds-p-bottom_medium">
+
+                                <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                                    <div class="slds-col">
+                                        <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                                            <div class="slds-col_bump-left">
+                                                <lightning-icon icon-name="standard:feed"
+                                                    class="slds-m-right_medium life-event-icon"
+                                                    alternative-text="Life Event" size="medium">
+                                                </lightning-icon>
+                                            </div>
+                                            <div class="slds-col">
+                                                <h2 class="slds-text-heading_small slds-p-bottom_xx-small">
+                                                    {item.Name}
+                                                </h2>
+                                                <lightning-badge label={item.FinServ__Status__c}>
+                                                </lightning-badge>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col_bump-left">
+                                        <lightning-button-group>
+                                            <lightning-button-icon icon-name="utility:edit" variant="border-filled"
+                                                alternative-text="Edit" data-recordid={item.Id}
+                                                onclick={editPersonLifeEvent}>
+                                            </lightning-button-icon>
+                                        </lightning-button-group>
+                                    </div>
+                                </div>
+                                <div class="slds-p-top_large slds-m-top_large card-content">
+                                    <div class="slds-grid slds-wrap slds-grid_vertical-align-center">
+                                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                                            <div class="slds-text-heading--label">
+                                                Type
+                                            </div>
+                                            <div class="slds-text-heading_small">
+                                                {item.EventType}
+                                            </div>
+                                        </div>
+
+                                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                                            <div class="slds-text-heading--label">
+                                                Date
+                                            </div>
+                                            <div class="slds-text-heading_small">
+                                                <lightning-formatted-date-time value={item.EventDate} year="2-digit"
+                                                    month="short" day="2-digit">
+                                                </lightning-formatted-date-time>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+
+    <!--Edit Person Life Event Dialog -->
+    <div if:true={displayPersonEventDialog}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closePersonLifeEventDialog}>
+                        <lightning-icon icon-name="utility:close" size="medium">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                        Life Event Details
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-grid slds-wrap slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_12-of-12">
+                            <lightning-input label="Life Event Name" value={personLifeEventName}
+                                data-field="life-event-name" required>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-input label="Date" type="date" value={personLifeEventDate}
+                                data-field="life-event-date">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-input label="Description" value={personLifeEventDescription}
+                                data-field="life-event-description">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-combobox label="Impact (Positive/Negative)" value={personLifeEventImpact}
+                                placeholder="Select Impact" options={personLifeEventImpactOptions}
+                                data-field="life-event-impact">
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-textarea label="Impact on Outcome/Goals" value={personLifeEventImpactDes}
+                                data-field="life-event-impactdes">
+                            </lightning-textarea>
+                        </div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" variant="neutral" onclick={closePersonLifeEventDialog}>
+                    </lightning-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <lightning-button label="Save Life Event" variant="brand" onclick={savePersonLifeEvent}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+
+    <!-- Goal Record Type Dialog -->
+    <div if:true={displayGoalRecordTypeDialog}>
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeRecordTypeDialog}>
+                        <lightning-icon icon-name="utility:close" size="medium">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate">
+                        Select a goal type
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div class="slds-grid slds-wrap slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+                            <lightning-radio-group name="radioGroup" options={goalProductTypeOptions}
+                                value={goalProductTypeValue} type="button" data-field="product-type">
+                            </lightning-radio-group>
+                        </div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" variant="neutral" onclick={closeRecordTypeDialog}>
+                    </lightning-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <lightning-button label="Next" variant="brand" onclick={createNewGoal}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+
+    <!--Edit Goal Dialog -->
+    <div if:true={displayGoalDialog}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeGoalDialog}>
+                        <lightning-icon icon-name="utility:close" size="medium">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate">
+                        Goal Details
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div class="slds-grid slds-wrap slds-wrap slds-gutters">
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-input label="Goal Name" value={goalName} data-field="goal-name" required>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-combobox name="progress" label="Priority" value={goalPriority}
+                                placeholder="Select Goal Priority" options={goalPriorityOptions} 
+                                data-field="goal-priority">
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-combobox if:true={isInvestmentGoal} name="progress" label="Type" value={goalType}
+                                placeholder="Select Goal Type" options={goalTypeInvestmentPicklistValues}
+                                onchange={handleGoalTypeChange} data-field="goal-type">
+                            </lightning-combobox>
+                            <lightning-combobox if:true={isProtectionGoal} name="progress" label="Type" value={goalType}
+                                placeholder="Select Goal Type" options={goalTypeProtectionPicklistValues}
+                                onchange={handleGoalTypeChange} data-field="goal-type">
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                            <lightning-input label="Target Date" type="date" value={goalTargetDate}
+                                data-field="target-date">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" if:true={isInvestmentGoal}>
+                            <lightning-input label="Initial Value" type="number" formatter="currency" step="1"
+                                value={goalInitialValue} data-field="initial-value">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" if:true={isInvestmentGoal}>
+                            <lightning-input label="Actual Value" type="number" formatter="currency" step="1"
+                                value={goalActualValue} data-field="actual-value">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" if:true={isInvestmentGoal}>
+                            <lightning-input label="Target Value" type="number" formatter="currency" step="1"
+                                value={goalTargetValue} data-field="target-value">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" if:true={isProtectionGoal}>
+                            <lightning-input label="Actual Cover Value" type="number" formatter="currency" step="1"
+                                value={goalActualValue} data-field="actual-value">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" if:true={isProtectionGoal}>
+                            <lightning-input label="Recommended Cover Value" type="number" formatter="currency" step="1"
+                                value={goalTargetValue} data-field="target-value">
+                            </lightning-input>
+                        </div>
+                        <template if:true={hideUpload}>
+                            <div class="slds-col slds-large-size_3-of-12 slds-m-top_medium">
+                                Upload an image of your goal. <br/>Max file size (1.5mb) 
+                                <c-aw-lwc-image-uploader record-id={goalId} onupload={refreshGoalImage}></c-aw-lwc-image-uploader>
+                            </div>
+                            <div class="slds-col slds-large-size_3-of-12 slds-m-top_medium">
+                                <c-aw-lwc-display-image record-id={goalId} site-path="/clientportal"></c-aw-lwc-display-image>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" variant="neutral" onclick={closeGoalDialog}>
+                    </lightning-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <lightning-button label="Save Goal" variant="brand" onclick={saveGoal}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    
+    <c-cmn-lwc-toast></c-cmn-lwc-toast>
+
+</template>

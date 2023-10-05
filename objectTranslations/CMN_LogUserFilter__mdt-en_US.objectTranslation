@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Log User Filter</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Log User Filters</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>CMN_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- INFO, DEBUG, WARN, ERROR --></help>
+        <label><!-- Active Log Levels --></label>
+        <name>CMN_LogLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active Log User --></label>
+        <name>CMN_LogUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active User Type --></label>
+        <name>CMN_UserType__c</name>
+        <picklistValues>
+            <masterLabel>All Users</masterLabel>
+            <translation><!-- All Users --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UserId</masterLabel>
+            <translation><!-- UserId --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Username</masterLabel>
+            <translation><!-- Username --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

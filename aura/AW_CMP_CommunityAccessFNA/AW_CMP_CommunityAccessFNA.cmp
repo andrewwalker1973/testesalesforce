@@ -1,0 +1,6 @@
+<aura:component 
+     implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+	<div class="slds-box">
+        <lightning:button label="Access FNA" variant="brand" class="slds-align_absolute-center" onclick="{!c.navigate}"/>
+    </div>
+</aura:component>

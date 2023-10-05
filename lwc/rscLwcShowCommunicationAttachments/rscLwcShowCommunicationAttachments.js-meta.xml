@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>54.0</apiVersion>
+	<description>Component to display the Communication Attachments</description>
+	<isExposed>true</isExposed>
+	<masterLabel>Rsc Lwc Show Communication Attachments</masterLabel>
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="communicationTemplate"
+					  type="String"
+					  label="Communication Template"
+					  description="Selected Communication Template"
+					  required="true"/>
+			<property name="displayType"
+					  type="String"
+					  label="Display Type"
+					  description="Display Type either Read or Edit"
+					  default="Edit"
+					  required="true"/>
+			<property name="selectedAttachmentsPayload"
+					  type="String"
+					  label="Selected Attachments Payload"
+					  description="Selected Communication Attachments Payload For Input and Output"/>
+			<property name="attachments"
+					  label="List of Attachments"
+					  description="List of Attachment DTOs"
+					  type="apex://CMN_DTO_CommunicationAttachment[]"
+					  role="outputOnly"/>
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

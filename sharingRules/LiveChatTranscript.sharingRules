@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>SD_MalawiChats</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Malawi Chats</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_MalawiLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>contains</operation>
+            <value>Malawi</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SD_MozambiqueChats</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Mozambique Chats</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_MozambiqueLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>contains</operation>
+            <value>Mozambique</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SD_SouthAfricaChats</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>South Africa Chats</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_SouthAfricaLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>contains</operation>
+            <value>South Africa</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SD_UgandaChats</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Uganda Chats</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_UgandaLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>contains</operation>
+            <value>Uganda</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>SC_MedicalAppointmentWorkType</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This rule allows read write access of Medical Appointment work type record to users with or below Role &apos;Onboarding Admin and Medical Services Manager&apos;.</description>
+        <label>Medical Appointment Work Type Read Write</label>
+        <sharedTo>
+            <roleAndSubordinates>RSC_ZA_Retail_OnboardingDivisionalExecutive</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>equals</operation>
+            <value>Medical Appointment</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

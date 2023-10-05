@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>PersonLifeEvent$Name</field>
+    </columns>
+    <columns>
+        <field>PersonLifeEvent$PrimaryPerson</field>
+    </columns>
+    <columns>
+        <field>PersonLifeEvent$EventType</field>
+    </columns>
+    <columns>
+        <field>PersonLifeEvent$EventDate</field>
+    </columns>
+    <columns>
+        <field>PersonLifeEvent$AW_RecurringDate__c</field>
+    </columns>
+    <description>Report to show table view of this month&apos;s  life event anniversaries.</description>
+    <filter>
+        <criteriaItems>
+            <column>PersonLifeEvent$AW_RecurringDate__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_MONTH</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>This Month&apos;s Life Event Anniversaries</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_PersonLifeEventsReport__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>PersonLifeEvent$PrimaryPerson</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>PersonLifeEvent$EventDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

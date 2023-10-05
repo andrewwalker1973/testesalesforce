@@ -1,0 +1,10 @@
+<!--
+	@description This VF pages is used to determine the running user Session Id,
+		since its on a VF page this Session Id will be API enabled
+	@author jason.van.beukering@accenture.com
+	@date January 2023
+	@see CMN_UTIL_System.getApiEnabledSessionId
+-->
+<apex:page id="CMN_UTIL_GetApiEnabledSessionId">
+	[[{!$Api.Session_ID}]]
+</apex:page>

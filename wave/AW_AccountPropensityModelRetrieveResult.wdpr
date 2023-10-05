@@ -1,0 +1,1109 @@
+{
+  "version" : "53.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Joined_dat.policyTermBucket", "MAX_yearsSinceFirstRetirementAnnuityProduct_bucket", "ownerNationalIdCalculated", "Joined_dat.cont_no", "Joined_dat.ageBucket", "Joined_dat.inforceIndicatorFlag", "Joined_dat.maturityDateTenureBucket", "prsn_mrtl_sts_dsc", "Joined_dat.oldestInceptionDate", "Joined_dat.movent_ind", "ageBucket", "Joined_dat.movent_dt", "Joined_dat.frequencyCalculated", "Joined_dat.inforceIndicatorCalculated", "MAX_investmentAgeOfCustomer_formula_bucket", "Joined_dat.sb_match", "Joined_dat.consult_sales_cd1", "Joined_dat.prsn_mrtl_sts_dsc", "MAX_retirementAnnuityDependentVariable_formula", "Joined_dat.inceptionDateString", "Joined_dat.source", "Joined_dat.newestInceptionDate", "MAX_yearsSinceFirstInvestmentProduct_bucket", "Joined_dat.owner_natl_id", "MAX_annuityAgeOfCustomer_bucket", "Joined_dat.policyNumberCalculated", "MAX_yearsSinceLastAnnuityProduct_bucket", "Joined_dat.prsn_mrkt_cnsnt", "Joined_dat.prod_name", "MAX_bondDependentVariable_formula", "Joined_dat.asOfDate", "MAX_educationDependentVariable_formula", "Joined_dat.prsn_pdb_id", "Joined_dat.productNameCalculated", "Joined_dat.product_group_category", "Joined_dat.mty_dt", "Joined_dat.personMarketConsentCalculated", "Joined_dat.inforce_ind", "Joined_dat.inceptionDateNewest", "Joined_dat.newestMaturityDateCalculated", "Joined_dat.prsn_brth_dt", "Joined_dat.inceptionDateTenureBucket", "Joined_dat.frequency", "Joined_dat.movementInceptionDateBucket", "Joined_dat.prsn_gndr_dsc", "MAX_yearsSinceLastInvestmentProduct_bucket", "MAX_yearsSinceLastRetirementAnnuityProduct_bucket", "Joined_dat.incp_dt", "Joined_dat.ownerNationalIdProductNameKey", "Joined_dat.nullFilter", "Joined_dat1.ownerNationalIdCalculated", "MAX_annuityDependentVariable_formula", "Joined_dat.acrProductGroupCalculated", "Joined_dat.acr_product_group", "Joined_dat.inceptionDateOldestCalculated", "MAX_yearsSinceFirstAnnuityProduct_bucket", "MAX_investmentDependentVariable_formula", "Joined_dat.movementDateTenureBucket", "MAX_retirementAnnuityAgeOfCustomer_bucket", "Joined_dat.standardBankMatch", "prsn_gndr_dsc", "Joined_dat.ownerNationalIdCalculated", "Joined_dat.movementDateCalculated", "Joined_dat.investmentAgeOfCustomer", "SUM_frequencyMonthlyCalculated", "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula", "countPoliciesAnnuityAnnuityFlag", "MAX_yearsSinceFirstInvestmentProduct", "Joined_dat.investmentInvestmentBuilder", "Joined_dat.age", "Joined_dat.bondDependentVariable", "Joined_dat.bondGuaranteedCapitalBond", "MAX_investmentDependentVariable", "MAX_yearsSinceOldestPolicyStart_formula", "MAX_yearsSinceOldestPolicyStart", "MAX_yearsSinceNewestPolicyStart", "countPoliciesRetirementAnnuityLibertyEvolveRetirementAnnuityFlag", "Joined_dat.bondActivePolicy", "Joined_dat.annuityAnnuity", "SUM_investmentActivePolicy", "countPoliciesInvestmentInvestmentBuilderFlag", "MAX_investmentAgeOfCustomer", "Joined_dat.otherInvestmentProducts", "Joined_dat.movementInceptionDateDiffereence", "SUM_investmentLibertyEvolveInvestmentPlan", "ownerNationalIdCalculated_formula1_formula", "MAX_riskGroupFlag", "MAX_yearsSinceFirstAnnuityProduct", "SUM_frequencyLumpsumCalculated", "SUM_investmentInvestmentBuilder", "SUM_educationEducationPlan", "countPoliciesInvestmentFlexibleInvestmentPlanFlag", "Joined_dat.educationDependentVariable", "Joined_dat.investmentDependentVariable", "ownerNationalIdCalculated_formula_formula_formula_formula_formula", "Joined_dat.retirementAnnuityAgeOfCustomer", "MAX_annuityAgeOfCustomer", "SUM_totalInvestmentPremium", "ownerNationalIdCalculated_formula1_formula_formula_formula", "countPoliciesEducationEducationPlanFlag", "ownerNationalIdCalculated_formula1", "ownerNationalIdCalculated_formula1_formula1", "Joined_dat.totalAnnuityPremium", "Joined_dat.movementDateTenure", "MAX_yearsSinceLastRetirementAnnuityProduct", "Joined_dat.investmentActivePolicy", "Joined_dat.retirementAnnuityLibertyRetirementAnnuityFlag", "Joined_dat.retirementAnnuityRetirementAnnuityBuilder", "MAX_yearsSinceLastBondProduct", "Joined_dat1.SUM_countExcludePolicy", "Joined_dat.inceptionDateEpoc", "Joined_dat.yearsSinceLastAnnuityProduct", "ownerNationalIdCalculated_formula1_formula_formula", "Joined_dat.retirementAnnuityActivePolicy", "Joined_dat.annuityInactivePolicy", "Joined_dat.annuityActivePolicy", "Joined_dat.yearsSinceFirstInvestmentProduct", "Joined_dat.investmentInvestmentPlanFlag", "Joined_dat1.SUM_countExcludePolicy_formula", "SUM_totalRetirementAnnuityPremium", "MAX_retirementAnnuityDependentVariable", "Joined_dat.bondGuaranteedCapitalBondFlag", "Joined_dat.investmentLibertyEvolveInvestmentPlanFlag", "Joined_dat.Inactive_Policy", "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuity", "Joined_dat.educationInactivePolicy", "Joined_dat.yearsSinceOldestPolicyStart", "Joined_dat.retirementAnnuityLibertyRetirementAnnuity", "MAX_bondDependentVariable", "MAX_yearsSinceFirstRetirementAnnuityProduct", "Joined_dat.retirementAnnuityRetirementAnnuityBuilderFlag", "SUM_totalAnnuityPremium", "Joined_dat.maturityDateTenure", "Joined_dat.bondAgeOfCustomer", "Joined_dat.movementInceptionDate", "MAX_investmentAgeOfCustomer_formula", "countPoliciesInvestmentInvestmentPlanFlag", "Joined_dat.educationAgeOfCustomer", "Joined_dat.yearsSinceFirstRetirementAnnuityProduct", "Joined_dat.educationEducationPlanFlag", "Joined_dat.investmentInactivePolicy", "Joined_dat.yearsSinceFirstEducationProduct", "Joined_dat.annuityFlexibleAnnuity", "countPoliciesInvestmentGatewayInvestmentPlanFlag", "Joined_dat.investmentInvestmentPlan", "SUM_annuityAnnuity", "countPoliciesInvestmentLibertyEvolveInvestmentPlanFlag", "Joined_dat.annuityDependentVariable", "Joined_dat.yearsSinceLastRetirementAnnuityProduct", "Joined_dat.policyExpireDuration", "Joined_dat.investmentInvestmentBuilderFlag", "Joined_dat.yearsSinceLastInvestmentProduct", "MAX_yearsSinceLastEducationProduct", "MAX_yearsSinceLastInvestmentProduct", "ownerNationalIdCalculated_formula", "Joined_dat.api", "Joined_dat.annuityAgeOfCustomer", "Joined_dat.policyTerm", "Joined_dat.inceptionDateTenure", "MAX_educationDependentVariable", "MAX_annuityDependentVariable", "Joined_dat.retirementAnnuityDependentVariable", "SUM_investmentGatewayInvestmentPlan", "Joined_dat.yearsSinceLastEducationProduct", "SUM_investmentInvestmentPlan", "Joined_dat.annuityAnnuityFlag", "SUM_investmentFlexibleInvestmentPlan", "SUM_bondGuaranteedCapitalBond", "MAX_yearsSinceLastAnnuityProduct", "MAX_yearsSinceFirstEducationProduct", "Joined_dat.annuityFlexibleAnnuityFlag", "SUM_retirementAnnuityRetirementAnnuityBuilder", "Joined_dat.frequencyMonthlyCalculated", "ownerNationalIdCalculated_formula_formula_formula", "SUM_activePolicy", "SUM_annuityFlexibleAnnuity", "Joined_dat.retirementAnnuityInactivePolicy", "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuityFlag", "Joined_dat.activePolicy", "Joined_dat.totalInvestmentPremium", "Joined_dat.investmentFlexibleInvestmentPlan", "Joined_dat.dateOfBirth", "Joined_dat.frequencyLumpsumCalculated", "Joined_dat.educationEducationPlan", "countPoliciesRetirementAnnuityLibertyRetirementAnnuityFlag", "ownerNationalIdCalculated_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula", "Joined_dat.investmentGatewayInvestmentPlanFlag", "countPoliciesAnnuityFlexibleAnnuityFlag", "SUM_retirementAnnuityLibertyEvolveRetirementAnnuity", "SUM_bondGuaranteedCapitalBondFlag", "Joined_dat.yearsSinceFirstBondProduct", "Joined_dat.riskGroupFlag", "MAX_yearsSinceNewestPolicyStart_formula", "Joined_dat.investmentLibertyEvolveInvestmentPlan", "Joined_dat.Column1", "countPoliciesRetirementAnnuityRetirementAnnuityBuilderFlag", "SUM_retirementAnnuityActivePolicy", "Joined_dat.yearsSinceFirstAnnuityProduct", "Joined_dat.yearsSinceNewestPolicyStart", "Joined_dat.totalRetirementAnnuityPremium", "Joined_dat.educationActivePolicy", "MAX_retirementAnnuityAgeOfCustomer", "Joined_dat.investmentFlexibleInvestmentPlanFlag", "Joined_dat.yearsSinceLastBondProduct", "COUNT_policyNumberCalculated", "Joined_dat.bondInactivePolicy", "Joined_dat.investmentGatewayInvestmentPlan", "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula_formula", "MAX_yearsSinceFirstBondProduct", "SUM_Inactive_Policy", "SUM_retirementAnnuityLibertyRetirementAnnuity" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Aggregated Data",
+          "name" : "AW_AccountPropensityModelAggregatedData"
+        }
+      }
+    },
+    "DISCOVERY_PREDICT0" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT1" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedBondPropensityScore"
+        },
+        "columnMapping" : {
+          "SUM_retirementAnnuityActivePolicy" : "SUM_retirementAnnuityActivePolicy",
+          "prsn_gndr_dsc" : "Joined_dat.prsn_gndr_dsc",
+          "Joined_dat.age" : "Joined_dat.age",
+          "prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "MAX_yearsSinceOldestPolicyStart_formula",
+          "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula" : "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula",
+          "MAX_investmentAgeOfCustomer_formula_bucket" : "MAX_investmentAgeOfCustomer_formula_bucket",
+          "MAX_riskGroupFlag" : "MAX_riskGroupFlag",
+          "SUM_totalInvestmentPremium" : "SUM_totalInvestmentPremium",
+          "Joined_dat.standardBankMatch" : "Joined_dat.standardBankMatch",
+          "SUM_totalRetirementAnnuityPremium" : "SUM_totalRetirementAnnuityPremium",
+          "MAX_yearsSinceNewestPolicyStart_formula" : "MAX_yearsSinceNewestPolicyStart_formula"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedBondPropensityScore_prediction",
+          "label" : "Predicted Bond Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT1" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedEducationPropensityScore"
+        },
+        "columnMapping" : {
+          "MAX_yearsSinceLastRetirementAnnuityProduct_bucket" : "MAX_yearsSinceLastRetirementAnnuityProduct_bucket",
+          "ownerNationalIdCalculated_formula1_formula" : "ownerNationalIdCalculated_formula1_formula",
+          "MAX_riskGroupFlag" : "MAX_riskGroupFlag",
+          "SUM_totalInvestmentPremium" : "SUM_totalInvestmentPremium",
+          "Joined_dat1.SUM_countExcludePolicy_formula" : "Joined_dat1.SUM_countExcludePolicy_formula",
+          "SUM_totalRetirementAnnuityPremium" : "SUM_totalRetirementAnnuityPremium",
+          "MAX_yearsSinceNewestPolicyStart_formula" : "MAX_yearsSinceNewestPolicyStart_formula",
+          "prsn_gndr_dsc" : "Joined_dat.prsn_gndr_dsc",
+          "ownerNationalIdCalculated_formula1_formula1" : "ownerNationalIdCalculated_formula1_formula1",
+          "Joined_dat.age" : "Joined_dat.age",
+          "prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "MAX_yearsSinceOldestPolicyStart_formula",
+          "MAX_yearsSinceLastInvestmentProduct_bucket" : "MAX_yearsSinceLastInvestmentProduct_bucket"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedEducationPropensityScore_prediction",
+          "label" : "Predicted Education Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT2" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT0" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedAnnuityPropensityScore"
+        },
+        "columnMapping" : {
+          "prsn_gndr_dsc" : "Joined_dat.prsn_gndr_dsc",
+          "ownerNationalIdCalculated_formula1_formula1" : "ownerNationalIdCalculated_formula1_formula1",
+          "MAX_yearsSinceFirstInvestmentProduct_bucket" : "MAX_yearsSinceFirstInvestmentProduct_bucket",
+          "prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc",
+          "MAX_retirementAnnuityAgeOfCustomer_bucket" : "MAX_retirementAnnuityAgeOfCustomer_bucket",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "MAX_yearsSinceOldestPolicyStart_formula",
+          "MAX_yearsSinceFirstRetirementAnnuityProduct_bucket" : "MAX_yearsSinceFirstRetirementAnnuityProduct_bucket",
+          "ownerNationalIdCalculated_formula1_formula" : "ownerNationalIdCalculated_formula1_formula",
+          "MAX_investmentAgeOfCustomer_formula_bucket" : "MAX_investmentAgeOfCustomer_formula_bucket",
+          "Joined_dat1.SUM_countExcludePolicy_formula" : "Joined_dat1.SUM_countExcludePolicy_formula",
+          "Joined_dat.standardBankMatch" : "Joined_dat.standardBankMatch",
+          "SUM_totalRetirementAnnuityPremium" : "SUM_totalRetirementAnnuityPremium"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedAnnuityPropensityScore_prediction",
+          "label" : "Predicted Annuity Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT3" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT2" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedInvestmentPropensityScore"
+        },
+        "columnMapping" : {
+          "ownerNationalIdCalculated_formula_formula_formula" : "ownerNationalIdCalculated_formula_formula_formula",
+          "MAX_annuityAgeOfCustomer_bucket" : "MAX_annuityAgeOfCustomer_bucket",
+          "MAX_retirementAnnuityAgeOfCustomer_bucket" : "MAX_retirementAnnuityAgeOfCustomer_bucket",
+          "ownerNationalIdCalculated_formula1_formula" : "ownerNationalIdCalculated_formula1_formula",
+          "MAX_riskGroupFlag" : "MAX_riskGroupFlag",
+          "Joined_dat.standardBankMatch" : "Joined_dat.standardBankMatch",
+          "Joined_dat1.SUM_countExcludePolicy_formula" : "Joined_dat1.SUM_countExcludePolicy_formula",
+          "SUM_totalRetirementAnnuityPremium" : "SUM_totalRetirementAnnuityPremium",
+          "MAX_yearsSinceNewestPolicyStart_formula" : "MAX_yearsSinceNewestPolicyStart_formula",
+          "Joined_dat.age" : "Joined_dat.age",
+          "prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "MAX_yearsSinceOldestPolicyStart_formula",
+          "MAX_yearsSinceFirstRetirementAnnuityProduct" : "MAX_yearsSinceFirstRetirementAnnuityProduct"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedInvestmentPropensityScore_prediction",
+          "label" : "Predicted Investment Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT4" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT3" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedRetirementAnnuityPropensityScore"
+        },
+        "columnMapping" : {
+          "prsn_gndr_dsc" : "Joined_dat.prsn_gndr_dsc",
+          "MAX_yearsSinceFirstInvestmentProduct_bucket" : "MAX_yearsSinceFirstInvestmentProduct_bucket",
+          "Joined_dat.age" : "Joined_dat.age",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "MAX_yearsSinceOldestPolicyStart_formula",
+          "MAX_investmentAgeOfCustomer_formula_bucket" : "MAX_investmentAgeOfCustomer_formula_bucket",
+          "MAX_riskGroupFlag" : "MAX_riskGroupFlag",
+          "ownerNationalIdCalculated_formula1_formula_formula_formula" : "ownerNationalIdCalculated_formula1_formula_formula_formula",
+          "SUM_totalInvestmentPremium" : "SUM_totalInvestmentPremium",
+          "Joined_dat.standardBankMatch" : "Joined_dat.standardBankMatch"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedRetirementAnnuityPropensityScore_prediction",
+          "label" : "Predicted Retirement Annuity Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ]
+      }
+    },
+    "DROP_FIELDS0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "COUNT_policyNumberCalculated", "Joined_dat.Column1", "Joined_dat.Inactive_Policy", "Joined_dat.acrProductGroupCalculated", "Joined_dat.acr_product_group", "Joined_dat.activePolicy", "Joined_dat.age", "Joined_dat.ageBucket", "Joined_dat.annuityActivePolicy", "Joined_dat.annuityAgeOfCustomer", "Joined_dat.annuityAnnuity", "Joined_dat.annuityAnnuityFlag", "Joined_dat.annuityDependentVariable", "Joined_dat.annuityFlexibleAnnuity", "Joined_dat.annuityFlexibleAnnuityFlag", "Joined_dat.annuityInactivePolicy", "Joined_dat.api", "Joined_dat.asOfDate", "Joined_dat.bondActivePolicy", "Joined_dat.bondAgeOfCustomer", "Joined_dat.bondDependentVariable", "Joined_dat.bondGuaranteedCapitalBond", "Joined_dat.bondGuaranteedCapitalBondFlag", "Joined_dat.bondInactivePolicy", "Joined_dat.consult_sales_cd1", "Joined_dat.cont_no", "Joined_dat.dateOfBirth", "Joined_dat.educationActivePolicy", "Joined_dat.educationAgeOfCustomer", "Joined_dat.educationDependentVariable", "Joined_dat.educationEducationPlan", "Joined_dat.educationEducationPlanFlag", "Joined_dat.educationInactivePolicy", "Joined_dat.frequency", "Joined_dat.frequencyCalculated", "Joined_dat.frequencyLumpsumCalculated", "Joined_dat.frequencyMonthlyCalculated", "Joined_dat.inceptionDateEpoc", "Joined_dat.inceptionDateNewest", "Joined_dat.inceptionDateOldestCalculated", "Joined_dat.inceptionDateString", "Joined_dat.inceptionDateTenure", "Joined_dat.inceptionDateTenureBucket", "Joined_dat.incp_dt", "Joined_dat.inforceIndicatorCalculated", "Joined_dat.inforceIndicatorFlag", "Joined_dat.inforce_ind", "Joined_dat.investmentActivePolicy", "Joined_dat.investmentAgeOfCustomer", "Joined_dat.investmentDependentVariable", "Joined_dat.investmentFlexibleInvestmentPlan", "Joined_dat.investmentFlexibleInvestmentPlanFlag", "Joined_dat.investmentGatewayInvestmentPlan", "Joined_dat.investmentGatewayInvestmentPlanFlag", "Joined_dat.investmentInactivePolicy", "Joined_dat.investmentInvestmentBuilder", "Joined_dat.investmentInvestmentBuilderFlag", "Joined_dat.investmentInvestmentPlan", "Joined_dat.investmentInvestmentPlanFlag", "Joined_dat.investmentLibertyEvolveInvestmentPlan", "Joined_dat.investmentLibertyEvolveInvestmentPlanFlag", "Joined_dat.maturityDateTenure", "Joined_dat.maturityDateTenureBucket", "Joined_dat.movementDateCalculated", "Joined_dat.movementDateTenure", "Joined_dat.movementDateTenureBucket", "Joined_dat.movementInceptionDate", "Joined_dat.movementInceptionDateBucket", "Joined_dat.movementInceptionDateDiffereence", "Joined_dat.movent_dt", "Joined_dat.movent_ind", "Joined_dat.mty_dt", "Joined_dat.newestInceptionDate", "Joined_dat.newestMaturityDateCalculated", "Joined_dat.nullFilter", "Joined_dat.oldestInceptionDate", "Joined_dat.otherInvestmentProducts", "Joined_dat.ownerNationalIdCalculated", "Joined_dat.ownerNationalIdProductNameKey", "Joined_dat.owner_natl_id", "Joined_dat.personMarketConsentCalculated", "Joined_dat.policyExpireDuration", "Joined_dat.policyNumberCalculated", "Joined_dat.policyTerm", "Joined_dat.policyTermBucket", "Joined_dat.prod_name", "Joined_dat.productNameCalculated", "Joined_dat.product_group_category", "Joined_dat.prsn_brth_dt", "Joined_dat.prsn_gndr_dsc", "Joined_dat.prsn_mrkt_cnsnt", "Joined_dat.prsn_mrtl_sts_dsc", "Joined_dat.prsn_pdb_id", "Joined_dat.retirementAnnuityActivePolicy", "Joined_dat.retirementAnnuityAgeOfCustomer", "Joined_dat.retirementAnnuityDependentVariable", "Joined_dat.retirementAnnuityInactivePolicy", "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuity", "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuityFlag", "Joined_dat.retirementAnnuityLibertyRetirementAnnuity", "Joined_dat.retirementAnnuityLibertyRetirementAnnuityFlag", "Joined_dat.retirementAnnuityRetirementAnnuityBuilder", "Joined_dat.retirementAnnuityRetirementAnnuityBuilderFlag", "Joined_dat.riskGroupFlag", "Joined_dat.sb_match", "Joined_dat.source", "Joined_dat.standardBankMatch", "Joined_dat.totalAnnuityPremium", "Joined_dat.totalInvestmentPremium", "Joined_dat.totalRetirementAnnuityPremium", "Joined_dat.yearsSinceFirstAnnuityProduct", "Joined_dat.yearsSinceFirstBondProduct", "Joined_dat.yearsSinceFirstEducationProduct", "Joined_dat.yearsSinceFirstInvestmentProduct", "Joined_dat.yearsSinceFirstRetirementAnnuityProduct", "Joined_dat.yearsSinceLastAnnuityProduct", "Joined_dat.yearsSinceLastBondProduct", "Joined_dat.yearsSinceLastEducationProduct", "Joined_dat.yearsSinceLastInvestmentProduct", "Joined_dat.yearsSinceLastRetirementAnnuityProduct", "Joined_dat.yearsSinceNewestPolicyStart", "Joined_dat.yearsSinceOldestPolicyStart", "Joined_dat1.SUM_countExcludePolicy", "Joined_dat1.SUM_countExcludePolicy_formula", "Joined_dat1.ownerNationalIdCalculated", "MAX_annuityAgeOfCustomer", "MAX_annuityAgeOfCustomer_bucket", "MAX_annuityDependentVariable", "MAX_annuityDependentVariable_formula", "MAX_bondDependentVariable", "MAX_bondDependentVariable_formula", "MAX_educationDependentVariable", "MAX_educationDependentVariable_formula", "MAX_investmentAgeOfCustomer", "MAX_investmentAgeOfCustomer_formula", "MAX_investmentAgeOfCustomer_formula_bucket", "MAX_investmentDependentVariable", "MAX_investmentDependentVariable_formula", "MAX_retirementAnnuityAgeOfCustomer", "MAX_retirementAnnuityAgeOfCustomer_bucket", "MAX_retirementAnnuityDependentVariable", "MAX_retirementAnnuityDependentVariable_formula", "MAX_riskGroupFlag", "MAX_yearsSinceFirstAnnuityProduct", "MAX_yearsSinceFirstAnnuityProduct_bucket", "MAX_yearsSinceFirstBondProduct", "MAX_yearsSinceFirstEducationProduct", "MAX_yearsSinceFirstInvestmentProduct", "MAX_yearsSinceFirstInvestmentProduct_bucket", "MAX_yearsSinceFirstRetirementAnnuityProduct", "MAX_yearsSinceFirstRetirementAnnuityProduct_bucket", "MAX_yearsSinceLastAnnuityProduct", "MAX_yearsSinceLastAnnuityProduct_bucket", "MAX_yearsSinceLastBondProduct", "MAX_yearsSinceLastEducationProduct", "MAX_yearsSinceLastInvestmentProduct", "MAX_yearsSinceLastInvestmentProduct_bucket", "MAX_yearsSinceLastRetirementAnnuityProduct", "MAX_yearsSinceLastRetirementAnnuityProduct_bucket", "MAX_yearsSinceNewestPolicyStart", "MAX_yearsSinceNewestPolicyStart_formula", "MAX_yearsSinceOldestPolicyStart", "MAX_yearsSinceOldestPolicyStart_formula", "SUM_Inactive_Policy", "SUM_activePolicy", "SUM_annuityAnnuity", "SUM_annuityFlexibleAnnuity", "SUM_bondGuaranteedCapitalBond", "SUM_bondGuaranteedCapitalBondFlag", "SUM_educationEducationPlan", "SUM_frequencyLumpsumCalculated", "SUM_frequencyMonthlyCalculated", "SUM_investmentActivePolicy", "SUM_investmentFlexibleInvestmentPlan", "SUM_investmentGatewayInvestmentPlan", "SUM_investmentInvestmentBuilder", "SUM_investmentInvestmentPlan", "SUM_investmentLibertyEvolveInvestmentPlan", "SUM_retirementAnnuityActivePolicy", "SUM_retirementAnnuityLibertyEvolveRetirementAnnuity", "SUM_retirementAnnuityLibertyRetirementAnnuity", "SUM_retirementAnnuityRetirementAnnuityBuilder", "SUM_totalAnnuityPremium", "SUM_totalInvestmentPremium", "SUM_totalRetirementAnnuityPremium", "ageBucket", "countPoliciesAnnuityAnnuityFlag", "countPoliciesAnnuityFlexibleAnnuityFlag", "countPoliciesEducationEducationPlanFlag", "countPoliciesInvestmentFlexibleInvestmentPlanFlag", "countPoliciesInvestmentGatewayInvestmentPlanFlag", "countPoliciesInvestmentInvestmentBuilderFlag", "countPoliciesInvestmentInvestmentPlanFlag", "countPoliciesInvestmentLibertyEvolveInvestmentPlanFlag", "countPoliciesRetirementAnnuityLibertyEvolveRetirementAnnuityFlag", "countPoliciesRetirementAnnuityLibertyRetirementAnnuityFlag", "countPoliciesRetirementAnnuityRetirementAnnuityBuilderFlag", "ownerNationalIdCalculated_formula", "ownerNationalIdCalculated_formula1", "ownerNationalIdCalculated_formula1_formula", "ownerNationalIdCalculated_formula1_formula1", "ownerNationalIdCalculated_formula1_formula_formula", "ownerNationalIdCalculated_formula1_formula_formula_formula", "ownerNationalIdCalculated_formula_formula", "ownerNationalIdCalculated_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula_formula", "prsn_gndr_dsc", "prsn_mrtl_sts_dsc" ]
+        }
+      }
+    },
+    "OUTPUT1" : {
+      "action" : "save",
+      "sources" : [ "JOIN2" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Result Data",
+          "name" : "AW_AccountPropensityModelResultData",
+          "rowLevelSecurityFilter" : "'Account.OwnerId' == \"$User.Id\" || 'FullAccessMembers.GroupMember.UserOrGroupId' == \"$User.Id\"",
+          "folderName" : "Account_Propensity_Model_Adviser_App"
+        }
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "AW_IdentificationNumber__pc", "OwnerId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Account",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Account"
+        }
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "DISCOVERY_PREDICT4", "LOAD_DATASET2" ],
+      "schema" : {
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "RIGHT_OUTER",
+        "leftKeys" : [ "ownerNationalIdCalculated" ],
+        "rightQualifier" : "Account",
+        "rightKeys" : [ "AW_IdentificationNumber__pc" ]
+      }
+    },
+    "FORMULA0" : {
+      "action" : "formula",
+      "sources" : [ "JOIN0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Joined_dat.prsn_pstl_cd_formula",
+          "label" : "Check For Null",
+          "formulaExpression" : "case \r\n\twhen AW_PredictedEducationPropensityScore_prediction is null and AW_PredictedBondPropensityScore_prediction is null and AW_PredictedAnnuityPropensityScore_prediction is null and AW_PredictedInvestmentPropensityScore_prediction is null and AW_PredictedRetirementAnnuityPropensityScore_prediction is null\r\n\tthen \r\n    'Y'\r\n\telse\r\n\t'N'\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FILTER0" : {
+      "action" : "filter",
+      "sources" : [ "FORMULA0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Joined_dat.prsn_pstl_cd_formula",
+          "operator" : "EQUAL",
+          "operands" : [ "N" ]
+        } ]
+      }
+    },
+    "FORMULA1" : {
+      "action" : "formula",
+      "sources" : [ "DROP_FIELDS0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "ownerNationalIdCalculated_formula",
+          "label" : "Full Access Formula",
+          "formulaExpression" : "'FullAccess'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN2" : {
+      "action" : "join",
+      "sources" : [ "FORMULA1", "DROP_FIELDS1" ],
+      "schema" : {
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "ownerNationalIdCalculated_formula" ],
+        "rightQualifier" : "FullAccessMembers",
+        "rightKeys" : [ "Id_formula" ]
+      }
+    },
+    "LOAD_DATASET6" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "DeveloperName" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Group",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Group"
+        }
+      }
+    },
+    "FILTER1" : {
+      "action" : "filter",
+      "sources" : [ "JOIN4" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "DeveloperName",
+          "operator" : "EQUAL",
+          "operands" : [ "AW_PredictionModelFullAccess" ]
+        } ]
+      }
+    },
+    "FORMULA2" : {
+      "action" : "formula",
+      "sources" : [ "FILTER1" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Id_formula",
+          "label" : "Full Access Formula1",
+          "formulaExpression" : "'FullAccess'",
+          "precision" : 50,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS1" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA2" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "DeveloperName", "GroupMember.Id", "Id", "Name" ]
+        }
+      }
+    },
+    "JOIN4" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET6", "LOAD_DATASET7" ],
+      "schema" : {
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "MULTI_VALUE_LOOKUP",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "GroupMember",
+        "rightKeys" : [ "GroupId" ]
+      }
+    },
+    "LOAD_DATASET7" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "GroupId", "UserOrGroupId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "GroupMember",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "GroupMember"
+        }
+      }
+    },
+    "DROP_FIELDS2" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Account.AW_IdentificationNumber__pc", "Account.Name", "Account.OwnerId", "Joined_dat.prsn_pstl_cd_formula", "Token.Person_Tokenized_Id__c", "ownerNationalIdCalculated" ]
+        }
+      }
+    },
+    "OUTPUT2" : {
+      "action" : "outputExternal",
+      "sources" : [ "DROP_FIELDS2" ],
+      "parameters" : {
+        "connectionName" : "AW_AccountPropensityModelConnection",
+        "object" : "Account",
+        "operation" : "update",
+        "externalIdFieldName" : "",
+        "fieldsMapping" : [ {
+          "sourceField" : "AW_PredictedEducationPropensityScore_prediction",
+          "targetField" : "AW_PredictionEducationModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedBondPropensityScore_prediction",
+          "targetField" : "AW_PredictionBondModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedAnnuityPropensityScore_prediction",
+          "targetField" : "AW_PredictionAnnuityModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedInvestmentPropensityScore_prediction",
+          "targetField" : "AW_PredictionInvestmentModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedRetirementAnnuityPropensityScore_prediction",
+          "targetField" : "AW_PredictionRetirementModelScore__c"
+        }, {
+          "sourceField" : "Account.Id",
+          "targetField" : "Id"
+        } ],
+        "connectorType" : "SALESFORCE_OUTPUT"
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "Account Propensity Model Aggregated Data",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 112,
+        "graph" : {
+          "LOAD_DATASET0" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "DISCOVERY_PREDICT0" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 392
+      },
+      "DISCOVERY_PREDICT1" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 252
+      },
+      "DISCOVERY_PREDICT2" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 532
+      },
+      "DISCOVERY_PREDICT3" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 672
+      },
+      "DISCOVERY_PREDICT4" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 392,
+        "left" : 812
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 1372,
+        "graph" : {
+          "DROP_FIELDS0" : null
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT1" : {
+        "label" : "Output",
+        "type" : "OUTPUT",
+        "top" : 252,
+        "left" : 1792
+      },
+      "LOAD_DATASET2" : {
+        "label" : "Account",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 812,
+        "graph" : {
+          "LOAD_DATASET2" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN0" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 952
+      },
+      "TRANSFORM1" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 1092,
+        "graph" : {
+          "FORMULA0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "FILTER0" : {
+        "label" : "Filter",
+        "type" : "FILTER",
+        "top" : 392,
+        "left" : 1232
+      },
+      "TRANSFORM2" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 1512,
+        "graph" : {
+          "FORMULA1" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "JOIN2" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 1652
+      },
+      "LOAD_DATASET6" : {
+        "label" : "Group",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 1092,
+        "graph" : {
+          "LOAD_DATASET6" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "FILTER1" : {
+        "label" : "Filter",
+        "type" : "FILTER",
+        "top" : 112,
+        "left" : 1372
+      },
+      "TRANSFORM3" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 112,
+        "left" : 1512,
+        "graph" : {
+          "FORMULA2" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "DROP_FIELDS1" : null
+        },
+        "connectors" : [ {
+          "source" : "FORMULA2",
+          "target" : "DROP_FIELDS1"
+        } ]
+      },
+      "JOIN4" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 1232
+      },
+      "LOAD_DATASET7" : {
+        "label" : "GroupMember",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 1092,
+        "graph" : {
+          "LOAD_DATASET7" : null
+        },
+        "connectors" : [ ],
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM4" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 1512,
+        "graph" : {
+          "DROP_FIELDS2" : null
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT2" : {
+        "label" : "Output",
+        "type" : "OUTPUT",
+        "top" : 392,
+        "left" : 1652
+      }
+    },
+    "connectors" : [ {
+      "source" : "DISCOVERY_PREDICT1",
+      "target" : "DISCOVERY_PREDICT0"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "DISCOVERY_PREDICT1"
+    }, {
+      "source" : "DISCOVERY_PREDICT0",
+      "target" : "DISCOVERY_PREDICT2"
+    }, {
+      "source" : "DISCOVERY_PREDICT2",
+      "target" : "DISCOVERY_PREDICT3"
+    }, {
+      "source" : "DISCOVERY_PREDICT3",
+      "target" : "DISCOVERY_PREDICT4"
+    }, {
+      "source" : "FILTER0",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "JOIN2",
+      "target" : "OUTPUT1"
+    }, {
+      "source" : "DISCOVERY_PREDICT4",
+      "target" : "JOIN0"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "TRANSFORM1"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "FILTER0"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "TRANSFORM2"
+    }, {
+      "source" : "TRANSFORM2",
+      "target" : "JOIN2"
+    }, {
+      "source" : "TRANSFORM3",
+      "target" : "JOIN2"
+    }, {
+      "source" : "JOIN4",
+      "target" : "FILTER1"
+    }, {
+      "source" : "FILTER1",
+      "target" : "TRANSFORM3"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "JOIN4"
+    }, {
+      "source" : "LOAD_DATASET7",
+      "target" : "JOIN4"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "TRANSFORM4"
+    }, {
+      "source" : "TRANSFORM4",
+      "target" : "OUTPUT2"
+    } ],
+    "hiddenColumns" : [ {
+      "fieldName" : "ownerNationalIdCalculated_formula1",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "ownerNationalIdCalculated_formula1_formula1",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.totalAnnuityPremium",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.movementDateTenure",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceLastRetirementAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityLibertyRetirementAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityRetirementAnnuityBuilder",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceLastBondProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat1.SUM_countExcludePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.inceptionDateEpoc",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceLastAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "ownerNationalIdCalculated_formula1_formula_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.annuityInactivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.annuityActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceFirstInvestmentProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentInvestmentPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat1.SUM_countExcludePolicy_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_totalRetirementAnnuityPremium",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_retirementAnnuityDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.bondGuaranteedCapitalBondFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentLibertyEvolveInvestmentPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.Inactive_Policy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.educationInactivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceOldestPolicyStart",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityLibertyRetirementAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_bondDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceFirstRetirementAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityRetirementAnnuityBuilderFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_totalAnnuityPremium",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.maturityDateTenure",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.bondAgeOfCustomer",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.movementInceptionDate",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_investmentAgeOfCustomer_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "countPoliciesInvestmentInvestmentPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.educationAgeOfCustomer",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceFirstRetirementAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.educationEducationPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentInactivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceFirstEducationProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.annuityFlexibleAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "countPoliciesInvestmentGatewayInvestmentPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_annuityAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "countPoliciesInvestmentLibertyEvolveInvestmentPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.annuityDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceLastRetirementAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.policyExpireDuration",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentInvestmentBuilderFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceLastInvestmentProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceLastEducationProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceLastInvestmentProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "ownerNationalIdCalculated_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.api",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.annuityAgeOfCustomer",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.policyTerm",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.inceptionDateTenure",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_educationDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_annuityDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityDependentVariable",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_investmentGatewayInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceLastEducationProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_investmentInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.annuityAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_investmentFlexibleInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_bondGuaranteedCapitalBond",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceLastAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceFirstEducationProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.annuityFlexibleAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_retirementAnnuityRetirementAnnuityBuilder",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.frequencyMonthlyCalculated",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "ownerNationalIdCalculated_formula_formula_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_activePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_annuityFlexibleAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityInactivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.activePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.totalInvestmentPremium",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentFlexibleInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.dateOfBirth",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.frequencyLumpsumCalculated",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.educationEducationPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "countPoliciesRetirementAnnuityLibertyRetirementAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "ownerNationalIdCalculated_formula_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "ownerNationalIdCalculated_formula_formula_formula_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentGatewayInvestmentPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "countPoliciesAnnuityFlexibleAnnuityFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_retirementAnnuityLibertyEvolveRetirementAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_bondGuaranteedCapitalBondFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceFirstBondProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.riskGroupFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceNewestPolicyStart_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentLibertyEvolveInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.Column1",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "countPoliciesRetirementAnnuityRetirementAnnuityBuilderFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_retirementAnnuityActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceFirstAnnuityProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceNewestPolicyStart",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.totalRetirementAnnuityPremium",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.educationActivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_retirementAnnuityAgeOfCustomer",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentFlexibleInvestmentPlanFlag",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.yearsSinceLastBondProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "COUNT_policyNumberCalculated",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.bondInactivePolicy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "Joined_dat.investmentGatewayInvestmentPlan",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula_formula",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "MAX_yearsSinceFirstBondProduct",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_Inactive_Policy",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    }, {
+      "fieldName" : "SUM_retirementAnnuityLibertyRetirementAnnuity",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_AccountPropensityModelAggregatedData"
+    } ]
+  }
+}

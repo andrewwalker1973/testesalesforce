@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template to be used for an FA when a medical appointment is rescheduled</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Appointment To Be Rescheduled FA</name>
+    <style>none</style>
+    <subject>SMS Client Unreachable</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

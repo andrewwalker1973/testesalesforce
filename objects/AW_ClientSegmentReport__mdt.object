@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata is created to store ClientSegment Report Id.</description>
+    <fields>
+        <fullName>AW_ReportId__c</fullName>
+        <description>The report ID being referenced</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>AW ReportId</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>ClientSegmentReport</label>
+    <pluralLabel>AW ClientSegmentReports</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

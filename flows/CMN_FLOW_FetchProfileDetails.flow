@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <description>To store the logged in user profile details</description>
+        <name>RSC_AssignProfileDetails</name>
+        <label>Assign Profile Details</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_RetrievedProfileName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RSC_GetLoggedInUserProfile.Name</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Sub flow that gets profile information for logged in user</description>
+    <interviewLabel>CMN_FLOW_FetchProfileDetails {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CMN_FLOW_FetchProfileDetails</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Used to get the profile of the logged In user</description>
+        <name>RSC_GetLoggedInUserProfile</name>
+        <label>Get Logged In User Profile</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_AssignProfileDetails</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.ProfileId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Profile</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_GetLoggedInUserProfile</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Retrieved Profile Name</description>
+        <name>RSC_RetrievedProfileName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

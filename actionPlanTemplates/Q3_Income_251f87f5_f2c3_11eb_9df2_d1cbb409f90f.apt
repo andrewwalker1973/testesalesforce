@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Commission Earned Q3 Target-R150000</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Q3 Income</name>
+    <targetEntityType>01I4J000000mUF0</targetEntityType>
+    <uniqueName>Q3_Income_251f87f5_f2c3_11eb_9df2_d1cbb409f90f</uniqueName>
+</ActionPlanTemplate>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Send For Signature to call external system Signing Hub</description>
+    <flowDefinition>AW_FLOW_SendForSignature</flowDefinition>
+    <label>Send For Signature</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

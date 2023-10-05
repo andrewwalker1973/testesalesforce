@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>SC_ServiceAppointment</fullName>
+        <fields>AppointmentNumber</fields>
+        <fields>OwnerId</fields>
+        <fields>CMN_COMMS_WorkOrder__c</fields>
+        <fields>WorkTypeId</fields>
+        <fields>Status</fields>
+        <fields>EarliestStartTime</fields>
+        <fields>DueDate</fields>
+        <label>SC_ServiceAppointment</label>
+    </compactLayouts>
+    <fields>
+        <fullName>CMN_COMMS_WorkOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Populate work order to get case and case extension fields in formula fields</description>
+        <externalId>false</externalId>
+        <label>Work Order</label>
+        <referenceTo>WorkOrder</referenceTo>
+        <relationshipLabel>Service Appointments</relationshipLabel>
+        <relationshipName>Service_Appointments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_COMMS_ClientName__c</fullName>
+        <description>To Populate Client Name from the case extension object.
+Use this field in email template to send SMS.</description>
+        <externalId>false</externalId>
+        <formula>CMN_COMMS_WorkOrder__r.Case.SC_CaseExtension__r.RSC_ClientFirstName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_COMMS_ClientSurname__c</fullName>
+        <description>To Populate Client Surname from the case extension object.
+Use this field in email template to send SMS.</description>
+        <externalId>false</externalId>
+        <formula>CMN_COMMS_WorkOrder__r.Case.SC_CaseExtension__r.RSC_ClientSurname__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Surname</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_COMMS_ClientTitle__c</fullName>
+        <description>To Populate Client Title from the case extension object.
+Use this field in email template to send SMS.</description>
+        <externalId>false</externalId>
+        <formula>CMN_COMMS_WorkOrder__r.Case.SC_CaseExtension__r.RSC_ClientTitle__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_COMMS_PolicyNumber__c</fullName>
+        <description>This is a masked version of the Policy Number, related to the service appointment, and is used in email templates.</description>
+        <externalId>false</externalId>
+        <formula>CMN_COMMS_WorkOrder__r.Case.SC_CaseExtension__r.RSC_MasterContractNumber__c</formula>
+        <label>Policy Number (masked)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_COMMS_PriorScheduledStartTimeAsText__c</fullName>
+        <description>This will convert the Prior Scheduled Start Time to text for use in Email Templates</description>
+        <externalId>false</externalId>
+        <formula>IF
+(
+  ISNULL(SC_COMMS_PriorScheduledStartTime__c),
+  NULL,
+  TEXT
+  (
+    DAY(DATEVALUE(SC_COMMS_PriorScheduledStartTime__c))
+  )
+  + 
+  &quot; &quot;
+  +
+  CASE
+  (
+    TEXT(MONTH(DATEVALUE(SC_COMMS_PriorScheduledStartTime__c))),
+    &quot;1&quot;, &quot;January&quot;,
+    &quot;2&quot;, &quot;February&quot;,
+    &quot;3&quot;, &quot;March&quot;,
+    &quot;4&quot;, &quot;April&quot;,
+    &quot;5&quot;, &quot;May&quot;,
+    &quot;6&quot;, &quot;June&quot;,
+    &quot;7&quot;, &quot;July&quot;,
+    &quot;8&quot;, &quot;August&quot;,
+    &quot;9&quot;, &quot;September&quot;,
+    &quot;10&quot;, &quot;October&quot;,
+    &quot;11&quot;, &quot;November&quot;,
+    &quot;December&quot;
+  )
+  +
+  &quot; &quot;
+  +
+  TEXT
+  (
+    YEAR(DATEVALUE(SC_COMMS_PriorScheduledStartTime__c))
+  )
+  + 
+  &quot; at &quot;
+  + 
+  LEFT
+  (
+    TEXT
+    (
+      TIMEVALUE(SC_COMMS_PriorScheduledStartTime__c)+ (2 * 60 * 60 * 1000)
+    ),
+    5
+  )
+)</formula>
+        <label>Prior Scheduled Start Time (as Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_COMMS_PriorScheduledStartTime__c</fullName>
+        <description>Is used the store the previous value for SchedStartTime</description>
+        <externalId>false</externalId>
+        <label>Prior Scheduled Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SC_COMMS_ScheduledStartTimeAsText__c</fullName>
+        <description>This will convert the Scheduled Start Time to text for use in Email Templates</description>
+        <externalId>false</externalId>
+        <formula>IF
+(
+  ISNULL(SchedStartTime),
+  NULL,
+  TEXT
+  (
+    DAY(DATEVALUE(SchedStartTime))
+  )
+  + 
+  &quot; &quot;
+  +
+  CASE
+  (
+    TEXT(MONTH(DATEVALUE(SchedStartTime))),
+    &quot;1&quot;, &quot;January&quot;,
+    &quot;2&quot;, &quot;February&quot;,
+    &quot;3&quot;, &quot;March&quot;,
+    &quot;4&quot;, &quot;April&quot;,
+    &quot;5&quot;, &quot;May&quot;,
+    &quot;6&quot;, &quot;June&quot;,
+    &quot;7&quot;, &quot;July&quot;,
+    &quot;8&quot;, &quot;August&quot;,
+    &quot;9&quot;, &quot;September&quot;,
+    &quot;10&quot;, &quot;October&quot;,
+    &quot;11&quot;, &quot;November&quot;,
+    &quot;December&quot;
+  )
+  +
+  &quot; &quot;
+  +
+  TEXT
+  (
+    YEAR(DATEVALUE(SchedStartTime))
+  )
+  + 
+  &quot; at &quot;
+  + 
+  LEFT
+  (
+    TEXT
+    (
+      TIMEVALUE(SchedStartTime) + (2 * 60 * 60 * 1000)
+    ),
+    5
+  )
+)</formula>
+        <label>Scheduled Start Time (as Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ClientIdentificationNumber__c</fullName>
+        <externalId>false</externalId>
+        <formula>CMN_COMMS_WorkOrder__r.Case.SC_CaseExtension__r.RSC_ClientIdentificationNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Identification Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_PolicyNumber__c</fullName>
+        <description>The policy number associated with the Appointment</description>
+        <externalId>false</externalId>
+        <formula>CMN_COMMS_WorkOrder__r.Case.SC_CaseExtension__r.RSC_MasterContractNumber__c</formula>
+        <label>Policy Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ServiceResource__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup Field for Service Resource Currently Assigned for the Service Appointment</description>
+        <externalId>false</externalId>
+        <label>Service Resource</label>
+        <referenceTo>ServiceResource</referenceTo>
+        <relationshipLabel>Service Appointments</relationshipLabel>
+        <relationshipName>Service_Appointments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_StatusReason__c</fullName>
+        <description>Picklist values and dependencies describing the various statuses of appointments, scheduled for clients.</description>
+        <externalId>false</externalId>
+        <label>Status Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Client refuses blood test</fullName>
+                    <default>false</default>
+                    <label>Client refuses blood test</label>
+                </value>
+                <value>
+                    <fullName>Client has been to lab for tests</fullName>
+                    <default>false</default>
+                    <label>Client has been to lab for tests</label>
+                </value>
+                <value>
+                    <fullName>Client prefers to go to own doctor for tests</fullName>
+                    <default>false</default>
+                    <label>Client prefers to go to own doctor for tests</label>
+                </value>
+                <value>
+                    <fullName>Cannot get hold of client</fullName>
+                    <default>false</default>
+                    <label>Cannot get hold of client</label>
+                </value>
+                <value>
+                    <fullName>Client requires clarity on policy - Financial Adviser to contact client</fullName>
+                    <default>false</default>
+                    <label>Client requires clarity on policy - Financial Adviser to contact client</label>
+                </value>
+                <value>
+                    <fullName>Client requires clarity on bloods, broker to contact client</fullName>
+                    <default>false</default>
+                    <label>Client requires clarity on bloods, broker to contact client</label>
+                </value>
+                <value>
+                    <fullName>Duplicate Request</fullName>
+                    <default>false</default>
+                    <label>Duplicate Request</label>
+                </value>
+                <value>
+                    <fullName>Our numerous attempts at contacting the client have failed</fullName>
+                    <default>false</default>
+                    <label>Our numerous attempts at contacting the client have failed</label>
+                </value>
+                <value>
+                    <fullName>Incorrect contact details</fullName>
+                    <default>false</default>
+                    <label>Incorrect contact details</label>
+                </value>
+                <value>
+                    <fullName>Client keeps cancelling appointments</fullName>
+                    <default>false</default>
+                    <label>Client keeps cancelling appointments</label>
+                </value>
+                <value>
+                    <fullName>No bloods required</fullName>
+                    <default>false</default>
+                    <label>No bloods required</label>
+                </value>
+                <value>
+                    <fullName>Client coming to Liberty office for tests</fullName>
+                    <default>false</default>
+                    <label>Client coming to Liberty office for tests</label>
+                </value>
+                <value>
+                    <fullName>Client going to own doctor for tests</fullName>
+                    <default>false</default>
+                    <label>Client going to own doctor for tests</label>
+                </value>
+                <value>
+                    <fullName>Client requests cancellation</fullName>
+                    <default>false</default>
+                    <label>Client requests cancellation</label>
+                </value>
+                <value>
+                    <fullName>Referred to alternative lab</fullName>
+                    <default>false</default>
+                    <label>Referred to alternative lab</label>
+                </value>
+                <value>
+                    <fullName>Distance exceeds 100km per client</fullName>
+                    <default>false</default>
+                    <label>Distance exceeds 100km per client</label>
+                </value>
+                <value>
+                    <fullName>Client confirms that medicals have been completed</fullName>
+                    <default>false</default>
+                    <label>Client confirms that medicals have been completed</label>
+                </value>
+                <value>
+                    <fullName>Client has not honoured previous scheduled appointments.</fullName>
+                    <default>false</default>
+                    <label>Client has not honoured previous scheduled appointments.</label>
+                </value>
+                <value>
+                    <fullName>Client not answering, no voicemail service</fullName>
+                    <default>false</default>
+                    <label>Client not answering, no voicemail service</label>
+                </value>
+                <value>
+                    <fullName>Client not answering, voicemail message left</fullName>
+                    <default>false</default>
+                    <label>Client not answering, voicemail message left</label>
+                </value>
+                <value>
+                    <fullName>Client not at work</fullName>
+                    <default>false</default>
+                    <label>Client not at work</label>
+                </value>
+                <value>
+                    <fullName>Client in meeting</fullName>
+                    <default>false</default>
+                    <label>Client in meeting</label>
+                </value>
+                <value>
+                    <fullName>Client&apos;s number is continuously engaged</fullName>
+                    <default>false</default>
+                    <label>Client&apos;s number is continuously engaged</label>
+                </value>
+                <value>
+                    <fullName>Client requested to be contacted at a later stage</fullName>
+                    <default>false</default>
+                    <label>Client requested to be contacted at a later stage</label>
+                </value>
+                <value>
+                    <fullName>Client Unavailable</fullName>
+                    <default>false</default>
+                    <label>Client Unavailable</label>
+                </value>
+                <value>
+                    <fullName>Client cancelled appointment</fullName>
+                    <default>false</default>
+                    <label>Client cancelled appointment</label>
+                </value>
+                <value>
+                    <fullName>Nurse is ill</fullName>
+                    <default>false</default>
+                    <label>Nurse is ill</label>
+                </value>
+                <value>
+                    <fullName>Nurse was late</fullName>
+                    <default>false</default>
+                    <label>Nurse was late</label>
+                </value>
+                <value>
+                    <fullName>Incomplete medical requirements</fullName>
+                    <default>false</default>
+                    <label>Incomplete medical requirements</label>
+                </value>
+                <value>
+                    <fullName>NTU</fullName>
+                    <default>false</default>
+                    <label>NTU</label>
+                </value>
+                <value>
+                    <fullName>Medicals Waived</fullName>
+                    <default>false</default>
+                    <label>Medicals Waived</label>
+                </value>
+                <value>
+                    <fullName>Medicals Received</fullName>
+                    <default>false</default>
+                    <label>Medicals Received</label>
+                </value>
+                <value>
+                    <fullName>Appointment Cancelled - No Notification</fullName>
+                    <default>false</default>
+                    <label>Appointment Cancelled - No Notification</label>
+                </value>
+                <value>
+                    <fullName>Appointment completed</fullName>
+                    <default>false</default>
+                    <label>Appointment completed</label>
+                </value>
+                <value>
+                    <fullName>Awaiting feedback from Financial Adviser</fullName>
+                    <default>false</default>
+                    <label>Awaiting feedback from Financial Adviser</label>
+                </value>
+                <value>
+                    <fullName>Medical requirement received</fullName>
+                    <default>false</default>
+                    <label>Medical requirement received</label>
+                </value>
+                <value>
+                    <fullName>Client requires clarity on bloods - Financial Adviser to contact client</fullName>
+                    <default>false</default>
+                    <label>Client requires clarity on bloods - Financial Adviser to contact client</label>
+                </value>
+                <value>
+                    <fullName>Financial Adviser to contact client</fullName>
+                    <default>false</default>
+                    <label>Financial Adviser to contact client</label>
+                </value>
+                <value>
+                    <fullName>Duplicate appointment - no notification</fullName>
+                    <default>false</default>
+                    <label>Duplicate appointment - no notification</label>
+                </value>
+                <value>
+                    <fullName>No Identification</fullName>
+                    <default>false</default>
+                    <label>No Identification</label>
+                </value>
+                <value>
+                    <fullName>Policy cancelled - not taken up</fullName>
+                    <default>false</default>
+                    <label>Policy cancelled - not taken up</label>
+                </value>
+                <value>
+                    <fullName>Nurse is late</fullName>
+                    <default>false</default>
+                    <label>Nurse is late</label>
+                </value>
+                <value>
+                    <fullName>Client prefers to go to lab for tests</fullName>
+                    <default>false</default>
+                    <label>Client prefers to go to lab for tests</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Completed</controllingFieldValue>
+                <valueName>Appointment completed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Completed</controllingFieldValue>
+                <valueName>Medical requirement received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client refuses blood test</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client has been to lab for tests</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client prefers to go to own doctor for tests</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Cannot get hold of client</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client requires clarity on policy - Financial Adviser to contact client</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Incorrect contact details</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client keeps cancelling appointments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client requests cancellation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Referred to alternative lab</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Medicals Waived</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Appointment Cancelled - No Notification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client requires clarity on bloods - Financial Adviser to contact client</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Duplicate appointment - no notification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Policy cancelled - not taken up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Canceled</controllingFieldValue>
+                <valueName>Client prefers to go to lab for tests</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>To be Rescheduled</controllingFieldValue>
+                <valueName>Client Unavailable</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>To be Rescheduled</controllingFieldValue>
+                <valueName>Client cancelled appointment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>To be Rescheduled</controllingFieldValue>
+                <valueName>Nurse is ill</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>To be Rescheduled</controllingFieldValue>
+                <valueName>Incomplete medical requirements</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>To be Rescheduled</controllingFieldValue>
+                <valueName>No Identification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>To be Rescheduled</controllingFieldValue>
+                <valueName>Nurse is late</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <recordTypes>
+        <fullName>SC_ServiceAppointment</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SC_ServiceAppointment</compactLayoutAssignment>
+        <description>Record type used for nurses booking appointments</description>
+        <label>Service Appointment</label>
+        <picklistValues>
+            <picklist>SC_StatusReason__c</picklist>
+            <values>
+                <fullName>Appointment Cancelled - No Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Appointment completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting feedback from Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cannot get hold of client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client cancelled appointment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client coming to Liberty office for tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client confirms that medicals have been completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client going to own doctor for tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client has been to lab for tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client has not honoured previous scheduled appointments%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client in meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client keeps cancelling appointments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not answering%2C no voicemail service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not answering%2C voicemail message left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not at work</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client prefers to go to lab for tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client prefers to go to own doctor for tests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client refuses blood test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client requested to be contacted at a later stage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client requests cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client requires clarity on bloods - Financial Adviser to contact client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client requires clarity on bloods%2C broker to contact client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client requires clarity on policy - Financial Adviser to contact client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client%27s number is continuously engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distance exceeds 100km per client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate appointment - no notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Adviser to contact client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete medical requirements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect contact details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical requirement received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicals Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicals Waived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NTU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Identification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No bloods required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nurse is ill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nurse is late</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nurse was late</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Our numerous attempts at contacting the client have failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy cancelled - not taken up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referred to alternative lab</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dispatched</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>To be Rescheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+</CustomObject>

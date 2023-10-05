@@ -1,0 +1,77 @@
+<!--
+ * @description Used for create the service Quote record for WIQ
+ *
+ * @author kiran.yelisetti@liberty.co.za, a.shrikrishna.pethe@accenture.com
+ *
+ * @date August 2021, July 2022
+-->
+
+<aura:component description="AW_CMP_ContractServicingQuote" controller="AW_CTRL_ContractServicingQuote">
+	<aura:attribute name="isContractsOpenChild" type="Boolean"/>
+	<aura:attribute name="isBpoOpenChild" type="Boolean"/><!--Added by Annu-->
+	<aura:attribute name="opportunityId" type="String"/>
+	<aura:attribute name="accountContactWrapper" type="Object"/>
+	<aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+	<aura:attribute name="contractsLabels" type="Map"/>
+	<aura:attribute name="contractsColumns" type="List" default="[]"/>
+	<aura:attribute name="contractsData" type="List"/>
+	<aura:attribute name="isFinancialAccountEmpty" type="Boolean"/>
+	<aura:attribute name="isLoading" type="Boolean" default="true"/>
+	<aura:attribute name="isContinueDisabled" type="Boolean" default="true"/>
+	<aura:attribute name="selectedContract" type="Object"/>
+	<aura:attribute name="accountId" type="String"/>
+	<aura:attribute name="userId" type="String"/><!--Added by Kiran-->
+	<aura:attribute name="quoteSolutionNumber" type="String"/><!--Added by Kiran-->
+	<aura:attribute name="consultant" type="Object"/> <!--Added by Kiran-->
+	<aura:attribute name="pageReference" type="Object"/> <!--Added by Kiran-->
+	<aura:attribute name="consultantCode" type="String"/>
+
+	<aura:attribute name="isServicingQuoteContainerOpenGrandChild" type="boolean"/> <!-- pav -->
+	<lightning:navigation aura:id="navService"/> <!--Added by Kiran-->
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+			 class="slds-modal slds-fade-in-open slds-modal_medium">
+		<div class="slds-modal__container">
+			<header class="slds-modal__header">
+				<lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModal }" alternativeText="close" variant="bare-inverse"
+									  class="slds-modal__close"/>
+				<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+					{!$Label.c.AW_FinancialAccountSelection}
+				</h2>
+			</header>
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+				<aura:if isTrue="{!v.isLoading}">
+					<div class="exampleHolder">
+						<lightning:spinner alternativeText="Loading" size="medium" class="slds-is-relative slds-align_absolute-center slds-p-around_medium"/>
+					</div>
+					<aura:set attribute="else">
+						<aura:if isTrue="{!v.isFinancialAccountEmpty}">
+							<div class="slds-text-body_regular slds-text-align_center">
+								{!$Label.c.AW_EmptyFinancialAccountList}
+							</div>
+							<aura:set attribute="else">
+								<lightning:datatable data="{!v.contractsData }" columns="{!v.contractsColumns }" keyField="Id"
+													 maxRowSelection="{! v.maxRowSelection }" onrowselection="{! c.handleRowActionContracts }"/>
+
+							</aura:set>
+						</aura:if>
+					</aura:set>
+				</aura:if>
+			</div>
+			<footer class="slds-modal__footer">
+				<button class="slds-button slds-button_neutral" onclick="{! c.closeModal }">
+					{!$Label.c.AW_Cancel}
+				</button>
+				<aura:if isTrue="{!v.isFinancialAccountEmpty}">
+					<aura:set attribute="else">
+						<button class="slds-button slds-button_brand" onclick="{! c.createNewQuote }" disabled="{!v.isContinueDisabled}">
+							{!$Label.c.AW_CreateNewQuote}
+						</button>
+					</aura:set>
+				</aura:if>
+			</footer>
+		</div>
+	</section>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

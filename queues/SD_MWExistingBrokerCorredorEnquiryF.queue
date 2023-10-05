@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>MW Existing Broker Corredor Enquiry F</name>
+    <queueMembers>
+        <users>
+            <user>emanuel.defreitas@libertyhealth.net</user>
+            <user>portia.nkunzi@libertyhealth.net</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>SD_MWLibertyHealthSupportDesk</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

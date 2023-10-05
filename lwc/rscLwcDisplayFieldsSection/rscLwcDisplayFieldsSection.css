@@ -1,0 +1,15 @@
+.sectionBackground
+{
+	--sds-c-accordion-summary-color-background : #F3F2F2;
+}
+
+.required-field:before
+{
+	color   : #FF0000;
+	content : "*";
+}
+
+.alignRight
+{
+	padding-left : 5px;
+}

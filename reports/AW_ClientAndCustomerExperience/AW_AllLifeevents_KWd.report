@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>PersonLifeEvent$Name</field>
+    </columns>
+    <columns>
+        <field>PersonLifeEvent$PrimaryPerson</field>
+    </columns>
+    <columns>
+        <field>PersonLifeEvent$EventDate</field>
+    </columns>
+    <columns>
+        <field>PersonLifeEvent$CreatedBy</field>
+    </columns>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>PersonLifeEvent$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>PersonLifeEvent$EventType</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>All Life events</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_PersonLifeEventsReport__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>PersonLifeEvent$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

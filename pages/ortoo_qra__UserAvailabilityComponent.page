@@ -1,0 +1,180 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:UC
+
+TC_LAST_NO_USED:0010
+
+-->
+<apex:page controller="ortoo_qra.UserAvailabilityController">
+
+    <style>
+        .profileCircle{
+          display:block;
+          border-radius:80px;
+          height:50px;
+          width:50px;
+          background:gray;
+          position:relative;
+          //margin-top:100px;
+        }
+        
+        .statusCircle{
+          position:absolute;
+          height:10px;
+          width:10px;
+          border-radius:40px;
+          border:3px solid white;
+          left:120%;
+          margin-left:-25px;
+          top: 70%;
+        }
+        .heading
+        {
+            /*color: #62062f;*/
+            color: #1797c0;
+            font-family: monospace;
+            font-family: 'Arial,Helvetica,sans-serif;
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 0px;
+            /*line-height: 5px;*/
+        }
+        .GroupName
+        {
+            width: 50px;
+            display: inline-block;
+            white-space: nowrap;
+           // overflow:hidden !important;
+            text-overflow: ellipsis;
+        }
+        .table
+        {
+            line-height: 1px;
+            border: 1px solid #ccc; 
+            width: 100%;
+        }
+        select option { /* value not val */
+            background: white;
+        }
+        select option[value="Enabled"] { /* value not val */
+            //background: green;
+        }
+        
+        select option[value="Disabled"] { /* value not val */
+            //background: red;
+        }
+    </style>
+    <apex:form id="frm">
+    <table>
+        <tr>
+            <td>
+                <div class="profileCircle">
+                  <img html-ortoo-elem-id="QAUC0001" src="{!photoUrl}" style="border-radius: 25px;width: 50px;"/>
+                  <div class="statusCircle" style="background:{!statusColor};"></div>
+                </div>
+                
+            </td>
+            <td>
+                <apex:outputText html-ortoo-elem-id="QAUC0002" value="{!UserName}" style="font-size: 14px;"/>
+                <br/>
+                <apex:selectList html-ortoo-elem-id="QAUC0003" value="{!currentStatus}" size="1" style="border-radius: 5px;">
+                    <apex:selectOptions value="{!StatusOptions}"></apex:selectOptions>
+                    <apex:actionSupport event="onchange" action="{!updateAvailability}" rerender="frm,button_grid" status="updateUserStatus"/>
+                </apex:selectList>
+                <apex:actionStatus id="updateUserStatus">
+                    <apex:facet name="start">
+                      <img src="/img/loading.gif" />
+                    </apex:facet>
+                </apex:actionStatus>
+            </td>
+        </tr>
+    </table>
+    <!--<table style="width: 100%;align-content: center;">
+    <tr>
+    <td>
+    <apex:image value="{!$Resource.ortoo_qra__red_spot}"/>
+    </td>
+    <td>
+     <apex:selectList value="{!loginButtonText}" size="1" style="width: 100%;align-content: center;border-radius: 5px;">
+        <apex:selectoption itemValue="Logged In" itemLabel="Logged Out"/>
+        <apex:selectoption itemValue="Logged Out" itemLabel="Logged Out"/>
+    </apex:selectList>
+    </td>
+    </tr>
+    </table>-->
+    <apex:outputPanel id="button_grid">
+    <apex:commandbutton html-ortoo-elem-id="QAUC0004" rendered="{!currentStatus == 'Available' && showLoginButton}" value="{!loginButtonText}" title="{!loginButtonTitle}" style="width: 100%;background:{!buttonBackground};color: whitesmoke;" action="{!updateQAssignLoginStatus}"/>
+    </apex:outputPanel>
+     <hr/>
+     <table html-ortoo-elem-id="QAUC0006" class="table">
+        <tr>
+            <td colspan="3" style="line-height: 15px;"><p class="heading" style="font-size: 16px;">My Groups</p></td>
+        </tr>
+        <apex:repeat value="{!GroupMemberStatusList}" var="row">
+            <tr>
+                <td style="overflow:hidden !important;">
+                    <span class="GroupName" title="{!row.groupName}">{!row.groupName}</span>
+                </td>
+                <td>
+                    <apex:commandLink action="{!changeGroupMemberStatus}">
+                        <apex:image value="{!$Resource.ortoo_qra__red_spot}" title="{!row.statusHelpTitle}" rendered="{!row.memberStatus == 'Disabled'}"/>
+                        <apex:image value="{!$Resource.ortoo_qra__green_spot}" title="{!row.statusHelpTitle}" rendered="{!row.memberStatus == 'Enabled'}"/>
+                        <apex:param name="editrowmemberid" value="{!row.Member.Id}" assignto="{!EditRowAssignmentGroupMemberId}"/>
+                    </apex:commandLink>
+                </td>
+                <!--<td>
+                    <apex:selectList value="{!selectedStatus}" size="1" style="width:75px;border-radius: 5px;">
+                        <apex:selectOptions value="{!userGroupStatusOptions}"></apex:selectOptions>
+                        <apex:actionSupport event="onchange" action="{!onchangeAGStatus}" rerender="frm"/>
+                    </apex:selectList>
+                </td>-->
+                <td>
+                    <apex:commandLink value="Pull" action="{!Pull}" rerender="error_message,AssignedRecord" onComplete="alertError();" title="{!row.buttonTitle}" rendered="{!row.Member.Assignment_Group__r.ortoo_qra__Show_Pull_Button__c && row.Member.Assignment_Group__r.ortoo_qra__Is_Active__c}">
+                        <apex:param name="editrowgroupid" value="{!row.Member.ortoo_qra__Assignment_Group__c}" assignTo="{!EditRowAssignmentGroupId}"/>
+                        <apex:param name="editrowmemberid" value="{!row.Member.Id}" assignTo="{!EditRowAssignmentGroupMemberId}"/>
+                    </apex:commandLink>
+                </td>
+            </tr>
+            <tr style="line-height: 9px;">
+                <td colspan="3">
+                    <apex:outputPanel id="AssignedRecord">
+                        <apex:outputLink onclick="redirectToRecord('{!RecordId}');" style="    line-height: 15px;color: #02afe6;" rendered="{!AssignedRecord}">
+                         Go to Assigned {!ObjectTitle}
+                        </apex:outputLink>
+                    </apex:outputPanel>
+                </td>   
+            </tr>
+        </apex:repeat>
+        <apex:outputPanel id="error_message"> 
+            <script type="text/Javascript">
+                var msg = '{!errorMessage}';
+                var assigned = '{!AssignedRecord}';
+                var recordId = '{!RecordId}';
+                console.log(assigned);
+                console.log(recordId);
+                function alertError()
+                {
+                    if(assigned =='true' && recordId != null)
+                    {
+                       alert('Record Assigned Successfully.');
+                    }
+                    console.log('m:'+msg);
+                    if(msg != null && msg != '' && msg != undefined)
+                    {
+                        alert('{!errorMessage}');
+                    }
+                }
+                function redirectToRecord(Id)
+                {
+                    console.log(Id);
+                    window.parent.location.href = '/'+Id;
+                }
+            </script>
+        </apex:outputPanel>
+    </table>
+    </apex:form>
+</apex:page>

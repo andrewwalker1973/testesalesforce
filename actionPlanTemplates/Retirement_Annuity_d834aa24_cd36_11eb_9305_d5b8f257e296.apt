@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>100 Retirement Annuities</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Retirement Annuity</name>
+    <targetEntityType>Account</targetEntityType>
+    <uniqueName>Retirement_Annuity_d834aa24_cd36_11eb_9305_d5b8f257e296</uniqueName>
+</ActionPlanTemplate>

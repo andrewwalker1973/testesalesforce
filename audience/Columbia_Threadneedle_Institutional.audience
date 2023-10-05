@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Columbia Threadneedle</audienceName>
+    <container>STANLIB Client Portal</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <entityField>Contact.$Contact.SLC_Subscription_Preferences__c.$SLC_Subscription_Preferences__c.SLC_PC_Columbia_Threadneedle__c</entityField>
+                <entityType>User</entityType>
+                <fieldValue>Yes</fieldValue>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>FieldBased</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AllCriteriaMatch</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+    <targets>
+        <target>
+            <groupName>5d99cc57-5479-4f4c-a657-780133dc8075$#$beae901d-0a82-4849-b32a-225035428e71</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Portfolio_Team_Insights_CMS_Single_Item_10_Component</targetValue>
+        </target>
+    </targets>
+</Audience>

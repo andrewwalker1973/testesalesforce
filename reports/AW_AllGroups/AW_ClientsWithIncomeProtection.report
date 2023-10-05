@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.InsurancePolicy$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.InsurancePolicy$AW_TotalIncomeProtectionMonthly__c</field>
+    </columns>
+    <description>This reports displays Accounts with/without Income Protection ( on Insurance Policy)</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.InsurancePolicy$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IN FORCE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.InsurancePolicy$AW_PolicySubCategory__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Income Protection (Critical Illness)</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.InsurancePolicy$AW_PolicySubCategory__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Clients with Income Protection</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_AccountsWithWithoutInsurancePolicies__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

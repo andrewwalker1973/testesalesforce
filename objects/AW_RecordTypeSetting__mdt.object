@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata contains recordtype ids of several objects, which will be used in process/code to avoid hardcoding ids.</description>
+    <fields>
+        <fullName>AW_RecordTypeId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field contains the id of record type</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>RecordType Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Record_Type_DeveloperName__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field contains the developer name of record type id</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Record Type DeveloperName</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>RecordType Setting</label>
+    <pluralLabel>RecordType Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

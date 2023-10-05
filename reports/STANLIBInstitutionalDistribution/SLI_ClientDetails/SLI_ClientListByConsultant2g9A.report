@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.FinServ__ClientFinancialAccounts__r$AW_CurrentValue__c</field>
+    </columns>
+    <columns>
+        <field>Account.FinServ__ClientFinancialAccounts__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.FinServ__ClientFinancialAccounts__r$SLI_MandateType__c</field>
+    </columns>
+    <columns>
+        <field>Account$SLC_ClientHealth__c</field>
+    </columns>
+    <columns>
+        <field>Account$SLC_Client_Status__c</field>
+    </columns>
+    <description>Displays client list, grouped by Consultant and Mandate</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.SLI_StanlibInstitutionalAccount</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$SLI_Consultant__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Client List by Consultant</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_AccountWithFinancialAccounts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

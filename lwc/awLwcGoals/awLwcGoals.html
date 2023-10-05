@@ -1,0 +1,195 @@
+<template>
+
+  <div class="slds-m-bottom_large align-right">
+    <lightning-button label="Add Goal" onclick={newGoal}></lightning-button>
+  </div>
+
+  <template if:true={goalList}>
+    <template for:each={goalList} for:item="goal" class="slds-m-bottom_large">
+      <div class="slds-m-bottom_large" key={goal.Id}>
+        <lightning-card>
+          <div class="slds-p-horizontal_large">
+            <div class="slds-clearfix">
+              <h2 class="slds-text-heading_medium slds-float_left slds-p-right_medium">
+                {goal.Name}
+              </h2>
+              <lightning-badge label={goal.FinServ__Status__c}></lightning-badge>
+              <lightning-button-group class="slds-float_right">
+                <lightning-button-icon icon-name="utility:edit" variant="border-filled" alternative-text="Edit"
+                  data-recordid={goal.Id} onclick={editGoal}></lightning-button-icon>
+                <lightning-button-icon if:true={goal.AW_IsOwner__c} icon-name="utility:delete" variant="border-filled" alternative-text="Delete"
+                  onclick={deleteGoal} data-recordid={goal.Id}></lightning-button-icon>
+              </lightning-button-group>
+            </div>
+            <div>
+              {goal.FinServ__Description__c}
+            </div>
+            <div class="slds-p-top_large slds-p-bottom_large">
+              <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+                <div class="slds-col">
+                  <div class="slds-text-heading--label">
+                    Type
+                  </div>
+                  <div class="slds-text-heading_small">
+                    {goal.FinServ__Type__c}
+                  </div>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-text-heading--label">
+                    <template if:true={goal.AW_IsProtectionGoal__c}>Actual Cover Value</template>
+                    <template if:true={goal.AW_IsInvestmentGoal__c}>Actual Value</template>
+                  </div>
+                  <div class="slds-text-heading_small">
+                    <lightning-formatted-number value={goal.FinServ__ActualValue__c} format-style="currency"
+                      currency-code="ZAR"></lightning-formatted-number>
+                  </div>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-text-heading--label">
+                    <template if:true={goal.AW_IsProtectionGoal__c}>Recommended Cover Value</template>
+                    <template if:true={goal.AW_IsInvestmentGoal__c}>Target Value</template>
+                  </div>
+                  <div class="slds-text-heading_small">
+                    <lightning-formatted-number value={goal.FinServ__TargetValue__c} format-style="currency"
+                      currency-code="ZAR"></lightning-formatted-number>
+                  </div>
+                </div>
+                <div class="slds-col">
+                  <div class="slds-text-heading--label">
+                    Target Date
+                  </div>
+                  <div class="slds-text-heading_small">
+                    {goal.FinServ__TargetDate__c}
+                  </div>
+                </div>
+                <div class="slds-col slds-grow-none">
+                  <c-aw-lwc-doughnut-chart percentage-complete={goal.AW_PercentageComplete__c}>
+                  </c-aw-lwc-doughnut-chart>
+                </div>
+              </div>
+            </div>
+          </div>
+        </lightning-card>
+      </div>
+    </template>
+  </template>
+  <template if:true={goalListError}>
+    {goalListError.error}
+  </template>
+
+  <!-- Goal Record Type Dialog -->
+  <div if:true={displayGoalRecordTypeDialog}>
+    <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open slds-modal_medium">
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close"
+            onclick={closeRecordTypeDialog}>
+            <lightning-icon icon-name="utility:close" size="medium">
+            </lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 class="slds-text-heading_medium slds-hyphenate">
+            Select a goal type
+          </h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium">
+          <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center">
+              <lightning-radio-group name="radioGroup" options={goalProductTypeOptions} value={goalProductTypeValue}
+                type="button" data-field="product-type"></lightning-radio-group>
+            </div>
+          </div>
+        </div>
+        <footer class="slds-modal__footer">
+          <lightning-button label="Cancel" variant="neutral" onclick={closeRecordTypeDialog}>
+          </lightning-button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <lightning-button label="Next" variant="brand" onclick={createNewGoal}>
+          </lightning-button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </div>
+
+  <!--Edit Goal Dialog -->
+  <div if:true={displayGoalDialog}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+      aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close"
+            onclick={closeDialog}>
+            <lightning-icon icon-name="utility:close" size="medium">
+            </lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+            Goal Details
+          </h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+          <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+              <lightning-input label="Goal Name" value={goalName} data-field="goal-name" required>
+              </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+              <lightning-input label="Description" max-length="256" value={goalDescription}  data-field="goal-description">
+              </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+              <lightning-combobox if:true={isInvestmentGoal} name="progress" label="Type" value={goalType}
+                placeholder="Select Goal Type" options={goalTypeInvestmentPicklistValues}
+                onchange={handleGoalTypeChange} data-field="goal-type">
+              </lightning-combobox>
+              <lightning-combobox if:true={isProtectionGoal} name="progress" label="Type" value={goalType}
+                placeholder="Select Goal Type" options={goalTypeProtectionPicklistValues}
+                onchange={handleGoalTypeChange} data-field="goal-type">
+              </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+              <lightning-input label="Target Date" type="date" value={goalTargetDate} data-field="target-date">
+              </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" if:true={isInvestmentGoal}>
+              <lightning-input label="Initial Value" type="number" formatter="currency" step="1"
+                value={goalInitialValue} data-field="initial-value">
+              </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" if:true={isInvestmentGoal}>
+              <lightning-input label="Actual Value" type="number" formatter="currency" step="1" value={goalActualValue}
+                data-field="actual-value">
+              </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" if:true={isInvestmentGoal}>
+              <lightning-input label="Target Value" type="number" formatter="currency" step="1" value={goalTargetValue}
+                data-field="target-value">
+              </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" if:true={isProtectionGoal}>
+              <lightning-input label="Actual Cover Value" type="number" formatter="currency" step="1"
+                value={goalActualValue} data-field="actual-value">
+              </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" if:true={isProtectionGoal}>
+              <lightning-input label="Recommended Cover Value" type="number" formatter="currency" step="1"
+                value={goalTargetValue} data-field="target-value">
+              </lightning-input>
+            </div>
+          </div>
+        </div>
+        <footer class="slds-modal__footer">
+          <lightning-button label="Cancel" variant="neutral" onclick={closeDialog}>
+          </lightning-button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <lightning-button label="Save Goal" variant="brand" onclick={saveGoal}>
+          </lightning-button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </div>
+
+  <c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>SLI_FinancialAccountTransactionReadWriteAccess</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Records owned by users in STANLIB Institutional Read Write Access public group give read/write access to other users in STANLIB Institutional Read Write Access public group</description>
+        <label>STANLIB Financial Account Transaction Read Write Access</label>
+        <sharedTo>
+            <group>SLI_InstitutionalReadWriteAccess</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>SLI_InstitutionalReadWriteAccess</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SLI_InstitutionalSupportAccess</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Read/Write access given to users in the Institutional Distribution Support Lead and Subordinates roles</description>
+        <label>STANLIB Institutional Support Access</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistributionSupportLead</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistribution</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SLI_RfpTeamAccess</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Read only access to users in RFP Team Lead and Subordinates roles</description>
+        <label>STANLIB RFP Team Access</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLI_RfpTeamLead</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistribution</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

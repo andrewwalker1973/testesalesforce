@@ -1,0 +1,11 @@
+<aura:component implements="lightning:isUrlAddressable,force:appHostable" controller="AW_CTR_GetAtWorkURL" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>    
+    <aura:attribute name="baseUrl" type="String" />
+    
+    <aura:if isTrue="{!v.pageReference.state.c__url == null}">
+        <iframe src="{!v.baseUrl + '/login'}" frameborder="0" height="100%" width="100%" />
+    </aura:if>
+    <aura:if isTrue="{!v.pageReference.state.c__url != null}">
+        <iframe src="{!v.pageReference.state.c__url}" frameborder="0" height="100%" width="100%" />
+    </aura:if>  
+</aura:component>

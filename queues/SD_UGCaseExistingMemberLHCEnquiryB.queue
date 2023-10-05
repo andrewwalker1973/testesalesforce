@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>UG Case Existing Member LHC Enquiry B</name>
+    <queueMembers>
+        <users>
+            <user>andrew.ssebugwawo@libertyhealth.net</user>
+            <user>cissy.nanfuka@libertyhealth.net</user>
+            <user>edison.byaruhanga@libertyhealth.net</user>
+            <user>fiona.mutamba@libertyhealth.net</user>
+            <user>ibra.kato@libertyhealth.net</user>
+            <user>nevis.mbeera@libertyhealth.net</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>SD_UGLibertyHealthSupportDesk</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

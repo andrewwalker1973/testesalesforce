@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <choices>
+        <description>Choice to store the Clone Case option</description>
+        <name>RSC_CloneCase</name>
+        <choiceText>{!RSC_CloneCaseAction}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>RSC_CloneCaseAction</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>Choice to perform log a call</description>
+        <name>RSC_LogACall</name>
+        <choiceText>{!RSC_LogaCallAction}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>RSC_LogaCallAction</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>Stores the choice for On Hold action</description>
+        <name>RSC_OnHold</name>
+        <choiceText>{!RSC_OnHoldAction}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>RSC_OnHoldAction</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>Store the choice for Case Reassign</description>
+        <name>RSC_ReassignCase</name>
+        <choiceText>{!RSC_ReassignAction}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>RSC_ReassignAction</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>Stores the Choice to perform Reclassify action</description>
+        <name>RSC_Reclassify</name>
+        <choiceText>{!RSC_ReclassifyActionName}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>RSC_ReclassifyActionName</elementReference>
+        </value>
+    </choices>
+    <decisions>
+        <description>Decision used to validate the selected Case Action</description>
+        <name>RSC_SelectedCaseAction</name>
+        <label>Selected Case Action</label>
+        <locationX>710</locationX>
+        <locationY>398</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>RSC_IsCloneCase</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_CaseActionChoice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_CloneCaseAction</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_CloneCaseActionScreen</targetReference>
+            </connector>
+            <label>Is Clone Case</label>
+        </rules>
+        <rules>
+            <name>RSC_IsLogaCall</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_CaseActionChoice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_LogaCallAction</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_LogaCallScreen</targetReference>
+            </connector>
+            <label>Is Log A Call</label>
+        </rules>
+        <rules>
+            <name>RSC_IsOnHold</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_CaseActionChoice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_OnHoldAction</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_CaseOnHold</targetReference>
+            </connector>
+            <label>Is On Hold</label>
+        </rules>
+        <rules>
+            <name>RSC_IsReassignCase</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_CaseActionChoice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_ReassignAction</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_CaseOnHoldCheck</targetReference>
+            </connector>
+            <label>Is Reassign Case</label>
+        </rules>
+        <rules>
+            <name>RSC_IsReclassify</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_CaseActionChoice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_Reclassify</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_OnHoldCaseCheck</targetReference>
+            </connector>
+            <label>Is Reclassify</label>
+        </rules>
+    </decisions>
+    <description>Flow used to combine multiple case actions on a single flow</description>
+    <environments>Default</environments>
+    <interviewLabel>Case Actions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Actions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <description>Used to display all the available actions on the screen</description>
+        <name>RSC_CaseActionSelectionScreen</name>
+        <label>Case Action Selection Screen</label>
+        <locationX>710</locationX>
+        <locationY>278</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>RSC_SelectedCaseAction</targetReference>
+        </connector>
+        <fields>
+            <name>RSC_CaseActionChoice</name>
+            <choiceReferences>RSC_CloneCase</choiceReferences>
+            <choiceReferences>RSC_LogACall</choiceReferences>
+            <choiceReferences>RSC_OnHold</choiceReferences>
+            <choiceReferences>RSC_ReassignCase</choiceReferences>
+            <choiceReferences>RSC_Reclassify</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Actions</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>RSC_CloneCaseActionScreen</name>
+        <label>Clone Case</label>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>RSC_CloneCaseWithFieldSets</name>
+            <extensionName>c:rscLwcCloneCaseWithFieldSets</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>invokedFromFlow</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>dispatchFlowFinish</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>RSC_LogaCallScreen</name>
+        <label>Log A Call Screen</label>
+        <locationX>314</locationX>
+        <locationY>518</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>RSC_CreateTask</name>
+            <extensionName>c:scLwcCreateTask</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>invokedFromFlow</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>RSC_ServiceTypeSelector</name>
+        <label>Service Type Selector</label>
+        <locationX>1106</locationX>
+        <locationY>638</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>RSC_ReclassifyActionscreen</name>
+            <extensionName>c:rscLwcServiceTypeSelector</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>invokedFromFlow</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CMN_GetRecordMaxAccessLevelCheck</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>To get the current user max access level from the sub flow and display the error message if not having sufficient access.</description>
+        <name>CMN_GetRecordMaxAccessLevelCheck</name>
+        <label>GetRecordMaxAccessLevelCheck</label>
+        <locationX>710</locationX>
+        <locationY>158</locationY>
+        <connector>
+            <targetReference>RSC_CaseActionSelectionScreen</targetReference>
+        </connector>
+        <flowName>CMN_FLOW_RecordEditAccessCheck</flowName>
+        <inputAssignments>
+            <name>CMN_RecordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <description>Invokes the Case OnHold flow</description>
+        <name>RSC_CaseOnHold</name>
+        <label>Case On Hold</label>
+        <locationX>578</locationX>
+        <locationY>518</locationY>
+        <flowName>RSC_FLOW_CaseOnHold</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <description>Checks the case status is on-hold, if so then it will update the status to resumed and proceeds with the reassign action.</description>
+        <name>RSC_CaseOnHoldCheck</name>
+        <label>Case On-Hold Check</label>
+        <locationX>842</locationX>
+        <locationY>518</locationY>
+        <connector>
+            <targetReference>RSC_ReassignCaseScreen</targetReference>
+        </connector>
+        <flowName>RSC_FLOW_UpdateCaseStatusToResumed</flowName>
+        <inputAssignments>
+            <name>RSC_recordID</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <description>If case is on hold, it will update the case to resumed and proceeds to the reclassify action.</description>
+        <name>RSC_OnHoldCaseCheck</name>
+        <label>On-Hold Case Check</label>
+        <locationX>1106</locationX>
+        <locationY>518</locationY>
+        <connector>
+            <targetReference>RSC_ServiceTypeSelector</targetReference>
+        </connector>
+        <flowName>RSC_FLOW_UpdateCaseStatusToResumed</flowName>
+        <inputAssignments>
+            <name>RSC_recordID</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <description>Invokes the Case Reassign Flow</description>
+        <name>RSC_ReassignCaseScreen</name>
+        <label>Reassign Case Screen</label>
+        <locationX>842</locationX>
+        <locationY>638</locationY>
+        <flowName>RSC_FLOW_CaseReassignment</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <description>Stores the Action screen Header</description>
+        <name>ActionHeader</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Please select an action to proceed further</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>stores the recordId</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the Clone Case Action Name</description>
+        <name>RSC_CloneCaseAction</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Clone Case</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Store the Log a Call action name</description>
+        <name>RSC_LogaCallAction</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Log A Call</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the On Hold Action Name</description>
+        <name>RSC_OnHoldAction</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>On Hold</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Store the Reassign Case action name</description>
+        <name>RSC_ReassignAction</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Reassign Case</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>stores the Reclassify Action name</description>
+        <name>RSC_ReclassifyActionName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Reclassify</stringValue>
+        </value>
+    </variables>
+</Flow>

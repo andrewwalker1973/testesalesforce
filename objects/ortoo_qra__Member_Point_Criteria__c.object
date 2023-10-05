@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ortoo_qra__Action_on_Error_Fixed_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Action on Error Fixed Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Action_on_Error__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Action on Error</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Set a value</fullName>
+                    <default>false</default>
+                    <label>Set a value</label>
+                </value>
+                <value>
+                    <fullName>Skip this calculation</fullName>
+                    <default>false</default>
+                    <label>Skip this calculation</label>
+                </value>
+                <value>
+                    <fullName>Skip this member</fullName>
+                    <default>false</default>
+                    <label>Skip this member</label>
+                </value>
+                <value>
+                    <fullName>Skip trying to assign this record</fullName>
+                    <default>false</default>
+                    <label>Skip trying to assign this record</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_Date_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points Date Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_Field_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points Field Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_Fixed_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points Fixed Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_From_Date_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points From Date Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_From_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points From Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_Multiplier__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_Numeric_Value_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points Numeric Value Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_To_Date_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points To Date Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points_To_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points To Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Add_Points__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Add Points</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fixed Value</fullName>
+                    <default>false</default>
+                    <label>Fixed Value</label>
+                </value>
+                <value>
+                    <fullName>Field Value</fullName>
+                    <default>false</default>
+                    <label>Field Value</label>
+                </value>
+                <value>
+                    <fullName>SUM WHERE (DATE RANGE)</fullName>
+                    <default>false</default>
+                    <label>SUM WHERE (DATE RANGE)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Assignment_Group__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Assignment Group</label>
+        <referenceTo>ortoo_qra__Assignment_Group__c</referenceTo>
+        <relationshipName>Member_Point_Criterias</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Field_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Field Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Field_Value_Object_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Field Value Object Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Field_Value_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Field Value Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Field_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Field Value</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Calculate_Using_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the calculation type for works/business hours when calculating difference between two dates or adding a date and a value. Only applicable if Left1 Value1 and Math V1 to V2 are selected AND one of the Left1 Value1 or Left1 Value2 are date/datetime.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the calculation type for works/business hours when calculating difference between two dates or adding a date and a value. Only applicable if Left1 Value1 and Math V1 to V2 are selected AND one of the Left1 Value1 or Left1 Value2 are date/datetime.</inlineHelpText>
+        <label>Left1 Calculate Using Hours</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>24/7</fullName>
+                    <default>false</default>
+                    <label>24/7</label>
+                </value>
+                <value>
+                    <fullName>Member&apos;s Working Hours Only</fullName>
+                    <default>false</default>
+                    <label>Member&apos;s Working Hours Only</label>
+                </value>
+                <value>
+                    <fullName>Case Business Hours Only</fullName>
+                    <default>false</default>
+                    <label>Case Business Hours Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Math_V1_to_V2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the math operator between Left Value 1 and Left Value 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the operator between Left Value 1 and Left Value 2. If none is selected, then only Left Value 1 is used in the IF condition&apos;s left hand side.</inlineHelpText>
+        <label>Left1 Math V1 to V2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>(none)</fullName>
+                    <default>false</default>
+                    <label>(none)</label>
+                </value>
+                <value>
+                    <fullName>+</fullName>
+                    <default>false</default>
+                    <label>+</label>
+                </value>
+                <value>
+                    <fullName>-</fullName>
+                    <default>false</default>
+                    <label>-</label>
+                </value>
+                <value>
+                    <fullName>*</fullName>
+                    <default>false</default>
+                    <label>*</label>
+                </value>
+                <value>
+                    <fullName>/</fullName>
+                    <default>false</default>
+                    <label>/</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Value1_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the type of value that is stored in corresponding &quot;Value&quot; field: Left1 Value1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the type of value to use. You can choose from User field, object field, a fixed value or special formula values.</inlineHelpText>
+        <label>Left1 Value1 Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Field</fullName>
+                    <default>false</default>
+                    <label>User Field</label>
+                </value>
+                <value>
+                    <fullName>{Object} Field</fullName>
+                    <default>false</default>
+                    <label>{Object} Field</label>
+                </value>
+                <value>
+                    <fullName>Fixed Value</fullName>
+                    <default>false</default>
+                    <label>Fixed Value</label>
+                </value>
+                <value>
+                    <fullName>NOW</fullName>
+                    <default>false</default>
+                    <label>NOW</label>
+                </value>
+                <value>
+                    <fullName>TODAY</fullName>
+                    <default>false</default>
+                    <label>TODAY</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Value1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the actual value selected by the user, based on value type. It could be a field name (User or Object) or a fixed value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the value to use for evaluation in the IF expression. You can choose from User Field, Object Field, a Fixed Value.</inlineHelpText>
+        <label>Left1 Value1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Value2_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the type of value that is stored in corresponding &quot;Value&quot; field: Left1 Value2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the type of value to use. You can choose from User field, object field, a fixed value or special formula values.</inlineHelpText>
+        <label>Left1 Value2 Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Field</fullName>
+                    <default>false</default>
+                    <label>User Field</label>
+                </value>
+                <value>
+                    <fullName>{Object} Field</fullName>
+                    <default>false</default>
+                    <label>{Object} Field</label>
+                </value>
+                <value>
+                    <fullName>Fixed Value</fullName>
+                    <default>false</default>
+                    <label>Fixed Value</label>
+                </value>
+                <value>
+                    <fullName>NOW</fullName>
+                    <default>false</default>
+                    <label>NOW</label>
+                </value>
+                <value>
+                    <fullName>TODAY</fullName>
+                    <default>false</default>
+                    <label>TODAY</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Value2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the actual value selected by the user, based on value type. It could be a field name (User or Object) or a fixed value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the value to use for evaluation in the IF expression. You can choose from User Field, Object Field, a Fixed Value.</inlineHelpText>
+        <label>Left1 Value2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Number_of_Times_to_Run_This_Rule__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies how many times the point scoring rule will run.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>&apos;Only Once Per User&apos; means the point scoring rule will run once for each matching user. &apos;Once Per each Member Matching Rule record matched to the User&apos; means the rule will run as many times as the number of records a user is matched to by  Matching Rules</inlineHelpText>
+        <label>Number of Times to Run This Rule</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Only Once Per User</fullName>
+                    <default>false</default>
+                    <label>Only Once Per User</label>
+                </value>
+                <value>
+                    <fullName>Once Per each Member Matching Rule record matched to the User</fullName>
+                    <default>false</default>
+                    <label>Once Per each Member Matching Rule record matched to the User</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Object__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Operator__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Operator</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Right1_Calculate_Using_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the calculation type for work/business hours when calculating difference between two dates or adding a date and a value. Only applicable if Right1 Value1 and Math V1 to V2 are selected AND one of the Right1 Value1 or Right1 Value2 are date/datetime.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the calculation type for work/business hours when calculating difference between two dates or adding a date and a value. Only applicable if Right1 Value1 and Math V1 to V2 are selected AND one of the Righ1 Value1 or Right1 Value2 are date/datetime.</inlineHelpText>
+        <label>Right1 Calculate Using Hours</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>24/7</fullName>
+                    <default>false</default>
+                    <label>24/7</label>
+                </value>
+                <value>
+                    <fullName>Member&apos;s Working Hours Only</fullName>
+                    <default>false</default>
+                    <label>Member&apos;s Working Hours Only</label>
+                </value>
+                <value>
+                    <fullName>Case Business Hours Only</fullName>
+                    <default>false</default>
+                    <label>Case Business Hours Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Right1_Math_V1_to_V2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the math operator between Left Value 1 and Left Value 2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the operator between Left Value 1 and Left Value 2. If none is selected, then only Left Value 1 is used in the IF condition&apos;s left hand side.</inlineHelpText>
+        <label>Right1 Math V1 to V2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>(none)</fullName>
+                    <default>false</default>
+                    <label>(none)</label>
+                </value>
+                <value>
+                    <fullName>+</fullName>
+                    <default>false</default>
+                    <label>+</label>
+                </value>
+                <value>
+                    <fullName>-</fullName>
+                    <default>false</default>
+                    <label>-</label>
+                </value>
+                <value>
+                    <fullName>*</fullName>
+                    <default>false</default>
+                    <label>*</label>
+                </value>
+                <value>
+                    <fullName>/</fullName>
+                    <default>false</default>
+                    <label>/</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Right1_Value1_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the type of value that is stored in corresponding &quot;Value&quot; field: Right1 Value1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the type of value to use. You can choose from User field, object field, a fixed value or special formula values.</inlineHelpText>
+        <label>Right1 Value1 Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Field</fullName>
+                    <default>false</default>
+                    <label>User Field</label>
+                </value>
+                <value>
+                    <fullName>{Object} Field</fullName>
+                    <default>false</default>
+                    <label>{Object} Field</label>
+                </value>
+                <value>
+                    <fullName>Fixed Value</fullName>
+                    <default>false</default>
+                    <label>Fixed Value</label>
+                </value>
+                <value>
+                    <fullName>NOW</fullName>
+                    <default>false</default>
+                    <label>NOW</label>
+                </value>
+                <value>
+                    <fullName>TODAY</fullName>
+                    <default>false</default>
+                    <label>TODAY</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Right1_Value1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the actual value selected by the user, based on value type. It could be a field name (User or Object) or a fixed value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the value to use for evaluation in the IF expression. You can choose from User Field, Object Field, a Fixed Value.</inlineHelpText>
+        <label>Right1 Value1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Right1_Value2_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the type of value that is stored in corresponding &quot;Value&quot; field: Left1 Value1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the type of value to use. You can choose from User field, object field, a fixed value or special formula values.</inlineHelpText>
+        <label>Right1 Value2 Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Field</fullName>
+                    <default>false</default>
+                    <label>User Field</label>
+                </value>
+                <value>
+                    <fullName>{Object} Field</fullName>
+                    <default>false</default>
+                    <label>{Object} Field</label>
+                </value>
+                <value>
+                    <fullName>Fixed Value</fullName>
+                    <default>false</default>
+                    <label>Fixed Value</label>
+                </value>
+                <value>
+                    <fullName>NOW</fullName>
+                    <default>false</default>
+                    <label>NOW</label>
+                </value>
+                <value>
+                    <fullName>TODAY</fullName>
+                    <default>false</default>
+                    <label>TODAY</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Right1_Value2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the actual value selected by the user, based on value type. It could be a field name (User or Object) or a fixed value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the value to use for evaluation in the IF expression. You can choose from User Field, Object Field, a Fixed Value.</inlineHelpText>
+        <label>Right1 Value2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>QA Member Point Criteria</label>
+    <nameField>
+        <label>Member Point Criteria Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>QA Member Point Criterias</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

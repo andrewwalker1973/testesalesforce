@@ -1,0 +1,23 @@
+<aura:component controller="AW_CTR_ClientCommunity"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <!--<aura:attribute name="acc" type="Account"/>-->
+    <aura:attribute name="fields" type="String[]" default="['AW_Outcome__c']"/>
+    <aura:attribute name="recordId" type="String"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!--Record Form to display and edit Account Field-->
+
+    <aura:if isTrue="{!v.recordId}">
+        <lightning:card>
+            <lightning:recordForm objectApiName="Account"
+                                  recordId="{!v.recordId}"
+                                  fields="{!v.fields}"
+                                  columns="2"
+                                  mode="view"/>
+        </lightning:card>
+    </aura:if>
+
+</aura:component>

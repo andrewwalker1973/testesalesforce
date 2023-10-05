@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>CMN_MOCK_Answer_TEST</testClassName>
+    <testClassName>CMN_MOCK_AnyOrder_TEST</testClassName>
+    <testClassName>CMN_MOCK_ApexMocksUtils_TEST</testClassName>
+    <testClassName>CMN_MOCK_ApexMocks_TEST</testClassName>
+    <testClassName>CMN_MOCK_ArgumentCaptor_TEST</testClassName>
+    <testClassName>CMN_MOCK_Inheritor</testClassName>
+    <testClassName>CMN_MOCK_Inheritor_TEST</testClassName>
+    <testClassName>CMN_MOCK_InOrder_TEST</testClassName>
+    <testClassName>CMN_MOCK_MatcherDefinitions_TEST</testClassName>
+    <testClassName>CMN_MOCK_Match_TEST</testClassName>
+    <testClassName>CMN_MOCK_MethodArgValues_TEST</testClassName>
+    <testClassName>CMN_MOCK_QualifiedMethod_TEST</testClassName>
+    <testClassName>CMN_MOCK_SObjectMocks_TEST</testClassName>
+    <testClassName>CMN_MOCK_System_TEST</testClassName>
+</ApexTestSuite>

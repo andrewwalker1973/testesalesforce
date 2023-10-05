@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleTypeChannelDisplay>
+        <articleTypeTemplates>
+            <channel>App</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Prm</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Csp</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Pkb</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+    </articleTypeChannelDisplay>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>RSC_RetailAgentScriptCompactLayout</fullName>
+        <fields>Title</fields>
+        <fields>RecordTypeId</fields>
+        <fields>ArticleNumber</fields>
+        <fields>PublishStatus</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>VersionNumber</fields>
+        <label>Retail Agent Script Compact Layout</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>RSC_RetailKnowledgeCompactLayout</fullName>
+        <fields>Title</fields>
+        <fields>RecordTypeId</fields>
+        <fields>ArticleNumber</fields>
+        <fields>PublishStatus</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>VersionNumber</fields>
+        <label>RetailKnowledgeCompactLayout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>AW_Answer__c</fullName>
+        <description>Displays answer for FAQ</description>
+        <externalId>false</externalId>
+        <label>Answer</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AW_Question__c</fullName>
+        <description>Question for FAQ</description>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AW_Text__c</fullName>
+        <description>Displays article content</description>
+        <externalId>false</externalId>
+        <label>Text</label>
+        <length>100168</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RSC_Description__c</fullName>
+        <description>Insert Knowledge article content</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RSC_KnowledgeApproval__c</fullName>
+        <description>Updated by Knowledge Approval Process to set Pending Approver Information.
+Team Leader Approval Pending 
+ Knowledge Administrator Approval Pending</description>
+        <externalId>false</externalId>
+        <label>Knowledge Approval</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ArticleApprovalTime__c</fullName>
+        <description>This field will support trigger invoke to update the latest version of the knowledge article on the respective Service Type. And will reflect the publishing time of the new article.</description>
+        <externalId>false</externalId>
+        <label>Article Approval Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <label>Knowledge</label>
+    <listViews>
+        <fullName>RSC_ArticlesForAdministratorApproval</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LAST_PUBLISHED_DATE</columns>
+        <columns>PUBLISH_STATUS</columns>
+        <columns>VALIDATION_STATUS_ENUM</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RSC_KnowledgeApproval__c</field>
+            <operation>equals</operation>
+            <value>Knowledge Administrator Approval Pending</value>
+        </filters>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Articles For Administrator Approval</label>
+        <sharedTo>
+            <group>AW_LibertyAdministrators</group>
+            <group>RSC_RetailKnowledgeAdministrators</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RSC_ArticlesForApproval</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LAST_PUBLISHED_DATE</columns>
+        <columns>PUBLISH_STATUS</columns>
+        <columns>VALIDATION_STATUS_ENUM</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RSC_KnowledgeApproval__c</field>
+            <operation>equals</operation>
+            <value>Team Leader Approval Pending</value>
+        </filters>
+        <label>Articles For Approval</label>
+        <sharedTo>
+            <group>AW_LibertyAdministrators</group>
+            <group>RSC_KnowledgeInitialApprovalGroup</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RSC_ProcessArticles</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>TITLE</columns>
+        <columns>PUBLISH_STATUS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_PUBLISHED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>OWNER_ID</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Knowledge__kav.RSC_RetailProcessing</value>
+        </filters>
+        <label>Process Articles</label>
+        <sharedTo>
+            <group>AW_LibertyAdministrators</group>
+            <group>RSC_ClientandAdviserServiceCentreAgents</group>
+            <group>RSC_ClientandAdviserServiceCentreLeaders</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RSC_ScriptProcessArticles</fullName>
+        <columns>RECORDTYPE</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>TITLE</columns>
+        <columns>PUBLISH_STATUS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_PUBLISHED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>OWNER_ID</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Knowledge__kav.SC_RetailAgentScript</value>
+        </filters>
+        <label>Script Process Articles</label>
+        <sharedTo>
+            <group>RSC_ClientandAdviserServiceCentreAgents</group>
+            <group>RSC_ClientandAdviserServiceCentreLeaders</group>
+            <role>Liberty_Administrator</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>archived_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Archived Articles</label>
+    </listViews>
+    <listViews>
+        <fullName>draft_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Draft Articles</label>
+    </listViews>
+    <listViews>
+        <fullName>published_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Published Articles</label>
+    </listViews>
+    <pluralLabel>Knowledge</pluralLabel>
+    <recordTypes>
+        <fullName>FAQ</fullName>
+        <active>true</active>
+        <description>This can be used for simple question and answer articles</description>
+        <label>FAQ</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>General</fullName>
+        <active>true</active>
+        <description>Denotes Risk  and Investment categories</description>
+        <label>General</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Invest</fullName>
+        <active>true</active>
+        <description>Denotes  Investment catergory</description>
+        <label>Invest</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Protect</fullName>
+        <active>true</active>
+        <description>Denotes Risk Category</description>
+        <label>Protect</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_RetailProcessing</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>RSC_RetailKnowledgeCompactLayout</compactLayoutAssignment>
+        <description>Retail Servicing used on  Service Console</description>
+        <label>Retail Processing</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SC_RetailAgentScript</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>RSC_RetailAgentScriptCompactLayout</compactLayoutAssignment>
+        <description>This record type will be used for creating articles for the agent&apos;s conversation with client.</description>
+        <label>Retail Agent Script</label>
+    </recordTypes>
+    <searchLayouts />
+</CustomObject>

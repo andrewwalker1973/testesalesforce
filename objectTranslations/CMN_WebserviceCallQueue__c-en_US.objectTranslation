@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Webservice Call Queue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Webservice Calls Queue</value>
+    </caseValues>
+    <fields>
+        <label><!-- Client ID Number --></label>
+        <name>CMN_ClientIDNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Identification Type --></label>
+        <name>CMN_ClientIdentificationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Call No --></label>
+        <name>CMN_CurrentCallNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Errors --></label>
+        <name>CMN_Errors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Response Paged --></label>
+        <name>CMN_IsResponsePaged__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mocked Response --></label>
+        <name>CMN_MockedResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Retry --></label>
+        <name>CMN_NextRetry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Code --></label>
+        <name>CMN_PartnerCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner ID Number --></label>
+        <name>CMN_PartnerIDNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Time Taken --></label>
+        <name>CMN_RequestTimeTaken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Parameters --></label>
+        <name>CMN_Request_Parameters__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request --></label>
+        <name>CMN_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response --></label>
+        <name>CMN_Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retries --></label>
+        <name>CMN_Retries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>CMN_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source ID --></label>
+        <name>CMN_SourceID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>CMN_StatusCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>CMN_Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Batched</masterLabel>
+            <translation><!-- Batched --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retry</masterLabel>
+            <translation><!-- Retry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retrying</masterLabel>
+            <translation><!-- Retrying --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Service Call Completed</masterLabel>
+            <translation><!-- Web Service Call Completed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Triggering Object Id --></label>
+        <name>CMN_TriggeringObjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Trigger Object --></label>
+        <name>CMN_TriggeringObjectUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>CMN_Type__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>CMN_URL__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

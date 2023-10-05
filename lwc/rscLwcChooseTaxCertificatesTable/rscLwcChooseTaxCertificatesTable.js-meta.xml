@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>54.0</apiVersion>
+	<description>Rsc Lwc Choose Tax Certificates Table</description>
+	<isExposed>true</isExposed>
+	<masterLabel>Rsc Lwc Choose Tax Certificates Table</masterLabel>
+
+	<targets>
+		<target>lightning__FlowScreen</target>
+	</targets>
+
+	<targetConfigs>
+		<targetConfig targets="lightning__FlowScreen">
+			<property name="payload"
+					  label="Tax Payload"
+					  type="String"
+					  role="inputOnly"/>
+			<property name="resultsPerPage"
+					  label="Number of Results per page"
+					  description="Defaults to 10 if not provided"
+					  type="Integer"
+					  role="inputOnly"/>
+
+			<propertyType name="A"
+						  extends="SObject"
+						  label="Account Type"
+						  description="Select Account object as data type"/>
+			<property name="client"
+					  label="Client"
+					  type="{A}"
+					  role="inputOnly"/>
+
+			<propertyType name="C"
+						  extends="SObject"
+						  label="Contact Type"
+						  description="Select Contact object as data type"/>
+			<property name="financialAdvisor"
+					  label="Financial Advisor"
+					  type="{C}"
+					  role="inputOnly"/>
+
+			<propertyType name="U"
+						  extends="SObject"
+						  label="User Type"
+						  description="Select User object as data type"/>
+			<property name="thirdParty"
+					  label="Third Party"
+					  type="{U}"
+					  role="inputOnly"/>
+
+			<propertyType name="AC"
+						  extends="SObject"
+						  label="Associated Contract Type"
+						  description="Select Associated Contract object as data type"/>
+			<property name="associatedContracts"
+					  label="Associated Contracts"
+					  type="{AC[]}"
+					  role="inputOnly"/>
+
+			<property name="requestPayload"
+					  label="Request payload"
+					  description="String output payload to pass to SendTax webservice call"
+					  type="String"
+					  role="outputOnly"/>
+		</targetConfig>
+	</targetConfigs>
+
+</LightningComponentBundle>

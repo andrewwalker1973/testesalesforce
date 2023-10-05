@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BenefitCodeAndCategoryMapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BenefitCodeAndCategoryMappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Benefit Name --></label>
+        <name>AW_BenefitName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cover Category --></label>
+        <name>AW_CoverCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cover Sub Category --></label>
+        <name>AW_CoverSubCategory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Code --></label>
+        <name>AW_TypeCode__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>SC_ServiceAppointmentRecordType__c</fullName>
+        <description>This field stores the Service Appointment&apos;s record type name (developer name)</description>
+        <externalId>false</externalId>
+        <label>Service Appointment Record Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_WorkOrderLineItemRecordType__c</fullName>
+        <description>This field stores the Work Order Line Item&apos;s record type name (developer name)</description>
+        <externalId>false</externalId>
+        <label>Work Order Line Item Record Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_WorkOrderRecordType__c</fullName>
+        <description>This field stores the Work Order&apos;s record type name (developer name).</description>
+        <externalId>false</externalId>
+        <label>Work Order Record Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

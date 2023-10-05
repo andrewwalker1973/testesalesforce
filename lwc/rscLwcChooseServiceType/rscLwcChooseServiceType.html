@@ -1,0 +1,16 @@
+<template>
+	<lightning-layout multiple-rows>
+		<lightning-layout-item padding="around-small" size="6">
+			<lightning-combobox class="required-field" label="Department" name="department" onchange={handleDepartmentChange} options={displayDepartments}
+								placeholder="Choose Department.." value={department}></lightning-combobox>
+
+		</lightning-layout-item>
+		<lightning-layout-item padding="around-small" size="6">
+
+			<c-sc-lwc-custom-lookup default-record-id={selectedServiceType} enforce-filter-criteria="true" filter-criteria={filterCriteria}
+									onlookupupdate={handleServiceTypeSelection} s-object-api-name={sObjectName}
+									sobject-field-name={sObjectFieldName}></c-sc-lwc-custom-lookup>
+		</lightning-layout-item>
+	</lightning-layout>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

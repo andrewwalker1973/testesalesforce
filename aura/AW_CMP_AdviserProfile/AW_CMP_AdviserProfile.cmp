@@ -1,0 +1,29 @@
+<aura:component controller="AW_CTR_ClientCommunity"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+
+    <aura:attribute name="oUser" type="user" default="{'sobjectType' : 'User'}"/>
+    <aura:attribute name="oAccount" type="account" default="{'sobjectType' : 'Account'}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-box slds-card">
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_5-of-12">
+                <img src="{!v.oUser.FullPhotoUrl}" alt="{!v.oUser.Name}"/>
+            </div>
+            <div class="slds-col slds-size_7-of-12">
+                <aura:if isTrue="{!v.oUser.Name}">
+                    <div>
+                        <h2 class="slds-text-heading_small">My Adviser</h2><br/>
+                        <strong>Name</strong><br/>{!v.oUser.Name}<br/>
+                        <strong>Email</strong><br/>{!v.oUser.Email}<br/>
+                        <strong>Phone</strong><br/>{!v.oUser.MobilePhone}<br/>
+                        <strong>Branch Location</strong><br/>{!v.oUser.AW_Branch__c}<br/>
+                        {!v.oUser.AW_Region__c}<br/>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+</aura:component>

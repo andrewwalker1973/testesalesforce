@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>Component used to view communication logs based on the parent record Id</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Rsc Lwc View Communication Logs</masterLabel>
+     <targets>
+            <target>lightning__RecordPage</target>
+     </targets>
+</LightningComponentBundle>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allow users to filter and replace content of log body using regular expressions</description>
+    <fields>
+        <fullName>CMN_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is log filter active or not</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_RegexToFind__c</fullName>
+        <description>Regex to search for (can also use plain text) - useful for masking data</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Regex to Find</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_RegexToReplaceWith__c</fullName>
+        <description>Regex to replace with in the event you use capture groups in Regex To Find field</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Regex To Replace With</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Log Message Filter</label>
+    <listViews>
+        <fullName>CMN_AllLogMessageFilters</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>CMN_Active__c</columns>
+        <columns>CMN_RegexToFind__c</columns>
+        <columns>CMN_RegexToReplaceWith__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Log Message Filters</label>
+    </listViews>
+    <pluralLabel>Log Message Filters</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

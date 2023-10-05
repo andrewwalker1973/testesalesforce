@@ -1,0 +1,14 @@
+/**
+ * Created by jayanth.kumar.s on 2/17/2022.
+ */
+
+.spinner-medium::before
+{
+	color       : #483D8B;
+	content     : attr(data-text);
+	font-weight : bold;
+	position    : absolute;
+	text-align  : center;
+	top         : calc(50% + 2em);
+	width       : 100%;
+}

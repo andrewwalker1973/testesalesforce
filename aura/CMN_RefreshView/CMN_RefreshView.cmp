@@ -1,0 +1,13 @@
+<!--
+ * @description Reusable Aura Component that listens for aura://refreshView custom event and refreshes the view
+ *
+ * @see https://mtr-design.com/news/salesforce-mini-how-to-refreshview-alternative-for-lwc
+ *
+ * @author Accenture
+ *
+ * @date June 2021
+ * -->
+
+<aura:component description="CMN_RefreshView" implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{! this }" action="{! c.onInit }" />
+</aura:component>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Change of Consultant(Orphans Only) --></label>
+        <name>AW_Change_of_Consultant_Form__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Interaction Outcome --></label>
+        <name>AW_ClientInteractionOutcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Interaction Outcome Feedback --></label>
+        <name>AW_Client_Interaction_Outcome_Feedback__c</name>
+    </fields>
+    <fields>
+        <help><!-- If my Meeting is a Review --></help>
+        <label><!-- Review --></label>
+        <name>AW_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summarises Comments field  to 255 --></help>
+        <label><!-- Summary Comments --></label>
+        <name>AW_SummaryComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>AW_TaskCategory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please check if task is for assistant. --></help>
+        <label><!-- Task For My Assistant --></label>
+        <name>AW_TaskForMyAssistant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expectations --></label>
+        <name>FinServ__Expectations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Next Steps --></label>
+        <name>FinServ__NextSteps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Objectives --></label>
+        <name>FinServ__Objectives__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regarding --></label>
+        <name>FinServ__Regarding__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Hold Comments --></label>
+        <name>RSC_OnHoldComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Hold Reasons --></label>
+        <name>RSC_OnHoldReasons__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting Success --></label>
+        <name>SLR_MeetingSuccess__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Meeting Note --></label>
+        <name>SLR_PostMeetingNote__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Default task record for Sales Leader --></description>
+        <label><!-- Adviser Task --></label>
+        <name>AW_AdviserTask</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This Record Type will be used to capture Tasks generated through the Orphan Management process --></description>
+        <label><!-- Orphan Task --></label>
+        <name>AW_OrphanTask</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Default task record type for Advisor profile --></description>
+        <label><!-- Advisor Task --></label>
+        <name>FinServ__AdvisorTask</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Default task record type for Client Associate profile --></description>
+        <label><!-- Client Associate Task --></label>
+        <name>FinServ__ClientAssociateTask</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Task for STANLIB Institutional Distribution users --></description>
+        <label><!-- SLI Task --></label>
+        <name>SLI_Task</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please fill in the Comments --></errorMessage>
+        <name>AW_Orphan_Tasks_Comments_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please choose a Client Interaction Outcome --></errorMessage>
+        <name>AW_Orphan_Tasks_Without_Contact_Feedback</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill in the Change of Consultant Form field --></errorMessage>
+        <name>AW_Orphan_Tasks_Without_Form_Feedback</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Take_Ownership --></label>
+        <name>ortoo_qra__Take_Ownership</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Take_Ownership_Detail --></label>
+        <name>ortoo_qra__Take_Ownership_Detail</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,82 @@
+<apex:page controller="AW_CTR_ClientCommunity" showheader="false" sidebar="false" standardStylesheets="false">
+<head>
+  <meta charset="utf-8"></meta>
+  <title>FullviewClientPortal</title>
+  <base href="/"></base>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <link rel="icon" type="image/x-icon" href="{!URLFOR($Resource.clientportalassets, 'favicon.ico')}"></link>
+
+  <meta name="theme-color" content="#302c4c"></meta>
+  <meta name="msapplication-navbutton-color" content="#302c4c"></meta>
+  <meta name="apple-mobile-web-app-status-bar-style" content="#302c4c"></meta>
+  <style type="text/css">
+    body,
+    html {
+      height: 90%;
+    }
+
+    .app-loading {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  </style>
+          <script type="text/javascript">
+            function getAuthDetails() {
+              return new Promise((resolve, reject) => {
+                var data;
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.AW_CTR_ClientCommunity.getFullViewAuthDetails}',
+                    function (result, event) {
+                        if (event.status) {
+                            data = result;
+                            // console.log('result: ' + JSON.stringify(result));
+                            resolve(data);
+                        } else if (event.type === 'exception') {
+                            console.log('event.message: ' + event.message);
+                            reject();
+                        } else {
+                            console.log('event.message: ' + event.message);
+                        }
+                    },
+                    { escape: true }
+                );
+                return data;
+              });
+            }
+
+            function processYodleeCompleted() {
+              //this is where you call salesforce to notify that yodlee has completed.
+              console.log('Yodlee completed');
+            }
+        </script>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
+    <app-root>
+      <div class="app-loading">
+        <div class="logo">
+          <img src="{!URLFOR($Resource.clientportalassets,'assets/img/Working.gif')}"></img>
+        </div>
+      </div>
+    </app-root>
+    <script>
+        gSfStaticRoot = "{!URLFOR($Resource.clientportalassets, 'favicon.ico')}"
+        if (!(gSfStaticRoot[0] === "{")) { //in local mode this will not have been replaced
+          gSfStaticRoot = gSfStaticRoot.substr(0, gSfStaticRoot.lastIndexOf('/')) + '/';
+        } else {
+          gSfStaticRoot = "";
+        }
+
+        function getSfStaticResourceRoot() {
+            return gSfStaticRoot;
+        }
+    </script>
+<script type="text/javascript" src="{!URLFOR($Resource.clientportalassets, 'inline.bundle.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.clientportalassets, 'polyfills.bundle.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.clientportalassets, 'styles.bundle.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.clientportalassets, 'vendor.bundle.js')}"></script><script type="text/javascript" src="{!URLFOR($Resource.clientportalassets, 'main.bundle.js')}"></script></body>
+</apex:page>

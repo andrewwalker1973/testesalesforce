@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Feature Switches</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Feature Switches</value>
+    </caseValues>
+    <fields>
+        <label><!-- Adviser Targets On --></label>
+        <name>AW_AdviserTargetsOn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Community User --></label>
+        <name>AW_Create_Community_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Account API Call --></label>
+        <name>AW_DisableAccountAPICall__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Account Validation Rules --></label>
+        <name>AW_DisableAccountValidationRules__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Adviser Performance Validation --></label>
+        <name>AW_DisableAdviserPerformanceValidation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Adviser Target Validation Rule --></label>
+        <name>AW_DisableAdviserTargetValidationRule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable All API Calls --></label>
+        <name>AW_DisableAllAPICalls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Do Not Authenticate With Azure B2C --></label>
+        <name>AW_DoNotAuthenticateWithAzureB2C__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

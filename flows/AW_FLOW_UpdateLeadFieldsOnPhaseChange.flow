@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>AW_LeadStatusEqualsUnsuccessful</name>
+        <label>Lead Status Equals Unsuccessful?</label>
+        <locationX>182</locationX>
+        <locationY>551</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_Unsuccessful</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Unsuccessful</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdateStatusChange</targetReference>
+            </connector>
+            <label>Unsuccessful</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>AW_NewLeadOrPhaseIsChanged</name>
+        <label>New Lead Or Phase Is Changed?</label>
+        <locationX>380</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_NewLeadOrPhaseChanged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AW_LeadIsNewOrPhaseChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdateLastStatusChangeFromPhaseAndToPhase</targetReference>
+            </connector>
+            <label>New Lead Or Phase Changed</label>
+        </rules>
+    </decisions>
+    <description>The flow is used to update Lead fields when the phase changes. 
+@author latika.kharbanda@accenture.com
+@date August 2021</description>
+    <formulas>
+        <name>AW_LeadIsNewOrPhaseChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>(ISNEW()) || ISCHANGED({!$Record.Status})</expression>
+    </formulas>
+    <interviewLabel>Update Lead Fields On Phase Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Lead Fields On Phase Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>AW_UpdateLastStatusChangeFromPhaseAndToPhase</name>
+        <label>Update Last Status Change, From Phase And To Phase</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>AW_LeadStatusEqualsUnsuccessful</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AW_LastStatusChange__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AW_Phase_Stage__c</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AW_To_Phase__c</field>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AW_UpdateStatusChange</name>
+        <label>Update Status Change</label>
+        <locationX>50</locationX>
+        <locationY>671</locationY>
+        <inputAssignments>
+            <field>AW_Status_Change__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AW_NewLeadOrPhaseIsChanged</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

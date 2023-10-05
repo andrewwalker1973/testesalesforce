@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>Dans_Liberty_Email_Signature_May202</masterLabel>
+    <originNetwork>Liberty Client Portal</originNetwork>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>Dan&apos;s Liberty Email Signature May2021.png</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

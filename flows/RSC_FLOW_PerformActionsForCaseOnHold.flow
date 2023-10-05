@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <description>Update the stopped variable as false when the case is reopened.</description>
+        <name>Populate_Stopped_Field_Value</name>
+        <label>Populate Stopped Value To False</label>
+        <locationX>964</locationX>
+        <locationY>470</locationY>
+        <assignmentItems>
+            <assignToReference>IsStoppedVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_AssignCaseOwnertoPriorOwner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update the stopped variable as true when the case is put on hold.</description>
+        <name>Populate_Stopped_Value_To_True</name>
+        <label>Populate Stopped Value To True</label>
+        <locationX>446</locationX>
+        <locationY>479</locationY>
+        <assignmentItems>
+            <assignToReference>IsStoppedVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_CheckQueueAndProfile</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>If the case sub-status is resumed or reopened then the case owner should remain as pervious owner.</description>
+        <name>RSC_AssignCaseOwnertoPriorOwner</name>
+        <label>Assign Case Owner to Prior Owner</label>
+        <locationX>716</locationX>
+        <locationY>649</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_UpdatedCaseOwner</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_the_is_stopped_checkbox_on_triggered_case_record_to_false_and_case_owner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the variable to the current user who is updating the case to sub status to on hold</description>
+        <name>RSC_AssignCaseOwnerToUser</name>
+        <label>Assign Case Owner To User</label>
+        <locationX>314</locationX>
+        <locationY>719</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_UpdatedCaseOwner</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_the_is_stopped_checkbox_on_triggered_case_record_to_false_and_case_owner</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This is to check whether only the sub status field update trigger the flow or not</description>
+        <name>Check_if_Sub_Status_field_is_changed</name>
+        <label>Check if Sub_Status field is changed</label>
+        <locationX>768</locationX>
+        <locationY>361</locationY>
+        <defaultConnectorLabel>No Match Found</defaultConnectorLabel>
+        <rules>
+            <name>RSC_CheckIfSub_StatusIsChangedToOnHold</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>On Hold</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RSC_Retail</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Stopped_Value_To_True</targetReference>
+            </connector>
+            <label>Check if Sub_Status is changed to on hold</label>
+        </rules>
+        <rules>
+            <name>RSC_CheckIfSub_StatusIsChangedToReopened</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Re-opened</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Resumed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Stopped_Field_Value</targetReference>
+            </connector>
+            <label>Check if Sub_Status is changed to on Reopened</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check  if Case Owner is Cases Available For Assignment queue and Profile is Servicing Supervisor</description>
+        <name>RSC_CheckQueueAndProfile</name>
+        <label>Check Queue And Profile</label>
+        <locationX>446</locationX>
+        <locationY>599</locationY>
+        <defaultConnector>
+            <targetReference>RSC_AssignCaseOwnertoPriorOwner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>RSC_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner:Group.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_QueueName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_ProfileName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_AssignCaseOwnerToUser</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Performs Actions for Sub status  On Hold and Resumed</description>
+    <environments>Default</environments>
+    <interviewLabel>Perform Actions For Case On Hold {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Perform Actions For Case On Hold</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_the_is_stopped_checkbox_on_triggered_case_record_to_false_and_case_owner</name>
+        <label>Update the is stopped checkbox on triggered case record to false and Case Owner</label>
+        <locationX>867</locationX>
+        <locationY>835</locationY>
+        <inputAssignments>
+            <field>IsStopped</field>
+            <value>
+                <elementReference>IsStoppedVariable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>RSC_UpdatedCaseOwner</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>651</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_if_Sub_Status_field_is_changed</targetReference>
+        </connector>
+        <filterFormula>AND
+(ISPICKVAL({!$Record.SC_SubStatus__c},&quot;On Hold&quot;) || ISPICKVAL({!$Record.SC_SubStatus__c},&quot;Resumed&quot;) || ISPICKVAL({!$Record.SC_SubStatus__c},&quot;Re-Opened&quot;) ,
+{!$Record.RSC_ServiceType__r.SC_LaunchStandardFlow__c} = TRUE)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>IsStoppedVariable</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Displays Profile name</description>
+        <name>RSC_ProfileName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Liberty Servicing Supervisor</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Displays Queue Name</description>
+        <name>RSC_QueueName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>SC_CasesAvailableForAssignment</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Store the case owner to use in update record element</description>
+        <name>RSC_UpdatedCaseOwner</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

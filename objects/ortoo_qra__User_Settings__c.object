@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>It has different user settings like business hours, working hours, logout time etc.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>ortoo_qra__Default_Shift_x_Business_Hour_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to SF built in Business Hours object. Filled in if &quot;Use a Business Hours schedule&quot; is selected in the &quot;Default Shift Type&quot; picklist</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to SF built in Business Hours object. Filled in if &quot;Use a Business Hours schedule&quot; is selected in the &quot;Default Shift Type&quot; picklist</inlineHelpText>
+        <label>Default Shift - Business Hour Id</label>
+        <referenceTo>BusinessHours</referenceTo>
+        <relationshipName>QA_User_Settings_Default_Shift_x_BH_Id</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Default_Shift_x_Business_Hours_Reversed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>It stores whether user is available inside Business Hours Schedule or outside.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It stores whether user is available inside Business Hours Schedule or outside.</inlineHelpText>
+        <label>Reversed - Use hours only OUTSIDE BH</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Default_Shift_x_Calendar_Items_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Which Calendar Entries are your shift?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Which Calendar Entries are your shift?</inlineHelpText>
+        <label>Which Calendar Entries are your shift?</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All Calendar items</fullName>
+                    <default>false</default>
+                    <label>All Calendar items</label>
+                </value>
+                <value>
+                    <fullName>Time OUTSIDE all calendar items</fullName>
+                    <default>false</default>
+                    <label>Time OUTSIDE all calendar items</label>
+                </value>
+                <value>
+                    <fullName>Just specific types of calendar Items</fullName>
+                    <default>false</default>
+                    <label>Just specific types of calendar Items</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Default_Shift_x_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>My Default Shift / Working Hours</description>
+        <externalId>false</externalId>
+        <inlineHelpText>My Default Shift / Working Hours</inlineHelpText>
+        <label>My Default Shift / Working Hours</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>24/7</fullName>
+                    <default>false</default>
+                    <label>24/7</label>
+                </value>
+                <value>
+                    <fullName>Use a Business Hours schedule</fullName>
+                    <default>false</default>
+                    <label>Use a Business Hours schedule</label>
+                </value>
+                <value>
+                    <fullName>Use My Calendar</fullName>
+                    <default>false</default>
+                    <label>Use My Calendar</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__OOO_x_Calendar_Items_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Which Calendar Entries are OOO / Unavailable?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Which Calendar Entries are OOO / Unavailable?</inlineHelpText>
+        <label>Which Calendar Entries are OOO?</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All Calendar items</fullName>
+                    <default>false</default>
+                    <label>All Calendar items</label>
+                </value>
+                <value>
+                    <fullName>Time OUTSIDE all calendar items</fullName>
+                    <default>false</default>
+                    <label>Time OUTSIDE all calendar items</label>
+                </value>
+                <value>
+                    <fullName>Just specific types of calendar Items</fullName>
+                    <default>false</default>
+                    <label>Just specific types of calendar Items</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__OOO_x_Source__c</fullName>
+        <deprecated>false</deprecated>
+        <description>My OOO / non-working times</description>
+        <externalId>false</externalId>
+        <inlineHelpText>My OOO / non-working times</inlineHelpText>
+        <label>My OOO / non-working times</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Default (from Global Settings)</fullName>
+                    <default>false</default>
+                    <label>Default (from Global Settings)</label>
+                </value>
+                <value>
+                    <fullName>Use My Calendar</fullName>
+                    <default>false</default>
+                    <label>Use My Calendar</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__QA_Logout_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>QA Logout Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__QA_Logout__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>QA Logout</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Settings</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__WO_Business_Hours__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Stores the Id of Business Hours to use. It is only applicable when Working Hours field has &quot;Business Hours&quot; selected as its value. When applied, the selected business hours are used for this user&apos;s working hours calculations elsewhere in Q-assign.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Id of Business Hours to use. It is only applicable when Working Hours field has &quot;Business Hours&quot; selected as its value. When applied, the selected business hours are used for this user&apos;s working hours calculations elsewhere in Q-assign.</inlineHelpText>
+        <label>Business Hours (No Longer Used)</label>
+        <referenceTo>BusinessHours</referenceTo>
+        <relationshipLabel>QA User Settings (Business Hours)</relationshipLabel>
+        <relationshipName>User_Settings</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Working_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the type of working hours to be used for this user when calculation is performed based on member&apos;s working hours (such as in Member Point scoring rules).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the type of working hours to be used for this user when calculation is performed based on member&apos;s working hours (such as in Member Point scoring rules).</inlineHelpText>
+        <label>Working Hours (No Longer Used)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>24/7</fullName>
+                    <default>false</default>
+                    <label>24/7</label>
+                </value>
+                <value>
+                    <fullName>Business Hours</fullName>
+                    <default>false</default>
+                    <label>Business Hours</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>QA User Settings</label>
+    <nameField>
+        <label>User Settings Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>QA User Settings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Custom Time-Based Notification</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Custom Time-Based Notifications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Custom Notification API Name --></label>
+        <name>AW_CustomNotificationAPIName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notification Body --></label>
+        <name>AW_NotificationBody__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notification Date Time --></label>
+        <name>AW_NotificationDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notification Title --></label>
+        <name>AW_NotificationTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notification Type --></label>
+        <name>AW_NotificationType__c</name>
+        <picklistValues>
+            <masterLabel>In-App / Push</masterLabel>
+            <translation><!-- In-App / Push --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plain Email</masterLabel>
+            <translation><!-- Plain Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rich Text Email</masterLabel>
+            <translation><!-- Rich Text Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Parent Id --></label>
+        <name>AW_ParentId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recipients (comma-separated) --></label>
+        <name>AW_Recipients__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sender Id --></label>
+        <name>AW_SenderId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Id --></label>
+        <name>AW_TargetId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Page Reference --></label>
+        <name>AW_TargetPageReference__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Notification body cannot be empty. --></errorMessage>
+        <name>AW_NotificationBodyRequired</name>
+    </validationRules>
+</CustomObjectTranslation>

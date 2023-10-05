@@ -1,0 +1,25 @@
+<apex:page sidebar="false" showChat="false" showHeader="false" >
+	<apex:slds />
+
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/GRAXSecuredIframe.js')}"/>
+	<iframe id="cookie_verification" scrolling="no" style="border:0;width:0;height:0;position:absolute;top:0;left:0"></iframe>
+
+	<script>
+		initGRAXSecuredIframe("{!$CurrentPage.parameters.herokuAppDomain}", "cookie_verification");
+	</script>
+
+	<c:GRAXIframeLoader appName="{!$CurrentPage.parameters.appName}" endpointPath="{!$CurrentPage.parameters.endpoint}" isFullPageIframe="{!$CurrentPage.parameters.fullPage}" />
+
+	<script>
+		(function() {
+			var extraQueryParams = 'gspId={!$CurrentPage.parameters.gspId}';
+
+			if({!NOT(ISNULL($CurrentPage.parameters.fromDate))}){
+				extraQueryParams += '&fromDate={!$CurrentPage.parameters.fromDate}&toDate=' + Date.now();
+			}
+
+			getsummariesGRAXAppToken(extraQueryParams);
+		})();
+	</script>
+
+</apex:page>

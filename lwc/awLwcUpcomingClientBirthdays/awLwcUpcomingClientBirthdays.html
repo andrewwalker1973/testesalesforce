@@ -1,0 +1,50 @@
+<template>
+	<lightning-card title={birthdayCardTitle} icon-name="standard:thanks">
+		<template if:true={hasContactsData}>
+			<table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+				<thead>
+				<tr class="slds-line-height_reset">
+					<th class="" scope="col">
+						<div class="slds-truncate" title="Name">Name</div>
+					</th>
+					<th class="" scope="col">
+						<div class="slds-truncate" title="Age">Turning</div>
+					</th>
+					<th class="" scope="col">
+						<div class="slds-truncate" title="Date">Date</div>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<template for:each={contacts} for:item="contact">
+					<tr key={contact.name}>
+						<td data-label="Name">
+							<div class="slds-cell-wrap" title="Name"><a href="#" data-account={contact.accountId} onclick={navigateToAccount}>{contact.name}</a></div>
+						</td>
+						<td data-label="Age">
+							<div class="slds-truncate" title="Email">{contact.turningToAge}</div>
+						</td>
+						<td data-label="dob">
+							<template if:true={contact.isBirthdayToday}>
+								<div class="slds-truncate" title="Date">{contact.birthDate}</div>
+							</template>
+							<template if:false={contact.isBirthdayToday}>
+								<lightning-formatted-date-time value={contact.birthDate} month="short" day="2-digit"></lightning-formatted-date-time>
+							</template>
+
+						</td>
+					</tr>
+				</template>
+				</tbody>
+			</table>
+		</template>
+		<template if:false={hasContactsData}>
+			<div class="slds-card__body slds-card__body_inner">{noUpcomingBirthdaysMessage}</div>
+		</template>
+		<footer class="slds-card__footer">
+			<a class="slds-card__footer-action" href="#" onclick={navigateToListView}>View All
+			</a>
+		</footer>
+	</lightning-card>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

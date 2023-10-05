@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>SC_MedicalRequirement</fullName>
+        <fields>LineItemNumber</fields>
+        <fields>WorkOrderId</fields>
+        <fields>SC_MedicalRequirement__c</fields>
+        <fields>Status</fields>
+        <label>SC_MedicalRequirement</label>
+    </compactLayouts>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SC_MedicalCode__c</fullName>
+        <description>This indicates the abbreviation of the medical Requirements field which holds the full name of the medical test.</description>
+        <externalId>false</externalId>
+        <label>Medical Code</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_MedicalQuestionnaire__c</fullName>
+        <description>This field indicates whether or not the test is required</description>
+        <externalId>false</externalId>
+        <label>Medical Questionnaire</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_MedicalRequirement__c</fullName>
+        <description>This field indicates the full name of the medical test</description>
+        <externalId>false</externalId>
+        <label>Medical Requirement</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A.L.T. Blood Test</fullName>
+                    <default>false</default>
+                    <label>A.L.T. Blood Test</label>
+                </value>
+                <value>
+                    <fullName>A.S.T. Blood Test</fullName>
+                    <default>false</default>
+                    <label>A.S.T. Blood Test</label>
+                </value>
+                <value>
+                    <fullName>Alkaline Phosphatase-Blood Test</fullName>
+                    <default>false</default>
+                    <label>Alkaline Phosphatase-Blood Test</label>
+                </value>
+                <value>
+                    <fullName>Await Result from External LAB.NO Further Action Required</fullName>
+                    <default>false</default>
+                    <label>Await Result from External LAB.NO Further Action Required</label>
+                </value>
+                <value>
+                    <fullName>Blood Urea Nitrogen</fullName>
+                    <default>false</default>
+                    <label>Blood Urea Nitrogen</label>
+                </value>
+                <value>
+                    <fullName>Carbohydrate Deficient Transferring</fullName>
+                    <default>false</default>
+                    <label>Carbohydrate Deficient Transferring</label>
+                </value>
+                <value>
+                    <fullName>CD4 Cell Count</fullName>
+                    <default>false</default>
+                    <label>CD4 Cell Count</label>
+                </value>
+                <value>
+                    <fullName>Cholesterol and HDL Ratio</fullName>
+                    <default>false</default>
+                    <label>Cholesterol and HDL Ratio</label>
+                </value>
+                <value>
+                    <fullName>Collection of Urine Specimen and Dispatch to Pathologists</fullName>
+                    <default>false</default>
+                    <label>Collection of Urine Specimen and Dispatch to Pathologists</label>
+                </value>
+                <value>
+                    <fullName>Cotinine Test for Nicotine</fullName>
+                    <default>false</default>
+                    <label>Cotinine Test for Nicotine</label>
+                </value>
+                <value>
+                    <fullName>C-Reactive Protein</fullName>
+                    <default>false</default>
+                    <label>C-Reactive Protein</label>
+                </value>
+                <value>
+                    <fullName>Creatinine Clearance</fullName>
+                    <default>false</default>
+                    <label>Creatinine Clearance</label>
+                </value>
+                <value>
+                    <fullName>Drawing of Blood Specimen and Dispatch to Pathologists</fullName>
+                    <default>false</default>
+                    <label>Drawing of Blood Specimen and Dispatch to Pathologists</label>
+                </value>
+                <value>
+                    <fullName>Erythrocyte Sedimentation Rate (Westergren Test)</fullName>
+                    <default>false</default>
+                    <label>Erythrocyte Sedimentation Rate (Westergren Test)</label>
+                </value>
+                <value>
+                    <fullName>Estimated Average Glucose</fullName>
+                    <default>false</default>
+                    <label>Estimated Average Glucose</label>
+                </value>
+                <value>
+                    <fullName>Fasting Blood Serum Triglycerides (Fasting 10 Hours)</fullName>
+                    <default>false</default>
+                    <label>Fasting Blood Serum Triglycerides (Fasting 10 Hours)</label>
+                </value>
+                <value>
+                    <fullName>Fasting Blood Sugar (Fasting 10 Hours)</fullName>
+                    <default>false</default>
+                    <label>Fasting Blood Sugar (Fasting 10 Hours)</label>
+                </value>
+                <value>
+                    <fullName>Ferritin Test</fullName>
+                    <default>false</default>
+                    <label>Ferritin Test</label>
+                </value>
+                <value>
+                    <fullName>Full Blood Count (Excluding ESR)</fullName>
+                    <default>false</default>
+                    <label>Full Blood Count (Excluding ESR)</label>
+                </value>
+                <value>
+                    <fullName>Full Blood Count (Including ESR)</fullName>
+                    <default>false</default>
+                    <label>Full Blood Count (Including ESR)</label>
+                </value>
+                <value>
+                    <fullName>Gamma Glutamyl Transpeptidase</fullName>
+                    <default>false</default>
+                    <label>Gamma Glutamyl Transpeptidase</label>
+                </value>
+                <value>
+                    <fullName>Glycosulated Haemoglobin</fullName>
+                    <default>false</default>
+                    <label>Glycosulated Haemoglobin</label>
+                </value>
+                <value>
+                    <fullName>HBA1C Sent to External LAB.NO Further Action Required</fullName>
+                    <default>false</default>
+                    <label>HBA1C Sent to External LAB.NO Further Action Required</label>
+                </value>
+                <value>
+                    <fullName>Hepatitis B Core Antibody IGM</fullName>
+                    <default>false</default>
+                    <label>Hepatitis B Core Antibody IGM</label>
+                </value>
+                <value>
+                    <fullName>Hepatitis B Surface Antibody</fullName>
+                    <default>false</default>
+                    <label>Hepatitis B Surface Antibody</label>
+                </value>
+                <value>
+                    <fullName>Hepatitis B Surface Antigen</fullName>
+                    <default>false</default>
+                    <label>Hepatitis B Surface Antigen</label>
+                </value>
+                <value>
+                    <fullName>Hepatitis C Antibody</fullName>
+                    <default>false</default>
+                    <label>Hepatitis C Antibody</label>
+                </value>
+                <value>
+                    <fullName>High Density Lipoprotein</fullName>
+                    <default>false</default>
+                    <label>High Density Lipoprotein</label>
+                </value>
+                <value>
+                    <fullName>HIV Elisa 2 &amp; 3 Confirmatory</fullName>
+                    <default>false</default>
+                    <label>HIV Elisa 2 &amp; 3 Confirmatory</label>
+                </value>
+                <value>
+                    <fullName>HIV Immunodeficiency Virus Antibody Test</fullName>
+                    <default>false</default>
+                    <label>HIV Immunodeficiency Virus Antibody Test</label>
+                </value>
+                <value>
+                    <fullName>HIV Qualitative Test</fullName>
+                    <default>false</default>
+                    <label>HIV Qualitative Test</label>
+                </value>
+                <value>
+                    <fullName>HIV Questionnaire by Treating Doctor</fullName>
+                    <default>false</default>
+                    <label>HIV Questionnaire by Treating Doctor</label>
+                </value>
+                <value>
+                    <fullName>HIV Venous Blood Test</fullName>
+                    <default>false</default>
+                    <label>HIV Venous Blood Test</label>
+                </value>
+                <value>
+                    <fullName>HIV-1 Viral Load</fullName>
+                    <default>false</default>
+                    <label>HIV-1 Viral Load</label>
+                </value>
+                <value>
+                    <fullName>Low-Density Lipoprotein</fullName>
+                    <default>false</default>
+                    <label>Low-Density Lipoprotein</label>
+                </value>
+                <value>
+                    <fullName>Micro Albumin and Creatinine Ratio</fullName>
+                    <default>false</default>
+                    <label>Micro Albumin and Creatinine Ratio</label>
+                </value>
+                <value>
+                    <fullName>Micro Chemical Urinalysis</fullName>
+                    <default>false</default>
+                    <label>Micro Chemical Urinalysis</label>
+                </value>
+                <value>
+                    <fullName>Micro Chemical Urinalysis (Repeat)</fullName>
+                    <default>false</default>
+                    <label>Micro Chemical Urinalysis (Repeat)</label>
+                </value>
+                <value>
+                    <fullName>Micro Chemical Urinalysis Early Morning Specimen</fullName>
+                    <default>false</default>
+                    <label>Micro Chemical Urinalysis Early Morning Specimen</label>
+                </value>
+                <value>
+                    <fullName>Micro Chemical Urinalysis Mid-Stream Specimen</fullName>
+                    <default>false</default>
+                    <label>Micro Chemical Urinalysis Mid-Stream Specimen</label>
+                </value>
+                <value>
+                    <fullName>Micro-Albuminuria</fullName>
+                    <default>false</default>
+                    <label>Micro-Albuminuria</label>
+                </value>
+                <value>
+                    <fullName>Modified Glucose Tolerence Test</fullName>
+                    <default>false</default>
+                    <label>Modified Glucose Tolerence Test</label>
+                </value>
+                <value>
+                    <fullName>Name and Address of Dr to Whom HIV Results May Be Sent</fullName>
+                    <default>false</default>
+                    <label>Name and Address of Dr to Whom HIV Results May Be Sent</label>
+                </value>
+                <value>
+                    <fullName>P24 Antigen</fullName>
+                    <default>false</default>
+                    <label>P24 Antigen</label>
+                </value>
+                <value>
+                    <fullName>Prostate Specific Antigen</fullName>
+                    <default>false</default>
+                    <label>Prostate Specific Antigen</label>
+                </value>
+                <value>
+                    <fullName>Qualitative Polymerase Chain Reaction</fullName>
+                    <default>false</default>
+                    <label>Qualitative Polymerase Chain Reaction</label>
+                </value>
+                <value>
+                    <fullName>Random Blood Serum Cholesterol</fullName>
+                    <default>false</default>
+                    <label>Random Blood Serum Cholesterol</label>
+                </value>
+                <value>
+                    <fullName>Random Blood Sugar</fullName>
+                    <default>false</default>
+                    <label>Random Blood Sugar</label>
+                </value>
+                <value>
+                    <fullName>RBSC Sent to External LAB.NO Further Action Required</fullName>
+                    <default>false</default>
+                    <label>RBSC Sent to External LAB.NO Further Action Required</label>
+                </value>
+                <value>
+                    <fullName>Recheck of Height and Weight</fullName>
+                    <default>false</default>
+                    <label>Recheck of Height and Weight</label>
+                </value>
+                <value>
+                    <fullName>Repeat A.L.T. Blood Test</fullName>
+                    <default>false</default>
+                    <label>Repeat A.L.T. Blood Test</label>
+                </value>
+                <value>
+                    <fullName>Repeat Blood Urea</fullName>
+                    <default>false</default>
+                    <label>Repeat Blood Urea</label>
+                </value>
+                <value>
+                    <fullName>Repeat Blood Urea Nitrogen</fullName>
+                    <default>false</default>
+                    <label>Repeat Blood Urea Nitrogen</label>
+                </value>
+                <value>
+                    <fullName>Repeat Erythrocyte Sedimentation Rate</fullName>
+                    <default>false</default>
+                    <label>Repeat Erythrocyte Sedimentation Rate</label>
+                </value>
+                <value>
+                    <fullName>Repeat Fasting Blood Serum Triglycerides</fullName>
+                    <default>false</default>
+                    <label>Repeat Fasting Blood Serum Triglycerides</label>
+                </value>
+                <value>
+                    <fullName>Repeat Full Blood Count (Excluding ESR)</fullName>
+                    <default>false</default>
+                    <label>Repeat Full Blood Count (Excluding ESR)</label>
+                </value>
+                <value>
+                    <fullName>Repeat Gamma Glutanyl Transpeptidase</fullName>
+                    <default>false</default>
+                    <label>Repeat Gamma Glutanyl Transpeptidase</label>
+                </value>
+                <value>
+                    <fullName>Repeat Glycosulated Haemoglobin</fullName>
+                    <default>false</default>
+                    <label>Repeat Glycosulated Haemoglobin</label>
+                </value>
+                <value>
+                    <fullName>Repeat High Density Lipoprotein</fullName>
+                    <default>false</default>
+                    <label>Repeat High Density Lipoprotein</label>
+                </value>
+                <value>
+                    <fullName>Repeat HIV (Elisa Test) Due to Lab</fullName>
+                    <default>false</default>
+                    <label>Repeat HIV (Elisa Test) Due to Lab</label>
+                </value>
+                <value>
+                    <fullName>Repeat Micro Chemical Urinalysis</fullName>
+                    <default>false</default>
+                    <label>Repeat Micro Chemical Urinalysis</label>
+                </value>
+                <value>
+                    <fullName>Repeat Micro Chemical Urinalysis Early Morning Specimen</fullName>
+                    <default>false</default>
+                    <label>Repeat Micro Chemical Urinalysis Early Morning Specimen</label>
+                </value>
+                <value>
+                    <fullName>Repeat Micro Chemical Urinalysis Mid-Stream Specimen</fullName>
+                    <default>false</default>
+                    <label>Repeat Micro Chemical Urinalysis Mid-Stream Specimen</label>
+                </value>
+                <value>
+                    <fullName>Repeat Random Blood Serum Cholesterol</fullName>
+                    <default>false</default>
+                    <label>Repeat Random Blood Serum Cholesterol</label>
+                </value>
+                <value>
+                    <fullName>Repeat Serum Amylase Blood Test</fullName>
+                    <default>false</default>
+                    <label>Repeat Serum Amylase Blood Test</label>
+                </value>
+                <value>
+                    <fullName>Repeat Serum Bilirubin Blood Test</fullName>
+                    <default>false</default>
+                    <label>Repeat Serum Bilirubin Blood Test</label>
+                </value>
+                <value>
+                    <fullName>Serum Cotinine(cotinine Test Cannot Be Waived)</fullName>
+                    <default>false</default>
+                    <label>Serum Cotinine(cotinine Test Cannot Be Waived)</label>
+                </value>
+                <value>
+                    <fullName>Serum Creatinine Blood Test</fullName>
+                    <default>false</default>
+                    <label>Serum Creatinine Blood Test</label>
+                </value>
+                <value>
+                    <fullName>Short Medical Report</fullName>
+                    <default>false</default>
+                    <label>Short Medical Report</label>
+                </value>
+                <value>
+                    <fullName>Signed Laboratory Form</fullName>
+                    <default>false</default>
+                    <label>Signed Laboratory Form</label>
+                </value>
+                <value>
+                    <fullName>Special Questionnaire Wrt Prostatitis</fullName>
+                    <default>false</default>
+                    <label>Special Questionnaire Wrt Prostatitis</label>
+                </value>
+                <value>
+                    <fullName>Test to Be Done at a Pathology Laboratory</fullName>
+                    <default>false</default>
+                    <label>Test to Be Done at a Pathology Laboratory</label>
+                </value>
+                <value>
+                    <fullName>Three Additional Blood Pressure Readings (U/W 503)</fullName>
+                    <default>false</default>
+                    <label>Three Additional Blood Pressure Readings (U/W 503)</label>
+                </value>
+                <value>
+                    <fullName>Urine Cannabis – Colorimetric Method</fullName>
+                    <default>false</default>
+                    <label>Urine Cannabis – Colorimetric Method</label>
+                </value>
+                <value>
+                    <fullName>Urine Cocaine</fullName>
+                    <default>false</default>
+                    <label>Urine Cocaine</label>
+                </value>
+                <value>
+                    <fullName>Western Blot Blood Test</fullName>
+                    <default>false</default>
+                    <label>Western Blot Blood Test</label>
+                </value>
+                <value>
+                    <fullName>BLOOD UREA</fullName>
+                    <default>false</default>
+                    <label>BLOOD UREA</label>
+                </value>
+                <value>
+                    <fullName>FLOW VOLUME LOOP - NO INTERPRETATION</fullName>
+                    <default>false</default>
+                    <label>FLOW VOLUME LOOP - NO INTERPRETATION</label>
+                </value>
+                <value>
+                    <fullName>DIPSTICK URINALYSIS</fullName>
+                    <default>false</default>
+                    <label>DIPSTICK URINALYSIS</label>
+                </value>
+                <value>
+                    <fullName>SMR TO BE COMPLETED BY LIBERTY NURSE ONLY</fullName>
+                    <default>false</default>
+                    <label>SMR TO BE COMPLETED BY LIBERTY NURSE ONLY</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <recordTypes>
+        <fullName>SC_MedicalRequirement</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SC_MedicalRequirement</compactLayoutAssignment>
+        <description>The medical requirements to complete for a particular work order</description>
+        <label>Medical Requirement</label>
+        <picklistValues>
+            <picklist>SC_MedicalRequirement__c</picklist>
+            <values>
+                <fullName>A%2EL%2ET%2E Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A%2ES%2ET%2E Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alkaline Phosphatase-Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Await Result from External LAB%2ENO Further Action Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BLOOD UREA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blood Urea Nitrogen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C-Reactive Protein</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CD4 Cell Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carbohydrate Deficient Transferring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cholesterol and HDL Ratio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collection of Urine Specimen and Dispatch to Pathologists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cotinine Test for Nicotine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creatinine Clearance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DIPSTICK URINALYSIS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drawing of Blood Specimen and Dispatch to Pathologists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Erythrocyte Sedimentation Rate %28Westergren Test%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estimated Average Glucose</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FLOW VOLUME LOOP - NO INTERPRETATION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fasting Blood Serum Triglycerides %28Fasting 10 Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fasting Blood Sugar %28Fasting 10 Hours%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ferritin Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Blood Count %28Excluding ESR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Blood Count %28Including ESR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gamma Glutamyl Transpeptidase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Glycosulated Haemoglobin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HBA1C Sent to External LAB%2ENO Further Action Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HIV Elisa 2 %26 3 Confirmatory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HIV Immunodeficiency Virus Antibody Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HIV Qualitative Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HIV Questionnaire by Treating Doctor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HIV Venous Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HIV-1 Viral Load</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hepatitis B Core Antibody IGM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hepatitis B Surface Antibody</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hepatitis B Surface Antigen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hepatitis C Antibody</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Density Lipoprotein</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-Density Lipoprotein</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Micro Albumin and Creatinine Ratio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Micro Chemical Urinalysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Micro Chemical Urinalysis %28Repeat%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Micro Chemical Urinalysis Early Morning Specimen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Micro Chemical Urinalysis Mid-Stream Specimen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Micro-Albuminuria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modified Glucose Tolerence Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Name and Address of Dr to Whom HIV Results May Be Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P24 Antigen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prostate Specific Antigen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qualitative Polymerase Chain Reaction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RBSC Sent to External LAB%2ENO Further Action Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Random Blood Serum Cholesterol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Random Blood Sugar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recheck of Height and Weight</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat A%2EL%2ET%2E Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Blood Urea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Blood Urea Nitrogen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Erythrocyte Sedimentation Rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Fasting Blood Serum Triglycerides</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Full Blood Count %28Excluding ESR%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Gamma Glutanyl Transpeptidase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Glycosulated Haemoglobin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat HIV %28Elisa Test%29 Due to Lab</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat High Density Lipoprotein</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Micro Chemical Urinalysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Micro Chemical Urinalysis Early Morning Specimen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Micro Chemical Urinalysis Mid-Stream Specimen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Random Blood Serum Cholesterol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Serum Amylase Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repeat Serum Bilirubin Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMR TO BE COMPLETED BY LIBERTY NURSE ONLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serum Cotinine%28cotinine Test Cannot Be Waived%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serum Creatinine Blood Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Short Medical Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signed Laboratory Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Questionnaire Wrt Prostatitis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test to Be Done at a Pathology Laboratory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Three Additional Blood Pressure Readings %28U%2FW 503%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urine Cannabis %E2%80%93 Colorimetric Method</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urine Cocaine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Western Blot Blood Test</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cannot Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+</CustomObject>

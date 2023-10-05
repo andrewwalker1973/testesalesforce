@@ -1,0 +1,82 @@
+<template>
+	<lightning-layout-item alignment-bump="right" flexibility="auto" if:true={showLinkContractsToGoalButton} padding="horizontal-small">
+		<lightning-button label="Link Contracts To Goal" onclick={showModalBox} title="Open popup" variant="brand"></lightning-button>
+	</lightning-layout-item>
+	<!--Account modal start -->
+	<template if:true={isShowModalAccount}>
+		<section aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open slds-modal_small" role="dialog" tabindex="-1">
+			<div class="slds-modal__container">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+					<svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
+						<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+					</svg>
+					<span class="slds-assistive-text">Close</span>
+				</button>
+				<div class="slds-modal__header">
+					<h1 class="slds-modal__title slds-hyphenate" id="modal-heading-02">Select Financial Goal</h1>
+				</div>
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+					<template if:true={isLoading}>
+						<lightning-spinner alternative-text="Loading" class="slds-is-relative slds-align_absolute-center slds-p-around_medium" size="medium"></lightning-spinner>
+					</template>
+					<template if:false={isLoading}>
+						<div class="slds-card__body slds-card__body_inner" if:true={hasGoals}>
+							<lightning-datatable class='financial-goal-table' columns={goalColumns} data={financialGoalList} key-field="Id" max-row-selection="1"
+												 onrowselection={handleGoalRowSelection}></lightning-datatable>
+						</div>
+						<div class="slds-align_absolute-center" if:false={hasGoals}>We could not find any Financial Goal
+							linked to this record.
+						</div>
+					</template>
+				</div>
+				<div class="slds-modal__footer">
+					<button aria-label="Close" class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
+					<!--suppress HtmlWrongAttributeValue -->
+					<button class="slds-button slds-button_brand" disabled={isDisabled} if:true={hasGoals} onclick={handleNext}>Next</button>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+	<!--Financial Accounts/Contract Selection modal start -->
+	<template if:true={isShowModalFinancialGoal}>
+		<section aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open slds-modal_small" role="dialog" tabindex="-1">
+			<div class="slds-modal__container">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+					<svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
+						<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+					</svg>
+					<span class="slds-assistive-text">Close</span>
+				</button>
+				<div class="slds-modal__header slds-p-top_medium slds-p-bottom_xx-small">
+					<h1 class="slds-modal__title slds-hyphenate" id="modal-heading-01">Select Contract</h1>
+					<p class="slds-p-bottom_xx-small">The contracts can be linked or unlinked to track the performance
+						of the goals</p>
+				</div>
+				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+					<template if:true={isLoading}>
+						<lightning-spinner alternative-text="Loading" class="slds-is-relative slds-align_absolute-center slds-p-around_medium" size="medium"
+										   variant="brand"></lightning-spinner>
+					</template>
+					<template if:false={isLoading}>
+						<div class="slds-card__body slds-card__body_inner slds-m-top_x-small" if:true={hasContracts}>
+							<lightning-datatable class='contract-table' columns={columns} data={contractList} key-field="Id"
+												 selected-rows={preSelectedContractIds}></lightning-datatable>
+						</div>
+						<div class="slds-align_absolute-center" if:false={hasContracts}>We could not find any Financial
+							Account(s) linked to this record.
+						</div>
+					</template>
+				</div>
+				<div class="slds-modal__footer">
+					<button aria-label="Close" class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
+					<template if:false={isLoading}>
+						<button class="slds-button slds-button_brand" if:true={hasContracts} onclick={handleSave}>Save</button>
+					</template>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

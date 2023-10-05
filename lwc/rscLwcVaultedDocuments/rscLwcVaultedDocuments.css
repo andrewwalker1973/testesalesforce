@@ -1,0 +1,28 @@
+.customModal
+{
+	max-width : 70rem !important;
+	width     : 70% !important;
+}
+
+.spinner-medium::after
+{
+	color       : #483D8B;
+	content     : attr(data-text);
+	font-weight : bold;
+	position    : absolute;
+	text-align  : center;
+	top         : calc(50% + 2em);
+	width       : 100%;
+}
+
+.required-field:before
+{
+	color   : #FF0000;
+	content : "*";
+}
+
+.datatable-orange
+{
+	/*--lwc-colorBackgroundRowSelected: rgb(103, 231, 156);*/
+	background-color : #E06000;
+}

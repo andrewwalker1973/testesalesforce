@@ -1,0 +1,2151 @@
+<apex:page controller="grax.GRAXAuditCtrl" cache="false" showChat="false" showHeader="{!AND(ISNULL($CurrentPage.parameters.isEmbedded), AND(NOT($User.UIThemeDisplayed == 'Theme4d'), NOT(isMasterRestore)))}" standardStylesheets="true" sidebar="{!ISNULL($CurrentPage.parameters.isEmbedded)}" applyHtmlTag="{!OR(NOT(ISBLANK(pageErrorMessage)), NOT(ISNULL($CurrentPage.parameters.isEmbedded)), AND(NOT($User.UIThemeDisplayed == 'Theme4d'), NOT(isMasterRestore)))}" applyBodyTag="{!NOT(ISBLANK(pageErrorMessage))}" docType="html-5.0">
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/jquery-3.5.0.slim.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.sldsPillsCombobox.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.sldsCombobox.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.slds.js')}"/>
+	<apex:includeLightning />
+
+	<apex:outputPanel rendered="{! NOT(ISNULL($CurrentPage.parameters.isIframe))}">
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/iframeResizer.contentWindow.min.js')}"/>
+	</apex:outputPanel>
+
+	<apex:outputPanel rendered="{! OR(NOT(isMasterRestore), NOT(ISNULL($CurrentPage.parameters.isIframe)))}">
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/moment-with-locales.min.js')}"/>
+		<script src="{!URLFOR($Resource.aljs, '/jquery.aljs-init.min.js')}"></script>
+
+		<script>
+			$.aljsInit({
+				assetsLocation: "{!URLFOR($Asset.SLDS, '')}",
+				scoped: true
+			});
+		</script>
+
+		<script src="{!URLFOR($Resource.aljs, '/jquery.aljs-datepicker.min.js')}"></script>
+
+		<script>
+			var momentJSUserLocale = salesforceAndMomentJSLocalesMapping["{!currentUserLocale}"] ? salesforceAndMomentJSLocalesMapping["{!currentUserLocale}"].code : 'en';
+			moment.locale(momentJSUserLocale);
+
+			window.setCookie = function(cname, cvalue, exdays) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+				var expires = "expires="+ d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			};
+
+			window.getCookie = function(cname) {
+				var name = cname + "=";
+				var decodedCookie = decodeURIComponent(document.cookie);
+				var ca = decodedCookie.split(';');
+				for(var i = 0; i <ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			};
+
+			var $sf = function(id) {
+				return $(document.getElementById(id));
+			};
+
+			window.radioChange = function(input, hiddenId) {
+				$(document.getElementById(hiddenId)).val(input.value).trigger('change');
+			};
+		</script>
+	</apex:outputPanel>
+
+	<apex:outputPanel rendered="{! OR(NOT(isMasterRestore), NOT(ISNULL($CurrentPage.parameters.isIframe)), NOT(ISBLANK(pageErrorMessage)))}">
+		<!-- Import the Design System style sheet -->
+		<apex:slds />
+		<style>
+			.slds-scope .slds-input-has-icon.slds-form-element__date .slds-input__icon, .slds-icon_container.slds-icon-utility-clock.slds-input__icon.slds-input__icon_right .slds-icon {
+				pointer-events: all;
+				cursor: pointer;
+				fill: #005fb2;
+			}
+
+			.slds-scope .slds-input-has-icon.slds-form-element__date .slds-input__icon:hover {
+				fill: #005fb2;
+			}
+		</style>
+	</apex:outputPanel>
+
+	<style>
+		#table_tooltip {
+			left: 100%;
+			position: absolute;
+			top: 30px;
+			margin-left: 0;
+		}
+
+		.sObjectTableActionsHeader {
+			width: 80px;
+		}
+
+		.assistiveText {
+			display: none;
+		}
+
+		.slds-hide {
+			display: none!important;
+		}
+
+		[data-load="true"][data-loading="true"] {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+		[data-load="true"] + [role="status"] {
+			display: none;
+		}
+		[data-load="true"][data-loading="true"] + [role="status"] {
+			display: block;
+		}
+
+		#datePicker {
+			z-index: 99999;
+			top: 2.9rem!important;
+			left: 0!important;
+		}
+
+		.dateFormat {
+			display: none;
+		}
+
+		.noPointerEvents {
+			pointer-events: none;
+		}
+
+		.slds-scope .slds-input-has-icon a.slds-input__icon {
+			pointer-events: all;
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+
+		#sObjectAuditTableContainer .slds-th__action, #sObjectAuditTableAdvanceContainer .slds-th__action {
+			margin: -0.25rem;
+			cursor: pointer;
+		}
+
+		a[disabled], a[disabled]:hover {
+			pointer-events: none;
+		}
+
+		#fieldtooltip_help, #tabletooltip_help {
+			position: fixed;
+			margin-top: 1rem;
+			z-index: 9999;
+		}
+
+		#field_tooltip {
+			left: 100%;
+			position: absolute;
+			top: 7px;
+			margin-left: 0;
+		}
+
+		.slds-scope .slds-p-top_large, .slds-scope .slds-p-top--large {
+			padding-top: 0px;
+		}
+
+		table#diffTable {
+			border-bottom: 0;
+		}
+
+		table#diffTable > tbody > tr {
+			display: none;
+		}
+
+		table#diffTable.showAllRows > tbody > tr,
+		table#diffTable > tbody > tr.isDifferent {
+			display: table-row;
+		}
+
+		table#diffTable > tbody > tr > td.col-field-name {
+			max-width: 15vw;
+		}
+
+		table#diffTable > tbody > tr > td.col-old,
+		table#diffTable > tbody > tr > td.col-new,
+		table#diffTable > tbody > tr > td.col-current {
+			max-width: 25vw;
+		}
+
+		table#diffTable > tbody > tr.isDifferent {
+			font-weight: bold;
+		}
+
+		table#diffTable > tfoot > tr > td {
+			padding-top: 1rem !important;
+			border-top: 1px solid rgb(221, 219, 218);
+			border-left-color: transparent !important;
+		}
+
+		#groupVersionsByRecord_help {
+			position: fixed;
+			margin-top: 1rem;
+			z-index: 9999;
+		}
+
+		#modal-content-showDetails {
+			overflow: auto;
+		}
+
+		#auditPaginator, #auditAdvancePaginator {
+			display: inline-block;
+			width: 75%;
+		}
+
+		#auditPaginatorTotalRecordsPanel, #auditAdvancePaginatorTotalRecordsPanel {
+			display: inline-block;
+			text-align: right;
+			width: 24%;
+		}
+	</style>
+
+	<apex:outputPanel layout="none" rendered="{!NOT(isMasterRestore)}">
+		<style>
+		.slds-scope .slds-modal_medium .slds-modal__container {
+			width: 95% !important;
+		}
+		</style>
+	</apex:outputPanel>
+
+	<apex:outputPanel id="errorMessagesPanel">
+		<apex:outputPanel layout="block" rendered="{!NOT(ISBLANK(pageErrorMessage))}">
+			<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert" style="margin: 10px 0;">
+				<span class="slds-assistive-text">Error</span>
+				<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+				<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+					<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#error')}"></use>
+				</svg>
+				</span>
+				&nbsp;
+				<apex:outputText value="{!pageErrorMessage}" escape="false" />
+			</div>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{! NOT(ISNULL($CurrentPage.parameters.isIframe))}">
+			<script>
+				//hide the spinner after click on Search Tab inside GraxSetup
+				$(document).ready(function() {
+					window.parent.showGlobalSpinner(false);
+					$("#globalSpinner").css('position','absolute');
+				});
+			</script>
+		</apex:outputPanel>
+	</apex:outputPanel>
+
+	<apex:outputPanel rendered="{!ISBLANK(pageErrorMessage)}">
+		<script>
+			var selectedObject = '{!JSENCODE(objToQuery)}';
+
+			(function() {
+				var toggleAllRows = function($btn, $tbl, state) {
+				$btn.text(state ? 'Display updated fields only' : 'Display all field values');
+				$tbl.toggleClass('showAllRows', state);
+				};
+
+				window.toggleAllRowsButtonInit = function(btnSelector, tblSelector, state) {
+					state = state !== undefined ? state : false;
+
+					var $btn = $(btnSelector);
+					var $tbl = $(tblSelector);
+
+					toggleAllRows($btn, $tbl, state);
+
+					$btn.on('click', function(e) {
+						state = !state;
+
+						toggleAllRows($btn, $tbl, state);
+
+						e.preventDefault();
+					}).removeClass('slds-hide');
+				};
+
+				window.sortResultsTable = function(){
+					var tableData = document.getElementById('diffTable').getElementsByTagName('tbody').item(0);
+					var rowData = tableData.getElementsByTagName('tr');
+					for(var i = 0; i < rowData.length - 1; i++){
+						for(var j = 0; j < rowData.length - (i + 1); j++) {
+							if(rowData.item(j).getElementsByTagName('td').item(0).innerHTML.toUpperCase() > rowData.item(j+1).getElementsByTagName('td').item(0).innerHTML.toUpperCase()){
+								tableData.insertBefore(rowData.item(j+1),rowData.item(j));
+							}
+						}
+					}
+				}
+			})();
+
+		</script>
+
+		<div class="{!IF(AND(isMasterRestore,ISNULL($CurrentPage.parameters.isIframe)), 'slds-tabs_scoped__content', 'slds-scope')}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<apex:outputPanel id="csvExportOutputAudit" layout="block" style="margin:0;padding:0;border:0;display:block;height:0;width:0;position:absolute;left:0;top:0;">
+				<apex:outputPanel layout="none" rendered="{!!isAuditTableRecordsEmpty}">
+					<form id="csvExportAudit" action="{!exportToCsvUrl}" target="_blank" method="POST" enctype="application/x-www-form-urlencoded">
+						<input type="hidden" name="source" value="elastic" />
+						<input type="hidden" name="_index" value="grax{!objToQuery}" />
+						<input type="hidden" name="dataIndex" value="grax{!objToQuery}index" />
+						<input type="hidden" name="_select" value="{!selectedFields}" />
+						<input type="hidden" name="_q" value="{!filterSearchTerm}" />
+						<input type="hidden" name="_sort" value="{!pageSort} {!pageSortOrder}" />
+						<input type="hidden" name="_sortType" value="{!pageSortType}" />
+						<input type="hidden" name="columns" value="{!selectedFields}" />
+					</form>
+				</apex:outputPanel>
+			</apex:outputPanel>
+
+			<apex:outputPanel id="csvExportOutputAuditAdvanced">
+				<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(exportAdvancedStatus))}">
+					<script>
+						$('#exportAndProcessModal').trigger('modaltoggle', [false]);
+						$('#exportAndProcessModalFalse').trigger('modaltoggle', [false]);
+					</script>
+					<c:GRAXAlert message="{!exportAdvancedStatus}" title="{!IF(isOverwriteRecords, 'Overwrite Records Result', 'Export Only Result')}" alertId="GRAXAudit"/>
+				</apex:outputPanel>
+			</apex:outputPanel>
+
+			<apex:outputPanel id="csvExportOutputAuditAdvancedTimeMachine" layout="block" style="margin:0;padding:0;border:0;display:block;height:0;width:0;position:absolute;left:0;top:0;">
+				<apex:outputPanel layout="none" rendered="{!!isAuditTableRecordsEmpty}">
+					<form id="csvExportAuditAdvancedTimeMachine" action="{!exportToCsvUrlAuditAdvancedTimeMachine}" target="_blank" method="POST" enctype="application/x-www-form-urlencoded">
+						<input type="hidden" name="source" value="elastic" />
+						<input type="hidden" name="_index" value="graxtimemachine" />
+						<input type="hidden" name="dataIndex" value="graxtimemachineindex" />
+						<input type="hidden" name="_select" value="{!timeMachineSelectedFields}" />
+						<input type="hidden" name="_q" value="{!filterSearchTerm}" />
+						<input type="hidden" name="_sort" value="{!pageSort} {!pageSortOrder}" />
+						<input type="hidden" name="_sortType" value="{!pageSortType}" />
+						<input type="hidden" name="columns" value="{!timeMachineSelectedFields}"/>
+					</form>
+				</apex:outputPanel>
+			</apex:outputPanel>
+
+			<apex:form >
+				<apex:actionFunction action="{!saveRefreshedTokenToCache}" name="saveRefreshedTokenToCache" immediate="true" reRender=""></apex:actionFunction>
+
+				<apex:actionFunction action="{!updateAuditDataTable}" name="updateAuditDataTable" immediate="true" reRender="filterLogicErrorAuditPanel, auditDatatableOuput, csvExportOutputAudit" oncomplete="completeAuditRefreshDataTable();showAuditDataTable();showGlobalSpinner(false);">
+					<apex:param name="selectedFields" value="" assignTo="{!selectedFields}" />
+					<apex:param name="filterSearchTerm" value="" assignTo="{!filterSearchTerm}" />
+					<apex:param name="page" value="" assignTo="{!page}" />
+					<apex:param name="pageSort" value="" assignTo="{!pageSort}" />
+					<apex:param name="pageSortOrder" value="" assignTo="{!pageSortOrder}"/>
+					<apex:param name="pageSortType" value="" assignTo="{!pageSortType}" />
+					<apex:param name="groupVersionsByRecord" value="" assignTo="{!groupVersionsByRecord}" />
+					<apex:param name="isAdvanced" value="" assignTo="{!isAdvanced}"/>
+					<apex:param name="filterLogicExpression" value="" assignTo="{!filterLogicExpression}" />
+					<apex:param name="filterRules" value="" assignTo="{!filterRules}" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!updateAuditDataTable}" name="updateAuditAdvanceDataTable" immediate="true" reRender="filterLogicErrorAuditAdvancePanel, auditAdvanceDatatableOuput, csvExportOutputAuditAdvancedTimeMachine" oncomplete="completeAuditAdvancedRefreshDataTable();showAuditAdvanceDataTable();showGlobalSpinner(false);">
+					<apex:param name="selectedFields" value="" assignTo="{!selectedFields}" />
+					<apex:param name="filterSearchTerm" value="" assignTo="{!filterSearchTerm}" />
+					<apex:param name="page" value="" assignTo="{!page}" />
+					<apex:param name="pageSort" value="" assignTo="{!pageSort}" />
+					<apex:param name="pageSortOrder" value="" assignTo="{!pageSortOrder}"/>
+					<apex:param name="pageSortType" value="" assignTo="{!pageSortType}" />
+					<apex:param name="groupVersionsByRecord" value="" assignTo="{!groupVersionsByRecord}" />
+					<apex:param name="isAdvanced" value="" assignTo="{!isAdvanced}"/>
+					<apex:param name="filterLogicExpression" value="" assignTo="{!filterLogicExpression}" />
+					<apex:param name="filterRules" value="" assignTo="{!filterRules}" />
+					<apex:param name="isExportAdvanced" value="" assignTo="{!isExportAdvanced}" />
+					<apex:param name="timeMachineSelectedFields" value="" assignTo="{!timeMachineSelectedFields}" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!updateAuditDataTable}" name="csvExportAuditAdvanced" immediate="true" reRender="csvExportOutputAuditAdvanced" oncomplete="showGlobalSpinner(false);GRAXAudit_showWarningMessage('');">
+					<apex:param name="selectedFields" value="" assignTo="{!selectedFields}" />
+					<apex:param name="filterSearchTerm" value="" assignTo="{!filterSearchTerm}" />
+					<apex:param name="page" value="" assignTo="{!page}" />
+					<apex:param name="pageSort" value="" assignTo="{!pageSort}" />
+					<apex:param name="pageSortOrder" value="" assignTo="{!pageSortOrder}"/>
+					<apex:param name="pageSortType" value="" assignTo="{!pageSortType}" />
+					<apex:param name="groupVersionsByRecord" value="" assignTo="{!groupVersionsByRecord}" />
+					<apex:param name="isAdvanced" value="" assignTo="{!isAdvanced}"/>
+					<apex:param name="filterLogicExpression" value="" assignTo="{!filterLogicExpression}" />
+					<apex:param name="filterRules" value="" assignTo="{!filterRules}" />
+					<apex:param name="isExportAdvanced" value="" assignTo="{!isExportAdvanced}" />
+					<apex:param name="isOverwriteRecords" value="" assignTo="{!isOverwriteRecords}" />
+					<apex:param name="overwriteRecordsBatchSize" value="" assignTo="{!overwriteRecordsBatchSize}" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!getSelectedRecordDetails}" name="getSelectedRecordDetails" immediate="true" reRender="showDetailsOutput" oncomplete="completeShowDetailsTable();showDetailsModalWindow(true);showGlobalSpinner(false);renderSvgIcons();">
+					<apex:param name="param1" value="" assignTo="{!selectedRecordIdentifier}" />
+					<apex:param name="isAdvanced" value="" assignTo="{!isAdvanced}" />
+					<apex:param name="selectedRecordInfo" value="" assignTo="{!selectedRecordInfo}" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!retrieveFieldsToExport}" name="exportOnly" immediate="true" reRender="availableOptionsPanelContainer" oncomplete="$('#exportOnlyModalHelpText').show();completeExportAndProcessModalFalseContainer();showGlobalSpinner(false);renderSvgIcons();">
+					<apex:param name="isOverwriteRecords" value="" assignTo="{!isOverwriteRecords}" />
+					<apex:param name="selectedAuditAdvancedFields" value="" assignTo="{!selectedFields}" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!retrieveFieldsToExport}" name="exportProcess" immediate="true" reRender="exportOnlyPanelContainer, exportOnlyButtonContainer" oncomplete="$('#helpTextExportOnly').show();completeExportOnlyPanelContainer();showGlobalSpinner(false);renderSvgIcons();showMultipicklist(false);">
+					<apex:param name="isOverwriteRecords" value="" assignTo="{!isOverwriteRecords}" />
+					<apex:param name="selectedAuditAdvancedFields" value="" assignTo="{!selectedFields}" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!retrieveFieldsToExport}" name="overwriteProcess" immediate="true" reRender="overwriteRecordsPanelContainer, overwriteButtonContainer" oncomplete="$('#helpTextOverwriteRecords').show();completeOverwriteRecordsPanelContainer();showGlobalSpinner(false);renderSvgIcons();window.reRendered();showMultipicklist(true);">
+					<apex:param name="isOverwriteRecords" value="" assignTo="{!isOverwriteRecords}" />
+					<apex:param name="selectedAuditAdvancedFields" value="" assignTo="{!selectedFields}" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!restoreToOldVersion}" name="restoreToOldVersion" immediate="true" oncomplete="showRestoreToOldVersionModal(false);showGlobalSpinner(false);" reRender="errorMessagesPanel" rendered="{!hasRestorePermission}">
+					<apex:param name="setBlankValues" value="" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!updateToThisVersion}" name="updateToThisVersion" immediate="true" oncomplete="showUpdateToThisVersionModal(false);showGlobalSpinner(false);" reRender="errorMessagesPanel" rendered="{!hasRestorePermission}">
+					<apex:param name="setBlankValues" value="" />
+				</apex:actionFunction>
+
+				<apex:actionFunction action="{!changeObjToAdvanceQuery}" name="changeObjToAdvanceQuery" immediate="true" reRender="auditFilterAdvancePanelOuput, auditAdvanceDatatableOuput, initializeAuditAdvanceFieldPicklist" oncomplete="completeAuditAdvancedRefreshDataTable();showGlobalSpinner(false);window.reRendered();">
+					<apex:param name="objToAdvanceQueryValue" value="" />
+				</apex:actionFunction>
+
+				<apex:outputPanel id="auditDatatableOuput" layout="block" style="display:none;">
+					<div id="auditDataTableOutputContainer">
+						<apex:outputPanel layout="block" styleClass="slds-m-vertical_small" rendered="{!NOT(ISBLANK(queryFilterErrorMessage))}">
+							<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+							<span class="slds-assistive-text">Error</span>
+							<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+							</span>
+							&nbsp;
+							<h1><apex:outputText value="{!queryFilterErrorMessage}" escape="false" style="font-size: 16pt; font-weight: bold;"/></h1>
+							</div>
+						</apex:outputPanel>
+
+						<apex:variable var="objectIdVar" value="ObjectId" />
+						<apex:variable var="objectTypeVar" value="ObjectType" />
+						<apex:variable var="orgIdVar" value="OrgId" />
+						<apex:variable var="objectPathVar" value="ObjectPath" />
+
+						<apex:dataTable value="{!sortedIds}" var="sid" id="sObjectAuditDataTable" styleClass="slds-table slds-table_bordered slds-table_cell-buffer" rendered="{!!isAuditTableRecordsEmpty}" style="table-layout:fixed;">
+							<apex:repeat var="n" value="{!selectedFieldsList}">
+								<apex:column headerClass="slds-text-title_caps {!IF(fieldMap[n].isSortable, 'slds-is-sortable', '')} {!IF(pageSort == fieldMap[n].name, 'slds-is-sorted slds-is-sorted_' + pageSortOrder, '')}" rendered="{!IF(isFieldInMap[n], true, false)}">
+									<apex:facet name="header">
+										<apex:outputPanel layout="block">
+											<div class="{!IF(fieldMap[n].isSortable, 'slds-th__action', '')}" role="button" tabindex="0" onclick="graxAuditGoToPage({!page}, '{!fieldMap[n].name}', '{!IF(pageSort == fieldMap[n].name, IF(pageSortOrder == 'asc', 'desc', 'asc'), 'asc')}', null, {!fieldMap[n].isSortable});">
+												<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+													<span class="slds-truncate" style="display:{!IF(isFieldInMap[n], '', 'none;')}" title="{!columnsFieldNamesAndLabels[n]}">{!columnsFieldNamesAndLabels[n]}</span>
+													<span class="slds-icon_container slds-icon-utility-arrowdown">
+														<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+															<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+														</svg>
+													</span>
+												</div>
+											</div>
+										</apex:outputPanel>
+									</apex:facet>
+									<apex:outputPanel layout="none" rendered="{!(fieldMap[n].name <> 'CreatedById' && fieldMap[n].name <> 'LastModifiedById' && fieldMap[n].name <> 'Name' && isFieldInMap[n])}">
+										<c:GRAXFieldDisplay uniqueIdentifier="audit_{!sid}_{!fieldMap[n].name}" objName1="{!objToQuery}" fieldName1="{!fieldMap[n].name}" fieldType1="{!fieldMap[n].type}" isSalesforceField1="false" currentValue1="{!objectMap[sid][fieldMap[n].name]}" isEdit1="false"/>
+									</apex:outputPanel>
+
+									<apex:outputPanel layout="none" rendered="{!(fieldMap[n].name == 'CreatedById' || fieldMap[n].name == 'LastModifiedById')}">
+										<div class="slds-has-flexi-truncate slds-grid">
+											<!-- FORMULA LEN is used to avoid the SFDC Known Issue "Discrepencies with ISBLANK and CONTAINS functions in Visualforce Page" -->
+											<apex:outputLink target="_blank" rendered="{!LEN(objectMap[sid][fieldMap[n].name]) > 0}" title="{!objectMap[sid][fieldMap[n].name]}" value="/{!existingUsersByUserId[objectMap[sid][fieldMap[n].name]].Id}" styleClass="slds-truncate">{!existingUsersByUserId[objectMap[sid][fieldMap[n].name]].Name}</apex:outputLink>
+										</div>
+									</apex:outputPanel>
+
+									<apex:outputPanel layout="none" rendered="{!fieldMap[n].name == 'Name'}">
+										<div class="slds-has-flexi-truncate slds-grid">
+											<apex:outputLink target="_blank" title="{!objectMap[sid][fieldMap[n].name]}" value="/{!objectMap[sid]['ObjectId']}" styleClass="slds-truncate">{!objectMap[sid][fieldMap[n].name]}</apex:outputLink>
+										</div>
+									</apex:outputPanel>
+
+								</apex:column>
+							</apex:repeat>
+
+							<apex:column headerClass="sObjectTableActionsHeader" styleClass="sObjectTableActionsHeader" rendered="{!ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)}">
+								<apex:facet name="header">
+									<span class="slds-assistive-text">Actions</span>
+								</apex:facet>
+								<apex:outputPanel >
+									<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+										<apex:outputLink styleClass="slds-button slds-button_icon" onclick="showDetails('{!JSENCODE(sid)}', false);return false;" title="Show Details">
+											<svg class="slds-button__icon" aria-hidden="true">
+												<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#preview')}"></use>
+											</svg>
+											<span class="slds-assistive-text">Show Details</span>
+										</apex:outputLink>
+									</div>
+								</apex:outputPanel>
+								<input id="auditRecordInfo_{!sid}" type="hidden" value="{!objectMap[sid]['OrgId']}#{!objectMap[sid]['CurrentFileName']}#{!objectMap[sid]['ObjectId']}" />
+							</apex:column>
+						</apex:dataTable>
+
+						<apex:outputPanel layout="block" rendered="{!!isAuditTableRecordsEmpty}">
+							<div id="auditPaginator" class="-x-small-buttons--horizontal slds-p-top_small"></div>
+
+							<script>
+								window.elasticAuditFieldsMapping = JSON.parse('{!IF(NOT(ISBLANK(elasticAuditFieldsMapping)), JSENCODE(elasticAuditFieldsMapping), "[]")}');
+								window.renderAuditPaginator('auditPaginator', {!totalRecords}, {!pageLimit}, {!page}, '{!JSENCODE(pageSort)}', '{!JSENCODE(pageSortOrder)}', window.elasticAuditFieldsMapping);
+							</script>
+
+							<div id="auditPaginatorTotalRecordsPanel" style="{!IF(totalRecords <= pageLimit, 'margin-top: 20px;', '')}">
+								<apex:outputText value="{0, number, ###,##0} - ">
+									<apex:param value="{!(page * pageLimit) + 1}"/>
+								</apex:outputText>
+								<apex:outputText value="{0, number, ###,##0} of ">
+									<apex:param value="{!IF((page + 1) * pageLimit <= totalRecords, (page + 1) * pageLimit, totalRecords)}"/>
+								</apex:outputText>
+								<apex:outputText value="{0, number, ###,##0} total results">
+									<apex:param value="{!totalRecords}"/>
+								</apex:outputText>
+							</div>
+
+							<div class="-x-small-buttons--horizontal slds-p-top_medium {!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')}">
+								<button class="slds-button slds-button_neutral" type="submit" form="csvExportAudit">Export to CSV</button>
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="block" rendered="{!isAuditTableRecordsEmpty && ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)}" styleClass="slds-text-align_center">
+							No records were found in GRAX
+						</apex:outputPanel>
+					</div>
+				</apex:outputPanel>
+
+				<apex:outputPanel id="auditAdvanceDatatableOuput" layout="block" style="display:none;">
+					<div id="auditAdvanceTableOutputContainer">
+						<apex:outputPanel layout="block" styleClass="slds-m-vertical_small" rendered="{!NOT(ISBLANK(queryFilterErrorMessage))}">
+							<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+							<span class="slds-assistive-text">Error</span>
+							<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+							</span>
+							&nbsp;
+							<h1><apex:outputText value="{!queryFilterErrorMessage}" escape="false" style="font-size: 16pt; font-weight: bold;"/></h1>
+							</div>
+						</apex:outputPanel>
+
+						<apex:variable var="objectIdVar" value="ObjectId" />
+						<apex:variable var="objectTypeVar" value="ObjectType" />
+						<apex:variable var="orgIdVar" value="OrgId" />
+						<apex:variable var="objectPathVar" value="ObjectPath" />
+
+						<apex:dataTable value="{!sortedAdvancedIds}" var="sid" id="sObjectAuditAdvanceDataTable" styleClass="slds-table slds-table_bordered slds-table_cell-buffer" rendered="{!!isAuditTableRecordsEmpty}" style="table-layout:fixed;">
+							<apex:repeat var="n" value="{!selectedFieldsList}">
+								<apex:column headerClass="slds-text-title_caps {!IF(fieldMap[n].isSortable, 'slds-is-sortable', '')} {!IF(fieldMap[n].isSortable && pageSort == fieldMap[n].name, 'slds-is-sorted slds-is-sorted_' + pageSortOrder, '')}" rendered="{!IF(isFieldInMap[n], true, false)}">
+									<apex:facet name="header">
+										<apex:outputPanel layout="block">
+											<div class="{!IF(fieldMap[n].isSortable, 'slds-th__action', '')}" role="button" tabindex="0" onclick="graxAuditAdvancedGoToPage({!page}, '{!fieldMap[n].name}', '{!IF(pageSort == fieldMap[n].name, IF(pageSortOrder == 'asc', 'desc', 'asc'), 'asc')}', null, {!fieldMap[n].isSortable}, false);">
+												<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+													<span class="slds-truncate" style="display:{!IF(isFieldInMap[n], '', 'none;')}" title="{!columnsFieldNamesAndLabels[n]}">{!columnsFieldNamesAndLabels[n]}</span>
+													<span class="slds-icon_container slds-icon-utility-arrowdown">
+														<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+															<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+														</svg>
+													</span>
+												</div>
+											</div>
+										</apex:outputPanel>
+									</apex:facet>
+									<apex:outputPanel layout="none" rendered="{!(fieldMap[n].name <> 'CreatedById' && fieldMap[n].name <> 'LastModifiedById' && isFieldInMap[n] && NOT(fieldMap[n].name == 'Name') && NOT(fieldMap[n].isNameField))}">
+										<c:GRAXFieldDisplay uniqueIdentifier="advancedAudit_{!sid}_{!fieldMap[n].name}" objName1="{!fieldMap[n].sObjectName}" fieldName1="{!fieldMap[n].name}" fieldType1="{!fieldMap[n].type}" isSalesforceField1="{!fieldMap[n].isSalesforceField}" currentValue1="{!advancedObjMap[sid][fieldMap[n].name]}" isEdit1="false" recordId1="{!IF(fieldMap[n].isNameField, objectMap[sid]['Id'], null)}"/>
+									</apex:outputPanel>
+
+									<apex:outputPanel layout="none" rendered="{!(fieldMap[n].name == 'CreatedById' || fieldMap[n].name == 'LastModifiedById')}">
+										<div class="slds-has-flexi-truncate slds-grid">
+											<!-- FORMULA LEN is used to avoid the SFDC Known Issue "Discrepencies with ISBLANK and CONTAINS functions in Visualforce Page" -->
+											<apex:outputLink target="_blank" rendered="{!LEN(advancedObjMap[sid][fieldMap[n].name]) > 0}" title="{!advancedObjMap[sid][fieldMap[n].name]}" value="/{!existingUsersByUserId[advancedObjMap[sid][fieldMap[n].name]].Id}" styleClass="slds-truncate">{!existingUsersByUserId[advancedObjMap[sid][fieldMap[n].name]].Name}</apex:outputLink>
+										</div>
+									</apex:outputPanel>
+
+									<apex:outputPanel layout="none" rendered="{!fieldMap[n].name == 'Name' || fieldMap[n].isNameField}">
+										<div class="slds-has-flexi-truncate slds-grid">
+											<apex:outputLink target="_blank" title="{!advancedObjMap[sid][fieldMap[n].name]}" value="/{!advancedObjMap[sid]['ObjectId']}" styleClass="slds-truncate">{!advancedObjMap[sid][fieldMap[n].name]}</apex:outputLink>
+										</div>
+									</apex:outputPanel>
+
+								</apex:column>
+							</apex:repeat>
+
+							<apex:column headerClass="sObjectTableActionsHeader" styleClass="sObjectTableActionsHeader" rendered="{!ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)}">
+								<apex:facet name="header">
+									<span class="slds-assistive-text">Actions</span>
+								</apex:facet>
+								<apex:outputPanel >
+									<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+										<apex:outputLink styleClass="slds-button slds-button_icon" onclick="showDetails('{!JSENCODE(sid)}', true);return false;" title="Show Details">
+											<svg class="slds-button__icon" aria-hidden="true">
+												<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#preview')}"></use>
+											</svg>
+											<span class="slds-assistive-text">Show Details</span>
+										</apex:outputLink>
+									</div>
+								</apex:outputPanel>
+								<input id="advancedAuditRecordInfo_{!sid}" type="hidden" value="{!advancedObjMap[sid]['OrgId']}#{!advancedObjMap[sid]['CurrentFileName']}#{!advancedObjMap[sid]['ObjectId']}" />
+							</apex:column>
+						</apex:dataTable>
+
+						<apex:outputPanel layout="block" rendered="{!!isAuditTableRecordsEmpty}">
+							<div id="auditAdvancePaginator" class="-x-small-buttons--horizontal slds-p-top_small"></div>
+
+							<script>
+								window.elasticAuditFieldsMapping = JSON.parse('{!IF(NOT(ISBLANK(elasticAuditFieldsMapping)), JSENCODE(elasticAuditFieldsMapping), "[]")}');
+								window.renderAuditPaginator('auditAdvancePaginator', {!totalRecords}, {!pageLimit}, {!page}, '{!JSENCODE(pageSort)}', '{!JSENCODE(pageSortOrder)}', window.elasticAuditFieldsMapping);
+							</script>
+
+							<div id="auditAdvancePaginatorTotalRecordsPanel" style="{!IF(totalRecords <= pageLimit, 'margin-top: 20px;', '')}">
+								<apex:outputText value="{0, number, ###,##0} - ">
+									<apex:param value="{!(page * pageLimit) + 1}"/>
+								</apex:outputText>
+								<apex:outputText value="{0, number, ###,##0} of ">
+									<apex:param value="{!IF((page + 1) * pageLimit <= totalRecords, (page + 1) * pageLimit, totalRecords)}"/>
+								</apex:outputText>
+								<apex:outputText value="{0, number, ###,##0} total results">
+									<apex:param value="{!totalRecords}"/>
+								</apex:outputText>
+							</div>
+
+							<div class="-x-small-buttons--horizontal slds-p-top_medium {!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)) || NOT(isMasterRestore) || NOT(advancedAuditExportEnabled), 'slds-hide', '')}">
+								<input type="button" class="slds-button slds-button_neutral" id="csvExportAuditAdvancedButton" value="Export & Process" onclick="csvExportAuditAdvancedButtonClick($(this));" disabled="disabled" />
+							</div>
+
+							<div class="-x-small-buttons--horizontal slds-p-top_medium {!IF(isMasterRestore, 'slds-hide', '')}">
+								<input type="button" class="slds-button slds-button_neutral" value="Export to CSV" onclick="$('#csvExportAuditAdvancedTimeMachine').submit();" />
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="block" rendered="{!isAuditTableRecordsEmpty && ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)}" styleClass="slds-text-align_center">
+							No records were found in GRAX
+						</apex:outputPanel>
+					</div>
+				</apex:outputPanel>
+
+				<apex:outputPanel id="showDetailsOutput" layout="block" styleClass="slds-m-bottom_large" style="display:none;">
+					<div id="showDetailsOutputContainer">
+						<apex:outputPanel layout="block" styleClass="slds-m-vertical_small pageMessages">
+							<apex:pageMessages ></apex:pageMessages>
+						</apex:outputPanel>
+
+						<div aria-hidden="false">
+							<div class="slds-clearfix slds-p-vertical_large">
+								<div class="slds-clearfix">
+									<div class="slds-align_absolute-center">
+										<button id="toggleAllRowsButton" class="slds-button slds-button_neutral"/>
+									</div>
+								</div>
+							</div>
+							<table id="diffTable" class="slds-table slds-table_bordered slds-table_col-bordered slds-table_cell-buffer">
+								<thead>
+									<tr class="slds-text-title_caps">
+										<th scope="col">
+											<div class="slds-truncate" title="Field">Field</div>
+										</th>
+										<th scope="col">
+											<div class="slds-truncate" title="Original Value">Original Value</div>
+										</th>
+										<th scope="col">
+											<div class="slds-truncate" title="New Value">New Value</div>
+										</th>
+										<th scope="col">
+											<div class="slds-truncate" title="Current Value">Current Value</div>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<apex:repeat value="{!selectedRecordFieldValuesDifferences}" var="fieldName">
+										<tr class="{!IF(selectedRecordFieldValuesDifferences[fieldName].oldValue <> selectedRecordFieldValuesDifferences[fieldName].newValue, 'isDifferent', '')}" style="display:{!IF(fieldName == 'SystemModstamp', 'none;', '')}">
+											<td data-label="Field" class="col-field-name">
+												<div class="slds-truncate" style="white-space: normal; text-overflow: ellipsis;">
+													<apex:outputText rendered="{!AND(fieldName <> 'Id')}" value="{!selectedRecordFieldValuesDifferences[fieldName].fieldLabel}" title="{!selectedRecordFieldValuesDifferences[fieldName].fieldLabel}" />
+													<apex:outputText rendered="{!fieldName == 'Id'}" value="Id" title="Id" />
+												</div>
+											</td>
+
+											<td data-label="Original Value" class="col-old">
+												<c:GRAXFieldDisplay uniqueIdentifier="auditFieldDiffOriginal_{!fieldName}" objName1="{!selectedRecordObjectType}" fieldName1="{!fieldName}" fieldType1="{!selectedRecordFieldValuesDifferences[fieldName].fieldType}" isSalesforceField1="{!selectedRecordFieldValuesDifferences[fieldName].isSalesforceField}"  currentValue1="{!selectedRecordFieldValuesDifferences[fieldName].oldValue}" isEdit1="false"/>
+											</td>
+
+											<td data-label="New Value" class="col-new">
+												<c:GRAXFieldDisplay uniqueIdentifier="auditFieldDiffNew_{!fieldName}" objName1="{!selectedRecordObjectType}" fieldName1="{!fieldName}" fieldType1="{!selectedRecordFieldValuesDifferences[fieldName].fieldType}" isSalesforceField1="{!selectedRecordFieldValuesDifferences[fieldName].isSalesforceField}" currentValue1="{!selectedRecordFieldValuesDifferences[fieldName].newValue}" isEdit1="false"/>
+											</td>
+
+											<td data-label="Current Value" class="col-current">
+												<c:GRAXFieldDisplay uniqueIdentifier="auditFieldDiffCurrent_{!fieldName}" objName1="{!selectedRecordObjectType}" fieldName1="{!fieldName}" fieldType1="{!selectedRecordFieldValuesDifferences[fieldName].fieldType}" isSalesforceField1="{!selectedRecordFieldValuesDifferences[fieldName].isSalesforceField}" currentValue1="{!selectedRecordFieldValuesDifferences[fieldName].currentValue}" isEdit1="false"/>
+											</td>
+										</tr>
+									</apex:repeat>
+								</tbody>
+								<apex:outputPanel layout="none" rendered="{!NOT(isMasterRestore)}">
+									<tfoot>
+										<tr>
+											<td colspan="4" style="text-align: center; font-weight: bold; font-size: 12px;">
+												<apex:outputPanel rendered="{!hasRestorePermission && showRestoreToOldVersionButton}" style="margin-right: 10px;">
+													<button id="restoreToOldVersionButton" class="slds-button slds-button_neutral" data-toggle="modal" data-target="#restoreToOldVersionModal" style="{!IF(ISBLANK(oldState) || oldState.size == 0, 'color: lightgray; pointer-events: none;', '')}">Restore Original Values</button>
+												</apex:outputPanel>
+
+												<apex:outputPanel rendered="{!hasRestorePermission}">
+													<button id="updateToThisVersionButton" class="slds-button slds-button_neutral" data-toggle="modal" data-target="#updateToThisVersionModal" style="{!IF(ISBLANK(newState) || newState.size == 0, 'color: lightgray; pointer-events: none;', '')}">Restore New Values</button>
+												</apex:outputPanel>
+											</td>
+										</tr>
+									</tfoot>
+								</apex:outputPanel>
+							</table>
+						</div>
+						<script>
+							window.toggleAllRowsButtonInit('#toggleAllRowsButton', '#diffTable', false);
+						</script>
+						<script>
+							$(document).ready(function() {
+								if (!$("diffTable").is(":hidden")) {
+									window.sortResultsTable();
+								}
+							});
+						</script>
+					</div>
+				</apex:outputPanel>
+
+				<apex:outputPanel layout="block" styleClass="exportOnlyPanelContainer" id="exportOnlyPanelContainer" style="display:none;">
+					<div id="exportOnlyPanelOutputContainer">
+						<apex:outputPanel layout="block" rendered="{!NOT(ISNULL(availableOptions))}" styleClass="slds-form-element slds-m-bottom_xx-small">
+							<div class="slds-form-element__control">
+								<c:GRAXFieldDisplay uniqueIdentifier="exportOnlyAdvancedFields_Custom" objName1="{!objToQuery}" fieldName1="exportOnlyAdvancedFields" fieldType1="multipicklist" isSalesforceField1="false" currentValue1="{!selectedOptions}" isEdit1="true" recordId1="null" customFieldType1="multipicklist" customAvailablePicklistOptions1="{!availableOptions}"/>
+							</div>
+						</apex:outputPanel>
+					</div>
+				</apex:outputPanel>
+
+				<apex:outputPanel layout="block" styleClass="overwriteRecordsPanelContainer" id="overwriteRecordsPanelContainer" style="display:none;">
+					<div id="overwriteRecordsPanelOutputContainer">
+						<apex:outputPanel layout="block" rendered="{!NOT(ISNULL(editOnlyOptions))}" styleClass="slds-form-element slds-m-bottom_xx-small">
+							<div class="slds-form-element__control">
+								<c:GRAXFieldDisplay uniqueIdentifier="editOnlyAdvancedFields_Custom" objName1="{!objToQuery}" fieldName1="editOnlyAdvancedFields" fieldType1="multipicklist" isSalesforceField1="false" currentValue1="{!selectedOptions}" isEdit1="true" recordId1="null" customFieldType1="multipicklist" customAvailablePicklistOptions1="{!editOnlyOptions}"/>
+							</div>
+						</apex:outputPanel>
+					</div>
+				</apex:outputPanel>
+
+				<apex:outputPanel layout="block" id="availableOptionsPanelContainer" style="display:none;">
+					<div id="availableOptionsPanelOutputContainer">
+						<apex:outputPanel layout="block" rendered="{!NOT(ISNULL(availableOptions))}" styleClass="slds-form-element slds-m-bottom_xx-small">
+							<div class="slds-form-element__control">
+								<c:GRAXFieldDisplay uniqueIdentifier="auditAdvancedExportFields_Custom" objName1="{!objToQuery}" fieldName1="auditAdvancedExportFields" fieldType1="multipicklist" isSalesforceField1="false" currentValue1="{!selectedOptions}" isEdit1="true" recordId1="null" customFieldType1="multipicklist" customAvailablePicklistOptions1="{!availableOptions}"/>
+							</div>
+						</apex:outputPanel>
+						<div class="slds-form-element" style="margin-top: 25px; display: inline-block;">
+							<label class="slds-form-element__label" for="overwriteRecordsBatchSizeInput">Batch Size</label>
+							<div class="slds-form-element__control">
+								<input id="overwriteRecordsBatchSizeInput" value="{!overwriteRecordsBatchSize}" class="slds-input" style="width: 125px;" type="number" min="1" max="10000" onchange="validateOvewriteRecordsBatchSizeChange();" />
+							</div>
+						</div>
+
+						<div style="display: inline-block;">
+							<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="overwrite_records_batch_size_warning" title="Warning!">
+								<svg class="slds-button__icon slds-icon-text-warming slds-icon_small" aria-hidden="true">
+									<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+								</svg>
+								<span class="slds-assistive-text">Warning!</span>
+							</button>
+
+							<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-hide" role="tooltip" id="overwrite_records_batch_size_warning" aria-hidden="true" style="position: fixed; top: 0px; left: 0px; width: 100%; margin-left: -365px; margin-top: 10px;">
+								<div class="slds-popover__body">
+									The Bulk API is intended to load large numbers of records in parallel asynchronously. It also has really small daily limits. You could technically set up 10,000 batches of 1 record each, but then you would hit your daily limit.
+								</div>
+							</div>
+						</div>
+
+						<div id="overwriteRecordsBatchSizeErrorMessagePanel" style="display: none; color: rgb(194, 57, 52);">Please enter only a whole value number value in this field, between 1 and 10000.</div>
+					</div>
+				</apex:outputPanel>
+			</apex:form>
+
+			<apex:outputPanel layout="none" rendered="{!isTokenRefreshed}">
+				<script>saveRefreshedTokenToCache();</script>
+			</apex:outputPanel>
+
+			<div id="graxAuditContainer">
+				<div class="slds-tabs_default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<ul class="slds-tabs_default__nav" role="tablist" style="{!IF(NOT(isMasterRestore), 'display: none;', '')}">
+						<li class="slds-tabs_default__item slds-is-active" title="Audit" role="presentation">
+							<a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" aria-selected="true" aria-controls="tab-audit-objects" id="tab-audit-objects__item">Audit</a>
+						</li>
+						<li class="slds-tabs_default__item" title="Advanced" role="presentation">
+							<a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" aria-selected="false" aria-controls="tab-advanced-objects" id="tab-advanced-objects__item">Advanced</a>
+						</li>
+					</ul>
+					<div id="tab-audit-objects" class="slds-tabs_default__content {!IF(isMasterRestore, 'slds-show', 'slds-hide')}" role="tabpanel" aria-labelledby="tab-audit-objects__item">
+						<apex:outputPanel styleClass="{!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')} {!IF(ISNULL($CurrentPage.parameters.isEmbedded), 'slds-section slds-is-open slds-p-top_large', 'slds-section slds-p-top_large')}" layout="block">
+							<div id="selectFieldsAudit-section">
+								<h3 class="slds-section__title slds-theme_shade">
+									<button aria-controls="selectFieldsAudit-section" aria-expanded="false" class="slds-button slds-section__title-action">
+										<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+										</svg>
+										<span class="slds-truncate slds-p-horizontal_small" title="Select your Salesforce Object">Details</span>
+									</button>
+								</h3>
+								<div class="slds-section__content slds-is-relative" style="width:610px;">
+									<input type="hidden" id="fieldListAudit" />
+
+									<div id="fieldAuditSelection">
+										<div class="slds-form-element" >
+											<label class="slds-form-element__label" for="combobox-fields-audit">Fields</label>
+											<div class="slds-form-element__control">
+												<div class="slds-combobox_container" style="margin-right:10px;">
+													<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+														<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+															<input id="selectedFields" type="hidden" />
+															<input type="text" class="slds-input slds-combobox__input" id="combobox-fields-audit" aria-autocomplete="list" aria-controls="listbox-fields-audit" autoComplete="off" role="textbox" placeholder="Search..." />
+															<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+																<svg class="slds-button__icon" aria-hidden="true">
+																	<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+																</svg>
+															</span>
+														</div>
+														<div id="listbox-fields-audit" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+															<ul class="slds-listbox slds-listbox_vertical" role="presentation"></ul>
+														</div>
+													</div>
+												</div>
+												<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="fieldtooltip_help" title="Help" id="field_tooltip">
+													<svg class="slds-button__icon" aria-hidden="true">
+														<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+													</svg>
+													<span class="slds-assistive-text">Help</span>
+												</button>
+
+												<div class="slds-listbox_selection-group" style="height: auto;">
+													<ul id="selectedFieldsPillsAudit" class="slds-listbox slds-listbox_horizontal" role="listbox" aria-label="Selected Fields:" aria-orientation="horizontal"></ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="fieldtooltip_help" aria-hidden="true">
+										<div class="slds-popover__body">
+											Salesforce Fields list is generated by matching the GRAX field name against this Salesforce environment's field API Names for this object. GRAX Fields list consists of any GRAX fields that do NOT match against this object's field API names (generally means these are system GRAX fields or fields from other environments or systems).
+										</div>
+									</div>
+								</div>
+							</div>
+						</apex:outputPanel>
+						<apex:outputPanel styleClass="{!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')} {!IF(ISNULL($CurrentPage.parameters.isEmbedded), 'slds-section slds-is-open slds-p-top_large', 'slds-section slds-p-top_large')}" layout="block">
+							<div id="filterRecordsAudit-section">
+								<h3 class="slds-section__title slds-theme_shade">
+									<button aria-controls="filterRecordsAudit-section" aria-expanded="false" class="slds-button slds-section__title-action">
+										<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+										</svg>
+										<span class="slds-truncate{!IF(ISNULL($CurrentPage.parameters.isEmbedded), ' slds-p-horizontal_small', '')}" title="Filter Records">Filter Records</span>
+									</button>
+								</h3>
+								<div aria-hidden="false" class="slds-section__content slds-is-relative">
+									<apex:outputPanel layout="none" id="auditFilterPanelOuput">
+										<apex:outputPanel layout="none">
+											<c:GRAXFilterGenerator id="GRAXAuditFilterGenerator"
+												fieldsStructJSON="{!auditFilterFieldsJson}"
+												isSorted="true"
+												jsCallback="window.setAuditFilterQuery" />
+										</apex:outputPanel>
+
+										<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="fieldtooltip_help" aria-hidden="true">
+											<div class="slds-popover__body">
+												Salesforce Fields list is generated by matching the GRAX field name against this Salesforce environment's field API Names for this object. GRAX Fields list consists of any GRAX fields that do NOT match against this object's field API names (generally means these are system GRAX fields or fields from other environments or systems).
+											</div>
+										</div>
+
+										<apex:outputPanel id="filterLogicErrorAuditPanel">
+											<apex:outputPanel rendered="{!NOT(ISBLANK(filterLogicExpressionError))}">
+												<script>
+												$('#filterLogicExpressionErrorDiv').show();
+												</script>
+												<div id="filterLogicExpressionErrorAuditDiv" class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert" style="margin-top: 5px; margin-bottom: 10px;">
+												<span class="slds-assistive-text">Error</span>
+												<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+												</span>
+												&nbsp;
+												<h2><apex:outputText value="{!filterLogicExpressionError}" escape="false" styleClass="filterLogicExpressionErrorText"/></h2>
+												</div>
+											</apex:outputPanel>
+										</apex:outputPanel>
+									</apex:outputPanel>
+
+									<div class="slds-grid slds-grid_vertical-align-center slds-hide">
+										<div class="slds-col slds-m-right_small">
+											<div class="slds-form-element">
+												<label class="slds-form-element__label" for="filter-search-term">Search Term</label>
+												<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+													<svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+														<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+													</svg>
+													<input id="filter-audit-search-term" class="slds-input" placeholder="Search" type="text" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</apex:outputPanel>
+
+						<div id="graxDataRecordsAudit-section" class="slds-section slds-is-open slds-p-top_large" style="{!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'padding-top: 0px !important', '')}">
+							<apex:outputPanel layout="none" rendered="{!ISBLANK($CurrentPage.parameters.isEmbeddedRelatedList)}">
+								<h3 class="slds-section__title{!IF(ISBLANK($CurrentPage.parameters.isEmbedded), 'slds-theme_shade', '')}">
+									<button aria-controls="graxDataRecordsAudit-section" aria-expanded="false" class="slds-button slds-section__title-action">
+										<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+										</svg>
+										<span class="slds-truncate{!IF(ISNULL($CurrentPage.parameters.isEmbedded), ' slds-p-horizontal_small', '')}" title="GRAX Stored Records">GRAX Stored Records</span>
+									</button>
+								</h3>
+							</apex:outputPanel>
+
+							<div aria-hidden="{!IF(ISNULL($CurrentPage.parameters.isEmbedded), 'true', 'false')}" class="slds-section__content slds-is-relative" id="audit_records-section">
+								<div class="slds-clearfix slds-p-bottom_medium {!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')}" >
+									<div class="slds-clearfix">
+										<div class="slds-float_left">
+											<input type="button" id="auditRetrieveButton" class="slds-button slds-button_brand" value="Retrieve" />
+										</div>
+									</div>
+								</div>
+
+								<div id="sObjectAuditTableContainer" data-load="true"></div>
+
+								<div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand {!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')}">
+									<span class="slds-assistive-text">Loading GRAX Records...</span>
+									<div class="slds-spinner__dot-a"></div>
+									<div class="slds-spinner__dot-b"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="tab-advanced-objects" class="slds-tabs_default__content {!IF(isMasterRestore, 'slds-hide', 'slds-show')}" role="tabpanel" aria-labelledby="tab-advanced-objects__item" style="{!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'padding-top: 0px !important;', '')}">
+						<apex:outputPanel styleClass="{!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')} {!IF(ISNULL($CurrentPage.parameters.isEmbedded), 'slds-section slds-is-open slds-p-top_large', 'slds-section slds-p-top_large')}" layout="block">
+							<h3 class="slds-section__title{!IF(ISNULL($CurrentPage.parameters.isEmbedded), ' slds-theme_shade', '')}">
+								<button aria-controls="selectAdvanceObjects-section" aria-expanded="false" class="slds-button slds-section__title-action">
+									<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+										<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+									</svg>
+									<span class="slds-truncate{!IF(ISNULL($CurrentPage.parameters.isEmbedded), ' slds-p-horizontal_small', '')}" title="Select your Salesforce Object">Details</span>
+								</button>
+							</h3>
+							<div id="selectAdvanceObjects-section" >
+								<div class="slds-section__content slds-is-relative" style="width:610px;">
+									<input type="hidden" id="fieldListAuditAdvance" />
+
+									<div id="fieldAuditAdvanceSelection">
+										<div class="slds-form-element" >
+											<label class="slds-form-element__label" for="combobox-fields-audit-advance">Fields</label>
+											<div class="slds-form-element__control">
+												<div class="slds-combobox_container" style="margin-right:10px;">
+													<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+														<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+															<input id="selectedFieldsAdvance" type="hidden" />
+															<input type="text" class="slds-input slds-combobox__input" id="combobox-fields-audit-advance" aria-autocomplete="list" aria-controls="listbox-fields-audit-advance" autoComplete="off" role="textbox" placeholder="Search..." />
+															<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+																<svg class="slds-button__icon" aria-hidden="true">
+																	<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+																</svg>
+															</span>
+														</div>
+														<div id="listbox-fields-audit-advance" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+															<ul class="slds-listbox slds-listbox_vertical" role="presentation"></ul>
+														</div>
+													</div>
+												</div>
+												<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="fieldtooltip_help" title="Help" id="field_tooltip">
+													<svg class="slds-button__icon" aria-hidden="true">
+														<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+													</svg>
+													<span class="slds-assistive-text">Help</span>
+												</button>
+
+												<div class="slds-listbox_selection-group" style="height: auto;">
+													<ul id="selectedFieldsPillsAuditAdvance" class="slds-listbox slds-listbox_horizontal" role="listbox" aria-label="Selected Fields:" aria-orientation="horizontal"></ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="fieldtooltip_help" aria-hidden="true">
+										<div class="slds-popover__body">
+											Salesforce Fields list is generated by matching the GRAX field name against this Salesforce environment's field API Names for this object. GRAX Fields list consists of any GRAX fields that do NOT match against this object's field API names (generally means these are system GRAX fields or fields from other environments or systems).
+										</div>
+									</div>
+								</div>
+							</div>
+						</apex:outputPanel>
+						<apex:outputPanel styleClass="{!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')} {!IF(ISNULL($CurrentPage.parameters.isEmbedded), 'slds-section slds-is-open', 'slds-section')}" layout="block">
+							<h3 class="slds-section__title slds-theme_shade">
+								<button aria-controls="filterRecordsAdvance-section" aria-expanded="false" class="slds-button slds-section__title-action">
+									<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+										<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+									</svg>
+									<span class="slds-truncate{!IF(ISNULL($CurrentPage.parameters.isEmbedded), ' slds-p-horizontal_small', '')}" title="Filter Records">Filter Records</span>
+								</button>
+							</h3>
+							<div id="filterRecordsAdvance-section">
+								<div class="slds-section__content {!IF(NOT(isMasterRestore), 'slds-hide', '')}" id="advanceObjects-section">
+									<div class="slds-grid slds-grid_vertical-align-center">
+										<div class="slds-col slds-grow-none slds-m-right_small">
+											<div class="slds-form-element">
+												<div class="slds-form-element__control">
+													<apex:outputPanel layout="none">
+														<label class="slds-form-element__label" for="combobox-advance-objects">Tables</label>
+														<input type="hidden" id="comboBoxObjectAdvanceList" />
+														<div class="slds-combobox_container" style="width:600px;margin-right:10px;">
+															<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+																<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+																	<input type="text" class="slds-input slds-combobox__input" id="combobox-advance-objects" aria-autocomplete="list" aria-controls="listbox-advance-objects" autoComplete="off" role="textbox" placeholder="SELECT TABLE" />
+																	<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+																		<svg class="slds-button__icon" aria-hidden="true">
+																			<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+																		</svg>
+																	</span>
+																</div>
+																<div id="listbox-advance-objects" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+																	<ul class="slds-listbox slds-listbox_vertical" role="presentation"></ul>
+																</div>
+															</div>
+														</div>
+													</apex:outputPanel>
+													<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="tabletooltip_help" title="Help" id="table_tooltip">
+														<svg class="slds-button__icon" aria-hidden="true">
+															<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+														</svg>
+														<span class="slds-assistive-text">Help</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="tabletooltip_help" aria-hidden="true">
+										<div class="slds-popover__body">
+											Salesforce Objects list is generated by matching the GRAX Index name against this Salesforce environment's object API Names. GRAX Tables list consists of any GRAX indexes/tables that do NOT match against this environment's object API names (generally means these are GRAX indexes from other environments or systems).
+										</div>
+									</div>
+								</div>
+
+								<div aria-hidden="{!IF(ISNULL($CurrentPage.parameters.isEmbedded) && ISNULL($CurrentPage.parameters.isEmbeddedRelatedList), 'true', 'false')}" class="slds-section__content slds-is-relative" id="restore_selectFields-section" style="width:610px;">
+									<input type="hidden" id="fieldListAdvance" />
+
+									<div id="fieldSelectionAdvance">
+										<div class="slds-form-element" >
+											<label class="slds-form-element__label" for="combobox-advance-fields">Fields</label>
+											<div class="slds-form-element__control">
+												<div class="slds-combobox_container" style="margin-right:10px;">
+													<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+														<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+															<input id="selectedFieldsTableAdvance" type="hidden" />
+															<input type="text" class="slds-input slds-combobox__input" id="combobox-advance-fields" aria-autocomplete="list" aria-controls="listbox-advance-fields" autoComplete="off" role="textbox" placeholder="Search..." />
+															<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+																<svg class="slds-button__icon" aria-hidden="true">
+																	<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+																</svg>
+															</span>
+														</div>
+														<div id="listbox-advance-fields" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+															<ul class="slds-listbox slds-listbox_vertical" role="presentation"></ul>
+														</div>
+													</div>
+												</div>
+												<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="fieldtooltip_help" title="Help" id="field_tooltip">
+													<svg class="slds-button__icon" aria-hidden="true">
+														<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+													</svg>
+													<span class="slds-assistive-text">Help</span>
+												</button>
+
+												<div class="slds-listbox_selection-group" style="height: auto;">
+													<ul id="selectedFieldsPillsAdvance" class="slds-listbox slds-listbox_horizontal" role="listbox" aria-label="Selected Fields:" aria-orientation="horizontal"></ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="fieldtooltip_help" aria-hidden="true">
+										<div class="slds-popover__body">
+											Salesforce Fields list is generated by matching the GRAX field name against this Salesforce environment's field API Names for this object. GRAX Fields list consists of any GRAX fields that do NOT match against this object's field API names (generally means these are system GRAX fields or fields from other environments or systems).
+										</div>
+									</div>
+								</div>
+								<div aria-hidden="false" class="slds-section__content slds-is-relative">
+									<div class="slds-grid slds-grid_vertical-align-center">
+										<apex:outputPanel layout="none" rendered="{!isGRAXAdmin}">
+											<div class="slds-form-element slds-is-relative slds-p-bottom_medium">
+												<button style="margin-top:0.25rem;float:right;" class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="groupVersionsByRecord_help" title="Help">
+													<svg class="slds-button__icon" aria-hidden="true">
+														<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+													</svg>
+													<span class="slds-assistive-text">Help</span>
+												</button>
+												<div style="display:inline-block">
+													<label class="slds-checkbox_toggle">
+														<span class="slds-form-element__label slds-m-bottom_none">Group versions by record?</span>
+														<input type="checkbox" id="groupVersionsByRecord" value="{!isEmbedded}"/>
+														<span class="slds-checkbox_faux_container" aria-live="assertive">
+															<span class="slds-checkbox_faux"></span>
+															<span class="slds-checkbox_on">Yes</span>
+															<span class="slds-checkbox_off">No</span>
+														</span>
+													</label>
+												</div>
+											</div>
+										</apex:outputPanel>
+									</div>
+										<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="groupVersionsByRecord_help" aria-hidden="true">
+											<div class="slds-popover__body">
+												All versions of the record(s) will be displayed before the date criteria added below. When grouping records, only the latest version for each record will be retrieved.
+											</div>
+										</div>
+										<apex:outputPanel layout="none" id="auditFilterAdvancePanelOuput">
+										<apex:outputPanel layout="none">
+											<c:GRAXFilterGenerator id="GRAXAuditAdvanceFilterGenerator"
+												fieldsStructJSON="{!auditAdvanceFilterFieldsJson}"
+												isSorted="true"
+												jsCallback="window.setAuditAdvancedFilterQuery" />
+										</apex:outputPanel>
+
+										<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="fieldtooltip_help" aria-hidden="true">
+											<div class="slds-popover__body">
+												Salesforce Fields list is generated by matching the GRAX field name against this Salesforce environment's field API Names for this object. GRAX Fields list consists of any GRAX fields that do NOT match against this object's field API names (generally means these are system GRAX fields or fields from other environments or systems).
+											</div>
+										</div>
+
+										<apex:outputPanel id="filterLogicErrorAuditAdvancePanel">
+											<apex:outputPanel rendered="{!NOT(ISBLANK(filterLogicExpressionError))}">
+												<script>
+													$('#filterLogicExpressionErrorDiv').show();
+												</script>
+												<div id="filterLogicExpressionErrorAuditAdvanceDiv" class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert" style="margin-top: 5px; margin-bottom: 10px;">
+													<span class="slds-assistive-text">Error</span>
+													<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+													</span>
+													&nbsp;
+													<h2><apex:outputText value="{!filterLogicExpressionError}" escape="false" styleClass="filterLogicExpressionErrorText"/></h2>
+												</div>
+											</apex:outputPanel>
+										</apex:outputPanel>
+									</apex:outputPanel>
+									<div class="slds-grid slds-grid_vertical-align-center slds-hide">
+										<div class="slds-col slds-m-right_small">
+											<div class="slds-form-element">
+												<label class="slds-form-element__label" for="filter-search-term">Search Term</label>
+												<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+													<svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+														<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+													</svg>
+													<input id="filter-audit-advanced-search-term" class="slds-input" placeholder="Search" type="text" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</apex:outputPanel>
+						<div id="graxDataRecordsAuditAdvance-section" class="slds-section slds-is-open slds-p-top_large" style="{!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'padding-top: 0px !important', '')}">
+							<apex:outputPanel layout="none" rendered="{!ISBLANK($CurrentPage.parameters.isEmbeddedRelatedList)}">
+								<h3 class="slds-section__title{!IF(ISBLANK($CurrentPage.parameters.isEmbedded), 'slds-theme_shade', '')}">
+									<button aria-controls="graxDataRecordsAudit-section" aria-expanded="false" class="slds-button slds-section__title-action">
+										<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+										</svg>
+										<span class="slds-truncate{!IF(ISNULL($CurrentPage.parameters.isEmbedded), ' slds-p-horizontal_small', '')}" title="GRAX Stored Records">GRAX Stored Records</span>
+									</button>
+								</h3>
+							</apex:outputPanel>
+
+							<div aria-hidden="{!IF(ISNULL($CurrentPage.parameters.isEmbedded), 'true', 'false')}" class="slds-section__content slds-is-relative" id="audit_records-section">
+								<div class="slds-clearfix slds-p-bottom_medium {!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')}" >
+									<div class="slds-clearfix">
+										<div class="slds-float_left">
+											<input type="button" id="auditRetrieveAdvancedButton" class="slds-button slds-button_brand" value="Retrieve" />
+										</div>
+									</div>
+								</div>
+
+								<div id="sObjectAuditTableAdvanceContainer" data-load="true"></div>
+
+								<div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand {!IF(NOT(ISNULL($CurrentPage.parameters.isEmbeddedRelatedList)), 'slds-hide', '')}">
+									<span class="slds-assistive-text">Loading GRAX Records...</span>
+									<div class="slds-spinner__dot-a"></div>
+									<div class="slds-spinner__dot-b"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<apex:outputPanel rendered="{!NOT(isMasterRestore)}" layout="block">
+					<div id="auditGlobalSpinner" class="slds-spinner_container slds-is-fixed slds-hide">
+						<div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+							<span class="slds-assistive-text">Loading</span>
+							<div class="slds-spinner__dot-a"></div>
+							<div class="slds-spinner__dot-b"></div>
+						</div>
+					</div>
+				</apex:outputPanel>
+
+				<section id="showDetailsModal" role="dialog" tabindex="-1" aria-labelledby="modal-showDetails" aria-modal="true" aria-describedby="modal-content-showDetails" class="slds-modal slds-modal_medium slds-hide">
+					<div class="slds-modal__container" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<header class="slds-modal__header">
+							<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" data-toggle="modal" onclick="showDetailsModalWindow(false);">
+								<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+									<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+								</svg>
+								<span class="slds-assistive-text">Close</span>
+							</button>
+							<h2 id="modal-showDetails" class="slds-text-heading_medium slds-hyphenate">Changes Details</h2>
+						</header>
+
+						<div class="slds-modal__content slds-p-horizontal_medium" id="modal-content-showDetails">
+						</div>
+
+						<footer class="slds-modal__footer">
+							<button id="closeShowDetailsButton" class="slds-button slds-button_neutral" data-toggle="modal" data-preview-only="true" onclick="showDetailsModalWindow(false);">Close</button>
+						</footer>
+					</div>
+				</section>
+
+				<div class="slds-backdrop slds-hide"></div>
+				<section id="restoreToOldVersionModal" role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-hide">
+					<div class="slds-modal__container">
+						<header class="slds-modal__header">
+							<button data-toggle="modal" data-target="#restoreToOldVersionModal" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+								<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+									<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+								</svg>
+								<span class="slds-assistive-text">Close</span>
+							</button>
+
+							<h2 class="slds-text-heading_medium slds-hyphenate">Restore to Old Version</h2>
+						</header>
+
+						<div class="slds-modal__content slds-p-around_medium">
+							<p class="slds-text-heading_small">Are you sure that you would like to update this record with the values from the selected record?</p>
+							<p>Warning: This will update this record when you click "OK".</p>
+						</div>
+
+						<footer class="slds-modal__footer">
+							<div class="slds-form-element slds-float_left" data-multi="false">
+								<label class="slds-checkbox_toggle slds-grid">
+									<span class="slds-form-element__label slds-m-bottom_none">Update field(s) on record to blank values from this version</span>
+									<input type="checkbox" id="setBlankValues_old"/>
+									<span class="slds-checkbox_faux_container" aria-live="assertive">
+										<span class="slds-checkbox_faux"></span>
+										<span class="slds-checkbox_on">Yes</span>
+										<span class="slds-checkbox_off">No</span>
+									</span>
+								</label>
+							</div>
+
+							<span class="slds-button slds-button_neutral" data-toggle="modal" data-target="#restoreToOldVersionModal">Cancel</span>
+							<span class="slds-button slds-button_destructive _blank" onclick="showGlobalSpinner(true);restoreToOldVersion($('#setBlankValues_old').prop('checked'));showDetailsModalWindow(false);return false;">OK</span>
+						</footer>
+					</div>
+				</section>
+				<div class="slds-backdrop slds-hide"></div>
+
+				<section id="updateToThisVersionModal" role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-hide">
+					<div class="slds-modal__container">
+						<header class="slds-modal__header">
+							<button data-toggle="modal" data-target="#updateToThisVersionModal" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+								<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+									<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+								</svg>
+								<span class="slds-assistive-text">Close</span>
+							</button>
+
+							<h2 class="slds-text-heading_medium slds-hyphenate">Update to this Version</h2>
+						</header>
+
+						<div class="slds-modal__content slds-p-around_medium">
+							<p class="slds-text-heading_small">Are you sure that you would like to update this record with the values from the selected record?</p>
+							<p>Warning: This will update this record when you click "OK".</p>
+						</div>
+
+						<footer class="slds-modal__footer">
+							<div class="slds-form-element slds-float_left" data-multi="false">
+								<label class="slds-checkbox_toggle slds-grid">
+									<span class="slds-form-element__label slds-m-bottom_none">Update field(s) on record to blank values from this version</span>
+									<input type="checkbox" id="setBlankValues_new"/>
+									<span class="slds-checkbox_faux_container" aria-live="assertive">
+										<span class="slds-checkbox_faux"></span>
+										<span class="slds-checkbox_on">Yes</span>
+										<span class="slds-checkbox_off">No</span>
+									</span>
+								</label>
+							</div>
+
+							<span class="slds-button slds-button_neutral" data-toggle="modal" data-target="#updateToThisVersionModal">Cancel</span>
+							<span class="slds-button slds-button_destructive _blank" onclick="showGlobalSpinner(true);updateToThisVersion($('#setBlankValues_new').prop('checked'));showDetailsModalWindow(false);return false;">OK</span>
+						</footer>
+					</div>
+				</section>
+				<div class="slds-backdrop slds-hide"></div>
+
+				<section id="exportAndProcessModal" role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-hide" style="z-index: 9002;">
+					<div class="slds-modal__container">
+						<header class="slds-modal__header slds-theme_alt-inverse slds-theme_alert-texture">
+							<h2 class="slds-text-heading_medium slds-hyphenate" id="exportAndProcessHeader"></h2>
+						</header>
+
+						<div class="slds-modal__content slds-p-around_medium">
+							<div id="exportAndProcessModalHelpText">
+							<p class="slds-p-bottom_small">Export Only - This will generate a csv based on your selections.</p>
+							<p class="slds-p-bottom_small">Overwrite Records - This will generate a csv which is submitted to bulk api to be processed.</p>
+						</div>
+
+							<div id="helpTextOverwriteRecords" style="display: none;">
+								<p class="slds-p-bottom_small">Select all the fields that you want to override from the records.</p>
+							</div>
+
+							<div id="helpTextExportOnly" style="display: none;">
+								<p class="slds-p-bottom_small">Select all the fields that you want to export from the selected records.</p>
+							</div>
+
+							<div id="exportOnlyContainer"></div>
+							<div id="overwriteRecordsPanel"></div>
+
+						</div>
+
+						<footer class="slds-modal__footer" id="exportAndProcessFooter">
+							<input type="button" class="slds-button slds-button_brand" id="exportButton" value="Export Only" onclick="showExportOnlyPanelContainer();"/>
+							<input type="button" class="slds-button slds-button_brand" id="overwriteRecordsButton" value="Overwrite Records" onclick="showOverwriteRecordsPanelContainer();"/>
+
+							<apex:outputPanel styleClass="exportOnlyButtonContainer" id="exportOnlyButtonContainer">
+								<apex:outputPanel layout="none" rendered="{!NOT(ISNULL(availableOptions))}">
+									<input type="button" class="slds-button slds-button_brand" id="executeExportOnlyButton" value="Confirm Export" onclick="executeAdvancedAuditExport(this);"/>
+								</apex:outputPanel>
+							</apex:outputPanel>
+
+							<apex:outputPanel styleClass="overwriteButtonContainer" id="overwriteButtonContainer">
+								<apex:outputPanel layout="none" rendered="{!NOT(ISNULL(editOnlyOptions))}">
+									<input type="button" class="slds-button slds-button_brand" id="executeOverwriteButton" value="Confirm Overwrite" onclick="executeAdvancedAuditExport(this);"/>
+								</apex:outputPanel>
+							</apex:outputPanel>
+
+							<span id="exportAndProcessModalCancelButton" class="slds-button slds-button_neutral" data-toggle="modal" data-target="#exportAndProcessModal">Cancel</span>
+						</footer>
+					</div>
+				</section>
+
+				<div class="slds-backdrop slds-hide"></div>
+
+				<section id="exportAndProcessModalFalse" role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-hide" style="z-index: 9002;">
+					<div class="slds-modal__container">
+						<header class="slds-modal__header slds-theme_alt-inverse slds-theme_alert-texture">
+							<h2 class="slds-text-heading_medium slds-hyphenate">Export Only</h2>
+						</header>
+						<div id="exportOnlyModalHelpText" class="slds-modal__content slds-p-around_medium">
+							<p class="slds-p-bottom_small" id="exportOnlyHelpText">Select all the fields that you want to export from the selected records.</p>
+						</div>
+						<div id="exportAndProcessModalFalseContainer" class="slds-modal__content slds-p-around_medium"></div>
+
+						<footer class="slds-modal__footer">
+							<input type="button" class="slds-button slds-button_brand" id="exportOnlyButton" value="Confirm" onclick="executeAdvancedAuditExport(this);"/>
+							<span id="exportOnlysModalCancelButton" class="slds-button slds-button_neutral" data-toggle="modal" data-target="#exportAndProcessModalFalse">Cancel</span>
+						</footer>
+					</div>
+				</section>
+				<div class="slds-backdrop slds-hide" style="z-index: 9001;"></div>
+				<script>
+
+					$(function() {
+						var $sObjectAuditTableContainer = $('#sObjectAuditTableContainer');
+						var $sObjectAuditTableAdvanceContainer = $('#sObjectAuditTableAdvanceContainer');
+						var $showDetailsContainer = $('#modal-content-showDetails');
+						var $exportOnlyContainer = $('#exportOnlyContainer');
+						var $exportAndProcessModalFalseContainer = $('#exportAndProcessModalFalseContainer');
+						var $overwriteRecordsPanel = $('#overwriteRecordsPanel');
+						var $fieldListAudit = $('#fieldListAudit');
+						var $fieldListAuditAdvance = $("#fieldListAuditAdvance");
+						var $fieldListAdvance = $("#fieldListAdvance");
+						var $salesforceObject = $("#comboBoxObjectAdvanceList");
+						var $filterAuditSearchTerm = $('#filter-audit-search-term');
+						var $filterAuditAdvancedSearchTerm = $("#filter-audit-advanced-search-term");
+						var $auditRetrieveButton = $('#auditRetrieveButton');
+						var $auditRetrieveAdvancedButton = $('#auditRetrieveAdvancedButton');
+						var $auditGlobalSpinner = window.$globalSpinner || $('#auditGlobalSpinner');
+						var $csvExportAuditAdvancedButton = $("#csvExportAuditAdvancedButton");
+						var $overwriteRecordsBatchSizeInput = $("#overwriteRecordsBatchSizeInput");
+
+						// If the page was include into an iframe from Setup
+						var isIframe = "{! NOT( ISNULL(JSENCODE($CurrentPage.parameters.isIframe)))}" == "true";
+
+						var $groupVersionsByRecord = $('#groupVersionsByRecord');
+						var $exportAndProcessModal = $('#exportAndProcessModal');
+						var $exportAndProcessModalFalse = $('#exportAndProcessModalFalse');
+
+						/////////////////////////////////////////////////////
+						//Helper functions
+						var filterOptions = function(options, isAdvanced) {
+							return options.filter(function(option) {
+								if(option.type === 'keyword') return false;
+
+								if(option.id.endsWith('.keyword')) return false;
+
+								if(option.id == 'ObjectType' && isAdvanced) return false;
+
+								return true;
+							});
+						};
+
+						var sortOptions = function(options){
+							return options.sort(function(a, b) {
+								return (a.label >= b.label ? 1 : -1);
+							});
+						};
+
+						window.completeAuditRefreshDataTable = function() {
+							$sObjectAuditTableContainer.empty();
+							$('#auditDataTableOutputContainer').appendTo($sObjectAuditTableContainer);
+						}
+
+						window.completeAuditAdvancedRefreshDataTable = function() {
+							$sObjectAuditTableAdvanceContainer.empty();
+							$('#auditAdvanceTableOutputContainer').appendTo($sObjectAuditTableAdvanceContainer);
+						}
+
+						window.completeShowDetailsTable = function() {
+							$showDetailsContainer.empty();
+							$('#showDetailsOutputContainer').appendTo($showDetailsContainer);
+						}
+
+						window.completeExportOnlyPanelContainer = function() {
+							$overwriteRecordsPanel.empty();
+							$exportOnlyContainer.empty();
+							$('#exportOnlyPanelOutputContainer').appendTo($exportOnlyContainer);
+						}
+
+						window.completeOverwriteRecordsPanelContainer = function() {
+							$overwriteRecordsPanel.empty();
+							$exportOnlyContainer.empty();
+							$('#overwriteRecordsPanelOutputContainer').appendTo($overwriteRecordsPanel);
+						}
+
+						window.completeExportAndProcessModalFalseContainer = function() {
+							$exportAndProcessModalFalseContainer.empty();
+							$('#availableOptionsPanelOutputContainer').appendTo($exportAndProcessModalFalseContainer);
+						}
+
+						/////////////////////////////////////////////////////
+
+						window.isGRAXAdmin = {!isGRAXAdmin};
+
+						window.$showDetailsModal = $('#showDetailsModal');
+
+						window.renderAuditFieldList = function(fieldOptions) {
+							if(fieldOptions.length == 0) return;
+							showGlobalSpinner(true);
+
+							function getFieldSelection(isAdvanced) {
+								// Common fields for Audit/Advanced Audit in case we don't have any content stored in cookies
+								var commonAuditSelectedFields = '["Name", "LastModifiedDate", "LastModifiedById", "ObjectType", "FieldsModified"]';
+								var commonAuditAdvancedSelectedFields = '["Name", "LastModifiedDate", "LastModifiedById", "FieldsModified"]';
+								var selectedFields = $.parseJSON(window.getCookie(isAdvanced ? 'graxtimemachineAdvancedAuditFields' : 'graxtimemachineFields') || (isAdvanced ? commonAuditAdvancedSelectedFields : commonAuditSelectedFields));
+
+								if (selectedFields.length == 0) {
+									selectedFields = $.parseJSON(isAdvanced ? commonAuditAdvancedSelectedFields : commonAuditSelectedFields);
+								}
+								return selectedFields.map(function(item) {
+									return {
+										id: item
+									}
+								});
+							};
+
+							// Set up the list of available TimeMachine fields for Audit and Audit Advanced
+							var auditFieldsOptions = sortOptions(filterOptions(fieldOptions, false));
+							var auditAdvancedFieldsOptions = sortOptions(filterOptions(fieldOptions, true));
+
+							// Append the GRAX Fields Options Group
+							auditFieldsOptions.unshift({id: 'FIELDS_GROUPED_OPTIONS_2', label: 'GRAX Fields'});
+							auditAdvancedFieldsOptions.unshift({id: 'FIELDS_GROUPED_OPTIONS_2', label: 'GRAX Fields'});
+
+							$fieldListAudit.sldsPillsCombobox({
+									comboboxSelector: '#combobox-fields-audit',
+									listboxItemsSelector: '#listbox-fields-audit',
+									selectedItemsPillsSelector: '#selectedFieldsPillsAudit',
+									pillRemoveIcon: "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}",
+									options: auditFieldsOptions,
+									sort: false,
+									selection: getFieldSelection(false)
+								}, function(setSelection, clearSelection, setOptions) {
+									window.renderAuditFieldSelection = function(data) {
+										var selectedFields = getFieldSelection(false);
+
+										clearSelection(false);
+										setOptions(filterOptions(data, false));
+
+										if(selectedFields.length > 0) {
+											setSelection(selectedFields);
+										}
+									};
+								}).on('changeSelection', function(e) {
+									window.setCookie('graxtimemachineFields', e.target.value);
+							});
+
+							$fieldListAuditAdvance.sldsPillsCombobox({
+									comboboxSelector: '#combobox-fields-audit-advance',
+									listboxItemsSelector: '#listbox-fields-audit-advance',
+									selectedItemsPillsSelector: '#selectedFieldsPillsAuditAdvance',
+									pillRemoveIcon: "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}",
+									options: auditAdvancedFieldsOptions,
+									sort: false,
+									selection: getFieldSelection(true)
+								}, function(setSelection, clearSelection, setOptions) {
+									window.renderAuditFieldSelection = function(data) {
+										var selectedFields = getFieldSelection(true);
+
+										clearSelection(false);
+										setOptions(filterOptions(data, true));
+
+										if(selectedFields.length > 0) {
+											setSelection(selectedFields);
+										}
+									};
+								}).on('changeSelection', function(e) {
+									window.setCookie('graxtimemachineAdvancedAuditFields', e.target.value);
+							});
+
+							showGlobalSpinner(false);
+						};
+
+						window.renderAdvanceFieldList = function (fieldOptions){
+							if(fieldOptions.length == 0) return;
+
+							function getFieldSelection() {
+								var selectedFields = $.parseJSON(window.getCookie($salesforceObject.val() + 'AdvancedAuditFields') || '["Id"]');
+								if (selectedFields.length == 0) {
+									selectedFields = $.parseJSON('["Id"]');
+								}
+								return selectedFields.map(function(item) {
+									return {
+										id: item
+									}
+								});
+							};
+
+							$fieldListAdvance.sldsPillsCombobox({
+									comboboxSelector: '#combobox-advance-fields',
+									listboxItemsSelector: '#listbox-advance-fields',
+									selectedItemsPillsSelector: '#selectedFieldsPillsAdvance',
+									pillRemoveIcon: "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}",
+									options: fieldOptions,
+									sort: false,
+									selection: getFieldSelection()
+								}, function(setSelection, clearSelection, setOptions) {
+									window.renderAdvanceFieldSelection = function(data) {
+										var selectedFields = getFieldSelection();
+
+										clearSelection(false);
+										setOptions(filterOptions(data, true));
+
+										if(selectedFields.length > 0) {
+											setSelection(selectedFields);
+										}
+									};
+								}).on('changeSelection', function(e) {
+							showGlobalSpinner(false);
+									window.setCookie($salesforceObject.val() + 'AdvancedAuditFields', e.target.value);
+							});
+						};
+
+						window.addAdvanceObjectListOptions = function(options) {
+							// Transform the Map<String, String> into an array of suitable picklist options
+							var tables = $.map(options, function (value, key) {
+								return {label: value, index: key};
+							});
+
+							// Before appending the Salesforce Object Options Group we need to sort the content
+							var advancedAuditTables = sortOptions(tables);
+							// Append the Salesforce Object Options Group
+							advancedAuditTables.unshift({label:'Salesforce Objects', index:'GROUPED_OPTIONS_1'});
+
+							$.each(advancedAuditTables, function(i, item) {
+								var labelValue = item.label;
+								labelValue += item.index != 'GROUPED_OPTIONS_1' ? ' (' + item.index + ')' : '';
+
+								item.label = labelValue;
+							});
+
+							$salesforceObject.sldsCombobox({
+									comboboxSelector: '#combobox-advance-objects',
+									listboxItemsSelector: '#listbox-advance-objects',
+									sort: false, // we disable the sorting, we have the content already sorted
+									options: advancedAuditTables
+								}, function(setSelectionCombobox, clearSelectionCombobox, setOptionsCombobox) {
+								}).on('changeSelection', function(e) {
+									showGlobalSpinner(true);
+									$filterAuditAdvancedSearchTerm.val('');
+									changeObjToAdvanceQuery(e.target.value);
+							});
+
+						};
+
+						var getFilterQueryAudit = function(filters) {
+							var queryConditions = [];
+
+							$.each(filters, function(i, filter) {
+								var condition = [];
+								var type = filter.type;
+								var value = filter.value;
+								var operator = filter.operator;
+
+								if(type !== 'boolean' && operator.endsWith('EQ') && Boolean(value) === false) {
+									value = operator.startsWith('N') || operator.startsWith('KN');
+									operator = 'EXT';
+								}
+
+								if(type == 'boolean') {
+									value = Boolean(value);
+
+									if(value === false) {
+										operator = 'NEQ';
+										value = true;
+									}
+								} else if(type == 'number') {
+									value = parseFloat(filter.value);
+								} else if(type == 'date'){
+									if(filter.value != null && filter.value != '') {
+										if(filter.value.indexOf(' ') != -1){
+											value = moment(filter.value, 'L LT').format('YYYY-MM-DD HH:mm:ss.SSS');
+										}else{
+											value = moment(filter.value, 'L').format('YYYY-MM-DD');
+										}
+									}
+								}
+
+								condition = {[operator]: {[filter.field]: value}};
+
+								if(operator != null && value != null) {
+									queryConditions.push(condition);
+								}
+							});
+
+							// return queryConditions.length > 0 ? JSON.stringify({'AND': queryConditions}) : null;
+							return queryConditions.length > 0 ? JSON.stringify(queryConditions) : null;
+						};
+
+						window.setAuditFilterQuery = function(filters) {
+							$filterAuditSearchTerm.val(getFilterQueryAudit(filters));
+						};
+						window.setAuditAdvancedFilterQuery = function(filters) {
+							$filterAuditAdvancedSearchTerm.val(getFilterQueryAudit(filters));
+						};
+
+						var globalSpinnerCounter = 0;
+						window.showGlobalSpinner = window.showGlobalSpinner || function(state) {
+							globalSpinnerCounter += (state ? 1 : -1);
+
+							if(globalSpinnerCounter < 0) {
+								globalSpinnerCounter = 0;
+							}
+
+							$auditGlobalSpinner.toggleClass('slds-hide', globalSpinnerCounter == 0);
+
+							var isMasterRestore = {!isMasterRestore};
+							if (isMasterRestore) {
+							parent.showGlobalSpinner(globalSpinnerCounter != 0);
+							}
+
+						};
+
+						var defaultObjToQuery = '{!JSENCODE(objToQuery)}';
+
+						window.graxAuditGoToPage = function(page, sort, sortOrder, pageSortType, isSortable) {
+							if(isSortable === false) return;
+
+							var defaultSortField = 'LastModifiedDate';
+
+							if(!pageSortType && window.elasticAuditFieldsMapping) {
+								pageSortType = window.elasticAuditFieldsMapping[sort] || 'date';
+							}
+
+							var selectedFields = $fieldListAudit.val();
+							var groupVersionsByRecord = false;
+							var isAdvanced = false;
+							var filterRows = $($("#GRAXAuditFilterGenerator table tr td[data-label='Is Active?'] input[type='checkbox']"));
+							var filterRules = [];
+							$.each(filterRows, function(i, iRow) {
+								if($(iRow).is(":checked")) {
+									filterRules.push(i+1);
+								}
+							});
+
+							if($("#GRAXAuditFilterGenerator .slds-form-element.slds-has-error").length == 0){
+								$sObjectAuditTableContainer.attr({'data-loading': true});
+								updateAuditDataTable(selectedFields, $filterAuditSearchTerm.val(), page || 0, sort || defaultSortField, sortOrder || 'desc', pageSortType, groupVersionsByRecord, isAdvanced, $('#GRAXAuditFilterGenerator_bool_filter').val(), JSON.stringify(filterRules));
+							}else{
+								alert('Please fix the invalid filter\'s rows.');
+							}
+
+						};
+
+						window.graxAuditAdvancedGoToPage = function(page, sort, sortOrder, pageSortType, isSortable, isExportAdvanced, isOverwriteRecords) {
+							if(isSortable === false) return;
+
+							isOverwriteRecords == isOverwriteRecords || false;
+
+							var defaultSortField = 'LastModifiedDate';
+
+							if(!pageSortType && window.elasticAuditFieldsMapping) {
+								pageSortType = window.elasticAuditFieldsMapping[sort] || 'date';
+							}
+
+							var selectedFields = "{\"fields\":" + $fieldListAuditAdvance.val();
+							selectedFields += $fieldListAdvance.val() != ''? ", \"sfObjectFields\":" + $fieldListAdvance.val() + "}" : "}";
+							var groupVersionsByRecord = (typeof $groupVersionsByRecord.prop('checked') !== 'undefined') ? $groupVersionsByRecord.prop('checked') : {!isEmbedded};
+							var isAdvanced = true;
+							var filterRows = $($("#GRAXAuditAdvanceFilterGenerator table tr td[data-label='Is Active?'] input[type='checkbox']"));
+							var filterRules = [];
+							$.each(filterRows, function(i, iRow) {
+								if($(iRow).is(":checked")) {
+									filterRules.push(i+1);
+								}
+							});
+
+
+							if($("#GRAXAuditAdvanceFilterGenerator .slds-form-element.slds-has-error").length == 0){
+								if (isExportAdvanced) {
+									sfObjectFields = [];
+									var exportOnlyAdvancedFields = $("#GRAXFieldDisplay_exportOnlyAdvancedFields_selected").is(':visible');
+									var editOnlyAdvancedFields = $("#GRAXFieldDisplay_editOnlyAdvancedFields_selected").is(':visible');
+
+									var selectedFieldsInputName = exportOnlyAdvancedFields ? 'GRAXFieldDisplay_exportOnlyAdvancedFields_selected' : (editOnlyAdvancedFields ? 'GRAXFieldDisplay_editOnlyAdvancedFields_selected' : 'GRAXFieldDisplay_auditAdvancedExportFields_selected');
+
+									$("#" + selectedFieldsInputName + " li").each(function (i, row) {
+										var $row = $(row);
+										sfObjectFields.push($row.attr('data-value'));
+									});
+
+									if(sfObjectFields.length == 0){
+										alert('No fields selected');
+										showGlobalSpinner(false);
+									}else{
+										var selectedFields = "{\"fields\":" + $fieldListAuditAdvance.val();
+										selectedFields += $fieldListAdvance.val() != ''? ", \"sfObjectFields\": [\"" + sfObjectFields.join("\", \"") + "\"]}" : "}";
+
+										var overwriteRecordsBatchSize = $('#overwriteRecordsBatchSizeInput').val();
+
+										csvExportAuditAdvanced(selectedFields, $filterAuditAdvancedSearchTerm.val(), page || 0, sort || defaultSortField, sortOrder || 'desc', pageSortType, groupVersionsByRecord, isAdvanced, $('#GRAXAuditAdvanceFilterGenerator_bool_filter').val(), JSON.stringify(filterRules), isExportAdvanced, isOverwriteRecords, overwriteRecordsBatchSize);
+									}
+								} else {
+									$sObjectAuditTableAdvanceContainer.attr({'data-loading': true});
+									updateAuditAdvanceDataTable(selectedFields, $filterAuditAdvancedSearchTerm.val(), page || 0, sort || defaultSortField, sortOrder || 'desc', pageSortType, groupVersionsByRecord, isAdvanced, $('#GRAXAuditAdvanceFilterGenerator_bool_filter').val(), JSON.stringify(filterRules), false, JSON.stringify(JSON.parse(selectedFields).fields));
+								}
+							}else{
+								alert('Please fix the invalid filter\'s rows.');
+							}
+						};
+
+						$auditRetrieveButton.on('click', function(e) {
+							var selectedFields = $fieldListAudit.val();
+							if (selectedFields.length > 2) {
+								graxAuditGoToPage(0);
+							} else {
+								alert('No fields selected');
+							}
+
+							e.preventDefault();
+						});
+
+						$auditRetrieveAdvancedButton.on('click', function(e) {
+							var selectedFields = $fieldListAuditAdvance.val();
+							if (selectedFields.length > 2) {
+								graxAuditAdvancedGoToPage(0);
+							} else {
+								alert('No fields selected');
+							}
+
+							e.preventDefault();
+						});
+
+						window.csvExportAuditAdvancedButtonClick = function(e) {
+							// we make sure the panel is totally empty before loading the popup
+							$overwriteRecordsPanel.empty();
+							$exportOnlyContainer.empty();
+							var selectedFields = $fieldListAuditAdvance.val();
+							if (selectedFields.length > 2) {
+								if($groupVersionsByRecord.prop('checked')){
+									$("#exportButton").show();
+									$("#overwriteRecordsButton").show();
+									$("#exportAndProcessModalHelpText").show();
+									$("#exportAndProcessHeader").text('Export & Process');
+									$("#helpTextOverwriteRecords").hide();
+									$("#helpTextExportOnly").hide();
+
+									$(".overwriteButtonContainer").hide();
+									$(".exportOnlyButtonContainer").hide();
+
+									$(".overwriteRecordsPanelContainer").hide();
+									$(".exportOnlyPanelContainer").hide();
+
+									$exportAndProcessModal.trigger('modaltoggle', [true]);
+
+									if(isIframe){
+										centerModalOnAuditIframe('#exportAndProcessModal');
+									}
+								}else{
+									$("#exportOnlyModalHelpText").hide();
+									showGlobalSpinner(true);
+									exportOnly(false, $fieldListAdvance.val());
+									$exportAndProcessModalFalse.trigger('modaltoggle', [true]);
+
+									if(isIframe){
+										centerModalOnAuditIframe('#exportAndProcessModalFalse');
+									}
+								}
+
+								return false;
+							}else{
+								alert('No fields selected');
+							}
+						};
+
+						window.showExportOnlyPanelContainer = function() {
+							$("#exportButton").hide();
+							$("#overwriteRecordsButton").hide();
+							$("#exportAndProcessModalHelpText").hide();
+
+							$(".exportOnlyButtonContainer").hide();
+							$(".exportOnlyPanelContainer").hide();
+
+							showGlobalSpinner(true);
+							exportProcess(false, $fieldListAdvance.val());
+						}
+
+						window.showOverwriteRecordsPanelContainer = function() {
+							$("#exportButton").hide();
+							$("#overwriteRecordsButton").hide();
+							$("#exportAndProcessModalHelpText").hide();
+
+							$(".overwriteButtonContainer").hide();
+							$(".overwriteRecordsPanelContainer").hide();
+
+							$('#overwriteRecordsBatchSizeInput').closest('.slds-form-element').removeClass('slds-has-error');
+							$("#overwriteRecordsBatchSizeErrorMessagePanel").hide();
+							$("#executeOverwriteButton").prop('disabled', false);
+
+							showGlobalSpinner(true);
+							overwriteProcess(true, $fieldListAdvance.val());
+						}
+
+						window.showMultipicklist = function(isOverwrite) {
+							if (isOverwrite) {
+								$("#exportAndProcessHeader").text('Confirm Field to Update');
+								$(".overwriteButtonContainer").show();
+								$(".exportOnlyButtonContainer").hide();
+
+								$(".overwriteRecordsPanelContainer").show();
+								$(".exportOnlyPanelContainer").hide();
+							} else {
+								$("#exportAndProcessHeader").text('Export Only');
+								$(".overwriteButtonContainer").hide();
+								$(".exportOnlyButtonContainer").show();
+
+								$(".overwriteRecordsPanelContainer").hide();
+								$(".exportOnlyPanelContainer").show();
+							}
+						}
+
+						window.validateOvewriteRecordsBatchSizeChange = function() {
+							var $this = $('#overwriteRecordsBatchSizeInput');
+
+							var $overwriteRecordsBatchSizeErrorMessagePanel = $("#overwriteRecordsBatchSizeErrorMessagePanel");
+							var $executeOverwriteButton = $("#executeOverwriteButton");
+							var condition = $this.val() < 1 || $this.val() > 10000 || $this.val().indexOf('.') != -1 || $this.val().indexOf(',') != -1;
+
+							$this.closest('.slds-form-element').toggleClass('slds-has-error', condition);
+							$executeOverwriteButton.prop('disabled', condition);
+
+							if(condition){
+								$overwriteRecordsBatchSizeErrorMessagePanel.show();
+							}else{
+								$overwriteRecordsBatchSizeErrorMessagePanel.hide();
+							}
+						}
+
+						window.executeAdvancedAuditExport = function(e){
+							showGlobalSpinner(true);
+							graxAuditAdvancedGoToPage(0, null, null, null, null, true, e.id == 'executeOverwriteButton');
+						}
+
+						window.showAuditDataTable = function() {
+							$sObjectAuditTableContainer.attr({'data-loading': false});
+							renderSvgIcons();
+						};
+
+						window.showAuditAdvanceDataTable = function() {
+							$('#csvExportAuditAdvancedButton').prop('disabled', $groupVersionsByRecord.prop('checked'));
+
+							$sObjectAuditTableAdvanceContainer.attr({'data-loading': false});
+							renderSvgIcons();
+						};
+
+						window.reRendered = function() {
+							renderSvgIcons();
+
+							$('a._blank').attr('target', '_blank');
+							$('button._blank, input._blank').attr('formtarget', '_blank');
+
+							$(document).trigger('reRendered');
+						};
+
+						var paginatorFirstIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#left')}";
+						var paginatorPrevIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#chevronleft')}";
+						var paginatorNextIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#chevronright')}";
+						var paginatorLastIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#right')}";
+
+						window.renderAuditPaginator = function(paginatorId, totalRecords, pageLimit, currentIndex, pageSort, pageSortOrder, elasticAuditFieldsMapping) {
+							var $auditPaginator = $('#' + paginatorId);
+
+							var isNarrow = false;
+							if(totalRecords > 10000) {
+								isNarrow = true;
+								totalRecords = 10000;
+							}
+
+							var totalPages = Math.ceil(totalRecords / pageLimit);
+
+							if (totalPages > 1) {
+								var $pages = $('<div class="slds-button-group" role="group" />');
+
+								var currentPage = currentIndex + 1;
+
+								var startPage, endPage;
+								if (totalPages <= 10) {
+									// less than 10 total pages so show all
+									startPage = 1;
+									endPage = totalPages;
+								} else {
+									// more than 10 total pages so calculate start and end pages
+									if (currentPage <= 6) {
+										startPage = 1;
+										endPage = 10;
+									} else if (isNarrow && (currentPage + 3) >= totalPages) {
+										startPage = totalPages - 8;
+										endPage = totalPages;
+									} else if ((currentPage + 4) >= totalPages) {
+										startPage = totalPages - 9;
+										endPage = totalPages;
+									} else {
+										startPage = currentPage - 5;
+										endPage = currentPage + 4;
+									}
+								}
+
+								var pages = Array.from(Array((endPage + 1) - startPage).keys()).map(function(i) {
+									return startPage + i;
+								});
+
+								var isFirstPage = currentPage === 1;
+								var isLastPage = currentPage === totalPages;
+
+								var pageSortType = elasticAuditFieldsMapping ? (elasticAuditFieldsMapping[pageSort] || '') : '';
+
+								if(paginatorId == 'auditPaginator'){
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditGoToPage(0, \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isFirstPage ? ' noPointerEvents' : '') + '"' + (isFirstPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--left" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorFirstIcon + '"></use></svg> First</a>');
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditGoToPage(' + (currentIndex - 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isFirstPage ? ' noPointerEvents' : '') + '"' + (isFirstPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--left" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorPrevIcon + '"></use></svg></a>');
+
+									pages.map(function(page, index) {
+										$pages.append('<a href="javascript:void(0);" onclick="graxAuditGoToPage(' + (page - 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button ' + (page == currentPage ? 'slds-button--brand noPointerEvents' : 'slds-button--neutral') + '">' + page + '</a>');
+									});
+
+									if(isNarrow && currentPage >= (totalPages - 3)) {
+										$pages.append('<a href="javascript:void(0);" title="The list is too long, try adding more filters to optimize the results." role="button" class="slds-button slds-button--neutral">&middot;&middot;&middot;</a>');
+									}
+
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditGoToPage(' + (currentIndex + 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isLastPage ? ' noPointerEvents' : '') + '"' + (isLastPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--right" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorNextIcon + '"></use></svg></a>');
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditGoToPage(' + (totalPages - 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isLastPage ? ' noPointerEvents' : '') + '"' + (isLastPage ? ' disabled' : '') + '>Last <svg class="slds-button__icon slds-button__icon--right" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorLastIcon + '"></use></svg></a>');
+								}else{
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditAdvancedGoToPage(0, \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isFirstPage ? ' noPointerEvents' : '') + '"' + (isFirstPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--left" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorFirstIcon + '"></use></svg> First</a>');
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditAdvancedGoToPage(' + (currentIndex - 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isFirstPage ? ' noPointerEvents' : '') + '"' + (isFirstPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--left" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorPrevIcon + '"></use></svg></a>');
+
+									pages.map(function(page, index) {
+										$pages.append('<a href="javascript:void(0);" onclick="graxAuditAdvancedGoToPage(' + (page - 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button ' + (page == currentPage ? 'slds-button--brand noPointerEvents' : 'slds-button--neutral') + '">' + page + '</a>');
+									});
+
+									if(isNarrow && currentPage >= (totalPages - 3)) {
+										$pages.append('<a href="javascript:void(0);" title="The list is too long, try adding more filters to optimize the results." role="button" class="slds-button slds-button--neutral">&middot;&middot;&middot;</a>');
+									}
+
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditAdvancedGoToPage(' + (currentIndex + 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isLastPage ? ' noPointerEvents' : '') + '"' + (isLastPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--right" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorNextIcon + '"></use></svg></a>');
+									$pages.append('<a href="javascript:void(0);" onclick="graxAuditAdvancedGoToPage(' + (totalPages - 1) + ', \'' + pageSort + '\', \'' + pageSortOrder + '\', \'' + pageSortType + '\', true);" role="button" class="slds-button slds-button--neutral' + (isLastPage ? ' noPointerEvents' : '') + '"' + (isLastPage ? ' disabled' : '') + '>Last <svg class="slds-button__icon slds-button__icon--right" aria-hidden="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="' + paginatorLastIcon + '"></use></svg></a>');
+								}
+								$auditPaginator.html($pages);
+
+								renderSvgIcons();
+							} else {
+								$auditPaginator.empty();
+							}
+						};
+
+						window.showDetails = function(recordIdentifier, isAdvanced) {
+							showGlobalSpinner(true);
+
+							//$showDetailsModal.attr(data-selected-id, sid);
+
+							getSelectedRecordDetails(recordIdentifier, isAdvanced, document.getElementById((isAdvanced ? 'advancedAuditRecordInfo' : 'auditRecordInfo') + '_' + recordIdentifier).value);
+						};
+
+						window.showDetailsModalWindow = function(state) {
+							if(!state) {
+								state = $showDetailsModal.find('.pageMessages').text().trim() != '';
+								showGlobalSpinner(false);
+							}
+
+							if(state) {
+								$auditGlobalSpinner.addClass('slds-hide');
+							}
+
+							$showDetailsModal.trigger('modaltoggle', [state]);
+							if(state) renderSvgIcons();
+
+							if(state && isIframe) {
+								centerModalOnAuditIframe('#showDetailsModal');
+							}
+						};
+
+						window.showRestoreToOldVersionModal = function(state) {
+							$('#restoreToOldVersionModal').trigger('modaltoggle', [state]);
+
+							if(state && isIframe){
+								centerModalOnAuditIframe('#restoreToOldVersionModal');
+							}else if(!state){
+								showGlobalSpinner(false);
+							}
+						};
+
+						window.showUpdateToThisVersionModal = function(state) {
+							$('#updateToThisVersionModal').trigger('modaltoggle', [state]);
+
+							if(state && isIframe){
+								centerModalOnAuditIframe('#updateToThisVersionModal');
+							}else if(!state){
+								showGlobalSpinner(false);
+							}
+						};
+
+						renderSvgIcons();
+						window.reRendered();
+					});
+
+					(function () {
+						document.body.setAttribute('onload','');
+					})();
+				</script>
+
+				<apex:outputPanel >
+					<script>
+						$(function() {
+							addAdvanceObjectListOptions(JSON.parse('{!IF(NOT(ISBLANK(tablesJson)), JSENCODE(tablesJson), "[]")}'), true);
+						});
+
+						// Initialize Audit Picklist Fields for Regular and Advance search
+						var fieldsJson = JSON.parse('{!IF(NOT(ISBLANK(auditFieldsJsonString)), JSENCODE(auditFieldsJsonString), "[]")}');
+						$(document).ready(function() {
+							if (window.renderAuditFieldSelection !== undefined ) {
+								renderAuditFieldSelection(fieldsJson);
+							} else { renderAuditFieldList(fieldsJson); }
+						});
+
+						var isMasterRestore = {!isMasterRestore};
+						$(document).ready(function() {
+							if (!isMasterRestore) {
+								$("#comboBoxObjectAdvanceList").val('{!JSENCODE(selectedRecordObjectType)}');
+								$("#combobox-advance-objects").val('{!JSENCODE(selectedRecordObjectType)}');
+								$("#comboBoxObjectAdvanceList").trigger('changeSelection');
+							}
+						});
+					</script>
+				</apex:outputPanel>
+
+				<apex:outputPanel id="initializeAuditAdvanceFieldPicklist" layout="block" style="display: none;">
+					<apex:outputPanel rendered="{!NOT(ISBLANK(auditAdvanceTablesJsonString))}">
+						<script>
+							var sortOptions = function(options){
+								return options.sort(function(a, b) {
+									return (a.label >= b.label ? 1 : -1);
+								});
+							};
+
+							var fieldsJson = JSON.parse('{!IF(NOT(ISBLANK(auditAdvanceFieldsJsonString)), JSENCODE(auditAdvanceFieldsJsonString), "[]")}');
+							if (fieldsJson != undefined && fieldsJson.length > 0) {
+
+								// Set up the list of available Salesforce fields for Audit Advanced
+								var fieldsJson = sortOptions(fieldsJson);
+
+								// Append the Salesforce Fields Options Group
+								fieldsJson.unshift({id: 'FIELDS_GROUPED_OPTIONS_1', label: 'Salesforce Fields'});
+							}
+							if (window.renderAdvanceFieldSelection !== undefined ) {
+								renderAdvanceFieldSelection(fieldsJson);
+							} else { renderAdvanceFieldList(fieldsJson); }
+							if (!isMasterRestore) {
+								$('#auditRetrieveAdvancedButton').trigger('click');
+							}
+						</script>
+					</apex:outputPanel>
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{! NOT( ISNULL($CurrentPage.parameters.isIframe))}">
+					<script>
+						// This Scripts if running only when we call the Audit from the Iframe included
+						// on the Setup. This logic it's necessary to enabe the ability to center the modale window
+						// into the current position (not related to the iframe).
+						function centerModalOnAuditIframe(idModalSelector){
+							if (window.parent.document.querySelector('#GraxRestoreIframe')) {
+								var offset = 300;
+								if('{!$User.UIThemeDisplayed}' == 'Theme4d'){
+									offset = 170;
+								}
+
+								var modalPosition = window.parent.pageYOffset - offset - document.scrollingElement.scrollTop;
+								if(modalPosition  < 0){
+									modalPosition = 10;
+								}
+
+								$(idModalSelector).css({'top': modalPosition, 'height': window.screen.availHeight - 200}); //set modal position
+							}
+						}
+						//hide the spinner after click on Search Tab inside GraxSetup
+						$(document).ready(function() {
+							setTimeout(function(){
+								window.parent.showGlobalSpinner(false);
+							}, 2000);
+						});
+					</script>
+
+					<style type="text/css">
+						#graxAuditContainer {
+							background-color: rgb(255, 255, 255);
+							border: 1px solid rgb(221, 219, 218);
+							border-top: 0;
+							border-radius: 0 0 .25rem .25rem;
+							padding: 1rem;
+						}
+
+						#updateToThisVersionModal .slds-modal__container,
+						#restoreToOldVersionModal .slds-modal__container,
+						#showDetailsModal .slds-modal__container,
+						#exportAndProcessModalFalse .slds-modal__container,
+						#exportAndProcessModal .slds-modal__container {
+						/*height: 600px !important;*/
+						padding-top: 0;
+						}
+
+						#updateToThisVersionModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse,
+						#restoreToOldVersionModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse,
+						#showDetailsModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse,
+						#exportAndProcessModalFalse button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse,
+						#exportAndProcessModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse{
+							top: 10px;
+							right: 10px;
+							color: rgb(150, 148, 146);
+						}
+
+						#updateToThisVersionModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse:hover,
+						#restoreToOldVersionModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse:hover,
+						#showDetailsModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse:hover,
+						#exportAndProcessModalFalse button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse:hover,
+						#exportAndProcessModal button.slds-button.slds-button_icon.slds-modal__close.slds-button_icon-inverse:hover {
+							color: rgba(27, 82, 151, 1);
+						}
+					</style>
+
+				</apex:outputPanel>
+			</div>
+		</div>
+	</apex:outputPanel>
+</apex:page>

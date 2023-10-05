@@ -1,0 +1,71 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:CA
+
+TC_LAST_NO_USED:0005
+
+-->
+<apex:page lightningStylesheets="true" standardController="ortoo_qra__Assignment_Group__c" extensions="ortoo_qra.CloneAssignmentGroupController" id="thePage" title="Clone Assignment Group" sidebar="false" showheader="false">
+
+    <apex:form id="TheForm">
+        <apex:outputPanel id="reRenderedPanelToSetVariable">
+            <script type="text/javascript">
+                var new_assignmnet_group_Id = "{!newAssignmentGroupId}";
+                var error_msg = "{!errorMessage }";
+            </script>
+        </apex:outputPanel>
+        <apex:pageBlock title="Clone Assignment Group" id="pageEdit" mode="edit">
+            <apex:pageBlockButtons location="Bottom">
+                <apex:actionStatus id="runStatus">
+					<apex:facet name="stop">
+                        <apex:commandButton html-ortoo-elem-id="QACA0001" action="{!cloneGroup}" status="runStatus" oncomplete="closePopUp();" value="Save" rerender="reRenderedPanelToSetVariable" />	
+					</apex:facet>
+					<apex:facet name="start">
+						<apex:commandButton html-ortoo-elem-id="QACP0004" value="Saving..." disabled="true" status="runStatus" />
+					</apex:facet>
+                </apex:actionStatus> &nbsp;
+                <apex:actionStatus id="cancel">
+                    <apex:facet name="stop">
+                        <apex:commandButton html-ortoo-elem-id="QACA0002" value="Cancel" onclick="closePopUp();" status="cancel"/>
+                    </apex:facet>
+                    <apex:facet name="start">
+						<apex:commandButton html-ortoo-elem-id="QACP0005" value="Cancelling..." disabled="true" status="cancel" />
+					</apex:facet>
+                </apex:actionStatus>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1"> 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Group Name"/>
+                    <apex:inputText html-ortoo-elem-id="QACA0003" value="{!assignmentGroupName}" style="width:300px;"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <script type="text/javascript">
+        function closePopUp(){
+            
+            //alert(new_assignmnet_group_Id);
+            if(error_msg != undefined && error_msg != '')
+            {
+                alert('Error: '+error_msg); 
+            }
+            else
+            {
+                if(new_assignmnet_group_Id != undefined && new_assignmnet_group_Id != '')
+                {
+                    window.opener.location.assign("/apex/AssignmentGroup?id="+new_assignmnet_group_Id);
+                    window.top.close();
+                }
+                else
+                {
+                   window.opener.location.reload();
+                   window.top.close();
+                } 
+            }
+        }
+    </script>
+</apex:page>

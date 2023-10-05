@@ -1,0 +1,3585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>RSC_InsurancePolicy</fullName>
+        <fields>PolicyName</fields>
+        <fields>Name</fields>
+        <fields>AW_CommencementDate__c</fields>
+        <fields>Status</fields>
+        <fields>PremiumAmount</fields>
+        <fields>CMN_PaidToDate__c</fields>
+        <label>RSC_InsurancePolicy</label>
+    </compactLayouts>
+    <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>RSC_BankDetailsSection</fullName>
+        <description>Field Set to display fields under theBank Details section under the Details tab</description>
+        <displayedFields>
+            <field>CMN_DebitDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankAccountHolderName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankBranchCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankAccountType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankAccountNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Bank Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_CessionDetailsSection</fullName>
+        <description>Field Set to display fields under the Cession Details section under the Details tab</description>
+        <displayedFields>
+            <field>CMN_CessionaryType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_CessionaryTitle__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_CessionaryInitials__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_CessionaryName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Cession Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_IllustrativeValuesSection</fullName>
+        <description>Field Set to display fields under the Illustrative Values section under the Details tab</description>
+        <displayedFields>
+            <field>CMN_IllustrativeValueDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_IllustrativeValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_IllustrativeReturnPercentage__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_IllustrativeValueRate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_TermIllustrativeValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_IllustrativeValueAge__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Illustrative Values</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_PaymentDetailsSection</fullName>
+        <description>Field Set to display fields under the Payment Details section to be displayed under the Details tab</description>
+        <displayedFields>
+            <field>AW_PaymentMethod__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_DebitDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankAccountHolderName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankAccountType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankAccountNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FacilityName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_BankBranchCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FacilityGroup__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FacilityNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PayPointNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_EmployeeNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Payment Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_PolicyDetailsSection</fullName>
+        <description>Field Set to display fields under the Policy Details section to be displayed under the Details tab</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PolicyName</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PackageNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_OriginalCommencementDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_CommencementDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_IssueDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_MaturityDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Status</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_StatusReason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_AssociatedContracts__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_PolicySummarySection</fullName>
+        <description>Field Set to display fields under the Policy Summary section to be displayed under the Details tab</description>
+        <displayedFields>
+            <field>AW_TotalLifestyleProtection__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_TotalLifeCover__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_TotalIncomeProtectionMonthly__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_TotalIncomeProtectionLumpsum__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_ValueAsAt__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_CurrentValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_PaidUpValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CashSurrenderValue</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_AdvanceAvailable__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_RepayableAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_IllustrativeValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Policy Summary</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_PolicyValuesSection</fullName>
+        <description>Field Set to display fields under the Policy Values section</description>
+        <displayedFields>
+            <field>AW_ValueAsAt__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_TotalInvestmentAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_InvestmentValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_DeathValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_TotalPackageDeathValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CashSurrenderValue</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PaidUpBenefitIndicator__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PaidUpPremiumAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_PaidUpValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PaidUpDeathValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_AdvanceType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_AdvanceAvailable__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FundValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_OptionDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_GuaranteeReviewDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_GuaranteeValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_QualifyingAddlibIndicator__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_CashBackIndicator__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_CashBackDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_CashBackEarned__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_CoverType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_SystematicRedemptionPaymentIndicator__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_ConditionalPartRedemptionTaken__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_SwitchedValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_RefundAvailableAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_RepayableAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_TotalRepayableAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_RestrictionEndDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Policy Values</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_PremiumDetailsSection</fullName>
+        <description>Field Set to display fields under the Premium Details section under the Details tab</description>
+        <displayedFields>
+            <field>PremiumAmount</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_Frequency__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PaidToDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PremiumReceivedIndicator__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_NextBillingDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_PaymentMethod__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_PremiumPattern__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_AnnualContributionIncreaseACI__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AW_AnnualBenefitsIncreaseABI__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Premium Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_StopOrderDetailsSection</fullName>
+        <description>Field Set to display fields under the Stop Order Details section under the Details tab</description>
+        <displayedFields>
+            <field>CMN_EmployeeNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FacilityGroup__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FacilityName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FacilityNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_FacilityType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PayPointNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_ExpiryDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Stop Order Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_SystemInformationSection</fullName>
+        <description>Field Set to display fields under the System Information section to be displayed under the Details tab</description>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CMN_PolicySourceSystem__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>System Information</label>
+    </fieldSets>
+    <fields>
+        <fullName>AW_AUMSourceExternalId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>The external ID of the Assets Under Management source system</description>
+        <externalId>true</externalId>
+        <label>AUM Source External Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AW_AccidentalDeath__c</fullName>
+        <description>Accidental Death Amount</description>
+        <externalId>false</externalId>
+        <label>Accidental Death</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_AccidentalDisability__c</fullName>
+        <description>Accidental Disability Amount</description>
+        <externalId>false</externalId>
+        <label>Accidental Disability</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_AnnualBenefitsIncreaseABI__c</fullName>
+        <description>Used for integration to populate Automatic Benefit Increase Type (ABI)  from source systems (Compass/Lifestyle). Field Label was updated from Annual Benefits Increase (ABI) to Automatic Benefits Increase (ABI) however API Name was not updated to reduce impact on code.</description>
+        <externalId>false</externalId>
+        <label>Automatic Benefits Increase (ABI)</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_AnnualContributionIncreaseACI__c</fullName>
+        <description>Used for integration to populate Automatic Contribution Increase (ACI) from source systems (Compass/Lifestyle). Field Label was updated from Annual Contribution Increase (ACI) to Automatic Contribution Increase (ACI) however API name was not updated to reduce impact on code.</description>
+        <externalId>false</externalId>
+        <label>Automatic Contribution Increase (ACI)</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_CommencementDate__c</fullName>
+        <description>Commencement Date of Insurance</description>
+        <externalId>false</externalId>
+        <label>Commencement Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_CoverGrowthEscalation__c</fullName>
+        <description>Percentage of Cover Growth Escalation</description>
+        <externalId>false</externalId>
+        <label>Cover Growth Escalation</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_CurrentValue__c</fullName>
+        <description>Current Value of Insurance Policy</description>
+        <externalId>false</externalId>
+        <label>Current Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_DeathIncome__c</fullName>
+        <description>Income in case of death</description>
+        <externalId>false</externalId>
+        <label>Death Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_DeathLumpSum__c</fullName>
+        <description>Lump Sum amount in case of death</description>
+        <externalId>false</externalId>
+        <label>Death Lump Sum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_DisabilityIncome__c</fullName>
+        <description>Income in case of disability</description>
+        <externalId>false</externalId>
+        <label>Disability Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_DisabilityLumpSum__c</fullName>
+        <description>Lump Sum amount in case of disability</description>
+        <externalId>false</externalId>
+        <label>Disability Lump Sum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_DreadDisease__c</fullName>
+        <description>Dread Disease Amount</description>
+        <externalId>false</externalId>
+        <label>Dread Disease</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_FinancialGoal__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Related financial goal</description>
+        <externalId>false</externalId>
+        <label>Financial Goal</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>FinServ__FinancialGoal__c.FinServ__PrimaryOwner__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.NameInsuredId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>FinServ__FinancialGoal__c</referenceTo>
+        <relationshipLabel>Insurance Policies</relationshipLabel>
+        <relationshipName>Insurance_Policies</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_Frequency__c</fullName>
+        <description>Enter Frequency</description>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_FunctionalImpairment__c</fullName>
+        <description>Functional Impairment Amount</description>
+        <externalId>false</externalId>
+        <label>Functional Impairment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_FundType__c</fullName>
+        <description>Enter Fund Type</description>
+        <externalId>false</externalId>
+        <label>Fund Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_InsurancePolicyName__c</fullName>
+        <description>Select Insurance Policy Name</description>
+        <externalId>false</externalId>
+        <label>Insurance Policy Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>AW_ProductTypeCode__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>UNIVERSAL LIFE</fullName>
+                    <default>false</default>
+                    <label>UNIVERSAL LIFE</label>
+                </value>
+                <value>
+                    <fullName>MEDICAL LIFESTYLE</fullName>
+                    <default>false</default>
+                    <label>MEDICAL LIFESTYLE</label>
+                </value>
+                <value>
+                    <fullName>LIFESTYLE INCOME PROTECTION</fullName>
+                    <default>false</default>
+                    <label>LIFESTYLE INCOME PROTECTION</label>
+                </value>
+                <value>
+                    <fullName>GUARANTEED REVIEWABLE LIFESTYLE</fullName>
+                    <default>false</default>
+                    <label>GUARANTEED REVIEWABLE LIFESTYLE</label>
+                </value>
+                <value>
+                    <fullName>TERM SELECT</fullName>
+                    <default>false</default>
+                    <label>TERM SELECT</label>
+                </value>
+                <value>
+                    <fullName>LIFESTYLE PENTA PLUS</fullName>
+                    <default>false</default>
+                    <label>LIFESTYLE PENTA PLUS</label>
+                </value>
+                <value>
+                    <fullName>LIVABILITY</fullName>
+                    <default>false</default>
+                    <label>LIVABILITY</label>
+                </value>
+                <value>
+                    <fullName>LIBERTY LIFESTYLE PROTECTOR</fullName>
+                    <default>false</default>
+                    <label>LIBERTY LIFESTYLE PROTECTOR</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>1</controllingFieldValue>
+                <valueName>UNIVERSAL LIFE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>8</controllingFieldValue>
+                <valueName>MEDICAL LIFESTYLE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>9</controllingFieldValue>
+                <valueName>LIFESTYLE INCOME PROTECTION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>10</controllingFieldValue>
+                <valueName>GUARANTEED REVIEWABLE LIFESTYLE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>11</controllingFieldValue>
+                <valueName>TERM SELECT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>12</controllingFieldValue>
+                <valueName>LIFESTYLE PENTA PLUS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>13</controllingFieldValue>
+                <valueName>LIVABILITY</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>14</controllingFieldValue>
+                <valueName>LIBERTY LIFESTYLE PROTECTOR</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_InvestmentValue__c</fullName>
+        <description>The amount invested</description>
+        <externalId>false</externalId>
+        <label>Investment Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Last_Updated_Date_from_Source__c</fullName>
+        <description>Last Update Date and Time</description>
+        <externalId>false</externalId>
+        <label>Source Last Modified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccountId__c</fullName>
+        <description>Used to store the Master Account Id, if Master Account Exists for the Active Account</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(NameInsured.AW_ParentAccount__c)),NameInsured.AW_ParentAccount__c,NameInsuredId)</formula>
+        <label>AW_MasterAccountId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the Master Account Details</description>
+        <externalId>false</externalId>
+        <label>MasterAccount</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Insurance Policies (MasterAccount)</relationshipLabel>
+        <relationshipName>Insurance_Policies</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_MaturityDate__c</fullName>
+        <description>Maturity Date of Insurance Policy</description>
+        <externalId>false</externalId>
+        <label>Maturity Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_Owner_UACFID__c</fullName>
+        <description>Owner UACFID</description>
+        <externalId>false</externalId>
+        <formula>Owner:User.AW_UACFID__c</formula>
+        <label>Owner UACFID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PaidUpValue__c</fullName>
+        <description>This field is used to store the paid-up value associated with an insurance policy</description>
+        <externalId>false</externalId>
+        <label>Paid up Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_ParentAccountOwnerId__c</fullName>
+        <description>Used to store the Parent Account Owner Id</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(NameInsured.Id)),NameInsured.OwnerId,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AW_ParentAccountOwnerId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PaymentMethodCode__c</fullName>
+        <description>This field represents the payment method code associated with an insurance policy</description>
+        <externalId>false</externalId>
+        <label>Payment Method Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PaymentMethod__c</fullName>
+        <description>This field is designed to store information about the payment method associated with an insurance policy</description>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PolicyCategory__c</fullName>
+        <description>Select Policy Category</description>
+        <externalId>false</externalId>
+        <label>PolicyCategory</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Protection</fullName>
+                    <default>false</default>
+                    <label>Protection</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_PolicySubCategory__c</fullName>
+        <description>Select Policy Sub Category</description>
+        <externalId>false</externalId>
+        <label>PolicySubCategory</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Life Cover</fullName>
+                    <default>false</default>
+                    <label>Life Cover</label>
+                </value>
+                <value>
+                    <fullName>Income Protection (Critical Illness)</fullName>
+                    <default>false</default>
+                    <label>Income Protection (Critical Illness)</label>
+                </value>
+                <value>
+                    <fullName>Critical Illness</fullName>
+                    <default>false</default>
+                    <label>Critical Illness</label>
+                </value>
+                <value>
+                    <fullName>Disability Lumpsum</fullName>
+                    <default>false</default>
+                    <label>Disability Lumpsum</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_PremiumFrequencyCode__c</fullName>
+        <description>Premium Frequency Code</description>
+        <externalId>false</externalId>
+        <label>Premium Frequency Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PremiumGrowthEscalation__c</fullName>
+        <description>Percentage of Premium Growth Escalation</description>
+        <externalId>false</externalId>
+        <label>Premium Growth Escalation</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_PremiumPatternCode__c</fullName>
+        <description>Premium Pattern Code</description>
+        <externalId>false</externalId>
+        <label>Premium Pattern Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PremiumPattern__c</fullName>
+        <description>Premium Pattern</description>
+        <externalId>false</externalId>
+        <label>Premium Pattern</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ProductTypeCode__c</fullName>
+        <description>Select Product Code</description>
+        <externalId>false</externalId>
+        <label>Product Type Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>8</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <label>9</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10</label>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                    <label>11</label>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                    <label>12</label>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                    <label>13</label>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                    <label>14</label>
+                </value>
+                <value>
+                    <fullName>31</fullName>
+                    <default>false</default>
+                    <label>31</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_RD_CommencementDateTime__c</fullName>
+        <description>This Field replicates the Commencement Date field( AW_CommencementDate__c). This was created in order to use this as a Dashboard filter( Converted from Date data type to Date/Time data type ).</description>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE( AW_CommencementDate__c )</formula>
+        <label>Commencement Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AW_Roles__c</fullName>
+        <description>Enter Roles</description>
+        <externalId>false</externalId>
+        <label>Roles</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AW_ServiceProvider__c</fullName>
+        <description>Service Provider Name</description>
+        <externalId>false</externalId>
+        <label>Service Provider</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Source_System_Name__c</fullName>
+        <description>Select Source System Name</description>
+        <externalId>false</externalId>
+        <label>Source System Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>atWork</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>Avalon</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>BPNB</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>SFDC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_StatusReasonCode__c</fullName>
+        <description>Code for Status Reason</description>
+        <externalId>false</externalId>
+        <label>Status Reason Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_StatusReason__c</fullName>
+        <description>Short Description of Status Change</description>
+        <externalId>false</externalId>
+        <label>Status Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TargetReturn__c</fullName>
+        <description>The percentage of return</description>
+        <externalId>false</externalId>
+        <label>Target Return</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalCriticalIllnessCover__c</fullName>
+        <description>Total amount of cover in case of critical illness</description>
+        <externalId>false</externalId>
+        <label>Total Critical Illness Cover</label>
+        <summarizedField>InsurancePolicyCoverage.AW_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>InsurancePolicyCoverage.AW_Type__c</field>
+            <operation>equals</operation>
+            <value>Critical Illness Cover</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyCoverage.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalDisabilityCoverLumpsum__c</fullName>
+        <description>Total Disability Cover Lumpsum</description>
+        <externalId>false</externalId>
+        <label>Total Disability Cover (Lumpsum)</label>
+        <summarizedField>InsurancePolicyCoverage.AW_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>InsurancePolicyCoverage.AW_Type__c</field>
+            <operation>equals</operation>
+            <value>Disability Lump</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyCoverage.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalDisabilityCoverMonth__c</fullName>
+        <description>The total number of months covered in disability</description>
+        <externalId>false</externalId>
+        <label>Total Disability Cover ( Month)</label>
+        <summarizedField>InsurancePolicyCoverage.AW_Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>InsurancePolicyCoverage.AW_Type__c</field>
+            <operation>equals</operation>
+            <value>Disability Monthly</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyCoverage.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalIncomeProtectionLumpsum__c</fullName>
+        <description>This field rolls up Income Protection Lumpsum benefits from the Insurance Policy Coverage. It sums up the Amount value. We use a checkbox called Income Protection Lumpsum Benefits created on the Insurance Policy Coverage object as a filter condition, as there is a character limit for a filter condition.</description>
+        <externalId>false</externalId>
+        <label>Total Income Protection (Lumpsum)</label>
+        <summarizedField>InsurancePolicyCoverage.AW_BenefitAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>InsurancePolicyCoverage.AW_IncomeProtectionLumpsumBenefits__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyCoverage.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalIncomeProtectionMonthly__c</fullName>
+        <description>This field rolls up Income Protection Monthly benefits from the Insurance Policy Coverage. It sums up the Amount value. We use a checkbox called Income Protection Monthly Benefits created on the Insurance Policy Coverage object as a filter condition, as there is a character limit for a filter condition.</description>
+        <externalId>false</externalId>
+        <label>Total Income Protection (Monthly)</label>
+        <summarizedField>InsurancePolicyCoverage.AW_BenefitAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>InsurancePolicyCoverage.AW_IncomeProtectionMonthlyBenefits__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyCoverage.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalLifeCover__c</fullName>
+        <description>This field rolls up Life Cover benefits from the Insurance Policy Coverage. It sums up the Amount value. We use a checkbox called Life Cover Benefits created on the Insurance Policy Coverage object as a filter condition, as there is a character limit for a filter condition.</description>
+        <externalId>false</externalId>
+        <label>Total Life Cover</label>
+        <summarizedField>InsurancePolicyCoverage.AW_BenefitAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>InsurancePolicyCoverage.AW_LifeCoverBenefits__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyCoverage.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AW_TotalLifestyleProtection__c</fullName>
+        <description>This field rolls up Lifestyle Protection benefits from the Insurance Policy Coverage. It sums up the Amount value. We use a checkbox called Income Lifestyle Protection Benefits created on the Insurance Policy Coverage object as a filter condition, as there is a character limit for a filter condition.</description>
+        <externalId>false</externalId>
+        <label>Total Lifestyle Protection</label>
+        <summarizedField>InsurancePolicyCoverage.AW_BenefitAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>InsurancePolicyCoverage.AW_LifestyleProtectionBenefits__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyCoverage.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AW_UpdatedByMulesoft__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check if updated by MuleSoft</description>
+        <externalId>false</externalId>
+        <label>Updated by MuleSoft</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_ValueAsAt__c</fullName>
+        <description>Value As At Date</description>
+        <externalId>false</externalId>
+        <label>Value as At</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AuditTerm</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CMN_AdvanceAvailable__c</fullName>
+        <description>Used for integration to populate Advance Available Amount from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Advance Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_AdvanceType__c</fullName>
+        <description>Used for integration to populate Advance Type from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Advance Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_AidsInclusionIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Aids Inclusion Indicator from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Aids Inclusion Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_AssociatedContracts__c</fullName>
+        <description>Used for integration to populate Associated Contracts from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Associated Contracts</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_BankAccountHolderName__c</fullName>
+        <description>Used for integration to populate Account Holder from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Bank Account Holder</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_BankAccountNumber__c</fullName>
+        <description>Used for integration to populate Account Number from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Bank Account Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_BankAccountType__c</fullName>
+        <description>Used for integration to populate Account Type from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Bank Account Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Current Account</fullName>
+                    <default>false</default>
+                    <label>Current Account</label>
+                </value>
+                <value>
+                    <fullName>Savings Account</fullName>
+                    <default>false</default>
+                    <label>Savings Account</label>
+                </value>
+                <value>
+                    <fullName>Transmission Account</fullName>
+                    <default>false</default>
+                    <label>Transmission Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CMN_BankBranchCode__c</fullName>
+        <description>Used for integration to populate Branch Code from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Bank Branch Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_BankName__c</fullName>
+        <description>Used for integration to populate Bank Name from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Bank Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_CashBackDate__c</fullName>
+        <description>Used for integration to populate Cash Back Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Cash Back Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_CashBackEarned__c</fullName>
+        <description>Used for integration to populate Cash Back Earned from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Cash Back Earned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_CashBackIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Cash Back Indicator from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Cash Back Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_CessionaryInitials__c</fullName>
+        <description>Used for integration to populate CessionaryInitials from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Cessionary Initials</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_CessionaryName__c</fullName>
+        <description>Used for integration to populate Cessionary Name from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Cessionary Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_CessionaryTitle__c</fullName>
+        <description>Used for integration to populate CessionaryTitle from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Cessionary Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_CessionaryType__c</fullName>
+        <description>Used for integration to populate Cessionary Type from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Cessionary Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ConditionalPartRedemptionTaken__c</fullName>
+        <description>Used for integration to populate Conditional Part Redemption Taken from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Conditional Part Redemption Taken</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_CoverType__c</fullName>
+        <description>Used for integration to populate Cover Type  from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Cover Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_DeathValue__c</fullName>
+        <description>Used for integration to populate Gross Death Value from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Death Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_DebitDay__c</fullName>
+        <description>Used for integration to populate Debit Day from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Debit Day</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_EarlyRetirementValue__c</fullName>
+        <description>Used for integration to populate Early Retirement Value from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Early Retirement Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_EmployeeNumber__c</fullName>
+        <description>Used for integration to populate Employee Number for Stop Orders from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Employee Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_ExpiryDate__c</fullName>
+        <description>Used for integration to populate Expiry Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_FacilityGroup__c</fullName>
+        <description>Used for integration to populate Facility Group for Stop Orders from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Facility Group</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_FacilityName__c</fullName>
+        <description>Used for integration to populate Facility Name for Stop Orders from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Facility Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_FacilityNumber__c</fullName>
+        <description>Used for integration to populate Facility Number for Stop Orders from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Facility Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_FacilityType__c</fullName>
+        <description>Used for integration to populate Facility Type for Stop Orders from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Facility Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_FundValue__c</fullName>
+        <description>Used for integration to populate Fund Value from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Fund Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_GuaranteeReviewDate__c</fullName>
+        <description>Used for integration to populate Guarantee Review Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Guarantee Review Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_GuaranteeValue__c</fullName>
+        <description>Used for integration to populate Guarantee Value from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Guarantee Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_IllustrativeReturnPercentage__c</fullName>
+        <description>Used for integration to populate Illustrative Return % from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Illustrative Return %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CMN_IllustrativeValueAge__c</fullName>
+        <description>Used for integration to populate Illustrative Value Age from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Illustrative Value Age</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_IllustrativeValueDate__c</fullName>
+        <description>Used for integration to populate Illustrative Value Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Illustrative Value Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_IllustrativeValueRate__c</fullName>
+        <description>Used for integration to populate Illustrative Value Rate from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Illustrative Value Rate</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CMN_IllustrativeValue__c</fullName>
+        <description>Used for integration to populate Illustrative Value from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Illustrative Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_IssueDate__c</fullName>
+        <description>Used for integration to populate Issue Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Issue Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_MasterAccountRecordTypeName__c</fullName>
+        <description>A field created to hold the master account record type. This field will be used to share the contract with all service console users to have a read only access to the contract.</description>
+        <externalId>false</externalId>
+        <label>Master Account Record Type Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_NextBillingDate__c</fullName>
+        <description>Used for integration to populate Next Billing Date from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Next Billing Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_OptionDate__c</fullName>
+        <description>Used for integration to populate Option Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Option Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_OriginalCommencementDate__c</fullName>
+        <description>Used for integration to populate Original Commencement Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Original Commencement Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_PackageNumber__c</fullName>
+        <description>Used for integration to populate Package Number from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Package Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_PaidToDate__c</fullName>
+        <description>Used for integration to populate Paid to Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Paid to Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_PaidUpBenefitIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Paid Up Benefit Indicator from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Paid Up Benefit Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_PaidUpDeathValue__c</fullName>
+        <description>Used for integration to populate Paid Up Death Value from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Paid Up Death Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_PaidUpPremiumAmount__c</fullName>
+        <description>Used for integration to populate Paid Up Premium Amount from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Paid Up Premium Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_PayPointNumber__c</fullName>
+        <description>Used for integration to populate Pay Point Number for Stop Orders from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Pay Point Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_PolicySourceSystem__c</fullName>
+        <description>Used for integration to populate the specific source system (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Policy Source System</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_PremiumReceivedIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Premium Received Indicator from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Premium Received Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_ProductName__c</fullName>
+        <description>Used for integration to populate Product Name from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_PrototypeCode__c</fullName>
+        <description>Used for integration to populate Prototype Code from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Prototype Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>6</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <label>7</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>8</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <label>9</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CMN_QualifyingAddlibIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Qualifying Addlib Indicator from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Qualifying Addlib Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_RefundAvailableAmount__c</fullName>
+        <description>Used for integration to populate Refund Available Amount from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Refund Available Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_RepayableAmount__c</fullName>
+        <description>Used for integration to populate Repayable Amount from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Repayable Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_RestrictionEndDate__c</fullName>
+        <description>Used for integration to populate Restriction End Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Restriction End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_SwitchedValue__c</fullName>
+        <description>Used for integration to populate Switched Value from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Switched value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_SystematicRedemptionPaymentIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Systematic Redemption Payment Indicator from source systems (Compass/Lifestyle)</description>
+        <externalId>false</externalId>
+        <label>Systematic Redemption Payment Indicator</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_TermIllustrativeValue__c</fullName>
+        <description>Used for integration to populate Term Illustrative Value from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Term Illustrative Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_TotalInvestmentAmount__c</fullName>
+        <description>Used for integration to populate Total Investment Amount from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Total Investment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_TotalPackageDeathValue__c</fullName>
+        <description>Used for integration to populate Total Package Death Value from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Total Package Death Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_TotalRepayableAmount__c</fullName>
+        <description>Used for integration to populate Total Repayable Amount from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Total Repayable Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CancellationDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CancellationReason</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CancellationReasonType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CashSurrenderValue</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ChangeSubtype</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ChangeType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DateRenewed</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ExpirationDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FinServ__Household__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Household Insurance Policies</relationshipLabel>
+        <relationshipName>HouseholdInsurancePolicies</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinalRenewalDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FnolChannel</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>GrossWrittenPremium</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>HasAnyAutoCoverage</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsLoanEligibile</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsRenewedPolicy</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>NameInsuredId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>OriginalEffectiveDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OriginalExpirationDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OriginalPolicyId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PaidToDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ParentPolicyId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PaymentDueDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PlanTier</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PlanType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PolicyDescription</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PolicyName</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PolicyTerm</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PolicyType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PremiumAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PremiumCalculationMethod</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PremiumFrequency</fullName>
+        <description>This picklist field is used to populate the Premium Frequency values on the insurance policy object.</description>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PremiumPaymentType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PreviousPremium</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PreviousRenewalDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PriorPolicyId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProducerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReferencePolicyNumber</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RenewalChannel</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RenewalDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SC_ActiveConsultantCount__c</fullName>
+        <description>Indicates the total number of active consultants associated with insurance policy</description>
+        <externalId>false</externalId>
+        <label>Active Consultant Count</label>
+        <summaryFilterItems>
+            <field>InsurancePolicyParticipant.SC_ConsultantStatus__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </summaryFilterItems>
+        <summaryForeignKey>InsurancePolicyParticipant.InsurancePolicyId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SC_ConsultantStatus__c</fullName>
+        <description>Indicates whether the Insurance policy is Intermediated or orphan.</description>
+        <externalId>false</externalId>
+        <formula>IF
+(
+SC_ActiveConsultantCount__c &gt; 0,
+&apos;Intermediated&apos;,
+&apos;Orphan&apos;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consultant Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SaleDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ServicingOffice</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceOpportunityId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SourceQuoteId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystem</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystemIdentifier</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StandardFeeAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StandardPremiumAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StandardTaxAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Substatus</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaxesSurcharges</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TermFeeAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TermPremiumAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TermTaxAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalCommissionAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TotalStandardAmount</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalSumInsured</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UnderwritingEntityId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UniversalPolicyNumber</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <listViews>
+        <fullName>AW_InsurancePoliciesInForce</fullName>
+        <columns>PolicyName</columns>
+        <columns>Name</columns>
+        <columns>Status</columns>
+        <columns>PremiumAmount</columns>
+        <columns>AW_RD_CommencementDateTime__c</columns>
+        <columns>NameInsured</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status</field>
+            <operation>equals</operation>
+            <value>IN FORCE</value>
+        </filters>
+        <label>Insurance Policies - In Force</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>AW_ZA_Retail_GroupExecutiveClientandAdviserExperience</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AW_InsurancePoliciesOutOfForce</fullName>
+        <columns>PolicyName</columns>
+        <columns>Name</columns>
+        <columns>Status</columns>
+        <columns>PremiumAmount</columns>
+        <columns>AW_RD_CommencementDateTime__c</columns>
+        <columns>NameInsured</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status</field>
+            <operation>notEqual</operation>
+            <value>IN FORCE</value>
+        </filters>
+        <label>Insurance Policies - Out of Force</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>AW_ZA_Retail_GroupExecutiveClientandAdviserExperience</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_InsurancePolicies</fullName>
+        <columns>Name</columns>
+        <columns>PolicyName</columns>
+        <columns>AW_RD_CommencementDateTime__c</columns>
+        <columns>Status</columns>
+        <columns>PremiumAmount</columns>
+        <columns>CMN_PaidToDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Insurance Policies</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>AW_ZA_Retail_GroupExecutiveClientandAdviserExperience</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RSC_AllInsurancePolicies</fullName>
+        <columns>Name</columns>
+        <columns>PolicyName</columns>
+        <columns>AW_CommencementDate__c</columns>
+        <columns>Status</columns>
+        <columns>PremiumAmount</columns>
+        <columns>PaidToDate</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Insurance Policies</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>RSC_ZA_Retail_ClientandAdviserServiceCentre</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>AW_FNA_Policy</fullName>
+        <active>true</active>
+        <description>Record type used for FNA Policies sync.</description>
+        <label>FNA Policy</label>
+        <picklistValues>
+            <picklist>CMN_BankAccountType__c</picklist>
+            <values>
+                <fullName>Current Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transmission Account</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_PrototypeCode__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PremiumFrequency</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BiAnnually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>IN FORCE</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>NOT TAKEN UP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_InsurancePolicyName__c</picklist>
+            <values>
+                <fullName>GUARANTEED REVIEWABLE LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIBERTY LIFESTYLE PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFESTYLE INCOME PROTECTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFESTYLE PENTA PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICAL LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TERM SELECT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UNIVERSAL LIFE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PolicyCategory__c</picklist>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PolicySubCategory__c</picklist>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Protection %28Critical Illness%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductTypeCode__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AuditTerm</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi Annual%28twice a year%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Monthly%28twice a month%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CancellationReasonType</picklist>
+            <values>
+                <fullName>Cancelled at Request of the Finance Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled by Underwriter or Plan Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Officer NonElection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court Release</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage Placed Elsewhere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failure to Comply with Terms and Conditions %28ex%2E Audit Failure%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failure to Pay Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insured%27s Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misrepresentation of Information on Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Taken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revocation of Voluntary Market Acceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rewritten</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Substantial Change in Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Underwriting Reasons</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ChangeSubtype</picklist>
+            <values>
+                <fullName>Child Birth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marriage</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ChangeType</picklist>
+            <values>
+                <fullName>House Renovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life-Event</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FnolChannel</picklist>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PlanTier</picklist>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platinum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Silver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PlanType</picklist>
+            <values>
+                <fullName>Joint First-to-Die</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Last-to-Die</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Life</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PolicyTerm</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PolicyType</picklist>
+            <values>
+                <fullName>Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PremiumCalculationMethod</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PremiumPaymentType</picklist>
+            <values>
+                <fullName>Advance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arrears</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RenewalChannel</picklist>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Substatus</picklist>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Final</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negotiation End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Abandoned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AW_InsurancePolicy</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>RSC_InsurancePolicy</compactLayoutAssignment>
+        <description>Record type used for mulesoft integration, Liberty Compass, Lifestyle and Ilanga.</description>
+        <label>Insurance Policy</label>
+        <picklistValues>
+            <picklist>CMN_BankAccountType__c</picklist>
+            <values>
+                <fullName>Current Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Savings Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transmission Account</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CMN_PrototypeCode__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PremiumFrequency</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BiAnnually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>IN FORCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NOT TAKEN UP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OUT OF FORCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SETTLEMENT PENDING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUSPENSE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UNISSUED</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_InsurancePolicyName__c</picklist>
+            <values>
+                <fullName>GUARANTEED REVIEWABLE LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIBERTY LIFESTYLE PROTECTOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFESTYLE INCOME PROTECTION</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIFESTYLE PENTA PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIVABILITY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEDICAL LIFESTYLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TERM SELECT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UNIVERSAL LIFE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PolicyCategory__c</picklist>
+            <values>
+                <fullName>Protection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_PolicySubCategory__c</picklist>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Income Protection %28Critical Illness%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life Cover</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_ProductTypeCode__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>31</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AuditTerm</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi Annual%28twice a year%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Monthly%28twice a month%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CancellationReasonType</picklist>
+            <values>
+                <fullName>Cancelled at Request of the Finance Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled by Underwriter or Plan Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Officer NonElection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court Release</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coverage Placed Elsewhere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failure to Comply with Terms and Conditions %28ex%2E Audit Failure%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failure to Pay Deductible</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insured%27s Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misrepresentation of Information on Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Taken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revocation of Voluntary Market Acceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rewritten</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Substantial Change in Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Underwriting Reasons</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ChangeSubtype</picklist>
+            <values>
+                <fullName>Child Birth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marriage</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ChangeType</picklist>
+            <values>
+                <fullName>House Renovation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life-Event</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FnolChannel</picklist>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PlanTier</picklist>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platinum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Silver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PlanType</picklist>
+            <values>
+                <fullName>Joint First-to-Die</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Last-to-Die</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Life</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PolicyTerm</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PolicyType</picklist>
+            <values>
+                <fullName>Annuity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PremiumCalculationMethod</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PremiumPaymentType</picklist>
+            <values>
+                <fullName>Advance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arrears</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RenewalChannel</picklist>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Substatus</picklist>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Final</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negotiation End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Abandoned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>NameInsured</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ExpirationDate</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PremiumAmount</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>NameInsured</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ExpirationDate</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PremiumAmount</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>NameInsured</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ExpirationDate</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PremiumAmount</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>NameInsured</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ExpirationDate</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PremiumAmount</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

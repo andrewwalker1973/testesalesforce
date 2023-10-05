@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AW_ClientCommunityIcon__c</fullName>
+        <description>Used to calculate lightning icon to display on community based on event type.</description>
+        <externalId>false</externalId>
+        <formula>CASE
+    (
+        EventType, 
+        &quot;Birth&quot;, &quot;standard:people&quot;, 
+        &quot;Car&quot;, &quot;custom:custom31&quot;,
+        &quot;Graduation&quot;, &quot;standard:reward&quot;,
+        &quot;Job&quot;, &quot;standard:case&quot;,
+        &quot;Marriage&quot;, &quot;custom:custom1&quot;,
+        &quot;Relocation&quot;, &quot;custom:custom106&quot;,
+        &quot;Home&quot;, &quot;standard:home&quot;,
+        &quot;Baby&quot;, &quot;standard:bot&quot;,
+        &quot;Diagnosis&quot;, &quot;standard:feed&quot;,
+        &quot;Retirement&quot;, &quot;standard:goals&quot;,
+        &quot;standard:lightning_component&quot;
+    )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Community Icon</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_EstimatedValue__c</fullName>
+        <description>Estimated Value of the event</description>
+        <externalId>false</externalId>
+        <label>Estimated value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_ImpactOnOutcomeGoals__c</fullName>
+        <description>What is the outcome of this event on the goals?</description>
+        <externalId>false</externalId>
+        <label>Impact on outcome/goals</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>AW_Impact__c</fullName>
+        <description>Please select impact</description>
+        <externalId>false</externalId>
+        <label>Impact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Positive</fullName>
+                    <default>false</default>
+                    <label>Positive</label>
+                </value>
+                <value>
+                    <fullName>Negative</fullName>
+                    <default>false</default>
+                    <label>Negative</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccountId__c</fullName>
+        <description>Used to store the Master Account Id, if Master Account Exists for the Active Account</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(PrimaryPerson.Account.FinServ__Status__c, &apos;Active&apos;), NOT(ISNULL( PrimaryPerson.Account.AW_ParentAccount__r.Id))), PrimaryPerson.Account.AW_ParentAccount__r.Id,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AW_MasterAccountId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_MasterAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the Master Account Details</description>
+        <externalId>false</externalId>
+        <label>Master Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Person Life Events (MasterAccount)</relationshipLabel>
+        <relationshipName>AW_PersonLifeEvents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AW_MomentTypeFinancial__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this event of Moment Type?</description>
+        <externalId>false</externalId>
+        <label>Moment type (Financial)</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_NextRecurringDate__c</fullName>
+        <description>Next Recurring Date</description>
+        <externalId>false</externalId>
+        <formula>TEXT(AW_RecurringDate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>When the next event anniversary will take place.</inlineHelpText>
+        <label>Next Recurring Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_OtherEventType__c</fullName>
+        <description>Capture event type if not in picklist</description>
+        <externalId>false</externalId>
+        <label>Other Event Type</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ParentAccountOwnerId__c</fullName>
+        <description>Used to store the Parent Account Owner Id</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL(PrimaryPerson.Account.Id)),PrimaryPerson.Account.OwnerId,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AW_ParentAccountOwnerId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PrimaryPersonOwnerId__c</fullName>
+        <description>Owner ID of Primary Person</description>
+        <externalId>false</externalId>
+        <formula>PrimaryPerson.OwnerId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Person Owner Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_PriorityLevel__c</fullName>
+        <description>Select Priority Level</description>
+        <externalId>false</externalId>
+        <label>Priority Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_RecurringDate__c</fullName>
+        <description>When the next event date will occur.</description>
+        <externalId>false</externalId>
+        <label>Recurring Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_Recurring__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>User can select if event should be recurring.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event will be recurred annually.</inlineHelpText>
+        <label>Recurring</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AW_SortingDate__c</fullName>
+        <description>Used by lightning component to sort life events and goals</description>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(EventDate)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sorting Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AW_VisibleToClient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this event visible to client?</description>
+        <externalId>false</externalId>
+        <label>Visible to client</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EventDescription</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EventLocation</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EventType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ExpirationDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ExpirationDescription</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsExpired</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsTentative</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PrimaryPersonId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>RelatedPersonId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystem</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystemIdentifier</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <listViews>
+        <fullName>All_PersonLifeEvents</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Person Life Events</label>
+    </listViews>
+    <listViews>
+        <fullName>All_PersonLifeEvents</fullName>
+        <columns>Name</columns>
+        <columns>EventType</columns>
+        <columns>PrimaryPerson</columns>
+        <columns>EventDate</columns>
+        <columns>IsTentative</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Person Life Events</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventType</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PrimaryPerson</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventDate</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IsTentative</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>EventType</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PrimaryPerson</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventDate</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IsTentative</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventType</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PrimaryPerson</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventDate</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IsTentative</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>EventType</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PrimaryPerson</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventDate</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IsTentative</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AW_EventTypeNotOther</fullName>
+        <active>true</active>
+        <description>To check if &quot;Other Event Type&quot; is not populated if &quot;Other&quot; event type has not been selected</description>
+        <errorConditionFormula>AND( 
+NOT(ISPICKVAL( EventType , &apos;AW_Other&apos;)), 
+NOT(ISBLANK( AW_OtherEventType__c ))
+)</errorConditionFormula>
+        <errorDisplayField>AW_OtherEventType__c</errorDisplayField>
+        <errorMessage>Please select &quot;Other&quot; under Event Type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AW_Financial_Moment_Type_Selected</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND
+(
+ AW_MomentTypeFinancial__c=true,
+ ISBLANK(AW_EstimatedValue__c)
+)</errorConditionFormula>
+        <errorDisplayField>AW_EstimatedValue__c</errorDisplayField>
+        <errorMessage>Financial Moment type is selected, please provide the value in field &apos;Estimated Value&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AW_OtherEventTypeRequired</fullName>
+        <active>true</active>
+        <description>When Other is selected in Event Type field, the Other Event Type should not be left blank.</description>
+        <errorConditionFormula>AND( 
+     ISPICKVAL(   EventType , &apos;AW_Other&apos;), 
+     ISBLANK(   AW_OtherEventType__c )
+   )</errorConditionFormula>
+        <errorDisplayField>AW_OtherEventType__c</errorDisplayField>
+        <errorMessage>Please enter Other Event Type</errorMessage>
+    </validationRules>
+</CustomObject>

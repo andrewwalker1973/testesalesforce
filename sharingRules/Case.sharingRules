@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>RSC_RetailServicingCases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Retail Servicing Cases</label>
+        <sharedTo>
+            <roleAndSubordinates>RSC_ZA_Retail_ClientandAdviserServiceCentre</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>RSC_TeamLeaderAssignable</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows team leads to view all cases on service console</description>
+        <label>Team Leader Assignable</label>
+        <sharedTo>
+            <group>RSC_ClientandAdviserServiceCentreLeaders</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Retail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SC_Assignable__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SD_MalawiCases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Malawi Cases</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_MalawiLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>equals</operation>
+            <value>Malawi</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SD_MozambiqueCases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Mozambique Cases</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_MozambiqueLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>equals</operation>
+            <value>Mozambique</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SD_SouthAfricanCases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>South African Cases</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_SouthAfricaLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>equals</operation>
+            <value>South Africa</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SD_WebOrigin__c</field>
+            <operation>equals</operation>
+            <value>South Africa Web</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SD_UgandaCases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Uganda Cases</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SD_UgandaLibertyHealthSupervisor</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>SD_Country__c</field>
+            <operation>equals</operation>
+            <value>Uganda</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLC_Manco</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>STANLIB Manco Case Visibility on all STANLIB Manco Case</description>
+        <label>STANLIB Manco</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Retail_MANCO</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>STANLIB Manco Case</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLI_InstitutionalDistribution</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Case Read for STANLIB Case Record Type</description>
+        <label>STANLIB Institutional Distribution</label>
+        <sharedTo>
+            <role>SLI_InstitutionalDistribution</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>STANLIB Retail Case,STANLIB Institution Case</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLI_InstitutionalDistributionSupport</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>STANLIB Institutional Distribution Support Team Read and Write access to Cases</description>
+        <label>STANLIB Institutional Distribution Support</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLI_InstitutionalDistributionSupportLead</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>STANLIB Retail Case,STANLIB Institution Case</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLI_InstitutionalRFPTeam</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>STANLIB Institutional RFP Team Read access on STANLIB Cases</description>
+        <label>STANLIB Institutional RFP Team</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLI_RfpTeamLead</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>STANLIB Retail Case,STANLIB Institution Case</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SLR_RetailDistribution</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>STANLIB Retail Distribution Roles Read and Write on Cases</description>
+        <label>STANLIB Retail Distribution</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLR_Retail_Distribution</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>STANLIB Retail Case</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

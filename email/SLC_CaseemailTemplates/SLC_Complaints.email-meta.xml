@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>STANLIB Manco Complaints auto-response template</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>STANLIB_CaseLetterhead</letterhead>
+    <name>STANLIB Complaints</name>
+    <style>freeForm</style>
+    <subject>Your case {!Case.CaseNumber} has been created - STANLIB Complaints Resolution</subject>
+    <textOnly>Dear Valued Investor,
+
+Thank you for getting in touch with the STANLIB Complaints Team. This is an automatic acknowledgement that we have received your complaint.
+
+This is a dedicated mailbox for Complaints related to STANLIB Investment Products and Services.
+
+Please allow us 24 hours to provide you with feedback on your complaint.
+
+Please note this mailbox is exclusively for Complaints resolution. If you send financial instructions to it, we will not be held liable for any delays in processing them.
+
+To get in touch with our client and broker support team please use the numbers below:
+
+- Client Support Line: 0860 123 003 (SA only)
+- Client Support Email Address: contact@stanlib.com
+- Unit Trust Broker Support Line: 0860 104 418 (SA only)
+- Unit Trust Broker Support Email Address: UTBrokerSupport@stanlib.com
+
+We thank you for your patience while we attend to the matter.
+
+Kind Regards,
+STANLIB Complaints Resolution Team
+www.stanlib.com
+
+{!Case.Email_Thread}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

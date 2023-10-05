@@ -1,0 +1,6 @@
+<template>
+	<c-cmn-lwc-record-form-with-field-set object-api-name={objectApiName} if:false={hasError}></c-cmn-lwc-record-form-with-field-set>
+	<div class="slds-card" if:true={hasError}>
+		<p class="slds-card__body slds-align_absolute-center">There is no additional information to show.</p>
+	</div>
+</template>

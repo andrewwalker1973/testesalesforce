@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PresenceUserConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <capacity>3</capacity>
+    <declineReasons>SD_AttendingToAnUrgentIssue</declineReasons>
+    <declineReasons>SD_OnACall</declineReasons>
+    <enableAutoAccept>false</enableAutoAccept>
+    <enableDecline>true</enableDecline>
+    <enableDeclineReason>true</enableDeclineReason>
+    <enableDisconnectSound>false</enableDisconnectSound>
+    <enableRequestSound>true</enableRequestSound>
+    <label>MW Liberty Health Support Desk</label>
+    <presenceStatusOnDecline>Busy</presenceStatusOnDecline>
+    <presenceStatusOnPushTimeout>Available_Chat</presenceStatusOnPushTimeout>
+</PresenceUserConfig>

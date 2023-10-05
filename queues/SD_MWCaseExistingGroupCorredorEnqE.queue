@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>MW Case Existing Group Corredor Enq E</name>
+    <queueMembers>
+        <users>
+            <user>deesse.francisco@libertyhealth.net</user>
+            <user>lenia.pangani@libertyhealth.net</user>
+            <user>tarcio.silvestre@libertyhealth.net</user>
+            <user>valdumiro.ipanga@libertyhealth.net</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>SD_MWLibertyHealthSupportDesk</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

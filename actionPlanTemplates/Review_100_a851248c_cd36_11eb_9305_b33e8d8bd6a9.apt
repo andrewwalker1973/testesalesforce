@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Do 100 reviews</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Review 100</name>
+    <targetEntityType>Account</targetEntityType>
+    <uniqueName>Review_100_a851248c_cd36_11eb_9305_b33e8d8bd6a9</uniqueName>
+</ActionPlanTemplate>

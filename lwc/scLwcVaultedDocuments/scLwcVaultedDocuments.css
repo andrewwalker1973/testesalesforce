@@ -1,0 +1,20 @@
+/**
+ * @description LWC Component used to display the vaulted documents from the DocumentCheckList Item.
+ *
+ * @author Accenture
+ *
+ * @see storyNo: 146010
+ *
+ * @date July 2021
+ */
+
+.spinner-medium::after
+{
+	color       : #483D8B;
+	content     : attr(data-text);
+	font-weight : bold;
+	position    : absolute;
+	text-align  : center;
+	top         : calc(50% + 2em);
+	width       : 100%;
+}

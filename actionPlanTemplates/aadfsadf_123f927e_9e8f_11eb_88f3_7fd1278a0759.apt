@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>asdfadsf</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>aadfsadf</name>
+    <targetEntityType>Opportunity</targetEntityType>
+    <uniqueName>aadfsadf_123f927e_9e8f_11eb_88f3_7fd1278a0759</uniqueName>
+</ActionPlanTemplate>

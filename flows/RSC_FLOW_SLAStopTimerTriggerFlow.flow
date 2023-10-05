@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <assignments>
+        <description>Assigning all the updated case milestone records to a temp list</description>
+        <name>RSC_AddUpdatedCaseMilestonesList</name>
+        <label>Add Updated Case Milestones List</label>
+        <locationX>138</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_UpdatedCaseMilestonesList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>RSC_IterateOverCaseMilestones</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_IterateOverCaseMilestones</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set the milestone completion date-time to current date-time</description>
+        <name>RSC_SetCompletionDateTimeToCurrentDateTime</name>
+        <label>Set Completion DateTime To Current DateTime</label>
+        <locationX>138</locationX>
+        <locationY>935</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_IterateOverCaseMilestones.CompletionDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_AddUpdatedCaseMilestonesList</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Checks any milestones related to the case are available or not.</description>
+        <name>RSC_HasCaseMilestones</name>
+        <label>Has Case Milestones</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Doesn&apos;t Exists</defaultConnectorLabel>
+        <rules>
+            <name>RSC_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_CaseMilestonesList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_IterateOverCaseMilestones</targetReference>
+            </connector>
+            <label>Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks the case record on various criteria to close the milestone by updating the completion date.</description>
+        <name>RSC_IsEntitlementProcessActive</name>
+        <label>Is Entitlement Process Active</label>
+        <locationX>380</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>RSC_yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SlaStartDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SlaExitDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Entitlement.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_CaseRecordType</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_getMilestoneTypeId</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Triggered flow to stop the SLA timer when the case is closed by updating the completion date-time of Case milestone records to current date-time.</description>
+    <environments>Default</environments>
+    <interviewLabel>SLA Stop Timer Trigger Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SLA Stop Timer Trigger Flow</label>
+    <loops>
+        <description>Loop to capture the records to update the completion date of the case milestone for the related case</description>
+        <name>RSC_IterateOverCaseMilestones</name>
+        <label>Iterate Over Case Milestones</label>
+        <locationX>50</locationX>
+        <locationY>815</locationY>
+        <collectionReference>RSC_CaseMilestonesList</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>RSC_SetCompletionDateTimeToCurrentDateTime</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>RSC_updateCaseMilestoneRecord</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Fetch the related case milestone record details related to the case record updated</description>
+        <name>RSC_getCaseMilestoneRecord</name>
+        <label>Get Case Milestone Record</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_HasCaseMilestones</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>CaseId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>MilestoneTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RSC_getMilestoneTypeId.Id</elementReference>
+            </value>
+        </filters>
+        <object>CaseMilestone</object>
+        <outputReference>RSC_CaseMilestonesList</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CompletionDate</queriedFields>
+        <queriedFields>MilestoneTypeId</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>To fetch the milestone type record based on the name value</description>
+        <name>RSC_getMilestoneTypeId</name>
+        <label>Get Milestone Type Id</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_getCaseMilestoneRecord</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RSC_EntitlementName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>MilestoneType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updating the completion date in case milestone record of the related case record to closed date of the case.</description>
+        <name>RSC_updateCaseMilestoneRecord</name>
+        <label>Update Case Milestone Record</label>
+        <locationX>50</locationX>
+        <locationY>1271</locationY>
+        <inputReference>RSC_UpdatedCaseMilestonesList</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_IsEntitlementProcessActive</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>List of case milestone records for the case</description>
+        <name>RSC_CaseMilestonesList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CaseMilestone</objectType>
+    </variables>
+    <variables>
+        <description>Case record type value to make the decision to run the flow for specific ones.</description>
+        <name>RSC_CaseRecordType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>RSC_Retail</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Entitlement name to be referred in the condition</description>
+        <name>RSC_EntitlementName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>RSC Mean Time to Resolve</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Updated case milestone records stored in this list.</description>
+        <name>RSC_UpdatedCaseMilestonesList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>CaseMilestone</objectType>
+    </variables>
+</Flow>

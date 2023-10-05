@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="awLwcAccessFinancialNeedsAnalysis">
+    <apiVersion>57</apiVersion>
+    <description>Component used to display the buttons to access financial needs</description>
+    <isExposed>true</isExposed>
+    <masterLabel>AW Lwc Access FNA</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+    	<targetConfig targets="lightning__RecordPage">
+    	<property label="isAccountObject" name="isAccountObject"  type="Boolean" description="Check if your on account record page"/>
+    	<property label="isOpportunityObject" name="isOpportunityObject"  type="Boolean" description="Check if your on Opportunity record page"/>
+		</targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

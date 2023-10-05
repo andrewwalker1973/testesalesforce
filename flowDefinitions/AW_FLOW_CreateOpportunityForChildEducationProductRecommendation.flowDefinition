@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>4</activeVersionNumber>
+    <description>This flow will create the opportunity for Child Education Product Recommendation</description>
+    <masterLabel>Create Opportunity For Child Education Product Recommendation</masterLabel>
+</FlowDefinition>

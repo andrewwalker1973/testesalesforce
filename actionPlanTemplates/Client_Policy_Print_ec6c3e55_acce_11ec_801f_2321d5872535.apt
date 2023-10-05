@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>DocumentChecklistItem</itemEntityType>
+            <name>Name</name>
+            <valueLiteral>Letter Of Authority</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>DocumentChecklistItem</itemEntityType>
+            <name>DocumentTypeId</name>
+            <valueLiteral>0de4J000000blm4QAA</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <isRequired>false</isRequired>
+        <itemEntityType>DocumentChecklistItem</itemEntityType>
+        <name>Letter Of Authority</name>
+        <uniqueName>Letter_Of_Authority_f5d8338a_acce_11ec_801f_0f61024db503</uniqueName>
+    </actionPlanTemplateItem>
+    <description>Documents required for Client Policy Print (CPP)</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Client Policy Print</name>
+    <targetEntityType>01I4J000001jvL5</targetEntityType>
+    <uniqueName>Client_Policy_Print_ec6c3e55_acce_11ec_801f_2321d5872535</uniqueName>
+</ActionPlanTemplate>

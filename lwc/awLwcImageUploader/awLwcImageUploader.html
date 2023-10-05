@@ -1,0 +1,24 @@
+<template>
+    <div>
+        <lightning-input label="" name="file uploader" onchange={handleFilesChange} type="file" multiple>
+        </lightning-input>
+        <div class="slds-text-body_small">
+            {fileName}
+        </div>
+        <template if:true={maxFileSizeWarning}>
+            <div class="slds-text-body_small slds-text-color_error">
+                This image is larger than 1.5mb. Please upload a smaller file.
+            </div>
+        </template>
+    </div>
+    <div class="slds-text-body_small slds-text-color_error">
+        <template if:true={showLoadingSpinner}>
+            <lightning-spinner alternative-text="Uploading......" size="medium"></lightning-spinner>
+        </template>
+    </div><br />
+    <div>
+        <lightning-button class="slds-m-top--medium" label="Save File" onclick={handleSave} variant="brand">
+        </lightning-button>
+    </div>
+    <div class="result"></div>
+</template>

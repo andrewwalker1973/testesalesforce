@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <assignments>
+        <description>Case Value for Client Answered</description>
+        <name>SC_CaseValueforClientAnswered</name>
+        <label>Case Value for Client Answered</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <assignmentItems>
+            <assignToReference>Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_SubStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.RSC_ResumeDate__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_OnHoldStatus__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_Reason__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_UpdateCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update case values when reminder date &amp; time is available.</description>
+        <name>SC_WhenReminderDateTimeIsAvailable</name>
+        <label>When Reminder Date &amp; Time is Available</label>
+        <locationX>842</locationX>
+        <locationY>575</locationY>
+        <assignmentItems>
+            <assignToReference>Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_SubStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>On Hold</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.RSC_ResumeDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ReminderDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_OnHoldStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Reschedule</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Client Requested Call Back</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_UpdateCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update case values when Reminder Date &amp; Time is not provided.</description>
+        <name>SC_WhenReminderDateTimeIsNotAvailable</name>
+        <label>When Reminder Date &amp; Time is Not Available</label>
+        <locationX>1106</locationX>
+        <locationY>575</locationY>
+        <assignmentItems>
+            <assignToReference>Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_SubStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>On Hold</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_OnHoldStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Reschedule</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Client Requested Call Back</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_UpdateCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update case values when reminder date &amp; time is available.</description>
+        <name>SC_WhenReminderIsAvailable</name>
+        <label>When Reminder is Available</label>
+        <locationX>314</locationX>
+        <locationY>575</locationY>
+        <assignmentItems>
+            <assignToReference>Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_SubStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>On Hold</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.RSC_ResumeDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ReminderDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_OnHoldStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Reschedule</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Client Not Available</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_UpdateCase</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update case values when Reminder Date &amp; Time is not provided.</description>
+        <name>SC_WhenReminderIsNotAvailable</name>
+        <label>When Reminder is Not Available</label>
+        <locationX>578</locationX>
+        <locationY>575</locationY>
+        <assignmentItems>
+            <assignToReference>Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_SubStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>On Hold</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_OnHoldStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Reschedule</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Case.SC_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Client Not Available</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SC_UpdateCase</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This decision is used to check if the reminder date &amp; time is added by the agent,</description>
+        <name>SC_CheckReminder</name>
+        <label>Check Reminder</label>
+        <locationX>446</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>SC_WhenReminderIsNotAvailable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Reminder Date Time Not Available</defaultConnectorLabel>
+        <rules>
+            <name>SC_ReminderAvailable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ReminderDateTime</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_WhenReminderIsAvailable</targetReference>
+            </connector>
+            <label>Reminder Available</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>This decision is used to check if the reminder date &amp; time is added by the agent,</description>
+        <name>SC_CheckReminderDateTimeAvailable</name>
+        <label>Check Reminder Date &amp; Time Available</label>
+        <locationX>974</locationX>
+        <locationY>455</locationY>
+        <defaultConnector>
+            <targetReference>SC_WhenReminderDateTimeIsNotAvailable</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Reminder Date &amp; Time Not Available</defaultConnectorLabel>
+        <rules>
+            <name>SC_ReminderDateTimeAvailable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ReminderDateTime</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_WhenReminderDateTimeIsAvailable</targetReference>
+            </connector>
+            <label>Reminder Date &amp; Time Available</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SC_CheckSubject</name>
+        <label>Check Subject</label>
+        <locationX>710</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Subject Not Available</defaultConnectorLabel>
+        <rules>
+            <name>SC_ClientAnswered</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Answered</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Service Complaint</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Wrong Number</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Number Not In Service</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_CaseValueforClientAnswered</targetReference>
+            </connector>
+            <label>Client Answered</label>
+        </rules>
+        <rules>
+            <name>SC_CallReschedule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Engaged</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Answer</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Voicemail</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Contactable - Service Not Available</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_CheckReminder</targetReference>
+            </connector>
+            <label>Call Reschedule</label>
+        </rules>
+        <rules>
+            <name>SC_RequestedCallback</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client Answered and Requested Reschedule</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SC_CheckReminderDateTimeAvailable</targetReference>
+            </connector>
+            <label>Requested Callback</label>
+        </rules>
+    </decisions>
+    <description>This flow will update Case based on Task Subject.</description>
+    <environments>Default</environments>
+    <interviewLabel>SC_FLOW_UpdateCaseStatus {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SC_FLOW_UpdateCaseStatus</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>SC_UpdateCase</name>
+        <label>Update Case</label>
+        <locationX>710</locationX>
+        <locationY>887</locationY>
+        <inputReference>Case</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SC_CheckSubject</targetReference>
+        </connector>
+        <filterFormula>AND(
+{!$Record.RecordType.DeveloperName} = &apos;RSC_OutboundTask&apos;
+)</filterFormula>
+        <object>Task</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Case</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

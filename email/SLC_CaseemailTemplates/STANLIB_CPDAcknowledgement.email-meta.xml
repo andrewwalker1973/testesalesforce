@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>STANLIB Institutional CPD Acknowledgement</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>STANLIB_CaseLetterhead</letterhead>
+    <name>STANLIB CPD Acknowledgement</name>
+    <style>freeForm</style>
+    <subject>Thank you for contacting us: CPD Certificate</subject>
+    <textOnly>Dear {!Case.Contact},
+
+We have received your email, one of our team members will be in contact shortly.
+
+Regards,
+STANLIB Marketing
+
+{!Case.Email_Thread}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

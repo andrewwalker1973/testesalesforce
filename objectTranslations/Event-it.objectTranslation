@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Change of Consultant(Orphans Only) --></label>
+        <name>AW_Change_of_Consultant_Form__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Interaction Outcome --></label>
+        <name>AW_ClientInteractionOutcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Interaction Outcome Feedback --></label>
+        <name>AW_Client_Interaction_Outcome_Feedback__c</name>
+    </fields>
+    <fields>
+        <help><!-- If my Meeting is a Review --></help>
+        <label><!-- Review --></label>
+        <name>AW_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summarises Comments field  to 255 --></help>
+        <label><!-- Summary Comments --></label>
+        <name>AW_SummaryComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>AW_TaskCategory__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please check if task is for assistant. --></help>
+        <label><!-- Task For My Assistant --></label>
+        <name>AW_TaskForMyAssistant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expectations --></label>
+        <name>FinServ__Expectations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Next Steps --></label>
+        <name>FinServ__NextSteps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Objectives --></label>
+        <name>FinServ__Objectives__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regarding --></label>
+        <name>FinServ__Regarding__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Hold Comments --></label>
+        <name>RSC_OnHoldComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Hold Reasons --></label>
+        <name>RSC_OnHoldReasons__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting Success --></label>
+        <name>SLR_MeetingSuccess__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Meeting Note --></label>
+        <name>SLR_PostMeetingNote__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Default event record type for Advisor profile --></description>
+        <label><!-- Advisor Event --></label>
+        <name>FinServ__AdvisorEvent</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Default event record type for Client Associate profile --></description>
+        <label><!-- Client Associate Event --></label>
+        <name>FinServ__ClientAssociateEvent</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SLI Event --></label>
+        <name>SLI_Event</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Event for STANLIB Retail Distribution Users --></description>
+        <label><!-- SLR Event --></label>
+        <name>SLR_Event</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Take_Ownership_Detail --></label>
+        <name>ortoo_qra__Take_Ownership_Detail</name>
+    </webLinks>
+</CustomObjectTranslation>

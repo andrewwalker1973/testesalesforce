@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>SLC_RFP Team Lead</fullName>
+        <default>false</default>
+        <label>RFP Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLC_Franchise Team Lead</fullName>
+        <default>false</default>
+        <label>Franchise Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLC_Performance Team Lead</fullName>
+        <default>false</default>
+        <label>Performance Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLC_Legal Team Lead</fullName>
+        <default>false</default>
+        <label>Legal Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLC_Distribution Support Team Lead</fullName>
+        <default>false</default>
+        <label>Distribution Support Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLC_Operational Team Lead</fullName>
+        <default>false</default>
+        <label>Operational Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLC_Finance Team Lead</fullName>
+        <default>false</default>
+        <label>Finance Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLC_Compliance Team Lead</fullName>
+        <default>false</default>
+        <label>Compliance Team Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLI_Backup Client Fund Manager</fullName>
+        <default>false</default>
+        <label>Backup Client Fund Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SLI_Portfolio Manager</fullName>
+        <default>false</default>
+        <label>Portfolio Manager</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AW_Adviser</fullName>
+        <default>false</default>
+        <label>Liberty Adviser</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AW_Manager</fullName>
+        <default>false</default>
+        <label>Liberty Sales Leader</label>
+    </standardValue>
+</StandardValueSet>

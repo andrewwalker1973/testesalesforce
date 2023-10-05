@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Public</fullName>
+        <default>false</default>
+        <label>Public</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Private</fullName>
+        <default>false</default>
+        <label>Private</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subsidiary</fullName>
+        <default>false</default>
+        <label>Subsidiary</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Corporation</fullName>
+        <default>false</default>
+        <label>Closed Corporation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Private Company</fullName>
+        <default>false</default>
+        <label>Private Company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Public Company</fullName>
+        <default>false</default>
+        <label>Public Company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Non Profit Company</fullName>
+        <default>false</default>
+        <label>Non Profit Company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Non Profit Organisation</fullName>
+        <default>false</default>
+        <label>Non Profit Organisation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Foreign Company</fullName>
+        <default>false</default>
+        <label>Foreign Company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>State Owned Company</fullName>
+        <default>false</default>
+        <label>State Owned Company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Personal Liability Company</fullName>
+        <default>false</default>
+        <label>Personal Liability Company</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Foreign Trust</fullName>
+        <default>false</default>
+        <label>Foreign Trust</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Local Trust</fullName>
+        <default>false</default>
+        <label>Local Trust</label>
+    </standardValue>
+</StandardValueSet>

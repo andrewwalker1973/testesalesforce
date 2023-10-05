@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Active --></label>
+        <name>grax__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Archive Override Approved By --></label>
+        <name>grax__Archive_Override_Approved_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Archive --></label>
+        <name>grax__Archive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bulk Formula Field Backup --></label>
+        <name>grax__Bulk_Formula_Field_Backup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bulk Highest Progress --></label>
+        <name>grax__Bulk_Highest_Progress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bulk Status --></label>
+        <name>grax__Bulk_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bulk Timestamp --></label>
+        <name>grax__Bulk_Timestamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Delete GRAX Records? --></label>
+        <name>grax__Can_Delete_GRAX_Records__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salesforce field on the selected object from which the Start &amp; End Dates are being used --></help>
+        <label><!-- Date Field --></label>
+        <name>grax__Date_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delete Children Only --></label>
+        <name>grax__Delete_Children_Only__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of the Error message received --></help>
+        <label><!-- Error Message --></label>
+        <name>grax__Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Unique Key Helper --></label>
+        <name>grax__Execution_Unique_Key_Helper__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Unique Key --></label>
+        <name>grax__Execution_Unique_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency Type --></label>
+        <name>grax__Frequency_Type__c</name>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Months</masterLabel>
+            <translation><!-- Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weeks</masterLabel>
+            <translation><!-- Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Years</masterLabel>
+            <translation><!-- Years --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Frequency Value --></label>
+        <name>grax__Frequency_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Async Objects Status Repor Id --></label>
+        <name>grax__GRAX_Async_Objects_Status_Report_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Async Objects Status Report Link --></label>
+        <name>grax__GRAX_Async_Objects_Status_Report_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Error Report Id --></label>
+        <name>grax__GRAX_Error_Report_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Error Report Link --></label>
+        <name>grax__GRAX_Error_Report_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Summary Link --></label>
+        <name>grax__GRAX_Summary_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include Relationship --></label>
+        <name>grax__Include_Relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsAsyncGroupGDRBackup --></label>
+        <name>grax__IsAsyncGroupGDRBackup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Multi-Object Date Range Criteria --></label>
+        <name>grax__Is_Multi_Object_Date_Range_Criteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Running --></label>
+        <name>grax__Is_Running__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Single Object Backup --></label>
+        <name>grax__Is_Single_Object_Backup__c</name>
+    </fields>
+    <fields>
+        <label><!-- JobId --></label>
+        <name>grax__JobId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last time this Scheduled Process was run --></help>
+        <label><!-- Last Run Date --></label>
+        <name>grax__Last_Run_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Start Time --></label>
+        <name>grax__Last_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max # of Records to Delete --></label>
+        <name>grax__Max_of_Records_to_Delete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>grax__Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Next date/time this Scheduled Process will execute --></help>
+        <label><!-- Next Run Date --></label>
+        <name>grax__Next_Run_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Records Errors Lkp --></label>
+        <name>grax__Num_Records_Errors_Lkp__c</name>
+        <relationshipLabel><!-- Num Records Errors Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- # Records Errors --></label>
+        <name>grax__Num_Records_Errors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Records Sent Lkp --></label>
+        <name>grax__Num_Records_Sent_Lkp__c</name>
+        <relationshipLabel><!-- Num Records Sent Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- # Records Sent --></label>
+        <name>grax__Num_Records_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Records To Send Lkp --></label>
+        <name>grax__Num_Records_To_Send_Lkp__c</name>
+        <relationshipLabel><!-- Num Records To Send Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- # Records To Send --></label>
+        <name>grax__Num_Records_To_Send__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Retry Sending Data Records --></label>
+        <name>grax__Number_of_Retry_Sending_Data_Records__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Name --></label>
+        <name>grax__Object_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incremental --></label>
+        <name>grax__Progressive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rolling Date --></label>
+        <name>grax__Rolling_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sched Job Async Alive Last Check --></label>
+        <name>grax__SchedJobAsyncAliveLastCheck__c</name>
+    </fields>
+    <fields>
+        <help><!-- Frequency of when the Scheduled Process will run --></help>
+        <label><!-- Schedule Type --></label>
+        <name>grax__Schedule_Type__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom</masterLabel>
+            <translation><!-- Custom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily</masterLabel>
+            <translation><!-- Daily --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Once</masterLabel>
+            <translation><!-- Once --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annually</masterLabel>
+            <translation><!-- Semi-Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Select Criteria --></label>
+        <name>grax__Select_Criteria__c</name>
+        <picklistValues>
+            <masterLabel>Main Object and Children not modified</masterLabel>
+            <translation><!-- Main Object and Children not modified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Main Object not modified</masterLabel>
+            <translation><!-- Main Object not modified --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Send Notifications --></label>
+        <name>grax__Send_Notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Time --></label>
+        <name>grax__Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>grax__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aborting</masterLabel>
+            <translation><!-- Aborting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Backing Up Data</masterLabel>
+            <translation><!-- Backing Up Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed - Errors Backing Up Data</masterLabel>
+            <translation><!-- Completed - Errors Backing Up Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed - Errors deleting records</masterLabel>
+            <translation><!-- Completed - Errors deleting records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed - Errors sending data</masterLabel>
+            <translation><!-- Completed - Errors sending data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleting Salesforce records</masterLabel>
+            <translation><!-- Deleting Salesforce records --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error Backing Up Files to Storage</masterLabel>
+            <translation><!-- Error Backing Up Files to Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finding Data</masterLabel>
+            <translation><!-- Finding Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending send data to GRAX</masterLabel>
+            <translation><!-- Pending send data to GRAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Running</masterLabel>
+            <translation><!-- Running --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sending data to GRAX</masterLabel>
+            <translation><!-- Sending data to GRAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Starting Archive Process</masterLabel>
+            <translation><!-- Starting Archive Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting Files Backup to Complete</masterLabel>
+            <translation><!-- Waiting Files Backup to Complete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date/Time from the field value in the &quot;Date Field&quot; from when this Scheduled Process will end. --></help>
+        <label><!-- Target End Datetime --></label>
+        <name>grax__Target_End_Datetime__c</name>
+    </fields>
+    <fields>
+        <help><!-- ID of the Salesforce report used for this process --></help>
+        <label><!-- Target Report --></label>
+        <name>grax__Target_Report__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date/Time from the field value in the &quot;Date Field&quot; from when this Scheduled Process will begin. --></help>
+        <label><!-- Target Start Datetime --></label>
+        <name>grax__Target_Start_Datetime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Times retried --></label>
+        <name>grax__Times_retried__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Objects Processed --></label>
+        <name>grax__Total_Objects_Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Objects To Process --></label>
+        <name>grax__Total_Objects_To_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Records Errors --></label>
+        <name>grax__Total_Records_Errors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Records Sent --></label>
+        <name>grax__Total_Records_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Records To Send --></label>
+        <name>grax__Total_Records_To_Send__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Bulk API --></label>
+        <name>grax__Use_Bulk_API__c</name>
+    </fields>
+    <fields>
+        <label><!-- currentChildElementIndex --></label>
+        <name>grax__currentChildElementIndex__c</name>
+    </fields>
+    <fields>
+        <label><!-- currentElementIndexIteration --></label>
+        <name>grax__currentElementIndexIteration__c</name>
+    </fields>
+    <fields>
+        <label><!-- currentElementIndexTotalIterations --></label>
+        <name>grax__currentElementIndexTotalIterations__c</name>
+    </fields>
+    <fields>
+        <label><!-- currentElementIndex --></label>
+        <name>grax__currentElementIndex__c</name>
+    </fields>
+    <fields>
+        <label><!-- # of Times Sent --></label>
+        <name>grax__of_Times_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- type --></label>
+        <name>grax__type__c</name>
+        <picklistValues>
+            <masterLabel>Hierarchy</masterLabel>
+            <translation><!-- Hierarchy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Object</masterLabel>
+            <translation><!-- Multi-Object --></translation>
+        </picklistValues>
+    </fields>
+    <webLinks>
+        <label><!-- Refresh_Bulk_API_Job --></label>
+        <name>grax__Refresh_Bulk_API_Job</name>
+    </webLinks>
+</CustomObjectTranslation>

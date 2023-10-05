@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Subject</name>
+            <valueLiteral>Living annuity quote</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Priority</name>
+            <valueLiteral>High</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ActivityDate</name>
+            <valueFormula>StartDate + 3</valueFormula>
+        </actionPlanTemplateItemValue>
+        <isRequired>false</isRequired>
+        <itemEntityType>Task</itemEntityType>
+        <name>Living annuity quote</name>
+        <uniqueName>Living_annuity_quote_ea3a9f27_b60a_11ea_9e19_3f1e82175f7c</uniqueName>
+    </actionPlanTemplateItem>
+    <description>Create LA investment at Liberty
+Withdrawal from insurer minus 1/3rd
+FICA documents
+Tax Directive follow up
+Possible commutation</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>Living Annuity</name>
+    <targetEntityType>Account</targetEntityType>
+    <uniqueName>Living_Annuity_7d2bc558_b60a_11ea_9e19_2f4c88937a76</uniqueName>
+</ActionPlanTemplate>

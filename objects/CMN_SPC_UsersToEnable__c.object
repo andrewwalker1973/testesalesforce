@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used by User to Enable Post Copy worker to Enable Relevant Users based on Username or Profilename. The worker will make sure email address is valid for user and ensure they are active.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CMN_SPC_EnableProfileName__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>All users with this profile name will be enabled; by ensuring email is valid and they are active</description>
+        <externalId>false</externalId>
+        <label>Enable Profile Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>CMN_SPC_EnableUsername__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>User with this name will be enabled; by ensuring email is valid and they are active</description>
+        <externalId>false</externalId>
+        <label>Enable Username</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CMN_SPC_UsersToEnable</label>
+    <listViews>
+        <fullName>CMN_SPC_AllPostCopySettings</fullName>
+        <columns>NAME</columns>
+        <columns>CMN_SPC_EnableProfileName__c</columns>
+        <columns>CMN_SPC_EnableUsername__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Post Copy Settings</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set group that allows the user to manage cases</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Manage Cases Group</label>
+    <permissionSets>AW_ManageCases</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

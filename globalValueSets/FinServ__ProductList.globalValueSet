@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Risk</fullName>
+        <default>false</default>
+        <label>Risk</label>
+    </customValue>
+    <customValue>
+        <fullName>Retirement</fullName>
+        <default>false</default>
+        <label>Retirement</label>
+    </customValue>
+    <customValue>
+        <fullName>Investments</fullName>
+        <default>false</default>
+        <label>Investments</label>
+    </customValue>
+    <customValue>
+        <fullName>Savings Account</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Savings Account</label>
+    </customValue>
+    <customValue>
+        <fullName>Checking Account</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Checking Account</label>
+    </customValue>
+    <customValue>
+        <fullName>HELOC</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>HELOC</label>
+    </customValue>
+    <customValue>
+        <fullName>Manage Money</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Manage Money</label>
+    </customValue>
+    <customValue>
+        <fullName>Property Purchase</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Property Purchase</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Manage Debt</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Manage Debt</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Card</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Credit Card</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Loan</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Personal Loan</label>
+    </customValue>
+    <customValue>
+        <fullName>Mortgage</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Mortgage</label>
+    </customValue>
+    <customValue>
+        <fullName>Day to Day Banking</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Day to Day Banking</label>
+    </customValue>
+    <masterLabel>Product List</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

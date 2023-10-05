@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>5</activeVersionNumber>
+    <description>This flow will create the opportunity for Life Cover Product Recommendation</description>
+    <masterLabel>Create Opportunity For Life Cover Product Recommendation</masterLabel>
+</FlowDefinition>

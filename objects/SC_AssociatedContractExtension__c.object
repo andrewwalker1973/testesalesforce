@@ -1,0 +1,3325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom object to associated with Associated Contract to extend its details.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>RSC_APICampaignDetails</fullName>
+        <description>Field set used to store fields related to campaign details for service type Adhoc Proactive Initiatives.</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_APICampaignPolicyDetails</fullName>
+        <description>Field set used to store fields related to campaign details for service type Adhoc Proactive Initiatives.</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PremiumAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_CurrentABIPercentage__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ReviewDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PremiumIncreaseDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ACIPercentageIncrease__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ABIPercentageIncrease__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PostACIPremium__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ReviewedPremium__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PercentageIndicator__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ExpectedLapseDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyPaymentMode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_SchemeCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_RequiredPremium__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_FutureExpectedRequiredPremium__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_Option2SumAssuredReduction__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NextReview25Capped__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_AddlibCampaignDetails</fullName>
+        <description>Field set used to store fields related to campaign details for service type Addlib.</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_AddlibCampaignPolicyDetails</fullName>
+        <description>Fieldset used to store fields related to Campaign Policy Details for service type Addlib.</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_BonusPaymentAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_BonusPaymentDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_ESeriesCampaignDetails</fullName>
+        <description>Field set used to store fields related to campaign details for service type E Series</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_ESeriesCampaignPolicyDetails</fullName>
+        <description>Field set used to store fields related to campaign details for service type E Series</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_BonusPaymentAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_BonusPaymentDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_GRDCampaignDetails</fullName>
+        <description>Field set used to store fields related to campaign details for service type Guaranteed Review Date</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_GRDCampaignPolicyDetails</fullName>
+        <description>Fieldset used to store fields related to Campaign Policy Details for service type Guaranteed Review Date.</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ReviewDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_GRDOption1</fullName>
+        <description>Fieldset used to store fields related to service type Guaranteed Review Date</description>
+        <displayedFields>
+            <field>RSC_OptionOneDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewPremiumForOptionOne__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewGRDForOptionOne__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 1</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_GRDOption2</fullName>
+        <description>Field set used to store fields related to service type Guaranteed Review Date</description>
+        <displayedFields>
+            <field>RSC_OptionTwoDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewPremiumForOptionTwo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewGRDForOptionTwo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 2</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_GRDOption3</fullName>
+        <description>Field set used to store fields for service type Guaranteed Review Date</description>
+        <displayedFields>
+            <field>RSC_OptionThreeDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewSumAssuredForOptionThree__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewGRDForOptionThree__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 3</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_GRDOption4</fullName>
+        <description>Field set used to store fields for service type Guaranteed Review Date</description>
+        <displayedFields>
+            <field>RSC_OptionFourDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ExpectedLapseDateForOptionFour__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 4</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_GRDOption5</fullName>
+        <description>Field set used to store fields for service type Guaranteed Review Date</description>
+        <displayedFields>
+            <field>RSC_OptionFiveDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewPremiumForOptionFive__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewGRDForOptionFive__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 5</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_LPRCampaignDetails</fullName>
+        <description>Fieldset used to store fields related to service type Level Premium Review</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_LPRCampaignPolicyDetails</fullName>
+        <description>Fieldset used to store fields related to service type Level Premium Review</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PremiumAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ReviewDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_LPROption1</fullName>
+        <description>Fieldset used to store fields related to service type Level Premium Review</description>
+        <displayedFields>
+            <field>RSC_OptionOneDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewPremiumForOptionOne__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 1</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_LPROption2</fullName>
+        <description>Fieldset used to store fields related to service type Level Premium Review</description>
+        <displayedFields>
+            <field>RSC_OptionTwoDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewSumAssuredForOptionTwo_c__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 2</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_LPROption3</fullName>
+        <description>Fieldset used to store fields related to service type Level Premium Review</description>
+        <displayedFields>
+            <field>RSC_OptionThreeDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_NewABIOptionThree__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 3</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_LPROption4</fullName>
+        <description>Fieldset used to store fields related to service type Level Premium Review</description>
+        <displayedFields>
+            <field>RSC_OptionFourDescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Option 4</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_OPRCampaignDetails</fullName>
+        <description>This field set is used to store the fields related to Campaign details for service type Ongoing Portfolio Review.</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_OPRCampaignPolicyDetails</fullName>
+        <description>This field set is used to store the fields related to Campaign details for service type Ongoing Portfolio Review.</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_PRCampaignDetails</fullName>
+        <description>This field set is used to store the fields related to Campaign details for service type Proactive Retentions (Lapse Predictor).</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_Rank__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_PRCampaignPolicyDetails</fullName>
+        <description>This field set is used to store the fields related to Campaign  Policy details for service type Proactive Retentions (Lapse Predictor).</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PremiumAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_UDOCampaignDetails</fullName>
+        <description>Field set used to store fields related to campaign details for service type Unpaid Debit Order.</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_CampaignPriority__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_UDOCampaignPolicyDetails</fullName>
+        <description>Fieldset used to store fields related to service type Unpaid Debit Order.</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_Cession__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_CessionType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_UDOFinancialAdviserDetails</fullName>
+        <description>Fieldset used to store fields related to financial adviser details for service type Unpaid Debit Order.</description>
+        <displayedFields>
+            <field>RSC_AdviserName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserIdentificationNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserCellphoneNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserBusinessTelephoneNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserHomeTelephoneNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserEmail__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserBranchCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserIntermediaryChannel__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserRegionName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserRegionCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Financial Adviser Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_UDOPaymentDetails</fullName>
+        <description>Fieldset used to store fields related to payment details for service type Unpaid Debit Order.</description>
+        <displayedFields>
+            <field>RSC_PaymentMethod__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DebitDay__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_BankName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_BankAccountNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Payment Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_UDOPremiumAndPaymentInfo</fullName>
+        <description>Field set used to store fields related to premium and payment information for service type Unpaid Debit Order.</description>
+        <displayedFields>
+            <field>RSC_PremiumAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PaymentFrequency__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_OutstandingAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_OutstandingPremiumCount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DebitOrderRejectedReason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Premium &amp; Payment Info</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_WCCampaignDetails</fullName>
+        <description>This field set is used to store the fields related to Campaign details for service type Welcome call.</description>
+        <displayedFields>
+            <field>RSC_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ClientIndicator__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_Channel__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SC_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>RSC_WCCampaignPolicyDetails</fullName>
+        <description>Fieldset used to store fields related to Campaign Policy Details for service type Welcome Call .</description>
+        <displayedFields>
+            <field>RSC_PolicyNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PolicyType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_DateOfCommencement__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_PremiumAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Campaign Policy Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>SC_FinancialAdvisorDetails</fullName>
+        <description>US :399878 Case Creation | Manual Case Creation</description>
+        <displayedFields>
+            <field>RSC_AdviserName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserSurname__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_ConsultantCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserCellphoneNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RSC_AdviserEmail__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Financial Advisor Information</label>
+    </fieldSets>
+    <fields>
+        <fullName>RSC_ABIPercentageIncrease__c</fullName>
+        <description>Annual Benefit Increase Percentage.</description>
+        <externalId>false</externalId>
+        <label>ABI % Increase</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ACIPercentageIncrease__c</fullName>
+        <description>Annual contribution increase percentage.</description>
+        <externalId>false</externalId>
+        <label>ACI % Increase</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserBranchCode__c</fullName>
+        <description>This field is used to capture the branch code of an adviser.</description>
+        <externalId>false</externalId>
+        <label>Branch Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserBusinessTelephoneNumber__c</fullName>
+        <description>Used to capture the business telephone number of the adviser.</description>
+        <externalId>false</externalId>
+        <label>Business Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserCellphoneNumber__c</fullName>
+        <description>This field is used to capture the cellphone number of adviser.</description>
+        <externalId>false</externalId>
+        <label>Mobile Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserEmail__c</fullName>
+        <description>Field to capture the adviser email.</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserHomeTelephoneNumber__c</fullName>
+        <description>Field to capture the home telephone number of the adviser.</description>
+        <externalId>false</externalId>
+        <label>Home Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserIdentificationNumber__c</fullName>
+        <description>Field to capture the identification number of the adviser.</description>
+        <externalId>false</externalId>
+        <label>Identification Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserIntermediaryChannel__c</fullName>
+        <description>Field used to capture the adviser intermediary channel</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserName__c</fullName>
+        <description>Field used to capture the adviser name.</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserReason__c</fullName>
+        <description>Field used to capture the adviser reason</description>
+        <externalId>false</externalId>
+        <label>Status Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserRegionCode__c</fullName>
+        <description>This is used to capture the region code of adviser.</description>
+        <externalId>false</externalId>
+        <label>Region Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserRegionName__c</fullName>
+        <description>This field is used to capture the region name of adviser.</description>
+        <externalId>false</externalId>
+        <label>Region Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserStatus__c</fullName>
+        <description>This field is used to capture the status of adviser.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_AdviserSurname__c</fullName>
+        <description>Field to capture the surname of the adviser.</description>
+        <externalId>false</externalId>
+        <label>Adviser Surname</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_BankAccountNumber__c</fullName>
+        <description>&quot;The bank account number from which premium payments are debited i.e. account number of the payee on the contract. This field is compass specific and so for lifestyle blank value will come.
+Related to 321712&quot;</description>
+        <externalId>false</externalId>
+        <label>Bank Account Number</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_BankName__c</fullName>
+        <description>&quot;The bank at which the bank account resides for premium payments i.e. bank name of the payee on the contract. This field is compass specific and so for lifestyle blank value will come.
+Related to 321712&quot;</description>
+        <externalId>false</externalId>
+        <label>Bank Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_BonusPaymentAmount__c</fullName>
+        <description>This field stores the Bonus Payment Amount</description>
+        <externalId>false</externalId>
+        <label>Bonus  Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RSC_BonusPaymentDate__c</fullName>
+        <description>This field stores the Bonus Payment Date</description>
+        <externalId>false</externalId>
+        <label>Bonus Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>RSC_CampaignPriority__c</fullName>
+        <description>This field will hold the Campaign Priority against individual policy.</description>
+        <externalId>false</externalId>
+        <label>Campaign Priority</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_Campaign__c</fullName>
+        <description>This field will indicate the campaign type.</description>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_CessionType__c</fullName>
+        <description>Contract Cession Type
+Related to 321712</description>
+        <externalId>false</externalId>
+        <label>Cession Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_Cession__c</fullName>
+        <description>This field will hold the cessionary information related to a policy.</description>
+        <externalId>false</externalId>
+        <label>Cessionary</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_Channel__c</fullName>
+        <description>This field will indicate the channel of the campaign.</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ClientIndicator__c</fullName>
+        <description>This field is used to indicate the client type.</description>
+        <externalId>false</externalId>
+        <label>Client Indicator</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ConsultantCode__c</fullName>
+        <description>This field will indicate the Consultant Code of the Adviser</description>
+        <externalId>false</externalId>
+        <label>Consultant Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ContributionAmount__c</fullName>
+        <description>Contribution amount value</description>
+        <externalId>false</externalId>
+        <label>Contribution Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RSC_ContributionFromDate__c</fullName>
+        <description>Premium contribution from date</description>
+        <externalId>false</externalId>
+        <label>Contribution From Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>RSC_CurrentABIPercentage__c</fullName>
+        <description>Current Annual Benefit Increase allocated to this contract.</description>
+        <externalId>false</externalId>
+        <label>Current ABI%</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_DateOfCommencement__c</fullName>
+        <description>Contract Commencement Date
+Related to 321712</description>
+        <externalId>false</externalId>
+        <label>Date Of Commencement</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>RSC_DebitDay__c</fullName>
+        <description>&quot;On which date the Policy is debited for Premium.
+Related to 321712&quot;</description>
+        <externalId>false</externalId>
+        <label>Debit Day</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_DebitOrderRejectedReason__c</fullName>
+        <description>This field is used to capture the debit order rejection reason.</description>
+        <externalId>false</externalId>
+        <label>Rejection Reason</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ExpectedLapseDateForOptionFour__c</fullName>
+        <description>GRD ad-hoc field to capture expected lapse date for option four.</description>
+        <externalId>false</externalId>
+        <label>Expected Lapse Date</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ExpectedLapseDate__c</fullName>
+        <description>The date at which contract is expected to lapse.</description>
+        <externalId>false</externalId>
+        <label>Expected Lapse Date</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_FutureExpectedRequiredPremium__c</fullName>
+        <description>Premium this will be effective after contract benefit updated.</description>
+        <externalId>false</externalId>
+        <label>Future Expected Required Premium</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewABIOptionThree__c</fullName>
+        <description>ABI Option Amount</description>
+        <externalId>false</externalId>
+        <label>New ABI Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RSC_NewGRDForOptionFive__c</fullName>
+        <description>GRD ad-hoc field to capture new GRD for option 5.</description>
+        <externalId>false</externalId>
+        <label>New GRD</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewGRDForOptionOne__c</fullName>
+        <description>GRD ad-hoc field to capture new GRD for option 1</description>
+        <externalId>false</externalId>
+        <label>New GRD</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewGRDForOptionThree__c</fullName>
+        <description>GRD ad-hoc field to capture new GRD for option 3.</description>
+        <externalId>false</externalId>
+        <label>New GRD</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewGRDForOptionTwo__c</fullName>
+        <description>GRD ad-hoc field to capture new GRD for option 2.</description>
+        <externalId>false</externalId>
+        <label>New GRD</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewPremiumForOptionFive__c</fullName>
+        <description>GRD ad-hoc field to capture new premium for option 5.</description>
+        <externalId>false</externalId>
+        <label>New Premium</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewPremiumForOptionOne__c</fullName>
+        <description>GRD ad-hoc field to capture new premium for option 1.</description>
+        <externalId>false</externalId>
+        <label>New Premium</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewPremiumForOptionTwo__c</fullName>
+        <description>GRD ad-hoc field to capture new premium for option 2.</description>
+        <externalId>false</externalId>
+        <label>New Premium</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewSumAssuredForOptionThree__c</fullName>
+        <description>GRD ad-hoc field to capture new sum assured for option three.</description>
+        <externalId>false</externalId>
+        <label>New Sum Assured</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NewSumAssuredForOptionTwo_c__c</fullName>
+        <description>Ad-hoc field to capture new sum assured for option two.</description>
+        <externalId>false</externalId>
+        <label>New Sum Assured</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_NextReview25Capped__c</fullName>
+        <description>Next date at which policy need to be reviewed.</description>
+        <externalId>false</externalId>
+        <label>Next Review 25% Capped</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_Option2SumAssuredReduction__c</fullName>
+        <description>Percentage at which the sum assured has been reduced after the client has made a selection.</description>
+        <externalId>false</externalId>
+        <label>Option 2 Sum Assured Reduction %</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_OptionFiveDescription__c</fullName>
+        <description>GRD ad-hoc field to capture option 5 description.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_OptionFourDescription__c</fullName>
+        <description>GRD ad-hoc field to capture option 4 description.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_OptionOneDescription__c</fullName>
+        <description>GRD ad-hoc field to capture option 1 description.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_OptionThreeDescription__c</fullName>
+        <description>GRD ad-hoc field to capture option 3 description.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_OptionTwoDescription__c</fullName>
+        <description>GRD ad-hoc field to capture option 2 description.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_OutstandingAmount__c</fullName>
+        <description>The amount still outstanding on the policy to make policy paid-to-date.</description>
+        <externalId>false</externalId>
+        <label>Outstanding Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RSC_OutstandingPremiumCount__c</fullName>
+        <description>The number of outstanding premiums</description>
+        <externalId>false</externalId>
+        <label>Outstanding Premium Count</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PaymentFrequency__c</fullName>
+        <description>&quot;Frequency in which a person will pay there premiums i.e monthly.
+Related to 321712&quot;</description>
+        <externalId>false</externalId>
+        <label>Payment Frequency</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PaymentMethod__c</fullName>
+        <description>This field is used to capture the payment method for a policy.</description>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PayorID__c</fullName>
+        <description>Contract Payor ID
+Related to 321712</description>
+        <externalId>false</externalId>
+        <label>Payor ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PercentageIndicator__c</fullName>
+        <description>Percentage Indicator.</description>
+        <externalId>false</externalId>
+        <label>% Indicator</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PolicyNumber__c</fullName>
+        <description>This field is used to capture the policy number.</description>
+        <externalId>false</externalId>
+        <label>Policy Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PolicyPaymentMode__c</fullName>
+        <description>Mode of payment defined for a contract premium.</description>
+        <externalId>false</externalId>
+        <label>Policy Payment Mode</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PolicyStatus__c</fullName>
+        <description>This field is used to capture the status of a policy.</description>
+        <externalId>false</externalId>
+        <label>Policy Status</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PolicyType__c</fullName>
+        <description>This field is used to capture the type of policy.</description>
+        <externalId>false</externalId>
+        <label>Policy Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PostACIPremium__c</fullName>
+        <description>New premium to be paid after Annual Contribution Increase.</description>
+        <externalId>false</externalId>
+        <label>Post ACI Premium</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_PremiumAmount__c</fullName>
+        <description>Welcome Call/Level Premium ad-hoc to store the Welcome Call and Level Premium premium amount</description>
+        <externalId>false</externalId>
+        <label>Premium Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RSC_PremiumIncreaseDate__c</fullName>
+        <description>The date at which the premium is reviewed and increased.</description>
+        <externalId>false</externalId>
+        <label>Premium Increase Date</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_Rank__c</fullName>
+        <description>This field is used to indicate the rank of the campaign.</description>
+        <externalId>false</externalId>
+        <label>Rank</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_RequiredPremium__c</fullName>
+        <description>Current required premium for a contract based on the option selected.</description>
+        <externalId>false</externalId>
+        <label>Required Premium</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ReviewDate__c</fullName>
+        <description>Field to capture a Review Date</description>
+        <externalId>false</externalId>
+        <label>Review Date</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_ReviewedPremium__c</fullName>
+        <description>Premium after the annual review has concluded.</description>
+        <externalId>false</externalId>
+        <label>Reviewed Premium</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RSC_SchemeCode__c</fullName>
+        <description>Scheme Code.</description>
+        <externalId>false</externalId>
+        <label>Scheme Code</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_BrokerConsultantEmail__c</fullName>
+        <description>This field will indicate any additional email addresses that should also be used when sending communications</description>
+        <externalId>false</externalId>
+        <label>Broker Consultant Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_CanConsultantBookMed__c</fullName>
+        <description>This field will indicate wether the Consultant can book medicals by themselves</description>
+        <externalId>false</externalId>
+        <label>Can Consultant Book Med</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_CaseExtension__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is lookup of Case Extension</description>
+        <externalId>false</externalId>
+        <label>Case Extension</label>
+        <referenceTo>SC_CaseExtension__c</referenceTo>
+        <relationshipLabel>Associated Contract Extensions</relationshipLabel>
+        <relationshipName>Associated_Contract_Extensions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SC_CaseRecordType__c</fullName>
+        <description>This is used to store the record type of the case linked to the related Associated Contract record.</description>
+        <externalId>false</externalId>
+        <label>Case Record Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ConsultantInitials__c</fullName>
+        <description>This field will indicate the Consultant Initials</description>
+        <externalId>false</externalId>
+        <label>Consultant Initials</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ConsultantPriority__c</fullName>
+        <description>This field will indicate if the Adviser is a priority Adviser</description>
+        <externalId>false</externalId>
+        <label>Consultant Priority</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ConsultantTelephoneNumber__c</fullName>
+        <description>This field will indicate the consultant telephone number</description>
+        <externalId>false</externalId>
+        <label>Consultant Telephone Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>SC_ConsultantType__c</fullName>
+        <description>This field will indicate the Type of Consultant, Adviser, Broker etc.</description>
+        <externalId>false</externalId>
+        <label>Consultant Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_ContractNumber__c</fullName>
+        <description>This field will show the Associated Contract Number that we have received from the Mulesoft API.</description>
+        <externalId>false</externalId>
+        <label>Contract Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_Outcome__c</fullName>
+        <description>This field holds Call Outcomes Per Policy</description>
+        <externalId>false</externalId>
+        <label>Outcome</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Affordability​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Affordability​</label>
+                </value>
+                <value>
+                    <fullName>Affordability</fullName>
+                    <default>false</default>
+                    <label>Affordability</label>
+                </value>
+                <value>
+                    <fullName>Age rated premium</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Age rated premium</label>
+                </value>
+                <value>
+                    <fullName>Age Rated Premium Increase</fullName>
+                    <default>false</default>
+                    <label>Age Rated Premium Increase</label>
+                </value>
+                <value>
+                    <fullName>Arrangement made with Financial Adviser</fullName>
+                    <default>false</default>
+                    <label>Arrangement made with Financial Adviser</label>
+                </value>
+                <value>
+                    <fullName>Arrangement made with Servicing Team</fullName>
+                    <default>false</default>
+                    <label>Arrangement made with Servicing Team</label>
+                </value>
+                <value>
+                    <fullName>Benefits Reduction - Premium Guarantee 10 years</fullName>
+                    <default>false</default>
+                    <label>Benefits Reduction - Premium Guarantee 10 years</label>
+                </value>
+                <value>
+                    <fullName>Cancellation​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cancellation​</label>
+                </value>
+                <value>
+                    <fullName>Client already contacted for another campaign</fullName>
+                    <default>false</default>
+                    <label>Client already contacted for another campaign</label>
+                </value>
+                <value>
+                    <fullName>Client already contacted successfully</fullName>
+                    <default>false</default>
+                    <label>Client already contacted successfully</label>
+                </value>
+                <value>
+                    <fullName>Client could not be reached</fullName>
+                    <default>false</default>
+                    <label>Client could not be reached</label>
+                </value>
+                <value>
+                    <fullName>Client deceased</fullName>
+                    <default>false</default>
+                    <label>Client deceased</label>
+                </value>
+                <value>
+                    <fullName>Client not interested</fullName>
+                    <default>false</default>
+                    <label>Client not interested</label>
+                </value>
+                <value>
+                    <fullName>Client unaware of policy</fullName>
+                    <default>false</default>
+                    <label>Client unaware of policy</label>
+                </value>
+                <value>
+                    <fullName>Client wants to cancel policy</fullName>
+                    <default>false</default>
+                    <label>Client wants to cancel policy</label>
+                </value>
+                <value>
+                    <fullName>Client wants to speak to Financial Adviser</fullName>
+                    <default>false</default>
+                    <label>Client wants to speak to Financial Adviser</label>
+                </value>
+                <value>
+                    <fullName>Client wants to surrender policy</fullName>
+                    <default>false</default>
+                    <label>Client wants to surrender policy</label>
+                </value>
+                <value>
+                    <fullName>Comprehensive Review</fullName>
+                    <default>false</default>
+                    <label>Comprehensive Review</label>
+                </value>
+                <value>
+                    <fullName>Converted to Debit Order​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Converted to Debit Order​</label>
+                </value>
+                <value>
+                    <fullName>Converted to Debit Order</fullName>
+                    <default>false</default>
+                    <label>Converted to Debit Order</label>
+                </value>
+                <value>
+                    <fullName>Customer Wants to Speak with Broker​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Customer Wants to Speak with Broker​</label>
+                </value>
+                <value>
+                    <fullName>Debit Order Form sent</fullName>
+                    <default>false</default>
+                    <label>Debit Order Form sent</label>
+                </value>
+                <value>
+                    <fullName>Default Premium Increase</fullName>
+                    <default>false</default>
+                    <label>Default Premium Increase</label>
+                </value>
+                <value>
+                    <fullName>Double Debit​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Double Debit​</label>
+                </value>
+                <value>
+                    <fullName>Double Debit</fullName>
+                    <default>false</default>
+                    <label>Double Debit</label>
+                </value>
+                <value>
+                    <fullName>Increase Premium (Premium guarantee extended by 13 years)</fullName>
+                    <default>false</default>
+                    <label>Increase Premium (Premium guarantee extended by 13 years)</label>
+                </value>
+                <value>
+                    <fullName>Increase premium (Universal Lifestyle only)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Increase premium (Universal Lifestyle only)</label>
+                </value>
+                <value>
+                    <fullName>Internet Payment​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Internet Payment​</label>
+                </value>
+                <value>
+                    <fullName>Internet Payment</fullName>
+                    <default>false</default>
+                    <label>Internet Payment</label>
+                </value>
+                <value>
+                    <fullName>Leave Policy As Is</fullName>
+                    <default>false</default>
+                    <label>Leave Policy As Is</label>
+                </value>
+                <value>
+                    <fullName>Leave Premium &amp; Cover unchanged (No premium guarantee)</fullName>
+                    <default>false</default>
+                    <label>Leave Premium &amp; Cover unchanged (No premium guarantee)</label>
+                </value>
+                <value>
+                    <fullName>M65 Payment​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>M65 Payment​</label>
+                </value>
+                <value>
+                    <fullName>M65 Payment</fullName>
+                    <default>false</default>
+                    <label>M65 Payment</label>
+                </value>
+                <value>
+                    <fullName>Made Payment Arrangement With Broker​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Made Payment Arrangement With Broker​</label>
+                </value>
+                <value>
+                    <fullName>Manual Special Debit</fullName>
+                    <default>false</default>
+                    <label>Manual Special Debit</label>
+                </value>
+                <value>
+                    <fullName>New Premium based on ABI Calculation</fullName>
+                    <default>false</default>
+                    <label>New Premium based on ABI Calculation</label>
+                </value>
+                <value>
+                    <fullName>New Premium Calculation basis for ABI (Only if policy has ABI)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>New Premium Calculation basis for ABI (Only if policy has ABI)</label>
+                </value>
+                <value>
+                    <fullName>No Contact Details</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>No Contact Details</label>
+                </value>
+                <value>
+                    <fullName>No contact details available</fullName>
+                    <default>false</default>
+                    <label>No contact details available</label>
+                </value>
+                <value>
+                    <fullName>Non-comprehensive Review</fullName>
+                    <default>false</default>
+                    <label>Non-comprehensive Review</label>
+                </value>
+                <value>
+                    <fullName>Orphan Client referred to CM Leads</fullName>
+                    <default>false</default>
+                    <label>Orphan Client referred to CM Leads</label>
+                </value>
+                <value>
+                    <fullName>Policy Cancelled</fullName>
+                    <default>false</default>
+                    <label>Policy Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Policy Lapsed</fullName>
+                    <default>false</default>
+                    <label>Policy Lapsed</label>
+                </value>
+                <value>
+                    <fullName>Policy Matured</fullName>
+                    <default>false</default>
+                    <label>Policy Matured</label>
+                </value>
+                <value>
+                    <fullName>Policy Not Taken Up</fullName>
+                    <default>false</default>
+                    <label>Policy Not Taken Up</label>
+                </value>
+                <value>
+                    <fullName>Policy Out of Force</fullName>
+                    <default>false</default>
+                    <label>Policy Out of Force</label>
+                </value>
+                <value>
+                    <fullName>Policy Paid to Date</fullName>
+                    <default>false</default>
+                    <label>Policy Paid to Date</label>
+                </value>
+                <value>
+                    <fullName>Policy Paid Up</fullName>
+                    <default>false</default>
+                    <label>Policy Paid Up</label>
+                </value>
+                <value>
+                    <fullName>Policy Replacement</fullName>
+                    <default>false</default>
+                    <label>Policy Replacement</label>
+                </value>
+                <value>
+                    <fullName>Policy Surrendered</fullName>
+                    <default>false</default>
+                    <label>Policy Surrendered</label>
+                </value>
+                <value>
+                    <fullName>Premium and Life Cover unchanged</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Premium and Life Cover unchanged</label>
+                </value>
+                <value>
+                    <fullName>Premium increase, Cancel ABI and ACI</fullName>
+                    <default>false</default>
+                    <label>Premium increase, Cancel ABI and ACI</label>
+                </value>
+                <value>
+                    <fullName>Premium increase and Cancel Annual Benefit Increase and Annual Contribution Increase</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Premium increase and Cancel Annual Benefit Increase and Annual Contribution Increase</label>
+                </value>
+                <value>
+                    <fullName>Premium increase to new level premium</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Premium increase to new level premium</label>
+                </value>
+                <value>
+                    <fullName>Provision of Portfolio Review</fullName>
+                    <default>false</default>
+                    <label>Provision of Portfolio Review</label>
+                </value>
+                <value>
+                    <fullName>Reduce life cover and other benefit amounts</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Reduce life cover and other benefit amounts</label>
+                </value>
+                <value>
+                    <fullName>Reduce Sum Assured</fullName>
+                    <default>false</default>
+                    <label>Reduce Sum Assured</label>
+                </value>
+                <value>
+                    <fullName>Replacement​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Replacement​</label>
+                </value>
+                <value>
+                    <fullName>Review Done</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Review Done</label>
+                </value>
+                <value>
+                    <fullName>Review Not Done</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Review Not Done</label>
+                </value>
+                <value>
+                    <fullName>Source Data Error</fullName>
+                    <default>false</default>
+                    <label>Source Data Error</label>
+                </value>
+                <value>
+                    <fullName>Special Debit​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Special Debit​</label>
+                </value>
+                <value>
+                    <fullName>Special Debit</fullName>
+                    <default>false</default>
+                    <label>Special Debit</label>
+                </value>
+                <value>
+                    <fullName>Successful conversation with Client</fullName>
+                    <default>false</default>
+                    <label>Successful conversation with Client</label>
+                </value>
+                <value>
+                    <fullName>Sum Assured reduction</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Sum Assured reduction</label>
+                </value>
+                <value>
+                    <fullName>Triple Debit​</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Triple Debit​</label>
+                </value>
+                <value>
+                    <fullName>Triple Debit</fullName>
+                    <default>false</default>
+                    <label>Triple Debit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Associated Contract Extension</label>
+    <nameField>
+        <label>Associated Contract Extension Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Associated Contract Extensions</pluralLabel>
+    <recordTypes>
+        <fullName>Default</fullName>
+        <active>true</active>
+        <description>Default Record Type</description>
+        <label>Default</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Affordability</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_Addlib</fullName>
+        <active>true</active>
+        <description>Represents Lifestyle Protector bonus &amp; compass bonus payment.</description>
+        <label>Addlib</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Client already contacted for another campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client could not be reached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_AdhocProactiveInitiatives</fullName>
+        <active>true</active>
+        <description>Represents records related to Adhoc Proactive Initiatives.</description>
+        <label>Adhoc Proactive Initiatives</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Client already contacted for another campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client could not be reached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Default Premium Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leave Policy As Is</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reduce Sum Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_CashToDebit</fullName>
+        <active>true</active>
+        <description>Represents policies with premiums that are paid in Cash will be included in the initiative for Cash to Debit order initiative.</description>
+        <label>Cash To Debit</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Affordability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arrangement made with Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arrangement made with Servicing Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Converted to Debit Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debit Order Form sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Double Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M65 Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Special Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triple Debit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_ESeries</fullName>
+        <active>true</active>
+        <description>Represents Lifestyle Protector bonus &amp; compass bonus payment.</description>
+        <label>E-series</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Client already contacted for another campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client could not be reached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_GuaranteeReviewDate</fullName>
+        <active>true</active>
+        <description>Represents Legacy universal life product with whole life risk cover.</description>
+        <label>Guarantee Review Date</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Age Rated Premium Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arrangement made with Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Reduction - Premium Guarantee 10 years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted for another campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client could not be reached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Default Premium Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Increase Premium %28Premium guarantee extended by 13 years%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leave Premium %26 Cover unchanged %28No premium guarantee%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_LevelPremiumCall</fullName>
+        <active>true</active>
+        <description>Represents Lifestyle Protector Level Premium policies.</description>
+        <label>Level Premium Call</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Client already contacted for another campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client could not be reached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Default Premium Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Premium based on ABI Calculation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium increase%2C Cancel ABI and ACI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reduce Sum Assured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_OngoingPortfolioReview</fullName>
+        <active>true</active>
+        <description>Represents portfolio’s review and alignment.</description>
+        <label>Ongoing Portfolio Review</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Client already contacted for another campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client could not be reached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-comprehensive Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provision of Portfolio Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_ProactiveRetentions</fullName>
+        <active>true</active>
+        <description>Represents proactive identification of customers with a high propensity of lapse.</description>
+        <label>Proactive Retentions</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Client already contacted for another campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client could not be reached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_UnpaidDebitOrders</fullName>
+        <active>true</active>
+        <description>Represents Unpaid Debit Order policies i.e Policies with missed premiums.</description>
+        <label>Unpaid Debit Orders</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Affordability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arrangement made with Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arrangement made with Servicing Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Converted to Debit Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Debit Order Form sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Double Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M65 Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Special Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Debit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triple Debit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RSC_WelcomeCall</fullName>
+        <active>true</active>
+        <description>Represents welcome call for new policies.</description>
+        <label>Welcome Call</label>
+        <picklistValues>
+            <picklist>SC_Outcome__c</picklist>
+            <values>
+                <fullName>Client already contacted successfully</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client deceased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client not interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client unaware of policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to cancel policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to speak to Financial Adviser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client wants to surrender policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No contact details available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orphan Client referred to CM Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Lapsed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Matured</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Not Taken Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Out of Force</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Paid to Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Replacement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy Surrendered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Data Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful conversation with Client</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SC_MedicalAppointment</fullName>
+        <active>true</active>
+        <description>Represents Medical Appointment for clients.</description>
+        <label>Medical Appointment</label>
+    </recordTypes>
+    <searchLayouts />
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

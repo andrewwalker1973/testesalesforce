@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Coastal and Free State Nurses Booking Team Leader</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Coastal and Free State Nurses Booking Team Leader</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>RSC_ZA_Retail_OnboardingAdminAndMedicalServicesManager</parentRole>
+</Role>

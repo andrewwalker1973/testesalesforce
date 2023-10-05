@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Assign_Target_Owner</name>
+        <label>Assign Target Owner</label>
+        <locationX>1481</locationX>
+        <locationY>469</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SLI_CFMTarget__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>gr_GetTargetOwner.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ur_UpdateHolding</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Target_Owner_0</name>
+        <label>Assign Target Owner</label>
+        <locationX>1486</locationX>
+        <locationY>592</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SLI_CFMTarget__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Orphan_CFM_Target.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ur_UpdateHolding</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigning the closing value of preceding month&apos;s financial holding record&apos;s market value zar current financial holding record</description>
+        <name>AssignClosingMarketValueLastMonth</name>
+        <label>Assign Closing Market Value Last Month</label>
+        <locationX>973</locationX>
+        <locationY>294</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SLI_ClosingMarketValueZARLastMonth__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_FinancialHoldingValueLastMonth.SLI_MarketValueZAR__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>dec_DoesHoldingDateExist</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Determine if a record was found with the AW_AUMSourceExternalId__c created in formula LastMonthFinancialHoldingExternalId</description>
+        <name>dec_DoesFinancialHoldingLastMonthExist</name>
+        <label>Does Financial Holding Last Month Exist?</label>
+        <locationX>780</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>dec_DoesHoldingDateExist</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FinancialHoldingExistsLastMonth</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_FinancialHoldingValueLastMonth.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignClosingMarketValueLastMonth</targetReference>
+            </connector>
+            <label>Financial Holding Exists Last Month</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>dec_DoesHoldingDateExist</name>
+        <label>Does Holding Date Exist?</label>
+        <locationX>966</locationX>
+        <locationY>490</locationY>
+        <defaultConnector>
+            <targetReference>Get_Orphan_CFM_Target</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Date_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AW_ValueAsAt__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>gr_GetTargetOwner</targetReference>
+            </connector>
+            <label>Date Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>dec_DoesTargetExist</name>
+        <label>Does Target Exist</label>
+        <locationX>1328</locationX>
+        <locationY>468</locationY>
+        <defaultConnector>
+            <targetReference>Get_Orphan_CFM_Target</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Target_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>gr_GetTargetOwner.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Target_Owner</targetReference>
+            </connector>
+            <label>Target Exists</label>
+        </rules>
+    </decisions>
+    <description>Updated Flow that kicks off when a Financial Holding record is created or updated and Value As At is changed.
+It find the value of any existing holdings from the preceding year so that a YTD movement of AUM can be calculated and rolled up from the FH triggering record.
+
+Updated from v22 to remove the &apos;Strategy Target&apos; assignment - instead to assign the Holding to the BDM target by the Franchise it relates to.
+
+Updates from v23 to improve with Fault path when it Flow to Get preceding month&apos;s externalId.
+Updates from v24 to use Franchise field on Financial Holding that gives FinAcct&apos;s Franchise
+Updates from v25 to use Franchise text field on Financial Holding that gives FinAcct&apos;s Franchise text value</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DateTimetoDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.AW_ValueAsAt__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Instead of using the last Year-End Financial Holding closing value, we will use Last Month&apos;s closing value to get the Month on Month movement in AUM. This will be determined by the triggering Financial Holding record&apos;s External ID (AW_AUMSourceExternalId__c) ending YYYYMM.
+
+This Formula produces the previous month&apos;s External ID.</description>
+        <name>LastMonthFinancialHoldingExternalId</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Record.AW_AUMSourceExternalId__c},(LEN({!$Record.AW_AUMSourceExternalId__c})-6))
+&amp;
+IF((RIGHT({!$Record.AW_AUMSourceExternalId__c},2)=&quot;01&quot;),
+(TEXT(VALUE(LEFT(RIGHT({!$Record.AW_AUMSourceExternalId__c},6),4))-1)),
+(LEFT(RIGHT({!$Record.AW_AUMSourceExternalId__c},6),4))
+)
+&amp;
+CASE(
+(RIGHT({!$Record.AW_AUMSourceExternalId__c},2)),
+&quot;01&quot;,&quot;12&quot;,
+&quot;12&quot;,&quot;11&quot;,
+&quot;11&quot;,&quot;10&quot;,
+&quot;10&quot;,&quot;09&quot;,
+&quot;09&quot;,&quot;08&quot;,
+&quot;08&quot;,&quot;07&quot;,
+&quot;07&quot;,&quot;06&quot;,
+&quot;06&quot;,&quot;05&quot;,
+&quot;05&quot;,&quot;04&quot;,
+&quot;04&quot;,&quot;03&quot;,
+&quot;03&quot;,&quot;02&quot;,
+&quot;02&quot;,&quot;01&quot;,
+&quot;XX&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>SLI - Financial Account Holdings {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SLI - Financial Account Holdings</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_CFM_Target_Record_Type</name>
+        <label>Get CFM Target Record Type</label>
+        <locationX>665</locationX>
+        <locationY>206</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_FinancialHoldingValueLastMonth</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CFM Target</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the Financial Holding record that has the AW_AUMSourceExternalId__c value we derived in the formula resource: &apos;LastMonthFinancialHoldingExternalId&apos;</description>
+        <name>Get_FinancialHoldingValueLastMonth</name>
+        <label>Get Financial Holding Value Last Month</label>
+        <locationX>790</locationX>
+        <locationY>206</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>dec_DoesFinancialHoldingLastMonthExist</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>dec_DoesFinancialHoldingLastMonthExist</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AW_AUMSourceExternalId__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>LastMonthFinancialHoldingExternalId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>FinServ__FinancialHolding__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>SLI_MarketValueZAR__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Orphan_CFM_Target</name>
+        <label>Get Orphan CFM Target</label>
+        <locationX>1160</locationX>
+        <locationY>584</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Target_Owner_0</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Orphan CFM Target</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SLC_Target__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>gr_GetTargetOwner</name>
+        <label>Get Target Owner</label>
+        <locationX>1156</locationX>
+        <locationY>397</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>dec_DoesTargetExist</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>dec_DoesTargetExist</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SLC_StartDate__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>DateTimetoDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SLC_EndDate__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>DateTimetoDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.FinServ__FinancialAccount__r.FinServ__PrimaryOwner__r.OwnerId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_CFM_Target_Record_Type.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Strategy_Text__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SLI_Franchise__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SLC_Target__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>ur_UpdateHolding</name>
+        <label>Update Holding</label>
+        <locationX>1625</locationX>
+        <locationY>526</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>230</locationX>
+        <locationY>112</locationY>
+        <connector>
+            <targetReference>Get_CFM_Target_Record_Type</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.AW_ValueAsAt__c})</filterFormula>
+        <object>FinServ__FinancialHolding__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,67 @@
+<template>
+  <template if:true={goals.data}>
+    <template for:each={goals.data} for:item="goal" class="slds-m-bottom_large">
+      <lightning-card key={goal.Id}>
+        <div class="slds-p-horizontal_large">
+          <div class="slds-clearfix">
+            <h2 class="slds-text-heading_medium slds-float_left slds-p-right_medium">
+              {goal.Name}
+            </h2>
+            <lightning-badge label={goal.FinServ__Status__c}></lightning-badge>
+            <lightning-button-group class="slds-float_right">
+              <lightning-button-icon icon-name="utility:edit" variant="border-filled" alternative-text="Edit">
+              </lightning-button-icon>
+              <lightning-button-icon icon-name="utility:delete" variant="border-filled" alternative-text="Delete"
+                onclick={deleteGoal} data-recordid={goal.Id}></lightning-button-icon>
+            </lightning-button-group>
+          </div>
+          <div class="slds-p-top_large slds-p-bottom_large">
+            <div class="slds-grid slds-gutters slds-grid_vertical-align-center">
+              <div class="slds-col">
+                <div class="slds-text-heading--label">
+                  Type
+                </div>
+                <div class="slds-text-heading_medium">
+                  {goal.FinServ__Type__c}
+                </div>
+              </div>
+              <div class="slds-col">
+                <div class="slds-text-heading--label">
+                  Actual Value
+                </div>
+                <div class="slds-text-heading_medium">
+                  <lightning-formatted-number value={goal.FinServ__ActualValue__c} format-style="currency"
+                    currency-code="ZAR"></lightning-formatted-number>
+                </div>
+              </div>
+              <div class="slds-col">
+                <div class="slds-text-heading--label">
+                  Target Value
+                </div>
+                <div class="slds-text-heading_medium">
+                  <lightning-formatted-number value={goal.FinServ__TargetValue__c} format-style="currency"
+                    currency-code="ZAR"></lightning-formatted-number>
+                </div>
+              </div>
+              <div class="slds-col">
+                <div class="slds-text-heading--label">
+                  Target Date
+                </div>
+                <div class="slds-text-heading_medium">
+                  {goal.FinServ__TargetDate__c}
+                </div>
+              </div>
+              <div class="slds-col">
+                <canvas width="100" height="100" data-field={goal.Id} lwc:dom="manual"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </lightning-card>
+    </template>
+  </template>
+  <template if:true={goals.error}>
+    {goals.error}
+  </template>
+  <c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

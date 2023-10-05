@@ -1,0 +1,39 @@
+<!--
+ * @description Used for Quick action call to retrieve the policy summary from Mulesoft and loading page for end user
+ *
+ * @see AW_CTR_PolicySummary
+ *
+ * @author Thiru
+ *
+ * @date June 2021
+-->
+
+<aura:component controller ="AW_CTR_PolicySummary" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasSObjectName,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+        
+    <!--create a component attributes -->
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    <aura:attribute name="sObjectType" type="string" default="{!v.sObjectName}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- create 2 aura handler with waiting and done waiting events-->
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    
+    
+    <!--loading spinner start... style=Brand Medium (blue dots)-->  
+    <div class="loading_wheel">
+        <aura:if isTrue="{!v.spinner}">
+            <lightning:spinner alternativeText="Policy Summary is loading..." size="large" variant="brand"/>
+        </aura:if>
+    </div>
+    <!-- Loading spinner end-->  
+    
+    <!--Modal Body-->   
+    <div class="slds-modal__content slds-p-around--x-small slds-align_absolute-center slds-size_1-of-1 slds-is-relative">
+        <p>
+            <center><b> Policy Summary is loading.. Please wait..</b></center>
+        </p>
+    </div>
+    <!--End of Modal Body--> 
+    <a id='anchorTag' style="display:none">Download PDF</a>
+</aura:component>

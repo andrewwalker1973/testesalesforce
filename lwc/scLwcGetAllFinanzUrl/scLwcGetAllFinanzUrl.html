@@ -1,0 +1,23 @@
+<!--
+* @description LWC Component used to invoke AllFinanz Web service and redirect user to the returned URL.
+*
+* @author d.pillay@accenture.com
+*
+* @date August 2021
+-->
+<template>
+	<div class="slds-grid slds-gutters">
+		<div class="slds-col slds-size_1-of-2">
+			<lightning-input type="text" label="ID Number/Passport Number" data-field="identity-number" value={identityNumber} required></lightning-input>
+			<lightning-input type="text" label="Contract Number" data-field="contract-number" value={contractNumber} required></lightning-input>
+			<div class="slds-m-top_small">
+				<lightning-button label="Go to AllFinanz" variant="brand" onclick={getUrl}>
+				</lightning-button>
+			</div>
+		</div>
+	</div>
+	<div if:true={isSpinner}>
+		<lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+	</div>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

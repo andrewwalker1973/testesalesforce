@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>STANLIB_Inbound call</fullName>
+        <default>false</default>
+        <label>Inbound Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Live Agent</fullName>
+        <default>false</default>
+        <label>Live Agent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_Outbound call</fullName>
+        <default>false</default>
+        <label>Outbound Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Converted from Bot to Web Chat</fullName>
+        <default>false</default>
+        <label>Converted from Bot to Web Chat</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_Portal_Retail</fullName>
+        <default>false</default>
+        <label>STANLIB_Portal_Retail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_Portal_Institution</fullName>
+        <default>false</default>
+        <label>STANLIB_Portal_Institution</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_LISP</fullName>
+        <default>false</default>
+        <label>STANLIB_email_LISP</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_Institution</fullName>
+        <default>false</default>
+        <label>STANLIB_email_Institution</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_CorpCash</fullName>
+        <default>false</default>
+        <label>STANLIB_email_CorpCash</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_ClientSupport</fullName>
+        <default>false</default>
+        <label>STANLIB_email_ClientSupport</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_UnitTrustPriority</fullName>
+        <default>false</default>
+        <label>STANLIB_email_UnitTrustPriority</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_Complaints</fullName>
+        <default>false</default>
+        <label>STANLIB_email_Complaints</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_UnitTrustBrokerSupport</fullName>
+        <default>false</default>
+        <label>STANLIB_email_UnitTrustBrokerSupport</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_RetailCorporateCashTeam</fullName>
+        <default>false</default>
+        <label>STANLIB_email_RetailCorporateCashTeam</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_email_OffshoreQueries</fullName>
+        <default>false</default>
+        <label>STANLIB_email_OffshoreQueries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_Institutional_Portal_Prospect</fullName>
+        <default>false</default>
+        <label>STANLIB_Institutional_Portal_Prospect</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STANLIB_Retail_Portal_Prospect</fullName>
+        <default>false</default>
+        <label>STANLIB_Retail_Portal_Prospect</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web</fullName>
+        <default>false</default>
+        <label>Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Community</fullName>
+        <default>false</default>
+        <label>Community</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web Chat</fullName>
+        <default>false</default>
+        <label>Web Chat</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bot</fullName>
+        <default>false</default>
+        <label>Bot</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contact Us Form</fullName>
+        <default>false</default>
+        <label>Contact Us Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>STAN</fullName>
+        <default>false</default>
+        <label>STAN</label>
+    </standardValue>
+    <standardValue>
+        <fullName>API</fullName>
+        <default>false</default>
+        <label>API</label>
+    </standardValue>
+</StandardValueSet>

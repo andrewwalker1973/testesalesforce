@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>decision_Check_Profile_is_STANLIB_Portal_User</name>
+        <label>Check Profile is STANLIB Portal User</label>
+        <locationX>768</locationX>
+        <locationY>462</locationY>
+        <defaultConnectorLabel>Not STANLIB Portal User</defaultConnectorLabel>
+        <rules>
+            <name>outcome_STANLIB_Portal_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>STANLIB Portal User</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>cr_Send_User_To_External_System</targetReference>
+            </connector>
+            <label>STANLIB Portal User</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Registration API WebService Callout (Create) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Registration API WebService Callout (Create)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>cr_Send_User_To_External_System</name>
+        <label>Send User To External System</label>
+        <locationX>776</locationX>
+        <locationY>678</locationY>
+        <inputAssignments>
+            <field>CMN_Service__c</field>
+            <value>
+                <elementReference>SLC_ServiceName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CMN_TriggeringObjectId__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CMN_Type__c</field>
+            <value>
+                <stringValue>Outbound</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CMN_WebserviceCallQueue__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>decision_Check_Profile_is_STANLIB_Portal_User</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>SLC_ServiceName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>SLC_API_RestOutboundCreateUser</stringValue>
+        </value>
+    </variables>
+</Flow>

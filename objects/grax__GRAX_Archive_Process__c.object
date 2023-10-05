@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object is used when the user creates a &quot;Scheduled Process&quot; and decides to Archive records from Salesforce.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>grax__Archive_Process_Monitoring_Report_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field that will be filled with the &quot;Archive Process Monitoring Report&quot; Id by trigger when a Archive Process is created</description>
+        <externalId>false</externalId>
+        <label>Archive Process Monitoring Report Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Archive_Process_Monitoring_Report_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field that will be filled with the URL to the report corresponding to the GDRs of the current Archive Process</description>
+        <externalId>false</externalId>
+        <formula>IF (NOT(ISBLANK(grax__Archive_Process_Monitoring_Report_Id__c)), IF(NOT($User.UIThemeDisplayed=&quot;Theme4d&quot;), HYPERLINK(&apos;/&apos; &amp; grax__Archive_Process_Monitoring_Report_Id__c &amp; &apos;?pv0=&apos; &amp; Name, &quot;Archive Process Monitoring Report Link&quot;,&quot;_blank&quot;), HYPERLINK(&apos;/lightning/r/Report/&apos; &amp; grax__Archive_Process_Monitoring_Report_Id__c &amp; &apos;/view?fv0=&apos; &amp; Name, &quot;Archive Process Monitoring Report Link&quot;,&quot;_blank&quot;)), &apos;&apos;)</formula>
+        <label>Archive Process Monitoring Report Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Async_Records_Successfully_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Count of Async records (Attachments/Content Documents) Successfully Sent</description>
+        <externalId>false</externalId>
+        <label># Async Records Successfully Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Async_Records_to_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Count of Async records (Attachments/Content Documents) to process</description>
+        <externalId>false</externalId>
+        <label># Async Records to Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Can_Delete_GRAX_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label>Can Delete GRAX Record?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Execution_Unique_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label>Execution Unique Key</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_Schedule_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Related Schedule Process record</description>
+        <externalId>false</externalId>
+        <label>GRAX Schedule Process</label>
+        <referenceTo>grax__GRAX_Schedule_Process__c</referenceTo>
+        <relationshipLabel>GRAX Archive Processes</relationshipLabel>
+        <relationshipName>GRAX_Archive_Processes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>grax__Is_Current_Execution_Record__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines if the GRAX Archive Process record belongs to the current Execution Unique Key, on the parent GRAX Schedule Process record</description>
+        <externalId>false</externalId>
+        <formula>NOT(ISBLANK(grax__Execution_Unique_Key__c)) &amp;&amp; grax__GRAX_Schedule_Process__r.grax__Execution_Unique_Key__c == grax__Execution_Unique_Key__c</formula>
+        <label>Is Current Execution Record</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Async_Records_Successfully_Sent_Lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Num Async Records Successfully Sent Lkp</label>
+        <referenceTo>grax__GRAX_Helper__c</referenceTo>
+        <relationshipLabel>Num Async Records Successfully Sent Lkps</relationshipLabel>
+        <relationshipName>Num_Async_Records_Successfully_Sent_Lkps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Async_Records_Successfully_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Count of Async records (Attachments/Content Documents) Successfully Sent</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Async_Records_Successfully_Sent_Lkp__r.grax__Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num Async Records Successfully Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Async_Records_to_Process_Lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Num Async Records To Process Lkp</label>
+        <referenceTo>grax__GRAX_Helper__c</referenceTo>
+        <relationshipLabel>Num Async Records To Process Lkps</relationshipLabel>
+        <relationshipName>Num_Async_Records_to_Process_Lkps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Async_Records_to_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Count of Async records (Attachments/Content Documents) to process</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Async_Records_to_Process_Lkp__r.grax__Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num Async Records To Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_Successfully_Sent_Lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Num Records Successfully Sent Lkp</label>
+        <referenceTo>grax__GRAX_Helper__c</referenceTo>
+        <relationshipLabel>Num Records Successfully Sent Lkps</relationshipLabel>
+        <relationshipName>Num_Records_Successfully_Sent_Lkps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_Successfully_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Records_Successfully_Sent_Lkp__r.grax__Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num Records Successfully Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_To_Process_Lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Num Records To Process Lkp</label>
+        <referenceTo>grax__GRAX_Helper__c</referenceTo>
+        <relationshipLabel>Num Records To Process Lkps</relationshipLabel>
+        <relationshipName>Num_Records_To_Process_Lkps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_To_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Count of the # of records which have been processed within Salesforce</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Records_To_Process_Lkp__r.grax__Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num Records To Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_SFDC_Records_Deleted_Lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Num Total SFDC Records Deleted Lkp</label>
+        <referenceTo>grax__GRAX_Helper__c</referenceTo>
+        <relationshipLabel>Num Total SFDC Records Deleted Lkps</relationshipLabel>
+        <relationshipName>Num_SFDC_Records_Deleted_Lkps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_SFDC_Records_Deleted__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total # of records deleted from SF from Scheduled Process</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_SFDC_Records_Deleted_Lkp__r.grax__Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num Total SFDC Records Deleted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_SFDC_Records_Failed_to_Delete_Lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Num SFDC Records Failed to Delete Lkp</label>
+        <referenceTo>grax__GRAX_Helper__c</referenceTo>
+        <relationshipLabel>Num SFDC Records Failed to Delete Lkps</relationshipLabel>
+        <relationshipName>Num_SFDC_Records_Failed_to_Delete_Lkps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_SFDC_Records_Failed_to_Delete__c</fullName>
+        <deprecated>false</deprecated>
+        <description># Total SFDC Records Failed to Delete</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_SFDC_Records_Failed_to_Delete_Lkp__r.grax__Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num Total SFDC Records Failed To Delete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_SFDC_Records_Lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Num Total SFDC Records Lkp</label>
+        <referenceTo>grax__GRAX_Helper__c</referenceTo>
+        <relationshipLabel>Num Total SFDC Records Lkps</relationshipLabel>
+        <relationshipName>Num_SFDC_Records_Lkps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__Num_SFDC_Records__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total # of records backed up from Scheduled Process</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_SFDC_Records_Lkp__r.grax__Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num Total SFDC Records</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Records_Successfully_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label># Records Successfully Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Records_To_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Count of the # of records which have been processed within Salesforce</description>
+        <externalId>false</externalId>
+        <label># Records To Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Overall Status of the Archive Process</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(grax__GRAX_Schedule_Process__r.grax__Status__c, &apos;Starting Archive Process&apos;) &amp;&amp; ($Setup.grax__GRAXSettings__c.grax__Use_Bulk_API__c == true || (grax__Num_Records_To_Process__c &gt; 0 &amp;&amp; grax__Num_Records_Successfully_Sent__c = grax__Num_Records_To_Process__c &amp;&amp; grax__Num_Async_Records_Successfully_Sent__c = grax__Num_Async_Records_to_Process__c &amp;&amp; grax__Num_SFDC_Records_Deleted__c = 0 &amp;&amp; grax__Num_SFDC_Records_Failed_to_Delete__c = 0)),
+  &apos;Ready to Delete&apos;,
+  IF((grax__Num_SFDC_Records__c &gt; 0 &amp;&amp; grax__Num_SFDC_Records__c = grax__Num_SFDC_Records_Deleted__c + grax__Num_SFDC_Records_Failed_to_Delete__c) || (ISPICKVAL(grax__GRAX_Schedule_Process__r.grax__Status__c, &apos;Completed&apos;) &amp;&amp; grax__Num_Records_To_Process__c = 0),
+    &apos;Delete Process Completed&apos;,
+    IF((grax__Num_SFDC_Records__c &gt; 0 &amp;&amp; grax__Num_SFDC_Records__c != grax__Num_SFDC_Records_Deleted__c + grax__Num_SFDC_Records_Failed_to_Delete__c &amp;&amp; (grax__Num_SFDC_Records_Deleted__c &gt; 0 || grax__Num_SFDC_Records_Failed_to_Delete__c &gt; 0)) || ISPICKVAL(grax__GRAX_Schedule_Process__r.grax__Status__c, &apos;Deleting Salesforce records&apos;),
+      &apos;Delete Process Started&apos;,
+      &apos;Waiting Backup to Complete&apos;
+    )
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Total_SFDC_Records_Deleted__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Total # of records deleted from SF from Scheduled Process</description>
+        <externalId>false</externalId>
+        <label># Total SFDC Records Deleted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Total_SFDC_Records_Failed_to_Delete__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label># Total SFDC Records Failed to Delete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Total_SFDC_Records__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Total # of records backed up from Scheduled Process</description>
+        <externalId>false</externalId>
+        <label># Total SFDC Records</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>GRAX Archive Process</label>
+    <nameField>
+        <displayFormat>GRAX-Proc-{0000000}</displayFormat>
+        <label>GRAX Archive Process Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>GRAX Archive Processes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

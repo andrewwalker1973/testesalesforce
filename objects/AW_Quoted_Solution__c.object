@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AW_QuotedSolutionRecordPage</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AW_QuotedSolutionRecordPage</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AW_Annuity_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Annuity Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>Half-Annually</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>Single</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>Weekly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Benefit_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefit Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Benefit_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefit Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>136</fullName>
+                    <default>false</default>
+                    <label>Absolute Impairment</label>
+                </value>
+                <value>
+                    <fullName>137</fullName>
+                    <default>false</default>
+                    <label>Absolute Impairment Plus</label>
+                </value>
+                <value>
+                    <fullName>144</fullName>
+                    <default>false</default>
+                    <label>Absolute Income Protector</label>
+                </value>
+                <value>
+                    <fullName>119</fullName>
+                    <default>false</default>
+                    <label>Absolute Protector (OD)</label>
+                </value>
+                <value>
+                    <fullName>120</fullName>
+                    <default>false</default>
+                    <label>Absolute Protector (OOD)</label>
+                </value>
+                <value>
+                    <fullName>97</fullName>
+                    <default>false</default>
+                    <label>Absolute Protector Plus (OD)</label>
+                </value>
+                <value>
+                    <fullName>98</fullName>
+                    <default>false</default>
+                    <label>Absolute Protector Plus (OOD)</label>
+                </value>
+                <value>
+                    <fullName>109</fullName>
+                    <default>false</default>
+                    <label>Capital Disability (OD)</label>
+                </value>
+                <value>
+                    <fullName>110</fullName>
+                    <default>false</default>
+                    <label>Capital Disability (OOD)</label>
+                </value>
+                <value>
+                    <fullName>95</fullName>
+                    <default>false</default>
+                    <label>Capital Disability Plus (OD)</label>
+                </value>
+                <value>
+                    <fullName>96</fullName>
+                    <default>false</default>
+                    <label>Capital Disability Plus (OOD)</label>
+                </value>
+                <value>
+                    <fullName>151</fullName>
+                    <default>false</default>
+                    <label>Free Child Illness Protector</label>
+                </value>
+                <value>
+                    <fullName>107</fullName>
+                    <default>false</default>
+                    <label>Child Living Lifestyle</label>
+                </value>
+                <value>
+                    <fullName>152</fullName>
+                    <default>false</default>
+                    <label>Free Claim Booster</label>
+                </value>
+                <value>
+                    <fullName>132</fullName>
+                    <default>false</default>
+                    <label>EduCator</label>
+                </value>
+                <value>
+                    <fullName>145</fullName>
+                    <default>false</default>
+                    <label>Extended Absolute Income Protector</label>
+                </value>
+                <value>
+                    <fullName>106</fullName>
+                    <default>false</default>
+                    <label>Female Living Lifestyle</label>
+                </value>
+                <value>
+                    <fullName>93</fullName>
+                    <default>false</default>
+                    <label>Financial Protector</label>
+                </value>
+                <value>
+                    <fullName>114</fullName>
+                    <default>false</default>
+                    <label>Funeral Benefit</label>
+                </value>
+                <value>
+                    <fullName>113</fullName>
+                    <default>false</default>
+                    <label>Future Protector</label>
+                </value>
+                <value>
+                    <fullName>149</fullName>
+                    <default>false</default>
+                    <label>Guaranteed Dependant Protecto</label>
+                </value>
+                <value>
+                    <fullName>130</fullName>
+                    <default>false</default>
+                    <label>Hospitalisation Lifestyle Enhancer</label>
+                </value>
+                <value>
+                    <fullName>118</fullName>
+                    <default>false</default>
+                    <label>Impairment</label>
+                </value>
+                <value>
+                    <fullName>99</fullName>
+                    <default>false</default>
+                    <label>Impairment Plus</label>
+                </value>
+                <value>
+                    <fullName>94</fullName>
+                    <default>false</default>
+                    <label>Life Cover</label>
+                </value>
+                <value>
+                    <fullName>150</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle Dependant Protector</label>
+                </value>
+                <value>
+                    <fullName>148</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle Protector benefit</label>
+                </value>
+                <value>
+                    <fullName>153</fullName>
+                    <default>false</default>
+                    <label>The Maternity Pause Option</label>
+                </value>
+                <value>
+                    <fullName>146</fullName>
+                    <default>false</default>
+                    <label>The Overhead Expenses Protector</label>
+                </value>
+                <value>
+                    <fullName>111</fullName>
+                    <default>false</default>
+                    <label>Premium Protector - Death</label>
+                </value>
+                <value>
+                    <fullName>112</fullName>
+                    <default>false</default>
+                    <label>Premium Protector - Disability</label>
+                </value>
+                <value>
+                    <fullName>131</fullName>
+                    <default>false</default>
+                    <label>Premium Protector - Retrenchment</label>
+                </value>
+                <value>
+                    <fullName>117</fullName>
+                    <default>false</default>
+                    <label>Renewable Life Cover</label>
+                </value>
+                <value>
+                    <fullName>147</fullName>
+                    <default>false</default>
+                    <label>Retrenchment Protector</label>
+                </value>
+                <value>
+                    <fullName>142</fullName>
+                    <default>false</default>
+                    <label>Vital Living</label>
+                </value>
+                <value>
+                    <fullName>143</fullName>
+                    <default>false</default>
+                    <label>Vital Living Plus</label>
+                </value>
+                <value>
+                    <fullName>155</fullName>
+                    <default>false</default>
+                    <label>Life Cover (Term)</label>
+                </value>
+                <value>
+                    <fullName>156</fullName>
+                    <default>false</default>
+                    <label>Capital Disability (Term) (OOD)</label>
+                </value>
+                <value>
+                    <fullName>157</fullName>
+                    <default>false</default>
+                    <label>Capital Disability Plus (Term) (OOD)</label>
+                </value>
+                <value>
+                    <fullName>158</fullName>
+                    <default>false</default>
+                    <label>Absolute Protector (Term) (OOD)</label>
+                </value>
+                <value>
+                    <fullName>159</fullName>
+                    <default>false</default>
+                    <label>Absolute Protector Plus (Term) (OOD)</label>
+                </value>
+                <value>
+                    <fullName>160</fullName>
+                    <default>false</default>
+                    <label>Absolute Impairment (Term)</label>
+                </value>
+                <value>
+                    <fullName>161</fullName>
+                    <default>false</default>
+                    <label>Absolute Impairment Plus (Term)</label>
+                </value>
+                <value>
+                    <fullName>162</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle (Term)</label>
+                </value>
+                <value>
+                    <fullName>163</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle Plus (Term)</label>
+                </value>
+                <value>
+                    <fullName>165</fullName>
+                    <default>false</default>
+                    <label>Retrenchment Protector (12-months)</label>
+                </value>
+                <value>
+                    <fullName>166</fullName>
+                    <default>false</default>
+                    <label>MediCator</label>
+                </value>
+                <value>
+                    <fullName>174</fullName>
+                    <default>false</default>
+                    <label>Wellness Bonus</label>
+                </value>
+                <value>
+                    <fullName>175</fullName>
+                    <default>false</default>
+                    <label>Income Protector benefit</label>
+                </value>
+                <value>
+                    <fullName>176</fullName>
+                    <default>false</default>
+                    <label>Bonus Cover benefit</label>
+                </value>
+                <value>
+                    <fullName>104</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle (Term 65)</label>
+                </value>
+                <value>
+                    <fullName>105</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle (WOL)</label>
+                </value>
+                <value>
+                    <fullName>100</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle Plus (Term 65)</label>
+                </value>
+                <value>
+                    <fullName>101</fullName>
+                    <default>false</default>
+                    <label>Living Lifestyle Plus (WOL)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Contract_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Contract_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>Contract Downloaded Successfully</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>Load/CC Outstanding</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>Ready for Upload</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>Upload Initiated</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>Duplicate Contract. Already exists on NB files</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>Invalid Product</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>Cons Code closed</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <label>Upload Unsuccessful</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>Invalid Contract Number</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <label>Cons Code Not found</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>Linked Life Contract not found</label>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                    <label>Contract found on Intermediate files</label>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                    <label>No Control Record found. Upload again</label>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                    <label>Repeat upload. PC file corrupt</label>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                    <label>Repeat upload. No records in upload file</label>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                    <label>System Error. Contact Hotseat</label>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                    <label>Upload Successful to Mainframe</label>
+                </value>
+                <value>
+                    <fullName>17</fullName>
+                    <default>false</default>
+                    <label>Mainframe Process Too Far Advanced. Load New Set</label>
+                </value>
+                <value>
+                    <fullName>18</fullName>
+                    <default>false</default>
+                    <label>Contract Number is Zero</label>
+                </value>
+                <value>
+                    <fullName>19</fullName>
+                    <default>false</default>
+                    <label>Contract Not On Mainframe Master Files</label>
+                </value>
+                <value>
+                    <fullName>21</fullName>
+                    <default>false</default>
+                    <label>No Client Role Specified</label>
+                </value>
+                <value>
+                    <fullName>22</fullName>
+                    <default>false</default>
+                    <label>Logged</label>
+                </value>
+                <value>
+                    <fullName>23</fullName>
+                    <default>false</default>
+                    <label>Upload not Allowed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Income_Escalation__c</fullName>
+        <externalId>false</externalId>
+        <label>Income Escalation</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_Life_Assured__c</fullName>
+        <externalId>false</externalId>
+        <label>Life Assured</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Nett_Annuity_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Nett Annuity Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Quote_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Name</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipLabel>Quoted Solutions</relationshipLabel>
+        <relationshipName>Quoted_Solutions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>AW_Recurring_Premium_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Recurring Premium Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Recurring_Premium_Escalation__c</fullName>
+        <externalId>false</externalId>
+        <label>Recurring Premium Escalation</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_Recurring_Premium_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Recurring Premium Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>Half-Annually</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>Single</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>Weekly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Single_Premium_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Single Premium Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Source_System_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Source System Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>atWork</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>Avalon</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>BPNB</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>SFDC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Sum_Assured__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum Assured</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_TF_External_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>TF External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Withdrawal_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawal Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Withdrawal_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawal Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>Annually</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>Half-Annually</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>Single</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>Weekly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_Withdrawal_Increase__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawal Increase</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Quoted Solution</label>
+    <nameField>
+        <label>Quoted Solution Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Quoted Solutions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

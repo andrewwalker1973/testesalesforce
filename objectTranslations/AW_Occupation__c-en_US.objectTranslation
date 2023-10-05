@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Occupation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Occupations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Occupation Code --></label>
+        <name>AW_OccupationCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- AW_OccupationalDuty_Admin --></label>
+        <name>AW_OccupationalDuty_Admin__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

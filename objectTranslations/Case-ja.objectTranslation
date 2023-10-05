@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- RSC_Clone --></label>
+        <name>RSC_Clone</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- RSC_MustSynchronise --></label>
+        <name>RSC_MustSynchronise</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- RSC_RequesterFields --></label>
+        <name>RSC_RequesterFields</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Anticipated Close Date --></label>
+        <name>AW_AnticipatedCloseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feedback --></label>
+        <name>AW_Feedback__c</name>
+    </fields>
+    <fields>
+        <label><!-- MasterAccount --></label>
+        <name>AW_MasterAccount__c</name>
+        <relationshipLabel><!-- Cases (MasterAccount) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AW_ParentAccountOwnerId --></label>
+        <name>AW_ParentAccountOwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Policy Number --></label>
+        <name>ECM_PolicyNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Account --></label>
+        <name>FinServ__FinancialAccount__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Household Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AQC --></label>
+        <name>RSC_AQC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>RSC_AccountEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account ID --></label>
+        <name>RSC_AccountID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Holder Mobile --></label>
+        <name>RSC_AccountMobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Holder Phone --></label>
+        <name>RSC_AccountPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adviser First Name --></label>
+        <name>RSC_AdviserFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adviser Last Name --></label>
+        <name>RSC_AdviserLastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Reassignment Reason --></label>
+        <name>RSC_CaseReassignmentReason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>RSC_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adviser Email --></label>
+        <name>RSC_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Adviser --></label>
+        <name>RSC_FinancialAdviser__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Is Related? --></label>
+        <name>RSC_IsRelated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reassign Case? --></label>
+        <name>RSC_ReassignCase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resume Date --></label>
+        <name>RSC_ResumeDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Type Action Plan Template Id --></label>
+        <name>RSC_ServiceTypeActionPlanTemplateId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Type --></label>
+        <name>RSC_ServiceType__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>RSC_Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Case Number --></label>
+        <name>RSC_WorkflowCaseNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignable --></label>
+        <name>SC_Assignable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>SC_AssignedTo__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Consultant Code --></label>
+        <name>SC_ConsultantCode__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Is Client Verified? --></label>
+        <name>SC_IsClientVerified__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Hold Status --></label>
+        <name>SC_OnHoldStatus__c</name>
+        <picklistValues>
+            <masterLabel>Escalated</masterLabel>
+            <translation><!-- Escalated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Options</masterLabel>
+            <translation><!-- Other Options --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outstanding Requirements</masterLabel>
+            <translation><!-- Outstanding Requirements --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>SC_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Anniversary</masterLabel>
+            <translation><!-- Anniversary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annuity Transfer Authorized</masterLabel>
+            <translation><!-- Annuity Transfer Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Required</masterLabel>
+            <translation><!-- Approval Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistance Required</masterLabel>
+            <translation><!-- Assistance Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Decision</masterLabel>
+            <translation><!-- Awaiting Decision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Document Print</masterLabel>
+            <translation><!-- Awaiting Document Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document Scanning</masterLabel>
+            <translation><!-- Document Scanning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Departments</masterLabel>
+            <translation><!-- Other Departments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overnight Update</masterLabel>
+            <translation><!-- Overnight Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refer To Department Name</masterLabel>
+            <translation><!-- Refer To Department Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review Response</masterLabel>
+            <translation><!-- Review Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Update</masterLabel>
+            <translation><!-- System Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systematic Override</masterLabel>
+            <translation><!-- Systematic Override --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting</masterLabel>
+            <translation><!-- Underwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verification</masterLabel>
+            <translation><!-- Verification --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requester Email --></label>
+        <name>SC_RequesterEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Mobile --></label>
+        <name>SC_RequesterMobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Name --></label>
+        <name>SC_RequesterName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Phone --></label>
+        <name>SC_RequesterPhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requester Type --></label>
+        <name>SC_RequesterType__c</name>
+        <picklistValues>
+            <masterLabel>Attorney</masterLabel>
+            <translation><!-- Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bank</masterLabel>
+            <translation><!-- Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beneficiary</masterLabel>
+            <translation><!-- Beneficiary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker</masterLabel>
+            <translation><!-- Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker Consultant</masterLabel>
+            <translation><!-- Broker Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cessionary</masterLabel>
+            <translation><!-- Cessionary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executor</masterLabel>
+            <translation><!-- Executor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - CVC</masterLabel>
+            <translation><!-- Internal - CVC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Claims</masterLabel>
+            <translation><!-- Internal - Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Collection Services</masterLabel>
+            <translation><!-- Internal - Collection Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Commissions</masterLabel>
+            <translation><!-- Internal - Commissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Customer Relations</masterLabel>
+            <translation><!-- Internal - Customer Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Data Integrity Services</masterLabel>
+            <translation><!-- Internal - Data Integrity Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Duplicate</masterLabel>
+            <translation><!-- Internal - Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Finance</masterLabel>
+            <translation><!-- Internal - Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Investment Services</masterLabel>
+            <translation><!-- Internal - Investment Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Payment Services</masterLabel>
+            <translation><!-- Internal - Payment Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Policy Services</masterLabel>
+            <translation><!-- Internal - Policy Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - RIO</masterLabel>
+            <translation><!-- Internal - RIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Retentions</masterLabel>
+            <translation><!-- Internal - Retentions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Value Services</masterLabel>
+            <translation><!-- Internal - Value Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - Walk-in Centre</masterLabel>
+            <translation><!-- Internal - Walk-in Centre --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal - info@keytax</masterLabel>
+            <translation><!-- Internal - info@keytax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Assured</masterLabel>
+            <translation><!-- Life Assured --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Contracted broker</masterLabel>
+            <translation><!-- Non Contracted broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulatory Body</masterLabel>
+            <translation><!-- Regulatory Body --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unauthorised Party</masterLabel>
+            <translation><!-- Unauthorised Party --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requester --></label>
+        <name>SC_Requester__c</name>
+        <relationshipLabel><!-- Cases (Requestor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source System --></label>
+        <name>SC_SourceSystem__c</name>
+        <picklistValues>
+            <masterLabel>Horizon</masterLabel>
+            <translation><!-- Horizon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub-Status --></label>
+        <name>SC_SubStatus__c</name>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-opened</masterLabel>
+            <translation><!-- Re-opened --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resumed</masterLabel>
+            <translation><!-- Resumed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Age of Case in Hours --></label>
+        <name>SD_AgeOfCaseInHours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Owner Profile --></label>
+        <name>SD_CaseOwnerProfile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client gives Liberty consent to collect, process and share information as per privacy terms and conditions --></help>
+        <label><!-- Consent Given --></label>
+        <name>SD_ConsentGiven__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>SD_Country__c</name>
+        <picklistValues>
+            <masterLabel>Malawi</masterLabel>
+            <translation><!-- Malawi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mozambique</masterLabel>
+            <translation><!-- Mozambique --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa</masterLabel>
+            <translation><!-- South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uganda</masterLabel>
+            <translation><!-- Uganda --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Type --></label>
+        <name>SD_CustomerType__c</name>
+        <picklistValues>
+            <masterLabel>Existing</masterLabel>
+            <translation><!-- Existing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Feedback Type --></label>
+        <name>SD_FeedbackType__c</name>
+        <picklistValues>
+            <masterLabel>Compliment</masterLabel>
+            <translation><!-- Compliment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Query</masterLabel>
+            <translation><!-- Query --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- First Date that is a Monday --></label>
+        <name>SD_FirstDateThatIsAMonday__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>SD_FirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>SD_LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Type --></label>
+        <name>SD_MemberType__c</name>
+        <picklistValues>
+            <masterLabel>Broker</masterLabel>
+            <translation><!-- Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group (HR)</masterLabel>
+            <translation><!-- Group (HR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member</masterLabel>
+            <translation><!-- Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider</masterLabel>
+            <translation><!-- Provider --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Preferred Method Of Contact --></label>
+        <name>SD_PreferredMethodOfContact__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>SD_ProductType__c</name>
+        <picklistValues>
+            <masterLabel>Corredor</masterLabel>
+            <translation><!-- Corredor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberty Blue</masterLabel>
+            <translation><!-- Liberty Blue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberty Health Cover (LHC)</masterLabel>
+            <translation><!-- Liberty Health Cover (LHC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prestige</masterLabel>
+            <translation><!-- Prestige --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vale</masterLabel>
+            <translation><!-- Vale --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Indicator --></label>
+        <name>SD_SLAIndicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA End Date --></label>
+        <name>SD_SlaEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Start Date --></label>
+        <name>SD_SlaStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date Time for First Monday --></label>
+        <name>SD_StartDateTimeForFirstMonday__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>SD_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Enquiry --></label>
+        <name>SD_TypeOfEnquiry__c</name>
+        <picklistValues>
+            <masterLabel>Benefit Confirmation</masterLabel>
+            <translation><!-- Benefit Confirmation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefits</masterLabel>
+            <translation><!-- Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Claim Statement</masterLabel>
+            <translation><!-- Claim Statement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Claims</masterLabel>
+            <translation><!-- Claims --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commission Due</masterLabel>
+            <translation><!-- Commission Due --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commission Paid</masterLabel>
+            <translation><!-- Commission Paid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergencies</masterLabel>
+            <translation><!-- Emergencies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Related</masterLabel>
+            <translation><!-- Employee Related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Enquiry</masterLabel>
+            <translation><!-- General Enquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preauthorisation</masterLabel>
+            <translation><!-- Preauthorisation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product &amp; Pricing</masterLabel>
+            <translation><!-- Product &amp; Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Networks</masterLabel>
+            <translation><!-- Provider Networks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation><!-- Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Statements</masterLabel>
+            <translation><!-- Statements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Contact Details</masterLabel>
+            <translation><!-- Update Contact Details --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Web Origin --></label>
+        <name>SD_WebOrigin__c</name>
+        <picklistValues>
+            <masterLabel>Liberty Health Portal</masterLabel>
+            <translation><!-- Liberty Health Portal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malawi Web</masterLabel>
+            <translation><!-- Malawi Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mozambique Vale</masterLabel>
+            <translation><!-- Mozambique Vale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mozambique Web</masterLabel>
+            <translation><!-- Mozambique Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa Web</masterLabel>
+            <translation><!-- South Africa Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uganda Web</masterLabel>
+            <translation><!-- Uganda Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned From Group --></label>
+        <name>ortoo_qra__Assigned_From_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned From Queue --></label>
+        <name>ortoo_qra__Assigned_From_Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignment Seq --></label>
+        <name>ortoo_qra__Assignment_Seq__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q Assign Exclude --></label>
+        <name>ortoo_qra__Q_Assign_Exclude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q-assign Custom Seq --></label>
+        <name>ortoo_qra__Q_assign_Custom_Seq__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q-assign Last Assigned Date --></label>
+        <name>ortoo_qra__Q_assign_Last_Assigned_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Q-assign Reviewed Days --></label>
+        <name>ortoo_qra__Reviewed_Days__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Default --></label>
+        <name>Default</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Retail --></label>
+        <name>RSC_Retail</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Health Feedback --></label>
+        <name>SD_HealthFeedback</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Health Support --></label>
+        <name>SD_HealthSupport</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used to track STANLIB client queries and requests. --></description>
+        <label><!-- STANLIB Manco Case --></label>
+        <name>SLSC_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used to track STANLIB client queries and requests. --></description>
+        <label><!-- STANLIB Case --></label>
+        <name>STANLIB_Case</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please provide feedback. --></errorMessage>
+        <name>AW_Feedback_Not_Updated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter values for the below fields when the Requester Type is not Customer :
+
+Requester Name,
+ Requester Email,
+ Requester Mobile,
+ Requester Phone --></errorMessage>
+        <name>SC_RequesterDetailsNotUpdated</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter valid Requester Email --></errorMessage>
+        <name>SC_RequesterEmailCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid Requester Mobile --></errorMessage>
+        <name>SC_RequesterMobileCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter valid Requester Phone --></errorMessage>
+        <name>SC_RequesterPhoneCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Resume Date cannot be less than today or more than 2 months from today. --></errorMessage>
+        <name>SC_ResumeDateCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter Resume Date --></errorMessage>
+        <name>SC_ResumeDateMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closed cases cannot be edited. --></errorMessage>
+        <name>SD_PreventCaseEdit</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Object_Time_Machine --></label>
+        <name>grax__Object_Time_Machine</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Restore --></label>
+        <name>grax__Restore</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Take_Ownership --></label>
+        <name>ortoo_qra__Take_Ownership</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Take_Ownership_Detail --></label>
+        <name>ortoo_qra__Take_Ownership_Detail</name>
+    </webLinks>
+</CustomObjectTranslation>

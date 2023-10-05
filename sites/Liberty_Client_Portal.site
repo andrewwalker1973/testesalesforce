@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowGuestPaymentsApi>false</allowGuestPaymentsApi>
+    <allowHomePage>true</allowHomePage>
+    <allowStandardAnswersPages>true</allowStandardAnswersPages>
+    <allowStandardIdeasPages>true</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardPortalPages>true</allowStandardPortalPages>
+    <allowStandardSearch>true</allowStandardSearch>
+    <authorizationRequiredPage>UnderConstruction</authorizationRequiredPage>
+    <bandwidthExceededPage>AW_VF_BandwidthExceeded</bandwidthExceededPage>
+    <browserXssProtection>true</browserXssProtection>
+    <cachePublicVisualforcePagesInProxyServers>true</cachePublicVisualforcePagesInProxyServers>
+    <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
+    <contentSniffingProtection>true</contentSniffingProtection>
+    <enableAuraRequests>true</enableAuraRequests>
+    <fileNotFoundPage>AW_VF_FileNotFound</fileNotFoundPage>
+    <forgotPasswordPage>AW_VF_ForgotPassword</forgotPasswordPage>
+    <genericErrorPage>AW_VF_Exception</genericErrorPage>
+    <inMaintenancePage>AW_VF_InMaintenance</inMaintenancePage>
+    <inactiveIndexPage>ML_VF_UnderConstruction</inactiveIndexPage>
+    <indexPage>ML_VF_UnderConstruction</indexPage>
+    <masterLabel>Liberty Client Portal</masterLabel>
+    <redirectToCustomDomain>false</redirectToCustomDomain>
+    <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
+    <selfRegPage>AW_VF_CommunitiesSelfReg</selfRegPage>
+    <siteAdmin>delmaine.vanzyl@liberty.co.za</siteAdmin>
+    <siteGuestRecordDefaultOwner>jason.van.beukering@liberty.co.za</siteGuestRecordDefaultOwner>
+    <siteTemplate>SiteTemplate</siteTemplate>
+    <siteType>ChatterNetwork</siteType>
+    <subdomain>liberty-group</subdomain>
+    <urlPathPrefix>clientportal</urlPathPrefix>
+</CustomSite>

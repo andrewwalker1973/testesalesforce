@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>FNA Risk</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>FNA Risks</value>
+    </caseValues>
+    <fields>
+        <label><!-- FNA --></label>
+        <name>AW_FNA__c</name>
+        <relationshipLabel><!-- FNA Risks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Last Updated Date From Source --></label>
+        <name>AW_LastUpdatedDatefromSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Need --></label>
+        <name>AW_Need__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provision --></label>
+        <name>AW_Provision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recommend --></label>
+        <name>AW_Recommend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Name --></label>
+        <name>AW_Source_System_Name__c</name>
+        <picklistValues>
+            <masterLabel>Avalon</masterLabel>
+            <translation><!-- Avalon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BPNP</masterLabel>
+            <translation><!-- BPNP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC</masterLabel>
+            <translation><!-- SFDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>atWork</masterLabel>
+            <translation><!-- atWork --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source System Id --></label>
+        <name>AW_TF_Source_System_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated by MuleSoft --></label>
+        <name>AW_UpdatedByMulesoft__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

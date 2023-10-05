@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <description>Update the stopped variable as false when the case is reopened.</description>
+        <name>Populate_Stopped_Field_Value</name>
+        <label>Populate Stopped Value To False</label>
+        <locationX>584</locationX>
+        <locationY>479</locationY>
+        <assignmentItems>
+            <assignToReference>IsStoppedVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_the_is_stopped_checkbox_on_triggered_case_record_to_false</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update the stopped variable as true when the case is put on hold.</description>
+        <name>Populate_Stopped_Value_To_True</name>
+        <label>Populate Stopped Value To True</label>
+        <locationX>320</locationX>
+        <locationY>479</locationY>
+        <assignmentItems>
+            <assignToReference>IsStoppedVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_the_is_stopped_checkbox_on_triggered_case_record_to_false</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This is to check whether only the sub status field update trigger the flow or not</description>
+        <name>Check_if_Sub_Status_field_is_changed</name>
+        <label>Check if Sub_Status field is changed</label>
+        <locationX>584</locationX>
+        <locationY>359</locationY>
+        <defaultConnectorLabel>No Match Found</defaultConnectorLabel>
+        <rules>
+            <name>Check_for_Sub_Status_field_is_changed_to_on_hold</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>On Hold</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RSC_Retail</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Stopped_Value_To_True</targetReference>
+            </connector>
+            <label>Check for Sub_Status field is changed to on hold</label>
+        </rules>
+        <rules>
+            <name>Check_for_Sub_Status_field_is_changed_to_Reopened</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Re-opened</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SC_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Resumed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_Stopped_Field_Value</targetReference>
+            </connector>
+            <label>Check for Sub_Status field is changed to Reopened</label>
+        </rules>
+    </decisions>
+    <description>Flow used to stop the timer when a case is put on hold &amp; Resume the timer when the case is reopened.</description>
+    <interviewLabel>RSC FLOW StopTimerOnCase {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RSC_FLOW_StopTimerOnCase</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_the_is_stopped_checkbox_on_triggered_case_record_to_false</name>
+        <label>Update the is stopped checkbox on triggered case record to false</label>
+        <locationX>584</locationX>
+        <locationY>695</locationY>
+        <inputAssignments>
+            <field>IsStopped</field>
+            <value>
+                <elementReference>IsStoppedVariable</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>458</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_if_Sub_Status_field_is_changed</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>SC_SubStatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>On Hold</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SC_SubStatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Re-opened</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SC_SubStatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Resumed</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>IsStoppedVariable</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

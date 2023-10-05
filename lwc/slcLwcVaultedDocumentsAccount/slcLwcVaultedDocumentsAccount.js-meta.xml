@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>List view of vaulted documents to ensure they have been securely placed in the vault.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Slc Lwc Vaulted Documents Accounts</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage, lightning__RecordPage, lightning__HomePage">
+            <property name="internalVault" type="boolean" label="Internal Doc Vault" default="true" description="Tick this checkbox if the component is on the Account page on Salesforce."/>
+            <property name="delinkDocTypesAllowed" type="string" label="Document Types allowed for delinking" description="List the allowed Document Types for delinking as comma separated values."/>
+            <property name="tabName" type="string" label="Tab Name" datasource="apex://SLC_CTRL_DocumentTypeAttributesPicklist" description="Filter documents by category."/>
+            <property name="docTypesList" type="string" label="Document Types Available to create" description="List the allowed Document Types as comma separated values."/>
+            <property name="enableFilter" type="boolean" label="Enable Document Type filter" default="true" description="Enables the 'Document Type Filter' dropdown."/>
+            <property name="enableUpload" type="boolean" label="Enable Upload button" default="false" description="Enables the file upload button."/>
+            <property name="showAccountDropbox" type="boolean" label="Show Account dropdown" default="true" description="Enables filtering by related Financial Accounts."/>
+            <property name="clientOnboarding" type="boolean" label="Opportunity Insto Client Onboarding" default="false" description="LWC for Insto Client Onboarding."/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="externalVault" type="boolean" label="External Doc Vault" default="true" description="Tick this checkbox if the component is on the Experience Cloud portal."/>
+            <property name="tabName" type="string" label="Tab Name" datasource="apex://SLC_CTRL_DocumentTypeAttributesPicklist" description="Filter documents by category."/>
+            <property name="docTypesList" type="string" label="Document Types dropdown" description="List the allowed Document Types as comma separated values."/>
+            <property name="enableFilter" type="boolean" label="Enable Document Type filter" default="false" description="Enables the 'Document Type Filter' dropdown."/>
+            <property name="enableUpload" type="boolean" label="Enable Upload button" default="false" description="Enables the file upload button."/>
+            <property name="showAccountDropbox" type="boolean" label="Show Account dropdown" default="true" description="Enables filtering by related Financial Accounts."/>
+            <property name="clientOnboarding" type="boolean" label="Opportunity Insto Client Onboarding" default="false" description="LWC for Insto Client Onboarding."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

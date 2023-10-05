@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata will store the Name of Chatter groups .</description>
+    <fields>
+        <fullName>RSC_GroupType__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Group Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Manager Group</fullName>
+                    <default>true</default>
+                    <label>Manager Group</label>
+                </value>
+                <value>
+                    <fullName>Team Leader Group</fullName>
+                    <default>false</default>
+                    <label>Team Leader Group</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Chatter Group Setting</label>
+    <pluralLabel>Chatter Group Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

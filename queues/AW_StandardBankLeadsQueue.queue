@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Standard Bank Leads Queue</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>AW_StandardBankLeadsManagers</publicGroup>
+        </publicGroups>
+        <users>
+            <user>deborah.harrold@liberty.co.za</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

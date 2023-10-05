@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>About tab</description>
+    <icon>ortoo_qra__ortoo/ortoo_qra__Ortoo_about_icon.png</icon>
+    <label>QA About</label>
+    <motif>Custom208: TV Widescreen</motif>
+    <page>ortoo_qra__About</page>
+</CustomTab>

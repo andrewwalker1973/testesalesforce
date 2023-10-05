@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedServiceBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contrastInvertedColor>#ffffff</contrastInvertedColor>
+    <contrastPrimaryColor>#005290</contrastPrimaryColor>
+    <embeddedServiceConfig>AW_Liberty_Bot</embeddedServiceConfig>
+    <font>Arial</font>
+    <height>100</height>
+    <masterLabel>EmbeddedServiceBranding_Parent04I8E000000Cc0B_16b2b4f894f</masterLabel>
+    <navBarColor>#005290</navBarColor>
+    <navBarTextColor>#ffffff</navBarTextColor>
+    <primaryColor>#005290</primaryColor>
+    <secondaryColor>#005290</secondaryColor>
+    <secondaryNavBarColor>#cb2b19</secondaryNavBarColor>
+    <width>320</width>
+</EmbeddedServiceBranding>

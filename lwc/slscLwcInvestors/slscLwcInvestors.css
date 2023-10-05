@@ -1,0 +1,8 @@
+.bordered {
+    border: 1px solid #4c566b;
+    border-radius: 4px;
+}
+
+.table {
+    height: 200px;
+}

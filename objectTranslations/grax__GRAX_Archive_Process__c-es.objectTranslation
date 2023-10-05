@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Archive Process Monitoring Report Id --></label>
+        <name>grax__Archive_Process_Monitoring_Report_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Archive Process Monitoring Report Link --></label>
+        <name>grax__Archive_Process_Monitoring_Report_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Async Records Successfully Sent --></label>
+        <name>grax__Async_Records_Successfully_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Async Records to Process --></label>
+        <name>grax__Async_Records_to_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can Delete GRAX Record? --></label>
+        <name>grax__Can_Delete_GRAX_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Unique Key --></label>
+        <name>grax__Execution_Unique_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Schedule Process --></label>
+        <name>grax__GRAX_Schedule_Process__c</name>
+        <relationshipLabel><!-- GRAX Archive Processes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Is Current Execution Record --></label>
+        <name>grax__Is_Current_Execution_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Async Records Successfully Sent Lkp --></label>
+        <name>grax__Num_Async_Records_Successfully_Sent_Lkp__c</name>
+        <relationshipLabel><!-- Num Async Records Successfully Sent Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Num Async Records Successfully Sent --></label>
+        <name>grax__Num_Async_Records_Successfully_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Async Records To Process Lkp --></label>
+        <name>grax__Num_Async_Records_to_Process_Lkp__c</name>
+        <relationshipLabel><!-- Num Async Records To Process Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Num Async Records To Process --></label>
+        <name>grax__Num_Async_Records_to_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Records Successfully Sent Lkp --></label>
+        <name>grax__Num_Records_Successfully_Sent_Lkp__c</name>
+        <relationshipLabel><!-- Num Records Successfully Sent Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Num Records Successfully Sent --></label>
+        <name>grax__Num_Records_Successfully_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Records To Process Lkp --></label>
+        <name>grax__Num_Records_To_Process_Lkp__c</name>
+        <relationshipLabel><!-- Num Records To Process Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Num Records To Process --></label>
+        <name>grax__Num_Records_To_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Total SFDC Records Deleted Lkp --></label>
+        <name>grax__Num_SFDC_Records_Deleted_Lkp__c</name>
+        <relationshipLabel><!-- Num Total SFDC Records Deleted Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Num Total SFDC Records Deleted --></label>
+        <name>grax__Num_SFDC_Records_Deleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num SFDC Records Failed to Delete Lkp --></label>
+        <name>grax__Num_SFDC_Records_Failed_to_Delete_Lkp__c</name>
+        <relationshipLabel><!-- Num SFDC Records Failed to Delete Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Num Total SFDC Records Failed To Delete --></label>
+        <name>grax__Num_SFDC_Records_Failed_to_Delete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num Total SFDC Records Lkp --></label>
+        <name>grax__Num_SFDC_Records_Lkp__c</name>
+        <relationshipLabel><!-- Num Total SFDC Records Lkps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Num Total SFDC Records --></label>
+        <name>grax__Num_SFDC_Records__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Records Successfully Sent --></label>
+        <name>grax__Records_Successfully_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Records To Process --></label>
+        <name>grax__Records_To_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>grax__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Total SFDC Records Deleted --></label>
+        <name>grax__Total_SFDC_Records_Deleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Total SFDC Records Failed to Delete --></label>
+        <name>grax__Total_SFDC_Records_Failed_to_Delete__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Total SFDC Records --></label>
+        <name>grax__Total_SFDC_Records__c</name>
+    </fields>
+</CustomObjectTranslation>

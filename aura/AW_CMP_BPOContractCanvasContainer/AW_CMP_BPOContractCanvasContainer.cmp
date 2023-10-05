@@ -1,0 +1,52 @@
+<!--
+ * @description Used for redirecting to and Integrating BPO WIQ Canvas App inside Salesforce and create the Quote record
+ *
+ * @see AW_CTRL_BPOCanvasContainer
+ *
+ * @author annu.agarwal@lntinfotech.com, a.shrikrishna.pethe@accenture.com
+ *
+ * @date August 2021, July 2022
+-->
+
+<aura:component controller="AW_CTRL_BPOCanvasContainer" implements="lightning:isUrlAddressable">
+	<aura:handler action="{!c.onPageReferenceChange}" name="init" value="{!this}"/>
+	<aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}"/>
+	<aura:attribute name="contractNumber" type="String" access="global"/>
+	<aura:attribute name="userId" type="String" access="global"/>
+	<aura:attribute name="opportunityId" type="String" access="global"/>
+	<aura:attribute name="accountId" type="String" access="global"/>
+	<aura:attribute name="quoteSolutionNumber" type="String" access="global"/>
+	<aura:attribute name="parameters" type="String"/>
+	<!--Added by Annu-->
+	<aura:attribute name="isContractsOpenChild" type="Boolean"/>
+	<aura:attribute name="isQuoteOpenChild" type="Boolean"/>
+	<aura:attribute name="isBpoOpenChild" type="Boolean"/>
+	<aura:attribute name="selectedQuote" type="Object" default=""/>
+	<aura:attribute name="selectedContract" type="Object"/>
+	<aura:attribute name="consultantCode" type="String"/>
+	<!--Added by Annu-->
+
+	<aura:attribute name="isServicingQuoteContainerOpenGrandChild" type="boolean"/> <!-- pav -->
+
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+			 class="slds-modal slds-fade-in-open slds-modal_medium">
+		<div class="slds-modal__container">
+			<header class="slds-modal__header">
+				<lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModal }" alternativeText="close" variant="bare-inverse"
+									  class="slds-modal__close"/>
+				<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+					BPO Canvas </h2>
+			</header>
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+				<lightning:card aura:id="BPOWhatIfQuoteCanvas">
+					<div class="slds-align_absolute-center">
+						<force:canvasApp onCanvasSubscribed="{!c.onSubParentLoaded}" developerName="AW_BPOWhatIfQuoteCanvas" maxHeight="infinite"
+										 maxWidth="infinite" parameters="{!v.parameters}"/>
+					</div>
+				</lightning:card>
+			</div>
+		</div>
+	</section>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+
+</aura:component>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission sets that allow the user to modify all data</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Support L3 Group</label>
+    <permissionSets>AW_LibertySupportL3</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>kobus.debruyn@liberty.co.za</contactEmail>
+    <label>SLC_DataIntegration</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:8082/callback</callbackUrl>
+        <certificate>MIIEpTCCA42gAwIBAgIOAX5JjvEcAAAAADGzQwkwDQYJKoZIhvcNAQELBQAwgY4xJjAkBgNVBAMMHVNMQ19EYXRhSW50ZWdyYXRpb25DZXJ0aWZjYXRlMRgwFgYDVQQLDA8wMEQ0SjAwMDAwMEVTcUoxFzAVBgNVBAoMDlNhbGVzZm9yY2UuY29tMRYwFAYDVQQHDA1TYW4gRnJhbmNpc2NvMQswCQYDVQQIDAJDQTEMMAoGA1UEBhMDVVNBMB4XDTIyMDExMTE0MzMzMVoXDTIzMDExMTEyMDAwMFowgY4xJjAkBgNVBAMMHVNMQ19EYXRhSW50ZWdyYXRpb25DZXJ0aWZjYXRlMRgwFgYDVQQLDA8wMEQ0SjAwMDAwMEVTcUoxFzAVBgNVBAoMDlNhbGVzZm9yY2UuY29tMRYwFAYDVQQHDA1TYW4gRnJhbmNpc2NvMQswCQYDVQQIDAJDQTEMMAoGA1UEBhMDVVNBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4G4iy/DdIoBfEI+fLX9ztRUhVULl5iAXRQ9PP1qbh6+eZHaOEUQxC+9ss+nH39t3VV1339hWAWIDiAJ1WOSad/Z9Bk0cdXjZzZzGCEVdm6trewc9xoMUTGSBpxziKldmXIbwiyyIHTNoNcUUH5KOlK0Q8twpvW9W9HrUKlS8g+I1Azn2p4p94NcsxFOPSmNcCxHcyOFxzTlylFIk1vT2Ke9zl4rEoGCCcBB/MrDMgOfuCYYH/HmxIG6zxDYuri1kYuVMhRfYbGSN12EQRT6dDeTX0qT0Oh5M2Jv5XuOdHGYIB3CqyxVeS7js5bgU3CfjMReAdsJCzmUTDYMwwQtmawIDAQABo4H+MIH7MB0GA1UdDgQWBBS9wV8uecAGGpesEEQK/ZwyO7cMxjAPBgNVHRMBAf8EBTADAQH/MIHIBgNVHSMEgcAwgb2AFL3BXy55wAYal6wQRAr9nDI7twzGoYGUpIGRMIGOMSYwJAYDVQQDDB1TTENfRGF0YUludGVncmF0aW9uQ2VydGlmY2F0ZTEYMBYGA1UECwwPMDBENEowMDAwMDBFU3FKMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQYIOAX5JjvEcAAAAADGzQwkwDQYJKoZIhvcNAQELBQADggEBAHVU/hRBEBu5B4y/arqsFkY7w+51IBxLn2OJc/k/St2BBNz3qzXVVEB3wWSZFopTuCWmqMnKhn96G2cfRWh1vBcLkXX2vgl9vZW2l9EqZ9ktsdu9zJRPEQOBv7/dQ4k029dncsqbEKPpmLnDmJQOkZgIiPQJyIgvJ4WSllEQ0fUL0n/9qLnp8ur7NXOtQCBaqwwu16pMUlzZB4lQEwPnHVckzUgPRxIRTQvg1lZ6mWxOXIFPve3e5jqbPTKVIU7obZVDe7XTgQtJkqsCE7F7BUAoXRsqMrT3J1zNmtk1PgoHrsrrGY0ofSsD1Hi6CKu2GF9XeD86dbWzTZsdXLXhnAk=</certificate>
+        <consumerKey>3MVG9tzQRhEbH_K1Ih04zBLV7GwaqeWpe_kV2erjqnRfYLfmYXq7PhYqbr8sIhHUZ3loQJnV3apiETsp8r1WU</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <permissionSetName>STANLIB Integration User</permissionSetName>
+    <profileName>STANLIB Standard User</profileName>
+</ConnectedApp>

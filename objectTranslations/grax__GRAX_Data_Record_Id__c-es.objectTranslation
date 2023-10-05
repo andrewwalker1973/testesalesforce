@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Can Delete GRAX Record? --></label>
+        <name>grax__Can_Delete_GRAX_Record__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Description --></label>
+        <name>grax__Error_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Execution Unique Key --></label>
+        <name>grax__Execution_Unique_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- GDRI Status Helper --></label>
+        <name>grax__GDRI_Status_Helper__c</name>
+    </fields>
+    <fields>
+        <label><!-- GRAX Data Record --></label>
+        <name>grax__GRAX_Data_Record__c</name>
+        <relationshipLabel><!-- GRAX Data Record Ids --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Last time this GRAX Async Record was verified to be fully backed up --></help>
+        <label><!-- Last Time Check Async Record Backup --></label>
+        <name>grax__Last_Time_Check_Async_Record_Backup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pending Set As Archived --></label>
+        <name>grax__Pending_Set_As_Archived__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processed Child Index --></label>
+        <name>grax__Processed_Child_Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFDC Id --></label>
+        <name>grax__SFDC_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>grax__Status__c</name>
+        <picklistValues>
+            <masterLabel>Delete Error</masterLabel>
+            <translation><!-- Delete Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deleted with Master Parent</masterLabel>
+            <translation><!-- Deleted with Master Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent Object - Not Delete</masterLabel>
+            <translation><!-- Parent Object - Not Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to GRAX</masterLabel>
+            <translation><!-- Sent to GRAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successfully Deleted</masterLabel>
+            <translation><!-- Successfully Deleted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To be Deleted</masterLabel>
+            <translation><!-- To be Deleted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # of Attempts to Delete --></label>
+        <name>grax__of_Attempts_to_Delete__c</name>
+    </fields>
+</CustomObjectTranslation>

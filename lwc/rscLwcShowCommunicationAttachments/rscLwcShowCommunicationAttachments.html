@@ -1,0 +1,37 @@
+<template>
+	<template if:true={isReadOnly}>
+		<template if:true={selectedAttachments}>
+			<template for:each={selectedAttachments} for:item="selectedAttachment">
+				<p class="slds-p-top_small" key={selectedAttachment.attachmentId}>
+					<lightning-formatted-text class="slds-p-top_small" key={selectedAttachment.attachmentId}
+											  value={selectedAttachment.definitionName}></lightning-formatted-text>
+				</p>
+				<template if:true={selectedAttachment.isSelected}>
+					<lightning-input disabled="true" id={selectedAttachment.attachmentId} key={selectedAttachment.attachmentId} label="Reason" type="text"
+									 value={selectedAttachment.reason}></lightning-input>
+				</template>
+			</template>
+		</template>
+		<template if:false={selectedAttachments}>
+			<h1>No form selected.</h1>
+		</template>
+	</template>
+	<template if:false={isReadOnly}>
+		<template if:true={communicationAttachments}>
+			<template for:each={communicationAttachments} for:index="index" for:item="attachment">
+				<lightning-input checked={attachment.isSelected} class="slds-p-top_small" data-field-name="isSelected" data-index={index}
+								 key={attachment.attachmentId} label={attachment.definitionName} onchange={selectAttachmentHandler}
+								 type="checkbox"></lightning-input>
+				<template if:true={attachment.isSelected}>
+					<lightning-input class="slds-p-horizontal_small" data-field-name="reason" data-index={index} id={attachment.attachmentId}
+									 key={attachment.attachmentId} label="Reason" onchange={selectReasonHandler} type="text"
+									 value={attachment.reason}></lightning-input>
+				</template>
+			</template>
+		</template>
+		<template if:false={communicationAttachments}>
+			<h1>No forms available.</h1>
+		</template>
+	</template>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

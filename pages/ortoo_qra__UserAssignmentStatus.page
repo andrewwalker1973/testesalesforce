@@ -1,0 +1,682 @@
+<!--
+
+Test Case Identification Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:US
+
+TC_LAST_NO_USED:0079
+
+-->
+<apex:page lightningStylesheets="true" controller="ortoo_qra.UserAssignmentStatusController" id="thePage" title="QA User Status" tabstyle="ortoo_qra__User_Assignment_Status__tab">
+        
+        <script type="text/javascript" src="{!$Resource.jquery}"></script>
+    	<apex:includeScript value="{! $Resource.Popper }"/>
+        <script type="text/javascript" src="{!URLFOR($Resource.jqueryui,'jquery-ui.min.js')}"></script>
+        <script type="text/javascript" src="{!URLFOR($Resource.bootstrapforMultiSelect,'js/bootstrap.min.js')}"></script>
+        <link href="{!URLFOR($Resource.bootstrapforMultiSelect, 'css/bootstrap.min.css')}" rel="stylesheet" media="screen"/>
+        <link href="{!URLFOR($Resource.multiselect, 'multiselect/css/multi-select.css')}" rel="stylesheet" media="screen"/>
+        <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+        <style type="text/css">
+            .detailList .customDataStyle select 
+            {
+                min-width: 6rem !important;
+            }
+            .customDataStyle
+            {
+                font-size: .8rem !important;
+            }
+            .customLabelStyle
+            {
+                vertical-align: inherit !important;
+            }
+          .pbTitle {
+            white-space: nowrap;
+          }
+
+          .multiList {
+            width: 100px; !important
+          }
+
+          .multiselect-native-select div {
+                display: inline;
+
+          }
+
+          .multiselect-native-select .btn {
+                width: 200px;
+
+          }
+
+          .no_title .pbTitle {
+            display: none;
+          }
+
+          .center_btn {
+            text-align: center;
+          }
+        </style>
+   
+        <script>
+            function checkForBrowser()
+            {
+                // Opera 8.0+
+                var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+                // Firefox 1.0+
+                var isFirefox = typeof InstallTrigger !== 'undefined';
+
+                // Safari 3.0+ "[object HTMLElementConstructor]" 
+                var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+                // Internet Explorer 6-11
+                var isIE = /*@cc_on!@*/false || !!document.documentMode;
+                if(isIE)
+                {
+                    return 'IE';
+                }
+                // Edge 20+
+                var isEdge = !isIE && !!window.StyleMedia;
+
+                // Chrome 1 - 71
+                var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+                if(isChrome)
+                {
+                    return 'Chrome';
+                }
+                // Blink engine detection
+                var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+                return 'Unexpected Browser';
+            }
+            function openLookupPopup(name,target_id ,prefix,source,target_object)
+            {
+                var search_term = '';
+                var height = 500;
+                var width = 900;
+                var top  = parseInt((screen.availHeight / 2) - (height / 2));
+                var left = parseInt((screen.availWidth / 2) - (width / 2));
+                search_term = document.getElementById("{!$Component.thepage:theForm:statusList:targetName}").value;
+                var url="/apex/ortoo_qra__CustomLookupPopup?namefield=" + name + "&idfield=" + target_id + "&prefix=" + prefix+"&is_queue=" + source+"&target_object=" + target_object+"&search_term="+search_term;
+                if(checkForBrowser() == 'IE')
+                {
+                    newWin=window.open(url, 'Popup','height=500,width=900,resizable=yes,scrollbars=yes,toolbar=no,status=no');
+                }
+                if(checkForBrowser() == 'Chrome')
+                {
+                    newWin=window.open(url, 'Popup','height=${height},width=${width},left=${left},top=${top},resizable=yes,scrollbars=yes,toolbar=no,status=no');
+                }
+                if(checkForBrowser() != 'IE' && checkForBrowser() != 'Chrome')
+                {
+                    newWin=window.open(url, 'Popup','height=${height},width=${width},left=${left},top=${top},resizable=yes,scrollbars=yes,toolbar=no,status=no');
+                }
+                if (window.focus) 
+                {
+                    newWin.focus();
+                }
+    
+                    
+                return false;
+            }
+        	function openAGLookupPopup(userId)
+            {
+                var height = 500;
+                var width = 900;
+                var top  = parseInt((screen.availHeight / 2) - (height / 2));
+                var left = parseInt((screen.availWidth / 2) - (width / 2));
+                var url="/apex/ortoo_qra__AssignmentGroupLookup?userId=" + userId;
+                if(checkForBrowser() == 'IE')
+                {
+                    newWin=window.open(url, 'Popup','height=500,width=900,resizable=yes,scrollbars=yes,toolbar=no,status=no');
+                }
+                if(checkForBrowser() == 'Chrome')
+                {
+                    newWin=window.open(url, 'Popup','height=${height},width=${width},left=${left},top=${top},resizable=yes,scrollbars=yes,toolbar=no,status=no');
+                }
+                if(checkForBrowser() != 'IE' && checkForBrowser() != 'Chrome')
+                {
+                    newWin=window.open(url, 'Popup','height=${height},width=${width},left=${left},top=${top},resizable=yes,scrollbars=yes,toolbar=no,status=no');
+                }
+                if (window.focus) 
+                {
+                    newWin.focus();
+                }
+                return false;
+            }
+            function updateData()
+            {
+                rerenderTopPanel();
+            }
+            function closeLookupPopup()
+            {
+               if (null!=newWin)
+               {
+                  newWin.close();
+               }  rerenderTopPanel();
+               
+            }
+    
+            function loadMultiPicklist()
+            {  
+                j$('.multiList').multiselect();
+            }
+    		function selectAllCheckboxes( obj, receivedInputID )
+            {
+                var inputCheckBox = document.getElementsByTagName( "input" );
+                for ( var i = 0; i < inputCheckBox.length; i++ )
+                {
+                    if ( inputCheckBox[ i ].id.indexOf( receivedInputID ) != -1 )
+                    {
+                        inputCheckBox[ i ].checked = obj.checked;
+                    }
+                } 
+            }
+            
+            function updateParentCheckbox( obj, parentID )
+            {
+                if ( obj.checked == false )
+                {
+                    var inputCheckBox = document.getElementsByTagName( "input" );
+                    {
+                        if( inputCheckBox[ i ].id.indexOf( parentID ) != -1 )
+                        {
+                            inputCheckBox[ i ].checked = false;
+                        }
+                    }
+                }
+            }
+            
+            function clearParentCheckbox( parentID )
+            {
+                var inputCheckBox = document.getElementsByTagName( "input" );
+                for ( var i = 0; i < inputCheckBox.length; i++ )
+                {
+                    if( inputCheckBox[ i ].id.indexOf( parentID ) != -1 )
+                    {
+                        inputCheckBox[ i ].checked = false;
+                        break;
+                    }
+                }
+            }
+            
+            function warnNoneSelected( receivedInputID )
+            {
+                var inputCheckBox = document.getElementsByTagName( "input" );
+                for ( var i = 0; i < inputCheckBox.length; i++ )
+                {
+                    if ( inputCheckBox[ i ].id.indexOf( receivedInputID ) != -1 )
+                    {
+                        if ( inputCheckBox[ i ].checked )
+                        {
+                            return true;
+                        }
+                    }
+                }
+                window.alert('Please select at least one row.');
+                return false;
+            }
+    		function warnDelete()
+    		{
+                return window.confirm('Please confirm that you would like to delete user from selected group(s).');
+            }
+        </script> 
+        <apex:form id="theForm">
+        <apex:outputPanel id="wholePage">
+        <apex:pageBlock id="statusList">
+            <apex:actionFunction action="{!userChanged}" name="rerenderTopPanel" rerender="statusList,wholePage,login_in_qassign,available_for_qassign,settings_panel" />
+            <apex:actionRegion >
+                <apex:inputHidden value="{!objUser.Name}" id="targetName" />
+                <apex:inputHidden value="{!User_ID}" id="targetId" />
+            </apex:actionRegion>
+            <h1>
+                Q-assign User Status for:&nbsp;<apex:outputField html-ortoo-elem-id="QAUS0077" value="{!userSettingsHolder.ortoo_qra__User__c}" />
+                &nbsp;
+	            <apex:commandButton html-ortoo-elem-id="QAUS0001" rendered="{!IsCurrentUserAManagerOrAdmin}" value="Change User" onclick="openLookupPopup('{!$Component.targetName}', '{!$Component.targetId}' , '005','USER',''); return false" />
+            </h1>
+            <apex:pageMessages id="error_messages"/> 
+                
+            <apex:pageBlockSection columns="2" collapsible="false">
+            <apex:pageBlockSectionItem helpText="{!availableforQassign_HelpText}" dataStyleClass="customDataStyle" labelStyleClass="customLabelStyle" >
+                    <c:customHelpTextLabel html-ortoo-elem-id="QAUS0078" labelValue="Presence within Q-assign:" helpTextID="Available" helpText="{!availableforQassign_HelpText}"/>
+                    <apex:outputPanel id="available_for_qassign" >
+                        <apex:actionRegion >
+                            <apex:selectList html-ortoo-elem-id="QAUS0002" value="{!userAvailabilityStatusForQassign}" size="1" >
+                                <apex:selectOptions value="{!qassignAvailabilityOptions}"></apex:selectOptions>
+                                <apex:actionSupport event="onchange" reRender="statusList" action="{!ChangeAvailableForQassign}" status="activeFlagsActStatus"/>
+                            </apex:selectList>                            
+                        </apex:actionRegion>
+                        <apex:actionStatus id="activeFlagsActStatus">
+                            <apex:facet name="start">
+                              <img src="/img/loading.gif" />                 
+                            </apex:facet>   
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!userLoggedIn_HelpText}">
+                    <c:customHelpTextLabel html-ortoo-elem-id="QAUS0079" labelValue="Logged in to Salesforce:" helpTextID="LoggedIn" helpText="{!userLoggedIn_HelpText}"/>
+                    <apex:outputPanel id="login_in_qassign" >
+                        &nbsp;
+                        <apex:image html-ortoo-elem-id="QAUS0005" value="{!$Resource.ortoo_qra__green_spot}" title="User is logged in to Salesforce" rendered="{!AND(isUserLoginInQAssign == true , LoggedInStatus == true)}"/>
+                        <apex:image html-ortoo-elem-id="QAUS0006" value="{!$Resource.ortoo_qra__red_spot}" title="User is not logged in to Salesforce" rendered="{!OR(isUserLoginInQAssign == false ,LoggedInStatus == false)}"/>
+                        <apex:actionStatus id="loginFlagsActStatus">
+                            <apex:facet name="start">
+                              <img src="/img/loading.gif" />                 
+                            </apex:facet>   
+                        </apex:actionStatus>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection> 
+            <br/>
+            <apex:commandButton html-ortoo-elem-id="QAUS0007" rendered="{!IsCurrentUserAManagerOrAdmin}" value="Add Assignment Groups" onclick="openAGLookupPopup('{!User_ID}'); return false" />
+            <br/>
+            <h3>Values at Last Scheduler Run</h3>
+            <br/>
+            <apex:commandButton html-ortoo-elem-id="QAUS0008" value="Refresh" action="{!refresh}" rerender="statusList" status="statusListActStatus" />
+            <apex:commandButton html-ortoo-elem-id="QAUS0009" rendered="{!IsCurrentUserAManagerOrAdmin}" value="Enable for Selected" action="{!Enableforall}" rerender="statusList" status="statusListActStatus" onClick="if(!warnNoneSelected('inputId')) return false;" />
+            <apex:commandButton html-ortoo-elem-id="QAUS0010" rendered="{!IsCurrentUserAManagerOrAdmin}" value="Disable for Selected" action="{!Disableforall}" rerender="statusList" status="statusListActStatus" onClick="if(!warnNoneSelected('inputId')) return false;" />
+            <apex:commandButton html-ortoo-elem-id="QAUS0011" rendered="{!IsCurrentUserAManagerOrAdmin}" value="Remove from Selected" action="{!removeFromSelected}" rerender="statusList" status="statusListActStatus" onClick="if(!warnNoneSelected('inputId')) return false; if(!warnDelete()) return false;" />
+            <apex:actionStatus id="statusListActStatus">
+                <apex:facet name="start">
+                    <img src="/img/loading.gif" />
+                </apex:facet>   
+            </apex:actionStatus>
+            <apex:pageBlockTable html-ortoo-elem-id="QAUS0012" value="{!UserAssignmentGroupMemberStatusList}" var="US" id="user_status_list_table">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputPanel >
+                            <apex:inputCheckbox onclick="selectAllCheckboxes(this, 'inputId')" id="parentCB" />
+                            <script>
+                            	clearParentCheckbox('parentCB');
+                            </script>
+                        </apex:outputPanel>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!US.RowSelected}" id="inputId" onclick="updateParentCheckbox(this, 'parentCB')"/> 
+                </apex:column>
+                <apex:column headerValue="Action">
+                    <apex:commandLink rendered="{!IsCurrentUserAManagerOrAdmin}" action="{!ChangeAssignmentGroupMemberActiveStatus}" rerender="statusList">
+                        <apex:outputText value="Enable" rendered="{!US.Member.ortoo_qra__Is_Active__c != true}"/>
+                        <apex:outputText value="Disable" rendered="{!US.Member.ortoo_qra__Is_Active__c == true}"/>
+                        <apex:param name="editrowmemberid" value="{!US.Member.Id}" assignTo="{!EditRowAssignmentGroupMemberId}"/>
+                    </apex:commandLink>
+                     <apex:outputText value=" | " rendered="{!IsCurrentUserAManagerOrAdmin}"/>
+                    <apex:commandLink rendered="{!IsCurrentUserAManagerOrAdmin}" action="{!removeGroupMember}" rerender="statusList" onclick="if(!warnDelete()) return false;">
+                        <apex:outputText value="Remove"/>
+                        <apex:param name="editrowmemberid" value="{!US.Member.Id}" assignTo="{!EditRowAssignmentGroupMemberId}"/>
+                    </apex:commandLink>
+                    <apex:outputPanel rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Show_Pull_Button__c && US.Member.Assignment_Group__r.ortoo_qra__Is_Active__c}">
+                         <apex:outputText value=" | " rendered="{!IsCurrentUserAManagerOrAdmin}" />
+                    </apex:outputPanel>
+                    <apex:commandLink value="{!US.ObjectName}" action="{!pullRecord}" rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Show_Pull_Button__c && US.Member.Assignment_Group__r.ortoo_qra__Is_Active__c}" status="pullRecord" rerender="AssignedRecord,error_message"> 
+                        <apex:param name="editrowgroupid" value="{!US.Member.ortoo_qra__Assignment_Group__c}" assignTo="{!EditRowAssignmentGroupId}"/>
+                        <apex:param name="editrowmemberid" value="{!US.Member.Id}" assignTo="{!EditRowAssignmentGroupMemberId}"/>
+                        <apex:param name="editRowUserId" value="{!US.Member.ortoo_qra__User__c}" assignTo="{!EditRowAssignmentGroupUserId}"/>
+                    </apex:commandLink>
+                    <apex:actionStatus id="pullRecord">
+                        <apex:facet name="start">
+                            <img src="/img/loading.gif" />                 
+                        </apex:facet>   
+                    </apex:actionStatus>
+                    <apex:outputPanel rendered="{!!IsCurrentUserAManagerOrAdmin && (!US.Member.Assignment_Group__r.ortoo_qra__Show_Pull_Button__c || !US.Member.Assignment_Group__r.ortoo_qra__Is_Active__c)}">
+                        <apex:outputText value="No action available" />
+                    </apex:outputPanel>
+                    
+                </apex:column>
+                <apex:column headerValue="Assignment Group">
+                    <apex:outputField value="{!US.Member.ortoo_qra__Assignment_Group__c}"/>&nbsp;
+                    <apex:outputLabel value="(inactive)" rendered="{!US.groupActive == false}"/>
+                </apex:column>
+                <apex:column headerValue="Enabled">
+                    <apex:outputField value="{!US.Member.ortoo_qra__Is_Active__c}"/>
+                </apex:column>
+                <apex:column headerValue="Last Assignment">
+                    <apex:outputField value="{!US.Member.ortoo_qra__Last_Assignment__c}"/>
+                </apex:column>
+                <apex:column headerValue="Quota Assigned (Max)">
+                    {!US.Member.ortoo_qra__Quota_Assigned__c}
+                    <apex:outputPanel rendered="{!IF(US.Member.ortoo_qra__Assignment_Quota__c != null, TRUE, FALSE)}">
+                            <apex:outputText rendered="{!US.Member.ortoo_qra__Assignment_Quota__c != null && US.Member.ortoo_qra__Assignment_Quota__c != 0}">
+                                ({!US.Member.ortoo_qra__Assignment_Quota__c})
+                            </apex:outputText>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!IF(US.Member.ortoo_qra__Assignment_Quota__c == null, TRUE, FALSE)}">
+                        <apex:outputText rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Assignment_Quota__c != null && US.Member.Assignment_Group__r.ortoo_qra__Assignment_Quota__c != 0}">
+                            ({!US.Member.Assignment_Group__r.ortoo_qra__Assignment_Quota__c})
+                        </apex:outputText>
+                        <apex:outputText rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Assignment_Quota__c == null || US.Member.Assignment_Group__r.ortoo_qra__Assignment_Quota__c == 0}">
+                            (&infin;)
+                        </apex:outputText>
+                    </apex:outputPanel>
+                </apex:column>
+                <apex:column headerValue="Active Records (Cap)">
+                    <apex:outputText >{!US.Member.ortoo_qra__Active_Assignments__c}</apex:outputText>
+                    <apex:outputPanel rendered="{!IF(US.Member.ortoo_qra__Max_Assignment_Cap__c != null, TRUE, FALSE)}">
+                            <apex:outputText rendered="{!US.Member.ortoo_qra__Max_Assignment_Cap__c != null && US.Member.ortoo_qra__Max_Assignment_Cap__c != 0}">
+                                ({!US.Member.ortoo_qra__Max_Assignment_Cap__c})
+                            </apex:outputText>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!IF(US.Member.ortoo_qra__Max_Assignment_Cap__c == null, TRUE, FALSE)}">
+                        <apex:outputText rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Assignments_Level__c != null && US.Member.Assignment_Group__r.ortoo_qra__Assignments_Level__c != 0}">
+                            ({!US.Member.Assignment_Group__r.ortoo_qra__Assignments_Level__c})
+                        </apex:outputText>
+                        <apex:outputText rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Assignments_Level__c == null || US.Member.Assignment_Group__r.ortoo_qra__Assignments_Level__c == 0}">
+                            (&infin;)
+                        </apex:outputText>
+                    </apex:outputPanel>
+                </apex:column>
+                <apex:column headerValue="Active Load Points (Cap)">
+                    <apex:outputText >{!IF((US.Member.Assignment_Group__r.ortoo_qra__Load_Points_Field__c == null || US.Member.Assignment_Group__r.ortoo_qra__Load_Points_Field__c == ''), '-', US.Member.ortoo_qra__Active_Load__c)}</apex:outputText>
+                    <apex:outputPanel rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Load_Points_Field__c != null && US.Member.Assignment_Group__r.ortoo_qra__Load_Points_Field__c != ''}">
+            	        
+                        <apex:outputPanel rendered="{!IF(US.Member.ortoo_qra__Max_Assignment_Points_Cap__c != null, TRUE, FALSE)}">
+                            <apex:outputText rendered="{!US.Member.ortoo_qra__Max_Assignment_Points_Cap__c != null && US.Member.ortoo_qra__Max_Assignment_Points_Cap__c != 0}">
+                                ({!US.Member.ortoo_qra__Max_Assignment_Points_Cap__c})
+                            </apex:outputText>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(US.Member.ortoo_qra__Max_Assignment_Points_Cap__c == null, TRUE, FALSE)}">
+                            <apex:outputText rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Max_Assignment_Points_Cap__c != null && US.Member.Assignment_Group__r.ortoo_qra__Max_Assignment_Points_Cap__c != 0}">
+                                ({!US.Member.Assignment_Group__r.ortoo_qra__Max_Assignment_Points_Cap__c})
+                            </apex:outputText>
+                            <apex:outputText rendered="{!US.Member.Assignment_Group__r.ortoo_qra__Max_Assignment_Points_Cap__c == null || US.Member.Assignment_Group__r.ortoo_qra__Max_Assignment_Points_Cap__c == 0}">
+        	            	(&infin;)
+                            </apex:outputText>
+                        </apex:outputPanel>
+					</apex:outputPanel>
+                </apex:column>
+                <apex:column headerValue="Status" title="{!US.StatusTitle}" id="statusCol">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:image value="{!$Resource.ortoo_qra__green_spot}" rendered="{!US.Status == 'ACTIVE'}"/>
+                    <apex:image value="{!$Resource.ortoo_qra__red_spot}" rendered="{!US.Status == 'INACTIVE'}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:outputPanel id="user_status_list_msg"> 
+                <apex:outputText html-ortoo-elem-id="QAUS0039" value="{!objUser.Name} is currently not a member of any assignment group(s)" rendered="{!MemberRowsDoNotExist}"/>
+            </apex:outputPanel>
+        </apex:pageBlock>
+        <apex:pageMessages id="error_message"/>
+        <apex:outputPanel id="AssignedRecord">
+        <apex:outputLabel value="Assigned {!ObjectTitle}:" rendered="{!AssignedRecord}"/>
+        <apex:outputLink html-ortoo-elem-id="QAUS0040" value="/{!RecordId}"  rendered="{!AssignedRecord}">
+         Click here
+        </apex:outputLink>
+        </apex:outputPanel>
+        </apex:outputPanel>
+
+        <span class="no_title">
+            <apex:pageBlock title="User Shift and OOO Settings" id="settings_panel" >
+                <apex:pageBlockButtons location="top">
+                    <div class="center_btn">
+                        <apex:commandButton html-ortoo-elem-id="QAUS0041" value="Update Settings" rerender="settings_panel" oncomplete="loadMultiPicklist();" action="{!UpdateSettings}"/>
+                    </div>
+                	
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection title="User Shift and OOO Settings" columns="1" id="settings_block_edit" collapsible="false">
+                    <apex:pageBlockSectionItem >
+                        <apex:pageMessage summary="Settings saved successfully" severity="confirm" strength="3" rendered="{!saveSuccessful}"  id="confirmSave"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <c:customHelpTextLabel labelValue="My Default Shift / Working Hours" helpTextID="default_WH_helptext" helpText="{!default_WH_helptext}"/>
+                        <apex:outputPanel >
+                            <apex:selectList html-ortoo-elem-id="QAUS0042" value="{!userSettings.ortoo_qra__Default_Shift_x_Type__c}" size="1">
+                                <apex:selectOptions value="{!defaultWorkingHourOptions}"></apex:selectOptions>
+                                <apex:actionSupport event="onchange" reRender="settings_block_edit" oncomplete="loadMultiPicklist();" status="object_status1"/>
+                            </apex:selectList>
+                            &nbsp;
+                            <apex:actionStatus id="object_status1">
+                                <apex:facet name="start">
+                                    <img src="/img/loading.gif" />
+                                </apex:facet>
+                            </apex:actionStatus>
+
+                            <apex:selectList html-ortoo-elem-id="QAUS0043" value="{!selectedBusinessHours}" rendered="{!isBusinessHoursScheduleSelected}" size="1">
+                                <apex:selectOptions value="{!businessHoursOptions}"></apex:selectOptions>
+                                <apex:actionSupport event="onchange" reRender="settings_block_edit" oncomplete="loadMultiPicklist();" status="object_status2"/>
+                            </apex:selectList>
+                            &nbsp;
+                            <apex:actionStatus id="object_status2">
+                                <apex:facet name="start">
+                                    <img src="/img/loading.gif" />
+                                </apex:facet>
+                            </apex:actionStatus>
+                            &nbsp;
+                            <apex:outputLink html-ortoo-elem-id="QAUS0044" rendered="{!isBusinessHoursScheduleSelected && selectedBusinessHours != null && selectedBusinessHours != ''}" value="/{!selectedBusinessHours}">Open Selected Business Hours</apex:outputLink>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!isBusinessHoursScheduleSelected}">
+                    	<c:customHelpTextLabel labelValue="Reversed - Use hours only OUTSIDE of this Business Hours schedule" helpTextID="reversed_WH_helptext" helpText="{!reversed_WH_helptext}" rendered="{!isBusinessHoursScheduleSelected}"/>
+                        <apex:inputCheckbox html-ortoo-elem-id="QAUS0045" value="{!userSettings.ortoo_qra__Default_Shift_x_Business_Hours_Reversed__c}"></apex:inputCheckbox>                            
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem rendered="{!isCalendarSelected}">
+                        <c:customHelpTextLabel labelValue="Which Calendar Entries are my shift?" helpTextID="which_cal_entries_WH" helpText="{!which_cal_entries_WH}" />
+                        <apex:outputPanel >
+                            <apex:selectList html-ortoo-elem-id="QAUS0046" value="{!userSettings.ortoo_qra__Default_Shift_x_Calendar_Items_Type__c}"  size="1">
+                                <apex:selectOptions value="{!OOOEntriesOptions}"></apex:selectOptions>
+                                <apex:actionSupport event="onchange" reRender="settings_block_edit" oncomplete="loadMultiPicklist();" status="Unavailable_settings_refresh"></apex:actionSupport>
+                            </apex:selectList>
+                            <apex:actionStatus id="Unavailable_settings_refresh">
+                                <apex:facet name="start">
+                                    <img src="/img/loading.gif" />
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+                    <!-- Filter Settings     -->
+                    <apex:pageBlockSectionItem rendered="{!isCalendarSelected && defaultShiftJustSpecificTypesSelected}">
+                        <c:customHelpTextLabel labelValue="Filter" helpTextID="filter_OOO" helpText="{!filter_OOO}"/>
+                        <apex:outputPanel id="DefaultFiltersTable">
+                            <apex:pageBlockTable html-ortoo-elem-id="QAUS0013" value="{!defaultWrappers}" var="filter" rendered="{!defaultWrappers.size > 0}">
+                                <apex:column headerValue="Field">
+                                    <apex:selectList value="{!filter.leftField}">
+                                        <apex:selectOption itemValue="ShowAs" itemLabel="Show Time As"></apex:selectOption>
+                                    </apex:selectList>
+                                    
+                                </apex:column>
+                                <apex:column headerValue="Operator">
+                                    <apex:selectList value="{!filter.operator}">
+                                        <apex:selectOption itemValue="equals" itemLabel="equals"></apex:selectOption>
+                                    </apex:selectList>
+                                </apex:column>
+                                <apex:column headerValue="Value">
+                                    <apex:selectList value="{!filter.values}" multiselect="true" styleClass="multiList">
+                                        <apex:selectOption itemValue="OutOfOffice" itemLabel="Out Of Office"></apex:selectOption>
+                                        <apex:selectOption itemValue="Busy" itemLabel="Busy"></apex:selectOption>
+                                        <apex:selectOption itemValue="Free" itemLabel="Free"></apex:selectOption>
+                                       
+                                </apex:selectList>
+                                </apex:column>
+                                <!--
+                                <apex:column headerValue="Action">
+                                    <apex:commandLink action="{!deleteDefaultFilter}" value="Remove" oncomplete="loadMultipicklist();" reRender="settings_block_edit" status="remove_logic_1">
+                                         <apex:param name="defDelIndex" value="{!rowNumber}"/>
+                                    </apex:commandLink>
+                                   
+                                    <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                                    <apex:actionStatus id="remove_logic_1">
+                                        <apex:facet name="start">
+                                            <img src= "/img/loading.gif"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:column>
+    							-->
+                            </apex:pageBlockTable>
+                            <!--
+                            <apex:commandLink value="Add Filter" reRender="DefaultFiltersTable" action="{!addDefaultFilter}" status="add_filter_logic_1" oncomplete="loadMultiPicklist();" >    
+                            </apex:commandLink>
+
+                            <apex:actionStatus id="add_filter_logic_1">
+                                <apex:facet name="start">
+                                  <img src= "/img/loading.gif"/>
+                                </apex:facet>
+                            </apex:actionStatus>
+    						-->
+
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+
+
+                	<!-- Calendar Settings END-->
+                    <apex:pageBlockSectionItem rendered="{!isCalendarSelected && IsCurrentUserAManagerOrAdmin}">
+                        <c:customHelpTextLabel labelValue="My Upcoming Shifts" helpTextID="my_upcoming_WH" helpText="{!my_upcoming_WH}" rendered="{!isCalendarSelected}"/>
+                        <apex:outputPanel >
+                            <apex:pageBlockTable html-ortoo-elem-id="QAUS0014" value="{!calendarEvents}" var="cal">
+                                <apex:column value="{!cal.Subject}"/>
+                                <apex:column value="{!cal.Location}"/>
+                                <apex:column value="{!cal.StartDateTime}"/> 
+                                <apex:column value="{!cal.EndDateTime}"/> 
+                                <apex:column value="{!cal.ShowAs}"/> 
+                                <apex:column value="{!cal.Description}"/>
+                            </apex:pageBlockTable>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    
+                    <!-- OOO section -->
+                    <apex:pageBlockSectionItem >
+                        <c:customHelpTextLabel labelValue="My OOO / non-working times" helpTextID="OOO_time_WH" helpText="{!OOO_time_WH}"/>
+                        <apex:outputPanel >
+                            <apex:selectList html-ortoo-elem-id="QAUS0056" size="1" value="{!userSettings.ortoo_qra__OOO_x_Source__c}">
+                                <apex:selectOptions value="{!outOfOfficeOptions}"></apex:selectOptions>
+                                <apex:actionSupport event="onchange" reRender="settings_block_edit" oncomplete="loadMultiPicklist();" status="ooo_options"></apex:actionSupport>
+                            </apex:selectList>
+                             <apex:actionStatus id="ooo_options">
+                                <apex:facet name="start">
+                                    <img src="/img/loading.gif" />                  
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem rendered="{!isGlobalSettingsSelected}">
+                        <c:customHelpTextLabel labelValue="Default OOO / non-working times setting for Users" helpTextID="DefaultOOO_HelpText" helpText="{!DefaultOOO_HelpText}"/>
+                        <apex:outputPanel >
+                            <apex:outputText html-ortoo-elem-id="QAUS0057" value="{!QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Source__c}"></apex:outputText>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!isGlobalCalendarSelected && isGlobalSettingsSelected}">
+                        <c:customHelpTextLabel labelValue="Which Calendar Entries are OOO / Unavailable?" helpTextID="DefaultOOOWhichCalendar_HelpText" helpText="{!DefaultOOOWhichCalendar_HelpText}"/>
+                        <apex:outputText html-ortoo-elem-id="QAUS0058" value="{!QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Calendar_Items_Type__c}"></apex:outputText>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!isGlobalCalendarSelected && QAGlobalSettingConfig.ortoo_qra__Default_User_OOO_x_Calendar_Items_Type__c == 'Just specific types of calendar Items' && isGlobalSettingsSelected}">
+                        <c:customHelpTextLabel labelValue="Filter" helpTextID="FilterOOOCalendarItemsBy_HelpText" helpText="{!FilterOOOCalendarItemsBy_HelpText}" />
+                        <apex:outputPanel >
+                            <apex:outputLabel html-ortoo-elem-id="QAUS0059" value="Show Time As"></apex:outputLabel>
+                            &nbsp;
+                            <apex:outputLabel html-ortoo-elem-id="QAUS0060" value="equals"></apex:outputLabel>
+                            &nbsp;
+                            <b><apex:outputLabel html-ortoo-elem-id="QAUS0061" value="{!filterValueForView}"></apex:outputLabel></b>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+                   
+
+
+                    <apex:pageBlockSectionItem rendered="{!isOOOCalendarSelected}">
+                        <c:customHelpTextLabel labelValue="Which Calendar Entries are OOO?" helpTextID="which_cal_OOO" helpText="{!which_cal_OOO}"/>
+                        <apex:outputPanel >
+                            <apex:selectList html-ortoo-elem-id="QAUS0062" value="{!userSettings.ortoo_qra__OOO_x_Calendar_Items_Type__c}"  size="1">
+                                <apex:selectOptions value="{!OOOEntriesOptions}"></apex:selectOptions>
+                                <apex:actionSupport event="onchange" reRender="settings_block_edit" oncomplete="loadMultiPicklist();" status="OOOEntries_refresh"></apex:actionSupport>
+                            </apex:selectList>
+                            <apex:actionStatus id="OOOEntries_refresh">
+                                <apex:facet name="start">
+                                        <img src="/img/loading.gif" />                  
+                                    </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+                    <!-- Filters -->
+                    <apex:pageBlockSectionItem rendered="{!isOOOCalendarSelected && oooJustSpecificTypesSelected}">
+                        <c:customHelpTextLabel labelValue="Filter" helpTextID="filter_OOO" helpText="{!filter_OOO}"/>
+                        <apex:outputPanel id="OOOfilterTable">
+                            <apex:pageBlockTable html-ortoo-elem-id="QAUS0016" value="{!filterWrappers}" var="filter" rendered="{!filterWrappers.size > 0}">
+                                <apex:column headerValue="Field">
+                                    <apex:selectList value="{!filter.leftField}">
+                                        <apex:selectOption itemValue="ShowAs" itemLabel="Show Time As"></apex:selectOption>
+                                    </apex:selectList>    
+                                </apex:column>
+                                <apex:column headerValue="Operator">
+                                    <apex:selectList value="{!filter.operator}">
+                                        <apex:selectOption itemValue="equals" itemLabel="equals"></apex:selectOption>
+                                    </apex:selectList>
+                                </apex:column>
+                                <apex:column headerValue="Value">
+                                    <apex:selectList value="{!filter.values}" multiselect="true" styleClass="multiList">
+                                        <apex:selectOption itemValue="OutOfOffice" itemLabel="Out Of Office"></apex:selectOption>
+                                        <apex:selectOption itemValue="Busy" itemLabel="Busy"></apex:selectOption>
+                                        <apex:selectOption itemValue="Free" itemLabel="Free"></apex:selectOption>
+                                </apex:selectList>
+                                </apex:column>
+                                <!--
+                                <apex:column headerValue="Action">
+                                    <apex:commandLink action="{!deleteOOOFilter}" value="Remove" oncomplete="loadMultipicklist();" reRender="settings_block_edit" status="remove_logic">
+                                         <apex:param name="delIndex" value="{!rowNumber}"/>
+                                    </apex:commandLink>
+                                   
+                                    <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                                    <apex:actionStatus id="remove_logic">
+                                        <apex:facet name="start">
+                                            <img src= "/img/loading.gif"/>
+                                        </apex:facet>
+                                        <apex:facet name="stop">
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </apex:column>
+    							-->
+                            </apex:pageBlockTable>
+                            <!---
+                            <apex:commandLink value="Add Filter" reRender="OOOfilterTable" action="{!addOOOFilter}" status="add_filter_logic_2" oncomplete="loadMultiPicklist();" >    
+                            </apex:commandLink>
+                            <apex:actionStatus id="add_filter_logic_2">
+                                <apex:facet name="start">
+                                    <img src= "/img/loading.gif"/>
+                                </apex:facet>
+                            </apex:actionStatus>
+    						-->
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                   <apex:pageBlockSectionItem id="OOO_list_section" rendered="{!isOOOCalendarSelected && IsCurrentUserAManagerOrAdmin}">
+                       <c:customHelpTextLabel labelValue="My upcoming OOO Calendar Entries" helpTextID="OOO_List_HelpText" helpText="{!OOO_List_HelpText}"/>
+                       <apex:outputPanel >
+                            <apex:pageBlockTable html-ortoo-elem-id="QAUS0017" value="{!OOOList}" var="cal">
+                                <apex:column headerValue="Action" rendered="{!OOOList.size > 0}">
+                                    <apex:commandLink rerender="OOO_list_section"  onclick="window.open('/apex/EditOOO?eid={!cal.Id}', 'mywindow','height=500,width=780,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');return false;">Edit</apex:commandLink> &nbsp;
+                                    
+                                    <apex:commandLink rerender="settings_block_edit" oncomplete="loadMultiPicklist();" action="{!DeleteOOOEvent}">
+                                        <apex:outputText >Delete</apex:outputText>
+                                        <apex:param name="ooorowid" value="{!cal.Id}" assignTo="{!OOORowId}"/>
+                                    </apex:commandLink>
+                                    
+
+                                </apex:column>
+
+                                <apex:column value="{!cal.Subject}"/>
+                                <apex:column value="{!cal.Location}"/>
+                                <apex:column value="{!cal.StartDateTime}"/> 
+                                <apex:column value="{!cal.EndDateTime}"/>
+                                <apex:column value="{!cal.ShowAs}"/> 
+                                <apex:column value="{!cal.Description}"/>
+                            </apex:pageBlockTable>
+                            <apex:commandLink html-ortoo-elem-id="QAUS0075" rendered="{!showAddEvent}" rerender="settings_block_edit" onclick="window.open('/apex/EditOOO?eid=NEW&user_id={!userSettings.ortoo_qra__User__c}', 'mywindow','height=500,width=780,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');return false;">
+                                <apex:outputText html-ortoo-elem-id="QAUS0076" >Add Event</apex:outputText>
+                            </apex:commandLink> &nbsp;
+                            <script type="text/javascript" src="{!URLFOR($Resource.multiselect,'multiselect/js/jquery.multi-select.js')}"></script>
+                            <script>
+                                 var j$ = jQuery.noConflict(); 
+                                    j$(document).ready(function(){
+                                        j$('.multiList').multiselect();
+                                    });
+                            </script>
+                        </apex:outputPanel>
+                   </apex:pageBlockSectionItem>
+            	</apex:pageBlockSection>
+            </apex:pageBlock>
+        </span>
+    </apex:form>
+    
+   
+</apex:page>

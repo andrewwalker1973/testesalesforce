@@ -1,0 +1,19 @@
+<template>
+    <div>
+        <template if:true={renderTable}>
+            <template if:true={canCopySelectedTableRows}>
+                <lightning-button-icon class="copy-table-button" title="Copy table content to clipboard"
+                    icon-name=utility:copy variant="container" onclick={copyContentToClipBoard} size="large">
+                </lightning-button-icon>
+            </template>
+            <lightning-datatable key-field={rowId} min-column-width="150" data={data} columns={columns}
+                hide-checkbox-column={isReadOnly} onrowselection={handleRowSelection}
+                sorted-direction={sortDirection} sorted-by={sortedBy}
+                onsort={handleSort} max-row-selection={maxRowsSelected}>
+            </lightning-datatable>
+        </template>
+        <template if:false={renderTable}>
+            <h1>No Data...</h1>
+        </template>
+    </div>
+</template>

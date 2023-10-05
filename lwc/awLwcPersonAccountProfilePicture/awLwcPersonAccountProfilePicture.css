@@ -1,0 +1,9 @@
+.slds-card{
+    background-image: linear-gradient(#ececec 50%,#ffffff 0%);
+    height: 50%;
+}
+
+img.profile-image {
+    border-radius: 50%;
+    width: 150px;
+}

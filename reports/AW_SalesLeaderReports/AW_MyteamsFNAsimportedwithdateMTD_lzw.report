@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.FNA__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.FNA__r$AW_FNADate__c</field>
+    </columns>
+    <columns>
+        <field>Account.FNA__r$AW_FNADescription__c</field>
+    </columns>
+    <columns>
+        <field>Account.FNA__r$Id</field>
+    </columns>
+    <columns>
+        <field>Account.FNA__r$CreatedDate</field>
+    </columns>
+    <description>My team&apos;s total FNAs imported with a date this month</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.FNA__r$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>My team&apos;s FNAs imported with date MTD</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_FNAs__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.FNA__r$AW_FNADate__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

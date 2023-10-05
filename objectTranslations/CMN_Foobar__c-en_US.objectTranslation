@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Foobar</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Foobars</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Default --></label>
+        <name>CMN_Default</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Foobar Set --></label>
+        <name>CMN_FoobarSet</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Checkbox --></label>
+        <name>CMN_Checkbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>CMN_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Datetime --></label>
+        <name>CMN_Datetime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>CMN_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geolocation --></label>
+        <name>CMN_Geolocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lookup --></label>
+        <name>CMN_Lookup__c</name>
+        <relationshipLabel><!-- Foobars --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number Decimal --></label>
+        <name>CMN_NumberDecimal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Integer --></label>
+        <name>CMN_NumberInteger__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent --></label>
+        <name>CMN_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>CMN_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PicklistMultiSelect --></label>
+        <name>CMN_PicklistMultiSelect__c</name>
+        <picklistValues>
+            <masterLabel>Five</masterLabel>
+            <translation><!-- Five --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Four</masterLabel>
+            <translation><!-- Four --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One</masterLabel>
+            <translation><!-- One --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Three</masterLabel>
+            <translation><!-- Three --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Two</masterLabel>
+            <translation><!-- Two --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Picklist --></label>
+        <name>CMN_Picklist__c</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TextAreaEncrypted --></label>
+        <name>CMN_TextAreaEncrypted__c</name>
+    </fields>
+    <fields>
+        <label><!-- TextAreaLong --></label>
+        <name>CMN_TextAreaLong__c</name>
+    </fields>
+    <fields>
+        <label><!-- TextAreaRich --></label>
+        <name>CMN_TextAreaRich__c</name>
+    </fields>
+    <fields>
+        <label><!-- TextArea --></label>
+        <name>CMN_TextArea__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text --></label>
+        <name>CMN_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>CMN_URL__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Default Foobar record type --></description>
+        <label><!-- Default --></label>
+        <name>CMN_DefaultFoobar</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

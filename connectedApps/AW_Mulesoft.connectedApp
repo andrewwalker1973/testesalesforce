@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>johann.lourens@liberty.co.za</contactEmail>
+    <label>Mulesoft</label>
+    <oauthConfig>
+        <callbackUrl>https://liberty-group.my.salesforce.com/</callbackUrl>
+        <consumerKey>3MVG9tzQRhEbH_K1Ih04zBLV7G5APO5buZyyaJ6fKpYInBXMugGh7oNB7JV13GEiWAphv2SCDw4GZXKQiTadx</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

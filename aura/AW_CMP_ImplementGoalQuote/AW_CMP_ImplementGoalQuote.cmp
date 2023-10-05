@@ -1,0 +1,89 @@
+<!--
+* @description Aura parent component for the Implement Quote Modal.
+*
+* @author dpucerea nihal.desai@accenture.com vishakha.saini@accenture.com
+*
+* @date November 2020, February 2022, May 2022
+-->
+
+<aura:component description="AW_CMP_ImplementGoalQuote" controller="AW_CTRL_ImplementGoal">
+	<aura:attribute name="isFinancialGoalOpenChild" type="Boolean" default="false"/>
+	<aura:attribute name="isPlannedSolutionOpenChild" type="Boolean" default="false"/>
+	<aura:attribute name="isQuoteOpenChild" type="Boolean" default="false"/>
+
+	<aura:attribute name="parentAccountId" type="String"/>
+	<aura:attribute name="selectedFinancialGoal" type="String"/>
+	<aura:attribute name="selectedPlannedSolution" type="String"/>
+	<aura:attribute name="selectedQuote" type="Object" default=""/>
+
+	<aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+	<aura:attribute name="quoteLabels" type="Map"/>
+	<aura:attribute name="quoteColumns" type="List"/>
+	<aura:attribute name="quoteData" type="List"/>
+	<aura:attribute name="isQuoteEmpty" type="Boolean"/>
+	<aura:attribute name="isLoading" type="Boolean" default="true"/>
+	<aura:attribute name="isContinueDisabled" type="Boolean" default="true"/>
+	<aura:attribute name="isRiskGoal" type="Boolean" default="false"/>
+	<aura:attribute name="sObjectTypeChild" type="String"/>
+	<aura:attribute name="isFromRiskGoal" type="Boolean" default="false"/>
+	<aura:attribute name="navigateToRecordId" type="String"/>
+
+	<aura:attribute name="pageReference" type="Object"/>
+	<lightning:navigation aura:id="navService"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+			 class="slds-modal slds-fade-in-open slds-modal_medium">
+		<div class="slds-modal__container">
+			<header class="slds-modal__header">
+				<lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModal }" alternativeText="close" variant="bare-inverse"
+									  class="slds-modal__close"/>
+				<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+					{!$Label.c.AW_QuoteSelection}
+				</h2>
+			</header>
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+				<aura:if isTrue="{!v.isLoading}">
+					<div class="exampleHolder">
+						<lightning:spinner alternativeText="Loading" size="medium" class="slds-is-relative slds-align_absolute-center slds-p-around_medium"/>
+					</div>
+					<aura:set attribute="else">
+						<aura:if isTrue="{!v.isQuoteEmpty}">
+							<div class="slds-text-body_regular slds-text-align_center">
+								{!$Label.c.AW_EmptyQuoteList}
+							</div>
+							<aura:set attribute="else">
+								<lightning:datatable data="{! v.quoteData }" columns="{! v.quoteColumns }" keyField="Id"
+													 maxRowSelection="{! v.maxRowSelection }" onrowselection="{! c.handleRowActionQuote }"/>
+							</aura:set>
+						</aura:if>
+					</aura:set>
+				</aura:if>
+			</div>
+			<footer class="slds-modal__footer">
+				<button class="slds-button slds-button_neutral" onclick="{! c.closeModal }">
+					{!$Label.c.AW_Cancel}
+				</button>
+				<aura:if isTrue="{!v.isFromRiskGoal}">
+					<aura:set attribute="else">
+						<button class="slds-button slds-button_neutral" onclick="{! c.previousModal }">
+							{!$Label.c.AW_Previous}
+						</button>
+					</aura:set>
+				</aura:if>
+				<aura:if isTrue="{!v.isQuoteEmpty}">
+					<aura:set attribute="else">
+						<button class="slds-button slds-button_brand" onclick="{! c.continueAction }" disabled="{!v.isContinueDisabled}">
+							{!$Label.c.AW_Continue}
+						</button>
+					</aura:set>
+				</aura:if>
+				<button class="slds-button slds-button_brand" onclick="{! c.createNewQuote }">
+					{!$Label.c.AW_CreateNewQuote}
+				</button>
+			</footer>
+		</div>
+	</section>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

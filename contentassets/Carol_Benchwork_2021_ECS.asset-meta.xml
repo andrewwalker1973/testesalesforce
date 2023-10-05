@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <language>en_US</language>
+    <masterLabel>Carol_Benchwork_2021_ECS</masterLabel>
+    <versions>
+        <version>
+            <number>1</number>
+            <pathOnClient>Carol Benchwork 2021 ECS.png</pathOnClient>
+        </version>
+    </versions>
+</ContentAsset>

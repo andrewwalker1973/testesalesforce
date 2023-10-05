@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object is related to the GRAX Schedule Process Object. These records contain the object and relationship to the Salesforce record(s) which will be backed up/archived from Salesforce.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>grax__Audit_Data_Payload__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Audit Data Payload</description>
+        <externalId>false</externalId>
+        <inlineHelpText>JSON Payload including the data sent to GRAX on new archive processes</inlineHelpText>
+        <label>Audit Data Payload</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>grax__Audit_Datetime_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the Date/Time field for the current Salesforce&apos;s Object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the Date/Time field for the current Salesforce&apos;s Object</inlineHelpText>
+        <label>Audit Datetime Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Can_Delete_GRAX_Record__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <formula>(grax__Records_To_Process__c = 0 || grax__Records_To_Process__c = null) &amp;&amp;
+(
+  grax__GRAX_Schedule_Process__c = null &amp;&amp; grax__Execution_Unique_Key__c = null &amp;&amp; grax__of_Times_Sent__c &gt;= 24 ||
+  grax__GRAX_Schedule_Process__c = null &amp;&amp; grax__Execution_Unique_Key__c != null ||
+  (
+    (
+      NOT(grax__GRAX_Schedule_Process__r.grax__Is_Running__c) &amp;&amp;
+      DATEVALUE(CreatedDate) &lt; TODAY() - 15
+    ) ||
+    (
+      grax__GRAX_Schedule_Process__r.grax__Execution_Unique_Key_Helper__c != grax__Execution_Unique_Key__c &amp;&amp;
+      NOT(grax__GRAX_Schedule_Process__r.grax__Is_Running__c)
+    ) ||
+    (
+      (grax__Num_Records_Failed_To_Delete__c = 0 || ISBLANK(grax__Num_Records_Failed_To_Delete__c)) &amp;&amp;
+      grax__GRAX_Schedule_Process__r.grax__Can_Delete_GRAX_Records__c &amp;&amp;
+      (
+        ISPICKVAL(grax__Status__c, &apos;Sent Successful&apos;) ||
+        (
+          ISPICKVAL(grax__Status__c, &apos;Not Sent&apos;) &amp;&amp;
+          NOT(grax__GRAX_Schedule_Process__r.grax__Is_Running__c)
+        )
+      ) &amp;&amp;
+      (
+         ISBLANK(grax__GRAX_Archive_Process__c) ||
+         grax__GRAX_Archive_Process__r.grax__Can_Delete_GRAX_Record__c
+      )
+    )
+  )
+)</formula>
+        <label>Can Delete GRAX Record?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Can_Set_As_Archived__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Records_Pending_Set_As_Archived__c &gt; 0 &amp;&amp; grax__Num_Records_To_Process__c = grax__Num_Records_Pending_Set_As_Archived__c + grax__Num_Records_Failed_To_Delete__c &amp;&amp; grax__Is_Current_Execution_Record__c</formula>
+        <label>Can Set As Archived?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Completed_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Completed_Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Error_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Error_Message</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of the Error message received</inlineHelpText>
+        <label>Error Message</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>grax__Execution_Unique_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label>Execution Unique Key</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__GDRI_Status_Helper__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GDRI Status Helper</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__GDR_Archive_Fully_Processed__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines that the GDR has completed all the potential actions, and, will not longer processed by any batch process</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Records_To_Process__c = grax__Num_Records_Successfully_Deleted__c + grax__Num_Records_Failed_To_Delete__c</formula>
+        <label>GDR Archive Fully Processed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__GDR_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GDR Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Data</fullName>
+                    <default>true</default>
+                    <label>Data</label>
+                </value>
+                <value>
+                    <fullName>Status</fullName>
+                    <default>false</default>
+                    <label>Status</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_Archive_Process__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Related Archive Process if &quot;Archive&quot; has been selected</description>
+        <externalId>false</externalId>
+        <label>GRAX Archive Process</label>
+        <referenceTo>grax__GRAX_Archive_Process__c</referenceTo>
+        <relationshipLabel>GRAX Data Records</relationshipLabel>
+        <relationshipName>GRAX_Data_Records</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_Group_GDR__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>GRAX Group GDR</label>
+        <referenceTo>grax__GRAX_GroupGDR__c</referenceTo>
+        <relationshipLabel>GRAX Data Records</relationshipLabel>
+        <relationshipName>GRAX_Data_Records</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__GRAX_Schedule_Process__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>GRAX_Schedule_Process</description>
+        <externalId>false</externalId>
+        <label>GRAX Schedule Process</label>
+        <referenceTo>grax__GRAX_Schedule_Process__c</referenceTo>
+        <relationshipLabel>GRAX Data Records</relationshipLabel>
+        <relationshipName>GRAX_Data_Records</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>grax__GroupGDR_File_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>grax__GRAX_Group_GDR__r.grax__File_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GroupGDR File Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__GroupGDR_Total_Records__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>grax__GRAX_Group_GDR__r.grax__Records__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GroupGDR Total Records</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Has_Pending_Archive_GDR_Records__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Records_To_Process__c &lt;&gt; grax__Num_Records_Successfully_Deleted__c + grax__Num_Records_Failed_To_Delete__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Pending Archive GDR Records</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Has_Pending_Async_Records__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <formula>grax__Num_Records_To_Process__c &gt; grax__Num_Records_Sent_to_GRAX__c</formula>
+        <label>Has Pending Async Records</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Is_Async_Salesforce_Object__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field is set to True if the Salesforce Object set on this GDR, is one of the defined in the &quot;asyncObjects2ProcessByGRAX&quot; list of the &quot;GRAXUtils&quot; APEX Class</description>
+        <externalId>false</externalId>
+        <label>Is Async Salesforce Object</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Is_Current_Execution_Record__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines if the GRAX Data Record belongs to the current Execution Unique Key, on the parent GRAX Schedule Process record</description>
+        <externalId>false</externalId>
+        <formula>NOT(ISBLANK(grax__Execution_Unique_Key__c)) &amp;&amp; grax__GRAX_Schedule_Process__r.grax__Execution_Unique_Key__c == grax__Execution_Unique_Key__c</formula>
+        <label>Is Current Execution Record</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>grax__Last_Sent_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last_Sent_Date</description>
+        <externalId>false</externalId>
+        <label>Last Sent Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Min_Num_of_Attempts_to_Delete__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The minimum number of attempts to delete from all the GDRI records related to this GDR</description>
+        <externalId>false</externalId>
+        <label>Min Num of Attempts to Delete</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_Failed_To_Delete__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># Records Failed To Delete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_Pending_Set_As_Archived__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># Records Pending Set As Archived</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_Sent_to_GRAX__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># Records Sent to GRAX</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_Successfully_Deleted__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># Records Successfully Deleted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_To_Be_Deleted__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label># Records To Be Deleted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Num_Records_To_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <description># of Salesforce records</description>
+        <externalId>false</externalId>
+        <label># Records To Process</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Overall_SFObject_Process_End_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Overall SFObject Process End Time</description>
+        <externalId>false</externalId>
+        <label>Overall SFObject Process End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Overall_SFObject_Process_Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Overall SFObject Process Start Time</description>
+        <externalId>false</externalId>
+        <label>Overall SFObject Process Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Process_Object_Index__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label>Process Object Index</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Processed_Child_Index__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label>Processed Child Index</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Processing_Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Processing Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Queued_Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Queued_Start_Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>grax__Records_Failed_to_Delete__c</fullName>
+        <deprecated>false</deprecated>
+        <description># of records which could not be deleted from SF</description>
+        <externalId>false</externalId>
+        <label># Records Failed to Delete</label>
+        <summaryFilterItems>
+            <field>grax__GRAX_Data_Record_Id__c.grax__Status__c</field>
+            <operation>equals</operation>
+            <value>Delete Error</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>grax__GRAX_Data_Record_Id__c.grax__of_Attempts_to_Delete__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>3</value>
+        </summaryFilterItems>
+        <summaryForeignKey>grax__GRAX_Data_Record_Id__c.grax__GRAX_Data_Record__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>grax__Records_Sent_to_GRAX__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label># Records Sent to GRAX</label>
+        <summaryFilterItems>
+            <field>grax__GRAX_Data_Record_Id__c.grax__Status__c</field>
+            <operation>equals</operation>
+            <value>Sent to GRAX</value>
+        </summaryFilterItems>
+        <summaryForeignKey>grax__GRAX_Data_Record_Id__c.grax__GRAX_Data_Record__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>grax__Records_Successfully_Deleted__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label># Records Successfully Deleted</label>
+        <summaryFilterItems>
+            <field>grax__GRAX_Data_Record_Id__c.grax__Status__c</field>
+            <operation>equals</operation>
+            <value>Deleted with Master Parent, Successfully Deleted, Parent Object - Not Delete</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>grax__GRAX_Data_Record_Id__c.grax__Pending_Set_As_Archived__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>grax__GRAX_Data_Record_Id__c.grax__GRAX_Data_Record__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>grax__Records_To_Process__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field Used for Internal Auditing</description>
+        <externalId>false</externalId>
+        <label># Records To Process</label>
+        <summaryForeignKey>grax__GRAX_Data_Record_Id__c.grax__GRAX_Data_Record__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>grax__Salesforce_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Salesforce_ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of ID&apos;s for all Salesforce records to be sent to Data Lake</inlineHelpText>
+        <label>Salesforce ID</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>grax__Salesforce_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Salesforce_Object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Salesforce object which is being backed up</inlineHelpText>
+        <label>Salesforce Object</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>grax__Sched_Proc_Hierarchy_Unique_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sched_Proc_Hierarchy_Unique_Key</description>
+        <externalId>false</externalId>
+        <label>Sched Proc Hierarchy Unique Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>grax__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of this related process</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Sent</fullName>
+                    <default>false</default>
+                    <label>Not Sent</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+                <value>
+                    <fullName>Sent Successful</fullName>
+                    <default>false</default>
+                    <label>Sent Successful</label>
+                </value>
+                <value>
+                    <fullName>Not Processed - Queuable Jobs Full</fullName>
+                    <default>false</default>
+                    <label>Not Processed - Queuable Jobs Full</label>
+                </value>
+                <value>
+                    <fullName>Processing</fullName>
+                    <default>false</default>
+                    <label>Processing</label>
+                </value>
+                <value>
+                    <fullName>Retry</fullName>
+                    <default>false</default>
+                    <label>Retry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>grax__of_Times_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <description># of Attempts in sending this record to GRAX</description>
+        <externalId>false</externalId>
+        <label># of Times Sent</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>GRAX Data Record</label>
+    <nameField>
+        <displayFormat>GRAX-{0000000}</displayFormat>
+        <label>GRAX Record Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>GRAX Data Records</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

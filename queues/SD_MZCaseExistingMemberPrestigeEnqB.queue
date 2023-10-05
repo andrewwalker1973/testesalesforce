@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>MZ Case Existing Member Prestige Enq B</name>
+    <queueMembers>
+        <users>
+            <user>armando.domingos@libertyhealth.net</user>
+            <user>daniela.jesuslorenzo@libertyhealth.net</user>
+            <user>paolo.marques@libertyhealth.net</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>SD_MZLibertyHealthSupportDesk</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,12 @@
+<template>
+  <div class="slds-grid slds-wrap">
+    <template for:each={records} for:item="record">
+      <div key={record.label} class="slds-col slds-size_1-of-2 slds-p-vertical_xx-small slds-p-horizontal_small">
+        <div class="slds-grid slds-wrap slds-border_bottom">
+          <span class="label slds-col slds-size_1-of-3 slds-text-align_bottom">{record.label}</span>
+          <span class="value slds-col slds-size_2-of-3 slds-text-align_bottom">{record.value}</span>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

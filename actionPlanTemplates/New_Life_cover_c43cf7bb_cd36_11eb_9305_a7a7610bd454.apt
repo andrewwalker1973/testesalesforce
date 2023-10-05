@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>100 Life covers</description>
+    <isAdHocItemCreationEnabled>false</isAdHocItemCreationEnabled>
+    <name>New Life cover</name>
+    <targetEntityType>Account</targetEntityType>
+    <uniqueName>New_Life_cover_c43cf7bb_cd36_11eb_9305_a7a7610bd454</uniqueName>
+</ActionPlanTemplate>

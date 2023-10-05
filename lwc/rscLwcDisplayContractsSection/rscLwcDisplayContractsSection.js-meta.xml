@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>Rsc Lwc Display Contracts Section</description>
+    <isExposed>false</isExposed>
+    <masterLabel>Rsc Lwc Display Contracts Section</masterLabel>
+    <targets>
+        <target>lightning__RecordAction</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+</LightningComponentBundle>

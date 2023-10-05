@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount/Quote.Opportunity.Account.Owner.Name__lookup:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <description>The total number of quotes done in a month divided by the total number of advisers who have done quotes</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average No.of Quotes</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>Quote$Name</field>
+    </columns>
+    <columns>
+        <field>Quote$Status</field>
+    </columns>
+    <columns>
+        <field>Quote$Opportunity</field>
+    </columns>
+    <columns>
+        <field>Quote$Opportunity.StageName</field>
+    </columns>
+    <columns>
+        <field>Quote$Opportunity.Account</field>
+    </columns>
+    <columns>
+        <field>Quote$Opportunity.Account.Owner.AW_ConsultantCode__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Opportunity.Account.Owner.AW_Branch__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Opportunity.Account.Owner.AW_Region__c</field>
+    </columns>
+    <description>Total number of quotes done per Financial Adviser this Current Year, grouped by Month</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>Quote$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Quote$Opportunity.Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Total Quotes per FA per Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_QuotesWithUserInformation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Quote$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

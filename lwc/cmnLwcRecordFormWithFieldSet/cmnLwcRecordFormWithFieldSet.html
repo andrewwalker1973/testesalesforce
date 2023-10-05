@@ -1,0 +1,57 @@
+<template>
+
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+
+	<template if:false={foundError}>
+		<!--Record view form to display fields when component loads-->
+		<template if:true={inViewMode}>
+			<lightning-record-view-form object-api-name={objectApiName} record-id={recordId}>
+				<lightning-accordion active-section-name={activeSections} allow-multiple-sections-open="true" class="slds-p-bottom_medium accordion-background">
+					<template if:true={isLoading}>
+						<lightning-spinner alternative-text="Loading"></lightning-spinner>
+					</template>
+					<template for:each={fieldSetAPINamesWithResults} for:index="index" for:item="fieldSet">
+						<lightning-accordion-section class="sectionBackground" key={fieldSet.key} label={fieldSet.label} name={fieldSet.sectionName}>
+							<lightning-layout multiple-rows style="height: max-content;">
+								<template for:each={fieldSet.value} for:item="mapValueResult">
+									<lightning-layout-item key={mapValueResult.fieldAPIName} padding="around-small" size="6">
+										<lightning-output-field class="slds-border_bottom" field-name={mapValueResult.fieldAPIName}></lightning-output-field>
+									</lightning-layout-item>
+								</template>
+							</lightning-layout>
+						</lightning-accordion-section>
+					</template>
+					<lightning-button class="slds-align_absolute-center" label="Edit" onclick={toggleFormMode} variant="brand"></lightning-button>
+				</lightning-accordion>
+			</lightning-record-view-form>
+		</template>
+
+		<!--Record edit form to enable editing of fields-->
+		<template if:false={inViewMode}>
+			<lightning-record-edit-form object-api-name={objectApiName} onerror={handleError} onsubmit={handleSubmit} onsuccess={handleSuccess}
+										record-id={recordId}>
+				<lightning-accordion active-section-name={activeSections} allow-multiple-sections-open="true" class="slds-p-bottom_medium accordion-background">
+					<template if:true={isLoading}>
+						<lightning-spinner alternative-text="Loading"></lightning-spinner>
+					</template>
+					<template for:each={fieldSetAPINamesWithResults} for:index="index" for:item="fieldSet">
+						<lightning-accordion-section class="sectionBackground" key={fieldSet.key} label={fieldSet.label} name={fieldSet.sectionName}>
+							<lightning-layout multiple-rows style="height: max-content;">
+								<template for:each={fieldSet.value} for:item="mapValueResult">
+									<lightning-layout-item key={mapValueResult.fieldAPIName} padding="around-small" size="6">
+										<lightning-input-field class="slds-border_bottom" field-name={mapValueResult.fieldAPIName}></lightning-input-field>
+									</lightning-layout-item>
+								</template>
+							</lightning-layout>
+						</lightning-accordion-section>
+					</template>
+					<div class="slds-align_absolute-center">
+						<lightning-button class="slds-m-right_small" label="Update" type="submit" variant="brand"></lightning-button>
+						<lightning-button label="Cancel" onclick={toggleFormMode} variant="brand"></lightning-button>
+					</div>
+				</lightning-accordion>
+			</lightning-record-edit-form>
+		</template>
+	</template>
+
+</template>

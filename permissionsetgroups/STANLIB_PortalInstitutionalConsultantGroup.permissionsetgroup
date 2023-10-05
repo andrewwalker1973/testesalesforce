@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>To group Permission Sets that can be applied to an external Institution Consultant&apos;s User record.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>STANLIB Portal Institutional Consultant Group</label>
+    <permissionSets>STANLIB_PortalInstitutionalConsultant</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

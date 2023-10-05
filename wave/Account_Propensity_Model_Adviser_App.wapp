@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>Account_Propensity_Model_Adviser_App</folder>
+    <masterLabel>Account Propensity Model Adviser App</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>kobus.debruyn@liberty.co.za</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <shares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>AW_PredictionModelFinancialAdviserAccess</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </shares>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>AW_PredictionModelFullAccess</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </shares>
+</WaveApplication>

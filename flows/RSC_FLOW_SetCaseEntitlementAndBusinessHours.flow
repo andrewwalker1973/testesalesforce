@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <description>Used to store the Businesshours on Entitlement</description>
+        <name>RSC_SetBusinessHoursOnEntitlement</name>
+        <label>Set Entitlement Hours</label>
+        <locationX>385</locationX>
+        <locationY>959</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_BusinessHourId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RSC_GetServiceType.SC_Entitlement__r.BusinessHours.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_UpdateCaseWithBusinessHoursAndEntitlement</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Used to assign the Businesshours on Entitlement process</description>
+        <name>RSC_SetProcessBusinessHours</name>
+        <label>Set Process Hours</label>
+        <locationX>121</locationX>
+        <locationY>839</locationY>
+        <assignmentItems>
+            <assignToReference>RSC_BusinessHourId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RSC_GetServiceType.SC_Entitlement__r.SlaProcess.BusinessHoursId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RSC_UpdateCaseWithBusinessHoursAndEntitlement</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Used to check if Entitlement has Entitlement Process</description>
+        <name>RSC_CheckEntitlementHasEntitlementProcess</name>
+        <label>Check Process On Entitlement</label>
+        <locationX>616</locationX>
+        <locationY>599</locationY>
+        <defaultConnector>
+            <targetReference>RSC_CheckEntitlementHours</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Has No Process</defaultConnectorLabel>
+        <rules>
+            <name>checkBusinessHoursOnEntitlementProcess</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_GetEntitlements</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_CheckEntitlementProcessHasHours</targetReference>
+            </connector>
+            <label>Has EntitlementProcess</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Used to check if Entitlement has BusinessHours</description>
+        <name>RSC_CheckEntitlementHours</name>
+        <label>Check Hours On Entitlement</label>
+        <locationX>636</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>No Hours On Entitlement</defaultConnectorLabel>
+        <rules>
+            <name>checkHoursOnEntitlement</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_GetServiceType.SC_Entitlement__r.BusinessHoursId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_SetBusinessHoursOnEntitlement</targetReference>
+            </connector>
+            <label>Hours On Entitlement</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Used to check if Entitlement Process has Businesshours</description>
+        <name>RSC_CheckEntitlementProcessHasHours</name>
+        <label>Check Hours on Process</label>
+        <locationX>319</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>RSC_CheckEntitlementHours</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Process Has No Hours</defaultConnectorLabel>
+        <rules>
+            <name>IsprocessHasHours</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_GetServiceType.SC_Entitlement__r.SlaProcess.BusinessHoursId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_SetProcessBusinessHours</targetReference>
+            </connector>
+            <label>Process Has Hours</label>
+        </rules>
+    </decisions>
+    <description>Flow used to set BusinessHours and Entitlements on Case that triggers the flow</description>
+    <interviewLabel>RSC_FLOW_SetCaseEntitlementAndBusinessHours {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RSC_FLOW_SetCaseEntitlementAndBusinessHours</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Used to get Entitlements with Entitlement Process</description>
+        <name>RSC_GetEntitlements</name>
+        <label>Get Entitlements With Process</label>
+        <locationX>616</locationX>
+        <locationY>479</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_CheckEntitlementHasEntitlementProcess</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RSC_GetServiceType.SC_Entitlement__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SlaProcessId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Entitlement</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Used to get the Service Type records</description>
+        <name>RSC_GetServiceType</name>
+        <label>Get Service Type</label>
+        <locationX>616</locationX>
+        <locationY>359</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_GetEntitlements</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.RSC_ServiceType__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SC_Assignable__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>SC_ServiceType__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Used to update the Case with BusinessHours and Entitlements</description>
+        <name>RSC_UpdateCaseWithBusinessHoursAndEntitlement</name>
+        <label>Update Case With Entitlement And BusinessHours</label>
+        <locationX>121</locationX>
+        <locationY>959</locationY>
+        <inputAssignments>
+            <field>BusinessHoursId</field>
+            <value>
+                <elementReference>RSC_BusinessHourId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EntitlementId</field>
+            <value>
+                <elementReference>RSC_GetServiceType.SC_Entitlement__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>490</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>RSC_GetServiceType</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>RSC_ServiceType__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>RSC_ServiceType__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>RSC_BusinessHourId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,1524 @@
+<apex:page controller="grax.GRAXSetupCtrl" cache="false" showChat="false" showHeader="true" standardStylesheets="false" sidebar="{!gxs.showSalesforceSidebar}" applyHtmlTag="{!$User.UIThemeDisplayed == 'Theme4d'}" applyBodyTag="{!$User.UIThemeDisplayed == 'Theme4d'}" docType="html-5.0" tabStyle="GRAX_DEPLOY__tab">
+	<div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/jquery-3.5.0.slim.min.js')}"/>
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/jquery.validate.min.js')}"/>
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.slds.js')}"/>
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.sldsTree.js')}"/>
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.sldsCombobox.js')}"/>
+		<!--
+			The following script it's included for the new way of display the Restore & Audit into an iframe
+			Sice now we display both pages on iframe we need to support that the iframe rezise automatically
+			when the content change into it.
+		-->
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/iframeResizer.min.js')}"/>
+
+		<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/GRAXSecuredIframe.js')}"/>
+		<iframe id="cookie_verification" scrolling="no" style="border:0;width:0;height:0;position:absolute;top:0;left:0"></iframe>
+		<script>
+			initGRAXSecuredIframe("{!gxs.herokuAppDomain}", "cookie_verification");
+		</script>
+
+
+		<apex:form >
+			<!-- Token Cache -->
+			<apex:actionFunction action="{!saveRefreshedTokenToCache}" name="saveRefreshedTokenToCache" immediate="true" reRender=""></apex:actionFunction>
+
+			<apex:actionFunction action="{!getTriggerableObjectsJSON}" name="getTriggerableObjectsJSON" immediate="true" reRender="triggerableObjectsJSONPanel" oncomplete="showGlobalSpinner(false);"/>
+			<apex:actionFunction immediate="true" name="displayRestoreIframeAF" action="{!renderRestoreIframe}" reRender="RestorePanel"/>
+			<apex:actionFunction immediate="true" name="displayAuditIframeAF" action="{!renderAuditIframe}" reRender="AuditPanel"/>
+			<apex:actionFunction immediate="true" name="updateHerokuAuthorizedUserId" action="{!updateHerokuAuthorizedUserId}" reRender="" oncomplete="showGlobalSpinner(false);"/>
+
+			<apex:actionFunction immediate="true" name="authorizeHeroku" action="{!AuthorizeHeroku}"/>
+
+			<apex:actionFunction immediate="true" name="unlockSettings" action="{!unlockSettings}" reRender="messagesPanel, graxMainTabsPanel, graxConfigurationSubTabsPanel, buttonsPanel, availableGraxAppsListPanel" oncomplete="showGlobalSpinner(false);"/>
+
+			<apex:actionFunction immediate="true" name="updateCustomSettings" action="{!UpdateCustomSettings}" reRender="updateCustomSettingsPanel, messagesPanel" >
+				<apex:param name="selectedCloudPlatform" value="" assignTo="{!selectedCloudPlatform}" />
+				<apex:param name="selectedGraxApp" value="" assignTo="{!selectedGraxApp}"/>
+				<apex:param name="selectedGraxAppURL" value="" assignTo="{!selectedGraxAppURL}"/>
+				<apex:param name="gatewayToken" value="" assignTo="{!gxs.GatewayToken}"/>
+				<apex:param name="apiToken" value="" assignTo="{!gxs.ApiToken}"/>
+				<apex:param name="licenseToken" value="" assignTo="{!gxs.LicenseToken}"/>
+				<apex:param name="isLoadingPage" value="false" assignTo="{!isLoadingPage}"/>
+			</apex:actionFunction>
+
+			<apex:actionFunction immediate="true" name="cancelReload" action="{!CancelReload}"/>
+
+			<apex:actionFunction immediate="true" name="validateSetup" action="{!validateSetup}" reRender="validateSetupResultPanel, messagesPanel">
+				<apex:param name="isLoadingPage" value="false" assignTo="{!isLoadingPage}"/>
+			</apex:actionFunction>
+
+			<apex:actionFunction immediate="true" name="saveScheduleJobs" action="{!saveScheduleJobs}"/>
+
+			<apex:actionFunction name="changeCloudPlatform" immediate="true" action="{!changeCloudPlatform}" reRender="availableGraxAppsListPanel, buttonsPanelContainer, messagesPanel" oncomplete="showGlobalSpinner(false);">
+				<apex:param name="selectedCloudPlatform" value="" assignTo="{!selectedCloudPlatform}" />
+				<apex:param name="isLoadingPage" value="false" assignTo="{!isLoadingPage}"/>
+			</apex:actionFunction>
+
+			<apex:actionFunction name="updateEnableDeleteTabSetting" immediate="true" action="{!updateEnableDeleteTabSetting}" reRender="" oncomplete="reloadCurrentPage();">
+				<apex:param name="enableDeleteTab" value="" assignTo="{!enableDeleteTab}"/>
+			</apex:actionFunction>
+
+			<apex:actionFunction name="updateShowSalesforceSidebarSetting" immediate="true" action="{!updateShowSalesforceSidebarSetting}" reRender="" oncomplete="reloadCurrentPage();">
+				<apex:param name="showSalesforceSidebar" value="" assignTo="{!showSalesforceSidebar}"/>
+			</apex:actionFunction>
+		</apex:form>
+
+		<!-- Token Cache -->
+		<apex:outputPanel layout="none" rendered="{!isTokenRefreshed}">
+			<script>saveRefreshedTokenToCache();</script>
+		</apex:outputPanel>
+
+
+		<!-- Import the Design System style sheet -->
+		<apex:slds />
+
+		<div id="globalSpinner" class="slds-spinner_container slds-is-fixed slds-hide">
+			<div role="status" class="slds-spinner slds-spinner_large slds-spinner_brand">
+				<span class="slds-assistive-text">Loading</span>
+				<div class="slds-spinner__dot-a"></div>
+				<div class="slds-spinner__dot-b"></div>
+			</div>
+		</div>
+
+		<script>
+			var $globalSpinner = $('#globalSpinner');
+
+			var globalSpinnerCounter = 0;
+			window.showGlobalSpinner = function(state) {
+				globalSpinnerCounter += (state ? 1 : -1);
+
+				if(globalSpinnerCounter < 0) {
+					globalSpinnerCounter = 0;
+				}
+
+				var isCounterZero = globalSpinnerCounter == 0;
+
+				setTimeout(function() {
+					$globalSpinner.toggleClass('slds-hide', isCounterZero);
+				}, isCounterZero ? 100 : 0);
+			};
+
+			var isAppleDevice = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
+			// The following script block is to support the resize automatically from Restore & Audit iframe
+			// and also to support to load the iframe only 1 time when user click on the related tab
+			var displayRestoreIframe = false;
+
+			function resizeIframe(iframe) {
+				iFrameResize({
+					log: false,
+					checkOrigin: false,
+					heightCalculationMethod: isAppleDevice ? 'bodyScroll' : 'bodyOffset'
+				}, "#" + iframe.id);
+			}
+
+			function displayRestoreIframeJS(){
+				resizeIframe(document.getElementById('GraxRestoreIframe'));
+				if( displayRestoreIframe == true) return false;
+				displayRestoreIframeAF();
+				showGlobalSpinner(true);
+				displayRestoreIframe = true;
+			}
+
+			var displayAuditIframe = false;
+			function displayAuditIframeJS(){
+				resizeIframe(document.getElementById('GraxAuditIframe'));
+				if( displayAuditIframe == true) return false;
+				displayAuditIframeAF();
+				showGlobalSpinner(true);
+				displayAuditIframe = true;
+			}
+
+			var $sf = function(id) {
+				return $(document.getElementById(id));
+			};
+
+			window.radioChange = function(input, hiddenId) {
+				$(document.getElementById(hiddenId)).val(input.value).trigger('change');
+			};
+		</script>
+
+		<style type="text/css">
+			body {
+				height: 100vh;
+			}
+
+			label.error {
+				color: red;
+				font-weight: bold;
+			}
+
+			#authorize_help,
+			#selectapp_help,
+			#audit_help,
+			#schedule_job_help,
+			#apextriggers_help {
+				position: fixed;
+				margin-top: 1rem;
+			}
+			#field_properties_scrollable {
+				height: 50vh;
+			}
+			.nopointerevents {
+				pointer-events: none;
+			}
+			select.objectlist > option:disabled {
+				display: none;
+				visibility: hidden;
+			}
+
+			.schedule_button:disabled + #schedule_job_warning{
+				display: none;
+			}
+
+			.slds-nubbin_top-right {
+				margin-left: 1rem;
+			}
+			.slds-nubbin_top-left {
+				margin-left: -1rem;
+			}
+			.slds-popover__body {
+				white-space: normal;
+			}
+
+			.slds-nubbin_top-right.slds-hide,
+			.slds-nubbin_top-left.slds-hide,
+			.slds-nubbin_bottom-right.slds-hide,
+			.slds-nubbin_bottom-left.slds-hide {
+				display: block!important;
+				visibility: hidden;
+			}
+
+			[data-load="true"][data-loading="true"] {
+				opacity: 0.5;
+				pointer-events: none;
+			}
+
+			[data-load="true"] + [role="status"] {
+				display: none;
+			}
+
+			[data-load="true"][data-loading="true"] + [role="status"] {
+				display: block;
+			}
+
+			span.slds-button {
+				cursor: default;
+			}
+
+			.copyToClipboard_button{
+				float: right !important;
+				margin-right: 35px !important;
+				margin-bottom: -20px !important;
+				margin-top: 3px !important;
+			}
+
+			.site {
+				font-size: .875rem;
+				line-height: 1.71429;
+				color: #5876a3;
+			}
+
+			.site .site-code_action-bar {
+				display: flex;
+				justify-content: flex-end;
+				font-size: .8125rem;
+			}
+
+			.site .site-code_action-bar > div {
+				border-left: 1px solid #dddbda;
+				padding: 0 .5rem;
+			}
+
+			.site .site-code_action-bar > div {
+				border-left: 1px solid #dddbda;
+				padding: 0 .5rem;
+			}
+
+			.site .site-code_toggle {
+				font-weight: 700;
+			}
+
+			.isTabDisabled {
+				color: rgb(201, 199, 197) !important;
+				pointer-events: none;
+			}
+
+			#GraxRestoreIframe {
+				width: 100%!important;
+				min-height: 100vh;
+				border: 0;
+			}
+
+			#GraxAuditIframe {
+				width: 100%!important;
+				min-height: 100vh;
+				border: 0;
+			}
+
+			.graxApiTokens {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 93% !important;
+				float: left;
+			}
+
+			.inlineBlockPanel {
+				display: inline-block !important;
+			}
+
+			.errorMessage pre {
+				margin: 0px !important;
+			}
+
+			#tab-configuration .slds-section__title-action-icon.slds-button__icon.slds-button__icon_left {
+				display: flex;
+			}
+
+			.png-icon, .png-icon:hover {
+				width: 14px !important;
+				height: 14px !important;
+				background-size: contain !important;
+			}
+
+			.info-icon {
+				background-image: url("{!URLFOR($Resource.grax, '/icons/info.png')}");
+			}
+
+			.info-icon:hover {
+				background:url("{!URLFOR($Resource.grax, '/icons/info-blue.png')}");
+			}
+		</style>
+
+		<apex:outputPanel rendered="{!selectedCloudPlatform == 'Heroku' && isHerokuAccountAuthorized && ISBLANK(gxs.herokuAuthorizedUserId)}">
+			<script>
+				// If the running User has been previously authorized (based on the parsed JSON information), and, the Authorized User Id field is blank, in the Custom Setting,
+				// then, we store the running User Id, into the Custom Settting
+				showGlobalSpinner(true);
+				updateHerokuAuthorizedUserId();
+			</script>
+		</apex:outputPanel>
+
+		<div>
+			<apex:outputPanel layout="block" id="messagesPanel" style="margin-bottom: 20px;">
+				<apex:outputPanel layout="block" rendered="{!NOT(ISBLANK(infoMessage)) && infoMessage <> ''}" style="margin-top:20px;">
+					<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert" id='alertNotificationInfo'>
+						<span class="slds-assistive-text">Info</span>
+						<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+						<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+							<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+						</svg>
+					</span>
+					&nbsp;
+						<h2><apex:outputText value="{!infoMessage}" escape="false" /></h2>
+						<div class="slds-notify__close">
+						<button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" id="closeAlertBtn" title="Close" onclick="$('#alertNotificationInfo').hide()">
+							<svg class="slds-button__icon" aria-hidden="true">
+								<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+							</svg>
+							<span class="slds-assistive-text">Close</span>
+						</button>
+					</div>
+					</div>
+				</apex:outputPanel>
+
+				<apex:outputPanel layout="block" rendered="{!errorMessages.size > 0}">
+					<apex:repeat value="{!errorMessages}" var="errorMessage">
+						<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert" style="margin-top:20px;">
+							<span class="slds-assistive-text">Error</span>
+							<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+								<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+									<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+								</svg>
+							</span>
+							&nbsp;
+							<h2>
+								<apex:outputPanel styleClass="errorMessage">
+									<apex:outputText value="{!errorMessage}" escape="true" />
+									<apex:outputPanel layout="none" rendered="{!LEN(validateSetupErrorMessage) > 0 && NOT(CONTAINS(validateSetupErrorMessage, 'Unable to connect to the Heroku App')) && NOT(CONTAINS(validateSetupErrorMessage, 'Unable to connect to the AWS App'))}">
+										<apex:outputText value=", and then click " /><a href="javascript:void(0);" onclick="showGlobalSpinner(true);validateSetup();">here to validate your setup</a>
+									</apex:outputPanel>
+								</apex:outputPanel>
+							</h2>
+						</div>
+					</apex:repeat>
+				</apex:outputPanel>
+
+				<apex:outputPanel layout="block" rendered="{!errorMessages.size == 0 && NOT(ISBLANK(warningMessage)) && warningMessage <> ''}" style="margin-top:20px;">
+					<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert" id="alertNotificationWarning">
+						<span class="slds-assistive-text">Warning</span>
+						<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+							<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+								<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+							</svg>
+						</span>
+						&nbsp;
+						<h2><apex:outputText value="{!warningMessage}" escape="false" /></h2>
+					</div>
+				</apex:outputPanel>
+			</apex:outputPanel>
+
+			<apex:outputPanel id="mainPanel" rendered="{!hasValidGraxPermissions && (hasConfigurationAdminPermission || allSettingsConfigured)}">
+				<div class="slds-scope">
+					<div class="slds-tabs_scoped">
+						<apex:outputPanel id="graxMainTabsPanel">
+							<ul class="slds-tabs_scoped__nav" role="tablist" id="tabs">
+								<apex:outputPanel layout="none" rendered="{!hasConfigurationAdminPermission}">
+									<li class="slds-tabs_scoped__item" title="Configuration" role="presentation">
+										<a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-configuration" id="tab-configuration__item">
+											Configuration
+										</a>
+									</li>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && hasBackupPagePermission}">
+									<li class="slds-tabs_scoped__item" title="Schedule" role="presentation">
+										<a class="slds-tabs_scoped__link" onclick="graxSecuredIframe(function() {}, this)(event);" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-archiving" id="tab-archiving__item">
+											Schedule
+										</a>
+									</li>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && hasSearchPagePermission}">
+									<li class="slds-tabs_scoped__item" title="Search" role="presentation">
+										<a class="slds-tabs_scoped__link" onclick="graxSecuredIframe(displayRestoreIframeJS, this)(event);" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-restore" id="tab-restore__item">
+											Search
+										</a>
+									</li>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && hasAuditPagePermission}">
+									<li class="slds-tabs_scoped__item" title="Audit" role="presentation">
+										<a class="slds-tabs_scoped__link" onclick="displayAuditIframeJS();" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-audit" id="tab-audit__item">
+											Audit
+										</a>
+									</li>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && isGRAXAdmin}">
+									<li class="slds-tabs_scoped__item" title="Summary" role="presentation">
+										<a class="slds-tabs_scoped__link" href="javascript:void(0);" onClick="graxSecuredIframe(summarychartsLoadGRAXApp, this)(event);" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-summary" id="tab-summary__item">
+											Summary
+										</a>
+									</li>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && isGRAXAdmin}">
+									<li class="slds-tabs_scoped__item" title="Logs" role="presentation">
+										<a class="slds-tabs_scoped__link" href="javascript:void(0);" onClick="graxSecuredIframe(loggingLoadGRAXApp, this)(event);" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-logs" id="tab-logs__item">
+											Logs
+										</a>
+									</li>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && isGRAXAdmin && gxs.enableDeleteTab}">
+									<li class="slds-tabs_scoped__item" title="Datalake Delete" role="presentation">
+										<a class="slds-tabs_scoped__link" href="javascript:void(0);" onClick="graxSecuredIframe(deleteLoadGRAXApp, this)(event);" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-delete" id="tab-delete__item">
+											Datalake Delete
+										</a>
+									</li>
+								</apex:outputPanel>
+
+								<apex:outputPanel layout="none" rendered="{!isGRAXAdmin}">
+									<li class="slds-tabs_scoped__item" title="Help" role="presentation">
+										<a class="slds-tabs_scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-contactsupport" id="tab-contactsupport__item">
+											Help
+										</a>
+									</li>
+								</apex:outputPanel>
+							</ul>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!hasConfigurationAdminPermission}">
+							<div id="tab-configuration" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-configuration__item">
+								<apex:outputPanel id="mainConfigurationPanel">
+									<div class="slds-tabs_default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<apex:outputPanel id="graxConfigurationSubTabsPanel">
+											<ul class="slds-tabs_default__nav" role="tablist">
+												<li class="slds-tabs_default__item slds-is-active" title="Connect" role="presentation">
+													<a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" aria-selected="false" aria-controls="tab-connect" id="tab-connect__item">Connect</a>
+												</li>
+												<li class="slds-tabs_default__item {!IF(NOT(connectSettingsConfigured) || NOT(connectConfigurationLocked), 'isTabDisabled', '')}" title="Setup" role="presentation">
+													<a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" aria-selected="true" aria-controls="tab-setup" id="tab-setup__item">Setup</a>
+												</li>
+												<li class="slds-tabs_default__item {!IF(NOT(connectConfigurationLocked), 'isTabDisabled', '')}" title="Miscellaneous" role="presentation">
+													<a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" aria-selected="false" aria-controls="tab-miscellaneous" id="tab-miscellaneous__item">Miscellaneous</a>
+												</li>
+												<div id="GRAXHelpLinkConfiguration" class="slds-section">
+													<h3>
+														<a href="https://documentation.grax.io/docs/configuration-new" style="position:absolute; right:27px;" target="_blank">GRAX Help</a>
+													</h3>
+												</div>
+											</ul>
+										</apex:outputPanel>
+
+										<script>
+											$("#tab-connect__item").on('click', function(e) {
+												hideUnselectedTabs(["tab-setup", "tab-miscellaneous"]);
+											});
+
+											$("#tab-setup__item").on('click', function(e) {
+												hideUnselectedTabs(["tab-connect", "tab-miscellaneous"]);
+												graxSecuredIframe(validatesetupLoadGRAXApp, this)(event);
+											});
+
+											$("#tab-miscellaneous__item").on('click', function(e) {
+												hideUnselectedTabs(["tab-connect", "tab-setup"]);
+											});
+
+											function hideUnselectedTabs(tabIdsToHide){
+												$.each(tabIdsToHide, function(i, tabId){
+													$("#" + tabId + "__item").parent().removeClass('slds-is-active');
+													$("#" + tabId).removeClass('slds-show').addClass('slds-hide');
+												});
+											}
+										</script>
+									</div>
+
+									<div id="tab-connect" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-connect__item">
+										<div class="slds-section slds-is-open slds-is-relative">
+											<h3 class="slds-section__title slds-theme_shade">
+												<span class="slds-truncate slds-p-horizontal_small" title="Cloud Platform Server">Cloud Platform Server</span>
+											</h3>
+											<div aria-hidden="false" class="slds-section__content">
+												<div class="slds-grid slds-grid_vertical-align-center">
+													<div class="slds-col slds-grow-none slds-m-right_small">
+														<div class="slds-form-element">
+															<div class="slds-form-element__control">
+																<apex:outputPanel layout="none">
+																	<input type="hidden" id="comboBoxCloudPlatformList"/>
+																	<div class="slds-combobox_container" style="width:250px;margin-right:10px;">
+																		<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+																			<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+																				<input type="text" class="slds-input slds-combobox__input" id="combobox-cloud-platforms" aria-autocomplete="list" aria-controls="listbox-cloud-platforms" autoComplete="off" role="textbox" placeholder="Select your Cloud Platform" disabled="disabled" />
+																				<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+																					<svg class="slds-button__icon" aria-hidden="true">
+																						<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+																					</svg>
+																				</span>
+																			</div>
+																			<div id="listbox-cloud-platforms" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+																				<ul class="slds-listbox slds-listbox_vertical" role="presentation">
+																				</ul>
+																			</div>
+																		</div>
+																	</div>
+																</apex:outputPanel>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div id="authorizeHerokuSection" class="slds-section slds-is-open slds-is-relative slds-p-top_large">
+											<h3 class="slds-section__title slds-theme_shade">
+												<span class="slds-truncate slds-p-horizontal_small" title="Authorize Heroku">Authorize Heroku</span>
+												<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="authorize_help" title="Help">
+													<span class="png-icon info-icon"/>
+													<span class="slds-assistive-text">Help</span>
+												</button>
+											</h3>
+											<div aria-hidden="false" class="slds-section__content">
+												<apex:outputPanel layout="block" rendered="{!!isHerokuAccountAuthorized}">
+													<input type="button" id="authorizeheroku" value="Authorize" onclick="authorizeHeroku();" class="slds-button slds-button_brand"/>
+												</apex:outputPanel>
+												<apex:outputPanel layout="block" rendered="{!isHerokuAccountAuthorized}">
+													<div class="slds-grid slds-grid_vertical-align-center">
+														<div class="slds-col slds-grow-none slds-m-right_small">
+															<span class="slds-button slds-button_neutral nopointerevents">
+																<svg class="slds-button__icon" aria-hidden="true">
+																	<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+																</svg>
+																Connected
+															</span>
+														</div>
+
+														<div class="slds-col slds-grow-none">
+															<input type="button" id="authorizeotherheroku" value="Authorize a different Heroku Account" onclick="authorizeHeroku();" class="slds-button slds-button_brand authorizeotherheroku _blank" disabled="{!connectConfigurationLocked}"/>
+														</div>
+													</div>
+												</apex:outputPanel>
+											</div>
+										</div>
+
+										<div class="slds-section slds-is-open slds-is-relative slds-p-top_large">
+											<h3 class="slds-section__title slds-theme_shade">
+												<span class="slds-truncate slds-p-horizontal_small" title="GRAX Application">GRAX Application</span>
+												<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="selectapp_help" title="Help">
+													<span class="png-icon info-icon"/>
+													<span class="slds-assistive-text">Help</span>
+												</button>
+											</h3>
+
+											<div id="herokuAppListSection" aria-hidden="false" class="slds-section__content">
+												<div class="slds-grid slds-grid_vertical-align-center">
+													<div class="slds-col slds-grow-none slds-m-right_small">
+														<div class="slds-form-element">
+															<div class="slds-form-element__control">
+																<apex:outputPanel layout="none">
+																	<input type="hidden" id="comboBoxGraxAppList"/>
+																	<div class="slds-combobox_container" style="width:250px;margin-right:10px;">
+																		<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+																			<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+																				<input type="text" class="slds-input slds-combobox__input" id="combobox-grax-apps" aria-autocomplete="list" aria-controls="listbox-grax-apps" autoComplete="off" role="textbox" placeholder="Select your GRAX Application" disabled="disabled" />
+																				<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+																					<svg class="slds-button__icon" aria-hidden="true">
+																						<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+																					</svg>
+																				</span>
+																			</div>
+																			<div id="listbox-grax-apps" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+																				<ul class="slds-listbox slds-listbox_vertical" role="presentation"></ul>
+																			</div>
+																		</div>
+																	</div>
+																</apex:outputPanel>
+															</div>
+														</div>
+													</div>
+
+													<div class="slds-col slds-grow-none">
+														<a id="deploy" href="{!graxDeployUrl}" target="_blank" class="slds-button slds-button_brand _blank deploy_button {!IF(connectConfigurationLocked || NOT(isHerokuAccountAuthorized), 'nopointerevents', '')}" disabled="{!connectConfigurationLocked || NOT(isHerokuAccountAuthorized)}">Create New GRAX App</a>
+													</div>
+												</div>
+											</div>
+
+											<div id="awsAppSection" aria-hidden="false" class="slds-section__content">
+												<div class="slds-grid slds-grid_vertical-align-center">
+													<div class="slds-col slds-grow-none slds-m-right_small">
+														<div class="slds-form-element__row">
+															<div class="slds-form-element" style="width: 450px; margin-top: 10px;">
+																<label class="slds-form-element__label" for="awsAppURL">App URL</label>
+																<div class="slds-form-element__control">
+																<input type="text" id="awsAppURL" placeholder="AWS App URL" class="slds-input" />
+																</div>
+															</div>
+															<div id="awsAppURLErrorMessagePanel" style="display: none; color: rgb(194, 57, 52);">Please enter a value.</div>
+														</div>
+
+														<div id="awsTokenSection">
+															<div class="slds-form-element__row">
+																<div class="slds-form-element" style="width: 450px; margin-top: 10px;">
+																	<label class="slds-form-element__label" for="awsGatewayToken">Gateway Token</label>
+																	<div class="slds-form-element__control">
+																	<input type="text" id="awsGatewayToken" placeholder="Gateway Token" class="slds-input" />
+																	</div>
+																</div>
+																<div id="awsGatewayTokenErrorMessagePanel" style="display: none; color: rgb(194, 57, 52);">Please enter a value.</div>
+															</div>
+
+															<div class="slds-form-element__row">
+																<div class="slds-form-element" style="width: 450px; margin-top: 10px;">
+																	<label class="slds-form-element__label" for="awsAPIToken">API Token</label>
+																	<div class="slds-form-element__control">
+																	<input type="text" id="awsAPIToken" placeholder="API Token" class="slds-input" />
+																	</div>
+																</div>
+																<div id="awsAPITokenErrorMessagePanel" style="display: none; color: rgb(194, 57, 52);">Please enter a value.</div>
+															</div>
+
+															<div class="slds-form-element__row">
+																<div class="slds-form-element" style="width: 450px; margin-top: 10px;">
+																	<label class="slds-form-element__label" for="awsLicenseToken">License Token</label>
+																	<div class="slds-form-element__control">
+																	<input type="text" id="awsLicenseToken" placeholder="License Token" class="slds-input" />
+																	</div>
+																</div>
+																<div id="awsLicenseTokenErrorMessagePanel" style="display: none; color: rgb(194, 57, 52);">Please enter a value.</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div id="remoteSiteSettingsContainer" class="slds-section {!IF(NOT(remoteSiteSettingExists) || ISBLANK(selectedGraxApp), 'slds-is-open', '')} slds-p-top_large">
+											<h3 class="slds-section__title">
+												<div aria-controls="section-remotesitesetting" aria-expanded="{!NOT(remoteSiteSettingExists) || ISBLANK(selectedGraxApp)}" class="slds-button slds-section__title-action">
+													<span class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<img src="{!URLFOR($Resource.grax, '/icons/switch.png')}" />
+													</span>
+													<span class="slds-truncate slds-p-right_small" title="Remote Site Setting">Remote Site Setting</span>
+												</div>
+											</h3>
+											<div aria-hidden="{!remoteSiteSettingExists && NOT(ISBLANK(selectedGraxApp))}" class="slds-section__content" id="section-remotesitesetting">
+												<div class="slds-scoped-notification slds-media slds-media_center" role="status" style="margin-top: 20px;">
+													<div class="slds-media__figure">
+														<span class="slds-icon_container slds-icon-utility-info" title="Remote Site Setting Message" style="padding-bottom: 5px;">
+															<svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true" style="{!IF(remoteSiteSettingExists && NOT(ISBLANK(selectedGraxApp)), 'fill: rgb(27, 82, 151);', 'fill: rgb(194, 57, 52);')}">
+																<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!IF(remoteSiteSettingExists && NOT(ISBLANK(selectedGraxApp)), '/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#check', '/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#error')}"></use>
+															</svg>
+															<span class="slds-assistive-text">information</span>
+														</span>
+													</div>
+													<div class="slds-media__body">
+														<apex:outputPanel id="remoteSiteSettingMessagePanel">
+															<apex:outputPanel rendered="{!NOT(remoteSiteSettingExists) && NOT(ISBLANK(selectedGraxApp))}">
+																Click this button to add the selected GRAX App Remote Site Setting
+																<apex:outputLink value="/0rp/e?SiteName={!SUBSTITUTE(SUBSTITUTE(gxs.herokuAppName, '-', ''), ' ', '')}&EndpointUrl={!gxs.apiURL}" target="_blank" styleClass="slds-button slds-button_brand _blank deploy_button" style="margin-left: 20px;">Add Remote Site Setting</apex:outputLink>
+															</apex:outputPanel>
+															<apex:outputPanel rendered="{!remoteSiteSettingExists && NOT(ISBLANK(selectedGraxApp))}">
+																The Remote Site Setting has been properly configured
+															</apex:outputPanel>
+															<apex:outputPanel rendered="{!ISBLANK(selectedGraxApp)}">
+																Please select your GRAX Application first
+															</apex:outputPanel>
+														</apex:outputPanel>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div id="graxAPITokensContainer" class="slds-section slds-p-top_large">
+											<h3 class="slds-section__title">
+												<div aria-controls="section-apitokens" aria-expanded="false" class="slds-button slds-section__title-action">
+													<span class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<img src="{!URLFOR($Resource.grax, '/icons/switch.png')}" />
+													</span>
+													<span class="slds-truncate slds-p-right_small" title="APEX Trigger(s)">GRAX API Tokens</span>
+												</div>
+											</h3>
+											<div aria-hidden="true" class="slds-section__content" id="section-apitokens">
+												<div class="slds-grid slds-grid_vertical-align-center slds-p-top_xx-small">
+													<div class="slds-col slds-grow-none" style="display: contents;">
+														<button id="revealGraxTokensButton" class="slds-button slds-button_brand">
+															<span>Reveal GRAX Tokens</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="slds-clearfix slds-p-vertical_large">
+											<apex:outputPanel id="buttonsPanelContainer" layout="block" styleClass="slds-clearfix">
+												<apex:outputPanel id="buttonsPanel" styleClass="slds-float_right" rendered="{!selectedCloudPlatform <> 'Heroku' || isHerokuAccountAuthorized || connectConfigurationLocked}">
+													<input type="button" id="unlockButton" value="Unlock" onclick="toggleUnlockSettings(false, false);unlockSettings();" class="slds-button slds-button_neutral unlock_button {!IF(!connectConfigurationLocked, 'slds-hide', '')}" />
+													<input type="button" id="cancel" value="Cancel" onclick="cancelReload();" class="slds-button slds-button_neutral cancel_button {!IF(connectConfigurationLocked || ISBLANK(selectedGraxApp), 'slds-hide', '')}" />
+													<input type="button" id="save" value="Save" onclick="saveSelectedApp();" class="slds-button slds-button_brand {!IF(connectConfigurationLocked, 'slds-hide', '')}" />
+												</apex:outputPanel>
+											</apex:outputPanel>
+										</div>
+
+										<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="authorize_help" aria-hidden="true">
+											<div class="slds-popover__body">
+												The GRAX cloud is powered by a Heroku application hosted on your Heroku environment.
+												<br />
+												First you will need to connect the Salesforce GRAX application with Heroku.
+											</div>
+										</div>
+
+										<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="selectapp_help" aria-hidden="true">
+											<div class="slds-popover__body">
+												Unless you already created a GRAX application in another Salesforce instance,
+												create a new GRAX application. Once complete with Heroku application wizard,
+												select your new application here.
+											</div>
+										</div>
+									</div>
+
+									<div id="tab-setup" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-setup__item">
+										<div class="slds-clearfix slds-p-vertical_large">
+											<div class="slds-clearfix">
+												<div id="validateSetupIframeContainer">
+													<c:GRAXIframeLoader id="validateSetupApp" appName="validatesetup" endpointPath="/grax-app/client/cloud/configuration" isFullPageIframe="true" />
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div id="tab-miscellaneous" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-miscellaneous__item">
+										<div class="slds-section slds-p-top_large">
+											<h3 class="slds-section__title">
+												<button aria-controls="section-data-privacy" aria-expanded="false" class="slds-button slds-section__title-action">
+													<span class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<img src="{!URLFOR($Resource.grax, '/icons/switch.png')}" />
+													</span>
+													<span class="slds-truncate" title="GRAX Data Privacy">GRAX Data Privacy</span>
+												</button>
+											</h3>
+
+											<div aria-hidden="true" class="slds-section__content" id="section-data-privacy">
+												<div class="slds-form-element">
+													<label class="slds-checkbox_toggle slds-grid">
+														<span class="slds-form-element__label slds-m-bottom_none">Enable Delete Tab?</span>
+														<input type="checkbox" id="enabledeletetab" value="{!gxs.enableDeleteTab}" />
+														<span class="slds-checkbox_faux_container" aria-live="assertive">
+															<span class="slds-checkbox_faux"></span>
+															<span class="slds-checkbox_on">Yes</span>
+															<span class="slds-checkbox_off">No</span>
+														</span>
+													</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="slds-section slds-p-top_large">
+											<h3 class="slds-section__title">
+												<button aria-controls="section-salesforce-settings" aria-expanded="false" class="slds-button slds-section__title-action">
+													<span class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<img src="{!URLFOR($Resource.grax, '/icons/switch.png')}" />
+													</span>
+													<span class="slds-truncate" title="Salesforce Settings">Salesforce Settings</span>
+												</button>
+											</h3>
+
+											<div aria-hidden="true" class="slds-section__content" id="section-salesforce-settings">
+												<div class="slds-form-element">
+													<label class="slds-checkbox_toggle slds-grid">
+														<span class="slds-form-element__label slds-m-bottom_none">Display Sidebar</span>
+														<input type="checkbox" id="sidebarSwitch" value="{!gxs.showSalesforceSidebar}"/>
+														<span class="slds-checkbox_faux_container" aria-live="assertive">
+															<span class="slds-checkbox_faux"></span>
+															<span class="slds-checkbox_on">Salesforce Sidebar Displayed</span>
+															<span class="slds-checkbox_off">Salesforce Sidebar Hidden</span>
+														</span>
+													</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="slds-section slds-p-top_large">
+											<h3 class="slds-section__title">
+												<button aria-controls="section-schedule" aria-expanded="false" class="slds-button slds-section__title-action">
+													<span class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<img src="{!URLFOR($Resource.grax, '/icons/switch.png')}" />
+													</span>
+													<span class="slds-truncate" title="Schedule">APEX Scheduled Jobs</span>
+												</button>
+											</h3>
+											<div aria-hidden="true" class="slds-section__content" id="section-schedule">
+												<apex:outPutPanel rendered="{!NOT(ISBLANK(scheduledJobsContextUserName))}">
+													<p>The scheduled jobs are currently running with the user: <b>{!scheduledJobsContextUserName}</b>.</p><br/>
+												</apex:outPutPanel>
+												<input type="button" id="scheduleJobBtnId" value="Activate Scheduled Jobs" onclick="saveScheduleJobs();" class="slds-button slds-button_brand schedule_button"/>
+
+												<button id="schedule_job_warning" class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="schedule_job_help" title="Warning!">
+													<svg class="slds-button__icon slds-icon-text-warning slds-icon_small" aria-hidden="true">
+														<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+													</svg>
+													<span class="slds-assistive-text">Warning!</span>
+												</button>
+											</div>
+										</div>
+
+										<div class="slds-section slds-p-top_large">
+											<h3 class="slds-section__title">
+												<div aria-controls="section-apextriggers" aria-expanded="false" class="slds-button slds-section__title-action">
+													<span class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+														<img src="{!URLFOR($Resource.grax, '/icons/switch.png')}" />
+													</span>
+													<span class="slds-truncate slds-p-right_small" title="APEX Trigger(s)">APEX Trigger(s)</span>
+													<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="apextriggers_help" title="Help">
+														<span class="png-icon info-icon"/>
+														<span class="slds-assistive-text">Help</span>
+													</button>
+												</div>
+											</h3>
+											<div aria-hidden="true" class="slds-section__content" id="section-apextriggers">
+
+												<div class="slds-grid slds-grid_vertical-align-center slds-p-top_xx-small">
+													<div class="slds-col slds-grow-none" style="display: contents;">
+														<button id="showTriggerExampleButton" class="slds-button slds-button_brand">
+															<span>Show Example</span>
+														</button>
+														<div id="GRAXHelpLinkConfiguration" style="margin-left:10px;">
+															<h3>
+																<a href="https://documentation.grax.io/docs/grax-object-time-machine" target="_blank" aria-labelledby="tab-archiving_scheduledprocesses__item">GRAX Help</a>
+															</h3>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="schedule_job_help" aria-hidden="true">
+											<div class="slds-popover__body">
+												When you click this button, the required APEX Scheduled Jobs will be added to the queue and GRAX processes will run as your user.
+											</div>
+										</div>
+
+										<div class="slds-popover slds-popover_tooltip slds-nubbin_top-left slds-rise-from-ground slds-hide" role="tooltip" id="apextriggers_help" aria-hidden="true">
+											<div class="slds-popover__body">
+												After clicking "Show Example", select your object, then you can view the sample trigger code.<br/>
+												The trigger is used to backup records on an object immediately after create, update, or delete.<br/>
+												This functionality is used for the Object Time Machine to view real-time results.
+											</div>
+										</div>
+
+										<section id="triggerDeployModal" role="dialog" tabindex="-1" aria-labelledby="modal-deploy-trigger" aria-modal="true" aria-describedby="modal-deploy-trigger-content" class="slds-modal slds-hide">
+											<div class="slds-modal__container">
+												<header class="slds-modal__header">
+													<button data-toggle="modal" data-target="#triggerDeployModal" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+														<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+															<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+														</svg>
+														<span class="slds-assistive-text">Close</span>
+													</button>
+
+													<h2 id="modal-deploy-trigger" class="slds-text-heading_medium slds-hyphenate">Create Trigger</h2>
+												</header>
+
+												<div class="slds-modal__content slds-p-around_medium">
+
+													<div class="slds-section slds-is-relative">
+														<h3 class="slds-section__title">
+															<div class="slds-button slds-section__title-action">
+																<span class="slds-truncate slds-p-right_small" title="Sample Test Class">Select Object</span>
+															</div>
+														</h3>
+
+														<div class="slds-section slds-is-relative slds-is-open">
+															<div class="slds-form-element">
+																<div class="slds-form-element__control">
+																	<apex:outputPanel layout="none">
+																		<input type="hidden" id="comboBoxObjectSetupList" />
+																		<div class="slds-combobox_container" style="width:600px;margin-right:10px;">
+																			<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+																				<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+																					<input type="text" class="slds-input slds-combobox__input" id="combobox-setup-objects" aria-autocomplete="list" aria-controls="listbox-setup-objects" autoComplete="off" role="textbox" placeholder="SELECT SALESFORCE OBJECT" />
+																					<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+																						<svg class="slds-button__icon" aria-hidden="true">
+																							<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+																						</svg>
+																					</span>
+																				</div>
+																				<div id="listbox-setup-objects" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+																					<ul class="slds-listbox slds-listbox_vertical" role="presentation"></ul>
+																				</div>
+																			</div>
+																		</div>
+																	</apex:outputPanel>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="slds-section slds-is-relative" style="padding-top: 20px;">
+														<h3 class="slds-section__title">
+															<div class="slds-button slds-section__title-action">
+																<span class="slds-truncate slds-p-right_small" title="Sample Test Class">Trigger Mockup</span>
+															</div>
+
+															<div class="site" >
+																<div class="site-code_action-bar">
+																	<div class="site-code_copy">
+																		<button class="slds-button slds-button_icon slds-button slds-button_icon" title="Copy to Clipboard" onclick="copyToClipboard('triggerExampleCode'); return false;">
+																			<svg class="slds-button__icon" aria-hidden="true">
+																				<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#copy_to_clipboard"></use>
+																			</svg>
+																			<span class="slds-assistive-text">Copy to Clipboard</span>
+																		</button>
+																	</div>
+																	<div class="site-code_toggle" style="width: 120px;" >
+																		<button class="slds-button slds-section__title-action" aria-controls="section-triggermockup" aria-expanded="false" aria-live="polite">Show Code</button>
+																	</div>
+																</div>
+															</div>
+														</h3>
+
+														<div id="triggerExampleCodeCopy" ></div>
+														<div aria-hidden="true" class="slds-section__content" id="section-triggermockup">
+															<div class="slds-p-around_medium" id="modal-deploy-sample-test-content">
+																<div id="accordion-sample-test-example">
+																	<div class="slds-form-element">
+																		<div class="slds-form-element__control">
+																			<div id="triggerExampleCode" readonly="readonly" ></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="slds-section slds-is-relative" style="padding-top: 10px;">
+														<h3 class="slds-section__title">
+															<div class="slds-button slds-section__title-action">
+																<span class="slds-truncate slds-p-right_small" title="Sample Test Class">Sample Test Class</span>
+															</div>
+
+															<div class="site" >
+																<div class="site-code_action-bar">
+																	<div class="site-code_copy">
+																		<button class="slds-button slds-button_icon slds-button slds-button_icon" title="Copy to Clipboard" onclick="copyToClipboard('sampleTestExampleCode'); return false;">
+																			<svg class="slds-button__icon" aria-hidden="true">
+																				<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#copy_to_clipboard"></use>
+																			</svg>
+																			<span class="slds-assistive-text">Copy to Clipboard</span>
+																		</button>
+																	</div>
+																	<div class="site-code_toggle" style="width: 120px;" >
+																		<button class="slds-button slds-section__title-action" aria-controls="section-sampletestclass" aria-expanded="false" aria-live="polite">Show Code</button>
+																	</div>
+																</div>
+															</div>
+														</h3>
+
+														<div id="sampleTestExampleCodeCopy" ></div>
+														<div aria-hidden="true" class="slds-section__content" id="section-sampletestclass">
+															<div class="slds-p-around_medium" id="modal-deploy-sample-test-content">
+																<div id="accordion-sample-test-example">
+																	<div class="slds-form-element">
+																		<div class="slds-form-element__control">
+																			<div id="sampleTestExampleCode" readonly="readonly" ></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<footer class="slds-modal__footer">
+													<span class="slds-button slds-button_neutral" data-toggle="modal" data-target="#triggerDeployModal">Close</span>
+												</footer>
+											</div>
+										</section>
+										<div class="slds-backdrop slds-hide"></div>
+									</div>
+								</apex:outputPanel>
+							</div>
+
+							<section id="GRAXTokenPanel" role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-hide" style="z-index: 9002;">
+								<div class="slds-modal__container">
+									<header class="slds-modal__header">
+										<button data-toggle="modal" data-target="#GRAXTokenPanel" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+											<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+												<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+											</svg>
+											<span class="slds-assistive-text">Close</span>
+										</button>
+										<h2 class="slds-text-heading_medium slds-hyphenate" id="GRAXTokenPanelHeader">GRAX Tokens</h2>
+									</header>
+
+									<apex:outputPanel layout="block" id="tokensPanel" styleClass="slds-modal__content slds-p-around_medium">
+										<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(gxs.herokuAppName))}">
+											<apex:outputLabel value="Gateway Token: " for="gatewayToken" />
+											<apex:outputText id="gatewayToken" value="{!gxs.GatewayToken}" title="{!gxs.GatewayToken}" styleClass="slds-input graxApiTokens" />
+											<div class="site" >
+												<div class="site-code_action-bar">
+													<div class="site-code_copy">
+														<button class="slds-button slds-button_icon slds-button slds-button_icon" title="Copy to Clipboard" onclick="copyToClipboard('{!$Component.gatewayToken}'); return false;">
+															<svg class="slds-button__icon" aria-hidden="true">
+																<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#copy_to_clipboard"></use>
+															</svg>
+															<span class="slds-assistive-text">Copy to Clipboard</span>
+														</button>
+													</div>
+												</div>
+											</div>
+											<br />
+											<apex:outputLabel value="API Token: " for="apiToken" />
+											<apex:outputText id="apiToken" value="{!gxs.ApiToken}" title="{!gxs.ApiToken}" styleClass="slds-input graxApiTokens" />
+											<div class="site" >
+												<div class="site-code_action-bar">
+													<div class="site-code_copy">
+														<button class="slds-button slds-button_icon slds-button slds-button_icon" title="Copy to Clipboard" onclick="copyToClipboard('{!$Component.apiToken}'); return false;">
+															<svg class="slds-button__icon" aria-hidden="true">
+																<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#copy_to_clipboard"></use>
+															</svg>
+															<span class="slds-assistive-text">Copy to Clipboard</span>
+														</button>
+													</div>
+												</div>
+											</div>
+											<br />
+											<apex:outputLabel value="License Token: " for="licenseToken" />
+											<apex:outputText id="licenseToken" value="{!gxs.LicenseToken}" title="{!gxs.LicenseToken}" styleClass="slds-input graxApiTokens" />
+											<div class="site" >
+												<div class="site-code_action-bar">
+													<div class="site-code_copy">
+														<button class="slds-button slds-button_icon slds-button slds-button_icon" title="Copy to Clipboard" onclick="copyToClipboard('{!$Component.licenseToken}'); return false;">
+															<svg class="slds-button__icon" aria-hidden="true">
+																<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#copy_to_clipboard"></use>
+															</svg>
+															<span class="slds-assistive-text">Copy to Clipboard</span>
+														</button>
+													</div>
+												</div>
+											</div>
+										</apex:outputPanel>
+									</apex:outputPanel>
+									<footer class="slds-modal__footer">
+										<span id="closeTokensModal" class="slds-button slds-button_neutral" data-toggle="modal" data-target="#GRAXTokenPanel">Close</span>
+									</footer>
+								</div>
+							</section>
+							<div class="slds-backdrop slds-hide"></div>
+							<apex:outputPanel layout="block" id="gatewayTokenCopy" />
+							<apex:outputPanel layout="block" id="apiTokenCopy" />
+							<apex:outputPanel layout="block" id="licenseTokenCopy" />
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && isGRAXAdmin}">
+							<div id="tab-summary" class="slds-hide" role="tabpanel" aria-labelledby="tab-summary__item">
+								<c:GRAXIframeLoader id="GRAXSummaryApp" appName="summarycharts" endpointPath="/grax-app/client/summarycharts" isFullPageIframe="true" />
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && hasBackupPagePermission}">
+							<div id="tab-archiving" class="slds-hide" role="tabpanel" aria-labelledby="tab-archiving__item">
+								<apex:include pageName="grax__GRAXBackup"/>
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && hasSearchPagePermission}" id="RestorePanel">
+							<div id="tab-restore" class="slds-hide" role="tabpanel" aria-labelledby="tab-restore__item">
+								<iframe id="GraxRestoreIframe" scrolling="no" />
+								<apex:outputPanel rendered="{!displayRestoreIframe}">
+									<script>
+										document.getElementById('GraxRestoreIframe').src = '{!URLFOR($Page.GRAXRestore,null,[isIframe=true])}';
+									</script>
+								</apex:outputPanel>
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && hasAuditPagePermission}" id="AuditPanel">
+							<div id="tab-audit" class="slds-hide" role="tabpanel" aria-labelledby="tab-audit__item">
+								<iframe id="GraxAuditIframe"  scrolling="no"/>
+								<apex:outputPanel rendered="{!displayAuditIframe}">
+									<script>
+										document.getElementById('GraxAuditIframe').src = '{!URLFOR($Page.GRAXAudit,null,[isIframe=true])}';
+									</script>
+								</apex:outputPanel>
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!allSettingsConfigured && connectConfigurationLocked && isGRAXAdmin}">
+							<div id="tab-logs" class="slds-hide" role="tabpanel" aria-labelledby="tab-logs__item">
+								<c:GRAXIframeLoader id="GRAXLoggingApp" appName="logging" endpointPath="/grax-app/client/logging" appleDeviceHeightCalculationMethod="documentElementScroll" isFullPageIframe="true" scrolling="auto"/>
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!isGRAXAdmin && gxs.enableDeleteTab}">
+							<div id="tab-delete" class="slds-hide" role="tabpanel" aria-labelledby="tab-delete__item">
+								<c:GRAXIframeLoader id="GRAXDeleteApp" appName="delete" endpointPath="/grax-app/client/delete" isFullPageIframe="true" scrolling="auto"/>
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel layout="none" rendered="{!isGRAXAdmin}">
+							<div id="tab-contactsupport" class="slds-tabs_scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-contactsupport__item" data-ps="admin">
+								<iframe id="GRAXSupportForm" height="600" width="100%" style="border: 0;" src="/apex/GRAXSupportForm"></iframe>
+							</div>
+						</apex:outputPanel>
+					</div>
+				</div>
+			</apex:outputPanel>
+
+			<style>
+				#graxCookiesMessageContinue {
+					padding: 0.5rem 1.5rem;
+					font-weight: 300;
+					font-size: 1.25rem;
+				}
+			</style>
+
+			<section id="graxCookiesMessage" role="dialog" tabindex="-1" aria-labelledby="modal-cookies-message" aria-modal="true" aria-describedby="modal-cookies-message-content" class="slds-modal slds-hide">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header slds-modal__header_empty">
+						<h2 id="modal-cookies-message" class="slds-text-heading_medium slds-hyphenate slds-assistive-text">GRAX Cookies Usage</h2>
+					</header>
+
+					<div class="slds-modal__content slds-p-around_medium">
+						<p class="slds-text-heading_medium">
+							GRAX uses cookies to ensure the best experience. Please click continue to proceed to cookie acceptance.
+						</p>
+
+						<div class="slds-p-top_medium">
+							<button id="graxCookiesMessageContinue" class="slds-button slds-button_brand" title="Continue">Continue</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-hide"></div>
+
+			<apex:outputPanel layout="none" rendered="{!hasConfigurationAdminPermission}">
+				<script>
+					var triggerableObjectsJSONLoaded = false;
+					var $comboBoxCloudPlatformList = $("#comboBoxCloudPlatformList");
+					var $comboBoxGraxAppList = $("#comboBoxGraxAppList");
+
+					$(function() {
+						var $comboBoxObjectSetupList = $("#comboBoxObjectSetupList");
+						window.addSetupObjectListOptions = function(options) {
+							var setupObjecttables = options.map(function (item) {
+								return item;
+							});
+
+							$comboBoxObjectSetupList.sldsCombobox({
+									comboboxSelector: '#combobox-setup-objects',
+									listboxItemsSelector: '#listbox-setup-objects',
+									sort: false,
+									options: setupObjecttables
+								}, function(setSelectionCombobox, clearSelectionCombobox, setOptionsCombobox) {
+								}).on('changeSelection', function(e) {
+									showTriggerExampleObject($comboBoxObjectSetupList.val());
+								});
+						};
+
+						window.addGraxAppListOptions = function(options) {
+							var graxApps = options.map(function (item) {
+								return item;
+							});
+
+							$comboBoxGraxAppList.sldsCombobox({
+									comboboxSelector: '#combobox-grax-apps',
+									listboxItemsSelector: '#listbox-grax-apps',
+									sort: false,
+									options: graxApps
+								}, function(setSelectionCombobox, clearSelectionCombobox, setOptionsCombobox) {
+								}).on('changeSelection', function(e) {
+								});
+						};
+
+						window.toggleUnlockSettings = function(locked, isLoadingPage){
+							if(!isLoadingPage){
+								showGlobalSpinner(true);
+							}
+
+							$('#authorizeotherheroku').prop('disabled', locked);
+
+							if(locked){
+								$('#deploy').attr('disabled', 'disabled').addClass('nopointerevents');
+							}else{
+								$('#deploy').removeAttr('disabled').removeClass('nopointerevents');
+							}
+
+							$('#unlockButton').prop('disabled', !locked);
+							$('#cancel').prop('disabled', locked);
+							$('#save').prop('disabled', locked);
+							$('#combobox-cloud-platforms').prop('disabled', locked);
+							$('#combobox-grax-apps').prop('disabled', locked);
+							$('#awsAppURL').prop('disabled', locked);
+
+							if(locked){
+								$('#combobox-cloud-platforms').parent().addClass('nopointerevents');
+								$('#combobox-grax-apps').parent().addClass('nopointerevents');
+								$('#remoteSiteSettingsContainer').show();
+								$('#graxAPITokensContainer').show();
+								$('#awsTokenSection').hide();
+							}else{
+								$('#combobox-cloud-platforms').parent().removeClass('nopointerevents');
+								$('#combobox-grax-apps').parent().removeClass('nopointerevents');
+								$('#remoteSiteSettingsContainer').hide();
+								$('#graxAPITokensContainer').hide();
+								$('#awsTokenSection').show();
+							}
+						}
+
+						$('.objectlist').on('change', function(e) {
+							showGlobalSpinner(true);
+						});
+
+						window.showTriggerExampleObject = function(sobjectName) {
+							if(!sobjectName) {
+								sobjectName = '<SOBJECT>';
+							}
+
+							$('#triggerExampleCode').html(
+								'<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #708">trigger</span> GRAXTriggerExample on '+sobjectName+' (after <span style="color: #708">update</span>, after <span style="color: #708">insert</span>, after <span style="color: #708">delete</span>, after <span style="color: #708">undelete</span>) {\n'+
+								'    <span style="color: #888888">// -------------------------------------------------</span>\n'+
+								'    <span style="color: #888888">// https://GRAX.com/</span>\n'+
+								'    <span style="color: #888888">// Support Contact - Help At Grax.com</span>\n'+
+								'    <span style="color: #888888">// -------------------------------------------------</span>\n'+
+								'    <span style="color: #008800; font-weight: bold">try</span> {\n'+
+								(sobjectName == 'User' ? '' : '        <span style="color: #888888">// Please change the 3rd parameter to "false" if you want to execute this process asynchronously (Queueable job)</span>\n') +
+								'        {!JSENCODE(nsPrefix)}GRAXApi.jsonContentCallout(Trigger.<span style="color: #008800; font-weight: bold">new</span>, Trigger.old, ' + (sobjectName == 'User' ? 'false' : 'true') + ');\n'+
+								'    } <span style="color: #008800; font-weight: bold">catch</span>(exception ex) {\n'+
+								'        <span style="color: #888888">// Handle all exceptions from environment.</span>\n'+
+								'        System.debug(<span style="color: #A11;">&#39;</span>[GRAX Trigger '+sobjectName+'] <span style="color: #A11;">&#39;</span> + ex.getMessage());\n'+
+								'    }\n'+
+								'}\n'+
+								'</pre></div>'
+							);
+
+							$('#sampleTestExampleCode').html(
+								'<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">@IsTest\n' +
+								'   <span style="color: #008800; font-weight: bold">static</span> <span style="color: #008800; font-weight: bold">void</span> GRAX'+sobjectName+'TestmethodExample (){\n' +
+								'   <span style="color: #888888">// -------------------------------------------------</span>\n' +
+								'   <span style="color: #888888">// https://GRAX.com/</span>\n' +
+								'   <span style="color: #888888">// Support Contact - Help At Grax.com</span>\n' +
+								'   <span style="color: #888888">// -------------------------------------------------</span>\n' +
+								'   @IsTest\n' +
+								'   <span style="color: #008800; font-weight: bold">static</span> <span style="color: #008800; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">Test</span>(){\n' +
+								'       '+sobjectName+' rec = <span style="color: #008800; font-weight: bold">new</span> '+sobjectName+'( <span style="font-weight: bold;" >[insert fields with their values here]</span> );\n' +
+								'       insert rec;\n' +
+								'   }\n' +
+								'}' +
+								'</pre></div>'
+							);
+						};
+
+						$('#showTriggerExampleButton').on('click', function(e) {
+							e.preventDefault();
+
+							if(!triggerableObjectsJSONLoaded){
+								showGlobalSpinner(true);
+
+								getTriggerableObjectsJSON();
+							}
+
+							$('#triggerDeployModal').trigger('modaltoggle');
+
+							return false;
+						});
+
+						$('#revealGraxTokensButton').on('click', function(e) {
+							e.preventDefault();
+
+							$("#GRAXTokenPanel").trigger('modaltoggle');
+							return false;
+						});
+
+						window.copyToClipboard = function CopyToClipboard(containerid) {
+							var codeText = $sf(containerid);
+							var copyText = $sf(containerid + 'Copy');
+
+							copyText.html( codeText.html() );
+
+							var range = document.createRange();
+							range.selectNode( copyText[0] );
+							window.getSelection().removeAllRanges(); // clear current selection
+							window.getSelection().addRange(range); // to select text
+							document.execCommand("copy");
+							window.getSelection().removeAllRanges();// to deselect
+
+							copyText.html('');
+						}
+
+						window.reloadCurrentPage = function(){
+							if('{!$User.UIThemeDisplayed}' == 'Theme4d'){
+								sforce.one.navigateToURL('/lightning/n/grax__GRAX_DEPLOY');
+							}else{
+								window.top.location.reload();
+							}
+						}
+
+						window.cleanAWSAppErrorMessages = function(){
+							$('#awsAppURL').closest('.slds-form-element').removeClass('slds-has-error');
+							$('#awsAppURLErrorMessagePanel').hide();
+
+							$('#awsGatewayToken').closest('.slds-form-element').removeClass('slds-has-error');
+							$('#awsGatewayTokenErrorMessagePanel').hide();
+
+							$('#awsAPIToken').closest('.slds-form-element').removeClass('slds-has-error');
+							$('#awsAPITokenErrorMessagePanel').hide();
+
+							$('#awsLicenseToken').closest('.slds-form-element').removeClass('slds-has-error');
+							$('#awsLicenseTokenErrorMessagePanel').hide();
+						}
+
+						window.changeSelectedCloudPlatform = function(selectedCloudPlatform){
+							if(selectedCloudPlatform == 'Heroku'){
+								$('#authorizeHerokuSection').show();
+								$('#herokuAppListSection').show();
+								$('#awsAppSection').hide();
+							}else{
+								$('#authorizeHerokuSection').hide();
+								$('#herokuAppListSection').hide();
+								$('#awsAppSection').show();
+							}
+							cleanAWSAppErrorMessages();
+						}
+
+						window.saveSelectedApp = function(){
+							var selectedCloudPlatform = $comboBoxCloudPlatformList.val();
+							var selectedApp = selectedCloudPlatform == 'Heroku' ? $comboBoxGraxAppList.val() : '';
+							var selectedAppURL = selectedCloudPlatform == 'Heroku' ? '' : $('#awsAppURL').val();
+
+							var condition2Save = true;
+
+							if(selectedCloudPlatform == 'AWS'){
+								if(selectedAppURL == null || selectedAppURL == ''){
+									$('#awsAppURL').closest('.slds-form-element').addClass('slds-has-error');
+									$('#awsAppURLErrorMessagePanel').show();
+									condition2Save = false;
+								}
+
+								if(!$('#awsGatewayToken').val()){
+									$('#awsGatewayToken').closest('.slds-form-element').addClass('slds-has-error');
+									$('#awsGatewayTokenErrorMessagePanel').show();
+									condition2Save = false;
+								}
+
+								if(!$('#awsAPIToken').val()){
+									$('#awsAPIToken').closest('.slds-form-element').addClass('slds-has-error');
+									$('#awsAPITokenErrorMessagePanel').show();
+									condition2Save = false;
+								}
+
+								if(!$('#awsLicenseToken').val()){
+									$('#awsLicenseToken').closest('.slds-form-element').addClass('slds-has-error');
+									$('#awsLicenseTokenErrorMessagePanel').show();
+									condition2Save = false;
+								}
+							}
+
+							if(condition2Save){
+								cleanAWSAppErrorMessages();
+
+								showGlobalSpinner(true);
+								updateCustomSettings(selectedCloudPlatform, selectedApp, selectedAppURL, $('#awsGatewayToken').val(), $('#awsAPIToken').val(), $('#awsLicenseToken').val());
+							}
+						}
+
+						$(document).ready(function() {
+							var cloudPlatforms = [{'index' : 'Heroku', 'name' : 'Heroku', 'label' : 'Heroku'},
+													{'index' : 'AWS', 'name' : 'AWS', 'label' : 'AWS'}];
+
+							$comboBoxCloudPlatformList.sldsCombobox({
+								comboboxSelector: '#combobox-cloud-platforms',
+								listboxItemsSelector: '#listbox-cloud-platforms',
+								sort: false,
+								options: cloudPlatforms
+							}, function(setSelectionCombobox, clearSelectionCombobox, setOptionsCombobox) {
+							}).on('changeSelection', function(e) {
+								showGlobalSpinner(true);
+								changeSelectedCloudPlatform($comboBoxCloudPlatformList.val());
+								changeCloudPlatform($comboBoxCloudPlatformList.val());
+							});
+
+							// Set the selected Cloud Platform Server Name, in the corresponding picklist
+							var selectedCloudPlatform = '{!JSENCODE(selectedCloudPlatform)}';
+							$comboBoxCloudPlatformList.val(selectedCloudPlatform);
+							$('#combobox-cloud-platforms').val(selectedCloudPlatform);
+							changeSelectedCloudPlatform($comboBoxCloudPlatformList.val());
+
+							// When loading the Setup page, we check if we have a valid Heroku App
+							// otherwise the "Reveal GRAX Tokens" will remain disabled
+							var isHerokuAppEnabled = {!ISBLANK(JSENCODE(gxs.herokuAppName))};
+							$("#revealGraxTokensButton").prop('disabled', isHerokuAppEnabled);
+
+							$('#enabledeletetab').prop('checked', {!gxs.enableDeleteTab});
+							$('#sidebarSwitch').prop('checked', {!gxs.showSalesforceSidebar});
+
+							toggleUnlockSettings({!isHerokuAppSetupCompleted}, true);
+						});
+					});
+				</script>
+
+				<apex:outputPanel id="availableGraxAppsListPanel">
+					<script>
+						$(function() {
+							$(document).ready(function() {
+								if($comboBoxCloudPlatformList.val() == 'Heroku'){
+									// Populate the list of available GRAX Applications, and, set the selected GRAX Application, if any
+									addGraxAppListOptions(JSON.parse('{!IF(NOT(ISBLANK(availableGraxAppsJSON)), JSENCODE(availableGraxAppsJSON), "[]")}'));
+
+									if({!NOT(isHerokuAccountAuthorized)}){
+										$('#combobox-grax-apps').prop('disabled', true);
+										$('#combobox-grax-apps').parent().addClass('nopointerevents');
+										$('#deploy').attr('disabled', 'disabled');
+									}
+								}
+
+								if({!isLoadingPage}){
+									var selectedGraxApp = '{!JSENCODE(selectedGraxApp)}';
+
+									if($comboBoxCloudPlatformList.val() == 'Heroku'){
+										$comboBoxGraxAppList.val(!selectedGraxApp ? null : selectedGraxApp);
+										$('#combobox-grax-apps').val(!selectedGraxApp ? null : selectedGraxApp);
+									}else{
+										$('#awsAppURL').val('{!JSENCODE(selectedGraxAppURL)}');
+										$('#awsGatewayToken').val('{!gxs.GatewayToken}');
+										$('#awsAPIToken').val('{!gxs.ApiToken}');
+										$('#awsLicenseToken').val('{!gxs.LicenseToken}');
+									}
+								}
+							});
+						});
+					</script>
+				</apex:outputPanel>
+
+				<apex:outputPanel id="triggerableObjectsJSONPanel">
+					<apex:outputPanel rendered="{!NOT(ISBLANK(triggerableObjectsJSON))}">
+						<script>
+							$(function() {
+								// Adding Object List to Trigger Sample Section
+								addSetupObjectListOptions(JSON.parse('{!IF(NOT(ISBLANK(triggerableObjectsJSON)), JSENCODE(triggerableObjectsJSON), "[]")}'), true);
+
+								triggerableObjectsJSONLoaded = true;
+							});
+						</script>
+					</apex:outputPanel>
+				</apex:outputPanel>
+
+				<apex:outputPanel id="validateSetupResultPanel">
+					<apex:outputPanel rendered="{!NOT(isLoadingPage)}">
+						<script>
+							if({!isSetupValidated || NOT(isHerokuAccountAuthorized)}){
+								reloadCurrentPage();
+							}else{
+								showGlobalSpinner(false);
+							}
+						</script>
+					</apex:outputPanel>
+				</apex:outputPanel>
+
+				<apex:outputPanel id="updateCustomSettingsPanel">
+					<apex:outputPanel rendered="{!NOT(isLoadingPage)}">
+						<script>
+							if({!errorMessages.size == 0}){
+								reloadCurrentPage();
+							}else{
+								showGlobalSpinner(false);
+							}
+						</script>
+					</apex:outputPanel>
+				</apex:outputPanel>
+			</apex:outputPanel>
+
+			<script>
+				$(function() {
+					if({!hasConfigurationAdminPermission || (allSettingsConfigured && connectConfigurationLocked && hasBackupPagePermission)}){
+						// Auto-click on the first visible Tab, if the User has access to either Configuration or Schedule Tabs
+						$('#tabs > li > a').first().focus().trigger('click');
+					}
+
+					$('#tab-contactsupport_help__item').on('focus', function(e) {
+						$('#GRAXSupportForm').show();
+					});
+
+					$('#enabledeletetab').on('change', function(e) {
+						showGlobalSpinner(true);
+						updateEnableDeleteTabSetting($(this).is(':checked'));
+					});
+
+					$('#sidebarSwitch').on('change', function(e) {
+						showGlobalSpinner(true);
+						updateShowSalesforceSidebarSetting($(this).is(':checked'));
+					});
+
+					window.reRendered = function() {
+						renderSvgIcons();
+
+						$('a._blank').attr('target', '_blank');
+						$('button._blank, input._blank').attr('formtarget', '_blank');
+
+						$(document).trigger('reRendered');
+					};
+
+					window.reRendered();
+				});
+
+				(function() {
+					var $continueButton = $('#graxCookiesMessageContinue');
+					var $graxCookiesMessage = $('#graxCookiesMessage');
+
+					$(document).on('GRAXSecuredIframe:init', function(e) {
+						$('#tabs > li > a').first().focus().trigger('click');
+					});
+
+					$(document).on('GRAXSecuredIframe:requestClick', function(e) {
+						$continueButton.get(0).onclick = e.originalEvent.detail.continueAction;
+
+						$graxCookiesMessage.trigger('modaltoggle', true);
+					});
+
+					$(document).on('GRAXSecuredIframe:auth', function(e) {
+						$graxCookiesMessage.trigger('modaltoggle', false);
+					});
+				})();
+			</script>
+		</div>
+	</div>
+</apex:page>

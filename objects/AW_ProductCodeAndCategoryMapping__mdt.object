@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Contains product code and category mapping for Insurance Policy and Financial account object</description>
+    <fields>
+        <fullName>AW_ProductCategory__c</fullName>
+        <description>Product category</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Product Category</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ProductCode__c</fullName>
+        <description>Product Code</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Append &apos;C&apos; after the ProductCode.</inlineHelpText>
+        <label>Product Code</label>
+        <length>4</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ProductName__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Product Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_ProductSubCategory__c</fullName>
+        <description>Subcategory of Product</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Product Sub Category</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Prototype__c</fullName>
+        <description>Prototype Code</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Prototype</label>
+        <length>4</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_SalesforceObject__c</fullName>
+        <description>Related Salesforce Object</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Salesforce Object</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>ProductCodeAndCategoryMapping</label>
+    <listViews>
+        <fullName>All_Mappings</fullName>
+        <columns>DeveloperName</columns>
+        <columns>MasterLabel</columns>
+        <columns>AW_ProductCode__c</columns>
+        <columns>AW_Prototype__c</columns>
+        <columns>AW_ProductName__c</columns>
+        <columns>AW_ProductCategory__c</columns>
+        <columns>AW_ProductSubCategory__c</columns>
+        <columns>AW_SalesforceObject__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Mappings</label>
+    </listViews>
+    <pluralLabel>ProductCodeAndCategoryMappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

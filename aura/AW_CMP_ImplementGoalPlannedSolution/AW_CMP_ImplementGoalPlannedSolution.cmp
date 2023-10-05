@@ -1,0 +1,81 @@
+<!--
+ *@description  Aura component for the Implement goal Planned Solution Modal.
+ *
+ *@author dpucerea ,nihal.desai@accenture.com 
+ *
+ *@date June, 2022.
+ -->
+<aura:component description="AW_CMP_ImplementGoalPlannedSolution" controller="AW_CTRL_ImplementGoal">
+	<aura:attribute name="isFinancialGoalOpenChild" type="Boolean" default="false"/>
+	<aura:attribute name="isPlannedSolutionOpenChild" type="Boolean" default="false"/>
+	<aura:attribute name="isQuoteOpenChild" type="Boolean" default="false"/>
+
+	<aura:attribute name="selectedFinancialGoal" type="String"/>
+
+	<aura:attribute name="sObjectTypeChild" type="String"/>
+	<aura:attribute name="opportunityIdChild" type="String"/>
+
+	<aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+	<aura:attribute name="plannedSolutionLabels" type="Map"/>
+	<aura:attribute name="plannedSolutionColumns" type="List"/>
+	<aura:attribute name="plannedSolutionGoalData" type="List"/>
+	<aura:attribute name="isPlannedSolutionEmpty" type="Boolean"/>
+	<aura:attribute name="isLoading" type="Boolean" default="true"/>
+	<aura:attribute name="isFromAccountOrOpportunity" type="Boolean" default="false"/>
+	<aura:attribute name="isContinueDisabled" type="Boolean" default="true"/>
+	<aura:attribute name="selectedPlannedSolution" type="Object"/>
+	<aura:attribute name="selectedRiskPlannedSolution" type="Object"/>
+	<aura:attribute name="isRiskGoal" type="Boolean" default="false"/>
+	<aura:attribute name="navigateToRecordId" type="String"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+			 class="slds-modal slds-fade-in-open slds-modal_medium">
+		<div class="slds-modal__container">
+			<header class="slds-modal__header">
+				<lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModal }" alternativeText="close" variant="bare-inverse"
+									  class="slds-modal__close"/>
+				<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+					{!$Label.c.AW_PlannedSolutionSelection}
+				</h2>
+			</header>
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+				<aura:if isTrue="{!v.isLoading}">
+					<div class="exampleHolder">
+						<lightning:spinner alternativeText="Loading" size="medium" class="slds-is-relative slds-align_absolute-center slds-p-around_medium"/>
+					</div>
+					<aura:set attribute="else">
+						<aura:if isTrue="{!v.isPlannedSolutionEmpty}">
+							<div class="slds-text-body_regular slds-text-align_center">
+								{!$Label.c.AW_EmptyPlannedSolutionList}
+							</div>
+							<aura:set attribute="else">
+								<lightning:datatable data="{! v.plannedSolutionGoalData }" columns="{! v.plannedSolutionColumns }" keyField="Id"
+													 maxRowSelection="{! v.maxRowSelection }" onrowselection="{! c.handleRowActionSolution }"/>
+							</aura:set>
+						</aura:if>
+					</aura:set>
+				</aura:if>
+			</div>
+			<footer class="slds-modal__footer">
+				<button class="slds-button slds-button_neutral" onclick="{! c.closeModal }">
+					{!$Label.c.AW_Cancel}
+				</button>
+				<aura:if isTrue="{!v.isFromAccountOrOpportunity}">
+					<button class="slds-button slds-button_neutral" onclick="{! c.previousModal }">
+						{!$Label.c.AW_Previous}
+					</button>
+				</aura:if>
+				<aura:if isTrue="{!v.isPlannedSolutionEmpty}">
+					<aura:set attribute="else">
+						<button class="slds-button slds-button_brand" onclick="{! c.openGoalModal }" disabled="{!v.isContinueDisabled}">
+							{!$Label.c.AW_Continue}
+						</button>
+					</aura:set>
+				</aura:if>
+			</footer>
+		</div>
+	</section>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

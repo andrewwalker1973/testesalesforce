@@ -1,0 +1,1749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>RSC_FinancialHolding</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>RSC_FinancialHolding</fullName>
+        <fields>Name</fields>
+        <fields>FinServ__FinancialAccount__c</fields>
+        <fields>AW_CurrentValue__c</fields>
+        <fields>FinServ__MarketValue__c</fields>
+        <fields>FinServ__Shares__c</fields>
+        <fields>AW_ValueAsAt__c</fields>
+        <label>RSC_FinancialHolding</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>A holding within a client&apos;s investment account.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>SLI_HoldingFieldSet</fullName>
+        <description>Used in Lightning record pages for Financial Account lightning component</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SLI_InstrumentCode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Shares__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__PurchasePrice__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__MarketValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SLI_MarketValueZAR__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SLI_HoldingFieldSet</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>SLSC_HoldingFieldSet</fullName>
+        <description>For FSC Financial Account Lightning component on MANCO End Client Person Account page</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SLSC_FundAccNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SLSC_HoldingFieldSet</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>WM_Client_FinancialHolding</fullName>
+        <description>Client profile&apos;s Financials tab: Investment Account</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__MarketValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__GainLoss__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__PercentChange__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Shares__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Financial Holding</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>WM_Household_FinancialHolding</fullName>
+        <description>Household profile&apos;s Financials tab: Investment Account</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__MarketValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__GainLoss__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__PercentChange__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Shares__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FinServ__Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Financial Holding</label>
+    </fieldSets>
+    <fields>
+        <fullName>AW_AUMSourceExternalId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>The external ID of the Assets Under Management source system</description>
+        <externalId>true</externalId>
+        <label>AUM Source External Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AW_CurrentValue__c</fullName>
+        <description>This field is used to track and store the monetary value associated with a particular financial holding record</description>
+        <externalId>false</externalId>
+        <label>Current Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Last_Updated_Date_from_Source__c</fullName>
+        <description>Date and Time of last update</description>
+        <externalId>false</externalId>
+        <label>Last Updated Date From Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AW_NetContribution__c</fullName>
+        <description>This field is used to store the net contribution amount associated with a particular financial holding or investment</description>
+        <externalId>false</externalId>
+        <label>Net Contribution</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_Product_Code__c</fullName>
+        <description>This field is designed to store a specific product code or identifier associated with the financial holding</description>
+        <externalId>false</externalId>
+        <label>Product Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Product__c</fullName>
+        <description>This field is used to capture the name or title of a product associated with a financial holding</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Provider_Code__c</fullName>
+        <description>This field is designed to store a code or identifier associated with the provider of a financial holding</description>
+        <externalId>false</externalId>
+        <label>Provider Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_Provider__c</fullName>
+        <description>This field is designed to store the name or the designation of a provider associated with the financial holding record</description>
+        <externalId>false</externalId>
+        <label>Provider</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AW_SellingPrice__c</fullName>
+        <description>This field is designed to store monetary values such as the price at which a financial holding is being sold or transferred</description>
+        <externalId>false</externalId>
+        <label>Selling Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AW_SharePercentage__c</fullName>
+        <description>This field is used to store and track the percentage of share that is attributed to a specific entity or individual within the financial holding record</description>
+        <externalId>false</externalId>
+        <label>Share Percentage</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AW_Source_System_Name__c</fullName>
+        <description>Select Source System Name</description>
+        <externalId>false</externalId>
+        <label>Source System Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>AW_Source_System_Names</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AW_ValueAsAt__c</fullName>
+        <description>This field is used to capture the date time for the current value from Full View.</description>
+        <externalId>false</externalId>
+        <label>Value As At</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CMN_BenefitAmount__c</fullName>
+        <description>Used for integration to populate Benefit Amount from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Benefit Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CMN_BenefitEndDate__c</fullName>
+        <description>Used for integration to populate Benefit End Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Benefit End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_BenefitStartDate__c</fullName>
+        <description>Used for integration to populate Benefit Start Date from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Benefit Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CMN_ConversionOptionIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Conversion Option Indicator from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Conversion Option Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_ExclusionIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Exclusion Indicator from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Exclusion Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_LoadingIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for integration to populate Loading Indicator from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Loading Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CMN_WaitingPeriod__c</fullName>
+        <description>Used for integration to populate Waiting Period from source systems (Compass/Lifestyle).</description>
+        <externalId>false</externalId>
+        <label>Waiting Period</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__AssetCategoryName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Market capitalization and investing style</description>
+        <externalId>false</externalId>
+        <label>Asset Category Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Large Growth</fullName>
+                    <default>false</default>
+                    <label>Large Growth</label>
+                </value>
+                <value>
+                    <fullName>Large Value</fullName>
+                    <default>false</default>
+                    <label>Large Value</label>
+                </value>
+                <value>
+                    <fullName>Large Blend</fullName>
+                    <default>false</default>
+                    <label>Large Blend</label>
+                </value>
+                <value>
+                    <fullName>Small Growth</fullName>
+                    <default>false</default>
+                    <label>Small Growth</label>
+                </value>
+                <value>
+                    <fullName>Small Value</fullName>
+                    <default>false</default>
+                    <label>Small Value</label>
+                </value>
+                <value>
+                    <fullName>Small Blend</fullName>
+                    <default>false</default>
+                    <label>Small Blend</label>
+                </value>
+                <value>
+                    <fullName>Mid-Cap Growth</fullName>
+                    <default>false</default>
+                    <label>Mid-Cap Growth</label>
+                </value>
+                <value>
+                    <fullName>Mid-Cap Value</fullName>
+                    <default>false</default>
+                    <label>Mid-Cap Value</label>
+                </value>
+                <value>
+                    <fullName>Mid-Cap Blend</fullName>
+                    <default>false</default>
+                    <label>Mid-Cap Blend</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__AssetCategory__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Subcategory of asset type.</description>
+        <externalId>false</externalId>
+        <label>Asset Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>U.S. Equity</fullName>
+                    <default>false</default>
+                    <label>U.S. Equity</label>
+                </value>
+                <value>
+                    <fullName>Sector Equity</fullName>
+                    <default>false</default>
+                    <label>Sector Equity</label>
+                </value>
+                <value>
+                    <fullName>Allocation</fullName>
+                    <default>false</default>
+                    <label>Allocation</label>
+                </value>
+                <value>
+                    <fullName>International Equity</fullName>
+                    <default>false</default>
+                    <label>International Equity</label>
+                </value>
+                <value>
+                    <fullName>Alternative</fullName>
+                    <default>false</default>
+                    <label>Alternative</label>
+                </value>
+                <value>
+                    <fullName>Commodities</fullName>
+                    <default>false</default>
+                    <label>Commodities</label>
+                </value>
+                <value>
+                    <fullName>Taxable Bond</fullName>
+                    <default>false</default>
+                    <label>Taxable Bond</label>
+                </value>
+                <value>
+                    <fullName>Municipal Bond</fullName>
+                    <default>false</default>
+                    <label>Municipal Bond</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__AssetClass__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Major category of asset type.</description>
+        <externalId>false</externalId>
+        <label>Asset Class</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Equities</fullName>
+                    <default>false</default>
+                    <label>Equities</label>
+                </value>
+                <value>
+                    <fullName>Fixed Income</fullName>
+                    <default>false</default>
+                    <label>Fixed Income</label>
+                </value>
+                <value>
+                    <fullName>Cash Equivalents</fullName>
+                    <default>false</default>
+                    <label>Cash Equivalents</label>
+                </value>
+                <value>
+                    <fullName>Alternative Investments</fullName>
+                    <default>false</default>
+                    <label>Alternative Investments</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FinServ__FinancialAccount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Account</label>
+        <referenceTo>FinServ__FinancialAccount__c</referenceTo>
+        <relationshipLabel>Financial Holdings</relationshipLabel>
+        <relationshipName>FinancialHoldings</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>FinServ__GainLoss__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Change in value since purchase.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Change in value since purchase.</inlineHelpText>
+        <label>Gain/Loss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Household__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Household</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Household Financial Holdings</relationshipLabel>
+        <relationshipName>HouseholdFinancialHoldings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__LastUpdated__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Updated</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__MarketValue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Current market value.</description>
+        <externalId>false</externalId>
+        <label>Market Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__PercentChange__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Percent change in value since purchase.</description>
+        <externalId>false</externalId>
+        <label>Percent Change</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Price__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__PrimaryOwner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Primary Owner</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>IndustriesIndividual</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Client Financial Holdings</relationshipLabel>
+        <relationshipName>ClientFinancialHoldings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__PurchasePrice__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Purchase Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Securities__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Symbol</label>
+        <referenceTo>FinServ__Securities__c</referenceTo>
+        <relationshipLabel>Securities</relationshipLabel>
+        <relationshipName>Securities</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinServ__Shares__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Shares</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__SourceSystemId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Source System ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FinServ__Symbol__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Ticker symbol for the securities held. The value is copied from Securities__c and can&apos;t be changed.</description>
+        <externalId>false</externalId>
+        <formula>FinServ__Securities__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Symbol</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_FundClass__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Fund Class</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>STANLIB Share Class</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Financial Holdings (Fund Class)</relationshipLabel>
+        <relationshipName>Financial_Holdings_Fund_Class</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_Fund__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Fund</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>STANLIB Fund</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Financial Holdings</relationshipLabel>
+        <relationshipName>Financial_Holdings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLC_ICBLevel1__c</fullName>
+        <externalId>false</externalId>
+        <label>ICB Industry</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_Platform__c</fullName>
+        <description>Name of the Linked Investment Service Provider</description>
+        <externalId>false</externalId>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Allan Gray</fullName>
+                    <default>false</default>
+                    <label>Allan Gray</label>
+                </value>
+                <value>
+                    <fullName>Ninety One</fullName>
+                    <default>false</default>
+                    <label>Ninety One</label>
+                </value>
+                <value>
+                    <fullName>Old Mutual</fullName>
+                    <default>false</default>
+                    <label>Old Mutual</label>
+                </value>
+                <value>
+                    <fullName>Momentum</fullName>
+                    <default>false</default>
+                    <label>Momentum</label>
+                </value>
+                <value>
+                    <fullName>Inn8</fullName>
+                    <default>false</default>
+                    <label>Inn8</label>
+                </value>
+                <value>
+                    <fullName>Momentum International</fullName>
+                    <default>false</default>
+                    <label>Momentum International</label>
+                </value>
+                <value>
+                    <fullName>PSG</fullName>
+                    <default>false</default>
+                    <label>PSG</label>
+                </value>
+                <value>
+                    <fullName>Direct</fullName>
+                    <default>false</default>
+                    <label>Direct</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SLC_Revenue__c</fullName>
+        <description>Revenue excluding Value Added Tax</description>
+        <externalId>false</externalId>
+        <label>Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLC_UniqueKey__c</fullName>
+        <description>Unique identifier to define Holding record from STANLIB Kite and Hawk data warehouses.</description>
+        <externalId>false</externalId>
+        <label>Unique Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLI_CFMTargetMatches__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(SLI_CFMTarget__r.OwnerId =  FinServ__PrimaryOwner__r.OwnerId , TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CFM Target Matches</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SLI_CFMTarget__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to related Financial Holding records with Target records that are assigned to individual CFMs</description>
+        <externalId>false</externalId>
+        <label>CFM Target</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>SLC_Target__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>CFM Target</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>SLC_Target__c</referenceTo>
+        <relationshipLabel>Financial Holdings</relationshipLabel>
+        <relationshipName>Financial_Holdings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SLI_ClosingMarketValueZARLastMonth__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Required to store the previous Month&apos;s &apos;Market Value ZAR&apos; retrieved in the &apos;SLI - Financial Account Holdings&apos; flow, if it exists, to use to calculate the MoM movement of AUM on the Financial Holding.</description>
+        <externalId>false</externalId>
+        <label>Closing Market Value ZAR Last Month</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLI_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SLI_Franchise__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FinServ__FinancialAccount__r.SLI_Franchise__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Franchise</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLI_InstrumentCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Instrument Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLI_MarketValueZAR__c</fullName>
+        <description>Market value of the asset as reported in South African Rand</description>
+        <externalId>false</externalId>
+        <label>Market Value ZAR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLI_MoMMovementOfAum__c</fullName>
+        <description>Calculates the MOM difference in Market Value ZAR between current Financial Holding and the previous month&apos;s Financial Holding if it existed.</description>
+        <externalId>false</externalId>
+        <formula>SLI_MarketValueZAR__c -  SLI_ClosingMarketValueZARLastMonth__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MoM Movement of AUM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLR_AccountNumber__c</fullName>
+        <description>Investment Account number of the client</description>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_AumNative__c</fullName>
+        <description>Assets under management in native currency of the fund</description>
+        <externalId>false</externalId>
+        <label>AUM Native</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_AumZar__c</fullName>
+        <description>Assets under management in South African Rands</description>
+        <externalId>false</externalId>
+        <label>AUM (ZAR)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLR_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsExclReinvestmentsNative__c</fullName>
+        <description>Client inflows less client outflows excluding reinvestments in native currency of the fund</description>
+        <externalId>false</externalId>
+        <label>Netflows Excl. Reinvestments Native</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsExclReinvestmentsZar__c</fullName>
+        <description>Client inflows less client outflows excluding reinvestmentsin South African Rands</description>
+        <externalId>false</externalId>
+        <label>Netflows excl. Reinvestments ZAR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsInclReinvestmentsNative__c</fullName>
+        <description>Client inflows less client outflows including reinvestments in native currency of the fund</description>
+        <externalId>false</externalId>
+        <label>Netflows Incl. Reinvestments Native</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLR_NetflowsinclReinvestmentsZAR__c</fullName>
+        <description>Client inflows less client outflows including reinvestments in South African Rands</description>
+        <externalId>false</externalId>
+        <label>Netflows incl. Reinvestments ZAR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SLSC_AccountUnits__c</fullName>
+        <description>Number of units per fund</description>
+        <externalId>false</externalId>
+        <label>Account Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLSC_CededUnits__c</fullName>
+        <description>Number of ceded units per fund</description>
+        <externalId>false</externalId>
+        <label>Ceded Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLSC_FundAccNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Fund Acc Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLSC_TotalNumberOfUnits__c</fullName>
+        <description>Total number of units including availabl and unavailable units</description>
+        <externalId>false</externalId>
+        <label>Total Number of Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLSC_UnclearedUnits__c</fullName>
+        <description>Number of uncleared units per fund</description>
+        <externalId>false</externalId>
+        <label>Uncleared Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Financial Holding</label>
+    <listViews>
+        <fullName>FinServ__All</fullName>
+        <columns>NAME</columns>
+        <columns>FinServ__Securities__c</columns>
+        <columns>FinServ__MarketValue__c</columns>
+        <columns>FinServ__LastUpdated__c</columns>
+        <columns>AW_CurrentValue__c</columns>
+        <columns>AW_NetContribution__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>SLI_My_Financial_Holdings</fullName>
+        <columns>NAME</columns>
+        <columns>FinServ__Securities__c</columns>
+        <columns>FinServ__MarketValue__c</columns>
+        <columns>FinServ__LastUpdated__c</columns>
+        <columns>AW_CurrentValue__c</columns>
+        <columns>AW_NetContribution__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>My Financial Holdings</label>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Financial Holding Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Financial Holdings</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>CMN_LibertyFinancialHolding</fullName>
+        <active>true</active>
+        <description>Record type to be used for Integration with Compass &amp; Lifestyle.</description>
+        <label>Liberty Financial Holding</label>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetCategoryName__c</picklist>
+            <values>
+                <fullName>Large Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Value</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetCategory__c</picklist>
+            <values>
+                <fullName>Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commodities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Municipal Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sector Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxable Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Equity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetClass__c</picklist>
+            <values>
+                <fullName>Alternative Investments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash Equivalents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_Platform__c</picklist>
+            <values>
+                <fullName>Allan Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inn8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Momentum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Momentum International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ninety One</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Old Mutual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSG</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SLI_FinancialHolding</fullName>
+        <active>true</active>
+        <description>Financial Holding for STANLIB Institutional Distribution</description>
+        <label>STANLIB Institutional Distribution Financial Holding</label>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetCategoryName__c</picklist>
+            <values>
+                <fullName>Large Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Value</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetCategory__c</picklist>
+            <values>
+                <fullName>Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commodities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Municipal Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sector Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxable Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Equity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetClass__c</picklist>
+            <values>
+                <fullName>Alternative Investments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash Equivalents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_Platform__c</picklist>
+            <values>
+                <fullName>Allan Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inn8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Momentum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Momentum International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ninety One</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Old Mutual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSG</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SLSC_FinancialHolding</fullName>
+        <active>true</active>
+        <description>Financial Holding for STANLIB End Clients</description>
+        <label>STANLIB Manco End Client Financial Holding</label>
+        <picklistValues>
+            <picklist>AW_Source_System_Name__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetCategoryName__c</picklist>
+            <values>
+                <fullName>Large Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Large Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Cap Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Blend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Growth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small Value</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetCategory__c</picklist>
+            <values>
+                <fullName>Allocation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commodities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Municipal Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sector Equity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Taxable Bond</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Equity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FinServ__AssetClass__c</picklist>
+            <values>
+                <fullName>Alternative Investments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cash Equivalents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed Income</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SLC_Platform__c</picklist>
+            <values>
+                <fullName>Allan Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inn8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Momentum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Momentum International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ninety One</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Old Mutual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PSG</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>FinServ__FinancialAccount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__Securities__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__Shares__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>FinServ__MarketValue__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

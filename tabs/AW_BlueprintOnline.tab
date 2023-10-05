@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Tab will redirect you to Blueprint log in page</description>
+    <label>Blueprint Online</label>
+    <motif>Custom54: Boat</motif>
+    <page>AW_VF_Blueprint</page>
+</CustomTab>

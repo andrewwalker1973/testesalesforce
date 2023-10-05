@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://www.blueprintonline.co.za/nblue/navigator/Integration/FromSF</canvasUrl>
+        <lifecycleClass>AW_BPO_Canvas_Lifecycle_Handler</lifecycleClass>
+        <locations>Aura</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>kobus.debruyn@liberty.co.za</contactEmail>
+    <label>BPO Canvas</label>
+    <oauthConfig>
+        <callbackUrl>https://www.blueprintonline.co.za/nblue/navigator/Integration/FromSF</callbackUrl>
+        <consumerKey>3MVG9tzQRhEbH_K1Ih04zBLV7G5FIgDuEXNz5hcMR8OFhq7efc.Z3tcFEsQNXN1mRZXik45DiN4iwd0i24BMZ</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Web</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Liberty Client Portal Profile</profileName>
+    <profileName>Liberty Administrator</profileName>
+    <profileName>Liberty Client Community User</profileName>
+    <profileName>Liberty Adviser</profileName>
+    <profileName>Liberty Campaign Manager</profileName>
+    <profileName>Liberty Executive</profileName>
+    <profileName>Liberty Sales Leader</profileName>
+    <profileName>Liberty Service Account</profileName>
+    <profileName>Liberty Delegated Administrator</profileName>
+    <profileName>System Administrator</profileName>
+    <profileName>Liberty Data Loader</profileName>
+    <profileName>Liberty Deployment</profileName>
+    <profileName>Liberty Support</profileName>
+    <profileName>Liberty ECM Claims Community User</profileName>
+    <profileName>Liberty ECM Claims Service Agent</profileName>
+    <profileName>Liberty Field Support</profileName>
+    <profileName>Liberty Health Support Desk Profile</profileName>
+    <profileName>Liberty Lead Manager</profileName>
+    <profileName>Liberty Lead Data Loader</profileName>
+    <profileName>Liberty Integration</profileName>
+    <profileName>Liberty Blended Centre Agent</profileName>
+    <profileName>Liberty Blended Centre Team Lead</profileName>
+    <profileName>Liberty Adviser Personal Assistant</profileName>
+</ConnectedApp>

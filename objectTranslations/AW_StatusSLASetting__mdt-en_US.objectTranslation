@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Status SLA Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Status SLA Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- The minimum number of hours the lead can be in a status before displaying a negative indicator. --></help>
+        <label><!-- Negative --></label>
+        <name>AW_Negative__c</name>
+    </fields>
+    <fields>
+        <help><!-- The maximum number of hours the lead can be in a status to display a positive indicator. --></help>
+        <label><!-- Positive --></label>
+        <name>AW_Positive__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

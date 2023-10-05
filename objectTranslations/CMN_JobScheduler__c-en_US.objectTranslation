@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Job Scheduler</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Job Schedulers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>CMN_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cron Expression --></label>
+        <name>CMN_CronExpression__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describes what the Job does and how often it runs --></help>
+        <label><!-- Description --></label>
+        <name>CMN_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Name --></label>
+        <name>CMN_JobName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule Class Name --></label>
+        <name>CMN_ScheduleClassName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled Job Id --></label>
+        <name>CMN_ScheduledJobId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduler Name --></label>
+        <name>CMN_SchedulerName__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

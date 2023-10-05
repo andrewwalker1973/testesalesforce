@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission sets that allow the user to navigate and access Salesforce functionality</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Standard Group</label>
+    <permissionSets>AW_LibertyFscInsurance</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

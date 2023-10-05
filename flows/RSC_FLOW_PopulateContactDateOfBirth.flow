@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>RSCContactIsNewOrContactBirthdateChanged</name>
+        <label>Contact Is New Or Birthdate Changed</label>
+        <locationX>182</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>RSC_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_ContactIsNewOrBirthdateChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_PopulateContactDateOfBirthSearchField</targetReference>
+            </connector>
+            <label>RSC_Yes</label>
+        </rules>
+    </decisions>
+    <description>Updates contact date of birth field to allow search on Date Of Birth</description>
+    <formulas>
+        <name>RSC_ContactDateOfBirthSearch</name>
+        <dataType>String</dataType>
+        <expression>LPAD(TEXT(DAY 
+({!$Record.Birthdate})),2,&quot;0&quot;)&amp;&quot;/&quot;&amp;LPAD(TEXT(MONTH({!$Record.Birthdate})),2,&quot;0&quot;)&amp;&quot;/&quot;&amp;TEXT(YEAR({!$Record.Birthdate}))</expression>
+    </formulas>
+    <formulas>
+        <name>RSC_ContactIsNewOrBirthdateChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>(ISNEW()) || ISCHANGED({!$Record.Birthdate})</expression>
+    </formulas>
+    <interviewLabel>RSC_FLOW_PopulateContactDateOfBirth {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RSC_FLOW_PopulateContactDateOfBirth</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Populate Date Of Birth Search field when Date Of Birth is added or updated</description>
+        <name>RSC_PopulateContactDateOfBirthSearchField</name>
+        <label>Populate Contact Date Of Birth Search Field</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>CMN_ContactDOBSearch__c</field>
+            <value>
+                <elementReference>RSC_ContactDateOfBirthSearch</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSCContactIsNewOrContactBirthdateChanged</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Birthdate</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

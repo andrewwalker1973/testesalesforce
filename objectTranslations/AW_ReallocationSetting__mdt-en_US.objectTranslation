@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reallocation Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reallocation Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Average Performance Threshold --></label>
+        <name>AW_AveragePerformanceThreshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Branch Id Field API Name --></label>
+        <name>AW_BranchIdFieldAPIName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner UACF Id Field API Name --></label>
+        <name>AW_OwnerUACFIdFieldAPIName__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Duration In Milliseconds --></label>
+        <name>AW_SLADurationInMilliseconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight For Lead Conversion Rate --></label>
+        <name>AW_WeightForLeadConversionRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight For Opportunity Win Rate --></label>
+        <name>AW_WeightForOpportunityWinRate__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

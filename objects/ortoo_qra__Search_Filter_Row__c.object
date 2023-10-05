@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores individual filters row for Search Filter object to store all kind of search filters across Q-assign configuration.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ortoo_qra__Left1_Link_Via_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If linking back to the Primary Object, the field on the Starting Object that links back to the Primary Object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If linking back to the Primary Object, the field on the Starting Object that links back to the Primary Object</inlineHelpText>
+        <label>Left1 Link Via Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Starting_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the lookup object. Can be the primary object (default). If we are traversing back to the Primary object from another object looking up to it, then the name of that starting object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the lookup object. Can be the primary object (default). If we are traversing back to the Primary object from another object looking up to it, then the name of that starting object</inlineHelpText>
+        <label>Left1 Starting Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Treat_blank_values_as__c</fullName>
+        <deprecated>false</deprecated>
+        <description>How to treat blank values in the field defined in Left1 Value1. Same functionality as in &quot;QA Member Matching Rule&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How to treat blank values in the field defined in Left1 Value1.</inlineHelpText>
+        <label>Left1 Treat blank values as</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ortoo_qra__TreatValuesAsOptions</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Treat_blank_values_as_x_Fixed_Val__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The fixed value if &quot;Left1 Treat blank values as&quot; is &quot;Fixed Value&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The fixed value if &quot;Left1 Treat blank values as&quot; is &quot;Fixed Value&quot;</inlineHelpText>
+        <label>Left1 Treat blank values as - Fixed Val</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Left1_Value1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Fist left hand side value field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fist left hand side value field</inlineHelpText>
+        <label>Left1 Value1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Operator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The operator between left and right hand side values</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The operator between left and right hand side values</inlineHelpText>
+        <label>Operator</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order of the filter row with respect to others.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Order of the filter row with respect to others.</inlineHelpText>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Parent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Master detail relationship with Filter Row</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Master detail relationship with Filter Row</inlineHelpText>
+        <label>Parent</label>
+        <referenceTo>ortoo_qra__Search_Filter__c</referenceTo>
+        <relationshipLabel>QA Search Filter Row</relationshipLabel>
+        <relationshipName>QA_Search_Filter_Row</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__Right1_Value1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Fist right hand side value field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fist right hand side value field</inlineHelpText>
+        <label>Right1 Value1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>QA Search Filter Row</label>
+    <nameField>
+        <label>Search Filter Row Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>QA Search Filter Row</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

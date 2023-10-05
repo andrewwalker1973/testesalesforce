@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_337017</developerName>
+        <masterLabel>Income Protection</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.InsurancePolicy.InsurancePolicyCoverage$AW_Type__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>TEMPORARY INCOME DISABILITY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>ABSOLUTE INCOME PROTECTOR</sourceValue>
+            </sourceValues>
+            <value>Income Protection - First 24 Months</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_37568030</developerName>
+        <masterLabel>Income Protection - First 24 Months</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.InsurancePolicy.InsurancePolicyCoverage$AW_TypeCode__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>102</sourceValue>
+            </sourceValues>
+            <value>With Income Protection</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.InsurancePolicy.InsurancePolicyCoverage$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.InsurancePolicy.InsurancePolicyCoverage$AW_BenefitAmount__c</field>
+    </columns>
+    <description>This report shows the split for the different Income Protector</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$FinServ__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.InsurancePolicy$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IN FORCE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.InsurancePolicy.InsurancePolicyCoverage$AW_IncomeProtection1st24MonthsBenefits__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.InsurancePolicy.InsurancePolicyCoverage$AW_IncomeProtection1st24MonthsBenefits__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.InsurancePolicy$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Income Protection - First 24 Months</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AW_AccountWithInsurancePolicyAndCoverage__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

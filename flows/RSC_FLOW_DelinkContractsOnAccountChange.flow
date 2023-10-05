@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <description>Checks if the case belongs to retail or not, and if the Case was not modified by Integration User</description>
+        <name>RSC_CheckIsRetailAndNotIntegrationUser</name>
+        <label>Check Is Retail And Not Integration User?</label>
+        <locationX>380</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Not Retail?</defaultConnectorLabel>
+        <rules>
+            <name>RSC_IsRetail</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_RetailRecordTypeName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LastModifiedBy.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_ServicingAgent</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LastModifiedBy.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>RSC_ServicingSupervisor</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_GetCasePolicies</targetReference>
+            </connector>
+            <label>Is Retail?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Used to check if the policies exists on the Case that triggers the flow</description>
+        <name>RSC_CheckPoliciesExists</name>
+        <label>Check Policies Exists</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <defaultConnectorLabel>Policies Doesn&apos;t Exists</defaultConnectorLabel>
+        <rules>
+            <name>RSC_PoliciesExists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_GetCasePolicies</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_DeleteExistingAssociatedContracts</targetReference>
+            </connector>
+            <label>Policies Exists</label>
+        </rules>
+    </decisions>
+    <description>Used to delink the associated contracts on the event of Account Change</description>
+    <environments>Default</environments>
+    <interviewLabel>Delink contracts On Account change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delink Contracts On Account Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <description>Used to delete the existing associated contracts</description>
+        <name>RSC_DeleteExistingAssociatedContracts</name>
+        <label>Delete Existing Associated Contracts</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <inputReference>RSC_GetCasePolicies</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Used to get all the policies linked to case</description>
+        <name>RSC_GetCasePolicies</name>
+        <label>Get Case Policies</label>
+        <locationX>182</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_CheckPoliciesExists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SC_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>SC_AssociatedContract__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_CheckIsRetailAndNotIntegrationUser</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores the developer name of integration user profile</description>
+        <name>RSC_IntegrationUserProfileName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Liberty Service Account</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Use to store the API name of Retail Record Type</description>
+        <name>RSC_RetailRecordTypeName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>RSC_Retail</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the Liberty Servicing Agent profile</description>
+        <name>RSC_ServicingAgent</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Liberty Servicing Agent</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Captures the Liberty Servicing Supervisor Profile</description>
+        <name>RSC_ServicingSupervisor</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Liberty Servicing Supervisor</stringValue>
+        </value>
+    </variables>
+</Flow>

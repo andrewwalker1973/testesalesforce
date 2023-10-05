@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>Activities</dataset>
+    <dimensions>
+        <field>Related.Related.Related_Name</field>
+        <isDerived>false</isDerived>
+        <linkTemplate>/{{row.Related.Related.Related_Id}}</linkTemplate>
+        <linkTemplateEnabled>true</linkTemplateEnabled>
+        <recordIdField>Related.Related.Related_Id</recordIdField>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Accounts.Account.Name</field>
+        <isDerived>false</isDerived>
+        <linkTemplate>/{{row.Accounts.Account.Id}}</linkTemplate>
+        <linkTemplateEnabled>true</linkTemplateEnabled>
+        <recordIdField>Accounts.Account.Id</recordIdField>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+</WaveXmd>

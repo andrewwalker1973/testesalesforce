@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Notification sent to Client Account&apos;s owner when their YTD Client Expense allowance exceeds 100% or greater spent.</description>
+        <name>Copy_1_of_Client_Expense_Limit_100_Notification</name>
+        <label>Copy 1 of Client Expense Limit 100% Notification</label>
+        <locationX>314</locationX>
+        <locationY>455</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>SLC_ClientExpenseLimitExceeds100Pc</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>{!$Record.Owner.Email}, susan.smith@stanlib.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>WARNING: Client Expense Limit</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Notification sent to Client Account&apos;s owner when their YTD Client Expense allowance exceeds 90% or greater spent.</description>
+        <name>Copy_1_of_Client_Expense_Limit_90_Notification</name>
+        <label>Copy 1 of Client Expense Limit 90% Notification</label>
+        <locationX>578</locationX>
+        <locationY>455</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>SLC_ClientExpenseLimitExceeds90Pc</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Owner.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>WARNING: Client Expense Limit</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Notification sent to Client Account&apos;s owner when their YTD Client Expense allowance exceeds 100% or greater spent.</description>
+        <name>SLC_ClientExpenseLimit100PcNotification</name>
+        <label>Client Expense Limit 100% Notification</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>SLC_ClientExpenseLimitExceeds100Pc</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Owner.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>WARNING: Client Expense Limit</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Notification sent to Client Account&apos;s owner when their YTD Client Expense allowance exceeds 90% or greater spent.</description>
+        <name>SLC_ClientExpenseLimit90PcNotification</name>
+        <label>Client Expense Limit 90% Notification</label>
+        <locationX>842</locationX>
+        <locationY>455</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>SLC_ClientExpenseLimitExceeds90Pc</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>{!$Record.Owner.Email}, susan.smith@stanlib.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>WARNING: Client Expense Limit</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <description>Cumulative Expenses per Client have an annual limit of R1000 - here we want to notify if the limit has been met or exceeded.</description>
+        <name>dec_IsAnnualExpenseLimitSpent</name>
+        <label>Is Annual Expense Limit Spent?</label>
+        <locationX>446</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>SLC_ClientExpenseLimit90PcNotification</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Over 90%</defaultConnectorLabel>
+        <rules>
+            <name>Over100PcInsto</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SLC_YtdClientExpensesRollupDlrs__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>1000.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Institutional</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SLC_ClientExpenseLimit100PcNotification</targetReference>
+            </connector>
+            <label>Over 100% Insto</label>
+        </rules>
+        <rules>
+            <name>Over100PcRetail</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SLC_YtdClientExpensesRollupDlrs__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>1000.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Retail</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Client_Expense_Limit_100_Notification</targetReference>
+            </connector>
+            <label>Over 100% Retail</label>
+        </rules>
+        <rules>
+            <name>Over_90_Insto</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SLC_YtdClientExpensesRollupDlrs__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>900.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Institutional</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Client_Expense_Limit_90_Notification</targetReference>
+            </connector>
+            <label>Over 90% Insto</label>
+        </rules>
+    </decisions>
+    <description>Notifies Account owner when Client Expenses have exceeded 90% of the current year&apos;s allowance - different notification for &gt;90% or &gt;100% of limit.</description>
+    <environments>Default</environments>
+    <interviewLabel>SLC - Client Expense Limit Email Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SLC - Client Expense Limit Email Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>dec_IsAnnualExpenseLimitSpent</targetReference>
+        </connector>
+        <filterFormula>AND(
+AND(
+OR({!$Record__Prior.SLC_YtdClientExpensesRollupDlrs__c}&lt;900, ISNULL({!$Record__Prior.SLC_YtdClientExpensesRollupDlrs__c})),
+{!$Record.SLC_YtdClientExpensesRollupDlrs__c}&gt;=900),
+AND(
+OR(CONTAINS({!$Record.RecordType.Name},&apos;Stanlib Institutional&apos;),CONTAINS({!$Record.RecordType.Name},&apos;Stanlib Retail&apos;))
+,
+{!$Record.IsPersonAccount}=TRUE)
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Notification to Client Account owner and Susan that the Client&apos;s Expense register for the current Calendar Year has exceeded its 100% limit.</description>
+        <name>SLC_ClientExpenseLimitExceeds100Pc</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14.6667px; font-family: Calibri; color: rgb(0, 0, 0);&quot;&gt;The annual limit for {!$Record.FirstName} {!$Record.LastName} has been reached. A declaration of overrun expenses is required.&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Notification to Client Account owner that the Client&apos;s Expense register for the current Calendar Year has exceeded 90% allowable.</description>
+        <name>SLC_ClientExpenseLimitExceeds90Pc</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.FirstName} {!$Record.LastName} is near it&apos;s annual limit of R1000.</text>
+    </textTemplates>
+</Flow>

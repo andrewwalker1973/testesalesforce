@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>South African ID</fullName>
+        <default>false</default>
+        <label>South African ID</label>
+    </customValue>
+    <customValue>
+        <fullName>Passport</fullName>
+        <default>false</default>
+        <label>Passport</label>
+    </customValue>
+    <customValue>
+        <fullName>FullView ID</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>FullView ID</label>
+    </customValue>
+    <masterLabel>Identification Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

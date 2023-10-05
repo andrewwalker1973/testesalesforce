@@ -1,0 +1,14 @@
+.sectionBackground
+{
+	border                                     : none;
+	--sds-c-accordion-summary-color-background : #F3F2F2;
+	--slds-c-accordion-summary-height          : 5px;
+	padding-left                               : 1rem;
+	padding-right                              : 1rem;
+	padding-top                                : 10px;
+}
+
+.accordion-background
+{
+	box-shadow : 0 1px 4px 0 #8B92A7;
+}

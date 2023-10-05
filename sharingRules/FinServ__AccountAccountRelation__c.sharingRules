@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Stanlib_AARRecordSharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Ability for all Stanlib Users to see related Accounts
+AAR owned by members of: R&amp;IS: STANLIB AM
+Share with: R&amp;IS: STANLIB AM
+Access Level: Read/Write</description>
+        <label>Stanlib AAR Record Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>STANLIB_AM</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>STANLIB_AM</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

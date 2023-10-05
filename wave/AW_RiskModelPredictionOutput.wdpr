@@ -1,0 +1,2427 @@
+{
+  "version" : "58.0",
+  "nodes" : {
+    "DISCOVERY_PREDICT0" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "LOAD_DATASET10" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedLifeCoverPropensityScore"
+        },
+        "columnMapping" : {
+          "Age_Tenure_Bucket_Between_26_35yrs" : "Age_Tenure_Bucket_Between_26_35yrs",
+          "Medical_Cover_Cat" : "Medical_Cover_Cat",
+          "Savings_plan_Cat" : "Savings_plan_Cat",
+          "Age_Tenure_Bucket_Greater_than_60_yrs" : "Age_Tenure_Bucket_Greater_than_60_yrs",
+          "CompleteRisk.sb_match" : "CompleteRisk.sb_match",
+          "Pregnancy_Complications_Cat" : "Pregnancy_Complications_Cat",
+          "Life_Cover_Cat" : "Life_Cover_Cat",
+          "Future_Insurability_Cat" : "Future_Insurability_Cat",
+          "Policy_Premiums_Cover_Cat" : "Policy_Premiums_Cover_Cat",
+          "Age_Tenure_Bucket_less_than_or_equal_to_25yrs" : "Age_Tenure_Bucket_less_than_or_equal_to_25yrs",
+          "Previous_Product_Bought" : "Previous_Product_Bought",
+          "Policy_Holder_dread_disease_Cat" : "Policy_Holder_dread_disease_Cat",
+          "Age_Tenure_Bucket_Between_36_45yrs" : "Age_Tenure_Bucket_Between_36_45yrs",
+          "Income_Disability_Cat" : "Income_Disability_Cat",
+          "Medical_Aid_Premiums_Cover_Cat" : "Medical_Aid_Premiums_Cover_Cat",
+          "Policy_Holder_Disablement_Cat" : "Policy_Holder_Disablement_Cat",
+          "CompleteRisk.prsn_mrtl_sts_dsc" : "CompleteRisk.prsn_mrtl_sts_dsc",
+          "Family_Funeral_Cat" : "Family_Funeral_Cat",
+          "Child_Education_Cover_Cat" : "Child_Education_Cover_Cat",
+          "Age_Tenure_Bucket_Between_46_60yrs" : "Age_Tenure_Bucket_Between_46_60yrs",
+          "CompleteRisk.prsn_gndr_dsc" : "CompleteRisk.prsn_gndr_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedLifeCoverPropensityScore_prediction",
+          "label" : "Predicted Life Cover Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT1" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT0" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedPolicyHolderDisablementPropensityScore"
+        },
+        "columnMapping" : {
+          "Age_Tenure_Bucket_Between_26_35yrs" : "Age_Tenure_Bucket_Between_26_35yrs",
+          "Medical_Cover_Cat" : "Medical_Cover_Cat",
+          "Savings_plan_Cat" : "Savings_plan_Cat",
+          "CompleteRisk.sb_match" : "CompleteRisk.sb_match",
+          "Age_Tenure_Bucket_Greater_than_60_yrs" : "Age_Tenure_Bucket_Greater_than_60_yrs",
+          "Pregnancy_Complications_Cat" : "Pregnancy_Complications_Cat",
+          "Life_Cover_Cat" : "Life_Cover_Cat",
+          "Future_Insurability_Cat" : "Future_Insurability_Cat",
+          "Age_Tenure_Bucket_less_than_or_equal_to_25yrs" : "Age_Tenure_Bucket_less_than_or_equal_to_25yrs",
+          "Policy_Premiums_Cover_Cat" : "Policy_Premiums_Cover_Cat",
+          "Previous_Product_Bought" : "Previous_Product_Bought",
+          "Policy_Holder_dread_disease_Cat" : "Policy_Holder_dread_disease_Cat",
+          "Medical_Aid_Premiums_Cover_Cat" : "Medical_Aid_Premiums_Cover_Cat",
+          "Age_Tenure_Bucket_Between_36_45yrs" : "Age_Tenure_Bucket_Between_36_45yrs",
+          "Income_Disability_Cat" : "Income_Disability_Cat",
+          "Policy_Holder_Disablement_Cat" : "Policy_Holder_Disablement_Cat",
+          "CompleteRisk.prsn_mrtl_sts_dsc" : "CompleteRisk.prsn_mrtl_sts_dsc",
+          "Child_Education_Cover_Cat" : "Child_Education_Cover_Cat",
+          "Family_Funeral_Cat" : "Family_Funeral_Cat",
+          "Age_Tenure_Bucket_Between_46_60yrs" : "Age_Tenure_Bucket_Between_46_60yrs",
+          "CompleteRisk.prsn_gndr_dsc" : "CompleteRisk.prsn_gndr_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedPolicyHolderDisablementPropensityScore_prediction",
+          "label" : "Predicted Policy Holder Disablement Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT2" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT1" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedPolicyPremiumPropensityScore"
+        },
+        "columnMapping" : {
+          "Age_Tenure_Bucket_Between_26_35yrs" : "Age_Tenure_Bucket_Between_26_35yrs",
+          "Medical_Cover_Cat" : "Medical_Cover_Cat",
+          "Savings_plan_Cat" : "Savings_plan_Cat",
+          "Age_Tenure_Bucket_Greater_than_60_yrs" : "Age_Tenure_Bucket_Greater_than_60_yrs",
+          "CompleteRisk.sb_match" : "CompleteRisk.sb_match",
+          "Pregnancy_Complications_Cat" : "Pregnancy_Complications_Cat",
+          "Life_Cover_Cat" : "Life_Cover_Cat",
+          "Future_Insurability_Cat" : "Future_Insurability_Cat",
+          "Policy_Premiums_Cover_Cat" : "Policy_Premiums_Cover_Cat",
+          "Age_Tenure_Bucket_less_than_or_equal_to_25yrs" : "Age_Tenure_Bucket_less_than_or_equal_to_25yrs",
+          "Previous_Product_Bought" : "Previous_Product_Bought",
+          "Policy_Holder_dread_disease_Cat" : "Policy_Holder_dread_disease_Cat",
+          "Age_Tenure_Bucket_Between_36_45yrs" : "Age_Tenure_Bucket_Between_36_45yrs",
+          "Income_Disability_Cat" : "Income_Disability_Cat",
+          "Medical_Aid_Premiums_Cover_Cat" : "Medical_Aid_Premiums_Cover_Cat",
+          "Policy_Holder_Disablement_Cat" : "Policy_Holder_Disablement_Cat",
+          "CompleteRisk.prsn_mrtl_sts_dsc" : "CompleteRisk.prsn_mrtl_sts_dsc",
+          "Child_Education_Cover_Cat" : "Child_Education_Cover_Cat",
+          "Family_Funeral_Cat" : "Family_Funeral_Cat",
+          "Age_Tenure_Bucket_Between_46_60yrs" : "Age_Tenure_Bucket_Between_46_60yrs",
+          "CompleteRisk.prsn_gndr_dsc" : "CompleteRisk.prsn_gndr_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedPolicyPremiumPropensityScore_prediction",
+          "label" : "Predicted Policy Premiums Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT3" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT2" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedChildEducationPropensityScore"
+        },
+        "columnMapping" : {
+          "Age_Tenure_Bucket_Between_26_35yrs" : "Age_Tenure_Bucket_Between_26_35yrs",
+          "Medical_Cover_Cat" : "Medical_Cover_Cat",
+          "Savings_plan_Cat" : "Savings_plan_Cat",
+          "Age_Tenure_Bucket_Greater_than_60_yrs" : "Age_Tenure_Bucket_Greater_than_60_yrs",
+          "CompleteRisk.sb_match" : "CompleteRisk.sb_match",
+          "Pregnancy_Complications_Cat" : "Pregnancy_Complications_Cat",
+          "Life_Cover_Cat" : "Life_Cover_Cat",
+          "Future_Insurability_Cat" : "Future_Insurability_Cat",
+          "Policy_Premiums_Cover_Cat" : "Policy_Premiums_Cover_Cat",
+          "Age_Tenure_Bucket_less_than_or_equal_to_25yrs" : "Age_Tenure_Bucket_less_than_or_equal_to_25yrs",
+          "Previous_Product_Bought" : "Previous_Product_Bought",
+          "Policy_Holder_dread_disease_Cat" : "Policy_Holder_dread_disease_Cat",
+          "Age_Tenure_Bucket_Between_36_45yrs" : "Age_Tenure_Bucket_Between_36_45yrs",
+          "Income_Disability_Cat" : "Income_Disability_Cat",
+          "Medical_Aid_Premiums_Cover_Cat" : "Medical_Aid_Premiums_Cover_Cat",
+          "Policy_Holder_Disablement_Cat" : "Policy_Holder_Disablement_Cat",
+          "CompleteRisk.prsn_mrtl_sts_dsc" : "CompleteRisk.prsn_mrtl_sts_dsc",
+          "Family_Funeral_Cat" : "Family_Funeral_Cat",
+          "Child_Education_Cover_Cat" : "Child_Education_Cover_Cat",
+          "Age_Tenure_Bucket_Between_46_60yrs" : "Age_Tenure_Bucket_Between_46_60yrs",
+          "CompleteRisk.prsn_gndr_dsc" : "CompleteRisk.prsn_gndr_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedChildEducationPropensityScore_prediction",
+          "label" : "Predicted Child Education Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT4" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT3" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedPolicyHolderDreadDiseasePropensityScore"
+        },
+        "columnMapping" : {
+          "Medical_Cover_Cat" : "Medical_Cover_Cat",
+          "Age_Tenure_Bucket_Between_26_35yrs" : "Age_Tenure_Bucket_Between_26_35yrs",
+          "Savings_plan_Cat" : "Savings_plan_Cat",
+          "CompleteRisk.sb_match" : "CompleteRisk.sb_match",
+          "Age_Tenure_Bucket_Greater_than_60_yrs" : "Age_Tenure_Bucket_Greater_than_60_yrs",
+          "Pregnancy_Complications_Cat" : "Pregnancy_Complications_Cat",
+          "Life_Cover_Cat" : "Life_Cover_Cat",
+          "Future_Insurability_Cat" : "Future_Insurability_Cat",
+          "Age_Tenure_Bucket_less_than_or_equal_to_25yrs" : "Age_Tenure_Bucket_less_than_or_equal_to_25yrs",
+          "Policy_Premiums_Cover_Cat" : "Policy_Premiums_Cover_Cat",
+          "Previous_Product_Bought" : "Previous_Product_Bought",
+          "Policy_Holder_dread_disease_Cat" : "Policy_Holder_dread_disease_Cat",
+          "Income_Disability_Cat" : "Income_Disability_Cat",
+          "Medical_Aid_Premiums_Cover_Cat" : "Medical_Aid_Premiums_Cover_Cat",
+          "Age_Tenure_Bucket_Between_36_45yrs" : "Age_Tenure_Bucket_Between_36_45yrs",
+          "Policy_Holder_Disablement_Cat" : "Policy_Holder_Disablement_Cat",
+          "CompleteRisk.prsn_mrtl_sts_dsc" : "CompleteRisk.prsn_mrtl_sts_dsc",
+          "Child_Education_Cover_Cat" : "Child_Education_Cover_Cat",
+          "Family_Funeral_Cat" : "Family_Funeral_Cat",
+          "Age_Tenure_Bucket_Between_46_60yrs" : "Age_Tenure_Bucket_Between_46_60yrs",
+          "CompleteRisk.prsn_gndr_dsc" : "CompleteRisk.prsn_gndr_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction",
+          "label" : "Predicted Policy Holder Dread Disease Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DROP_FIELDS0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Product_Name", "owner_natl_id", "Previous_Product_Bought", "Savings_plan_Cat", "Policy_Holder_dread_disease_Cat", "Pregnancy_Complications_Cat", "Policy_Premiums_Cover_Cat", "Income_Disability_Cat", "Medical_Aid_Premiums_Cover_Cat", "Medical_Cover_Cat", "Age_Tenure_Bucket_Greater_than_60_yrs", "Child_Education_Cover_Cat", "Age_Tenure_Bucket_Between_26_35yrs", "Future_Insurability_Cat", "Age_Tenure_Bucket_Between_36_45yrs", "Age_Tenure_Bucket_Between_46_60yrs", "Life_Cover_Cat", "Post_Retirement_Cat", "Age_Tenure_Bucket_less_than_or_equal_to_25yrs", "Policy_Holder_Disablement_Cat", "Family_Funeral_Cat", "Others_Cat", "Joined_dat.prsn_pstl_cd_formula", "prsn_mrtl_sts_dsc", "sb_match", "Update0.AW_IdentificationNumber__pc", "Inception_date_updated", "cont_no1", "prsn_gndr_dsc", "Update0.Name", "Update0.Id", "Update0.OwnerId", "Update0.AW_RiskPropensityRecommendation__c", "AW_PredictedLifeCoverPropensityScore_prediction", "AW_PredictedPolicyHolderDisablementPropensityScore_prediction", "AW_PredictedPolicyPremiumPropensityScore_prediction", "AW_PredictedChildEducationPropensityScore_prediction", "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction", "percentile_LifeCover_api", "Percentile_ChildEducationCover_api", "Percentile_PolicyHolderDisablement_api", "Percentile_PolicyPremiumsCover_api", "Percentile_PolicyHolderDreadDisease_api" ]
+        }
+      }
+    },
+    "FILTER0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "FORMULA4" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Joined_dat.prsn_pstl_cd_formula",
+          "operator" : "EQUAL",
+          "operands" : [ "N" ]
+        } ]
+      }
+    },
+    "FORMULA1_copy0" : {
+      "action" : "formula",
+      "sources" : [ "DROP_FIELDS0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "ownerNationalIdCalculated_formula",
+          "label" : "Full Access Formula",
+          "formulaExpression" : "'FullAccess'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN2_copy0" : {
+      "action" : "join",
+      "sources" : [ "FORMULA1_copy0", "DROP_FIELDS1_copy0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "ownerNationalIdCalculated_formula" ],
+        "rightQualifier" : "FullAccessMembers",
+        "rightKeys" : [ "Id_formula" ]
+      }
+    },
+    "LOAD_DATASET6_copy0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "DeveloperName" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Group",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Group"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FILTER1_copy0" : {
+      "action" : "filter",
+      "sources" : [ "JOIN4_copy0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "DeveloperName",
+          "operator" : "EQUAL",
+          "operands" : [ "AW_PredictionModelFullAccess" ]
+        } ]
+      }
+    },
+    "FORMULA2_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FILTER1_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Id_formula",
+          "label" : "Full Access Formula1",
+          "formulaExpression" : "'FullAccess'",
+          "precision" : 50,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS1_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA2_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "DeveloperName", "GroupMember.Id", "Id", "Name" ]
+        }
+      }
+    },
+    "JOIN4_copy0" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET6_copy0", "LOAD_DATASET7_copy0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "MULTI_VALUE_LOOKUP",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "GroupMember",
+        "rightKeys" : [ "GroupId" ]
+      }
+    },
+    "LOAD_DATASET7_copy0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "GroupId", "UserOrGroupId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "GroupMember",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "GroupMember"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "DROP_FIELDS6" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Update0.Id", "Update0.AW_RiskPropensityRecommendation__c", "Percentile_ChildEducationCover_api", "percentile_LifeCover_api", "Percentile_PolicyHolderDisablement_api", "Percentile_PolicyPremiumsCover_api", "Percentile_PolicyHolderDreadDisease_api" ]
+        }
+      }
+    },
+    "Ranking_copy0_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "APPEND7_copy0_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "owner_natl_id" ],
+        "orderBy" : [ {
+          "fieldName" : "Score_api",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Rank_api",
+          "label" : "Rank",
+          "formulaExpression" : "rank()",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "0"
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES1_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_Annuity_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_text_LifeCover",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES27" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES1_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "percentile_LifeCover_api",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "DROP_FIELDS8" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES27" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedLifeCoverPropensityScore_prediction" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES2_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_bond_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_PHDread_api",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES28" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES2_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Percentile_PolicyHolderDreadDisease_api",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "DROP_FIELDS9" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES28" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES4_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_RA_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_PHDisab_api",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES29" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES4_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Percentile_PolicyHolderDisablement_api",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "DROP_FIELDS10" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES29" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedPolicyHolderDisablementPropensityScore_prediction" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES6_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_investment_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_ChildEdu_api",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES30" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES6_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Percentile_ChildEducationCover_api",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES8_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_Education_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_PolPrem_api",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES31" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES8_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Percentile_PolicyPremiumsCover_api",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "DROP_FIELDS11" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES31" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedPolicyPremiumPropensityScore_prediction" ]
+        }
+      }
+    },
+    "Subset_Input_Scores_data_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA14_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "owner_natl_id", "AW_PredictedLifeCoverPropensityScore_prediction", "AW_PredictedPolicyHolderDisablementPropensityScore_prediction", "AW_PredictedPolicyPremiumPropensityScore_prediction", "AW_PredictedChildEducationPropensityScore_prediction", "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction", "percentile_LifeCover_api", "Percentile_ChildEducationCover_api", "Percentile_PolicyHolderDisablement_api", "Percentile_PolicyPremiumsCover_api", "Percentile_PolicyHolderDreadDisease_api" ]
+        }
+      }
+    },
+    "Add_fields_1_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Subset_Input_Scores_data_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_text_LifeCover",
+          "label" : "Add_text_LifeCover",
+          "formulaExpression" : "'LifeCover'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Add_fields_2_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_1_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_PHDisab_api",
+          "label" : "Add_field_PHDisab",
+          "formulaExpression" : "'Disability'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Add_fields_3_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_2_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_PHDread_api",
+          "label" : "Add_field_PHDread",
+          "formulaExpression" : "'Dread Disease'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Add_fields_4_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_3_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_PolPrem_api",
+          "label" : "Add_field_PolPrem",
+          "formulaExpression" : "'Premium'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Add_fields_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_4_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_ChildEdu_api",
+          "label" : "Add_field_ChildEdu",
+          "formulaExpression" : "'Child Education'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "Subset_Education_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Add_field_PolPrem_api", "owner_natl_id", "AW_PredictedPolicyPremiumPropensityScore_prediction", "Percentile_PolicyPremiumsCover_api" ]
+        }
+      }
+    },
+    "Subset_Annuity_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "owner_natl_id", "Add_text_LifeCover", "AW_PredictedLifeCoverPropensityScore_prediction", "percentile_LifeCover_api" ]
+        }
+      }
+    },
+    "Subset_RA_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Add_field_PHDisab_api", "owner_natl_id", "AW_PredictedPolicyHolderDisablementPropensityScore_prediction", "Percentile_PolicyHolderDisablement_api" ]
+        }
+      }
+    },
+    "Subset_investment_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Add_field_ChildEdu_api", "owner_natl_id", "Percentile_ChildEducationCover_api", "AW_PredictedChildEducationPropensityScore_prediction" ]
+        }
+      }
+    },
+    "Subset_bond_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Add_field_PHDread_api", "owner_natl_id", "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction", "Percentile_PolicyHolderDreadDisease_api" ]
+        }
+      }
+    },
+    "APPEND4_copy0_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "APPEND6_copy0_copy0", "DROP_FIELDS10" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "APPEND5_copy0_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "EDIT_ATTRIBUTES30", "APPEND4_copy0_copy0" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "APPEND6_copy0_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "DROP_FIELDS9", "DROP_FIELDS8" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "APPEND7_copy0_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "DROP_FIELDS11", "APPEND5_copy0_copy0" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "FILTER0_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "FORMULA5" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Rank_api",
+          "operator" : "EQUAL",
+          "operands" : [ "1", "2" ]
+        } ]
+      }
+    },
+    "DROP_FIELDS0_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER0_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "owner_natl_id", "Risk_ranking_text_api", "Rank_api" ]
+        }
+      }
+    },
+    "FORMULA1_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "DROP_FIELDS0_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Rank_Label_api",
+          "label" : "Rank_Label",
+          "formulaExpression" : "concat('Rank', Rank_api)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS7" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA1_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank_api" ]
+        }
+      }
+    },
+    "FILTER1_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "DROP_FIELDS7" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Rank_Label_api",
+          "operator" : "EQUAL",
+          "operands" : [ "Rank1" ]
+        } ]
+      }
+    },
+    "FILTER2_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "DROP_FIELDS7" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Rank_Label_api",
+          "operator" : "EQUAL",
+          "operands" : [ "Rank2" ]
+        } ]
+      }
+    },
+    "DROP_FIELDS2_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER2_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank_Label_api" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES21_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS2_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Risk_ranking_text_api",
+          "newProperties" : {
+            "label" : "Rank2",
+            "name" : "Rank2_api"
+          }
+        } ]
+      }
+    },
+    "DROP_FIELDS3_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER1_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank_Label_api" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES20_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS3_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Risk_ranking_text_api",
+          "newProperties" : {
+            "label" : "Rank1",
+            "name" : "Rank1_api"
+          }
+        } ]
+      }
+    },
+    "JOIN0_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "join",
+      "sources" : [ "EDIT_ATTRIBUTES21_copy0", "EDIT_ATTRIBUTES20_copy0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "owner_natl_id" ],
+        "rightQualifier" : "Transform3",
+        "rightKeys" : [ "owner_natl_id" ]
+      }
+    },
+    "FORMULA2_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "JOIN0_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Risk_Propensity_Recommendation",
+          "label" : "Risk_Propensity_Recommendation",
+          "formulaExpression" : "concat(\"Transform3.Rank1_api\", ' || ',Rank2_api)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS5_copy0_copy0_copy0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA2_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "owner_natl_id", "Risk_Propensity_Recommendation" ]
+        }
+      }
+    },
+    "TO_DIMENSION4_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "Ranking_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Rank_api_to_dimension",
+          "newProperties" : {
+            "name" : "Rank_api"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank_api" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Rank_api",
+          "newProperties" : {
+            "label" : "Rank",
+            "name" : "Rank_api_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "FORMULA5" : {
+      "action" : "formula",
+      "sources" : [ "TO_DIMENSION5" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Risk_ranking_text_api",
+          "label" : "Risk_ranking_text",
+          "formulaExpression" : "concat('(',Rank_api , ') ', Model_Name,' - ' ,Score_api,'%')",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "TO_DIMENSION5" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION4_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Score_api_to_dimension",
+          "newProperties" : {
+            "name" : "Score_api"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Score_api" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Score_api",
+          "newProperties" : {
+            "label" : "Score_api",
+            "name" : "Score_api_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "LOAD_DATASET9" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "AW_PredictionLifeCoverModelStatus__c", "AW_PredictionPHDisablementModelStatus__c", "AW_PredictionPHDreadDiseaseModelStatus__c", "AW_PredictionChildEducationModelStatus__c", "AW_PredictionPolicyPremiumModelStatus__c", "Id", "Name", "OwnerId", "AW_RiskPropensityRecommendation__c", "AW_IdentificationNumber__pc" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Account",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Account"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "UPDATE0" : {
+      "action" : "update",
+      "sources" : [ "LOAD_DATASET9", "DROP_FIELDS5_copy0_copy0_copy0_copy0_copy0" ],
+      "parameters" : {
+        "leftKeys" : [ "AW_IdentificationNumber__pc" ],
+        "rightKeys" : [ "owner_natl_id" ],
+        "updateColumns" : {
+          "AW_RiskPropensityRecommendation__c" : "Risk_Propensity_Recommendation"
+        }
+      }
+    },
+    "JOIN5" : {
+      "action" : "join",
+      "sources" : [ "FORMULA14_copy0", "UPDATE0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "RIGHT_OUTER",
+        "leftKeys" : [ "owner_natl_id" ],
+        "rightQualifier" : "Update0",
+        "rightKeys" : [ "AW_IdentificationNumber__pc" ]
+      }
+    },
+    "FORMULA4" : {
+      "action" : "formula",
+      "sources" : [ "JOIN5" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Joined_dat.prsn_pstl_cd_formula",
+          "label" : "Check For Null",
+          "formulaExpression" : "case \r\n\twhen AW_PredictedLifeCoverPropensityScore_prediction is null and AW_PredictedPolicyHolderDisablementPropensityScore_prediction is null and AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction is null and AW_PredictedPolicyPremiumPropensityScore_prediction is null and AW_PredictedChildEducationPropensityScore_prediction is null\r\n\tthen \r\n    'Y'\r\n\telse\r\n\t'N'\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "OUTPUT4" : {
+      "action" : "save",
+      "sources" : [ "JOIN2_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Risk Account Propensity Model Result Data",
+          "name" : "AW_RiskAccountPropensityModelResultData",
+          "folderName" : "SharedApp"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET10" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Policy_Holder_dread_disease_Cat", "Child_Education_Cover_Cat", "Policy_Premiums_Cover_Cat", "CompleteRisk.Catchment_Area_y", "CompleteRisk.Catchment_Area_x", "Child_Education_Cover_Cat", "Policy_Holder_Disablement_Cat", "Policy_Premiums_Cover_Cat", "Life_Cover_Cat", "Child_Education_Cover_TV5", "Policy_Holder_dread_disease_Cat", "Child_Education_Cover_Past", "Life_Cover_Cat", "Policy_Holder_Disablement_Cat", "Savings_plan_Cat", "Pregnancy_Complications_Cat", "Income_Disability_Cat", "Medical_Aid_Premiums_Cover_Cat", "Medical_Cover_Cat", "Pregnancy_Complications_TV12", "Medical_Cover_Cat", "Pregnancy_Complications_Past", "Pregnancy_Complications_Cat", "Savings_plan_Cat", "Post_Retirement_Cat", "Future_Insurability_Cat", "Medical_Aid_Premiums_Cover_Cat", "Duplicate_Need_flag", "Future_Insurability_Cat", "Income_Disability_Cat", "Others_Cat", "Post_Retirement_Cat", "Family_Funeral_Cat", "Family_Funeral_Cat", "Others_Cat", "CompleteRisk.prsn_mrkt_cnsnt", "CompleteRisk.prsn_gndr_dsc", "CompleteRisk.channel", "Age_Individual_api", "Policy_Holder_Dread_Disease_TV1", "owner_natl_id", "Policy_Holder_dread_disease_Past", "Policy_Premiums_Cover_TV8", "Life_Cover_Past", "Previous_Product_Bought", "CompleteRisk.prsn_mrtl_sts_dsc", "all_new", "Policy_Holder_Disablement_TV3", "Life_Cover_TV4", "Policy_Holder_Disablement_Past", "CompleteRisk.sb_match", "Policy_Premiums_Cover_Past", "Income_Disability_TV14", "Family_Funeral_Past", "Income_Disability_Past", "Savings_plan_Past", "Savings_plan_TV10", "Post_Retirement_TV15", "Others_TV7", "Post_Retirement_Past", "Age_Tenure_Bucket_Greater_than_60_yrs", "Medical_Cover_TV6", "Age_Tenure_Bucket_Between_26_35yrs", "Family_Funeral_TV9", "Others_Past", "Medical_Aid_Premiums_Cover_TV13", "Age_Tenure_Bucket_Between_36_45yrs", "Age_Tenure_Bucket_Between_46_60yrs", "Medical_Aid_Premiums_Cover_Past", "Age_Tenure_Bucket_less_than_or_equal_to_25yrs", "Future_Insurability_TV11", "Medical_Cover_Past", "Future_Insurability_Past" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Risk Scoring Input Data",
+          "name" : "AW_RiskScoringInputData"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN6" : {
+      "action" : "join",
+      "sources" : [ "DISCOVERY_PREDICT4", "DROP_FIELDS5_copy0_copy0_copy0_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "owner_natl_id" ],
+        "rightQualifier" : "Transform4",
+        "rightKeys" : [ "owner_natl_id" ]
+      }
+    },
+    "OUTPUT6" : {
+      "action" : "save",
+      "sources" : [ "JOIN6" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Output Risk Propensity Scores",
+          "name" : "AW_OutputRiskPropensityScores",
+          "folderName" : "SharedApp"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "OUTPUT7" : {
+      "action" : "outputExternal",
+      "sources" : [ "DROP_FIELDS6" ],
+      "parameters" : {
+        "connectionName" : "AW_AccountPropensityModelConnection",
+        "object" : "Account",
+        "operation" : "update",
+        "externalIdFieldName" : "",
+        "hyperFileName" : "",
+        "fieldsMapping" : [ {
+          "sourceField" : "percentile_LifeCover_api",
+          "targetField" : "AW_PredictionLifeCoverModelScore__c"
+        }, {
+          "sourceField" : "Percentile_PolicyHolderDisablement_api",
+          "targetField" : "AW_PredictionPHDisablementModelScore__c"
+        }, {
+          "sourceField" : "Percentile_PolicyPremiumsCover_api",
+          "targetField" : "AW_PredictionPolicyPremiumModelScore__c"
+        }, {
+          "sourceField" : "Percentile_ChildEducationCover_api",
+          "targetField" : "AW_PredictionChildEducationModelScore__c"
+        }, {
+          "sourceField" : "Percentile_PolicyHolderDreadDisease_api",
+          "targetField" : "AW_PredictionPHDreadDiseaseScore__c"
+        }, {
+          "sourceField" : "Update0.Id",
+          "targetField" : "Id"
+        }, {
+          "sourceField" : "Update0.AW_RiskPropensityRecommendation__c",
+          "targetField" : "AW_RiskPropensityRecommendation__c"
+        } ],
+        "connectorType" : "SALESFORCE_OUTPUT"
+      }
+    },
+    "FORMULA0_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "DISCOVERY_PREDICT4" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedLifeCoverPropensityScore_prediction",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "AW_PredictedLifeCoverPropensityScore_prediction_formula",
+          "label" : "Rank_LifeCover",
+          "formulaExpression" : "dense_rank()",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA2_copy1" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA11_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedLifeCoverPropensityScore_prediction_formula",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "max_rank_LifeCover_api",
+          "label" : "Max_rank_LifeCover",
+          "formulaExpression" : "last_value(AW_PredictedLifeCoverPropensityScore_prediction_formula)",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA3_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA2_copy1" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "percentile_LifeCover_api",
+          "label" : "Percentile_LifeCover",
+          "formulaExpression" : "(max_rank_LifeCover_api-AW_PredictedLifeCoverPropensityScore_prediction_formula+1)*100/max_rank_LifeCover_api",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA4_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA0_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedChildEducationPropensityScore_prediction",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "AW_PredictedChildEducationPropensityScore_prediction_formula",
+          "label" : "Rank_ChildEducationCover",
+          "formulaExpression" : "dense_rank()",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA5_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA8_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedPolicyHolderDisablementPropensityScore_prediction",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "AW_PredictedPolicyHolderDisablementPropensityScore_prediction_formula",
+          "label" : "Rank_PolicyHolderDisablement",
+          "formulaExpression" : "dense_rank()",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA6_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA3_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction_formula",
+          "label" : "Rank_PolicyHolderDreadDisease",
+          "formulaExpression" : "dense_rank()",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA7_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA9_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedPolicyPremiumPropensityScore_prediction",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "AW_PredictedPolicyPremiumPropensityScore_prediction_formula",
+          "label" : "Rank_PolicyPremiums",
+          "formulaExpression" : "dense_rank()",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA8_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA4_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedChildEducationPropensityScore_prediction_formula",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Max_rank_ChildEducationCover_api",
+          "label" : "Max_rank_ChildEducationCover",
+          "formulaExpression" : "last_value(AW_PredictedChildEducationPropensityScore_prediction_formula)",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA9_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA5_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedPolicyHolderDisablementPropensityScore_prediction_formula",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Max_Rank_PolicyHolderDisablement_api",
+          "label" : "Max_Rank_PolicyHolderDisablement",
+          "formulaExpression" : "last_value(AW_PredictedPolicyHolderDisablementPropensityScore_prediction_formula)",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA10_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA6_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction_formula",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Max_Rank_PolicyHolderDreadDisease_api",
+          "label" : "Max_Rank_PolicyHolderDreadDisease",
+          "formulaExpression" : "last_value(AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction_formula)",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA11_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA7_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "all_new" ],
+        "orderBy" : [ {
+          "fieldName" : "AW_PredictedPolicyPremiumPropensityScore_prediction_formula",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Max_Rank_PolicyPremiums_api",
+          "label" : "Max_Rank_PolicyPremiums",
+          "formulaExpression" : "last_value(AW_PredictedPolicyPremiumPropensityScore_prediction_formula)",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA12_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA10_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Percentile_ChildEducationCover_api",
+          "label" : "Percentile_ChildEducationCover",
+          "formulaExpression" : "(Max_rank_ChildEducationCover_api- AW_PredictedChildEducationPropensityScore_prediction_formula+1)*100/Max_rank_ChildEducationCover_api",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA13_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA12_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Percentile_PolicyHolderDisablement_api",
+          "label" : "Percentile_PolicyHolderDisablement",
+          "formulaExpression" : "(Max_Rank_PolicyHolderDisablement_api-AW_PredictedPolicyHolderDisablementPropensityScore_prediction_formula +1)*100/Max_Rank_PolicyHolderDisablement_api",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA14_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA15_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Percentile_PolicyHolderDreadDisease_api",
+          "label" : "Percentile_PolicyHolderDreadDisease",
+          "formulaExpression" : "(Max_Rank_PolicyHolderDreadDisease_api-AW_PredictedPolicyHolderDreadDiseasePropensityScore_prediction_formula+1)*100/Max_Rank_PolicyHolderDreadDisease_api",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA15_copy0" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA13_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Percentile_PolicyPremiumsCover_api",
+          "label" : "Percentile_PolicyPremiumsCover",
+          "formulaExpression" : "(Max_Rank_PolicyPremiums_api-AW_PredictedPolicyPremiumPropensityScore_prediction_formula+1)*100/Max_Rank_PolicyPremiums_api",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "DISCOVERY_PREDICT0" : {
+        "label" : "Life Cover Prediction",
+        "description" : "This node contain Life cover predication score",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 112,
+        "left" : 252
+      },
+      "DISCOVERY_PREDICT1" : {
+        "label" : "Policy holder disablement prediction",
+        "description" : "This node contain Policy holder disablement  predication score",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 112,
+        "left" : 392
+      },
+      "DISCOVERY_PREDICT2" : {
+        "label" : "Policy premiums prediction",
+        "description" : "This node contain Policy Premium predication score",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 112,
+        "left" : 532
+      },
+      "DISCOVERY_PREDICT3" : {
+        "label" : "Child education prediction",
+        "description" : "This node contain child education  predication score",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 112,
+        "left" : 672
+      },
+      "DISCOVERY_PREDICT4" : {
+        "label" : "Policy holder dread disease prediction",
+        "description" : "This node contain Policy holder dread disease predication score",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 112,
+        "left" : 812
+      },
+      "TRANSFORM0_copy0" : {
+        "label" : "Transform",
+        "description" : "This node drop unwanted fields",
+        "type" : "TRANSFORM",
+        "top" : 252.5,
+        "left" : 1372.5,
+        "graph" : {
+          "DROP_FIELDS0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "FILTER0_copy0" : {
+        "label" : "Filter",
+        "description" : "This node filtered Null values",
+        "type" : "FILTER",
+        "top" : 532,
+        "left" : 1232
+      },
+      "TRANSFORM2_copy0" : {
+        "label" : "Transform Copy",
+        "description" : "This nodes create a field with 'full access' value and each row",
+        "type" : "TRANSFORM",
+        "top" : 252.5,
+        "left" : 1512.5,
+        "graph" : {
+          "FORMULA1_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "JOIN2_copy0" : {
+        "label" : "Join Copy",
+        "description" : "This node does a left join using owner national id and full access formula field",
+        "type" : "JOIN",
+        "top" : 252.5,
+        "left" : 1652.5
+      },
+      "LOAD_DATASET6_copy0" : {
+        "label" : "Group",
+        "description" : "This node contains Group standard object fields",
+        "type" : "LOAD_DATASET",
+        "top" : 252.5,
+        "left" : 1092.5,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "FILTER1_copy0" : {
+        "label" : "Filter Copy",
+        "description" : "This nodes check for predictmodelfullaccess",
+        "type" : "FILTER",
+        "top" : 112.5,
+        "left" : 1372.7
+      },
+      "TRANSFORM3_copy0" : {
+        "label" : "Transform Copy1",
+        "description" : "This nodes check for user with access",
+        "type" : "TRANSFORM",
+        "top" : 112.5,
+        "left" : 1512.7,
+        "graph" : {
+          "FORMULA2_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "DROP_FIELDS1_copy0" : null
+        },
+        "connectors" : [ {
+          "source" : "FORMULA2_copy0",
+          "target" : "DROP_FIELDS1_copy0"
+        } ]
+      },
+      "JOIN4_copy0" : {
+        "label" : "Join Copy1",
+        "type" : "JOIN",
+        "top" : 252.5,
+        "left" : 1232.5
+      },
+      "LOAD_DATASET7_copy0" : {
+        "label" : "GroupMember",
+        "description" : "This node contains Group member standard object fields",
+        "type" : "LOAD_DATASET",
+        "top" : 112.5,
+        "left" : 1092.7,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM4_copy0" : {
+        "label" : "Transform Copy2",
+        "description" : "This node removed unwanted fields",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 1512,
+        "graph" : {
+          "DROP_FIELDS6" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM0_copy0_copy0" : {
+        "label" : "Ranking",
+        "description" : "This node creates rank field",
+        "type" : "TRANSFORM",
+        "top" : 812.0999999999999,
+        "left" : 1232,
+        "graph" : {
+          "Ranking_copy0_copy0" : {
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM0_copy0_copy0_copy0" : {
+        "label" : "Transform 0",
+        "description" : "This node transform lifecover field value as Model name",
+        "type" : "TRANSFORM",
+        "top" : 672,
+        "left" : 532,
+        "graph" : {
+          "EDIT_ATTRIBUTES1_copy0_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES27" : {
+            "label" : "Edit Attributes"
+          },
+          "DROP_FIELDS8" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES1_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES27"
+        }, {
+          "source" : "EDIT_ATTRIBUTES27",
+          "target" : "DROP_FIELDS8"
+        } ]
+      },
+      "TRANSFORM1_copy0_copy0_copy0" : {
+        "label" : "Transform 1",
+        "description" : "This node transform PHDiread field value as Model name",
+        "type" : "TRANSFORM",
+        "top" : 812,
+        "left" : 532,
+        "graph" : {
+          "EDIT_ATTRIBUTES2_copy0_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES28" : {
+            "label" : "Edit Attributes"
+          },
+          "DROP_FIELDS9" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES2_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES28"
+        }, {
+          "source" : "EDIT_ATTRIBUTES28",
+          "target" : "DROP_FIELDS9"
+        } ]
+      },
+      "TRANSFORM2_copy0_copy0_copy0" : {
+        "label" : "Transform 2",
+        "description" : "This node transform PHDisab field value as Model name",
+        "type" : "TRANSFORM",
+        "top" : 952,
+        "left" : 532.0999999999999,
+        "graph" : {
+          "EDIT_ATTRIBUTES4_copy0_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES29" : {
+            "label" : "Edit Attributes"
+          },
+          "DROP_FIELDS10" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES4_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES29"
+        }, {
+          "source" : "EDIT_ATTRIBUTES29",
+          "target" : "DROP_FIELDS10"
+        } ]
+      },
+      "TRANSFORM3_copy0_copy0_copy0" : {
+        "label" : "Transform 3",
+        "description" : "This node transform ChildEdu field value as Model name",
+        "type" : "TRANSFORM",
+        "top" : 1092,
+        "left" : 532.0999999999999,
+        "graph" : {
+          "EDIT_ATTRIBUTES6_copy0_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES30" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES6_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES30"
+        } ]
+      },
+      "TRANSFORM4_copy0_copy0_copy0" : {
+        "label" : "Transform 4",
+        "description" : "This node transform PolPrem field value as Model name",
+        "type" : "TRANSFORM",
+        "top" : 1232,
+        "left" : 532.0999999999999,
+        "graph" : {
+          "EDIT_ATTRIBUTES8_copy0_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES31" : {
+            "label" : "Edit Attributes"
+          },
+          "DROP_FIELDS11" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES8_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES31"
+        }, {
+          "source" : "EDIT_ATTRIBUTES31",
+          "target" : "DROP_FIELDS11"
+        } ]
+      },
+      "TRANSFORM0_copy1_copy0_copy0" : {
+        "label" : "Subset_Input_Scores_data",
+        "description" : "This node only select predication scores",
+        "type" : "TRANSFORM",
+        "top" : 672,
+        "left" : 112,
+        "graph" : {
+          "Subset_Input_Scores_data_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM1_copy1_copy0_copy0" : {
+        "label" : "Add_fields",
+        "description" : "This nodes calculates predication score from target variable",
+        "type" : "TRANSFORM",
+        "top" : 672,
+        "left" : 252,
+        "graph" : {
+          "Add_fields_1_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Add_fields_2_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Add_fields_3_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Add_fields_4_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "Add_fields_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ {
+          "source" : "Add_fields_1_copy0_copy0_copy0",
+          "target" : "Add_fields_2_copy0_copy0_copy0"
+        }, {
+          "source" : "Add_fields_2_copy0_copy0_copy0",
+          "target" : "Add_fields_3_copy0_copy0_copy0"
+        }, {
+          "source" : "Add_fields_3_copy0_copy0_copy0",
+          "target" : "Add_fields_4_copy0_copy0_copy0"
+        }, {
+          "source" : "Add_fields_4_copy0_copy0_copy0",
+          "target" : "Add_fields_copy0_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM2_copy1_copy0_copy0" : {
+        "label" : "Subset_PolPrem",
+        "description" : "This node keeps only PolPrem value rows",
+        "type" : "TRANSFORM",
+        "top" : 1232,
+        "left" : 392,
+        "graph" : {
+          "Subset_Education_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM3_copy1_copy0_copy0" : {
+        "label" : "Subset_LifeCover",
+        "description" : "This node keeps only life cover rows",
+        "type" : "TRANSFORM",
+        "top" : 672,
+        "left" : 392,
+        "graph" : {
+          "Subset_Annuity_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM4_copy1_copy0_copy0" : {
+        "label" : "Subset_PHDisab",
+        "description" : "This node keeps only PHDisab value rows",
+        "type" : "TRANSFORM",
+        "top" : 952,
+        "left" : 392,
+        "graph" : {
+          "Subset_RA_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM5_copy0_copy0_copy0" : {
+        "label" : "Subset_ChildEdu",
+        "description" : "this node keep only ChildEdu value rows",
+        "type" : "TRANSFORM",
+        "top" : 1092,
+        "left" : 392,
+        "graph" : {
+          "Subset_investment_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM6_copy0_copy0_copy0" : {
+        "label" : "Subset_PHDread",
+        "description" : "this node keep only PHDread value rows",
+        "type" : "TRANSFORM",
+        "top" : 812,
+        "left" : 392,
+        "graph" : {
+          "Subset_bond_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "APPEND4_copy0_copy0" : {
+        "label" : "Append 1",
+        "description" : "This node append Policy Holder Disablement  row wise",
+        "type" : "APPEND",
+        "top" : 811.9,
+        "left" : 812
+      },
+      "APPEND5_copy0_copy0" : {
+        "label" : "Append 5",
+        "description" : "This node append Child Education row wise",
+        "type" : "APPEND",
+        "top" : 811.9,
+        "left" : 952
+      },
+      "APPEND6_copy0_copy0" : {
+        "label" : "Append 6",
+        "description" : "This node append Life cover and Policy Holder dread disease row-wise",
+        "type" : "APPEND",
+        "top" : 811.9,
+        "left" : 672
+      },
+      "APPEND7_copy0_copy0" : {
+        "label" : "Append 7",
+        "description" : "This node append Policy premium row wise",
+        "type" : "APPEND",
+        "top" : 811.9,
+        "left" : 1092
+      },
+      "FILTER0_copy0_copy0_copy0_copy0_copy0" : {
+        "label" : "Filter top 2 recommendation",
+        "description" : "This node filter top two rank",
+        "type" : "FILTER",
+        "top" : 952.2,
+        "left" : 1512
+      },
+      "TRANSFORM1_copy2_copy0_copy0_copy0_copy0" : {
+        "label" : "Transform - Text concatenation Part 2",
+        "description" : "This node concatenate top two rank as one text field",
+        "type" : "TRANSFORM",
+        "top" : 952.2,
+        "left" : 1652,
+        "graph" : {
+          "DROP_FIELDS0_copy0_copy0_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "FORMULA1_copy0_copy0_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "DROP_FIELDS7" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "DROP_FIELDS0_copy0_copy0_copy0_copy0_copy0",
+          "target" : "FORMULA1_copy0_copy0_copy0_copy0_copy0"
+        }, {
+          "source" : "FORMULA1_copy0_copy0_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS7"
+        } ]
+      },
+      "FILTER1_copy0_copy0_copy0_copy0_copy0" : {
+        "label" : "Filter Top rank",
+        "description" : "This node puts filter on 1st rank",
+        "type" : "FILTER",
+        "top" : 952.2,
+        "left" : 1792
+      },
+      "FILTER2_copy0_copy0_copy0_copy0_copy0" : {
+        "label" : "Filter second rank",
+        "description" : "This node filter 2nd rank",
+        "type" : "FILTER",
+        "top" : 1092.2,
+        "left" : 1792
+      },
+      "TRANSFORM2_copy2_copy0_copy0_copy0_copy0" : {
+        "label" : "Transform labels part 2",
+        "description" : "This node rename 2nd rank field as Rank2",
+        "type" : "TRANSFORM",
+        "top" : 1092.2,
+        "left" : 1932,
+        "graph" : {
+          "DROP_FIELDS2_copy0_copy0_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "EDIT_ATTRIBUTES21_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "DROP_FIELDS2_copy0_copy0_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES21_copy0"
+        } ]
+      },
+      "TRANSFORM3_copy2_copy0_copy0_copy0_copy0" : {
+        "label" : "Transform labels part 1",
+        "description" : "This node rename 1st rank field as Rank2",
+        "type" : "TRANSFORM",
+        "top" : 952.2,
+        "left" : 1932,
+        "graph" : {
+          "DROP_FIELDS3_copy0_copy0_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "EDIT_ATTRIBUTES20_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "DROP_FIELDS3_copy0_copy0_copy0_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES20_copy0"
+        } ]
+      },
+      "JOIN0_copy0_copy0_copy0_copy0_copy0" : {
+        "label" : "Join 0",
+        "description" : "This node lookup on the basis owner national id",
+        "type" : "JOIN",
+        "top" : 1092.2,
+        "left" : 2072
+      },
+      "TRANSFORM4_copy2_copy0_copy0_copy0_copy0" : {
+        "label" : "Text Concatenation Part 3",
+        "description" : "This node rename concatenated rank field as Risk Propensity Recommendation",
+        "type" : "TRANSFORM",
+        "top" : 1092.2,
+        "left" : 2212,
+        "graph" : {
+          "FORMULA2_copy0_copy0_copy0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "DROP_FIELDS5_copy0_copy0_copy0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA2_copy0_copy0_copy0_copy0_copy0",
+          "target" : "DROP_FIELDS5_copy0_copy0_copy0_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM7_copy0" : {
+        "label" : "Text Concatenation Part 1",
+        "description" : "This node convert rank field in text",
+        "type" : "TRANSFORM",
+        "top" : 812.2,
+        "left" : 1372,
+        "graph" : {
+          "TO_DIMENSION4_copy0" : {
+            "label" : "To Text"
+          },
+          "FORMULA5" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "TO_DIMENSION5" : {
+            "label" : "To Text"
+          }
+        },
+        "connectors" : [ {
+          "source" : "TO_DIMENSION5",
+          "target" : "FORMULA5"
+        }, {
+          "source" : "TO_DIMENSION4_copy0",
+          "target" : "TO_DIMENSION5"
+        } ]
+      },
+      "LOAD_DATASET9" : {
+        "label" : "Account",
+        "description" : "This node contains Account standard object fields",
+        "type" : "LOAD_DATASET",
+        "top" : 812.1,
+        "left" : 1792.1,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "UPDATE0" : {
+        "label" : "Update recommendation in Account Object field",
+        "description" : "This node update account on the basis owner national id & identification number from account object",
+        "type" : "UPDATE",
+        "top" : 1092,
+        "left" : 2352
+      },
+      "JOIN5" : {
+        "label" : "Join 5",
+        "description" : "This node lookup on the basis owner national id & identification number from account object",
+        "type" : "JOIN",
+        "top" : 531.8,
+        "left" : 952
+      },
+      "TRANSFORM8" : {
+        "label" : "Transform 8",
+        "description" : "This nodes keep only score valued rows",
+        "type" : "TRANSFORM",
+        "top" : 393,
+        "left" : 1092,
+        "graph" : {
+          "FORMULA4" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT4" : {
+        "label" : "Output Data for Updated Account owners",
+        "description" : "This node creates a output dataset saves in Einstein Analytics",
+        "type" : "OUTPUT",
+        "top" : 252,
+        "left" : 1792
+      },
+      "LOAD_DATASET10" : {
+        "label" : "Risk Scoring Input Data",
+        "description" : "This node contain input dataset with scoring values",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN6" : {
+        "label" : "Join 6",
+        "description" : "This node lookup on the basis owner national id",
+        "type" : "JOIN",
+        "top" : 1232.2,
+        "left" : 2352
+      },
+      "OUTPUT6" : {
+        "label" : "Owners with Propensity scores and Recommendation",
+        "description" : "This node creates a output dataset saves in Einstein Analytics",
+        "type" : "OUTPUT",
+        "top" : 1232,
+        "left" : 2492
+      },
+      "OUTPUT7" : {
+        "label" : "Output Connection to Account object",
+        "description" : "This node update Risk Propensity recommendation field in account object using output connection",
+        "type" : "OUTPUT",
+        "top" : 532,
+        "left" : 1652
+      },
+      "TRANSFORM1_copy0" : {
+        "label" : "Percentile Calculation for Needs",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 251.8,
+        "graph" : {
+          "FORMULA0_copy0" : {
+            "label" : "Rank_LifeCover"
+          },
+          "FORMULA2_copy1" : {
+            "label" : "Max_Rank_LifeCover"
+          },
+          "FORMULA3_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Percentile_LifeCover"
+          },
+          "FORMULA4_copy0" : {
+            "label" : "Rank_ChildEducationCover"
+          },
+          "FORMULA5_copy0" : {
+            "label" : "Rank_PolicyHolderDisablement"
+          },
+          "FORMULA6_copy0" : {
+            "label" : "Rank_PolicyHolderDreadDisease"
+          },
+          "FORMULA7_copy0" : {
+            "label" : "Rank_PolicyPremiums"
+          },
+          "FORMULA8_copy0" : {
+            "label" : "Max_rank_ChildEducationCover"
+          },
+          "FORMULA9_copy0" : {
+            "label" : "Max_Rank_PolicyHolderDisablement"
+          },
+          "FORMULA10_copy0" : {
+            "label" : "Max_Rank_PolicyHolderDreadDisease"
+          },
+          "FORMULA11_copy0" : {
+            "label" : "Max_Rank_PolicyPremiumsCover"
+          },
+          "FORMULA12_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Percentile_ChildEducationCover"
+          },
+          "FORMULA13_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Percentile_PolicyHolderDisablement"
+          },
+          "FORMULA14_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Percentile_PolicyHolderDreadDisease"
+          },
+          "FORMULA15_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Percentile_PolicyPremiumsCover"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA2_copy1",
+          "target" : "FORMULA3_copy0"
+        }, {
+          "source" : "FORMULA0_copy0",
+          "target" : "FORMULA4_copy0"
+        }, {
+          "source" : "FORMULA3_copy0",
+          "target" : "FORMULA6_copy0"
+        }, {
+          "source" : "FORMULA8_copy0",
+          "target" : "FORMULA5_copy0"
+        }, {
+          "source" : "FORMULA4_copy0",
+          "target" : "FORMULA8_copy0"
+        }, {
+          "source" : "FORMULA9_copy0",
+          "target" : "FORMULA7_copy0"
+        }, {
+          "source" : "FORMULA5_copy0",
+          "target" : "FORMULA9_copy0"
+        }, {
+          "source" : "FORMULA6_copy0",
+          "target" : "FORMULA10_copy0"
+        }, {
+          "source" : "FORMULA11_copy0",
+          "target" : "FORMULA2_copy1"
+        }, {
+          "source" : "FORMULA7_copy0",
+          "target" : "FORMULA11_copy0"
+        }, {
+          "source" : "FORMULA10_copy0",
+          "target" : "FORMULA12_copy0"
+        }, {
+          "source" : "FORMULA12_copy0",
+          "target" : "FORMULA13_copy0"
+        }, {
+          "source" : "FORMULA15_copy0",
+          "target" : "FORMULA14_copy0"
+        }, {
+          "source" : "FORMULA13_copy0",
+          "target" : "FORMULA15_copy0"
+        } ]
+      }
+    },
+    "connectors" : [ {
+      "source" : "TRANSFORM1_copy0",
+      "target" : "JOIN5"
+    }, {
+      "source" : "DISCOVERY_PREDICT0",
+      "target" : "DISCOVERY_PREDICT1"
+    }, {
+      "source" : "DISCOVERY_PREDICT1",
+      "target" : "DISCOVERY_PREDICT2"
+    }, {
+      "source" : "DISCOVERY_PREDICT2",
+      "target" : "DISCOVERY_PREDICT3"
+    }, {
+      "source" : "DISCOVERY_PREDICT3",
+      "target" : "DISCOVERY_PREDICT4"
+    }, {
+      "source" : "FILTER0_copy0",
+      "target" : "TRANSFORM0_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0",
+      "target" : "TRANSFORM2_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy0",
+      "target" : "JOIN2_copy0"
+    }, {
+      "source" : "TRANSFORM3_copy0",
+      "target" : "JOIN2_copy0"
+    }, {
+      "source" : "JOIN4_copy0",
+      "target" : "FILTER1_copy0"
+    }, {
+      "source" : "FILTER1_copy0",
+      "target" : "TRANSFORM3_copy0"
+    }, {
+      "source" : "LOAD_DATASET6_copy0",
+      "target" : "JOIN4_copy0"
+    }, {
+      "source" : "LOAD_DATASET7_copy0",
+      "target" : "JOIN4_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0",
+      "target" : "TRANSFORM4_copy0"
+    }, {
+      "source" : "APPEND6_copy0_copy0",
+      "target" : "APPEND4_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0_copy0",
+      "target" : "TRANSFORM2_copy1_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0_copy0",
+      "target" : "TRANSFORM3_copy1_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0_copy0",
+      "target" : "TRANSFORM4_copy1_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0_copy0",
+      "target" : "TRANSFORM5_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0_copy0",
+      "target" : "TRANSFORM6_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy1_copy0_copy0",
+      "target" : "TRANSFORM4_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM3_copy1_copy0_copy0",
+      "target" : "TRANSFORM0_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM4_copy1_copy0_copy0",
+      "target" : "TRANSFORM2_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM5_copy0_copy0_copy0",
+      "target" : "TRANSFORM3_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM6_copy0_copy0_copy0",
+      "target" : "TRANSFORM1_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy0_copy0_copy0",
+      "target" : "APPEND4_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM3_copy0_copy0_copy0",
+      "target" : "APPEND5_copy0_copy0"
+    }, {
+      "source" : "APPEND4_copy0_copy0",
+      "target" : "APPEND5_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy0_copy0_copy0",
+      "target" : "APPEND6_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0_copy0_copy0",
+      "target" : "APPEND6_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM4_copy0_copy0_copy0",
+      "target" : "APPEND7_copy0_copy0"
+    }, {
+      "source" : "APPEND5_copy0_copy0",
+      "target" : "APPEND7_copy0_copy0"
+    }, {
+      "source" : "APPEND7_copy0_copy0",
+      "target" : "TRANSFORM0_copy0_copy0"
+    }, {
+      "source" : "FILTER0_copy0_copy0_copy0_copy0_copy0",
+      "target" : "TRANSFORM1_copy2_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy2_copy0_copy0_copy0_copy0",
+      "target" : "FILTER1_copy0_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy2_copy0_copy0_copy0_copy0",
+      "target" : "FILTER2_copy0_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "FILTER2_copy0_copy0_copy0_copy0_copy0",
+      "target" : "TRANSFORM2_copy2_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "FILTER1_copy0_copy0_copy0_copy0_copy0",
+      "target" : "TRANSFORM3_copy2_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy2_copy0_copy0_copy0_copy0",
+      "target" : "JOIN0_copy0_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM3_copy2_copy0_copy0_copy0_copy0",
+      "target" : "JOIN0_copy0_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "JOIN0_copy0_copy0_copy0_copy0_copy0",
+      "target" : "TRANSFORM4_copy2_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM7_copy0",
+      "target" : "FILTER0_copy0_copy0_copy0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0_copy0",
+      "target" : "TRANSFORM7_copy0"
+    }, {
+      "source" : "LOAD_DATASET9",
+      "target" : "UPDATE0"
+    }, {
+      "source" : "TRANSFORM4_copy2_copy0_copy0_copy0_copy0",
+      "target" : "UPDATE0"
+    }, {
+      "source" : "UPDATE0",
+      "target" : "JOIN5"
+    }, {
+      "source" : "JOIN5",
+      "target" : "TRANSFORM8"
+    }, {
+      "source" : "TRANSFORM8",
+      "target" : "FILTER0_copy0"
+    }, {
+      "source" : "JOIN2_copy0",
+      "target" : "OUTPUT4"
+    }, {
+      "source" : "LOAD_DATASET10",
+      "target" : "DISCOVERY_PREDICT0"
+    }, {
+      "source" : "DISCOVERY_PREDICT4",
+      "target" : "JOIN6"
+    }, {
+      "source" : "TRANSFORM4_copy2_copy0_copy0_copy0_copy0",
+      "target" : "JOIN6"
+    }, {
+      "source" : "JOIN6",
+      "target" : "OUTPUT6"
+    }, {
+      "source" : "TRANSFORM4_copy0",
+      "target" : "OUTPUT7"
+    }, {
+      "source" : "DISCOVERY_PREDICT4",
+      "target" : "TRANSFORM1_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy0",
+      "target" : "TRANSFORM0_copy1_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy1_copy0_copy0",
+      "target" : "TRANSFORM1_copy1_copy0_copy0"
+    } ],
+    "hiddenColumns" : [ {
+      "fieldName" : "Others_Past",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_RiskScoringInputData"
+    }, {
+      "fieldName" : "Medical_Aid_Premiums_Cover_Past",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_RiskScoringInputData"
+    }, {
+      "fieldName" : "Medical_Cover_Past",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_RiskScoringInputData"
+    }, {
+      "fieldName" : "Future_Insurability_Past",
+      "objectType" : "analyticsDataset",
+      "objectName" : "AW_RiskScoringInputData"
+    } ]
+  },
+  "runMode" : "full"
+}

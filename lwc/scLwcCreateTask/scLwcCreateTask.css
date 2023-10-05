@@ -1,0 +1,17 @@
+.customModal
+{
+	max-width : 110rem !important;
+	width     : 101% !important;
+}
+
+.errormessage
+{
+	color       : #C23934;
+	font-size   : 12px;
+	font-weight : 400;
+}
+
+.customCheckbox
+{
+	padding-bottom : initial;
+}

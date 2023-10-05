@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>RZB0804 00064 EQ-Fin Franchise Adviser</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>AW_ZA_Retail_EQFinFranchisePA_RZB080400064</parentRole>
+</Role>

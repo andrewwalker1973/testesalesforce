@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Service Consultant: Priority Broker Line</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Service Consultant: Priority Broker Line</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>SLSC_Team_Leader_Priority_Broker_Line</parentRole>
+</Role>

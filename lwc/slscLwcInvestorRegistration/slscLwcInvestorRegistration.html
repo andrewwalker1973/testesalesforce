@@ -1,0 +1,51 @@
+<template>
+  <div class="card">
+    <lightning-card title="Online Details" icon-name="custom:custom16">
+      <slot>
+
+        <div class="slds-p-top_large">
+          <lightning-spinner if:true={onlineDetailsSpinner} alternative-text="loading" size="medium"
+                             variant="brand"></lightning-spinner>
+        </div>
+
+        <template if:true={onlineDetails}>
+          <div class="slds-p-around_medium">
+            <c-slsc-lwc-record-view-form records={onlineDetails}></c-slsc-lwc-record-view-form>
+          </div>
+        </template>
+
+        <template if:true={onlineDetailsError}>
+          <div class="slds-p-left_large slds-p-bottom_large">
+            {onlineDetailsError}
+          </div>
+        </template>
+
+      </slot>
+    </lightning-card>
+  </div>
+
+  <div class="card slds-m-top_small">
+    <lightning-card title="SSO" icon-name="custom:custom16">
+      <slot>
+
+        <div class="slds-p-top_large">
+          <lightning-spinner if:true={ssoSpinner} class="slds-p-top_large" alternative-text="loading" size="medium"
+                             variant="brand"></lightning-spinner>
+        </div>
+
+        <template if:true={sso}>
+          <div class="slds-p-around_medium">
+            <c-slsc-lwc-record-view-form records={sso}></c-slsc-lwc-record-view-form>
+          </div>
+        </template>
+
+        <template if:true={ssoError}>
+          <div class="slds-p-left_large slds-p-bottom_large">
+            {ssoError}
+          </div>
+        </template>
+
+      </slot>
+    </lightning-card>
+  </div>
+</template>

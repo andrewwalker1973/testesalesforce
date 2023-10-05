@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>SLR_TargetSharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>SLR_TargetSharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>SLR_Retail_Distribution</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>SLR_Retail_Distribution</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

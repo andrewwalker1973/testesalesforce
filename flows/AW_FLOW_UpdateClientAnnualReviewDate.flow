@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <description>Assign review date as  current date</description>
+        <name>AW_AssignNewReviewDate</name>
+        <label>Assign New Review Date</label>
+        <locationX>587</locationX>
+        <locationY>54</locationY>
+        <assignmentItems>
+            <assignToReference>AW_AccountRecord.AW_AnnualReviewDateCompleted__pc</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AW_UpdateAccount</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check if already populated date is older then current date.</description>
+        <name>AW_IsReviewDateOlder</name>
+        <label>Is Review Date Older</label>
+        <locationX>341</locationX>
+        <locationY>53</locationY>
+        <defaultConnector>
+            <targetReference>AW_Finish</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Review_Date_Older</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AW_AccountRecord.AW_AnnualReviewDateCompleted__pc</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_AssignNewReviewDate</targetReference>
+            </connector>
+            <label>Review Date Older</label>
+        </rules>
+    </decisions>
+    <description>This flow updates the Annual Review Date - Completed date on Account as today&apos;s date if the already populated date is a past date.</description>
+    <interviewLabel>AW Update Client Annual Review Date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AW Update Client Annual Review Date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Get account the client initiating this flow.</description>
+        <name>AW_GetAccountRecord</name>
+        <label>Get Account Record</label>
+        <locationX>194</locationX>
+        <locationY>51</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AW_IsReviewDateOlder</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Account</object>
+        <outputReference>AW_AccountRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>AW_AnnualReviewDateCompleted__pc</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update account record</description>
+        <name>AW_UpdateAccount</name>
+        <label>Update Account</label>
+        <locationX>750</locationX>
+        <locationY>53</locationY>
+        <connector>
+            <targetReference>AW_Finish</targetReference>
+        </connector>
+        <inputReference>AW_AccountRecord</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>AW_Finish</name>
+        <label>Finish</label>
+        <locationX>518</locationX>
+        <locationY>357</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>AW_SuccessMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;Review has been completed&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>AW_GetAccountRecord</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>AW_AccountRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <description>record Id for the client</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

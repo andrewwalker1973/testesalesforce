@@ -1,0 +1,27 @@
+<template>
+  <div class="card">
+    <lightning-card title="Bank Details" icon-name="custom:custom16">
+
+      <div class="slds-p-top_large">
+        <lightning-spinner if:true={spinner} alternative-text="loading" size="medium"
+                           variant="brand"></lightning-spinner>
+      </div>
+
+      <template if:true={bankDetails}>
+        <div class="table">
+          <lightning-datatable
+            key-field="bankDetailNumber"
+            columns={columns}
+            data={bankDetails}></lightning-datatable>
+        </div>
+      </template>
+
+      <template if:true={error}>
+        <div class="slds-p-left_large slds-p-bottom_large">
+          {error}
+        </div>
+      </template>
+
+    </lightning-card>
+  </div>
+</template>

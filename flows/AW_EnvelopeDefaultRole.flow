@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <description>The decision is to determine if the conditions on Account and Opportunity are met. The condition is to check if the Envelope was created from a Person Account record or an Opportunity record.</description>
+        <name>AW_AccountOrOpportunityCheck</name>
+        <label>Account Or Opportunity Check</label>
+        <locationX>166</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_AccountCheck</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AW_Account__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AW_Account__r.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AW_PersonAccount</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_CreateEnvelopeRoleAccount</targetReference>
+            </connector>
+            <label>Account Check</label>
+        </rules>
+        <rules>
+            <name>AW_OpportunityCheck</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AW_Opportunity__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AW_Opportunity__r.Account.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AW_PersonAccount</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_CreateEnvelopeRoleOpportunity</targetReference>
+            </connector>
+            <label>Opportunity Check</label>
+        </rules>
+    </decisions>
+    <description>This flow creates a default record under the Role Tab when creating a new Envelope on Person Account and Opportunity</description>
+    <interviewLabel>Envelope Default {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AW Envelope Default Role</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create a record under the Envelope Role tab for an Account and populate the  Contact Details and Record ID</description>
+        <name>AW_CreateEnvelopeRoleAccount</name>
+        <label>Create Envelope Role Account</label>
+        <locationX>375</locationX>
+        <locationY>420</locationY>
+        <inputAssignments>
+            <field>AW_Contact__c</field>
+            <value>
+                <elementReference>$Record.AW_Account__r.PersonContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AW_Envelope__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AW_EnvelopeRole__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>Create a record under the Envelope Role tab for an Opportunity and populate the Contact Details and Record ID</description>
+        <name>AW_CreateEnvelopeRoleOpportunity</name>
+        <label>Create Envelope Role Opportunity</label>
+        <locationX>374</locationX>
+        <locationY>239</locationY>
+        <inputAssignments>
+            <field>AW_Contact__c</field>
+            <value>
+                <elementReference>$Record.AW_Opportunity__r.Account.PersonContactId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AW_Envelope__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>AW_EnvelopeRole__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>48</locationX>
+        <locationY>3</locationY>
+        <connector>
+            <targetReference>AW_AccountOrOpportunityCheck</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>AW_Account__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AW_Opportunity__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>AW_Envelope__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

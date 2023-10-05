@@ -1,0 +1,16 @@
+.label {
+    color: rgb(62,62,60);
+    font-size: 0.75rem;
+}
+
+.value {
+    color: rgb(8, 7, 7);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.layout-item {
+    width: 50%;
+    padding-left: var(--lwc-spacingSmall,0.75rem);
+    padding-right: var(--lwc-spacingSmall,0.75rem);
+}

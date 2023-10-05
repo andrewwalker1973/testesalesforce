@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>AW_OwnershipIsChanged</name>
+        <label>Ownership Is Changed?</label>
+        <locationX>314</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>AW_OwnershipIsOrphan</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AW_Account_Ownership__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Orphan</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdateWasIsOrphanClientField</targetReference>
+            </connector>
+            <label>Ownership Is Orphan?</label>
+        </rules>
+        <rules>
+            <name>AW_OwnershipIsAdviser</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.AW_Account_Ownership__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Orphan</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AW_Account_Ownership__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Adviser</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AW_UpdatePriorOwnershipCategoryField</targetReference>
+            </connector>
+            <label>Ownership Is Adviser?</label>
+        </rules>
+    </decisions>
+    <description>The flow is used to update &apos;Prior Ownership Category&apos; and &apos;Was/Is Orphan Client&apos; field on Account.
+@author latika.kharbanda@accenture.com
+@date December 2021</description>
+    <interviewLabel>Update Prior Ownership Category {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Prior Ownership Category</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>AW_UpdatePriorOwnershipCategoryField</name>
+        <label>Update &apos;Prior Ownership Category&apos; field</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>AW_PriorOwnershipCategory__c</field>
+            <value>
+                <elementReference>$Record__Prior.AW_Account_Ownership__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AW_UpdateWasIsOrphanClientField</name>
+        <label>Update &apos;Was/Is Orphan Client&apos; field</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>AW_WasIsOrphanClient__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AW_OwnershipIsChanged</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>AW_Account_Ownership__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AW_Account_Ownership__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

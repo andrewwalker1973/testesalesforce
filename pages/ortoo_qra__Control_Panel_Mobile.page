@@ -1,0 +1,229 @@
+<apex:page lightningStylesheets="true" controller="ortoo_qra.AssignmentConfigurationController" 
+tabstyle="ortoo_qra__Assignment_Configuration__tab"  id="thePage" title="QA Control Panel" >
+    
+    <!-- <link href="{!URLFOR($Resource.SLDS001, '/styles/salesforce-lightning-design-system.min.css')}" rel="stylesheet" media="screen"/>
+    <link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+    <apex:slds />
+    <div class="slds-scope"> 
+    <apex:form id="theForm">
+        <style> 
+            .topborder .apexp .bPageBlock 
+            {
+                border-top: 3px solid #eeee !important;
+            }
+            body .slds-vf-data-table .headerRow th, body .slds-vf-data-table thead th
+            {
+                white-space: unset;
+                vertical-align: top;
+            }
+        </style>
+        <apex:sectionHeader title="Q-assign Control Panel" subtitle="{!$Organization.Name}" />
+        <apex:pageBlock id="global-settings-block" title=""
+            rendered="{!IF(AND(EditIsNotActive , GlobalEditIsNotActive), TRUE, FALSE)}">
+            <apex:pageBlockSection columns="1" collapsible="false" title="Settings and Status" id="global-settings">
+                <apex:pageBlockSectionItem helpText="{!SchedulerMasterSwitch_HelpText}">
+                    <apex:outputPanel >
+                        <c:customHelpTextLabel labelValue="Global Scheduler Master Switch" helpTextID="Master_Switch" helpText="{!SchedulerMasterSwitch_HelpText}"/>
+                    </apex:outputPanel>
+                    <apex:outputPanel >
+                        <apex:outputText value="{!QAGlobalSettingConfig.Global_Scheduler_Master_Switch__c}" />
+                    &nbsp;
+                    <apex:image value="{!$Resource.green_spot}"
+                            title="Global Scheduler Master is active"
+                            rendered="{!QAGlobalSettingConfig.Global_Scheduler_Master_Switch__c == 'On'}" />
+                        <apex:image value="{!$Resource.red_spot}"
+                            title="Global Scheduler Master is inactive"
+                            rendered="{!QAGlobalSettingConfig.Global_Scheduler_Master_Switch__c == 'Off'}" />
+                      <apex:outputpanel >
+                        <apex:commandButton action="{!GlobalSwitch}"
+                            value="Switch On" immediate="true" style="margin-left:5px;" status="switchstatus" rerender="scheduler_status, License,status-buttons,watcher_status,global-settings,scheduler-block"
+    rendered="{!IF(AND(QAGlobalSettingConfig.Global_Scheduler_Master_Switch__c == 'Off', IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}" />
+                       <apex:commandButton action="{!GlobalSwitch}"
+                            value="Switch Off" immediate="true" style="margin-left:5px;" status="switchstatus" rerender="scheduler_status, License,status-buttons,watcher_status,global-settings,scheduler-block"
+                            rendered="{!IF(AND(QAGlobalSettingConfig.Global_Scheduler_Master_Switch__c == 'On', IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}" />
+                      <apex:outputPanel >
+                            <apex:actionStatus id="switchstatus">
+                                <apex:facet name="start">
+                                    <img src="/img/loading.gif" />
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel> 
+                        <apex:outputPanel rendered="{!errorMassage != ''}" id="error-massage">
+                         <apex:outputText value="{!errorMassage}" style="color:#cc3300;font-weight:600;margin-left:6px;" />
+                        </apex:outputPanel> 
+                    </apex:outputpanel> 
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!SchedulerEmail_HelpText}">
+                    <apex:outputLabel value="General Notifications Email Address" />
+					<apex:outputpanel >
+                    <apex:outputText value="{!QAGlobalSettingConfig.General_Notifications_Email_Address__c}" />
+                    <apex:outputpanel rendered="{!IsCurrentUserAManagerOrAdmin}" >
+                        <apex:commandButton action="{!EditGlobalConfiguration}"
+                            value="Edit" immediate="true" style="margin-left:5px;"
+                            rendered="{!IF(AND(EditIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}" />
+                            </apex:outputpanel>
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!NotifyOrtooSupport_HelpText}">
+                    <c:customHelpTextLabel labelValue="Notify Ortoo Support of errors" helpTextID="Notify_Support" helpText="{!NotifyOrtooSupport_HelpText}"/>
+                    <apex:outputPanel >
+                        <apex:outputField value="{!QAGlobalSettingConfig.Notify_Ortoo_Support_of_errors__c}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection collapsible="false" title="Q-assign Users"
+                columns="1"
+                rendered="{!IF(AND(EditIsNotActive , GlobalEditIsNotActive), TRUE, FALSE)}"
+                id="License">
+                
+                <apex:pageBlockSectionItem helpText="{!TotalLicenseCount_HelpText}">
+                    <c:customHelpTextLabel labelValue="Total Q-assign Licenses " helpTextID="Nunique" helpText="{!TotalLicenseCount_HelpText}"/>
+                    <apex:outputText value="{!totalLicenseCount}" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem helpText="{!ContextUser_HelpText}">
+                    <c:customHelpTextLabel labelValue="Context User" helpTextID="Context_User" helpText="{!ContextUser_HelpText}"/>
+                    <apex:outputText value="{!contextUser}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="scheduler-block" title=""
+            rendered="{!IF(AND(EditIsNotActive , GlobalEditIsNotActive), TRUE, FALSE)}">
+            <apex:pageBlockSection title="Settings" collapsible="false"
+                columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputpanel ></apex:outputpanel>
+                    <apex:outputpanel >
+                        <apex:commandButton action="{!EditConfiguration}" value="Edit"
+                            immediate="true" style="" rendered="{!IF(AND(EditIsAllowed, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}" />
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!ScheduleFrequencyMinutes_HelpText}">
+                    <c:customHelpTextLabel labelValue="Schedule Frequency (Minutes)" helpTextID="Schedule_Frequency" helpText="{!ScheduleFrequencyMinutes_HelpText}"/>
+                    <apex:outputField value="{!Config.Schedule_Frequency_Minutes__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!SchedulerEmail_HelpText}">
+                    <c:customHelpTextLabel labelValue="Notification Recipient" helpTextID="Notification_Recipient" helpText="{!SchedulerEmail_HelpText}"/>
+                    <apex:outputText value="{!Config.Error_Email_Address__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!MaxRecordsPerCommit_HelpText}">
+                    <c:customHelpTextLabel labelValue="Max Records Per Job" helpTextID="Max_Records" helpText="{!MaxRecordsPerCommit_HelpText}"/>
+                    <apex:outputText value="{!Config.Max_Records_Per_Job__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Status" columns="1" collapsible="false"
+                rendered="{!IF(AND(EditIsNotActive , GlobalEditIsNotActive), TRUE, FALSE)}"
+                id="scheduler_status">
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel >
+                    </apex:outputPanel>
+                    <apex:outputPanel >
+                        <apex:commandButton action="{!Refresh}" value="Refresh"
+                            immediate="true"
+                            reRender="statusOutputPanel,scheduler_status, safe_mode, scheduler_report"
+                            status="actStatus" />
+                        <apex:outputPanel id="statusOutputPanel">
+                            <apex:actionStatus id="actStatus">
+                                <apex:facet name="start">
+                                    <img src="/img/loading.gif" />
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="Enabled" helpTextID="Enabled" helpText="{!Enabled_HelpText}"/>
+                    <apex:outputPanel >
+                        <apex:outputField value="{!config.Enabled__c}"/>
+                        &nbsp;
+                    <apex:image value="{!$Resource.green_spot}"
+                            title="Global Scheduler Master is active and scheduler is enabled"
+                            rendered="{!QAGlobalSettingConfig.Global_Scheduler_Master_Switch__c == 'On' && config.Enabled__c}" />
+                        <apex:image value="{!$Resource.red_spot}"
+                            title="Global Scheduler Master is inactive or scheduler is disabled"
+                            rendered="{!QAGlobalSettingConfig.Global_Scheduler_Master_Switch__c == 'Off' || !config.Enabled__c}" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <apex:commandButton action="{!StartAssignmentScheduler}"
+                            reRender="scheduler_status" rendered="{!IF(AND(!Config.Enabled__c, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}"
+                            status="actStatus" value="Enable Scheduler" immediate="true" />
+                        <apex:commandButton action="{!StopAssignmentScheduler}"
+                            reRender="scheduler_status" rendered="{!IF(AND(Config.Enabled__c, IsCurrentUserAManagerOrAdmin), TRUE, FALSE)}"
+                            status="actStatus" value="Disable Scheduler" immediate="true" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!NextRun_HelpText}">
+                    <c:customHelpTextLabel labelValue="Next Scheduler Run Time" helpTextID="Next_Scheduler" helpText="{!NextRun_HelpText}"/>
+                        <apex:outputLabel value="{!NextScheduledAssignmentMsg}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" collapsible="false"
+                title="Scheduler Diagnostic Information"
+                rendered="{!IF(AND(EditIsNotActive , GlobalEditIsNotActive), TRUE, FALSE)}"
+                id="scheduler_report">
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel ></apex:outputPanel>
+                    <apex:outputPanel >
+                        <apex:commandButton action="{!Refresh}" value="Refresh"
+                            immediate="true"
+                            reRender="statusOutputPanelinfo,scheduler_status, scheduler_report, safe_mode,statusOutputPanel"
+                            status="actStatusinfo" />
+                        <apex:outputPanel id="statusOutputPanelinfo">
+                            <apex:actionStatus id="actStatusinfo">
+                                <apex:facet name="start">
+                                    <img src="/img/loading.gif" />
+                                </apex:facet>
+                            </apex:actionStatus>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!LastReport_HelpText}">
+                    <c:customHelpTextLabel labelValue="Last Run Report" helpTextID="Last_Report" helpText="{!LastReport_HelpText}"/>
+                    <apex:outputField value="{!Config.Last_Scheduler_Run_Stats__c }" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Global" id="EditSettings" mode="edit"
+            rendered="{!GlobalEditIsActive}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!SaveQAGlobalSettings}" value="Save" />
+                <apex:commandButton action="{!CancelEditQAGlobalSettings}"
+                    value="Cancel" immediate="true" />
+            </apex:pageBlockButtons>
+            <apex:pageMessages />
+            <apex:pageBlockSection columns="1" title="Settings">
+                <apex:pageBlockSectionItem helpText="{!SchedulerEmail_HelpText}">
+                    <c:customHelpTextLabel labelValue="General Notifications Email Address" helpTextID="General_Notifications_Email" helpText="{!SchedulerEmail_HelpText}"/>
+                    <apex:inputField style="width: 40%;" value="{!QAGlobalSettingConfig.General_Notifications_Email_Address__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!NotifyOrtooSupport_HelpText}">
+                    <c:customHelpTextLabel labelValue="Notify Ortoo Support of errors" helpTextID="Notify_Support" helpText="{!NotifyOrtooSupport_HelpText}"/>
+                    <apex:inputCheckbox value="{!QAGlobalSettingConfig.Notify_Ortoo_Support_of_errors__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="{!Config.Name}" id="pageEdit" mode="edit" 
+			rendered="{!EditIsActive}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!SaveConfiguration}" value="Save" />
+                <apex:commandButton action="{!CancelEditConfiguration}" value="Cancel" immediate="true" />
+            </apex:pageBlockButtons>
+            <apex:pageMessages />
+            <apex:pageBlockSection title="Settings" columns="1" collapsible="false">
+                <apex:pageBlockSectionItem helpText="{!ScheduleFrequencyMinutes_HelpText}">
+                    <c:customHelpTextLabel labelValue="Schedule Frequency Minutes" helpTextID="Schedule_Frequency_Minutes" helpText="{!ScheduleFrequencyMinutes_HelpText}"/>
+                    <apex:inputField value="{!Config.Schedule_Frequency_Minutes__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!SchedulerEmail_HelpText}">
+                    <c:customHelpTextLabel labelValue="Notification Recipient" helpTextID="Notification_Recipient" helpText="{!SchedulerEmail_HelpText}"/>
+                    <apex:inputField style="width: 40%;" value="{!Config.Error_Email_Address__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!MaxRecordsPerCommit_HelpText}">
+                    <c:customHelpTextLabel labelValue="Max Records Per Job" helpTextID="Max_Records_Job" helpText="{!MaxRecordsPerCommit_HelpText}"/>
+                    <apex:inputField value="{!Config.Max_Records_Per_Job__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    </div>  -->
+</apex:page>

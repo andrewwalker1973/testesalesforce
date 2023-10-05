@@ -1,0 +1,43 @@
+<!--
+* @description Aura parent component for the Implement Servicing Quote
+*
+* @author pavan.t@lntinfotech.com
+*
+* @date June 2022
+-->
+
+<aura:component description="AW_CTR_ContractServicingQuoteContainer" controller="AW_CTRL_ContractServicingQuote"
+				implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName,flexipage:availableForRecordHome">
+	<aura:attribute name="sObjectType" type="String" default="{!v.sObjectName}"/>
+	<aura:attribute name="isButtonVisible" type="boolean"/>
+	<aura:attribute name="isContractsOpen" type="boolean" default="false"/>
+	<aura:attribute name="isQuoteOpen" type="boolean" default="false"/>
+	<aura:attribute name="isBpoOpen" type="boolean" default="false"/><!--Added by Annu-->
+	<aura:attribute name="accountId" type="String"/>
+	<aura:attribute name="consultantCode" type="String"/><!--Added by Annu-->
+	<aura:attribute name="consultant" type="Object"/>
+	<aura:attribute name="userId" type="String"/><!--Added by Annu-->
+	<aura:attribute name="selectedContractsParent" type="Object"/>
+	<aura:attribute name="quoteSolutionNumber" type="String"/><!--Added by Annu-->
+	<aura:attribute name="selectedQuoteParent" type="Object"/>
+
+	<aura:attribute name="sObjectTypeChild" type="String"/>
+	<aura:attribute name="parentRecordId" type="String"/>
+	<aura:attribute name="isServicingQuoteContainerOpenChild" type="boolean"/>
+	<aura:attribute name="opportunityIdChild" type="String"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:if isTrue="{!v.isContractsOpen}">
+		<c:AW_CMP_ContractServicingQuote isContractsOpenChild="{!v.isContractsOpen}" isBpoOpenChild="{!v.isBpoOpen}" opportunityId="{!v.recordId}"
+										 accountId="{!v.accountId}" selectedContract="{!v.selectedContractsParent}" userId="{!v.userId}"
+										 consultantCode="{!v.consultantCode}"
+										 isServicingQuoteContainerOpenGrandChild="{!v.isServicingQuoteContainerOpenChild}"/>
+	</aura:if>
+	<!--Added by Annu-->
+	<aura:if isTrue="{!v.isBpoOpen}">
+		<c:AW_CMP_BPOContractCanvasContainer isContractsOpenChild="{!v.isContractsOpen}" isBpoOpenChild="{!v.isBpoOpen}" opportunityId="{!v.opportunityIdChild}"
+											 accountId="{!v.accountId}" selectedContract="{!v.selectedContractsParent}" selectedQuote="{!v.selectedQuoteParent}"
+											 quoteSolutionNumber="{!v.quoteSolutionNumber}" consultantCode="{!v.consultantCode}" userId="{!v.userId}"
+											 isServicingQuoteContainerOpenGrandChild="{!v.isServicingQuoteContainerOpenChild}"/>
+	</aura:if><!--Added by Annu-->
+</aura:component>

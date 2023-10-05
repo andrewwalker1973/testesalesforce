@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://libertyholdingsidms.b2clogin.com/libertyholdingsidms.onmicrosoft.com/oauth2/v2.0/authorize?p=b2c_1a_signup_signin_corp_dev</authorizeUrl>
+    <consumerKey>60702959-7cb4-4187-b064-5e6317def157</consumerKey>
+    <consumerSecret>7UyNoF1C8Zr04DDtdO13tjQANX7jCBFdcEEY92ILatc=</consumerSecret>
+    <defaultScopes>openid profile https://libertyholdingsidms.onmicrosoft.com/api/read.write</defaultScopes>
+    <executionUser>integration.user@liberty.co.za</executionUser>
+    <friendlyName>Liberty Account</friendlyName>
+    <idTokenIssuer>https://libertyholdingsidms.b2clogin.com/16f4cb32-2666-4863-920b-7c6c1e235419/v2.0/</idTokenIssuer>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>OpenIdConnect</providerType>
+    <registrationHandler>AW_AUTH_AzureB2C</registrationHandler>
+    <sendAccessTokenInHeader>true</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>true</sendSecretInApis>
+    <tokenUrl>https://libertyholdingsidms.b2clogin.com/libertyholdingsidms.onmicrosoft.com/oauth2/v2.0/token?p=b2c_1a_signup_signin_corp_dev</tokenUrl>
+    <userInfoUrl>https://b2cgetuserinfodevapp.azurewebsites.net/api/userinfo</userInfoUrl>
+</AuthProvider>

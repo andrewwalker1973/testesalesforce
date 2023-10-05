@@ -1,0 +1,9 @@
+.copy-table-button {
+    position: relative;
+    z-index: 99;
+    float: right;
+}
+
+div.slds-th__action.slds-th__action_form.slds-cell-fixed {
+	display: none !important;
+}

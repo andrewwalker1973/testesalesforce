@@ -1,0 +1,1792 @@
+{
+  "version" : "57.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Product_group_category", "Maximum_Years_Since_Last_Investment_Product_Bucket", "Joined_dat_As_Of_Date", "Product_Name", "Joined_dat_mty_dt", "prsn_mrtl_sts_dsc", "Joined_dat_inceptionDateOldestCalculated", "Inception_Date_Tenure_Bucket", "Frequency_Calculated", "Investment_Target_Variable", "prod_name", "Retirement_Annuity_Target_Variable", "Inception_Date_String", "source", "frequency", "Movement_Date_Tenure_Bucket", "Joined_dat_oldestInceptionDate", "Owner_National_Id_Product_Name_Key", "Age_first_Retirement_Annuity_BoughtBucket", "prsn_gndr_dsc1", "Policy_Term_Bucket", "Joined_dat_movementDateCalculated", "Null_Filter", "prsn_mrkt_cnsnt", "Inforce_Indicator_Flag", "Bond_Target_Variable", "Maximum_Years_Since_Last_Retirement_Annuity_Product_Bucket", "Joined_dat_newestInceptionDate", "Joined_dat_inceptionDateNewest", "Joined_dat_incp_dt", "Education_Target_Variable", "Product_Group", "movent_ind", "Customer_ID", "sb_match", "Age_First_Investment_Product_Bought_Bucket", "owner_natl_id", "Maturity_Date_Tenure_Bucket", "Maximum_Years_Since_First_Investment_Product_Bucket", "Joined_dat_newestMaturityDateCalculated", "acr_product_group", "Joined_dat_prsn_brth_dt", "Joined_dat_movent_dt", "Movement_Inception_Date_Bucket", "prsn_mrtl_sts_dsc1", "Person_Market_Consent_Calculated", "Standard_Bank_Match", "Annuity_Target_Variable", "Maximum_Years_Since_First_Retirement_Annuity_Product_Bucket", "Age_Bucket1", "Age_Bucket", "Age_first_Annuity_Product_Bought_Bucket", "prsn_gndr_dsc", "Annuity_Active_Policy", "Maximum_Years_Since_Last_Annuity_Product_Bucket", "Count_Policies_Retirement_Annuity_Liberty_Retirement_Annuity_Flag", "Sum_of_Investment_Investment_Plan", "Sum_of_Frequency_Monthly_Calculated", "Count_Policies_Investment_Investment_Plan_Flag", "Retirement_Annuity_Age_Of_Customer", "Sum_of_Retirement_Annuity_Liberty_Evolve_Retirement_Annuity", "Education_Dependent_Variable", "Maximum_Investment_Age_Of_Customer_capped", "api", "Bond_Dependent_Variable", "Years_Since_Oldest_Policy_Start", "Inforce_Indicator_Calculated", "Count_Policies_Annuity_Annuity_Flag", "Annuity_Dependent_Variable", "Investment_Gateway_Investment_Plan", "Investment_Investment_Plan", "consult_sales_cd1", "Years_Since_Last_Annuity_Product", "Maximum_Years_Since_First_Education_Product", "Maximum_Retirement_Annuity_Dependent_Variable", "Years_Since_First_Annuity_Product", "Maximum_Annuity_Age_Of_Customer", "Bond_Inactive_Policy", "Maximum_Years_Since_First_Bond_Product", "Maximum_Years_Since_First_Annuity_Product_Bucket", "Retirement_Annuity_Retirement_Annuity_Builder", "Count_Policies_Investment_Investment_Builder_Flag", "Annuity_Inactive_Policy", "Years_Since_Last_Retirement_Annuity_Product", "Investment_Liberty_Evolve_Investment_Plan", "Sum_of_Retirement_Annuity_Liberty_Retirement_Annuity", "Total_Annuity_Premium", "Maturity_Date_Tenure", "Sum_of_Frequency_Lumpsum_Calculated", "Movement_Inception_Date", "Annuity_Flexible_Annuity_Flag", "Years_Since_Last_Bond_Product", "Policy_Expire_Duration", "Retirement_Annuity_Dependent_Variable", "Count_Policies_Education_Education_Plan_Flag", "Investment_Dependent_Variable", "Education_Active_Policy", "Count_Policies_Annuity_Group_Capped", "Investment_Gateway_Investment_Plan_Flag", "Count_Policies_Annuity_Flexible_Annuity_Flag", "Sum_of_Annuity_Flexible_Annuity", "Sum_of_Investment_Gateway_Investment_Plan", "Count_Policies_Investment_Group", "Maximum_Years_Since_First_Annuity_Product", "Maximum_Years_last_Investment_Product_Capped", "Years_Since_Newest_Policy_Start", "inactive_Policy", "Column1", "Sum_of_Investment_Investment_Builder", "Frequency_Monthly_Capped", "Frequency_Lumpsum_Calculated", "Sum_of_Investment_Active_Policy", "Maximum_Risk_Group_Flag", "Sum_of_Retirement_Annuity_Active_Policy", "Count_Policies_Retirement_Annuity_Retirement_Annuity_Builder_Flag", "Count_Policies_Investment_Gateway_Investment_Plan_Flag", "Years_Since_First_Bond_Product", "Sum_of_Total_Annuity_Premium", "Sum_of_Bond_Guaranteed_Capital_Bond_Flag", "prsn_pdb_id", "Maximum_Years_Since_Last_Annuity_Product", "Risk_Group_Flag", "Sum_of_Investment_Flexible_Investment_Plan", "Active_Policy", "Education_Education_Plan", "Sum_of_Investment_Liberty_Evolve_Investment_Plan", "Sum_of_Total_Retirement_Annuity_premium", "Count_Policies_Investment_Flexible_Investment_Plan_Flag", "Age", "Frequency_Monthly_Calculated", "Years_Since_First_Education_Product", "Count_Policies_Retirement_Annuity_Liberty_Evolve_Retirement_Annuity_Flag", "Annuity_Age_Of_Customer", "Maximum_Retirement_Annuity_Age_Of_Customer", "Sum_of_Count_Exclude_Policy_Capped", "Date_Of_Birth", "Movement_Inception_Date_Difference", "Count_Policies_Investment_Liberty_Evolve_Investment_Plan_Flag", "Maximum_Years_First_Investment_Product_Capped", "Policy_Number_Calculated", "Maximum_Years_Since_Newest_Policy_Start_Capped", "Years_Since_Last_Investment_Product", "Bond_Age_Of_Customer", "Sum_of_Education_Education_Plan", "Years_Since_Last_Education_Product", "Maximum_Bond_Dependent_Variable", "Maximum_Annuity_Dependent_Variable", "Annuity_Annuity_Flag", "Bond_Guaranteed_Capital_Bond", "Investment_Investment_Builder_Flag", "Annuity_Flexible_Annuity", "Maximum_Years_Since_Last_Education_Product", "Maximum_Years_Since_First_Investment_Product", "Policy_Term", "Other_Investment_Products", "Maximum_Years_Since_Oldest_Policy_Start", "Retirement_Annuity_Liberty_Evolve_Retirement_Annuity_Flag", "Years_Since_First_Investment_Product", "Inception_Date_Tenure", "Maximum_Years_Since_Last_Bond_Product", "Tenure", "Total_Investment_Premium", "Maximum_Education_Dependent_Variable", "Sum_of_Bond_Guaranteed_Capital_Bond", "cont_no", "Investment_Active_Policy_Capped", "Investment_Investment_Builder", "Retirement_Annuity_Liberty_Retirement_Annuity", "Education_Education_Plan_Flag", "Sum_of_Active_Policy", "Maximum_Years_Since_Last_Retirement_Annuity_Product", "Sum_of_Count_Exclude_Policy", "Movement_Date_Tenure", "Sum_of_Total_Investment_Premium", "inforce_ind", "Count_Policies_Retirement_Annuity_Group", "Investment_Investment_Plan_Flag", "Education_Age_Of_Customer", "Bond_Active_Policy", "Sum_of_Retirement_Annuity_Retirement_Annuity_Builder", "Investment_Age_Of_Customer", "Policy_Number_Count_Capped", "Count_Policies_Annuity_Group", "Frequency_Lumpsum_Capped", "Retirement_Annuity_Retirement_Annuity_Builder_Flag", "Annuity_Annuity", "Maximum_Investment_Age_Of_Customer", "Investment_Flexible_Investment_Plan", "Maximum_Years_Since_Newest_Policy_Start", "Sum_of_inactive_Policy", "Investment_Active_Policy", "Retirement_Annuity_Liberty_Evolve_Retirement_Annuity", "Bond_Guaranteed_Capital_Bond_Flag", "Years_Since_First_Retirement_Annuity_Product", "Inception_Date_Epoc", "Maximum_Investment_Dependent_Variable", "Count_Policies_Investment_Group_Capped", "Sum_of_Annuity_Annuity", "Retirement_Annuity_Liberty_Retirement_Annuity_Flag", "Maximum_Years_Since_Last_Investment_Product", "Customer_ID1", "Customer_ID2", "Investment_Inactive_Policy", "Investment_Liberty_Evolve_Investment_Plan_Flag", "Total_Retirement_Annuity_premium", "Maximum_Years_Since_First_Retirement_Annuity_Product", "Retirement_Annuity_Inactive_Policy", "Investment_Flexible_Investment_Plan_Flag", "Retirement_Annuity_Active_Policy", "Education_Inactive_Policy", "Maximum_Years_First_Annuity_Product_Capped", "Count_of_Policy_Number_Calculated" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Aggregated Data",
+          "name" : "AW_AccountPropensityModelAggregatedData"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "DISCOVERY_PREDICT0" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT1" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedBondPropensityScore"
+        },
+        "columnMapping" : {
+          "SUM_retirementAnnuityActivePolicy" : "Sum_of_Retirement_Annuity_Active_Policy",
+          "Joined_dat.age" : "Age",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "Tenure",
+          "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula" : "Investment_Active_Policy_Capped",
+          "MAX_investmentAgeOfCustomer_formula_bucket" : "Age_First_Investment_Product_Bought_Bucket",
+          "MAX_riskGroupFlag" : "Maximum_Risk_Group_Flag",
+          "SUM_totalInvestmentPremium" : "Sum_of_Total_Investment_Premium",
+          "Joined_dat.prsn_gndr_dsc" : "prsn_gndr_dsc",
+          "Joined_dat.standardBankMatch" : "Standard_Bank_Match",
+          "SUM_totalRetirementAnnuityPremium" : "Sum_of_Total_Retirement_Annuity_premium",
+          "MAX_yearsSinceNewestPolicyStart_formula" : "Maximum_Years_Since_Newest_Policy_Start_Capped",
+          "Joined_dat.prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedBondPropensityScore_prediction",
+          "label" : "Predicted Bond Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT1" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedEducationPropensityScore"
+        },
+        "columnMapping" : {
+          "MAX_yearsSinceLastRetirementAnnuityProduct_bucket" : "Maximum_Years_Since_Last_Retirement_Annuity_Product_Bucket",
+          "ownerNationalIdCalculated_formula1_formula" : "Count_Policies_Retirement_Annuity_Group",
+          "MAX_riskGroupFlag" : "Maximum_Risk_Group_Flag",
+          "SUM_totalInvestmentPremium" : "Sum_of_Total_Investment_Premium",
+          "Joined_dat.prsn_gndr_dsc" : "prsn_gndr_dsc",
+          "Joined_dat1.SUM_countExcludePolicy_formula" : "Sum_of_Count_Exclude_Policy_Capped",
+          "SUM_totalRetirementAnnuityPremium" : "Sum_of_Total_Retirement_Annuity_premium",
+          "MAX_yearsSinceNewestPolicyStart_formula" : "Maximum_Years_Since_Newest_Policy_Start_Capped",
+          "ownerNationalIdCalculated_formula1_formula1" : "Count_Policies_Investment_Group_Capped",
+          "Joined_dat.age" : "Age",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "Tenure",
+          "MAX_yearsSinceLastInvestmentProduct_bucket" : "Maximum_Years_Since_Last_Investment_Product_Bucket",
+          "Joined_dat.prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedEducationPropensityScore_prediction",
+          "label" : "Predicted Education Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT2" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT0" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedAnnuityPropensityScore"
+        },
+        "columnMapping" : {
+          "ownerNationalIdCalculated_formula1_formula1" : "Count_Policies_Investment_Group_Capped",
+          "MAX_yearsSinceFirstInvestmentProduct_bucket" : "Maximum_Years_Since_First_Investment_Product_Bucket",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "Tenure",
+          "MAX_retirementAnnuityAgeOfCustomer_bucket" : "Age_first_Retirement_Annuity_BoughtBucket",
+          "ownerNationalIdCalculated_formula1_formula" : "Count_Policies_Retirement_Annuity_Group",
+          "MAX_yearsSinceFirstRetirementAnnuityProduct_bucket" : "Maximum_Years_Since_First_Retirement_Annuity_Product_Bucket",
+          "MAX_investmentAgeOfCustomer_formula_bucket" : "Age_First_Investment_Product_Bought_Bucket",
+          "Joined_dat.prsn_gndr_dsc" : "prsn_gndr_dsc",
+          "SUM_totalRetirementAnnuityPremium" : "Sum_of_Total_Retirement_Annuity_premium",
+          "Joined_dat.standardBankMatch" : "Standard_Bank_Match",
+          "Joined_dat.prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedAnnuityPropensityScore_prediction",
+          "label" : "Predicted Annuity Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT3" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT2" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedInvestmentPropensityScore"
+        },
+        "columnMapping" : {
+          "MAX_yearsSinceNewestPolicyStart" : "Maximum_Years_Since_Newest_Policy_Start",
+          "ownerNationalIdCalculated_formula_formula_formula" : "Frequency_Lumpsum_Capped",
+          "MAX_retirementAnnuityAgeOfCustomer_bucket" : "Age_first_Retirement_Annuity_BoughtBucket",
+          "MAX_annuityAgeOfCustomer_bucket" : "Age_first_Annuity_Product_Bought_Bucket",
+          "ownerNationalIdCalculated_formula1_formula" : "Count_Policies_Retirement_Annuity_Group",
+          "MAX_riskGroupFlag" : "Maximum_Risk_Group_Flag",
+          "Joined_dat1.SUM_countExcludePolicy_formula" : "Sum_of_Count_Exclude_Policy_Capped",
+          "Joined_dat.standardBankMatch" : "Standard_Bank_Match",
+          "SUM_totalRetirementAnnuityPremium" : "Sum_of_Total_Retirement_Annuity_premium",
+          "Joined_dat.age" : "Age",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "Tenure",
+          "MAX_yearsSinceFirstRetirementAnnuityProduct" : "Maximum_Years_Since_First_Retirement_Annuity_Product",
+          "Joined_dat.prsn_mrtl_sts_dsc" : "prsn_mrtl_sts_dsc"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedInvestmentPropensityScore_prediction",
+          "label" : "Predicted Investment Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DISCOVERY_PREDICT4" : {
+      "action" : "smartDataDiscoveryPredict",
+      "sources" : [ "DISCOVERY_PREDICT3" ],
+      "parameters" : {
+        "predictSource" : {
+          "type" : "PRED_DEF",
+          "name" : "AW_PredictedRetirementAnnuityPropensityScore"
+        },
+        "columnMapping" : {
+          "MAX_yearsSinceFirstInvestmentProduct_bucket" : "Maximum_Years_Since_First_Investment_Product_Bucket",
+          "Joined_dat.age" : "Age",
+          "MAX_yearsSinceOldestPolicyStart_formula" : "Tenure",
+          "MAX_investmentAgeOfCustomer_formula_bucket" : "Age_First_Investment_Product_Bought_Bucket",
+          "MAX_riskGroupFlag" : "Maximum_Risk_Group_Flag",
+          "ownerNationalIdCalculated_formula1_formula_formula_formula" : "Count_Policies_Annuity_Group_Capped",
+          "SUM_totalInvestmentPremium" : "Sum_of_Total_Investment_Premium",
+          "Joined_dat.prsn_gndr_dsc" : "prsn_gndr_dsc",
+          "Joined_dat.standardBankMatch" : "Standard_Bank_Match"
+        },
+        "predictionField" : {
+          "name" : "AW_PredictedRetirementAnnuityPropensityScore_prediction",
+          "label" : "Predicted Retirement Annuity Target Variable"
+        },
+        "predictionFactorFields" : [ ],
+        "prescriptionFields" : [ ],
+        "multiClassFields" : [ ]
+      }
+    },
+    "DROP_FIELDS0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "COUNT_policyNumberCalculated", "Joined_dat.Column1", "Joined_dat.Inactive_Policy", "Joined_dat.acrProductGroupCalculated", "Joined_dat.acr_product_group", "Joined_dat.activePolicy", "Joined_dat.age", "Joined_dat.ageBucket", "Joined_dat.annuityActivePolicy", "Joined_dat.annuityAgeOfCustomer", "Joined_dat.annuityAnnuity", "Joined_dat.annuityAnnuityFlag", "Joined_dat.annuityDependentVariable", "Joined_dat.annuityFlexibleAnnuity", "Joined_dat.annuityFlexibleAnnuityFlag", "Joined_dat.annuityInactivePolicy", "Joined_dat.api", "Joined_dat.asOfDate", "Joined_dat.bondActivePolicy", "Joined_dat.bondAgeOfCustomer", "Joined_dat.bondDependentVariable", "Joined_dat.bondGuaranteedCapitalBond", "Joined_dat.bondGuaranteedCapitalBondFlag", "Joined_dat.bondInactivePolicy", "Joined_dat.consult_sales_cd1", "Joined_dat.cont_no", "Joined_dat.dateOfBirth", "Joined_dat.educationActivePolicy", "Joined_dat.educationAgeOfCustomer", "Joined_dat.educationDependentVariable", "Joined_dat.educationEducationPlan", "Joined_dat.educationEducationPlanFlag", "Joined_dat.educationInactivePolicy", "Joined_dat.frequency", "Joined_dat.frequencyCalculated", "Joined_dat.frequencyLumpsumCalculated", "Joined_dat.frequencyMonthlyCalculated", "Joined_dat.inceptionDateEpoc", "Joined_dat.inceptionDateNewest", "Joined_dat.inceptionDateOldestCalculated", "Joined_dat.inceptionDateString", "Joined_dat.inceptionDateTenure", "Joined_dat.inceptionDateTenureBucket", "Joined_dat.incp_dt", "Joined_dat.inforceIndicatorCalculated", "Joined_dat.inforceIndicatorFlag", "Joined_dat.inforce_ind", "Joined_dat.investmentActivePolicy", "Joined_dat.investmentAgeOfCustomer", "Joined_dat.investmentDependentVariable", "Joined_dat.investmentFlexibleInvestmentPlan", "Joined_dat.investmentFlexibleInvestmentPlanFlag", "Joined_dat.investmentGatewayInvestmentPlan", "Joined_dat.investmentGatewayInvestmentPlanFlag", "Joined_dat.investmentInactivePolicy", "Joined_dat.investmentInvestmentBuilder", "Joined_dat.investmentInvestmentBuilderFlag", "Joined_dat.investmentInvestmentPlan", "Joined_dat.investmentInvestmentPlanFlag", "Joined_dat.investmentLibertyEvolveInvestmentPlan", "Joined_dat.investmentLibertyEvolveInvestmentPlanFlag", "Joined_dat.maturityDateTenure", "Joined_dat.maturityDateTenureBucket", "Joined_dat.movementDateCalculated", "Joined_dat.movementDateTenure", "Joined_dat.movementDateTenureBucket", "Joined_dat.movementInceptionDate", "Joined_dat.movementInceptionDateBucket", "Joined_dat.movementInceptionDateDiffereence", "Joined_dat.movent_dt", "Joined_dat.movent_ind", "Joined_dat.mty_dt", "Joined_dat.newestInceptionDate", "Joined_dat.newestMaturityDateCalculated", "Joined_dat.nullFilter", "Joined_dat.oldestInceptionDate", "Joined_dat.otherInvestmentProducts", "Joined_dat.ownerNationalIdCalculated", "Joined_dat.ownerNationalIdProductNameKey", "Joined_dat.owner_natl_id", "Joined_dat.personMarketConsentCalculated", "Joined_dat.policyExpireDuration", "Joined_dat.policyNumberCalculated", "Joined_dat.policyTerm", "Joined_dat.policyTermBucket", "Joined_dat.prod_name", "Joined_dat.productNameCalculated", "Joined_dat.product_group_category", "Joined_dat.prsn_brth_dt", "Joined_dat.prsn_gndr_dsc", "Joined_dat.prsn_mrkt_cnsnt", "Joined_dat.prsn_mrtl_sts_dsc", "Joined_dat.prsn_pdb_id", "Joined_dat.retirementAnnuityActivePolicy", "Joined_dat.retirementAnnuityAgeOfCustomer", "Joined_dat.retirementAnnuityDependentVariable", "Joined_dat.retirementAnnuityInactivePolicy", "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuity", "Joined_dat.retirementAnnuityLibertyEvolveRetirementAnnuityFlag", "Joined_dat.retirementAnnuityLibertyRetirementAnnuity", "Joined_dat.retirementAnnuityLibertyRetirementAnnuityFlag", "Joined_dat.retirementAnnuityRetirementAnnuityBuilder", "Joined_dat.retirementAnnuityRetirementAnnuityBuilderFlag", "Joined_dat.riskGroupFlag", "Joined_dat.sb_match", "Joined_dat.source", "Joined_dat.standardBankMatch", "Joined_dat.totalAnnuityPremium", "Joined_dat.totalInvestmentPremium", "Joined_dat.totalRetirementAnnuityPremium", "Joined_dat.yearsSinceFirstAnnuityProduct", "Joined_dat.yearsSinceFirstBondProduct", "Joined_dat.yearsSinceFirstEducationProduct", "Joined_dat.yearsSinceFirstInvestmentProduct", "Joined_dat.yearsSinceFirstRetirementAnnuityProduct", "Joined_dat.yearsSinceLastAnnuityProduct", "Joined_dat.yearsSinceLastBondProduct", "Joined_dat.yearsSinceLastEducationProduct", "Joined_dat.yearsSinceLastInvestmentProduct", "Joined_dat.yearsSinceLastRetirementAnnuityProduct", "Joined_dat.yearsSinceNewestPolicyStart", "Joined_dat.yearsSinceOldestPolicyStart", "Joined_dat1.SUM_countExcludePolicy", "Joined_dat1.SUM_countExcludePolicy_formula", "Joined_dat1.ownerNationalIdCalculated", "MAX_annuityAgeOfCustomer", "MAX_annuityAgeOfCustomer_bucket", "MAX_annuityDependentVariable", "MAX_annuityDependentVariable_formula", "MAX_bondDependentVariable", "MAX_bondDependentVariable_formula", "MAX_educationDependentVariable", "MAX_educationDependentVariable_formula", "MAX_investmentAgeOfCustomer", "MAX_investmentAgeOfCustomer_formula", "MAX_investmentAgeOfCustomer_formula_bucket", "MAX_investmentDependentVariable", "MAX_investmentDependentVariable_formula", "MAX_retirementAnnuityAgeOfCustomer", "MAX_retirementAnnuityAgeOfCustomer_bucket", "MAX_retirementAnnuityDependentVariable", "MAX_retirementAnnuityDependentVariable_formula", "MAX_riskGroupFlag", "MAX_yearsSinceFirstAnnuityProduct", "MAX_yearsSinceFirstAnnuityProduct_bucket", "MAX_yearsSinceFirstBondProduct", "MAX_yearsSinceFirstEducationProduct", "MAX_yearsSinceFirstInvestmentProduct", "MAX_yearsSinceFirstInvestmentProduct_bucket", "MAX_yearsSinceFirstRetirementAnnuityProduct", "MAX_yearsSinceFirstRetirementAnnuityProduct_bucket", "MAX_yearsSinceLastAnnuityProduct", "MAX_yearsSinceLastAnnuityProduct_bucket", "MAX_yearsSinceLastBondProduct", "MAX_yearsSinceLastEducationProduct", "MAX_yearsSinceLastInvestmentProduct", "MAX_yearsSinceLastInvestmentProduct_bucket", "MAX_yearsSinceLastRetirementAnnuityProduct", "MAX_yearsSinceLastRetirementAnnuityProduct_bucket", "MAX_yearsSinceNewestPolicyStart", "MAX_yearsSinceNewestPolicyStart_formula", "MAX_yearsSinceOldestPolicyStart", "MAX_yearsSinceOldestPolicyStart_formula", "SUM_Inactive_Policy", "SUM_activePolicy", "SUM_annuityAnnuity", "SUM_annuityFlexibleAnnuity", "SUM_bondGuaranteedCapitalBond", "SUM_bondGuaranteedCapitalBondFlag", "SUM_educationEducationPlan", "SUM_frequencyLumpsumCalculated", "SUM_frequencyMonthlyCalculated", "SUM_investmentActivePolicy", "SUM_investmentFlexibleInvestmentPlan", "SUM_investmentGatewayInvestmentPlan", "SUM_investmentInvestmentBuilder", "SUM_investmentInvestmentPlan", "SUM_investmentLibertyEvolveInvestmentPlan", "SUM_retirementAnnuityActivePolicy", "SUM_retirementAnnuityLibertyEvolveRetirementAnnuity", "SUM_retirementAnnuityLibertyRetirementAnnuity", "SUM_retirementAnnuityRetirementAnnuityBuilder", "SUM_totalAnnuityPremium", "SUM_totalInvestmentPremium", "SUM_totalRetirementAnnuityPremium", "ageBucket", "countPoliciesAnnuityAnnuityFlag", "countPoliciesAnnuityFlexibleAnnuityFlag", "countPoliciesEducationEducationPlanFlag", "countPoliciesInvestmentFlexibleInvestmentPlanFlag", "countPoliciesInvestmentGatewayInvestmentPlanFlag", "countPoliciesInvestmentInvestmentBuilderFlag", "countPoliciesInvestmentInvestmentPlanFlag", "countPoliciesInvestmentLibertyEvolveInvestmentPlanFlag", "countPoliciesRetirementAnnuityLibertyEvolveRetirementAnnuityFlag", "countPoliciesRetirementAnnuityLibertyRetirementAnnuityFlag", "countPoliciesRetirementAnnuityRetirementAnnuityBuilderFlag", "ownerNationalIdCalculated_formula", "ownerNationalIdCalculated_formula1", "ownerNationalIdCalculated_formula1_formula", "ownerNationalIdCalculated_formula1_formula1", "ownerNationalIdCalculated_formula1_formula_formula", "ownerNationalIdCalculated_formula1_formula_formula_formula", "ownerNationalIdCalculated_formula_formula", "ownerNationalIdCalculated_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula", "ownerNationalIdCalculated_formula_formula_formula_formula_formula_formula_formula", "prsn_gndr_dsc", "prsn_mrtl_sts_dsc" ]
+        }
+      }
+    },
+    "OUTPUT1" : {
+      "action" : "save",
+      "sources" : [ "JOIN2" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Account Propensity Model Result Data",
+          "name" : "AW_AccountPropensityModelResultData",
+          "folderName" : "Account_Propensity_Model_Adviser_App"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "AW_InvestmentPropensityRecommendation__c", "Id", "Name", "OwnerId", "AW_IdentificationNumber__pc" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Account",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Account"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "DISCOVERY_PREDICT4", "UPDATE0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "RIGHT_OUTER",
+        "leftKeys" : [ "owner_natl_id" ],
+        "rightQualifier" : "Account",
+        "rightKeys" : [ "AW_IdentificationNumber__pc" ]
+      }
+    },
+    "FORMULA0" : {
+      "action" : "formula",
+      "sources" : [ "JOIN0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Joined_dat.prsn_pstl_cd_formula",
+          "label" : "Check For Null",
+          "formulaExpression" : "case \r\n\twhen AW_PredictedEducationPropensityScore_prediction is null and AW_PredictedBondPropensityScore_prediction is null and AW_PredictedAnnuityPropensityScore_prediction is null and AW_PredictedInvestmentPropensityScore_prediction is null and AW_PredictedRetirementAnnuityPropensityScore_prediction is null\r\n\tthen \r\n    'Y'\r\n\telse\r\n\t'N'\r\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FILTER0" : {
+      "action" : "filter",
+      "sources" : [ "FORMULA0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Joined_dat.prsn_pstl_cd_formula",
+          "operator" : "EQUAL",
+          "operands" : [ "N" ]
+        } ]
+      }
+    },
+    "FORMULA1" : {
+      "action" : "formula",
+      "sources" : [ "DROP_FIELDS0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "ownerNationalIdCalculated_formula",
+          "label" : "Full Access Formula",
+          "formulaExpression" : "'FullAccess'",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN2" : {
+      "action" : "join",
+      "sources" : [ "FORMULA1", "DROP_FIELDS1" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "ownerNationalIdCalculated_formula" ],
+        "rightQualifier" : "FullAccessMembers",
+        "rightKeys" : [ "Id_formula" ]
+      }
+    },
+    "LOAD_DATASET6" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "DeveloperName" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Group",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Group"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FILTER1" : {
+      "action" : "filter",
+      "sources" : [ "JOIN4" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "DeveloperName",
+          "operator" : "EQUAL",
+          "operands" : [ "AW_PredictionModelFullAccess" ]
+        } ]
+      }
+    },
+    "FORMULA2" : {
+      "action" : "formula",
+      "sources" : [ "FILTER1" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Id_formula",
+          "label" : "Full Access Formula1",
+          "formulaExpression" : "'FullAccess'",
+          "precision" : 50,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS1" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA2" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "DeveloperName", "GroupMember.Id", "Id", "Name" ]
+        }
+      }
+    },
+    "JOIN4" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET6", "LOAD_DATASET7" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "MULTI_VALUE_LOOKUP",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "GroupMember",
+        "rightKeys" : [ "GroupId" ]
+      }
+    },
+    "LOAD_DATASET7" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "GroupId", "UserOrGroupId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "GroupMember",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "GroupMember"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "DROP_FIELDS2" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedEducationPropensityScore_prediction", "AW_PredictedBondPropensityScore_prediction", "AW_PredictedAnnuityPropensityScore_prediction", "AW_PredictedInvestmentPropensityScore_prediction", "AW_PredictedRetirementAnnuityPropensityScore_prediction", "Account.Id", "Account.AW_InvestmentPropensityRecommendation__c" ]
+        }
+      }
+    },
+    "Ranking_copy0" : {
+      "action" : "computeRelative",
+      "sources" : [ "APPEND7_copy0" ],
+      "parameters" : {
+        "partitionBy" : [ "owner_natl_id" ],
+        "orderBy" : [ {
+          "fieldName" : "Score_api",
+          "direction" : "DESC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Rank",
+          "label" : "Rank",
+          "formulaExpression" : "rank()",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : "1"
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES1_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_Annuity_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_text_annuity",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES10_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES1_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "AW_PredictedAnnuityPropensityScore_prediction",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES2_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_bond_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_Bond",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES11_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES2_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "AW_PredictedBondPropensityScore_prediction",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES4_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_RA_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_RA",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES12_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES4_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "AW_PredictedRetirementAnnuityPropensityScore_prediction",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES6_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_investment_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_Investment",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES13_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES6_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "AW_PredictedInvestmentPropensityScore_prediction",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES8_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Subset_Education_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Add_field_Education",
+          "newProperties" : {
+            "label" : "Model_Name",
+            "name" : "Model_Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES14_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES8_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "AW_PredictedEducationPropensityScore_prediction",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api"
+          }
+        } ]
+      }
+    },
+    "Subset_Input_Scores_data_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DISCOVERY_PREDICT4" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedInvestmentPropensityScore_prediction", "AW_PredictedEducationPropensityScore_prediction", "AW_PredictedAnnuityPropensityScore_prediction", "AW_PredictedRetirementAnnuityPropensityScore_prediction", "AW_PredictedBondPropensityScore_prediction", "owner_natl_id" ]
+        }
+      }
+    },
+    "Add_fields_1_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Subset_Input_Scores_data_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_text_annuity",
+          "label" : "Add_text_annuity",
+          "formulaExpression" : "'Annuity'",
+          "precision" : 255
+        } ]
+      }
+    },
+    "Add_fields_2_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_1_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_RA",
+          "label" : "Add_field_RA",
+          "formulaExpression" : "'RA'",
+          "precision" : 255
+        } ]
+      }
+    },
+    "Add_fields_3_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_2_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_Bond",
+          "label" : "Add_field_Bond",
+          "formulaExpression" : "'Bond'",
+          "precision" : 255
+        } ]
+      }
+    },
+    "Add_fields_4_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_3_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_Education",
+          "label" : "Add_field_Education",
+          "formulaExpression" : "'Education'",
+          "precision" : 255
+        } ]
+      }
+    },
+    "Add_fields_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "Add_fields_4_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Add_field_Investment",
+          "label" : "Add_field_Investment",
+          "formulaExpression" : "'Investment'",
+          "precision" : 255
+        } ]
+      }
+    },
+    "Subset_Education_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedEducationPropensityScore_prediction", "Add_field_Education", "owner_natl_id" ]
+        }
+      }
+    },
+    "Subset_Annuity_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedAnnuityPropensityScore_prediction", "Add_text_annuity", "owner_natl_id" ]
+        }
+      }
+    },
+    "Subset_RA_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedRetirementAnnuityPropensityScore_prediction", "Add_field_RA", "owner_natl_id" ]
+        }
+      }
+    },
+    "Subset_investment_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedInvestmentPropensityScore_prediction", "Add_field_Investment", "owner_natl_id" ]
+        }
+      }
+    },
+    "Subset_bond_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "Add_fields_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "SELECT",
+          "ignoreMissingFields" : true,
+          "fields" : [ "AW_PredictedBondPropensityScore_prediction", "Add_field_Bond", "owner_natl_id" ]
+        }
+      }
+    },
+    "TO_DIMENSION1_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "Ranking_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Rank_to_dimension",
+          "newProperties" : {
+            "name" : "Rank"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Rank",
+          "newProperties" : {
+            "label" : "Rank",
+            "name" : "Rank_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "FORMULA0_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "TO_DIMENSION2_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Investment_Ranking_Text_api",
+          "label" : "Investment_Ranking_Text",
+          "formulaExpression" : "concat('(',Rank,') ',Model_Name,' - ',Score_api,'%')",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "TO_DIMENSION2_copy0_copy0" : {
+      "action" : "typeCast",
+      "sources" : [ "TO_DIMENSION1_copy0_copy0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Score_api_to_dimension",
+          "newProperties" : {
+            "name" : "Score_api"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Score_api" ]
+        }
+      },
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Score_api",
+          "newProperties" : {
+            "label" : "Score",
+            "name" : "Score_api_to_dimension",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "FILTER0_copy0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "FORMULA0_copy0_copy0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Rank",
+          "operator" : "EQUAL",
+          "operands" : [ "1", "2" ]
+        } ]
+      }
+    },
+    "DROP_FIELDS0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER0_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Model_Name", "Score" ]
+        }
+      }
+    },
+    "FORMULA1_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "DROP_FIELDS0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Rank_Label_api",
+          "label" : "Rank_Label",
+          "formulaExpression" : "concat('Rank', Rank)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS1_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA1_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank" ]
+        }
+      }
+    },
+    "FILTER1_copy0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "DROP_FIELDS1_copy0_copy0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Rank_Label_api",
+          "operator" : "EQUAL",
+          "operands" : [ "Rank1" ]
+        } ]
+      }
+    },
+    "FILTER2_copy0_copy0" : {
+      "action" : "filter",
+      "sources" : [ "DROP_FIELDS1_copy0_copy0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Rank_Label_api",
+          "operator" : "EQUAL",
+          "operands" : [ "Rank2" ]
+        } ]
+      }
+    },
+    "DROP_FIELDS2_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER2_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank_Label_api" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES0_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS2_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Investment_Ranking_Text_api",
+          "newProperties" : {
+            "label" : "Rank2",
+            "name" : "Rank2_api"
+          }
+        } ]
+      }
+    },
+    "DROP_FIELDS3_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FILTER1_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank_Label_api" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES1_copy1_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS3_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Investment_Ranking_Text_api",
+          "newProperties" : {
+            "label" : "Rank1",
+            "name" : "Rank1_api"
+          }
+        } ]
+      }
+    },
+    "JOIN0_copy0_copy0" : {
+      "action" : "join",
+      "sources" : [ "EDIT_ATTRIBUTES0_copy0_copy0", "EDIT_ATTRIBUTES1_copy1_copy0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "owner_natl_id" ],
+        "rightQualifier" : "Transform3",
+        "rightKeys" : [ "owner_natl_id" ]
+      }
+    },
+    "FORMULA2_copy0_copy0" : {
+      "action" : "formula",
+      "sources" : [ "JOIN0_copy0_copy0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Investment_Propensity_Recommendation",
+          "label" : "Investment_Propensity_Recommendation",
+          "formulaExpression" : "concat(\"Transform3.Rank1_api\", ' || ',Rank2_api)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS5_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA2_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Rank2_api", "Transform3.Rank1_api" ]
+        }
+      }
+    },
+    "DROP_FIELDS6_copy0_copy0" : {
+      "action" : "schema",
+      "sources" : [ "DROP_FIELDS5_copy0_copy0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Score_api", "Transform3.Score_api", "Transform3.owner_natl_id" ]
+        }
+      }
+    },
+    "APPEND4_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "APPEND6_copy0", "EDIT_ATTRIBUTES12_copy0_copy0" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "APPEND5_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "EDIT_ATTRIBUTES13_copy0_copy0", "APPEND4_copy0" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "APPEND6_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "EDIT_ATTRIBUTES11_copy0_copy0", "EDIT_ATTRIBUTES10_copy0_copy0" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "APPEND7_copy0" : {
+      "action" : "appendV2",
+      "sources" : [ "EDIT_ATTRIBUTES14_copy0_copy0", "APPEND5_copy0" ],
+      "parameters" : {
+        "fieldMappings" : [ {
+          "top" : "owner_natl_id",
+          "bottom" : "owner_natl_id"
+        }, {
+          "top" : "Score_api",
+          "bottom" : "Score_api"
+        }, {
+          "top" : "Model_Name",
+          "bottom" : "Model_Name"
+        } ]
+      }
+    },
+    "UPDATE0" : {
+      "action" : "update",
+      "sources" : [ "LOAD_DATASET2", "DROP_FIELDS6_copy0_copy0" ],
+      "parameters" : {
+        "leftKeys" : [ "AW_IdentificationNumber__pc" ],
+        "rightKeys" : [ "owner_natl_id" ],
+        "updateColumns" : {
+          "AW_InvestmentPropensityRecommendation__c" : "Investment_Propensity_Recommendation"
+        }
+      }
+    },
+    "OUTPUT3" : {
+      "action" : "outputExternal",
+      "sources" : [ "DROP_FIELDS2" ],
+      "parameters" : {
+        "connectionName" : "AW_AccountPropensityModelConnection",
+        "object" : "Account",
+        "operation" : "update",
+        "externalIdFieldName" : "",
+        "hyperFileName" : "",
+        "fieldsMapping" : [ {
+          "sourceField" : "AW_PredictedEducationPropensityScore_prediction",
+          "targetField" : "AW_PredictionEducationModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedBondPropensityScore_prediction",
+          "targetField" : "AW_PredictionBondModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedAnnuityPropensityScore_prediction",
+          "targetField" : "AW_PredictionAnnuityModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedInvestmentPropensityScore_prediction",
+          "targetField" : "AW_PredictionInvestmentModelScore__c"
+        }, {
+          "sourceField" : "AW_PredictedRetirementAnnuityPropensityScore_prediction",
+          "targetField" : "AW_PredictionRetirementModelScore__c"
+        }, {
+          "sourceField" : "Account.AW_InvestmentPropensityRecommendation__c",
+          "targetField" : "AW_InvestmentPropensityRecommendation__c"
+        }, {
+          "sourceField" : "Account.Id",
+          "targetField" : "Id"
+        } ],
+        "connectorType" : "SALESFORCE_OUTPUT"
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "Account Propensity Model Aggregated Data",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "DISCOVERY_PREDICT0" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 392
+      },
+      "DISCOVERY_PREDICT1" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 252
+      },
+      "DISCOVERY_PREDICT2" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 532
+      },
+      "DISCOVERY_PREDICT3" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252,
+        "left" : 672
+      },
+      "DISCOVERY_PREDICT4" : {
+        "label" : "Discovery Predict",
+        "type" : "DISCOVERY_PREDICT",
+        "top" : 252.2,
+        "left" : 812
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 1372,
+        "graph" : {
+          "DROP_FIELDS0" : null
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT1" : {
+        "label" : "Output",
+        "type" : "OUTPUT",
+        "top" : 252,
+        "left" : 1792
+      },
+      "LOAD_DATASET2" : {
+        "label" : "Account",
+        "type" : "LOAD_DATASET",
+        "top" : 1092,
+        "left" : 1932.1,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN0" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 952
+      },
+      "TRANSFORM1" : {
+        "label" : "Transform10",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 1092,
+        "graph" : {
+          "FORMULA0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "FILTER0" : {
+        "label" : "Filter",
+        "type" : "FILTER",
+        "top" : 392,
+        "left" : 1232
+      },
+      "TRANSFORM2" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 1512,
+        "graph" : {
+          "FORMULA1" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ ]
+      },
+      "JOIN2" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 1652
+      },
+      "LOAD_DATASET6" : {
+        "label" : "Group",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 1092,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "FILTER1" : {
+        "label" : "Filter",
+        "type" : "FILTER",
+        "top" : 112,
+        "left" : 1372
+      },
+      "TRANSFORM3" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 112,
+        "left" : 1512,
+        "graph" : {
+          "FORMULA2" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "DROP_FIELDS1" : null
+        },
+        "connectors" : [ {
+          "source" : "FORMULA2",
+          "target" : "DROP_FIELDS1"
+        } ]
+      },
+      "JOIN4" : {
+        "label" : "Join",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 1232
+      },
+      "LOAD_DATASET7" : {
+        "label" : "GroupMember",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 1092,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM4" : {
+        "label" : "Transform",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 1512,
+        "graph" : {
+          "DROP_FIELDS2" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM0_copy0" : {
+        "label" : "Ranking",
+        "type" : "TRANSFORM",
+        "top" : 672.0999999999999,
+        "left" : 1232,
+        "graph" : {
+          "Ranking_copy0" : {
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM0_copy0_copy0" : {
+        "label" : "Transform 0",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 532,
+        "graph" : {
+          "EDIT_ATTRIBUTES1_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES10_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES1_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES10_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM1_copy0_copy0" : {
+        "label" : "Transform 1",
+        "type" : "TRANSFORM",
+        "top" : 672,
+        "left" : 532,
+        "graph" : {
+          "EDIT_ATTRIBUTES2_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES11_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES2_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES11_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM2_copy0_copy0" : {
+        "label" : "Transform 2",
+        "type" : "TRANSFORM",
+        "top" : 812,
+        "left" : 532.0999999999999,
+        "graph" : {
+          "EDIT_ATTRIBUTES4_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES12_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES4_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES12_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM3_copy0_copy0" : {
+        "label" : "Transform 3",
+        "type" : "TRANSFORM",
+        "top" : 952,
+        "left" : 532.0999999999999,
+        "graph" : {
+          "EDIT_ATTRIBUTES6_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES13_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES6_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES13_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM4_copy0_copy0" : {
+        "label" : "Transform 4",
+        "type" : "TRANSFORM",
+        "top" : 1092,
+        "left" : 532.0999999999999,
+        "graph" : {
+          "EDIT_ATTRIBUTES8_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES14_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES8_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES14_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM0_copy1_copy0" : {
+        "label" : "Subset_Input_Scores_data",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 112,
+        "graph" : {
+          "Subset_Input_Scores_data_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM1_copy1_copy0" : {
+        "label" : "Add_fields",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 252,
+        "graph" : {
+          "Add_fields_1_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Add_fields_2_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Add_fields_3_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Add_fields_4_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "Add_fields_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ {
+          "source" : "Add_fields_1_copy0_copy0",
+          "target" : "Add_fields_2_copy0_copy0"
+        }, {
+          "source" : "Add_fields_2_copy0_copy0",
+          "target" : "Add_fields_3_copy0_copy0"
+        }, {
+          "source" : "Add_fields_3_copy0_copy0",
+          "target" : "Add_fields_4_copy0_copy0"
+        }, {
+          "source" : "Add_fields_4_copy0_copy0",
+          "target" : "Add_fields_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM2_copy1_copy0" : {
+        "label" : "Subset_Education",
+        "type" : "TRANSFORM",
+        "top" : 1092,
+        "left" : 392,
+        "graph" : {
+          "Subset_Education_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM3_copy1_copy0" : {
+        "label" : "Subset_Annuity",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 392,
+        "graph" : {
+          "Subset_Annuity_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM4_copy1_copy0" : {
+        "label" : "Subset_RA",
+        "type" : "TRANSFORM",
+        "top" : 812,
+        "left" : 392,
+        "graph" : {
+          "Subset_RA_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM5_copy0_copy0" : {
+        "label" : "Subset_investment",
+        "type" : "TRANSFORM",
+        "top" : 952,
+        "left" : 392,
+        "graph" : {
+          "Subset_investment_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM6_copy0_copy0" : {
+        "label" : "Subset_bond",
+        "type" : "TRANSFORM",
+        "top" : 672,
+        "left" : 392,
+        "graph" : {
+          "Subset_bond_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM0_copy2_copy0" : {
+        "label" : "Transform 0 Copy",
+        "type" : "TRANSFORM",
+        "top" : 812,
+        "left" : 1372.3000000000002,
+        "graph" : {
+          "TO_DIMENSION1_copy0_copy0" : {
+            "label" : "To Text"
+          },
+          "FORMULA0_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "TO_DIMENSION2_copy0_copy0" : {
+            "label" : "To Text"
+          }
+        },
+        "connectors" : [ {
+          "source" : "TO_DIMENSION2_copy0_copy0",
+          "target" : "FORMULA0_copy0_copy0"
+        }, {
+          "source" : "TO_DIMENSION1_copy0_copy0",
+          "target" : "TO_DIMENSION2_copy0_copy0"
+        } ]
+      },
+      "FILTER0_copy0_copy0" : {
+        "label" : "Filter 0",
+        "type" : "FILTER",
+        "top" : 812,
+        "left" : 1512.3000000000002
+      },
+      "TRANSFORM1_copy2_copy0" : {
+        "label" : "Transform 1 Copy",
+        "type" : "TRANSFORM",
+        "top" : 812.1,
+        "left" : 1652.3000000000002,
+        "graph" : {
+          "DROP_FIELDS0_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "FORMULA1_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "DROP_FIELDS1_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "DROP_FIELDS0_copy0_copy0",
+          "target" : "FORMULA1_copy0_copy0"
+        }, {
+          "source" : "FORMULA1_copy0_copy0",
+          "target" : "DROP_FIELDS1_copy0_copy0"
+        } ]
+      },
+      "FILTER1_copy0_copy0" : {
+        "label" : "Filter 1",
+        "type" : "FILTER",
+        "top" : 812.1,
+        "left" : 1792.3000000000002
+      },
+      "FILTER2_copy0_copy0" : {
+        "label" : "Filter 2",
+        "type" : "FILTER",
+        "top" : 952.1,
+        "left" : 1792.3000000000002
+      },
+      "TRANSFORM2_copy2_copy0" : {
+        "label" : "Transform 2 Copy",
+        "type" : "TRANSFORM",
+        "top" : 952.1,
+        "left" : 1932.3000000000002,
+        "graph" : {
+          "DROP_FIELDS2_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "EDIT_ATTRIBUTES0_copy0_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "DROP_FIELDS2_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES0_copy0_copy0"
+        } ]
+      },
+      "TRANSFORM3_copy2_copy0" : {
+        "label" : "Transform 3 Copy",
+        "type" : "TRANSFORM",
+        "top" : 812.1,
+        "left" : 1932.3000000000002,
+        "graph" : {
+          "DROP_FIELDS3_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "EDIT_ATTRIBUTES1_copy1_copy0" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "DROP_FIELDS3_copy0_copy0",
+          "target" : "EDIT_ATTRIBUTES1_copy1_copy0"
+        } ]
+      },
+      "JOIN0_copy0_copy0" : {
+        "label" : "Join 0",
+        "type" : "JOIN",
+        "top" : 952.1,
+        "left" : 2072.3
+      },
+      "TRANSFORM4_copy2_copy0" : {
+        "label" : "Transform 4 Copy",
+        "type" : "TRANSFORM",
+        "top" : 952.1,
+        "left" : 2212.3,
+        "graph" : {
+          "FORMULA2_copy0_copy0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "DROP_FIELDS5_copy0_copy0" : {
+            "label" : "Drop Columns"
+          },
+          "DROP_FIELDS6_copy0_copy0" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA2_copy0_copy0",
+          "target" : "DROP_FIELDS5_copy0_copy0"
+        }, {
+          "source" : "DROP_FIELDS5_copy0_copy0",
+          "target" : "DROP_FIELDS6_copy0_copy0"
+        } ]
+      },
+      "APPEND4_copy0" : {
+        "label" : "Append 1",
+        "description" : "",
+        "type" : "APPEND",
+        "top" : 671.9,
+        "left" : 812
+      },
+      "APPEND5_copy0" : {
+        "label" : "Append 5",
+        "type" : "APPEND",
+        "top" : 671.9,
+        "left" : 952
+      },
+      "APPEND6_copy0" : {
+        "label" : "Append 6",
+        "type" : "APPEND",
+        "top" : 671.9,
+        "left" : 672
+      },
+      "APPEND7_copy0" : {
+        "label" : "Append 7",
+        "type" : "APPEND",
+        "top" : 671.9,
+        "left" : 1092
+      },
+      "UPDATE0" : {
+        "label" : "Update 0",
+        "type" : "UPDATE",
+        "top" : 952,
+        "left" : 2352
+      },
+      "OUTPUT3" : {
+        "label" : "Output 3",
+        "type" : "OUTPUT",
+        "top" : 532.2,
+        "left" : 1652
+      }
+    },
+    "connectors" : [ {
+      "source" : "DISCOVERY_PREDICT1",
+      "target" : "DISCOVERY_PREDICT0"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "DISCOVERY_PREDICT1"
+    }, {
+      "source" : "DISCOVERY_PREDICT0",
+      "target" : "DISCOVERY_PREDICT2"
+    }, {
+      "source" : "DISCOVERY_PREDICT2",
+      "target" : "DISCOVERY_PREDICT3"
+    }, {
+      "source" : "DISCOVERY_PREDICT3",
+      "target" : "DISCOVERY_PREDICT4"
+    }, {
+      "source" : "FILTER0",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "JOIN2",
+      "target" : "OUTPUT1"
+    }, {
+      "source" : "DISCOVERY_PREDICT4",
+      "target" : "JOIN0"
+    }, {
+      "source" : "UPDATE0",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "TRANSFORM1"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "FILTER0"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "TRANSFORM2"
+    }, {
+      "source" : "TRANSFORM2",
+      "target" : "JOIN2"
+    }, {
+      "source" : "TRANSFORM3",
+      "target" : "JOIN2"
+    }, {
+      "source" : "JOIN4",
+      "target" : "FILTER1"
+    }, {
+      "source" : "FILTER1",
+      "target" : "TRANSFORM3"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "JOIN4"
+    }, {
+      "source" : "LOAD_DATASET7",
+      "target" : "JOIN4"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "TRANSFORM4"
+    }, {
+      "source" : "APPEND6_copy0",
+      "target" : "APPEND4_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy1_copy0",
+      "target" : "TRANSFORM1_copy1_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0",
+      "target" : "TRANSFORM2_copy1_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0",
+      "target" : "TRANSFORM3_copy1_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0",
+      "target" : "TRANSFORM4_copy1_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0",
+      "target" : "TRANSFORM5_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy1_copy0",
+      "target" : "TRANSFORM6_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy1_copy0",
+      "target" : "TRANSFORM4_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM3_copy1_copy0",
+      "target" : "TRANSFORM0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM4_copy1_copy0",
+      "target" : "TRANSFORM2_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM5_copy0_copy0",
+      "target" : "TRANSFORM3_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM6_copy0_copy0",
+      "target" : "TRANSFORM1_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy2_copy0",
+      "target" : "FILTER0_copy0_copy0"
+    }, {
+      "source" : "FILTER0_copy0_copy0",
+      "target" : "TRANSFORM1_copy2_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy2_copy0",
+      "target" : "FILTER1_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy2_copy0",
+      "target" : "FILTER2_copy0_copy0"
+    }, {
+      "source" : "FILTER2_copy0_copy0",
+      "target" : "TRANSFORM2_copy2_copy0"
+    }, {
+      "source" : "FILTER1_copy0_copy0",
+      "target" : "TRANSFORM3_copy2_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy2_copy0",
+      "target" : "JOIN0_copy0_copy0"
+    }, {
+      "source" : "TRANSFORM3_copy2_copy0",
+      "target" : "JOIN0_copy0_copy0"
+    }, {
+      "source" : "JOIN0_copy0_copy0",
+      "target" : "TRANSFORM4_copy2_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0",
+      "target" : "TRANSFORM0_copy2_copy0"
+    }, {
+      "source" : "TRANSFORM2_copy0_copy0",
+      "target" : "APPEND4_copy0"
+    }, {
+      "source" : "TRANSFORM3_copy0_copy0",
+      "target" : "APPEND5_copy0"
+    }, {
+      "source" : "APPEND4_copy0",
+      "target" : "APPEND5_copy0"
+    }, {
+      "source" : "TRANSFORM1_copy0_copy0",
+      "target" : "APPEND6_copy0"
+    }, {
+      "source" : "TRANSFORM0_copy0_copy0",
+      "target" : "APPEND6_copy0"
+    }, {
+      "source" : "TRANSFORM4_copy0_copy0",
+      "target" : "APPEND7_copy0"
+    }, {
+      "source" : "APPEND5_copy0",
+      "target" : "APPEND7_copy0"
+    }, {
+      "source" : "APPEND7_copy0",
+      "target" : "TRANSFORM0_copy0"
+    }, {
+      "source" : "DISCOVERY_PREDICT4",
+      "target" : "TRANSFORM0_copy1_copy0"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "UPDATE0"
+    }, {
+      "source" : "TRANSFORM4_copy2_copy0",
+      "target" : "UPDATE0"
+    }, {
+      "source" : "TRANSFORM4",
+      "target" : "OUTPUT3"
+    } ],
+    "hiddenColumns" : [ ]
+  },
+  "runMode" : "full"
+}

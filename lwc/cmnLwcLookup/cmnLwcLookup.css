@@ -1,0 +1,51 @@
+.pillSize
+{
+	width : 100%;
+}
+
+lightning-radio-group .slds-radio_faux
+{
+	margin-right : 10px;
+}
+
+.slds-modal__content
+{
+	overflow : auto !important;
+}
+
+.lookup-container
+{
+	margin : inherit;
+}
+
+.disabled-overlay
+{
+	background : #000000;
+	height     : 100%;
+	opacity    : 0.09;
+	position   : absolute;
+	width      : 100%;
+	z-index    : 1;
+}
+
+.required-field:before
+{
+	color   : #FF0000;
+	content : "* ";
+}
+
+.no-pointer-events
+{
+	pointer-events : none;
+}
+
+.no-records-found
+{
+	font-weight : bold;
+	text-align  : center;
+}
+
+.search-option-selected
+{
+	background : #E9E9E9;
+}

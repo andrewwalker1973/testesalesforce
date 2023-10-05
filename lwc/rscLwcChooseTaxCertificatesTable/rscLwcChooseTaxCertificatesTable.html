@@ -1,0 +1,21 @@
+<template>
+	<template if:false={isReadOnly}>
+		<lightning-combobox class='slds-m-left_medium slds-large-size_3-of-12' onchange={handleYearChange} options={taxYears} placeholder='Select year'
+							validity=''></lightning-combobox>
+		<c-cmn-lwc-paginated-table columns={taxTableColumns} onrowselection={saveSelectedRows} results-per-page={resultsPerPage}
+								   rows={taxTableData}></c-cmn-lwc-paginated-table>
+	</template>
+
+	<template if:true={isReadOnly}>
+		<c-rsc-lwc-choose-email-recipients client={client} financial-advisor={financialAdvisor} include-name="true"
+										   onno_recipient_selected={noRecipientSelected} onrecipients_set={setRecipients}
+										   third-party={thirdParty}></c-rsc-lwc-choose-email-recipients>
+		<lightning-datatable columns={taxTableColumns} data={selectedTaxCertificates} hide-checkbox-column='true' key-field="Id" sorted-by={sortedBy}
+							 sorted-direction={sortDirection}></lightning-datatable>
+	</template>
+
+	<c-rsc-lwc-tax-flow-footer is-policy-selected={hasSelectedPolicies} is-recipient-selected={hasRecipients} onchoose_screen={changeToChooseScreen}
+							   onconfirmation_screen={changeToConfirmationScreen} onno_policy_selected={handleNoPolicySelected}
+							   onno_recipient_selected={handleNoRecipientSelected} use-flow-next-event={isReadOnly}></c-rsc-lwc-tax-flow-footer>
+	<c-cmn-lwc-toast></c-cmn-lwc-toast>
+</template>

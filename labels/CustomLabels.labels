@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AW_AdviceCentreAdminUserId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Advice Centre Admin User Id</shortDescription>
+        <value>0054J0000058pOI</value>
+    </labels>
+    <labels>
+        <fullName>AW_Cancel</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>AW_Change_of_Consultant_Form</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Change of Consultant Form</shortDescription>
+        <value>Change of Consultant Form</value>
+    </labels>
+    <labels>
+        <fullName>AW_ClientCommunityFAISLine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AW_ClientCommunityFAISLine</shortDescription>
+        <value>Liberty Group Limited (Reg. no 1957/002788/06) is an Insurer and an Authorised Financial Services Provider (FAIS no 2409). All rights reserved.</value>
+    </labels>
+    <labels>
+        <fullName>AW_Contact_Client</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Client</shortDescription>
+        <value>Contact Client</value>
+    </labels>
+    <labels>
+        <fullName>AW_Contact_Orphan_Client_and_Submit_Change_of_Consulting_Form</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Orphan Client and Submit Change of Consulting Form</shortDescription>
+        <value>Contact Orphan and Submit Change of Consulting Form</value>
+    </labels>
+    <labels>
+        <fullName>AW_Continue</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Continue Button</shortDescription>
+        <value>Continue</value>
+    </labels>
+    <labels>
+        <fullName>AW_CreateNewQuote</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create New Quote Button</shortDescription>
+        <value>Create New Quote</value>
+    </labels>
+    <labels>
+        <fullName>AW_EmptyFinancialAccountList</fullName>
+        <categories>AW_CMP_ContractServicingQuote,Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty Financial Account List</shortDescription>
+        <value>There are no [product interest] policies.</value>
+    </labels>
+    <labels>
+        <fullName>AW_EmptyFinancialGoalList</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty Financial Goal List</shortDescription>
+        <value>We could not find any Financial Goal linked to this record.</value>
+    </labels>
+    <labels>
+        <fullName>AW_EmptyPlannedSolutionList</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty Planned Solution List</shortDescription>
+        <value>We could not find any Planned Solution linked to this record. Please contact our support team on 011 558 2929, to log an issue.</value>
+    </labels>
+    <labels>
+        <fullName>AW_EmptyQuoteList</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty Quote List</shortDescription>
+        <value>We could not find any Quote linked to this record.</value>
+    </labels>
+    <labels>
+        <fullName>AW_Error</fullName>
+        <categories>BPO_Canvas</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>AW_Error_Message</fullName>
+        <categories>BPO_Canvas</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Message</shortDescription>
+        <value>Something went wrong, contact your Admin.</value>
+    </labels>
+    <labels>
+        <fullName>AW_FinancialAccountSelection</fullName>
+        <categories>AW_CMP_ContractServicingQuote,Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Financial Account Selection</shortDescription>
+        <value>Select Policy</value>
+    </labels>
+    <labels>
+        <fullName>AW_FinancialGoalHelpText</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Financial Goal Selection Help Text</shortDescription>
+        <value>Should you not see all your client&apos;s goals, please ensure that the solution has been implemented with the FNA done.</value>
+    </labels>
+    <labels>
+        <fullName>AW_FinancialGoalSelection</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Financial Goal Selection</shortDescription>
+        <value>Select Financial Goal</value>
+    </labels>
+    <labels>
+        <fullName>AW_GoalActualValueInvestment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Goal Actual Value - Investment</shortDescription>
+        <value>Actual Value</value>
+    </labels>
+    <labels>
+        <fullName>AW_ImplementGoal</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Implement investment goal button name in implement goal container lightning comp</shortDescription>
+        <value>Implement Investment Goal</value>
+    </labels>
+    <labels>
+        <fullName>AW_ImplementRiskGoal</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Implement risk need button name in implement goal container lightning component</shortDescription>
+        <value>Implement Risk Need</value>
+    </labels>
+    <labels>
+        <fullName>AW_MyClientSatisfactionRatingReportId</fullName>
+        <categories>report,id</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Satisfaction Rating Report Id</shortDescription>
+        <value>00O4J0000057S23UAE</value>
+    </labels>
+    <labels>
+        <fullName>AW_PlannedSolutionSelection</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Planned Solution Selection</shortDescription>
+        <value>Select Planned Solution</value>
+    </labels>
+    <labels>
+        <fullName>AW_Previous</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous Button</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>AW_ProceedToBPOQuotesAndEP</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Proceed to BPO Quotes and EP Button</shortDescription>
+        <value>Proceed to BPO Quotes and EP</value>
+    </labels>
+    <labels>
+        <fullName>AW_QuoteSelection</fullName>
+        <categories>BPO_Canvas, Aura Component Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Selection</shortDescription>
+        <value>Select Quote</value>
+    </labels>
+    <labels>
+        <fullName>AW_ServicingQuoteButton</fullName>
+        <categories>AW_CTR_ContractServicingQuoteContainer</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Implement Servicing Quote Button</shortDescription>
+        <value>Implement Servicing Quote</value>
+    </labels>
+    <labels>
+        <fullName>AW_TermsAndConditionsLink</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AW_TermsAndConditionsLink</shortDescription>
+        <value>Terms and Conditions</value>
+    </labels>
+    <labels>
+        <fullName>AW_ViewSurveysReportBtnLabel</fullName>
+        <categories>LWC,component,button,button label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>View Surveys Report Button Label</shortDescription>
+        <value>View surveys report</value>
+    </labels>
+    <labels>
+        <fullName>CMN_FileUploadErrorMessage</fullName>
+        <categories>LwC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message to display when a file upload fails</shortDescription>
+        <value>An error occurred with uploading files</value>
+    </labels>
+    <labels>
+        <fullName>LA_PreChat_Base_LiveChat_04I8E000000Cc0B_1583724</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_PreChat_Base_LiveChat_04I8E000000Cc0B_1583724</shortDescription>
+        <value>Liberty Bot</value>
+    </labels>
+    <labels>
+        <fullName>RSC_AdditionalComments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_AdditionalComments</shortDescription>
+        <value>Additional Comments</value>
+    </labels>
+    <labels>
+        <fullName>RSC_AllDocumentsVaulted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_AllDocumentsVaulted</shortDescription>
+        <value>All Client Documents have been Vaulted</value>
+    </labels>
+    <labels>
+        <fullName>RSC_BlockVisitor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_BlockVisitor</shortDescription>
+        <value>You are not authorized to View this Document</value>
+    </labels>
+    <labels>
+        <fullName>RSC_CaseOriginMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_CaseOriginMandatory</shortDescription>
+        <value>Please select Case Origin</value>
+    </labels>
+    <labels>
+        <fullName>RSC_CaseResumeDateValidation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom label to store the case resume date can not be more than 2 months.</shortDescription>
+        <value>2</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ClickToView</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ClickToView</shortDescription>
+        <value>Click here to View this Document</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ClientMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ClientMandatory</shortDescription>
+        <value>Please select Client</value>
+    </labels>
+    <labels>
+        <fullName>RSC_CompareDateTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_CompareDateTime</shortDescription>
+        <value>Reminder Date cannot be less than today or more than 2 months from today</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ContentDocumentDeletedby</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ContentDocumentDeletedby</shortDescription>
+        <value>15</value>
+    </labels>
+    <labels>
+        <fullName>RSC_CurrentDocumentMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_CurrentDocumentMessage</shortDescription>
+        <value>Current Document Type is :</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DeleteChecklistWarningMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DeleteChecklistWarningMessage</shortDescription>
+        <value>You are trying to delink the below Document Checklist Items, kindly confirm before you proceed</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DeleteDocumentCheckListItem</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DeleteDocumentCheckListItem</shortDescription>
+        <value>Document Checklist Item delinked successfully</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DelinkDocumentReasonInputHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DelinkDocumentReasonInputHeading</shortDescription>
+        <value>Provide the Reason</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DelinkDocumentsErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DelinkDocumentsErrorMessage</shortDescription>
+        <value>There was some error when delinking the documents. Please refer to Case Comments to view the errors.</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DelinkDocumentsSelectReasonHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DelinkDocumentsSelectReasonHeading</shortDescription>
+        <value>Select Reason to Delink</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DepartmentServiceTypeMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DepartmentServiceTypeMandatory</shortDescription>
+        <value>Please select Department and ServiceType</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DocumentChecklistItemMandatoryMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DocumentChecklistItemMandatoryMessage</shortDescription>
+        <value>Please complete the Mandatory fields</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DocumentChecklistItemSuccessMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DocumentChecklistItemSuccessMessage</shortDescription>
+        <value>Document Checklist Item created successfully</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DocumentChecklistItemUpdateMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DocumentChecklistItemUpdateMessage</shortDescription>
+        <value>Document Checklist Item updated successfully</value>
+    </labels>
+    <labels>
+        <fullName>RSC_DocumentTypeNotFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_DocumentTypeNotFound</shortDescription>
+        <value>Selected Document Type was not found, Please remove the document and proceed further</value>
+    </labels>
+    <labels>
+        <fullName>RSC_EmailRecipientMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_EmailRecipientMandatory</shortDescription>
+        <value>Sorry you did not enter client or third party</value>
+    </labels>
+    <labels>
+        <fullName>RSC_FileSizeLimit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_FileSizeLimit</shortDescription>
+        <value>File Size can not exceed</value>
+    </labels>
+    <labels>
+        <fullName>RSC_InternalCaseComments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_InternalCaseComments</shortDescription>
+        <value>Internal Case Comments</value>
+    </labels>
+    <labels>
+        <fullName>RSC_InvestmentProduct</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Investment Product</shortDescription>
+        <value>Investment Product</value>
+    </labels>
+    <labels>
+        <fullName>RSC_NoClientData</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_NoClientData</shortDescription>
+        <value>Client not found to fetch the vaulted documents</value>
+    </labels>
+    <labels>
+        <fullName>RSC_NoDataFoundMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_NoDataFoundMessage</shortDescription>
+        <value>No data found. Please contact administrator</value>
+    </labels>
+    <labels>
+        <fullName>RSC_NoDocumentsToLink</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_NoDocumentsToLink</shortDescription>
+        <value>Please select the Documents to link</value>
+    </labels>
+    <labels>
+        <fullName>RSC_NoFilesToDisplay</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_NoFilesToDisplay</shortDescription>
+        <value>No Files to Display</value>
+    </labels>
+    <labels>
+        <fullName>RSC_NoVaultedDocumentsForClient</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_NoVaultedDocumentsForClient</shortDescription>
+        <value>No Vaulted Documents found for the client</value>
+    </labels>
+    <labels>
+        <fullName>RSC_PreviewMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_PreviewMessage</shortDescription>
+        <value>Click on below link to view the Documents</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ProblemInFetchingDocuments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ProblemInFetchingDocuments</shortDescription>
+        <value>There were some problems while fetching the documents, please try after sometime</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ReasonForRejectingDocumentMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ReasonForRejectingDocumentMandatory</shortDescription>
+        <value>Please Enter the Reason For Rejecting the Document</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ReminderDateTime</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ReminderDateTime</shortDescription>
+        <value>You have not set a Reminder to reschedule this call.</value>
+    </labels>
+    <labels>
+        <fullName>RSC_RequesterEmailMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_RequesterEmailMandatory</shortDescription>
+        <value>Please enter Requester Email</value>
+    </labels>
+    <labels>
+        <fullName>RSC_RequesterFieldsMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_RequesterFieldsMandatory</shortDescription>
+        <value>Please enter values for Requester Name, Requester Email,  Requester Mobile, Requester Phone fields when the Requester Type is not Customer</value>
+    </labels>
+    <labels>
+        <fullName>RSC_RequesterTypeMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_RequesterTypeMandatory</shortDescription>
+        <value>Please select Requester Type</value>
+    </labels>
+    <labels>
+        <fullName>RSC_RiskProduct</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Risk Product</shortDescription>
+        <value>Risk Product</value>
+    </labels>
+    <labels>
+        <fullName>RSC_SelectDocumentChecklistItem</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_SelectDocumentChecklistItem</shortDescription>
+        <value>Please select the documents to delete</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ShowWarningToServicingAgents</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ShowWarningToServicingAgents</shortDescription>
+        <value>You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary.</value>
+    </labels>
+    <labels>
+        <fullName>RSC_SpinnerContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_SpinnerContent</shortDescription>
+        <value>Please wait while we are processing...</value>
+    </labels>
+    <labels>
+        <fullName>RSC_UploadFile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_UploadFile</shortDescription>
+        <value>Please upload  a document to proceed</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ValidRequesterEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ValidRequesterEmail</shortDescription>
+        <value>Please enter valid Requester Email</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ValidRequesterMobile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ValidRequesterMobile</shortDescription>
+        <value>Please enter valid Requester Mobile</value>
+    </labels>
+    <labels>
+        <fullName>RSC_ValidRequesterPhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_ValidRequesterPhone</shortDescription>
+        <value>Please enter valid Requester Phone</value>
+    </labels>
+    <labels>
+        <fullName>RSC_WarningHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RSC_WarningHeader</shortDescription>
+        <value>Warning!: Confirm before you Delink</value>
+    </labels>
+    <labels>
+        <fullName>SC_ClientDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client details for nurses on the road case creation section</shortDescription>
+        <value>Client Details</value>
+    </labels>
+    <labels>
+        <fullName>SC_ClientEmailMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Email Mandatory for nurses on the road case creation</shortDescription>
+        <value>Please enter Client Email</value>
+    </labels>
+    <labels>
+        <fullName>SC_ClientFirstNameMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client First Name Mandatory for nurses on the road case creation</shortDescription>
+        <value>Please enter Client First Name</value>
+    </labels>
+    <labels>
+        <fullName>SC_ClientIdNumberMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client ID Number Mandatory for nurses on the road case creation</shortDescription>
+        <value>Please Enter client ID Number</value>
+    </labels>
+    <labels>
+        <fullName>SC_ClientLastNameMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Last Name Mandatory for nurses on the road case creation</shortDescription>
+        <value>Please enter Client Last Name</value>
+    </labels>
+    <labels>
+        <fullName>SC_ClientMobileMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Mobile Mandatory for nurses on the road case creation</shortDescription>
+        <value>Please Enter client Mobile Number</value>
+    </labels>
+    <labels>
+        <fullName>SC_ConsultantCodeMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>financial adviser Consultant Cod Mandatory for nurses on the road case creation</shortDescription>
+        <value>Please Enter financial adviser  Consultant Code</value>
+    </labels>
+    <labels>
+        <fullName>SC_FinancialAdvisorDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Financial advisor details for nurses on the road case creation section</shortDescription>
+        <value>Financial Advisor Details</value>
+    </labels>
+    <labels>
+        <fullName>SC_NextActionOnCaseCreationScreen</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen flow api name for nurses on the road case creation</shortDescription>
+        <value>SC_FLOW_MedicalAppointmentCaseCreation</value>
+    </labels>
+    <labels>
+        <fullName>SC_PolicyNumberMandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Policy Number Mandatory for nurses on the road case creation</shortDescription>
+        <value>Please enter Policy Number/Master Contract Number</value>
+    </labels>
+    <labels>
+        <fullName>SC_ValidClientMobile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Mobile validation massage for nurses on the road case creation</shortDescription>
+        <value>Please enter valid Client Mobile</value>
+    </labels>
+    <labels>
+        <fullName>SC_ValidateClientEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client validation massage for nurses on the road case creation</shortDescription>
+        <value>Please enter valid  client email</value>
+    </labels>
+    <labels>
+        <fullName>SLC_RelatedPersonAccounts</fullName>
+        <categories>Relationship Map</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Replaces &apos;Related Contacts&apos; with &apos;Related Person Accounts&apos; in Relationship Map</shortDescription>
+        <value>Related Person Accounts</value>
+    </labels>
+    <labels>
+        <fullName>SigningHubUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Signing Hub URL For Iframe</shortDescription>
+        <value>https://web.signinghub.co.za</value>
+    </labels>
+</CustomLabels>

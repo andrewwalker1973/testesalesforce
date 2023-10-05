@@ -1,0 +1,138 @@
+<template>
+    <template if:true={accountInfo}>
+        <div class="slds-text-color_inverse ">
+            <div class="slds-grid slds-gutters slds-wrap slds-grid_vertical-align-center">
+                <div
+                    class="slds-grid slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-grid_vertical-align-center slds-large-order_1 slds-medium-order_2 slds-small-order_2">
+                    <div class="slds-col slds-text-align_right">
+                        <div class="slds-p-bottom_small">
+                            <div>
+                                Total Critical Illness Cover
+                            </div>
+                            <div class="slds-text-heading_large">
+                                <lightning-formatted-number value={accountInfo.AW_TotalCriticalIllnessCover__c}
+                                    format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                            </div>
+                        </div>
+                        <div class="slds-p-bottom_small">
+                            <div>
+                                Total Life Cover
+                            </div>
+                            <div class="slds-text-heading_large">
+                                <lightning-formatted-number value={accountInfo.AW_TotalLifeCover__c}
+                                    format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-text-align_left fh-banner-border">
+                        <div class="slds-p-bottom_small">
+                            <div>
+                                Total Disability Cover (Lump sum)
+                            </div>
+                            <div class="slds-text-heading_large">
+                                <lightning-formatted-number value={accountInfo.AW_TotalDisabilityCoverLumpsum__c}
+                                    format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                            </div>
+                        </div>
+                        <div class="slds-p-bottom_small">
+                            <div>
+                                Total Disability Cover (Monthly)
+                            </div>
+                            <div class="slds-text-heading_large">
+                                <lightning-formatted-number value={accountInfo.AW_TotalDisabilityCoverMonth__c}
+                                    format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-grid slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-grid_vertical-align-center slds-show_medium mg-bottom-medium slds-large-order_2 slds-medium-order_1 slds-small-order_1">
+                    <div class="slds-col slds-text-align_right slds-m-right_medium">
+                        <canvas width="220" height="220" lwc:dom="manual"></canvas>
+                    </div>
+                    <div class="slds-col slds-text-align_left">
+                        <div class="slds-text-align_left">
+                            <div class="slds-p-bottom_small">
+                                <div>
+                                    Total Investments
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <lightning-formatted-number value={accountInfo.AW_TotalInvestments__c}
+                                        format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                                </div>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <div>
+                                    Total Retirement
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <lightning-formatted-number value={accountInfo.AW_TotalRetirement__c}
+                                        format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                                </div>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <div>
+                                    Other Assets
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <lightning-formatted-number value={accountInfo.AW_TotalAssets__c}
+                                        format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="slds-grid slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-grid_vertical-align-center slds-hide_medium">
+                    <div
+                        class="slds-grid slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-grid_vertical-align-center">
+                        <div class="slds-col slds-text-align_right">
+                            <div class="slds-p-bottom_small">
+                                <div>
+                                    Total Assets
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <lightning-formatted-number value={accountInfo.AW_CLIENT_TotalAssets__c}
+                                        format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                                </div>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <div>
+                                    Total Investments
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <lightning-formatted-number value={accountInfo.AW_TotalInvestments__c}
+                                        format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-text-align_left fh-banner-border">
+                            <div class="slds-p-bottom_small">
+                                <div>
+                                    Total Retirement
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <lightning-formatted-number value={accountInfo.AW_TotalRetirement__c}
+                                        format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                                </div>
+                            </div>
+                            <div class="slds-p-bottom_small">
+                                <div>
+                                    Other Assets
+                                </div>
+                                <div class="slds-text-heading_large">
+                                    <lightning-formatted-number value={accountInfo.AW_TotalAssets__c}
+                                        format-style="currency" currency-code="ZAR"></lightning-formatted-number>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-text-color_inverse-weak">
+                <lightning-icon icon-name="utility:warning" class="slds-m-right_x-small" alternative-text="Warning!" variant="warning" size="small"></lightning-icon>
+                The values displayed are provided for illustrative purposes only and may be affected by unprocessed transactions and legislation
+            </div>
+        </div>
+    </template>
+</template>

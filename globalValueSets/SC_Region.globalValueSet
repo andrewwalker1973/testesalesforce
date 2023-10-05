@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>BLOEMFONTEIN</fullName>
+        <default>false</default>
+        <label>BLOEMFONTEIN</label>
+    </customValue>
+    <customValue>
+        <fullName>BOLAND CENTRAL</fullName>
+        <default>false</default>
+        <label>BOLAND CENTRAL</label>
+    </customValue>
+    <customValue>
+        <fullName>BOLAND OUTLYING</fullName>
+        <default>false</default>
+        <label>BOLAND OUTLYING</label>
+    </customValue>
+    <customValue>
+        <fullName>CENTURION</fullName>
+        <default>false</default>
+        <label>CENTURION</label>
+    </customValue>
+    <customValue>
+        <fullName>CT CBD/ CENTRAL</fullName>
+        <default>false</default>
+        <label>CT CBD/ CENTRAL</label>
+    </customValue>
+    <customValue>
+        <fullName>CT NORTH</fullName>
+        <default>false</default>
+        <label>CT NORTH</label>
+    </customValue>
+    <customValue>
+        <fullName>CT SOUTH</fullName>
+        <default>false</default>
+        <label>CT SOUTH</label>
+    </customValue>
+    <customValue>
+        <fullName>EASTERN CAPE</fullName>
+        <default>false</default>
+        <label>EASTERN CAPE</label>
+    </customValue>
+    <customValue>
+        <fullName>FREE STATE</fullName>
+        <default>false</default>
+        <label>FREE STATE</label>
+    </customValue>
+    <customValue>
+        <fullName>GARDEN ROUTE</fullName>
+        <default>false</default>
+        <label>GARDEN ROUTE</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB CBD/CENTRAL 1</fullName>
+        <default>false</default>
+        <label>JHB CBD/CENTRAL 1</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB CBD/CENTRAL 2</fullName>
+        <default>false</default>
+        <label>JHB CBD/CENTRAL 2</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB EAST</fullName>
+        <default>false</default>
+        <label>JHB EAST</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB NORTH</fullName>
+        <default>false</default>
+        <label>JHB NORTH</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB NORTH EAST</fullName>
+        <default>false</default>
+        <label>JHB NORTH EAST</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB SOUTH</fullName>
+        <default>false</default>
+        <label>JHB SOUTH</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB WEST</fullName>
+        <default>false</default>
+        <label>JHB WEST</label>
+    </customValue>
+    <customValue>
+        <fullName>KZN HIGHWAY</fullName>
+        <default>false</default>
+        <label>KZN HIGHWAY</label>
+    </customValue>
+    <customValue>
+        <fullName>KZN INLAND</fullName>
+        <default>false</default>
+        <label>KZN INLAND</label>
+    </customValue>
+    <customValue>
+        <fullName>KZN NORTH/CENTRAL</fullName>
+        <default>false</default>
+        <label>KZN NORTH/CENTRAL</label>
+    </customValue>
+    <customValue>
+        <fullName>KZN OUTLYING</fullName>
+        <default>false</default>
+        <label>KZN OUTLYING</label>
+    </customValue>
+    <customValue>
+        <fullName>KZN SOUTH</fullName>
+        <default>false</default>
+        <label>KZN SOUTH</label>
+    </customValue>
+    <customValue>
+        <fullName>MP EAST</fullName>
+        <default>false</default>
+        <label>MP EAST</label>
+    </customValue>
+    <customValue>
+        <fullName>MP WEST</fullName>
+        <default>false</default>
+        <label>MP WEST</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTHERN CAPE</fullName>
+        <default>false</default>
+        <label>NORTHERN CAPE</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTHERN PROVINCE</fullName>
+        <default>false</default>
+        <label>NORTHERN PROVINCE</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTH WEST OUTLYING</fullName>
+        <default>false</default>
+        <label>NORTH WEST OUTLYING</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTH WEST PROVINCE</fullName>
+        <default>false</default>
+        <label>NORTH WEST PROVINCE</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTH WEST PROVINCE 2</fullName>
+        <default>false</default>
+        <label>NORTH WEST PROVINCE 2</label>
+    </customValue>
+    <customValue>
+        <fullName>PTA CBD/ CENTRAL</fullName>
+        <default>false</default>
+        <label>PTA CBD/ CENTRAL</label>
+    </customValue>
+    <customValue>
+        <fullName>PTA EAST</fullName>
+        <default>false</default>
+        <label>PTA EAST</label>
+    </customValue>
+    <customValue>
+        <fullName>PTA NORTH</fullName>
+        <default>false</default>
+        <label>PTA NORTH</label>
+    </customValue>
+    <customValue>
+        <fullName>PTA OUTLYING</fullName>
+        <default>false</default>
+        <label>PTA OUTLYING</label>
+    </customValue>
+    <customValue>
+        <fullName>PTA WEST</fullName>
+        <default>false</default>
+        <label>PTA WEST</label>
+    </customValue>
+    <customValue>
+        <fullName>RUSTENBURG</fullName>
+        <default>false</default>
+        <label>RUSTENBURG</label>
+    </customValue>
+    <customValue>
+        <fullName>VAAL TRIANGLE</fullName>
+        <default>false</default>
+        <label>VAAL TRIANGLE</label>
+    </customValue>
+    <customValue>
+        <fullName>EASTERN CAPE EAST LONDON</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EASTERN CAPE EAST LONDON</label>
+    </customValue>
+    <customValue>
+        <fullName>NORTH WEST PROVINCE 1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>NORTH WEST PROVINCE 1</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB EAST 1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>JHB EAST 1</label>
+    </customValue>
+    <customValue>
+        <fullName>JHB EAST 2</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>JHB EAST 2</label>
+    </customValue>
+    <customValue>
+        <fullName>EASTERN CAPE PORT ELIZABETH</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>EASTERN CAPE PORT ELIZABETH</label>
+    </customValue>
+    <customValue>
+        <fullName>PTA CBD/CENTRAL</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PTA CBD/CENTRAL</label>
+    </customValue>
+    <customValue>
+        <fullName>KZN PMB</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>KZN PMB</label>
+    </customValue>
+    <customValue>
+        <fullName>CT CBD/CENTRAL</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>CT CBD/CENTRAL</label>
+    </customValue>
+    <description>Picklist contains the values for the nurses on the road sub regions</description>
+    <masterLabel>Region</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

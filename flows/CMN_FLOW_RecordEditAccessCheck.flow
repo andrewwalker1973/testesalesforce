@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <description>Decision for the access to the SObject record.</description>
+        <name>CMN_EditAccessForActions</name>
+        <label>Edit Access For Actions</label>
+        <locationX>182</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>Have Access</defaultConnectorLabel>
+        <rules>
+            <name>CMN_NoSufficientAccess</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>CMN_MaxAccessLevel</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Read</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CMN_MaxAccessLevel</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>None</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CMN_NoAccessLevelMessage</targetReference>
+            </connector>
+            <label>No Sufficient Access</label>
+        </rules>
+    </decisions>
+    <description>Determines the current user has sufficient access to the Sobject record.</description>
+    <environments>Default</environments>
+    <interviewLabel>CMN_FLOW_RecordEditAccessCheck {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Record Edit Access Check</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>To check the current user access to the record &amp; to determine the access level to the record.</description>
+        <name>CMN_GetRecordAccessLevel</name>
+        <label>Get Record Access Level</label>
+        <locationX>182</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CMN_EditAccessForActions</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>UserId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CMN_RecordId</elementReference>
+            </value>
+        </filters>
+        <object>UserRecordAccess</object>
+        <outputAssignments>
+            <assignToReference>CMN_MaxAccessLevel</assignToReference>
+            <field>MaxAccessLevel</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>CMN_RetrievedRecordID</assignToReference>
+            <field>RecordId</field>
+        </outputAssignments>
+    </recordLookups>
+    <screens>
+        <description>Displays the error message to the current user with no sufficient access on the record</description>
+        <name>CMN_NoAccessLevelMessage</name>
+        <label>No Access Level Message</label>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>CMN_NoAccessMessage</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(224, 46, 46); background-color: rgb(255, 255, 255); font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Web&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CMN_GetRecordAccessLevel</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores the maximum access level of the SObject record to the current user.</description>
+        <name>CMN_MaxAccessLevel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Id of a SObject record to check the user access levels.</description>
+        <name>CMN_RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The mandatory Record Id field that is retrieved by the query to be used in the main flow.</description>
+        <name>CMN_RetrievedRecordID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

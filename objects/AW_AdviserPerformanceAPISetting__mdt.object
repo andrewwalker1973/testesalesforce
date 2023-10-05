@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata holds the Adviser Performance API Setting</description>
+    <fields>
+        <fullName>AW_StartDate__c</fullName>
+        <description>This holds the start date to consider for performance API call.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <label>Adviser Performance API Setting</label>
+    <pluralLabel>Adviser Performance API Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>What notification will contain</description>
+        <name>SLSC_NewEmailOnCaseNotification</name>
+        <label>NewEmailOnCaseNotification</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>SLSC_GetCustomNotificationId.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>SLSC_NotificationRecepients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>SLSC_NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>SLSC_NotificationBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <description>Add Ids to Recipient Ids Collection Variable created</description>
+        <name>SLSC_AssignRecepients</name>
+        <label>AssignRecepients</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>SLSC_NotificationRecepients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Parent.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SLSC_NewEmailOnCaseNotification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>If the case owner is User then the notification should go to the User but is the Case Owner is a Queue then the notification must go to all Queue members</description>
+        <name>SLSC_CaseOwnerIsAUserOrAQueue</name>
+        <label>Case Owner Is A User Or A Queue</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Case Owner Is Not an Individual or Queue</defaultConnectorLabel>
+        <rules>
+            <name>SLSC_CaseOwnerIsAQueue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>00G</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Case Owner Is A Queue</label>
+        </rules>
+        <rules>
+            <name>SLSC_CaseOwnerIsAUser</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SLSC_AssignRecepients</targetReference>
+            </connector>
+            <label>Case Owner Is A User</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SLSC_RecordTypeIsMancoCase</name>
+        <label>Record Type is Manco case</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Record type is Not Manco Case</defaultConnectorLabel>
+        <rules>
+            <name>SLSC_RecordTypeisMancoCas</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>SLSC_Case</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SLSC_UpdateCases</targetReference>
+            </connector>
+            <label>Record Type is Manco case</label>
+        </rules>
+    </decisions>
+    <description>Notify case owner of New Inbound email received and Update case Status on email receipt</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>For Notification Body and Title</description>
+        <name>SLSC_NotificationBody</name>
+        <dataType>String</dataType>
+        <expression>&apos;New Email Message Received on Case&apos;+&apos;&apos;+{!$Record.Parent.CaseNumber}</expression>
+    </formulas>
+    <interviewLabel>Notify case owner of new inbound email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New inbound email</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Find Salesforce records and store their field values in flow variables</description>
+        <name>SLSC_GetCustomNotificationId</name>
+        <label>GetCustomNotificationId</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SLSC_CaseOwnerIsAUserOrAQueue</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>SLSC_CaseEmailNotification</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>SLSC_UpdateCases</name>
+        <label>Update cases</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>SLSC_GetCustomNotificationId</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Parent</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>SLSC_RecordTypeIsMancoCase</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Incoming</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>EmailMessage</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>This is a collection Variable that will hold all recipient Ids for Custom Notification</description>
+        <name>SLSC_NotificationRecepients</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Store all users</description>
+        <name>SLSC_StoreRecipientId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

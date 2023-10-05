@@ -1,0 +1,32 @@
+<!--
+ * @description Used for redirecting to and Integrating BPO  Canvas App inside Salesforce 
+ *
+ * @author annu.agarwal@lntinfotech.com, a.shrikrishna.pethe@accenture.com
+ *
+ * @date June 2022
+-->
+<aura:component implements="lightning:isUrlAddressable" controller="AW_CTRL_BPOCanvasContainer">
+
+	<aura:handler action="{!c.onPageReferenceChange}" name="init" value="{!this}"/>
+	<aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}"/>
+
+	<aura:attribute name="plannedSolutionId" type="String" access="global"/>
+	<aura:attribute name="accountId" type="String" access="global"/>
+	<aura:attribute name="quoteSolutionNumber" type="String" access="global"/>
+	<aura:attribute name="quoteNumber" type="String"/>
+	<aura:attribute name="isLoading" type="Boolean" default="false"/>
+	<aura:attribute name="getQuoteType" type="String" access="global"/>
+	<aura:attribute name="parameters" type="String"/>
+	<aura:attribute name="navigateToRecordId" type="String"/>
+
+	<lightning:card title="BPO" aura:id="BPOCanvas">
+		<div class="slds-align_absolute-center">
+			<force:canvasApp developerName="BPO_Canvas" maxHeight="infinite" maxWidth="infinite" parameters="{!v.parameters}"/>
+		</div>
+	</lightning:card>
+	<aura:if isTrue="{!v.isLoading}">
+		<div class="exampleHolder">
+			<lightning:spinner alternativeText="Loading" size="medium" class="slds-is-relative slds-align_absolute-center slds-p-around_medium"/>
+		</div>
+	</aura:if>
+</aura:component>

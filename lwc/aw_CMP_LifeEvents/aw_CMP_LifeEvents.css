@@ -1,0 +1,30 @@
+.timeline-continer {
+  display: flex;
+}
+
+.icon-bg {
+  background-color: #5581ef;
+  padding: 12px;
+  color: #fff;
+}
+
+.icon-line {
+  width: 100%;
+  position: relative;
+  margin: 30px 15px;
+  margin: 0px 10px 70px 10px;
+  border-bottom: 2px solid #dadada;
+}
+
+.icon-container {
+  position: relative;
+  top: 3px;
+}
+
+.icon-label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 72px;
+  text-align: center;
+}

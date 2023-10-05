@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Financieel doel</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Financiële doelen</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Financial Goal --></label>
+        <name>WM_Client_FinancialGoal</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Financial Goal --></label>
+        <name>WM_Household_FinancialGoal</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Amount Needed FV --></label>
+        <name>AW_AmountNeededFV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount Needed PV --></label>
+        <name>AW_AmountNeededPV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Escalation --></label>
+        <name>AW_AnnualEscalation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apply Goal --></label>
+        <name>AW_Apply_Goal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assets and Liabilities --></label>
+        <name>AW_AssetsAndLiabilities__c</name>
+        <relationshipLabel><!-- Financial Goals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CPI --></label>
+        <name>AW_CPI_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date From Source --></label>
+        <name>AW_Created_Date_From_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- FNA --></label>
+        <name>AW_FNA__c</name>
+        <relationshipLabel><!-- Financial Goals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Frequency (Months) --></label>
+        <name>AW_Frequency_Months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goal Picture --></label>
+        <name>AW_GoalPicture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goal Type if Other --></label>
+        <name>AW_GoalTypeIfOther__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goal Start Date --></label>
+        <name>AW_Goal_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goal Type --></label>
+        <name>AW_Goal_Type__c</name>
+        <picklistValues>
+            <masterLabel>Investment</masterLabel>
+            <translation><!-- Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk</masterLabel>
+            <translation><!-- Risk --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Growth Strategy --></label>
+        <name>AW_Growth_Strategy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Creator --></label>
+        <name>AW_IsCreator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Investment Goal --></label>
+        <name>AW_IsInvestmentGoal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Protection Goal --></label>
+        <name>AW_IsProtectionGoal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Updated Date From Source --></label>
+        <name>AW_Last_Updated_Date_from_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Life Event Link --></label>
+        <name>AW_LifeEventLink__c</name>
+    </fields>
+    <fields>
+        <label><!-- AW_MasterAccountId --></label>
+        <name>AW_MasterAccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- MasterAccount --></label>
+        <name>AW_MasterAccount__c</name>
+        <relationshipLabel><!-- Financial Goals (MasterAccount) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Nominal Calculated Value --></label>
+        <name>AW_Nominal_Calculated_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Value --></label>
+        <name>AW_OtherValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner UACFID --></label>
+        <name>AW_Owner_UACFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AW_ParentAccountOwnerId --></label>
+        <name>AW_ParentAccountOwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage Complete --></label>
+        <name>AW_PercentageComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority Level --></label>
+        <name>AW_PriorityLevel__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Probability of Outcome --></label>
+        <name>AW_ProbabilityOfOutcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>AW_ProductType__c</name>
+        <picklistValues>
+            <masterLabel>Investment</masterLabel>
+            <translation><!-- Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Protection</masterLabel>
+            <translation><!-- Protection --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Real Calculated Value --></label>
+        <name>AW_Real_Calculated_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurrence Count --></label>
+        <name>AW_Recurrence_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Opportunity --></label>
+        <name>AW_RelatedOpportunity__c</name>
+        <relationshipLabel><!-- Financial Goals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Save Until --></label>
+        <name>AW_Save_Until__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saving For --></label>
+        <name>AW_Saving_For__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sorting Date --></label>
+        <name>AW_SortingDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Name --></label>
+        <name>AW_Source_System_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suggested Contribution --></label>
+        <name>AW_Suggested_Contribution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Return --></label>
+        <name>AW_Target_Return_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Value (PV) --></label>
+        <name>AW_Target_Value_PV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Taxable --></label>
+        <name>AW_Taxable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term of Provision --></label>
+        <name>AW_TermOfProvision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Assets Amount --></label>
+        <name>AW_TotalAssetAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Financial Amount --></label>
+        <name>AW_TotalFinancialAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Insurance Amount --></label>
+        <name>AW_TotalInsuranceAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Liabilities Amount --></label>
+        <name>AW_TotalLiabilitiesAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Current Market Value --></label>
+        <name>AW_Total_Current_Market_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Goal Amount --></label>
+        <name>AW_Total_Goal_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Description --></label>
+        <name>AW_Type_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The value of the asset allocated to the Goal - This is pre-populated when linking a Financial Account to a goal. --></help>
+        <label><!-- Actual Value --></label>
+        <name>FinServ__ActualValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion Date --></label>
+        <name>FinServ__CompletionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>FinServ__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Household Financial Goals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initial Value --></label>
+        <name>FinServ__InitialValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Owner --></label>
+        <name>FinServ__PrimaryOwner__c</name>
+        <relationshipLabel><!-- Client Financial Goals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source System ID --></label>
+        <name>FinServ__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>FinServ__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation>Voltooid</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation>Bezig</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation>Niet gestart</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The date at which you want to reach a 100% completion on the goal. --></help>
+        <label><!-- Target Date --></label>
+        <name>FinServ__TargetDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The target value that you would like to reach for this specific goal. --></help>
+        <label><!-- Target Value --></label>
+        <name>FinServ__TargetValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>FinServ__Type__c</name>
+        <picklistValues>
+            <masterLabel>Lifestyle goals</masterLabel>
+            <translation><!-- Lifestyle goals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Overig</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Protect Me</masterLabel>
+            <translation><!-- Protect Me --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Protect My Assets</masterLabel>
+            <translation><!-- Protect My Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Protect My Family</masterLabel>
+            <translation><!-- Protect My Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement</masterLabel>
+            <translation>Pensioen</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saving for a rainy day</masterLabel>
+            <translation><!-- Saving for a rainy day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-Improvement goals</masterLabel>
+            <translation><!-- Self-Improvement goals --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Naam van financiële doel</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Capital Goal --></label>
+        <name>AW_Capital_Goal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Income Goal --></label>
+        <name>AW_Income_Goal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Liberty Client Goal --></label>
+        <name>AW_Liberty_Client_Goal</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Cannot enter Other Goal Type if Other is not selected as Type. --></errorMessage>
+        <name>AW_Goaltypenorother</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill Other Goal Type. --></errorMessage>
+        <name>AW_OtherGoalType</name>
+    </validationRules>
+</CustomObjectTranslation>

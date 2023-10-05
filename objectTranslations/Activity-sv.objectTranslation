@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Change of Consultant(Orphans Only) --></label>
+        <name>AW_Change_of_Consultant_Form__c</name>
+        <picklistValues>
+            <masterLabel>Not Submitted - Reallocate</masterLabel>
+            <translation><!-- Not Submitted - Reallocate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Client Interaction Outcome --></label>
+        <name>AW_ClientInteractionOutcome__c</name>
+        <picklistValues>
+            <masterLabel>Appointment Made</masterLabel>
+            <translation><!-- Appointment Made --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appointment Rescheduled</masterLabel>
+            <translation><!-- Appointment Rescheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appointment Seen</masterLabel>
+            <translation><!-- Appointment Seen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call Made</masterLabel>
+            <translation><!-- Call Made --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Called</masterLabel>
+            <translation><!-- Client Called --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Contacted Successfully</masterLabel>
+            <translation><!-- Client Contacted Successfully --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Doesn&apos;t Want Adviser</masterLabel>
+            <translation><!-- Client Doesn&apos;t Want Adviser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Not Available</masterLabel>
+            <translation><!-- Client Not Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Not Contacted - Reallocate</masterLabel>
+            <translation><!-- Client Not Contacted - Reallocate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Not Interested</masterLabel>
+            <translation><!-- Client Not Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Details Incorrect</masterLabel>
+            <translation><!-- Contact Details Incorrect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I Don&apos;t Want This Orphan</masterLabel>
+            <translation><!-- I Don&apos;t Want This Orphan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Unwanted \ Declined</masterLabel>
+            <translation><!-- Lead Unwanted \ Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Client Interaction Outcome Feedback --></label>
+        <name>AW_Client_Interaction_Outcome_Feedback__c</name>
+        <picklistValues>
+            <masterLabel>Change of Broker Signed</masterLabel>
+            <translation><!-- Change of Broker Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change of Broker Submitted</masterLabel>
+            <translation><!-- Change of Broker Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Not Available</masterLabel>
+            <translation><!-- Client Not Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client not Interested in seeing an Adviser</masterLabel>
+            <translation><!-- Client not Interested in seeing an Adviser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred \ Moving Forward with Appointment in future</masterLabel>
+            <translation><!-- Deferred \ Moving Forward with Appointment in future --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disclosure Signed</masterLabel>
+            <translation><!-- Disclosure Signed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberty Systems Updated with Disclosure Information</masterLabel>
+            <translation><!-- Liberty Systems Updated with Disclosure Information --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If my Meeting is a Review --></help>
+        <label><!-- Review --></label>
+        <name>AW_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summarises Comments field  to 255 --></help>
+        <label><!-- Summary Comments --></label>
+        <name>AW_SummaryComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>AW_TaskCategory__c</name>
+        <picklistValues>
+            <masterLabel>Adviser</masterLabel>
+            <translation><!-- Adviser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orphan</masterLabel>
+            <translation><!-- Orphan --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please check if task is for assistant. --></help>
+        <label><!-- Task For My Assistant --></label>
+        <name>AW_TaskForMyAssistant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expectations --></label>
+        <name>FinServ__Expectations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Next Steps --></label>
+        <name>FinServ__NextSteps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Objectives --></label>
+        <name>FinServ__Objectives__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regarding --></label>
+        <name>FinServ__Regarding__c</name>
+        <picklistValues>
+            <masterLabel>New Business</masterLabel>
+            <translation><!-- New Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation>Tjänst</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- On Hold Comments --></label>
+        <name>RSC_OnHoldComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Hold Reasons --></label>
+        <name>RSC_OnHoldReasons__c</name>
+        <picklistValues>
+            <masterLabel>Anniversary</masterLabel>
+            <translation><!-- Anniversary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annuity Transfer Authorized</masterLabel>
+            <translation><!-- Annuity Transfer Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Required</masterLabel>
+            <translation><!-- Approval Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistance Required</masterLabel>
+            <translation><!-- Assistance Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Decision</masterLabel>
+            <translation><!-- Awaiting Decision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Document Print</masterLabel>
+            <translation><!-- Awaiting Document Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document Scanning</masterLabel>
+            <translation><!-- Document Scanning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Departments</masterLabel>
+            <translation><!-- Other Departments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overnight Update</masterLabel>
+            <translation><!-- Overnight Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refer To Department Name</masterLabel>
+            <translation><!-- Refer To Department Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review Response</masterLabel>
+            <translation><!-- Review Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Update</masterLabel>
+            <translation><!-- System Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systematic Override</masterLabel>
+            <translation><!-- Systematic Override --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting</masterLabel>
+            <translation><!-- Underwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verification</masterLabel>
+            <translation><!-- Verification --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Meeting Success --></label>
+        <name>SLR_MeetingSuccess__c</name>
+        <picklistValues>
+            <masterLabel>Highly Successful</masterLabel>
+            <translation><!-- Highly Successful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Successful</masterLabel>
+            <translation><!-- Not Successful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successful</masterLabel>
+            <translation><!-- Successful --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Post Meeting Note --></label>
+        <name>SLR_PostMeetingNote__c</name>
+    </fields>
+</CustomObjectTranslation>

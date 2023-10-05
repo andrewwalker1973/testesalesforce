@@ -1,0 +1,159 @@
+<template>
+	<div class="slds-box slds-box_xx-small">
+		<lightning-card class="card-boarder" icon-name="standard:goals" title={title}>
+			<lightning-accordion active-section-name="InvestmentGoalSection" allow-multiple-sections-open>
+				<lightning-accordion-section class="accordion-background " label={investmentSectionName} name="InvestmentGoalSection">
+					<template if:true={investmentGoalRecords}>
+						<template for:each={investmentGoalRecords} for:item="iGoal">
+							<div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_small slds-m-horizontal_none" key={iGoal.Id}>
+								<lightning-layout multiple-rows="true">
+									<lightning-layout-item padding="around-small">
+										<div class="slds-text-heading_medium">
+
+											<p class="slds-text-heading_medium" title="Field 1">
+												<a data-record-id={iGoal.Id} onclick={onclickGoal} target="_blank">{iGoal.Name}</a>
+											</p>
+										</div>
+									</lightning-layout-item>
+									<lightning-layout-item padding="around-small">
+
+										<p class="field-title heading-truncate" title="Field 1">
+											<lightning-badge label={iGoal.FinServ__Status__c}></lightning-badge>
+										</p>
+
+									</lightning-layout-item>
+								</lightning-layout>
+								<div class="slds-grid slds-gutters">
+									<div class="slds-col slds-size_4-of-5">
+										<lightning-layout multiple-rows="true">
+
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Priority">Priority</p>
+												<p style="color:#16325C;font-size:14px;">{iGoal.AW_PriorityLevel__c}</p>
+
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Target date">Target Date</p>
+												<p style="color:#16325C;font-size:14px;">
+													<lightning-formatted-date-time day="2-digit" month="short" value={iGoal.FinServ__TargetDate__c}
+																				   year="2-digit"></lightning-formatted-date-time>
+												</p>
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Actual">Actual Value</p>
+												<p style="color:#16325C;font-size:14px;">
+													<lightning-formatted-number currency-code="ZAR" format-style="currency"
+																				value={iGoal.FinServ__ActualValue__c}></lightning-formatted-number>
+												</p>
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Target">Target Value</p>
+												<p style="color:#16325C;font-size:14px;">
+													<lightning-formatted-number currency-code="ZAR" format-style="currency"
+																				value={iGoal.FinServ__TargetValue__c}></lightning-formatted-number>
+												</p>
+											</lightning-layout-item>
+										</lightning-layout>
+									</div>
+									<div class="slds-col slds-size_1-of-5">
+										<lightning-layout>
+
+											<lightning-layout-item flexibility="auto" padding="around-small">
+												<p class="heading-label heading-truncate" title="GraphTarget">Target Achieved</p>
+												<div class="slds-p-bottom_xx-small align-left">
+													<c-aw-lwc-doughnut-chart percentage-complete={iGoal.AW_PercentageComplete__c}></c-aw-lwc-doughnut-chart>
+												</div>
+											</lightning-layout-item>
+										</lightning-layout>
+									</div>
+								</div>
+							</div>
+						</template>
+					</template>
+				</lightning-accordion-section>
+				<lightning-accordion-section class="accordion-background " label={riskGoalSectionName} name="RiskGoalSection">
+					<template if:true={riskGoalRecords}>
+						<template for:each={riskGoalRecords} for:item="rGoal">
+							<div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_small slds-m-horizontal_none" key={rGoal.Id}>
+								<lightning-layout multiple-rows="true">
+									<lightning-layout-item padding="around-small">
+										<p class="slds-text-heading_medium" title="Field 1">
+											<a data-record-id={rGoal.Id} onclick={onclickGoal} target="_blank">{rGoal.Name}</a>
+										</p>
+									</lightning-layout-item>
+								</lightning-layout>
+								<div class="slds-grid slds-box_xx-small">
+									<div class="slds-col slds-size_5-of-6">
+										<lightning-layout multiple-rows="true">
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Priority">Priority</p>
+												<p style="color:#16325C;font-size:14px;">{rGoal.AW_PriorityLevel__c}</p>
+
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Target date">Last Update</p>
+												<p style="color:#16325C;font-size:14px;">
+													<lightning-formatted-date-time day="2-digit" month="short" value={rGoal.FinServ__TargetDate__c}
+																				   year="2-digit"></lightning-formatted-date-time>
+												</p>
+
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Target">Total Need</p>
+												<p style="color:#16325C;font-size:14px;">
+													<lightning-formatted-number currency-code="ZAR" format-style="currency"
+																				value={rGoal.FinServ__TargetValue__c}></lightning-formatted-number>
+												</p>
+
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Actual">Existing Cover</p>
+												<p style="color:#16325C;font-size:14px;">
+													<lightning-formatted-number currency-code="ZAR" format-style="currency"
+																				value={rGoal.FinServ__ActualValue__c}></lightning-formatted-number>
+												</p>
+
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Shortfall/Surplus">Shortfall/Surplus</p>
+												<p style="color:#16325C;font-size:14px;">
+													<lightning-formatted-number currency-code="ZAR" format-style="currency"
+																				value={rGoal.AW_Shortfall__c}></lightning-formatted-number>
+												</p>
+
+											</lightning-layout-item>
+											<lightning-layout-item flexibility="auto" padding="around-small">
+
+												<p class="heading-label heading-truncate" title="Goal Type">Type</p>
+												<p style="color:#16325C;font-size:14px;">{rGoal.FinServ__Type__c}</p>
+
+											</lightning-layout-item>
+										</lightning-layout>
+									</div>
+									<lightning-layout>
+										<lightning-layout-item flexibility="auto" padding="around-small">
+											<p class="heading-label slds-text-align_center" title="GraphNeed">Need Fulfilled</p>
+											<div class="slds-p-bottom_x-small">
+												<c-aw-lwc-doughnut-chart percentage-complete={rGoal.AW_PercentageComplete__c}></c-aw-lwc-doughnut-chart>
+											</div>
+										</lightning-layout-item>
+									</lightning-layout>
+								</div>
+							</div>
+						</template>
+					</template>
+				</lightning-accordion-section>
+
+			</lightning-accordion>
+		</lightning-card>
+	</div>
+</template>

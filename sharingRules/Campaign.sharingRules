@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>AW_ShareWithAdvisers</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shares campaigns owned by campaign managers with advisers</description>
+        <label>Share with Advisers</label>
+        <sharedTo>
+            <group>AW_FinancialAdviser</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>AW_CampaignManagers</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

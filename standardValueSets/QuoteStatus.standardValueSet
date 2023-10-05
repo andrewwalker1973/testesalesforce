@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>4</fullName>
+        <default>true</default>
+        <label>Changed</label>
+        <allowEmail>true</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>7</fullName>
+        <default>false</default>
+        <label>Incomplete Load</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>8</fullName>
+        <default>false</default>
+        <label>Loaded</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>1</fullName>
+        <default>false</default>
+        <label>Calculation Aborted - Major Errors</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>2</fullName>
+        <default>false</default>
+        <label>Calculated with Warning Errors</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>5</fullName>
+        <default>false</default>
+        <label>Consistency Checked</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>6</fullName>
+        <default>false</default>
+        <label>Deleted</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>9</fullName>
+        <default>false</default>
+        <label>Output Created</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+    <standardValue>
+        <fullName>3</fullName>
+        <default>false</default>
+        <label>Calculated Error Free</label>
+        <allowEmail>false</allowEmail>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>RSC_ZA_Retail_ClientandAdviserServiceCentre</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>Liberty_Administrator</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>RSC_ClientandAdviserServiceCentreLeaders</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </folderShares>
+    <name>Retail Servicing Reports</name>
+</ReportFolder>

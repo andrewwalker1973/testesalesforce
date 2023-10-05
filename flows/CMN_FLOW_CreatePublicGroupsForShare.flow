@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>apxc_Create_Public_Groups</name>
+        <label>Create Public Groups</label>
+        <locationX>781</locationX>
+        <locationY>1405</locationY>
+        <actionName>CMN_FLOW_CreatePublicGroupsForShare</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>actIds</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <name>decision_Account_Record_Type_Criteria</name>
+        <label>Account Record Type Criteria</label>
+        <locationX>667</locationX>
+        <locationY>1144</locationY>
+        <defaultConnectorLabel>Outside Record Type Criteria</defaultConnectorLabel>
+        <rules>
+            <name>outcome_Within_Record_Type_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>gr_Get_Public_Group_For_Sharing_Setting.CMN_ObjectRecordTypeName__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.RecordType.DeveloperName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>apxc_Create_Public_Groups</targetReference>
+            </connector>
+            <label>Within Record Type Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>decision_Criteria_Check</name>
+        <label>Criteria Check</label>
+        <locationX>768</locationX>
+        <locationY>386</locationY>
+        <defaultConnectorLabel>Finish Flow</defaultConnectorLabel>
+        <rules>
+            <name>outcome_Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_Entry_Criteria_Create_Record</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>gr_Get_Public_Group_For_Sharing_Setting</targetReference>
+            </connector>
+            <label>Create</label>
+        </rules>
+        <rules>
+            <name>outcome_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_Entry_Criteria_Update_Record</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>gr_Get_Public_Group_For_Sharing_Setting</targetReference>
+            </connector>
+            <label>Update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>decision_Record_Type_Filter_Available</name>
+        <label>Record Type Filter Available?</label>
+        <locationX>768</locationX>
+        <locationY>904</locationY>
+        <defaultConnector>
+            <targetReference>apxc_Create_Public_Groups</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Available</defaultConnectorLabel>
+        <rules>
+            <name>outcome_RTAvailable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>gr_Get_Public_Group_For_Sharing_Setting.CMN_ObjectRecordTypeName__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>gr_Get_Public_Group_For_Sharing_Setting.CMN_ObjectRecordTypeName__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>decision_Account_Record_Type_Criteria</targetReference>
+            </connector>
+            <label>Available</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_Entry_Criteria_Create_Record</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>formula_Entry_Criteria_Update_Record</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISCHANGED({!$Record.CMN_CreatePublicGroups__c}),
+{!$Record.CMN_CreatePublicGroups__c}==TRUE,
+ISBLANK({!$Record.CMN_PublicGroupAccountRead__c})
+)</expression>
+    </formulas>
+    <interviewLabel>Create Public Groups For Share {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Public Groups For Share</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>gr_Get_Public_Group_For_Sharing_Setting</name>
+        <label>Get Public Group For Sharing Setting</label>
+        <locationX>776</locationX>
+        <locationY>685</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>decision_Record_Type_Filter_Available</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>MasterLabel</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CMN_PublicGroupForSharingSetting__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>decision_Criteria_Check</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

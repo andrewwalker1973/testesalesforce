@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission Set Group to be assigned to all the users with Liberty Data Loader profile</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Liberty Data Loader</label>
+    <permissionSets>AW_AccountPropensityModelAccess</permissionSets>
+    <permissionSets>AW_Default</permissionSets>
+    <permissionSets>AW_LibertyManageUsers</permissionSets>
+    <permissionSets>AW_ProspectSyncAdmin</permissionSets>
+    <permissionSets>FinServ__FinancialServicesCloudStandard</permissionSets>
+    <permissionSets>STANLIB_Institutional_Distribution_User</permissionSets>
+    <permissionSets>STANLIB_Retail_Distribution_User</permissionSets>
+    <permissionSets>force__SalesCloudEinsteinAll</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

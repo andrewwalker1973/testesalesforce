@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Income</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Income</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account SourceSystemId --></label>
+        <name>AW_Account_SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>AW_Account__c</name>
+        <relationshipLabel><!-- Income --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>AW_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>AW_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency (Months) --></label>
+        <name>AW_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Last Modified Date --></label>
+        <name>AW_Last_Updated_Date_from_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner UACFID --></label>
+        <name>AW_Owner_UACFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Name --></label>
+        <name>AW_Source_System_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System ID --></label>
+        <name>AW_TF_Source_System_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated by MuleSoft --></label>
+        <name>AW_UpdatedByMulesoft__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

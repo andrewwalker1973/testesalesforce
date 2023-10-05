@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Group Channels (SBSA and Liberty)</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Group Channels (SBSA and Liberty)</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>SLR_Retail_Distribution</parentRole>
+</Role>

@@ -1,0 +1,908 @@
+<apex:page controller="grax.GRAXBackupCtrl" docType="html-5.0" showHeader="false" applyHtmlTag="false" applyBodyTag="false" language="en_Us">
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/jquery-3.5.0.slim.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/moment-with-locales.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/thirdparty/moment-timezone-with-data-2012-2022.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__aljs, '/jquery.aljs-init.min.js')}"/>
+
+	<script>
+		$.aljsInit({
+			assetsLocation: "{!URLFOR($Asset.SLDS, '')}",
+			scoped: true
+		});
+	</script>
+
+	<apex:includeScript value="{!URLFOR($Resource.grax__aljs, '/jquery.aljs-datepicker.min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.sldsPillsCombobox.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.grax__grax, '/jquery.sldsPillsComboboxExtend.js')}"/>
+
+	<style>
+		.progress_additional_information {
+			position: absolute !important;
+			top: 20px !important;
+		}
+
+		#tab-archiving_scheduledprocesses .progress_additional_information {
+			left: 50px !important;
+		}
+
+		#tab-archiving_multiobjectbackup .progress_additional_information {
+			left: 35px !important;
+		}
+
+		#progress_help,
+		.progress_additional_information {
+			position: fixed;
+			margin-top: 1rem;
+		}
+
+		.help_button_container {
+			align-self: end;
+			margin: 0.5rem;
+		}
+
+		.noPointerEvents {
+			pointer-events: none;
+		}
+
+		.slds-scope .slds-input-has-icon.slds-form-element__date .slds-input__icon {
+			pointer-events: all;
+		}
+
+		.slds-scope .slds-input-has-icon.slds-form-element__date .slds-input__icon:hover {
+			fill: #005fb2;
+		}
+
+		#tab-archiving_scheduledprocesses {
+			margin-bottom: 6rem;
+		}
+
+		.slds-hide {
+			display: none!important;
+		}
+
+		.scheduledProcessesContainer .slds-th__action {
+			margin: -0.25rem;
+			cursor: pointer;
+		}
+	</style>
+
+
+	<apex:outputPanel layout="block" rendered="{!NOT(ISBLANK(pageErrorMessage))}">
+		<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert" style="margin: 10px 0;">
+			<span class="slds-assistive-text">Error</span>
+			<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-medium">
+				<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+					<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#error')}"></use>
+				</svg>
+			</span>
+			&nbsp;
+			<apex:outputText value="{!pageErrorMessage}" escape="false" />
+		</div>
+	</apex:outputPanel>
+
+	<apex:outputPanel rendered="{!ISBLANK(pageErrorMessage)}">
+		<script>
+			var currentUserLocale = "{!JSENCODE(currentUserLocale)}";
+			var momentJSUserLocale = salesforceAndMomentJSLocalesMapping[currentUserLocale] ? salesforceAndMomentJSLocalesMapping[currentUserLocale].code : 'en';
+			moment.locale(momentJSUserLocale);
+
+			window.addReportListOptions = function() {};
+			window.updateSaveState = function() {};
+
+			var paginatorFirstIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#left')}";
+			var paginatorPrevIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#chevronleft')}";
+			var paginatorNextIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#chevronright')}";
+			var paginatorLastIcon = "{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#right')}";
+
+			function renderPaginator(paginatorPanelId, totalRecords, pageLimit, currentIndex) {
+				var $paginator = $('#' + paginatorPanelId);
+
+				var totalPages = Math.ceil(totalRecords / pageLimit);
+
+				if (totalPages > 1) {
+					var $pages = $('<div class="slds-button-group" role="group" />');
+
+					var currentPage = currentIndex + 1;
+
+					var startPage, endPage;
+					if (totalPages <= 10) {
+						// less than 10 total pages so show all
+						startPage = 1;
+						endPage = totalPages;
+					} else {
+						// more than 10 total pages so calculate start and end pages
+						if (currentPage <= 6) {
+							startPage = 1;
+							endPage = 10;
+						}else{
+							startPage = currentPage - 5;
+							endPage = currentPage + 4;
+						}
+					}
+
+					var pages = Array.from(Array((endPage + 1) - startPage).keys()).map(function(i) {
+						return startPage + i;
+					});
+
+					var isFirstPage = currentPage === 1;
+					var isLastPage = currentPage === totalPages;
+					var functionName = paginatorPanelId == 'hierarchyTablePaginator' ? 'goToHierarchyPage' : 'goToMultiObjectPage';
+
+					$pages.append('<a href="javascript:void(0);" onclick="showGlobalSpinner(true);' + functionName + '(0);" role="button" class="slds-button slds-button--neutral' + (isFirstPage ? ' noPointerEvents' : '') + '"' + (isFirstPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--left="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+paginatorFirstIcon+'"></use></svg> First</a>');
+					$pages.append('<a href="javascript:void(0);" onclick="showGlobalSpinner(true);' + functionName + '(' + (currentIndex - 1) + ');" role="button" class="slds-button slds-button--neutral' + (isFirstPage ? ' noPointerEvents' : '') + '"' + (isFirstPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--left="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+paginatorPrevIcon+'"></use></svg></a>');
+
+					pages.map(function(page, index) {
+						$pages.append('<a href="javascript:void(0);" onclick="showGlobalSpinner(true);' + functionName + '(' + (page - 1) + ');" role="button" class="slds-button ' + (page == currentPage ? 'slds-button--brand noPointerEvents' : 'slds-button--neutral') + '">' + page + '</a>');
+					});
+
+					$pages.append('<a href="javascript:void(0);" onclick="showGlobalSpinner(true);' + functionName + '(' + (currentIndex + 1) + ');" role="button" class="slds-button slds-button--neutral' + (isLastPage ? ' noPointerEvents' : '') + '"' + (isLastPage ? ' disabled' : '') + '><svg class="slds-button__icon slds-button__icon--right="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+paginatorNextIcon+'"></use></svg></a>');
+					$pages.append('<a href="javascript:void(0);" onclick="showGlobalSpinner(true);' + functionName + '(' + (totalPages - 1) + ');" role="button" class="slds-button slds-button--neutral' + (isLastPage ? ' noPointerEvents' : '') + '"' + (isLastPage ? ' disabled' : '') + '>Last <svg class="slds-button__icon slds-button__icon--right="true"><use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="'+paginatorLastIcon+'"></use></svg></a>');
+
+					$paginator.html($pages);
+
+					//renderSvgIcons();
+				} else {
+					$paginator.empty();
+				}
+			};
+		</script>
+
+		<apex:form id="form-archiving" styleClass="slds-tabs_scoped__content">
+			<apex:actionFunction action="{!sortMultiObjectList}" name="sortMultiObjectList" immediate="true" reRender="multiObjectBackupPanel" oncomplete="reRendered();showGlobalSpinner(false);">
+				<apex:param name="OrderBy" assignTo="{!orderByMultiObject}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!sortHierarchyList}" name="sortHierarchyList" immediate="true" reRender="hierarchyBackupPanel" oncomplete="reRendered();showGlobalSpinner(false);">
+				<apex:param name="OrderBy" assignTo="{!orderByHierarchy}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!goToHierarchyPage}" name="goToHierarchyPage" immediate="true" reRender="hierarchyBackupPanel" oncomplete="reRendered();showGlobalSpinner(false);">
+				<apex:param name="pageNumber" assignTo="{!currentPageHierarchy}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!goToMultiObjectPage}" name="goToMultiObjectPage" immediate="true" reRender="multiObjectBackupPanel" oncomplete="reRendered();showGlobalSpinner(false);">
+				<apex:param name="pageNumber" assignTo="{!currentPageMultiObject}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!deleteScheduledProcess}" name="deleteScheduledProcess" immediate="true" reRender="pageAlertMessage" oncomplete="refreshScheduledProcessTables();">
+				<apex:param name="spId" assignTo="{!selectedGRAXScheduleProcessId}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!retrySendingData}" name="retrySendingData" immediate="true" reRender="pageAlertMessage" oncomplete="refreshScheduledProcessTables();">
+				<apex:param name="spId" assignTo="{!selectedGRAXScheduleProcessId}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!retryDeletingData}" name="retryDeletingData" immediate="true" reRender="pageAlertMessage" oncomplete="refreshScheduledProcessTables();">
+				<apex:param name="spId" assignTo="{!selectedGRAXScheduleProcessId}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!retryBackingUpFiles}" name="retryBackingUpFiles" immediate="true" reRender="pageAlertMessage" oncomplete="refreshScheduledProcessTables();">
+				<apex:param name="spId" assignTo="{!selectedGRAXScheduleProcessId}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!execScheduledProcess}" name="execScheduledProcess" immediate="true" reRender="pageAlertMessage" oncomplete="refreshScheduledProcessTables();">
+				<apex:param name="spId" assignTo="{!selectedGRAXScheduleProcessId}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!abortScheduledProcess}" name="abortScheduledProcess" immediate="true" reRender="pageAlertMessage" oncomplete="$('#GRAXBackupAbortScheduledProcess_GRAXAlertModal').trigger('modaltoggle', [false]);refreshScheduledProcessTables();">
+				<apex:param name="spId" assignTo="{!selectedGRAXScheduleProcessId}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!deactivateScheduledProcess}" name="deactivateScheduledProcess" immediate="true" reRender="pageAlertMessage" oncomplete="refreshScheduledProcessTables();">
+				<apex:param name="spId" assignTo="{!selectedGRAXScheduleProcessId}" value="" />
+			</apex:actionFunction>
+
+			<apex:actionFunction action="{!refreshScheduledProcessTables}" name="refreshScheduledProcessTables" immediate="true" reRender="hierarchyBackupPanel, multiObjectBackupPanel" oncomplete="reRendered();showGlobalSpinner(false);"></apex:actionFunction>
+
+			<apex:outputPanel id="pageAlertMessage">
+				<script>
+					var pageAlertMessage = '{!JSENCODE(pageAlertMessage)}';
+					if(pageAlertMessage) {
+						alert(pageAlertMessage);
+						refreshScheduledProcessTables();
+						// We set a timeout here to keep the spinner rolling
+						// as the refreshScheduledProcessTables function is executing
+						// on the background
+						// With this we avoid possible extra executions from the users
+						// as the table is being updated.
+						setTimeout(function() {
+							showGlobalSpinner(false);
+						}, 4000);
+					}
+				</script>
+			</apex:outputPanel>
+
+			<c:GRAXAlert message="Upon aborting this job, all grax data records and grax data record IDs will be deleted from the system, making it difficult to conduct root cause analysis for any issues with this job.  If you are unsure, please contact GRAX Support before aborting.  Do you still want to abort?" title="Warning" actionButtonLabel="Abort" alertId="GRAXBackupAbortScheduledProcess"/>
+
+			<div class="slds-tabs_default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<ul class="slds-tabs_default__nav" role="tablist">
+					<li class="slds-tabs_default__item slds-is-active" title="{! IF( enableBulkAPI, 'Backup','Object(s) Backup') }" role="presentation">
+						<a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" aria-selected="false" aria-controls="tab-archiving_multiobjectbackup" id="tab-archiving_multiobjectbackup__item">{! IF( enableBulkAPI, 'Backup','Object(s) Backup') }</a>
+					</li>
+					<li class="slds-tabs_default__item" title="{! IF( enableBulkAPI, 'Archive','Hierarchy Processes') }" role="presentation">
+						<a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" aria-selected="true" aria-controls="tab-archiving_scheduledprocesses" id="tab-archiving_scheduledprocesses__item">{! IF( enableBulkAPI, 'Archive','Hierarchy Processes') }</a>
+					</li>
+					<div style="padding-right: 5rem;width: 100%;">
+						<div class="slds-clearfix slds-align_absolute-center">
+							<div class="slds-float_left">
+                                <button class="slds-button slds-button_brand {! IF( enableBulkAPI, 'slds-hide', '' ) }" id="createScheduledProcess" onclick="showGRAXBackupPopUp();return false;">Create</button>
+
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open {! IF( enableBulkAPI, '', 'slds-hide' ) }">
+                                    <button class="slds-button slds-button_brand" aria-haspopup="true" title="Create">
+                                        Create
+                                        <span class="slds-icon_container slds-m-left_x-small">
+                                            <span class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                                                <svg class="slds-button__icon" aria-hidden="true">
+                                                    <use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        <span class="slds-assistive-text">Create</span>
+                                    </button>
+                                    <div class="slds-dropdown slds-dropdown_left slds-dropdown_actions">
+                                        <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                                            <li class="slds-dropdown__item" role="presentation" id="openMultiObjectPopupDropDownButton" >
+                                                <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                    <span class="slds-truncate" title="Backup">Backup</span>
+                                                </a>
+                                            </li>
+                                            <li class="slds-dropdown__item" role="presentation" id="openHierarchyProcessPopUpDropDownButton" >
+                                                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                    <span class="slds-truncate" title="Archive">Archive</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+								<button class="slds-button slds-button_brand" onclick="showGlobalSpinner(true);refreshScheduledProcessTables();return false;">
+									<span>Refresh Table</span>
+									<span class="slds-icon_container slds-m-left_x-small">
+										<span class="slds-icon slds-icon_xx-small" aria-hidden="true">
+											<img src="{!URLFOR($Resource.grax, '/icons/refresh-white.png')}" style="height: 14px; margin-bottom: 0.075em;"/>
+										</span>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="GRAXHelpLinkMultiobject">
+						<h3>
+							<a href="https://documentation.grax.io/docs/objects-backup" style="position:absolute; right:27px;" target="_blank" aria-labelledby="tab-archiving_scheduledprocesses__item">GRAX Help</a>
+						</h3>
+                        <br/>
+                        <h3>
+							<a href="https://documentation.grax.io/changelog/grax-360" style="position:absolute; right:27px;" target="_blank" aria-labelledby="tab-archiving_scheduledprocesses__item">See What's New</a>
+						</h3>
+					</div>
+					<div id="GRAXHelpLinkHierarchy" style="display:none;">
+						<h3>
+							<a href="https://documentation.grax.io/docs/hierarchy-processes" style="position:absolute; right:27px;" target="_blank" aria-labelledby="tab-archiving_scheduledprocesses__item">GRAX Help</a>
+						</h3>
+                        <br/>
+                        <h3>
+							<a href="https://documentation.grax.io/changelog/grax-360" style="position:absolute; right:27px;" target="_blank" aria-labelledby="tab-archiving_scheduledprocesses__item">See What's New</a>
+						</h3>
+					</div>
+				</ul>
+
+				<script>
+					$("#tab-archiving_scheduledprocesses__item").on('click', function(e) {
+						if($("#GRAXHelpLinkHierarchy").is(":hidden") && !$("#GRAXHelpLinkMultiobject").is(":hidden")) {
+							$("#GRAXHelpLinkMultiobject").css('display', 'none');
+							$("#GRAXHelpLinkHierarchy").css('display', '');
+							$("#tab-archiving_multiobjectbackup__item").parent().removeClass('slds-is-active');
+							$("#tab-archiving_multiobjectbackup").removeClass('slds-show').addClass('slds-hide');
+						}
+					});
+					$("#tab-archiving_multiobjectbackup__item").on('click', function(e) {
+						if(!$("#GRAXHelpLinkHierarchy").is(":hidden") && $("#GRAXHelpLinkMultiobject").is(":hidden")) {
+							$("#GRAXHelpLinkHierarchy").css('display', 'none');
+							$("#GRAXHelpLinkMultiobject").css('display', '');
+							$("#tab-archiving_scheduledprocesses__item").parent().removeClass('slds-is-active');
+							$("#tab-archiving_scheduledprocesses").removeClass('slds-show').addClass('slds-hide');
+						}
+					});
+				</script>
+			</div>
+
+			<div id="tab-archiving_multiobjectbackup" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-archiving_multiobjectbackup__item">
+				<apex:outputPanel id="multiObjectBackupPanel" styleClass="scheduledProcessesContainer">
+					<apex:dataTable value="{!currentPageMultiObjectList}" var="sp" id="multiobjectbackup" styleClass="slds-table slds-table_bordered slds-table_cell-buffer">
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByMultiObject == 'name', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortMultiObjectList('name'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Name">Name</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<a href="javascript:void(0);" onclick="openScheduleProcessPopUp('Multi-Object', '{!sp.GRAXScheduleProcess.Id}', {!sp.GRAXScheduleProcess.Is_Single_Object_Backup__c}, true);return false;" html-data-id="{!sp.GRAXScheduleProcess.Id}" >
+								{!sp.name}
+							</a>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByMultiObject == 'Active__c', 'slds-is-sorted slds-is-sorted_' + sortOrderMultiObject, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortMultiObjectList('Active__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Active">Active</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!IF(sp.isActive, 'Yes', 'No')}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByMultiObject == 'Last_Run_Date__c', 'slds-is-sorted slds-is-sorted_' + sortOrderMultiObject, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortMultiObjectList('Last_Run_Date__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Date Last Ran">Date Last Ran</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.lastRunDate}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByMultiObject == 'Next_Run_Date__c', 'slds-is-sorted slds-is-sorted_' + sortOrderMultiObject, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortMultiObjectList('Next_Run_Date__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Next Run Date">Next Run Date</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.nextRunDate}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByMultiObject == 'Status__c', 'slds-is-sorted slds-is-sorted_' + sortOrderMultiObject, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortMultiObjectList('Status__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Status">Status</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.status}"/>
+						</apex:column>
+
+						<apex:column >
+							<apex:facet name="header">
+								<span class="slds-p-right_small" title="Current Stage Progress">Current Stage Progress</span>
+							</apex:facet>
+							<apex:outputPanel layout="block">
+								<span class="{!IF(sp.isRunning, '', 'slds-hide')}">
+									<apex:outputText value="{!sp.progress}"/>
+								</span>
+
+								<apex:outputPanel rendered="{!NOT(sp.isUseBulkApi) && sp.status == scheduleJobStatus_QueryingRecords && sp.objectsProcessed > 0 && sp.GRAXScheduleProcess.grax__Target_Report__c == null}">
+									<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="progress_additional_information_{!sp.GRAXScheduleProcess.Id}" title="Additional Info">
+										<svg class="slds-button__icon" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+										</svg>
+										<span class="slds-assistive-text"></span>
+									</button>
+
+									<div class="slds-popover slds-popover_tooltip slds-nubbin_top-right slds-rise-from-ground slds-hide progress_additional_information" role="tooltip" id="progress_additional_information_{!sp.GRAXScheduleProcess.Id}" aria-hidden="true">
+										<div class="slds-popover__body">
+											{!sp.additionalProgressInfo}
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:outputPanel>
+						</apex:column>
+
+						<apex:column >
+							<apex:facet name="header">
+								<span class="slds-assistive-text">Actions</span>
+							</apex:facet>
+							<apex:outputPanel >
+								<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+									<button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show Actions">
+										<svg class="slds-button__icon" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
+										</svg>
+										<span class="slds-assistive-text">Show Actions</span>
+									</button>
+									<div class="slds-dropdown slds-dropdown_right slds-dropdown_actions">
+										<ul class="slds-dropdown__list" role="menu">
+											<apex:outputPanel layout="none" rendered="{!sp.isActive}">
+												<li class="slds-dropdown__item" role="presentation">
+													<apex:outputPanel layout="none" rendered="{!sp.isRunning == true && !(sp.isUseBulkApi && sp.status == 'Aborting')}">
+														<a href="javascript:void(0);" onclick="GRAXBackupAbortScheduledProcess_showWarningMessage('abortScheduledProcess', '{!JSENCODE(sp.GRAXScheduleProcess.Id)}');" role="menuitem" tabindex="0">
+															<span class="slds-truncate" title="Abort">Abort</span>
+														</a>
+													</apex:outputPanel>
+													<apex:outputPanel layout="none" rendered="{!sp.isRunning == false}">
+														<a href="javascript:void(0);" onclick="showGlobalSpinner(true);execScheduledProcess('{!sp.GRAXScheduleProcess.Id}');return false;" role="menuitem" tabindex="0">
+															<span class="slds-truncate" title="Execute Now">Execute Now</span>
+														</a>
+													</apex:outputPanel>
+												</li>
+												<apex:outputPanel layout="none" rendered="{!sp.isRunning == false}">
+													<li class="slds-dropdown__item" role="presentation">
+														<a href="javascript:void(0);" onclick="showGlobalSpinner(true);deactivateScheduledProcess('{!sp.GRAXScheduleProcess.Id}');return false;" role="menuitem" tabindex="0">
+															<span class="slds-truncate" title="Deactivate">Deactivate</span>
+														</a>
+													</li>
+												</apex:outputPanel>
+											</apex:outputPanel>
+											<apex:outputPanel layout="none" rendered="{! sp.preventEdit == false }" >
+												<li class="slds-dropdown__item" role="presentation">
+													<a href="javascript:void(0);" onclick="openScheduleProcessPopUp('Multi-Object', '{!sp.GRAXScheduleProcess.Id}', {!sp.GRAXScheduleProcess.grax__Is_Single_Object_Backup__c});return false;" role="menuitem" tabindex="0">
+														<span class="slds-truncate" title="Edit">Edit</span>
+													</a>
+												</li>
+											</apex:outputPanel>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="deleteSchedule('{!JSENCODE(sp.GRAXScheduleProcess.Id)}'); return false;" role="menuitem" tabindex="0">
+													<span class="slds-truncate" title="Delete">Delete</span>
+												</a>
+											</li>
+											<apex:outputPanel layout="none" rendered="{!NOT(sp.isUseBulkApi) && sp.status == scheduleJobStatus_CompletedErrorsSendingData}">
+												<li class="slds-dropdown__item" role="presentation">
+													<a href="javascript:void(0);" onclick="showGlobalSpinner(true);retrySendingData('{!sp.GRAXScheduleProcess.Id}');return false;" role="menuitem" tabindex="0">
+														<span class="slds-truncate" title="Re-try sending data">Re-try sending data</span>
+													</a>
+												</li>
+											</apex:outputPanel>
+											<apex:outputPanel layout="none" rendered="{!sp.status == scheduleJobStatus_ErrorBackingUpFilesToStorage}">
+												<li class="slds-dropdown__item" role="presentation">
+													<a href="javascript:void(0);" onclick="showGlobalSpinner(true);retryBackingUpFiles('{!sp.GRAXScheduleProcess.Id}');return false;" role="menuitem" tabindex="0">
+														<span class="slds-truncate" title="Re-try Backing Up Files">Re-try Backing Up Files</span>
+													</a>
+												</li>
+											</apex:outputPanel>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="openRecordDetail('{!JSENCODE(sp.GRAXScheduleProcess.Id)}'); return false;" role="menuitem" tabindex="0">
+													<span class="slds-truncate" title="Record Detail Link">Record Detail Link</span>
+												</a>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="window.open(this.nextElementSibling.getElementsByTagName('a')[0].href);" role="menuitem" tabindex="0">
+													Summary Link
+												</a>
+												<div class="slds-hide" aria-hidden="true">
+													<apex:outputField style="display:none;" value="{!sp.GRAXScheduleProcess.grax__GRAX_Summary_Link__c}" />
+												</div>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="graxSecuredIframe(openSummaryHistory.bind(this, '{!JSENCODE(sp.GRAXScheduleProcess.Id)}', {!sp.createdDateMilliseconds}), this)(event);" role="menuitem" tabindex="0">
+													<span class="slds-truncate" title="Summary History">Summary History</span>
+												</a>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="window.open(this.nextElementSibling.getElementsByTagName('a')[0].href);" role="menuitem" tabindex="0">
+													Error Report Link
+												</a>
+												<div class="slds-hide" aria-hidden="true">
+													<apex:outputField value="{!sp.GRAXScheduleProcess.grax__GRAX_Error_Report_Link__c}" />
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</apex:outputPanel>
+						</apex:column>
+					</apex:dataTable>
+
+					<div id="multiObjectTablePaginator" class="-x-small-buttons--horizontal slds-p-top_small" />
+
+					<script>
+						renderPaginator('multiObjectTablePaginator', {!totalRowsMultiObject}, {!rowsPerPage}, {!currentPageMultiObject});
+					</script>
+				</apex:outputPanel>
+			</div>
+
+			<div id="tab-archiving_scheduledprocesses" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-archiving_scheduledprocesses__item">
+				<apex:outputPanel id="hierarchyBackupPanel" styleClass="scheduledProcessesContainer">
+					<apex:dataTable value="{!currentPageHierarchyList}" var="sp" id="scheduledprocesses" styleClass="slds-table slds-table_bordered slds-table_cell-buffer">
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByHierarchy == 'name', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortHierarchyList('name'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Name">Name</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<a href="javascript:void(0);" onclick="openScheduleProcessPopUp('Hierarchy', '{!JSENCODE(sp.GRAXScheduleProcess.Id)}', false, true);return false;" >
+								{!sp.name}
+							</a>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByHierarchy == 'Active__c', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortHierarchyList('Active__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Active">Active</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!IF(sp.isActive, 'Yes', 'No')}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByHierarchy == 'Last_Run_Date__c', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortHierarchyList('Last_Run_Date__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Date Last Ran">Date Last Ran</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.lastRunDate}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByHierarchy == 'Next_Run_Date__c', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortHierarchyList('Next_Run_Date__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Next Run Date">Next Run Date</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.nextRunDate}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByHierarchy == 'Object_Name__c', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortHierarchyList('Object_Name__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Parent Object">Parent Object</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.parentObject}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByHierarchy == 'Archive__c', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortHierarchyList('Archive__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Archive">Archive</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.archive}"/>
+						</apex:column>
+
+						<apex:column headerClass="slds-text-title_caps slds-is-sortable {!IF(orderByHierarchy == 'Status__c', 'slds-is-sorted slds-is-sorted_' + sortOrderHierarchy, '')}">
+							<apex:facet name="header">
+								<apex:outputPanel layout="block">
+									<div class="slds-th__action" role="button" tabindex="0" onclick="showGlobalSpinner(true);sortHierarchyList('Status__c'); return false;">
+										<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+											<span class="slds-truncate" title="Status">Status</span>
+											<span class="slds-icon_container slds-icon-utility-arrowdown">
+												<svg class="slds-icon slds-icon-text-default slds-is-sortable__icon" aria-hidden="true">
+													<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#arrowdown')}"></use>
+												</svg>
+											</span>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+							<apex:outputText value="{!sp.status}"/>
+						</apex:column>
+
+						<apex:column >
+							<apex:facet name="header">
+								<span class="slds-p-right_small" title="Current Stage Progress">Current Stage Progress</span>
+							</apex:facet>
+							<apex:outputPanel layout="block">
+								<span class="{!IF(sp.isRunning, '', 'slds-hide')}">
+									<apex:outputText value="{!sp.progress}"/>
+								</span>
+
+								<apex:outputPanel rendered="{!sp.status == scheduleJobStatus_QueryingRecords && sp.objectsProcessed > 0 && sp.GRAXScheduleProcess.grax__Target_Report__c == null}">
+									<button class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="progress_additional_information_{!sp.GRAXScheduleProcess.Id}" title="Additional Info">
+										<svg class="slds-button__icon" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+										</svg>
+										<span class="slds-assistive-text"></span>
+									</button>
+
+									<div class="slds-popover slds-popover_tooltip slds-nubbin_top-right slds-rise-from-ground slds-hide progress_additional_information" role="tooltip" id="progress_additional_information_{!sp.GRAXScheduleProcess.Id}" aria-hidden="true">
+										<div class="slds-popover__body">
+											{!sp.additionalProgressInfo}
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:outputPanel>
+						</apex:column>
+
+						<apex:column >
+							<apex:facet name="header">
+								<span class="slds-assistive-text">Actions</span>
+							</apex:facet>
+							<apex:outputPanel >
+								<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+									<button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show Actions">
+										<svg class="slds-button__icon" aria-hidden="true">
+											<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
+										</svg>
+										<span class="slds-assistive-text">Show Actions</span>
+									</button>
+									<div class="slds-dropdown slds-dropdown_right slds-dropdown_actions">
+										<ul class="slds-dropdown__list" role="menu">
+											<apex:outputPanel layout="none" rendered="{!sp.isActive}">
+												<li class="slds-dropdown__item" role="presentation">
+													<apex:outputPanel layout="none" rendered="{!sp.isRunning == true}">
+														<a href="javascript:void(0);" onclick="GRAXBackupAbortScheduledProcess_showWarningMessage('abortScheduledProcess', '{!JSENCODE(sp.GRAXScheduleProcess.Id)}');" role="menuitem" tabindex="0">
+															<span class="slds-truncate" title="Abort">Abort</span>
+														</a>
+													</apex:outputPanel>
+													<apex:outputPanel layout="none" rendered="{!sp.isRunning == false}">
+														<a href="javascript:void(0);" onclick="showGlobalSpinner(true);execScheduledProcess('{!JSENCODE(sp.GRAXScheduleProcess.Id)}');return false;" role="menuitem" tabindex="0">
+															<span class="slds-truncate" title="Execute Now">Execute Now</span>
+														</a>
+													</apex:outputPanel>
+												</li>
+												<apex:outputPanel layout="none" rendered="{!sp.isRunning == false}">
+													<li class="slds-dropdown__item" role="presentation">
+														<a href="javascript:void(0);" onclick="showGlobalSpinner(true);deactivateScheduledProcess('{!JSENCODE(sp.GRAXScheduleProcess.Id)}');return false;" role="menuitem" tabindex="0">
+															<span class="slds-truncate" title="Deactivate">Deactivate</span>
+														</a>
+													</li>
+												</apex:outputPanel>
+											</apex:outputPanel>
+											<apex:outputPanel layout="none" rendered="{! sp.preventEdit == false }" >
+												<li class="slds-dropdown__item" role="presentation">
+													<a href="javascript:void(0);" onclick="openScheduleProcessPopUp('Hierarchy', '{!JSENCODE(sp.GRAXScheduleProcess.Id)}', false);return false;" role="menuitem" tabindex="0" >
+														<span class="slds-truncate" title="Edit">Edit</span>
+													</a>
+												</li>
+											</apex:outputPanel>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="deleteSchedule('{!JSENCODE(sp.GRAXScheduleProcess.Id)}');return false;" role="menuitem" tabindex="0">
+													<span class="slds-truncate" title="Delete">Delete</span>
+												</a>
+											</li>
+											<apex:outputPanel layout="none" rendered="{!sp.status == scheduleJobStatus_CompletedErrorsSendingData}">
+												<li class="slds-dropdown__item" role="presentation">
+													<a href="javascript:void(0);" onclick="showGlobalSpinner(true);retrySendingData('{!JSENCODE(sp.GRAXScheduleProcess.Id)}');return false;" role="menuitem" tabindex="0">
+														<span class="slds-truncate" title="Re-try sending data">Re-try sending data</span>
+													</a>
+												</li>
+											</apex:outputPanel>
+											<apex:outputPanel layout="none" rendered="{!sp.status == scheduleJobStatus_CompletedErrorsDeletingRecords}">
+												<li class="slds-dropdown__item" role="presentation">
+													<a href="javascript:void(0);" onclick="showGlobalSpinner(true);retryDeletingData('{!JSENCODE(sp.GRAXScheduleProcess.Id)}');return false;" role="menuitem" tabindex="0">
+														<span class="slds-truncate" title="Re-try deleting data">Re-try deleting data</span>
+													</a>
+												</li>
+											</apex:outputPanel>
+											<apex:outputPanel layout="none" rendered="{!sp.status == scheduleJobStatus_ErrorBackingUpFilesToStorage}">
+												<li class="slds-dropdown__item" role="presentation">
+													<a href="javascript:void(0);" onclick="showGlobalSpinner(true);retryBackingUpFiles('{!JSENCODE(sp.GRAXScheduleProcess.Id)}');return false;" role="menuitem" tabindex="0">
+														<span class="slds-truncate" title="Re-try Backing Up Files">Re-try Backing Up Files</span>
+													</a>
+												</li>
+											</apex:outputPanel>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="openRecordDetail('{!JSENCODE(sp.GRAXScheduleProcess.Id)}'); return false;" role="menuitem" tabindex="0">
+													<span class="slds-truncate" title="Record Detail Link">Record Detail Link</span>
+												</a>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="window.open(this.nextElementSibling.getElementsByTagName('a')[0].href);" role="menuitem" tabindex="0">
+													Summary Link
+												</a>
+												<div class="slds-hide" aria-hidden="true">
+													<apex:outputField value="{! sp.GRAXScheduleProcess.GRAX_Summary_Link__c}" />
+												</div>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="graxSecuredIframe(openSummaryHistory.bind(this, '{!JSENCODE(sp.GRAXScheduleProcess.Id)}', {!sp.createdDateMilliseconds}), this)(event);" role="menuitem" tabindex="0">
+													<span class="slds-truncate" title="Summary History">Summary History</span>
+												</a>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+												<a href="javascript:void(0);" onclick="window.open(this.nextElementSibling.getElementsByTagName('a')[0].href);" role="menuitem" tabindex="0">
+													Error Report Link
+												</a>
+												<div class="slds-hide" aria-hidden="true">
+													<apex:outputField value="{! sp.GRAXScheduleProcess.GRAX_Error_Report_Link__c}" />
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</apex:outputPanel>
+						</apex:column>
+					</apex:dataTable>
+
+					<div id="hierarchyTablePaginator" class="-x-small-buttons--horizontal slds-p-top_small" />
+
+					<script>
+						renderPaginator('hierarchyTablePaginator', {!totalRowsHierarchy}, {!rowsPerPage}, {!currentPageHierarchy});
+					</script>
+				</apex:outputPanel>
+			</div>
+
+			<div class="slds-popover slds-popover_tooltip slds-nubbin_top-right slds-rise-from-ground slds-hide" role="tooltip" id="progress_help" aria-hidden="true">
+				<div class="slds-popover__body">
+					Displays the total number of objects that were processed in your selection.
+				</div>
+			</div>
+			<section id="GRAXBackupPopUp" role="dialog" tabindex="-1" aria-labelledby="GRAXBackupTitle" aria-modal="true" aria-describedby="GRAXBackupPopUp" class="slds-modal slds-hide">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" data-toggle="modal" data-target="#GRAXBackupPopUp">
+							<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+								<use xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+							</svg>
+							<span class="slds-assistive-text">Close</span>
+						</button>
+						<h2 id="GRAXBackupTitle" class="slds-text-heading_medium slds-hyphenate">
+							Choose your GRAX Schedule Process
+						</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium" id="GRAXHierarchyContent">
+						<p class="slds-p-bottom_small">
+							Select Object Backup(s) to do the following:
+						</p>
+						<p>
+							1) Create an initial backup and subsequent incremental backups.
+						</p>
+						<p>
+							2) Use the Bulk API to back up objects quicker.
+						</p>
+						<br />
+						<button id="openMultiObjectPopupButton" class="slds-button slds-button_brand">Object Backup(s)</button>
+					</div>
+					<div class="slds-modal__content slds-p-around_medium" id="GRAXHierarchyContent">
+						<p class="slds-p-bottom_small">
+							Select Hierarchy Process to do the following:
+						</p>
+						<p>
+							1) Archive record(s).
+						</p>
+						<p>
+							2) Backup a parent and related children.
+						</p>
+						<br />
+						<button id="openHierarchyProcessPopUpButton" class="slds-button slds-button_brand">Hierarchy Process</button>
+					</div>
+					<footer class="slds-modal__footer">
+						<span id="close_GRAXBackupPopUp" class="slds-button slds-button_neutral" data-toggle="modal" data-target="#GRAXBackupPopUp">Close</span>
+					</footer>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open slds-hide" id="separator"></div>
+
+			<c:GRAXScheduleProcessPopUp />
+
+		</apex:form>
+
+		<script>
+			function showGRAXBackupPopUp() {
+				$("#GRAXBackupPopUp").trigger('modaltoggle', [true]);
+			}
+
+			var $openHierarchyProcessPopUp = $("#openHierarchyProcessPopUpButton,#openHierarchyProcessPopUpDropDownButton");
+			var $openMultiObjectPopupButton = $("#openMultiObjectPopupButton,#openMultiObjectPopupDropDownButton");
+
+			$openHierarchyProcessPopUp.on("click", function(e) {
+				e.preventDefault();
+				$("#GRAXBackupPopUp").trigger('modaltoggle', [false]);
+				$("#tab-archiving_scheduledprocesses__item").trigger("click");
+				openScheduleProcessPopUp('Hierarchy', null, false);
+			});
+
+			$openMultiObjectPopupButton.on("click", function(e) {
+				e.preventDefault();
+				$("#GRAXBackupPopUp").trigger('modaltoggle', [false]);
+				$("#tab-archiving_multiobjectbackup__item").trigger("click");
+				openScheduleProcessPopUp('Multi-Object', null, false);
+			});
+
+			$(document).ready(function() {
+				if({!NOT(hasConfigurationAdminPermission)}){
+					showGlobalSpinner(true);
+				}
+				refreshScheduledProcessTables();
+			});
+
+			function openSummaryHistory(gspId, fromDate){
+				var params = 'gspId=' + gspId;
+				params += '&fromDate=' + fromDate;
+				params += '&appName=summaries';
+				params += '&endpoint=' + encodeURIComponent('/grax-app/client/summaries');
+				params += '&fullPage=true';
+				params += '&herokuAppDomain=' + encodeURIComponent('{!herokuAppDomain}');
+
+				window.open('/apex/GRAXIframeViewer?' + params, '_blank');
+			}
+
+			function openRecordDetail(gspId){
+				window.open('/' + gspId, '_blank');
+			}
+
+			function deleteSchedule(gspId){
+				if( confirm( "This will delete the GRAX Schedule Process record. If you want to retain that information, we suggest deactivating the process instead.\n\n Are you sure you want to delete?" ) ){
+					showGlobalSpinner(true);
+					deleteScheduledProcess(gspId);
+					return true;
+				}
+				return false;
+			}
+		</script>
+
+	</apex:outputPanel>
+</apex:page>

@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" >
+	<!--Attribute Declaration-->
+    <aura:attribute name="fields" type="String[]" default="['AW_Outcome__c']"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="headerTitle" type="Aura.Component[]">
+        <h2>
+            <b>Outcome</b>
+        </h2>
+    </aura:attribute>
+    
+    <!--Record Form to display and edit Account Field-->
+    <lightning:card>
+        <div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_x-small">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate"> 
+                <div class="slds-media__figure" style="padding-left: 10px">
+                    <span class="slds-icon_container slds-icon-standard-account">
+                        <lightning:icon iconName="standard:topic" size="medium"/>
+                    </span>
+                </div> 	
+                <div class="slds-media__body">
+                    {!v.headerTitle}
+                </div>
+            </header>
+        </div>
+        <div style="padding: 10px" >
+                <lightning:recordForm 
+                                  objectApiName="Account"
+                                  recordId="{!v.recordId}"
+                                  fields="{!v.fields}"
+                                  columns="2"
+                                  mode="view"
+                                  />
+            
+        </div>
+    </lightning:card>
+    
+</aura:component>

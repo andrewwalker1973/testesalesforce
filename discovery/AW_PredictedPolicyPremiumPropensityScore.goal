@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiscoveryGoal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <deployedModels>
+        <active>true</active>
+        <aiModel>Maximize_Policy_Premiums_Target_Variable</aiModel>
+        <classificationThreshold>0.0985776066184044</classificationThreshold>
+        <label>AW_PredictedPolicyPremiumPropensityScore</label>
+        <name>Policy_Premiums_Cover_TV8</name>
+    </deployedModels>
+    <label>AW_PredictedPolicyPremiumPropensityScore</label>
+    <outcome>
+        <field>Policy_Premiums_Cover_TV8</field>
+        <fieldLabel>Policy Premiums Target Variable</fieldLabel>
+        <goal>Maximize</goal>
+    </outcome>
+    <predictionType>Classification</predictionType>
+</DiscoveryGoal>

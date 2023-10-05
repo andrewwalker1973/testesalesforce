@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Aktivet og passivet</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Aktiv og passiv</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Aktiv og passiv</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Aktiverne og passiverne</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Aktiver og passiver</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Aktiver og passiver</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Assets &amp; Liabilities --></label>
+        <name>WM_Client_Assets_Liabilities</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Assets &amp; Liabilities --></label>
+        <name>WM_Household_Assets_Liabilities</name>
+    </fieldSets>
+    <fields>
+        <label><!-- AUM Source External Id --></label>
+        <name>AW_AUMSourceExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Number --></label>
+        <name>AW_AccountNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Type --></label>
+        <name>AW_AccountType__c</name>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cheque</masterLabel>
+            <translation><!-- Cheque --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Savings</masterLabel>
+            <translation><!-- Savings --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>AW_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Name --></label>
+        <name>AW_AssetName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available Balance --></label>
+        <name>AW_AvailableBalance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bank Name --></label>
+        <name>AW_BankName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefits --></label>
+        <name>AW_Benefit__c</name>
+        <picklistValues>
+            <masterLabel>Critical Illness</masterLabel>
+            <translation><!-- Critical Illness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current Value</masterLabel>
+            <translation><!-- Current Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disability Lump</masterLabel>
+            <translation><!-- Disability Lump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disability Monthly</masterLabel>
+            <translation><!-- Disability Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Cover</masterLabel>
+            <translation><!-- Life Cover --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Bond Repayment Amount --></label>
+        <name>AW_BondRepaymentAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- CompanyLiability Type --></label>
+        <name>AW_CompanyLiabilityType__c</name>
+        <picklistValues>
+            <masterLabel>Credit Card</masterLabel>
+            <translation><!-- Credit Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan</masterLabel>
+            <translation><!-- Loan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle</masterLabel>
+            <translation><!-- Vehicle --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>AW_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Number --></label>
+        <name>AW_ContractNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>AW_Currency__c</name>
+        <picklistValues>
+            <masterLabel>AUD - Australian dollar</masterLabel>
+            <translation><!-- AUD - Australian dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGN - Bulgarian Lev</masterLabel>
+            <translation><!-- BGN - Bulgarian Lev --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRL - Brazilian Real</masterLabel>
+            <translation><!-- BRL - Brazilian Real --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAD - Canadian Dollar</masterLabel>
+            <translation><!-- CAD - Canadian Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHF - Switzerland Franc</masterLabel>
+            <translation><!-- CHF - Switzerland Franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNY - Chinese Yuan</masterLabel>
+            <translation><!-- CNY - Chinese Yuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CZK - Czech Republic Koruna</masterLabel>
+            <translation><!-- CZK - Czech Republic Koruna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DKK - Danish Krone</masterLabel>
+            <translation><!-- DKK - Danish Krone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR - European Euro</masterLabel>
+            <translation><!-- EUR - European Euro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBP - British Pound</masterLabel>
+            <translation><!-- GBP - British Pound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HKD - Hong Kong Dollar</masterLabel>
+            <translation><!-- HKD - Hong Kong Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HRK - Croatian Kuna</masterLabel>
+            <translation><!-- HRK - Croatian Kuna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUF - Hungarian Forint</masterLabel>
+            <translation><!-- HUF - Hungarian Forint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDR - Indonesian Rupiah</masterLabel>
+            <translation><!-- IDR - Indonesian Rupiah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ILS - Israeli Shekel</masterLabel>
+            <translation><!-- ILS - Israeli Shekel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INR - Indian Rupee</masterLabel>
+            <translation><!-- INR - Indian Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JPY - Japanese Yen</masterLabel>
+            <translation><!-- JPY - Japanese Yen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KRW - South Korean Won</masterLabel>
+            <translation><!-- KRW - South Korean Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MXN - Mexican Peso</masterLabel>
+            <translation><!-- MXN - Mexican Peso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MYR - Malaysian Ringgit</masterLabel>
+            <translation><!-- MYR - Malaysian Ringgit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOK - Norwegian krone</masterLabel>
+            <translation><!-- NOK - Norwegian krone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NZD - New Zealand Dollar</masterLabel>
+            <translation><!-- NZD - New Zealand Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHP - Philippine Peso</masterLabel>
+            <translation><!-- PHP - Philippine Peso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLN - Polish Zloty</masterLabel>
+            <translation><!-- PLN - Polish Zloty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RON - Romanian Leu</masterLabel>
+            <translation><!-- RON - Romanian Leu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUB - Russian Ruble</masterLabel>
+            <translation><!-- RUB - Russian Ruble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEK - Swedish krona</masterLabel>
+            <translation><!-- SEK - Swedish krona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SGD - Singaporean dollar</masterLabel>
+            <translation><!-- SGD - Singaporean dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>THB - Thai Baht</masterLabel>
+            <translation><!-- THB - Thai Baht --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRY - Turkish Lira</masterLabel>
+            <translation><!-- TRY - Turkish Lira --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USD - United States Dollar</masterLabel>
+            <translation><!-- USD - United States Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZAR - South African Rand</masterLabel>
+            <translation><!-- ZAR - South African Rand --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Value --></label>
+        <name>AW_CurrentValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deriving Rental Income --></label>
+        <name>AW_DerivingRentalIncome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Goal --></label>
+        <name>AW_FinancialGoal__c</name>
+        <relationshipLabel><!-- Assets and Liabilities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inception Date --></label>
+        <name>AW_InceptionDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interest Rate --></label>
+        <name>AW_InterestRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Investment Name --></label>
+        <name>AW_InvestmentName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Investment Value --></label>
+        <name>AW_InvestmentValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Updated Date From Source --></label>
+        <name>AW_LastUpdatedDatefromSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Liability Amount --></label>
+        <name>AW_LiabilityAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Liability Name --></label>
+        <name>AW_LiabilityName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Liability Term --></label>
+        <name>AW_LiabilityTerm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Linked Expense --></label>
+        <name>AW_Linked_Expense__c</name>
+        <relationshipLabel><!-- Assets and Liabilities (Linked Expense) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Linked Income --></label>
+        <name>AW_Linked_Income__c</name>
+        <relationshipLabel><!-- Assets and Liabilities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Linked Liability --></label>
+        <name>AW_Linked_Liabiltiy__c</name>
+        <relationshipLabel><!-- Assets and Liabilities (Linked Liability) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- AW_MasterAccountId --></label>
+        <name>AW_MasterAccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- MasterAccount --></label>
+        <name>AW_MasterAccount__c</name>
+        <relationshipLabel><!-- Assets and Liabilities (MasterAccount) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Monthly Repayment --></label>
+        <name>AW_MonthlyRepayment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Amount --></label>
+        <name>AW_OutstandingAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner UACFID --></label>
+        <name>AW_Owner_UACFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AW_ParentAccountOwnerId --></label>
+        <name>AW_ParentAccountOwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium --></label>
+        <name>AW_Premium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>AW_ProductName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>AW_ProductType__c</name>
+        <picklistValues>
+            <masterLabel>Banking</masterLabel>
+            <translation><!-- Banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endowment</masterLabel>
+            <translation><!-- Endowment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Protector</masterLabel>
+            <translation><!-- Financial Protector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interest only investment</masterLabel>
+            <translation><!-- Interest only investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LISP</masterLabel>
+            <translation><!-- LISP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Annuity</masterLabel>
+            <translation><!-- Living Annuity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pension</masterLabel>
+            <translation><!-- Pension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pension Preserver</masterLabel>
+            <translation><!-- Pension Preserver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property</masterLabel>
+            <translation><!-- Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provident</masterLabel>
+            <translation><!-- Provident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provident Preserver</masterLabel>
+            <translation><!-- Provident Preserver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement Annuity (RA)</masterLabel>
+            <translation><!-- Retirement Annuity (RA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk Protection</masterLabel>
+            <translation><!-- Risk Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shares</masterLabel>
+            <translation><!-- Shares --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unassigned</masterLabel>
+            <translation><!-- Unassigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit trust</masterLabel>
+            <translation><!-- Unit trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unlisted asset</masterLabel>
+            <translation><!-- Unlisted asset --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Property Name --></label>
+        <name>AW_PropertyName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Price --></label>
+        <name>AW_PurchasePrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rental Income Amount --></label>
+        <name>AW_RentalIncomeAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Share with my adviser --></label>
+        <name>AW_ShareWithMyAdviser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System Name --></label>
+        <name>AW_Source_System_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated by MuleSoft --></label>
+        <name>AW_UpdatedByMulesoft__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>FinServ__Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>FinServ__AssetsAndLiabilitiesSource__c</name>
+        <picklistValues>
+            <masterLabel>Manual Entry</masterLabel>
+            <translation>Manuel indtastning</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yodlee</masterLabel>
+            <translation>Yodlee</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>FinServ__AssetsAndLiabilitiesType__c</name>
+        <picklistValues>
+            <masterLabel>Auto Loan</masterLabel>
+            <translation>Billån</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automobile</masterLabel>
+            <translation>Bil</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cash</masterLabel>
+            <translation>Kontanter</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collection</masterLabel>
+            <translation>Samling</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment</masterLabel>
+            <translation>Udstyr</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold</masterLabel>
+            <translation>Guld</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jewelry</masterLabel>
+            <translation>Smykker</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage</masterLabel>
+            <translation>Prioritetslån</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Andet</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Loan</masterLabel>
+            <translation>Privatlån</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation>Ejendom</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>FinServ__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Account --></label>
+        <name>FinServ__FinancialAccount__c</name>
+        <relationshipLabel><!-- Assets and Liabilities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>FinServ__Household__c</name>
+        <relationshipLabel><!-- Household Assets and Liabilities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Joint Owner --></label>
+        <name>FinServ__JointOwner__c</name>
+        <relationshipLabel><!-- Joint Owner --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Type --></label>
+        <name>FinServ__OwnerType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership --></label>
+        <name>FinServ__Ownership__c</name>
+        <picklistValues>
+            <masterLabel>Individual</masterLabel>
+            <translation>Enkeltperson</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joint</masterLabel>
+            <translation>Fælles</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trust</masterLabel>
+            <translation>Trust</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Owner --></label>
+        <name>FinServ__PrimaryOwner__c</name>
+        <relationshipLabel><!-- Client Assets and Liabilities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source System ID --></label>
+        <name>FinServ__SourceSystemId__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Navn på aktiv eller passiv</nameFieldLabel>
+    <recordTypes>
+        <description><!-- Debt owed, such as a mortgage --></description>
+        <label><!-- Liability --></label>
+        <name>FinServ__Liability</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Asset not represented in financial accounts, such as real estate or collectibles --></description>
+        <label><!-- Asset --></label>
+        <name>FinServ__NonfinancialAsset</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Debt owed, such as a home loan --></description>
+        <label><!-- Liabilities --></label>
+        <name>Liabilities</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Other Assets Record Type --></description>
+        <label><!-- Other Assets --></label>
+        <name>Other_Assets</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Property Asset Record Type --></description>
+        <label><!-- Property (Asset) --></label>
+        <name>Property_Asset</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Individually owned accounts can&apos;t have a joint owner. --></errorMessage>
+        <name>FinServ__NoJointOwnerForIndividualAccounts</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The primary and joint owner must be different. --></errorMessage>
+        <name>FinServ__PrimaryAndJointOwnerCannotBeSame</name>
+    </validationRules>
+</CustomObjectTranslation>

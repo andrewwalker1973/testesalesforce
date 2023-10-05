@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Service Types</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Plan Template --></label>
+        <name>RSC_ActionPlanTemplate__c</name>
+        <relationshipLabel><!-- Service Types --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Assignable --></label>
+        <name>SC_Assignable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>SC_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entitlement --></label>
+        <name>SC_Entitlement__c</name>
+        <relationshipLabel><!-- Service Types --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Type --></label>
+        <name>SC_ServiceType__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

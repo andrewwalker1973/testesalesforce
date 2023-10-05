@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>UG Case Existing Provider LHC Enquiry C</name>
+    <queueMembers>
+        <users>
+            <user>lillian.asemo@libertyhealth.net</user>
+            <user>mark.kizito@libertyhealth.net</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>SD_UGLibertyHealthSupportDesk</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>Able to opt in/out of the process to get orphans</description>
+    <masterLabel>Orphan Opt In_Out</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object serves as a 1-1 mapping with User object. Attributes (fields) can be added to this object and later used by Q-assign configuration to run various types of matching rules while distributing records (such as Leads, Cases).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>RSC_Experience__c</fullName>
+        <description>Identify an agent/adviser&apos;s experience level.</description>
+        <externalId>false</externalId>
+        <label>Experience</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Senior</fullName>
+                    <default>true</default>
+                    <label>Senior</label>
+                </value>
+                <value>
+                    <fullName>Junior</fullName>
+                    <default>false</default>
+                    <label>Junior</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RSC_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Available</fullName>
+                    <default>false</default>
+                    <label>Available</label>
+                </value>
+                <value>
+                    <fullName>Busy - Meeting</fullName>
+                    <default>false</default>
+                    <label>Busy - Meeting</label>
+                </value>
+                <value>
+                    <fullName>Busy - Break</fullName>
+                    <default>false</default>
+                    <label>Busy - Break</label>
+                </value>
+                <value>
+                    <fullName>Busy - Lunch</fullName>
+                    <default>false</default>
+                    <label>Busy - Lunch</label>
+                </value>
+                <value>
+                    <fullName>Busy - Training</fullName>
+                    <default>false</default>
+                    <label>Busy - Training</label>
+                </value>
+                <value>
+                    <fullName>Busy - Admin</fullName>
+                    <default>false</default>
+                    <label>Busy - Admin</label>
+                </value>
+                <value>
+                    <fullName>Offline</fullName>
+                    <default>false</default>
+                    <label>Offline</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RSC_TeamName__c</fullName>
+        <description>Name of team that user belongs to. Retrieved from User Role.</description>
+        <externalId>false</externalId>
+        <label>Team Name</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SC_PrimaryRegion__c</fullName>
+        <description>Nurses on the road primary sub region - primary region which the booking agents operates in</description>
+        <externalId>false</externalId>
+        <label>Primary Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>SC_RegionGrouping__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>SC_Region</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BLOEMFONTEIN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BOLAND CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BOLAND OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT CBD/ CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>EASTERN CAPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>FREE STATE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>GARDEN ROUTE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN HIGHWAY</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN INLAND</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN NORTH/CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTHERN CAPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST PROVINCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST PROVINCE 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>RUSTENBURG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>CENTURION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB CBD/CENTRAL 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB CBD/CENTRAL 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB NORTH EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>MP EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>MP WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>NORTHERN PROVINCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA CBD/ CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>VAAL TRIANGLE</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SC_RegionGrouping__c</fullName>
+        <externalId>false</externalId>
+        <label>Region Grouping</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Coastal</fullName>
+                    <default>false</default>
+                    <label>Coastal</label>
+                </value>
+                <value>
+                    <fullName>Gauteng</fullName>
+                    <default>false</default>
+                    <label>Gauteng</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SC_SecondaryRegion__c</fullName>
+        <description>Nurses on the road secondary sub region - secondary region which the booking agents operates in</description>
+        <externalId>false</externalId>
+        <label>Secondary Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>SC_RegionGrouping__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>SC_Region</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BLOEMFONTEIN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BOLAND CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BOLAND OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT CBD/ CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>EASTERN CAPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>FREE STATE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>GARDEN ROUTE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN HIGHWAY</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN INLAND</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN NORTH/CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTHERN CAPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTHERN PROVINCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST PROVINCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST PROVINCE 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>RUSTENBURG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>CENTURION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB CBD/CENTRAL 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB CBD/CENTRAL 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB NORTH EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>MP EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>MP WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA CBD/ CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>VAAL TRIANGLE</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SC_TertiaryRegion__c</fullName>
+        <description>Nurses on the road tertiary sub region - tertiary region which the booking agents operates in</description>
+        <externalId>false</externalId>
+        <label>Tertiary Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>SC_RegionGrouping__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetName>SC_Region</valueSetName>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BLOEMFONTEIN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BOLAND CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>BOLAND OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT CBD/ CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>CT SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>EASTERN CAPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>FREE STATE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>GARDEN ROUTE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN HIGHWAY</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN INLAND</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN NORTH/CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>KZN SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTHERN CAPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTHERN PROVINCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST OUTLYING</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST PROVINCE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>NORTH WEST PROVINCE 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Coastal</controllingFieldValue>
+                <valueName>RUSTENBURG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>CENTURION</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB CBD/CENTRAL 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB CBD/CENTRAL 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB NORTH EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB SOUTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>JHB WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>MP EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>MP WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA CBD/ CENTRAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA EAST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA NORTH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>PTA WEST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gauteng</controllingFieldValue>
+                <valueName>VAAL TRIANGLE</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ortoo_qra__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Unique link to user.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Attributes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Q-assign User Attributes</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>ortoo_qra__User__c</columns>
+        <columns>RSC_Status__c</columns>
+        <columns>RSC_TeamName__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <sharedTo>
+            <group>AW_LibertyAdministrators</group>
+            <group>RSC_ClientandAdviserServiceCentreLeaders</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>User Attributes Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Q-assign User Attributes</pluralLabel>
+    <searchLayouts>
+        <listViewButtons>ortoo_qra__Delete_User_Attributes</listViewButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>ortoo_qra__Delete_User_Attributes</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Delete User Attributes</masterLabel>
+        <openType>replace</openType>
+        <page>ortoo_qra__Mass_Delete_User_Attributes</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

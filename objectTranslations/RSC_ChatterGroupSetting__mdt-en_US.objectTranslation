@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Chatter Group Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Chatter Group Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Group Type --></label>
+        <name>RSC_GroupType__c</name>
+        <picklistValues>
+            <masterLabel>Manager Group</masterLabel>
+            <translation><!-- Manager Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team Leader Group</masterLabel>
+            <translation><!-- Team Leader Group --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

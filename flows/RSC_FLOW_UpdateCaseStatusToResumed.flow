@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <description>Check the record type is RSC_Retail</description>
+        <name>RSC_ifRecordTypeIsRetail</name>
+        <label>If Record Type Is Retail</label>
+        <locationX>380</locationX>
+        <locationY>278</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>RSC_yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_getCaseRecord.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RSC_Retail</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_isCaseOnHold</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks the case on-hold status.</description>
+        <name>RSC_isCaseOnHold</name>
+        <label>Is Case On-Hold</label>
+        <locationX>182</locationX>
+        <locationY>398</locationY>
+        <defaultConnectorLabel>Not On-Hold</defaultConnectorLabel>
+        <rules>
+            <name>RSC_onHold</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RSC_getCaseRecord.SC_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>On Hold</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RSC_setCaseToResumed</targetReference>
+            </connector>
+            <label>On-Hold</label>
+        </rules>
+    </decisions>
+    <description>Flow to update the Case record status from On Hold to Resume before performing any case actions</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Null variable for the date-time data type.</description>
+        <name>RSC_NullValue</name>
+        <dataType>DateTime</dataType>
+        <expression>NULL</expression>
+    </formulas>
+    <interviewLabel>Update Case Status To Resumed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Case Status To Resumed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Fetch the current case record values</description>
+        <name>RSC_getCaseRecord</name>
+        <label>Get Case Record</label>
+        <locationX>380</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RSC_ifRecordTypeIsRetail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RSC_recordID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update the current case record sub status from on-hold to resumed</description>
+        <name>RSC_setCaseToResumed</name>
+        <label>Set Case To Resumed</label>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RSC_recordID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RSC_Department__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RSC_ResumeDate__c</field>
+            <value>
+                <elementReference>RSC_NullValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SC_OnHoldStatus__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SC_Reason__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SC_SubStatus__c</field>
+            <value>
+                <stringValue>Resumed</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>RSC_getCaseRecord</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Current record id to fetch the case sub status value</description>
+        <name>RSC_recordID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

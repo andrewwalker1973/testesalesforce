@@ -1,0 +1,724 @@
+<!--
+
+Test Case Identifi﻿cation Header
+
+TC_APP_REF:QA
+
+TC_PAGE_REF:AC
+
+TC_LAST_NO_USED:0069
+
+-->
+
+<apex:page lightningStylesheets="true" standardcontroller="ortoo_qra__Action__c" extensions="ortoo_qra.ActionsController" title="QA Assignment Group Actions" >
+	<script type="text/javascript" src="{!$Resource.jquery}"></script>
+	<apex:includeScript value="{! $Resource.Popper }"/>
+    <script type="text/javascript" src="{!URLFOR($Resource.jqueryui,'jquery-ui.min.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.bootstrapforMultiSelect,'js/bootstrap.min.js')}"></script>
+    <link href="{!URLFOR($Resource.bootstrapforMultiSelect, 'css/bootstrap.min.css')}" rel="stylesheet" media="screen"/>
+    <link href="{!URLFOR($Resource.multiselect, 'multiselect/css/multi-select.css')}" rel="stylesheet" media="screen"/>
+	<apex:variable var="uiTheme" value="lightningDesktop" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+		<link href="{!URLFOR($Resource.CustomStyle, 'CustomStyle.css')}" rel="stylesheet" media="screen"/>
+		<style>
+			   .fieldSelectionListWidth
+				{
+					width : 100%;
+				}
+		</style>
+	</apex:variable>
+	<apex:form >
+		<style>
+			
+          	.lookupIconOn 
+		  	{
+				background-image: url(/img/func_icons/util/lookup20.gif);
+				background-position: 0 0;
+				width: 20px;
+				height: 20px;
+				background-position: top right;
+			}
+
+            .lookupIcon 
+			{
+                background-image: url(/img/func_icons/util/lookup20.gif);
+                background-position: 0 0;
+                width: 20px;
+                height: 20px;
+                background-position: top left; 
+			}
+            .my-class
+            {
+                font-weight:bold;
+            }
+            .ms-container
+            {
+                width:250px; !important;
+            }
+            .inner_container
+            {
+                margin-top: 25px;
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-bottom: 25px;
+            }
+            .fieldSelectionPopup
+            {
+                background-color: white;
+                border-width: 2px;
+                border-style: solid;
+                border-radius: 25px;
+                border-color: #666;
+                z-index: 9999;
+                padding:10px;
+                position: fixed ;
+                top: 50%;
+                left: 50%;
+                width: Auto;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            .fieldSelectionPopupBackground
+            {
+                background-color:black;
+                opacity: 0.20;
+                filter: alpha(opacity = 20);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 9998;
+            }
+            .fieldSelectionLoader
+            {
+                line-height: 12px;
+                width: 18px;
+                font-size: 8pt;
+                font-family: tahoma;
+                margin-top: 25px;
+                margin-right: 10px;
+                position:absolute;
+                top:0;
+                right:0;
+            }
+            html, body
+            {
+                height: 100%;
+            }
+            .responsive-table
+            {
+                overflow-x: auto;
+                width: 1047px;
+            }
+            .headerRow
+            {
+                max-width: 70px !important;word-wrap: break-word !important;white-space: normal !important; vertical-align: top !important ;
+            }
+            .list td, .list th, body.oldForecast .list .last td, body.oldForecast .list .last th 
+            {
+                padding: 20px 2px 20px 5px;
+            }
+            span.tooltip
+            {
+                width: 195px;
+            }
+            span.tooltip:hover
+            {
+                /*background: #ffffff;*/
+                text-decoration: none;
+            } /*BG color is a must for IE6*/
+            span.tooltip span
+            {
+                display: none;
+                padding: 2px 3px;
+                margin-left: 8px;
+                /*width: 195px;*/
+            }
+            span.tooltip:hover span
+            {
+                display: inline;
+                position: absolute;
+                z-index: 444;
+                border: 1px solid orange;
+                background: #fefdb9;
+                color: #000000;
+            }  
+
+            .pbTitle {
+                display: none;
+            }
+
+            .center-btn {
+                text-align: center;
+            }         
+		</style>
+		
+        
+		<apex:sectionHeader title="QA Actions"/>
+		
+		&nbsp;&#171;&nbsp;
+		
+		<apex:outputLink html-ortoo-elem-id="QAAC0001" value="/{!assignmentGroupId}">Back to Parent : {!assignmentGroup.Name}</apex:outputLink>
+		
+		<br/><br/>
+		
+		<apex:pagemessages id="pg_msg"/>
+		
+		<apex:pageBlock id="editpb">
+			
+			<apex:pageBlockButtons >
+				<div class="center-btn">
+					<apex:commandButton html-ortoo-elem-id="QAAC0002" value="Edit" action="{!EditRecord}" rendered="{!AND( IsEditAllowed,NOT(editIsActive) )}"/>
+					<apex:commandButton html-ortoo-elem-id="QAAC0003" value="Delete" action="{!DeleteRecord}"  rendered="{!AND( IsDeleteAllowed , NOT(editIsActive) )}"/>
+					<apex:commandButton html-ortoo-elem-id="QAAC0004" value="Save" action="{!SaveRecord}" rendered="{!editIsActive}"/>
+					<apex:commandButton html-ortoo-elem-id="QAAC0005" value="Cancel" action="{!redirectToAG}" rendered="{!editIsActive}"/> 
+				</div>
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection title="Trigger" columns="1" collapsible="false" id="editpb_tr" rendered="{!editIsActive}">
+				<apex:pageBlockSectionItem helpText="{!ProcessingOrder_HelpText}" >
+					
+					<c:customHelpTextLabel labelValue="Processing Order:" helpTextID="ProcessingOrder" helpText="{!ProcessingOrder_HelpText}"/>
+					<apex:inputField html-ortoo-elem-id="QAAC0006" value="{!actionObject.ortoo_qra__Processing_Order__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!ActionType_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Action Type:" helpTextID="ActionType" helpText="{!ActionType_HelpText}"/>
+					<apex:outputPanel >
+						<apex:selectList html-ortoo-elem-id="QAAC0007" value="{!actionObject.ortoo_qra__Action_Type__c}" size="1">
+							<apex:selectoptions value="{!ActionType}"/>
+							<apex:actionsupport event="onchange" status="actionchangeStatus" action="{!onChangeActionType}" rerender="editpb,pg_msg"/>
+						</apex:selectList>
+						&nbsp;
+						<apex:actionStatus id="actionchangeStatus">
+							<apex:facet name="start">
+								<img src="/img/loading.gif" />                  
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!TriggerOn_HelpText}">
+					<c:customHelpTextLabel labelValue="Trigger On:" helpTextID="TriggerOn" helpText="{!TriggerOn_HelpText}"/>
+					<apex:outputPanel >
+						<apex:selectList html-ortoo-elem-id="QAAC0008" value="{!actionObject.ortoo_qra__Trigger_On__c}" size="1">
+							<apex:selectoptions value="{!TriggerOn}"/>
+							<apex:actionsupport event="onchange" oncomplete="loadMultiPicklistForFilterLogic();" status="triggerOnChange" action="{!onChangeTriggerOn}" rerender="objectsToUpdate,fieldToUpdate,pg_msg,editpb_ar,filter_table"/>
+						</apex:selectList>
+						<apex:actionStatus id="triggerOnChange">
+								<apex:facet name="start">
+									<img src="/img/loading.gif" />                  
+								</apex:facet>
+						</apex:actionStatus>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!TriggerType_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Trigger Type:" helpTextID="TriggerType" helpText="{!TriggerType_HelpText}"/>
+
+					<apex:outputPanel >
+						<apex:selectList html-ortoo-elem-id="QAAC0009" value="{!actionObject.ortoo_qra__Trigger_Type__c}" size="1">
+							<apex:selectoptions value="{!TriggerType}"/>
+							<apex:actionsupport event="onchange" action="{!onChangeTriggerType}" status="typechangeStatus" rerender="editpb_tr"/>
+						</apex:selectList>
+						&nbsp;
+						<apex:actionStatus id="typechangeStatus">
+							<apex:facet name="start">
+								<img src="/img/loading.gif" />                  
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!MatchObject_HelpText}" rendered="{!isMatchPattern}">
+					
+					<c:customHelpTextLabel labelValue="Match Object:" helpTextID="MatchObject" helpText="{!MatchObject_HelpText}"/>
+					<apex:outputPanel >
+						<apex:selectList html-ortoo-elem-id="QAAC0010" value="{!actionObject.ortoo_qra__Match_Object__c}" size="1">
+							<apex:selectoptions value="{!MatchObject}"/>
+	                        <apex:actionsupport event="onchange" action="{!onChangeMatchObject}" status="matchobjchangeStatus" rerender="editpb_tr"/>
+						</apex:selectList>
+						&nbsp;
+						<apex:actionStatus id="matchobjchangeStatus">
+							<apex:facet name="start">
+								<img src="/img/loading.gif" />                  
+							</apex:facet>
+						</apex:actionStatus>
+                    </apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!MatchField_HelpText}" rendered="{!isMatchPattern}">
+					
+					<c:customHelpTextLabel labelValue="Match Field:" helpTextID="MatchField" helpText="{!MatchField_HelpText}"/>
+					<apex:selectList html-ortoo-elem-id="QAAC0011" value="{!actionObject.ortoo_qra__Match_Field__c}" size="1">
+						<apex:selectoptions value="{!MatchField}"/>
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!MatchPattern_HelpText}" rendered="{!isMatchPattern}">
+					
+					<c:customHelpTextLabel labelValue="Match Pattern:" helpTextID="MatchPattern" helpText="{!MatchPattern_HelpText}"/>
+					<apex:inputField html-ortoo-elem-id="QAAC0012" value="{!actionObject.ortoo_qra__Match_Pattern__c}" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Action" columns="1" collapsible="false" id="editpb_ar_flow" rendered="{!AND(IsRunFlow ,editIsActive)}">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Select Flow:"/>
+					<apex:outputPanel >
+						<apex:selectList html-ortoo-elem-id="QAAC0013" value="{!actionObject.ortoo_qra__Flow_Name__c}" size="1">
+							<apex:selectoptions value="{!VisualFlows}"/>
+							<apex:actionsupport event="onchange" action="{!onChangeFlowName}" rerender="editpb,pg_msg" status="flowchangeStatus"/>
+						</apex:selectList>
+						&nbsp;
+						<apex:actionStatus id="flowchangeStatus">
+							<apex:facet name="start">
+								<img src="/img/loading.gif" />                  
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Select parameter to pass ID of the {!objectLabel}:"/>
+					<apex:selectList html-ortoo-elem-id="QAAC0014" value="{!actionObject.ortoo_qra__Flow_Parameter__c}" size="1">
+						<apex:selectoptions value="{!VisualFlowParamters}"/>
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="{!ActionRules}" columns="1" collapsible="false" id="editpb_ar" rendered="{!AND(NOT(IsRunFlow) ,editIsActive)}">
+				<apex:pageBlockSectionItem helpText="{!ObjectToUpdate_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Object to update:" helpTextID="ObjectToUpdate" helpText="{!ObjectToUpdate_HelpText}"/>
+					<apex:outputPanel id="objectsToUpdate">
+						<apex:selectList html-ortoo-elem-id="QAAC0015" value="{!actionObject.ortoo_qra__Object_to_Update__c}" size="1">
+							<apex:selectoptions value="{!ObjectsToUpdate}"/>
+							<apex:actionsupport oncomplete="loadMultiPicklistForFilterLogic();" event="onchange" action="{!onChangeObjectToUpdate}" status="objectchangeStatus" rerender="editpb,pg_msg,editpb_ar,filter_table"/>
+						</apex:selectList>
+						&nbsp;
+						<apex:actionStatus id="objectchangeStatus">
+							<apex:facet name="start">
+								<img src="/img/loading.gif" />                  
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>     
+			<apex:pageBlockSectionItem rendered="{!showFilter}" helpText="{!RecordToUpdate_HelpText}" >
+				    <c:customHelpTextLabel labelValue="Record to Update - Only Where:" helpTextID="RecordToUpdate" helpText="{!RecordToUpdate_HelpText}"/>
+                    <apex:outputPanel id="filter_table" >
+                    	<apex:variable var="rowNumber" value="{!0}"/>
+                   <apex:outputPanel id="filterShow" rendered="{!notEmptyFilterLogicList}" >
+                        <apex:pageBlockTable html-ortoo-elem-id="QAAC0016" value="{!filterLogicListInput}" var="SCItem">
+                            <apex:column >
+                                <apex:outputText value="{!SCItem.Order}"/>
+                            </apex:column>
+                            <apex:column headerValue="Field">
+                               <apex:inputText html-ortoo-elem-id="QAAC0017" value="{!SCItem.FieldLabel}" html-readonly="true">
+		                            <apex:actionSupport oncomplete="loadMultiPicklistForFilterLogic();" event="onclick" status="QSCnamestatus" rerender="field_selection_popup"  action="{!filterFieldSelectionShowPopup}">
+		                                 <apex:param name="index" value="{!rowNumber}"/>
+		                                  <apex:param name="isFL" value="0"/>
+		                            </apex:actionSupport>
+                       		 </apex:inputText>
+                                <apex:actionStatus id="QSCnamestatus">
+							    <apex:facet name="start">
+							      <img src="/img/loading.gif" />                  
+							    </apex:facet>
+							</apex:actionStatus>
+                            </apex:column>
+                            <apex:column headerValue="Operator">
+                                <apex:selectList html-ortoo-elem-id="QAAC0018" styleClass="customWidth" value="{!SCItem.filLogic.ortoo_qra__Operator__c}" size="1">
+                                    <apex:selectOptions value="{!FilterLogicOperatorOptions}"></apex:selectOptions>
+                                </apex:selectList>
+                            </apex:column>
+                            <apex:column headerValue="Value">
+                               <apex:inputText html-ortoo-elem-id="QAAC0019" html-placeholder=" " value="{!SCItem.FieldValue}" rendered="{!AND(SCItem.ShowOptionsList == false,SCItem.fieldCheckbox == false,SCItem.fieldDateTime == false,SCItem.isLookupField == false)}"/>
+                               <apex:selectList html-ortoo-elem-id="QAAC0020" value="{!SCItem.FieldValues}" size="2" styleClass="fllist" multiselect="true" rendered="{!SCItem.ShowOptionsList}" >
+                                   <apex:selectOptions value="{!SCItem.ShowOptions}"></apex:selectOptions>
+                               </apex:selectList> 
+                               <apex:inputCheckbox html-ortoo-elem-id="QAAC0021" value="{!SCItem.FieldValue}" rendered="{!SCItem.fieldCheckbox}"/>
+                               <apex:inputField html-ortoo-elem-id="QAAC0022" styleClass="dateField"  html-placeholder=" " value="{!fieldDate.ActivityDate}" rendered="{!SCItem.fieldDateTime}" />
+                               <apex:inputHidden html-ortoo-elem-id="QAAC0023" value="{!SCItem.FieldValue}" id="targetId" rendered="{!SCItem.isLookupField}"/>
+                               <apex:selectList html-ortoo-elem-id="QAAC0024" styleClass="customWidth1"  value="{!SCItem.assignedOwnerType}" size="1" rendered="{!AND(SCItem.isLookupField,SCItem.isOwnerLookupField)}">
+                                	<apex:selectOptions value="{!SCItem.AssignedOwnerTypeOptions}"></apex:selectOptions>
+                                    <apex:actionSupport event="onchange" reRender="filter_table" action="{!reSetOwnerType}" oncomplete="loadMultiPicklistForFilterLogic();" status="owner_type_staus">
+                                		<apex:param name="owner_type_index" value="{!rowNumber}"/>
+                                	</apex:actionSupport>
+                                </apex:selectList>
+                               <apex:outputLink html-ortoo-elem-id="QAAC0025" title="Related To Lookup (New Window)"  rendered="{!SCItem.isLookupField}" style="vertical-align:top" onclick="openLookupPopup('{!$Component.targetName}', '{!$Component.targetId}', '{!SCItem.lookupFieldObjectPrefix}','{!JSENCODE(SCItem.assignedOwnerType)}','{!JSENCODE(SCItem.objectName)}'); return false">
+                              	<apex:inputText html-ortoo-elem-id="QAAC0026" styleClass="" value="{!SCItem.lookupNameField}" id="targetName" onFocus="this.blur()" disabled="false" rendered="{!SCItem.isLookupField}"/>
+                               <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+                               	<i  class="fa fa-search" aria-hidden="true"></i>
+                               </apex:outputPanel>
+                               <img src="/s.gif" class="lookupIcon" onmouseout="this.className='lookupIcon';" onmouseover="this.className='lookupIconOn';"/>
+                               </apex:outputLink>
+                                <apex:actionStatus id="owner_type_staus">
+                                	<apex:facet name="start">
+                                        <img src= "/img/loading.gif"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop">
+                                    </apex:facet>
+                                </apex:actionStatus>     	
+                           </apex:column> 
+                           <apex:column headerValue="Action">
+                                <apex:commandLink html-ortoo-elem-id="QAAC0027" value="Remove" action="{!deleteFilterLogic}" reRender="filter_logic,filterLogic,filter_table" status="removeFilterLogic" oncomplete="loadMultiPicklistForFilterLogic(); ">
+                                    <apex:param name="delIndex" value="{!rowNumber}"/>
+                                </apex:commandLink>
+                                &nbsp;&nbsp; 
+                                 <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                                <apex:actionStatus id="removeFilterLogic">
+                                	<apex:facet name="start">
+                                        <img src= "/img/loading.gif"/>
+                                    </apex:facet>
+                                    <apex:facet name="stop">
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        </apex:outputPanel>
+                   		 <apex:commandLink html-ortoo-elem-id="QAAC0028" value="Add Filter" reRender="filterLogic,filter_table" action="{!addFilterLogic}" status="addFilterLogic" oncomplete="loadMultiPicklistForFilterLogic();"/>
+	                        <apex:actionStatus id="addFilterLogic">
+	                        	<apex:facet name="start">
+	                                <img src= "/img/loading.gif"/>
+	                         </apex:facet>
+					    </apex:actionStatus>
+                    </apex:outputPanel>
+                   
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!showFilter}" helpText="{!RecordToUpdateFilterLogic_HelpText}">
+				 
+					<c:customHelpTextLabel labelValue="Filter Logic" helpTextID="RecordToUpdateFilterLogicView" helpText="{!RecordToUpdateFilterLogic_HelpText}" />
+					<apex:outputPanel id="filter_logic" >
+						<apex:inputText html-ortoo-elem-id="QAAC0029" value="{!SearchFilter.ortoo_qra__Filter_Logic__c}"/>
+					</apex:outputPanel>
+                 </apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!FieldToUpdate_HelpText}" >
+					
+					<c:customHelpTextLabel labelValue="Field to Update:" helpTextID="FieldToUpdate" helpText="{!FieldToUpdate_HelpText}"/>
+					<apex:outputPanel id="fieldToUpdate">
+						<apex:selectList html-ortoo-elem-id="QAAC0030" value="{!actionObject.ortoo_qra__Field_to_Update__c}" size="1">
+							<apex:selectoptions value="{!fieldsToUpdate}"/>
+							<apex:actionsupport event="onchange" action="{!onChangeFieldToUpdate}" status="fieldchangeStatus" rerender="editpb"/>
+						</apex:selectList>
+						&nbsp;
+						<apex:actionStatus id="fieldchangeStatus">
+							<apex:facet name="start">
+								<img src="/img/loading.gif" />                  
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				
+				<apex:pageBlockSectionItem >
+                    <c:customHelpTextLabel labelValue="Assign Value 1" helpTextID="Right_Value1" helpText="{!assignValueHelpText}"/>
+                    
+					<apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAAC0031" value="{!actionObject.ortoo_qra__Assign_Value1_Type__c}" size="1">
+                             <apex:selectOptions value="{!ValueOptions}"/>
+                             <apex:actionSupport oncomplete="loadMultiPicklistForFilterLogic();" event="onchange" action="{!type1Change}" reRender="editpb_ar" status="object_status3"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="object_status3">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+						<apex:inputText html-ortoo-elem-id="QAAC0032" style="width:270px" value="{!assignFieldDisplay}" rendered="{!Value1DataRendered == 1}" html-readonly="true">
+							<apex:actionSupport event="onclick" reRender="popup" action="{!fieldSelectionShowPopup}" >
+								<apex:param name="fieldNo" value="1"/>
+							</apex:actionSupport>
+						</apex:inputText>
+						<apex:inputText html-ortoo-elem-id="QAAC0033" value="{!actionObject.ortoo_qra__Assign_Value1__c}" rendered="{!Value1DataRendered == 2}"/>	
+                    </apex:outputPanel>
+                
+				
+				</apex:pageBlockSectionItem>
+                
+
+				<apex:pageBlockSectionItem >
+                     <apex:outputText html-ortoo-elem-id="QAAC0034" value=""/>
+                     <apex:selectList html-ortoo-elem-id="QAAC0035" value="{!actionObject.ortoo_qra__Assign_Math_V1_to_V2__c}" size="1">
+                         <apex:selectOptions value="{!MathOptions}"/>
+                         <apex:actionSupport oncomplete="loadMultiPicklistForFilterLogic(); " event="onchange" reRender="editpb_ar"/>
+                     </apex:selectList>
+				</apex:pageBlockSectionItem>
+				
+				
+				<apex:pageBlockSectionItem rendered="{!actionObject.ortoo_qra__Assign_Math_V1_to_V2__c != ''}">
+                    <c:customHelpTextLabel labelValue="Assign Value 2" helpTextID="Assign_Value2" helpText="{!assignValueHelpText}"/>
+                    <apex:outputPanel >
+                         <apex:selectList html-ortoo-elem-id="QAAC0036" value="{!actionObject.ortoo_qra__Assign_Value2_Type__c}" size="1">
+                             <apex:selectOptions value="{!ValueOptions}"/>
+                             <apex:actionSupport oncomplete="loadMultiPicklistForFilterLogic();" event="onchange" action="{!type2Change}" reRender="editpb_ar" status="object_status3"/>
+                         </apex:selectList>
+                         &nbsp;
+                        <apex:actionStatus id="object_status3">
+                            <apex:facet name="start">
+                                <img src="/img/loading.gif" />                  
+                            </apex:facet>
+                        </apex:actionStatus>
+						<apex:inputText html-ortoo-elem-id="QAAC0037" style="width:270px" value="{!assignField2Display}" rendered="{!Value2DataRendered == 1}" html-readonly="true">
+							<apex:actionSupport event="onclick" status="QSCnamestatus" reRender="popup" action="{!fieldSelectionShowPopup}">
+								<apex:param name="fieldNo" value="2"/>
+							</apex:actionSupport>
+						</apex:inputText>
+						<apex:inputText html-ortoo-elem-id="QAAC0038" value="{!actionObject.ortoo_qra__Assign_Value2__c}"  rendered="{!Value2DataRendered == 2}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+				
+				
+			
+				<apex:pageBlockSectionItem helpText="{!OverwriteNonBlankValues_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Overwrite non-blank values:" helpTextID="OverwriteNonBlankValues" helpText="{!OverwriteNonBlankValues_HelpText}"/>
+					<apex:inputCheckbox html-ortoo-elem-id="QAAC0039" value="{!actionObject.ortoo_qra__Overwrite_non_blank_Values__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!StopFurtherProcessing_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Stop Processing Further Rules:" helpTextID="StopFurtherProcessing" helpText="{!StopFurtherProcessing_HelpText}"/>
+					<apex:inputcheckbox html-ortoo-elem-id="QAAC0040" value="{!actionObject.ortoo_qra__Stop_Processing_Further_Rules__c}"/>
+				</apex:pageBlockSectionItem>
+				
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Trigger" columns="1" collapsible="false" id="viewpb_tr" rendered="{!NOT(editIsActive)}">
+				<apex:pageBlockSectionItem helpText="{!ActionType_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Action Type" helpTextID="ActionType" helpText="{!ActionType_HelpText}"/>
+					<apex:outputField html-ortoo-elem-id="QAAC0041" value="{!actionObject.ortoo_qra__Action_Type__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!TriggerOn_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Trigger On:" helpTextID="TriggerOn" helpText="{!TriggerOn_HelpText}"/>
+					<apex:outputField html-ortoo-elem-id="QAAC0042" value="{!actionObject.ortoo_qra__Trigger_On__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!TriggerType_HelpText}">
+					<c:customHelpTextLabel labelValue="Trigger Type:" helpTextID="TriggerType" helpText="{!TriggerType_HelpText}"/>
+					<apex:outputField html-ortoo-elem-id="QAAC0043" value="{!actionObject.ortoo_qra__Trigger_Type__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!MatchObject_HelpText}" rendered="{!isMatchPattern}" >
+					
+					<c:customHelpTextLabel labelValue="Match Object:" helpTextID="MatchObject" helpText="{!MatchObject_HelpText}"/>
+					<apex:outputText html-ortoo-elem-id="QAAC0044" value="{!matchObjectText}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!MatchField_HelpText}" rendered="{!isMatchPattern}" >
+					
+					<c:customHelpTextLabel labelValue="Match Field:" helpTextID="MatchField" helpText="{!MatchField_HelpText}"/>
+					<apex:outputText html-ortoo-elem-id="QAAC0045" value="{!matchFieldText}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!MatchPattern_HelpText}" rendered="{!isMatchPattern}">
+					
+					<c:customHelpTextLabel labelValue="Match Pattern:" helpTextID="MatchPattern" helpText="{!MatchPattern_HelpText}"/>
+					<apex:outputField html-ortoo-elem-id="QAAC0046" value="{!actionObject.ortoo_qra__Match_Pattern__c}" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Action" columns="1" collapsible="false" id="viewpb_ar_flow" rendered="{!AND(IsRunFlow ,NOT(editIsActive))}">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Select Flow:"/>
+					<apex:outputField html-ortoo-elem-id="QAAC0047" value="{!actionObject.ortoo_qra__Flow_Name__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Select parameter to pass ID of the {!objectLabel}:"/>
+					<apex:outputField html-ortoo-elem-id="QAAC0048" value="{!actionObject.ortoo_qra__Flow_Parameter__c}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Action" columns="1" collapsible="false" id="viewpb_ar" rendered="{!AND(NOT(IsRunFlow) ,NOT(editIsActive))}">
+				
+				<apex:pageBlockSectionItem helpText="{!ObjectToUpdate_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Object to update:" helpTextID="ObjectToUpdate" helpText="{!ObjectToUpdate_HelpText}"/>
+					<apex:outputText html-ortoo-elem-id="QAAC0049" value="{!objectToUpdateLabel}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!notEmptyFilterLogicList}" helpText="{!RecordToUpdate_HelpText}" >
+				    <c:customHelpTextLabel labelValue="Record to Update - Only Where:" helpTextID="RecordToUpdateView" helpText="{!RecordToUpdate_HelpText}"/>
+                    <apex:outputPanel >
+                   		<apex:outputPanel rendered="{!notEmptyFilterLogicList}" >
+							<apex:pageBlockTable html-ortoo-elem-id="QAAC0050" value="{!filterLogicListInput}" var="SCItem">
+							<apex:column >
+								<apex:outputText html-ortoo-elem-id="QAAC0051" value="{!SCItem.Order}"/>
+							</apex:column>
+							<apex:column headerValue="Field">
+								<apex:outputText html-ortoo-elem-id="QAAC0052" value="{!SCItem.FieldLabel}"/>
+							</apex:column>
+							<apex:column headerValue="Operator"> 
+								<apex:outputText html-ortoo-elem-id="QAAC0053" value="{!SCItem.filLogic.ortoo_qra__Operator__c}"/>
+							</apex:column>
+							<apex:column headerValue="Value">
+								<apex:outputText html-ortoo-elem-id="QAAC0054" value="{!SCItem.FieldValueLabel}"/>
+							</apex:column>
+							</apex:pageBlockTable>
+						</apex:outputPanel>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!notEmptyFilterLogicList}" helpText="{!RecordToUpdateFilterLogic_HelpText}">
+					<c:customHelpTextLabel labelValue="Filter Logic" helpTextID="RecordToUpdateFilterLogicView" helpText="{!RecordToUpdateFilterLogic_HelpText}" />
+					<apex:outputField html-ortoo-elem-id="QAAC0055" value="{!SearchFilter.ortoo_qra__Filter_Logic__c}"/>
+                </apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!FieldToUpdate_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Field to Update:" helpTextID="FieldToUpdate" helpText="{!FieldToUpdate_HelpText}"/>
+					<apex:outputText html-ortoo-elem-id="QAAC0056" value="{!fieldToUpdateText}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!FieldValToAssign_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Field Value to Assign:" helpTextID="FieldValToAssign" helpText="{!FieldValToAssign_HelpText}"/>
+					<apex:outputPanel >
+						<apex:outputField html-ortoo-elem-id="QAAC0057" value="{!actionObject.ortoo_qra__Field_Value_to_Assign__c}"/>
+						<apex:outputPanel rendered="{!actionObject.ortoo_qra__Off_Set__c != null}">
+						<apex:outputText html-ortoo-elem-id="QAAC0058" value=" + " rendered="{!DateOption == 'TODAY'}"/>
+						<apex:outputField html-ortoo-elem-id="QAAC0059" value="{!actionObject.ortoo_qra__Off_Set__c}" rendered="{!DateOption == 'TODAY'}"/>
+						</apex:outputPanel>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!OverwriteNonBlankValues_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Overwrite non-blank values:" helpTextID="OverwriteNonBlankValues" helpText="{!OverwriteNonBlankValues_HelpText}"/>
+					<apex:outputPanel >
+						<apex:image html-ortoo-elem-id="QAAC0060" value="/img/checkbox_checked.gif" rendered="{!actionObject.ortoo_qra__Overwrite_non_blank_Values__c}" />
+						<apex:image html-ortoo-elem-id="QAAC0061" value="/img/checkbox_unchecked.gif" rendered="{!NOT(actionObject.ortoo_qra__Overwrite_non_blank_Values__c)}" />
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!StopFurtherProcessing_HelpText}">
+					
+					<c:customHelpTextLabel labelValue="Stop Processing Further Rules:" helpTextID="StopFurtherProcessing" helpText="{!StopFurtherProcessing_HelpText}"/>
+					<apex:outputPanel >
+						<apex:image html-ortoo-elem-id="QAAC0062" value="/img/checkbox_checked.gif" rendered="{!actionObject.ortoo_qra__Stop_Processing_Further_Rules__c}"/>
+						<apex:image html-ortoo-elem-id="QAAC0063"  value="/img/checkbox_unchecked.gif" rendered="{!NOT(actionObject.ortoo_qra__Stop_Processing_Further_Rules__c)}"/>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				
+			</apex:pageBlockSection>
+			
+			<apex:outputPanel id="popup">
+                <apex:outputPanel styleClass="fieldSelectionPopupBackground" layout="block" rendered="{!fieldSelectionDisplayPopup}"/>
+                <apex:outputPanel styleClass="fieldSelectionPopup" layout="block" rendered="{!fieldSelectionDisplayPopup}">
+                    <div class="inner_container">
+                    <table>
+                        <tr>
+                            <td>
+                                <apex:outputLabel >Select <span class="my-class">{!lookup_objectName_label}</span> Field</apex:outputLabel> 
+                                <br/>
+                                <br/>
+                                <apex:selectList html-ortoo-elem-id="QAAC0064" value="{!fieldApiName}" size="12">
+                                    <apex:selectOptions value="{!ObjectFieldOptionswithLookup}">
+                                    </apex:selectOptions>
+                                    <apex:actionSupport event="onchange" action="{!onChangeOfFieldAPIName}" reRender="lookup_field_block" status="showlookup"/>
+                                </apex:selectList>
+                            </td>
+                            <td>
+                               <apex:outputPanel id="lookup_field_block" >
+                                    <apex:outputLabel rendered="{!isLookupFieldSelected == true}">{!relatedFieldPicklistHeading}</apex:outputLabel> 
+                                    <br/>
+                                    <br/>
+                                    <apex:selectList html-ortoo-elem-id="QAAC0065" value="{!referenceFieldApiName}" size="12" rendered="{!isLookupFieldSelected == true}">
+                                        <apex:selectOptions value="{!referenceToFieldOptions}">
+                                        </apex:selectOptions>
+                                    </apex:selectList>
+                                </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:actionStatus id="showlookup">
+                                    <apex:facet name="start">
+                                        <div class="fieldSelectionLoader">
+                                            <img src="/img/loading.gif"/>
+                                        </div>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </td>
+                        </tr>
+                        <tr>
+							<td colspan="3">
+									<div style="float:right;display:block;margin-right:0px;clear:left; margin-top:5px;">
+										<apex:commandButton html-ortoo-elem-id="QAAC0066" value="Select" rerender="editpb_ar,popup" action="{!closefieldSelectionPopupAndAssignSelectedFieldName}" oncomplete="loadMultiPicklistForFilterLogic();" status="button_action"/>
+										&nbsp;
+										<apex:commandButton html-ortoo-elem-id="QAAC0067" value="Cancel" rerender="editpb_ar,popup" action="{!cancelfieldSelectionPopup}"  oncomplete="loadMultiPicklistForFilterLogic();" status="button_action" />
+										&nbsp;
+										<apex:actionStatus id="button_action">
+										<apex:facet name="start">
+											<img src="/img/loading.gif"/>
+										</apex:facet>
+									</apex:actionStatus>
+									</div>
+							</td>
+                        </tr>
+                    </table>
+                    </div><!-- Inner Container -->  
+                </apex:outputPanel>
+			</apex:outputPanel>
+			<apex:outputPanel id="field_selection_popup">
+			<apex:outputPanel styleClass="fieldSelectionPopupBackground" layout="block" rendered="{!filterFieldSelectionDisplayPopup}"/>
+				
+				<apex:outputPanel styleClass="fieldSelectionPopup" layout="block" rendered="{!filterFieldSelectionDisplayPopup}">
+					<div class="inner_container">
+						<table>
+							<tr>
+								<td>
+									<apex:outputText value="Select a field from" />
+									  <b><apex:outputLabel styleClass="bold-label" value="{!filterLogicObjectLabel}" /></b>
+									<apex:outputText value="to apply Filter on: " />
+									<br/>
+									<br/>
+									<apex:selectList styleClass="fieldSelectionListWidth" value="{!filterFieldApiName}" size="12" >
+										<apex:selectOptions value="{!FilterObjectFieldOptionswithLookup}">
+										</apex:selectOptions>
+										</apex:selectList>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+										<div style="float:right;display:block;margin-right:0px;clear:left;">
+											<apex:commandButton html-ortoo-elem-id="QAAC0068" value="Select" action="{!closeFilterfieldSelectionPopup}" oncomplete="loadMultiPicklistForFilterLogic();" rerender="editpb_ar,popup,field_selection_popup" status="button_action2"/>
+											&nbsp;
+											<apex:commandButton html-ortoo-elem-id="QAAC0069" value="Cancel" action="{!cancelfilterfieldSelectionPopup}" oncomplete="loadMultiPicklistForFilterLogic();" rerender="editpb_ar,popup,field_selection_popup" status="button_action2"/>
+											&nbsp;
+											<apex:actionStatus id="button_action2">
+											<apex:facet name="start">
+												<img src="/img/loading.gif"/>
+											</apex:facet>
+										</apex:actionStatus>
+										</div>
+								</td>
+							</tr>
+						</table>
+					</div><!-- Inner Container -->  
+				</apex:outputPanel>
+			</apex:outputPanel>    
+	
+            
+        
+		</apex:pageBlock>
+	  
+	  </apex:form>
+    <script type="text/javascript" src="{!URLFOR($Resource.multiselect,'multiselect/js/jquery.multi-select.js')}"></script>
+    <script>
+		var j$ = jQuery.noConflict(); 
+	  	function loadMultiPicklistForFilterLogic()
+		{
+			j$('.fllist').multiselect();
+			j$('.dontHide').css('display' , 'block !important');
+		}
+		j$(document).ready(function(){
+		j$('.fllist').multiselect();
+		});
+		var newWin=null;
+		function openLookupPopup(name, id,prefix,is_queue,target_object,search_query)
+		{
+			var url="/apex/ortoo_qra__CustomLookupPopup?namefield=" + name + "&idfield=" + id + "&prefix=" + prefix+"&is_queue=" + is_queue+"&target_object=" + target_object;
+			newWin=window.open(url, 'Popup','height=500,width=600,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');
+			if (window.focus) 
+			{
+				newWin.focus();
+			}                   
+			return false;
+		}
+						
+		function closeLookupPopup()
+		{
+			if (null!=newWin)
+			{
+				newWin.close();
+			}  
+		}
+	</script>
+</apex:page>
